@@ -7334,6 +7334,20 @@ blockquote {
   display: none;
 }
 
+.NoData {
+  background-color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.NoData .action {
+  background-color: #3f9eff;
+  border-radius: 2px;
+  padding: 8px 10px;
+  color: #fff;
+}
+
 .HeaderHTML,
 .SourcesFooterHTML {
   font-family: Lato, "Helvetica Neue", Arial, sans-serif;
