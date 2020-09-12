@@ -7324,6 +7324,18 @@ blockquote {
   color: #fff;
 }
 
+.collapsibleList {
+  padding-left: 15px;
+  white-space: nowrap;
+}
+.collapsibleList ul {
+  list-style: none;
+}
+.collapsibleList ul > .list-item.visible {
+  display: inline-block;
+  padding-left: 15px;
+}
+
 .HeaderHTML,
 .SourcesFooterHTML {
   font-family: Lato, "Helvetica Neue", Arial, sans-serif;
