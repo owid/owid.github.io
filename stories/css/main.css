@@ -7153,7 +7153,7 @@ blockquote {
   border-top-color: transparent;
 }
 
-.TimelineControl {
+.TimelineComponent {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7162,25 +7162,25 @@ blockquote {
   font-size: 1em;
   padding: 0 1em;
 }
-.TimelineControl > div {
+.TimelineComponent > div {
   margin-right: 0.5em;
 }
-.TimelineControl > div:last-child {
+.TimelineComponent > div:last-child {
   margin-right: 0;
 }
-.TimelineControl .date {
+.TimelineComponent .date {
   font-size: 0.9rem;
   margin-right: 0;
 }
-.TimelineControl .play,
-.TimelineControl .date {
+.TimelineComponent .play,
+.TimelineComponent .date {
   transition: color 0.1s;
 }
-.TimelineControl .play:hover,
-.TimelineControl .date:hover {
+.TimelineComponent .play:hover,
+.TimelineComponent .date:hover {
   color: #3f9eff;
 }
-.TimelineControl .slider {
+.TimelineComponent .slider {
   height: 4px;
   flex-grow: 1;
   background: #adb6c0;
@@ -7192,14 +7192,14 @@ blockquote {
   margin-right: 16px;
   padding: 12px 0;
 }
-.TimelineControl .handle {
+.TimelineComponent .handle {
   position: absolute;
   z-index: 1;
   margin-left: -14px;
   cursor: col-resize;
   padding: 10px 6px;
 }
-.TimelineControl .handle > .icon {
+.TimelineComponent .handle > .icon {
   height: 16px;
   width: 16px;
   border-radius: 100%;
@@ -7209,19 +7209,19 @@ blockquote {
   z-index: 1;
   pointer-events: none;
 }
-.TimelineControl .interval {
+.TimelineComponent .interval {
   position: absolute;
   height: 6px;
   background: #3f9eff;
   cursor: grab;
   padding: 10px 0;
 }
-.TimelineControl .interval:active {
+.TimelineComponent .interval:active {
   cursor: grabbing;
 }
-.TimelineControl .handle,
-.TimelineControl .interval,
-.TimelineControl .slider {
+.TimelineComponent .handle,
+.TimelineComponent .interval,
+.TimelineComponent .slider {
   box-sizing: content-box;
   background-clip: content-box;
 }
