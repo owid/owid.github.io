@@ -7736,17 +7736,17 @@ blockquote {
   font-weight: 700;
   opacity: 0.5;
 }
-.data-table .data-table-notice {
+.data-table .closest-time-notice-icon {
   opacity: 0.5;
   padding-right: 8px;
   font-size: 13px;
   cursor: default;
 }
-.data-table .data-table-notice .icon {
+.data-table .closest-time-notice-icon .icon {
   font-size: 0.75rem;
   opacity: 0.6;
 }
-.data-table .range-year {
+.data-table .range-time {
   opacity: 0.5;
   font-size: 13px;
   padding-bottom: 4px;
@@ -7764,7 +7764,7 @@ blockquote {
   opacity: 0.6;
 }
 
-.closest-year-notice {
+.closest-time-notice-tippy {
   max-width: 13rem;
   text-align: center;
   padding: 0.25rem;
