@@ -1425,7 +1425,7 @@ address a:hover {
   padding: 12px 30px;
   position: relative;
   text-decoration: none;
-  color: #3f9eff;
+  color: #0073e6;
 }
 @media screen and (max-device-width: 680px) {
   .article-content figure[data-grapher-src] .interactionNotice,
@@ -1649,7 +1649,7 @@ figure[data-explorer-src] {
 .article-content span.add-country {
   font-size: 0.9rem;
   font-weight: bold;
-  color: #3f9eff;
+  color: #0073e6;
 }
 .article-content span.add-country .icon {
   position: relative;
@@ -1676,7 +1676,7 @@ figure[data-explorer-src] {
   top: 0;
   width: 16px;
   height: 16px;
-  background-color: #3f9eff;
+  background-color: #0073e6;
   border-radius: 50%;
 }
 
@@ -2223,7 +2223,6 @@ legend {
     position: absolute;
     top: 0;
     bottom: 0;
-    z-index: 20;
     margin-left: -16.5rem;
     transition: margin 300ms ease;
   }
@@ -2249,6 +2248,7 @@ legend {
 }
 @media only screen and (max-width: 113.9375rem) {
   .entry-sidebar .toggle-toc button {
+    z-index: 20;
     position: -webkit-sticky;
     position: sticky;
     top: 1rem;
@@ -2280,6 +2280,7 @@ legend {
 }
 @media only screen and (max-width: 113.9375rem) {
   .entry-sidebar.toggled {
+    z-index: 20;
     margin-left: 0;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 0px, rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
   }
@@ -6645,7 +6646,7 @@ blockquote {
 }
 
 .ClearSelectionButton {
-  color: #3f9eff;
+  color: #0073e6;
   font-size: 13px;
   line-height: 16px;
   text-align: center;
@@ -6909,9 +6910,11 @@ blockquote {
 .toggleSwitch {
   text-transform: uppercase;
   cursor: pointer;
-  position: absolute;
   font-weight: bold;
   white-space: nowrap;
+}
+.toggleSwitch:not(.inline) {
+  position: absolute;
 }
 .toggleSwitch span {
   text-align: center;
@@ -6939,64 +6942,14 @@ blockquote {
 }
 
 .SelectEntitiesButton {
-  color: #3f9eff;
+  color: #0073e6;
 }
 .SelectEntitiesButton svg {
   margin-right: 3px;
 }
 
-.addDataButton {
-  font-size: 0.8em;
-  font-weight: 700;
-  border-radius: 2px;
-  padding: 0;
-  border: none;
-  color: #3f9eff;
-  line-height: 21px;
-  text-align: left;
-  white-space: nowrap;
-  padding-left: 6px;
-  padding-right: 6px;
-  margin-left: -25px;
-  outline: none;
-  animation: appear 500ms cubic-bezier(0, 0, 0.4, 1) 1s;
-  animation-iteration-count: initial;
-  animation-fill-mode: backwards;
-}
-.addDataButton .icon {
-  display: inline-block;
-  margin-right: 3px;
-  vertical-align: text-bottom;
-  position: relative;
-  width: 16px;
-  height: 16px;
-}
-.addDataButton .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-.addDataButton .icon path {
-  stroke: #fff;
-  stroke-width: 2px;
-}
-.addDataButton .icon::before {
-  display: block;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  background-color: #3f9eff;
-  border-radius: 100%;
-  transition: transform 200ms cubic-bezier(0, 0, 0.4, 1);
-  animation: bounceIn 750ms cubic-bezier(0, 0, 0.4, 1) 1s;
-  animation-iteration-count: initial;
-}
-.addDataButton:hover .icon::before {
-  transform: scale(1.25) !important;
+.ChangeEntityButton {
+  color: #0073e6;
 }
 
 @keyframes bounceIn {
@@ -7049,7 +7002,7 @@ blockquote {
 }
 .relatedQuestion a,
 .relatedQuestion svg {
-  color: #3f9eff;
+  color: #0073e6;
 }
 .relatedQuestion svg {
   margin-left: 0.4rem;
@@ -7102,7 +7055,7 @@ blockquote {
 .ControlsFooter .extraControls button {
   margin: 0;
   font-size: 1em;
-  color: #3f9eff;
+  color: #0073e6;
 }
 .ControlsFooter nav.tabs ul {
   margin: 0;
@@ -7178,7 +7131,7 @@ blockquote {
 }
 .TimelineComponent .play:hover,
 .TimelineComponent .date:hover {
-  color: #3f9eff;
+  color: #0073e6;
 }
 .TimelineComponent .slider {
   height: 4px;
@@ -7204,7 +7157,7 @@ blockquote {
   width: 16px;
   border-radius: 100%;
   background: #ffffff;
-  border: 1.5px solid #3f9eff;
+  border: 1.5px solid #0073e6;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   z-index: 1;
   pointer-events: none;
@@ -7212,7 +7165,7 @@ blockquote {
 .TimelineComponent .interval {
   position: absolute;
   height: 6px;
-  background: #3f9eff;
+  background: #0073e6;
   cursor: grab;
   padding: 10px 0;
 }
@@ -7318,22 +7271,49 @@ blockquote {
   justify-content: center;
 }
 .NoData .action {
-  background-color: #3f9eff;
+  background-color: #0073e6;
   border-radius: 2px;
   padding: 8px 10px;
   color: #fff;
 }
 
 .collapsibleList {
-  padding-left: 15px;
   white-space: nowrap;
 }
 .collapsibleList ul {
   list-style: none;
 }
-.collapsibleList ul > .list-item.visible {
+.collapsibleList ul > .list-item.visible, .collapsibleList ul > .list-item.moreButton {
   display: inline-block;
   padding-left: 15px;
+}
+.collapsibleList .moreButton {
+  cursor: pointer;
+}
+
+.controlsRow {
+  margin: 12px 0px 0px 0px;
+}
+.controlsRow ul {
+  margin: 0px;
+  padding: 0px;
+}
+.controlsRow .list-item {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 24px;
+  /* blue gray */
+  color: #60758c;
+}
+.controlsRow .moreButton {
+  /* blue medium */
+  color: #0073e6;
+}
+.controlsRow input[type=checkbox] {
+  height: 10px;
+  width: 10px;
 }
 
 .HeaderHTML,
@@ -7516,11 +7496,54 @@ blockquote {
   transition: color 150ms ease;
 }
 .EntitySelectorMulti .clearSelection:hover {
-  color: #3f9eff;
+  color: #0073e6;
 }
 
 .chart.portrait .EntitySelectorMulti .selectedData {
   min-width: 50%;
+}
+
+.addEntityButton {
+  font-weight: 700;
+  color: #0073e6;
+  animation: appear 500ms cubic-bezier(0, 0, 0.4, 1) 1s;
+  animation-iteration-count: initial;
+  animation-fill-mode: backwards;
+}
+.addEntityButton .icon {
+  display: inline-block;
+  margin-right: 3px;
+  vertical-align: text-bottom;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.addEntityButton .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.addEntityButton .icon path {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+.addEntityButton .icon::before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #0073e6;
+  border-radius: 100%;
+  transition: transform 200ms cubic-bezier(0, 0, 0.4, 1);
+  animation: bounceIn 750ms cubic-bezier(0, 0, 0.4, 1) 1s;
+  animation-iteration-count: initial;
+}
+.addEntityButton:hover .icon::before {
+  transform: scale(1.25) !important;
 }
 
 .DownloadTab .download-csv {
@@ -7966,9 +7989,11 @@ blockquote {
 .toggleSwitch {
   text-transform: uppercase;
   cursor: pointer;
-  position: absolute;
   font-weight: bold;
   white-space: nowrap;
+}
+.toggleSwitch:not(.inline) {
+  position: absolute;
 }
 .toggleSwitch span {
   text-align: center;
