@@ -786,19 +786,11 @@ address a:hover {
   -ms-transition: color 150ms ease;
   transition: color 150ms ease;
 }
-.HeaderSearch > input::-ms-input-placeholder {
-  color: #92a5bb;
-  -ms-transition: color 150ms ease;
-  transition: color 150ms ease;
-}
 .HeaderSearch > input::placeholder {
   color: #92a5bb;
   transition: color 150ms ease;
 }
 .HeaderSearch > input:focus:-ms-input-placeholder {
-  color: #1d3d63;
-}
-.HeaderSearch > input:focus::-ms-input-placeholder {
   color: #1d3d63;
 }
 .HeaderSearch > input:focus::placeholder {
@@ -1858,19 +1850,11 @@ legend {
   -ms-transition: opacity 150ms ease;
   transition: opacity 150ms ease;
 }
-.owid-inline-input::-ms-input-placeholder, .owid-input::-ms-input-placeholder, .owid-block-input::-ms-input-placeholder, .owid-text-field::-ms-input-placeholder {
-  color: #92a5bb;
-  -ms-transition: opacity 150ms ease;
-  transition: opacity 150ms ease;
-}
 .owid-inline-input::placeholder, .owid-input::placeholder, .owid-block-input::placeholder, .owid-text-field::placeholder {
   color: #92a5bb;
   transition: opacity 150ms ease;
 }
 .owid-inline-input:focus:-ms-input-placeholder, .owid-input:focus:-ms-input-placeholder, .owid-block-input:focus:-ms-input-placeholder, .owid-text-field:focus:-ms-input-placeholder {
-  opacity: 0.5;
-}
-.owid-inline-input:focus::-ms-input-placeholder, .owid-input:focus::-ms-input-placeholder, .owid-block-input:focus::-ms-input-placeholder, .owid-text-field:focus::-ms-input-placeholder {
   opacity: 0.5;
 }
 .owid-inline-input:focus::placeholder, .owid-input:focus::placeholder, .owid-block-input:focus::placeholder, .owid-text-field:focus::placeholder {
@@ -2419,19 +2403,11 @@ legend {
   -ms-transition: opacity 150ms ease;
   transition: opacity 150ms ease;
 }
-.homepage-masthead--search .search-input-wrapper input::-ms-input-placeholder {
-  color: #92a5bb;
-  -ms-transition: opacity 150ms ease;
-  transition: opacity 150ms ease;
-}
 .homepage-masthead--search .search-input-wrapper input::placeholder {
   color: #92a5bb;
   transition: opacity 150ms ease;
 }
 .homepage-masthead--search .search-input-wrapper input:focus:-ms-input-placeholder {
-  opacity: 0.5;
-}
-.homepage-masthead--search .search-input-wrapper input:focus::-ms-input-placeholder {
   opacity: 0.5;
 }
 .homepage-masthead--search .search-input-wrapper input:focus::placeholder {
@@ -3218,19 +3194,11 @@ legend {
   -ms-transition: color 150ms linear;
   transition: color 150ms linear;
 }
-.donate-form .custom-amount-input::-ms-input-placeholder {
-  color: #92a5bb;
-  -ms-transition: color 150ms linear;
-  transition: color 150ms linear;
-}
 .donate-form .custom-amount-input::placeholder {
   color: #92a5bb;
   transition: color 150ms linear;
 }
 .donate-form .custom-amount-input:focus:-ms-input-placeholder {
-  color: #d8e0e9;
-}
-.donate-form .custom-amount-input:focus::-ms-input-placeholder {
   color: #d8e0e9;
 }
 .donate-form .custom-amount-input:focus::placeholder {
@@ -4498,7 +4466,6 @@ html.iframe .CovidExplorerFigure,
   padding: 0;
   margin-right: 0.375em;
   -webkit-user-select: none;
-     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
@@ -6576,14 +6543,12 @@ blockquote {
   cursor: pointer;
   -webkit-user-select: none;
   -ms-user-select: none;
-  -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 .chart .noselect {
   -webkit-user-select: none;
   -ms-user-select: none;
-  -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -6711,7 +6676,6 @@ blockquote {
   color: #1d3d63;
   background-color: #f4f5f7;
   -webkit-user-select: none;
-     -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   position: relative;
@@ -6815,19 +6779,11 @@ blockquote {
   -ms-transition: opacity 150ms ease;
   transition: opacity 150ms ease;
 }
-.CountryPickerSearchInput .input-field::-ms-input-placeholder {
-  color: inherit;
-  -ms-transition: opacity 150ms ease;
-  transition: opacity 150ms ease;
-}
 .CountryPickerSearchInput .input-field::placeholder {
   color: inherit;
   transition: opacity 150ms ease;
 }
 .CountryPickerSearchInput .input-field:focus:-ms-input-placeholder {
-  opacity: 0.25;
-}
-.CountryPickerSearchInput .input-field:focus::-ms-input-placeholder {
   opacity: 0.25;
 }
 .CountryPickerSearchInput .input-field:focus::placeholder {
@@ -7573,7 +7529,6 @@ blockquote {
   vertical-align: middle;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
