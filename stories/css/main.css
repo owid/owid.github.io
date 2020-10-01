@@ -7548,7 +7548,6 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
   background: rgba(255, 255, 255, 0.95);
   text-align: center;
 }
@@ -7611,11 +7610,14 @@ blockquote {
   font-size: 0.7rem;
 }
 
+.tableTab {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .tableTab .data-table th {
   position: -webkit-sticky;
   position: sticky;
   z-index: 10;
-  height: 51px;
   white-space: nowrap;
 }
 .tableTab .data-table th.dimension, .tableTab .data-table th.entity {
@@ -7625,7 +7627,7 @@ blockquote {
   z-index: 11;
 }
 .tableTab .data-table th.subdimension {
-  top: 51px;
+  top: 53px;
 }
 .tableTab .data-table .entity {
   position: -webkit-sticky;
@@ -7636,13 +7638,15 @@ blockquote {
 
 .data-table {
   font-size: 0.9375rem;
+  line-height: 16px;
   border: none;
   background: white;
   width: 100%;
   border-spacing: 0px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 0px, rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
 }
-.data-table th {
+.data-table thead tr:last-child th,
+.data-table th.entity {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .data-table tr th:first-child,
@@ -7656,11 +7660,11 @@ blockquote {
 .data-table thead tr:first-child th {
   padding-top: 10px;
   padding-bottom: 8px;
-  vertical-align: text-top;
 }
 .data-table th {
   padding-top: 8px;
   padding-bottom: 8px;
+  vertical-align: bottom;
 }
 .data-table tr:first-child td {
   padding-top: 8px;
@@ -7674,7 +7678,6 @@ blockquote {
 .data-table th {
   background-color: white;
 }
-.data-table th.sorted,
 .data-table th.sortable:hover {
   background-color: whitesmoke;
 }
@@ -7682,8 +7685,34 @@ blockquote {
 .data-table td {
   padding-left: 15px;
   padding-right: 15px;
+}
+.data-table th.dimension {
+  text-align: center;
+}
+.data-table th.dimension > div {
+  min-height: 35px;
+}
+.data-table th.subdimension {
   border-right: 1px solid rgba(0, 0, 0, 0.08);
-  vertical-align: text-top;
+}
+.data-table .deltaColumn {
+  min-width: 145px;
+}
+.data-table th.entity,
+.data-table td.entity {
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+.data-table tr > .dimension-start ~ .dimension-start,
+.data-table tr > th.dimension ~ th.dimension,
+.data-table tr > th.firstSubdimension ~ th.firstSubdimension {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+.data-table th.firstSubdimension div,
+.data-table th.endSubdimension div {
+  min-width: 56px;
+}
+.data-table th.lastSubdimension {
+  border-right: none;
 }
 .data-table th:last-child,
 .data-table td:last-child {
@@ -7701,16 +7730,10 @@ blockquote {
   background-color: white;
 }
 .data-table tbody tr:nth-child(2n) td {
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 }
-.data-table tbody tr:nth-child(2n) td.sorted {
-  background-color: #f6f6f6;
-}
-.data-table td.sorted {
-  background-color: #fafafa;
-}
-.data-table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.035);
+.data-table tbody tr:hover td {
+  background-color: #f1f1f1;
 }
 .data-table .entity {
   text-align: left;
@@ -7726,6 +7749,7 @@ blockquote {
 .data-table .dimension .unit {
   font-weight: 700;
   opacity: 0.5;
+  padding-bottom: 3px;
 }
 .data-table .closest-time-notice-icon {
   opacity: 0.5;
