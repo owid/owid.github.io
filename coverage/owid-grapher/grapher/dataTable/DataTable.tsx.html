@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.94% </span>
+                <span class="strong">87.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>366/421</span>
+                <span class='fraction'>387/442</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.15% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>74/89</span>
+                <span class='fraction'>75/90</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.94% </span>
+                <span class="strong">87.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>366/421</span>
+                <span class='fraction'>387/442</span>
             </div>
         
             
@@ -478,7 +478,28 @@
 <a name='L419'></a><a href='#L419'>419</a>
 <a name='L420'></a><a href='#L420'>420</a>
 <a name='L421'></a><a href='#L421'>421</a>
-<a name='L422'></a><a href='#L422'>422</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -715,6 +736,8 @@
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -864,6 +887,24 @@
 <span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">168x</span>
 <span class="cline-any cline-yes">168x</span>
 <span class="cline-any cline-yes">168x</span>
@@ -875,6 +916,7 @@
 <span class="cline-any cline-yes">129x</span>
 <span class="cline-any cline-yes">168x</span>
 <span class="cline-any cline-yes">168x</span>
+<span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
 <span class="cline-any cline-yes">181x</span>
@@ -1124,7 +1166,7 @@ export class DataTable extends React.Component&lt;DataTableProps&gt; {
     private get dimensionSubheaders() {
         const { sort } = this.tableState
         return this.displayDimensions.map((dim, dimIndex) =&gt;
-            dim.columns.map((column) =&gt; {
+            dim.columns.map((column, i) =&gt; {
                 const headerText =
                     column.targetTimeMode === TargetTimeMode.point
                         ? dim.formatTime(column.targetTime!)
@@ -1142,6 +1184,8 @@ export class DataTable extends React.Component&lt;DataTableProps&gt; {
                         headerText={headerText}
                         colType="subdimension"
                         dataType="numeric"
+                        subdimensionType={column.key}
+                        lastSubdimension={i === dim.columns.length - 1}
                     /&gt;
                 )
             })
@@ -1271,32 +1315,51 @@ function ColumnHeader(props: {
     headerText: React.ReactFragment
     colType: "entity" | "dimension" | "subdimension"
     dataType: "text" | "numeric"
+    subdimensionType?: ColumnKey
+    lastSubdimension?: boolean
 }) {
-    const { sortable, sortedCol, colType } = props
+    const {
+        sortable,
+        sortedCol,
+        colType,
+        subdimensionType,
+        lastSubdimension,
+    } = props
     return (
         &lt;th
             className={classnames(colType, {
-                sortable: sortable,
+                sortable,
                 sorted: sortedCol,
+                firstSubdimension: subdimensionType === "start",
+                endSubdimension: subdimensionType === "end",
+                lastSubdimension,
             })}
             rowSpan={props.rowSpan ?? 1}
             colSpan={props.colSpan ?? 1}
             onClick={props.onClick}
         &gt;
-            {props.headerText}
-            {sortable &amp;&amp; (
-                &lt;SortIcon
-                    type={props.dataType}
-                    isActiveIcon={sortedCol}
-                    order={
-                        sortedCol
-                            ? props.sortOrder
-                            : colType === "entity"
-<span class="branch-0 cbranch-no" title="branch not covered" >                            ? SortOrder.asc</span>
-                            : SortOrder.desc
-                    }
-                /&gt;
-            )}
+            &lt;div
+                className={classnames({
+                    deltaColumn:
+                        subdimensionType === "delta" ||
+                        subdimensionType === "deltaRatio",
+                })}
+            &gt;
+                {props.headerText}
+                {sortable &amp;&amp; (
+                    &lt;SortIcon
+                        type={props.dataType}
+                        isActiveIcon={sortedCol}
+                        order={
+                            sortedCol
+                                ? props.sortOrder
+                                : colType === "entity"
+<span class="branch-0 cbranch-no" title="branch not covered" >                                ? SortOrder.asc</span>
+                                : SortOrder.desc
+                        }
+                    /&gt;
+                )}
+            &lt;/div&gt;
         &lt;/th&gt;
     )
 }
@@ -1327,7 +1390,7 @@ const makeClosestTimeNotice = (targetTime: string, closestTime: string) =&gt; (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 01 2020 15:59:25 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 01 2020 19:19:41 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
