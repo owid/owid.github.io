@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.72% </span>
+                <span class="strong">93.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>736/777</span>
+                <span class='fraction'>737/787</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.72% </span>
+                <span class="strong">93.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>736/777</span>
+                <span class='fraction'>737/787</span>
             </div>
         
             
@@ -834,7 +834,18 @@
 <a name='L775'></a><a href='#L775'>775</a>
 <a name='L776'></a><a href='#L776'>776</a>
 <a name='L777'></a><a href='#L777'>777</a>
-<a name='L778'></a><a href='#L778'>778</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L778'></a><a href='#L778'>778</a>
+<a name='L779'></a><a href='#L779'>779</a>
+<a name='L780'></a><a href='#L780'>780</a>
+<a name='L781'></a><a href='#L781'>781</a>
+<a name='L782'></a><a href='#L782'>782</a>
+<a name='L783'></a><a href='#L783'>783</a>
+<a name='L784'></a><a href='#L784'>784</a>
+<a name='L785'></a><a href='#L785'>785</a>
+<a name='L786'></a><a href='#L786'>786</a>
+<a name='L787'></a><a href='#L787'>787</a>
+<a name='L788'></a><a href='#L788'>788</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1087,6 +1098,15 @@
 <span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1624,6 +1644,7 @@
     memoize,
     fetchText,
     fetchJSON,
+    max,
 } from "grapher/utils/Util"
 import moment from "moment"
 import { csv } from "d3-fetch"
@@ -1865,18 +1886,27 @@ export class CovidExplorerTable {
 &nbsp;
     static async <span class="fstat-no" title="function not covered" >fetchAndParseData(): Promise&lt;CovidGrapherRow[]&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const rawData = (await csv(covidDataPath)) as any</span>
-<span class="cstat-no" title="statement not covered" >        const filtered = rawData</span>
+<span class="cstat-no" title="statement not covered" >        const filtered: CovidGrapherRow[] = rawData</span>
 <span class="cstat-no" title="statement not covered" >            .map(CovidExplorerTable.parseCovidRow)</span>
 <span class="cstat-no" title="statement not covered" >            .filter((row: CovidGrapherRow) =&gt; row.location !== "International")</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const continentRows = CovidExplorerTable.generateContinentRows(filtered)</span>
+<span class="cstat-no" title="statement not covered" >        const latestDate = max(filtered.map((row) =&gt; row.date))</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const continentRows = CovidExplorerTable.generateContinentRows(</span>
+<span class="cstat-no" title="statement not covered" >            filtered</span>
+<span class="cstat-no" title="statement not covered" >        ).filter(</span>
+<span class="cstat-no" title="statement not covered" >            // Drop the last day in aggregates containing Spain &amp; Sweden</span>
+<span class="cstat-no" title="statement not covered" >            (row) =&gt; !(row.date === latestDate &amp;&amp; row.location === "Europe")</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const euRows = CovidExplorerTable.calculateRowsForGroup(</span>
 <span class="cstat-no" title="statement not covered" >            filtered.filter((row: ParsedCovidCsvRow) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                CovidExplorerTable.euCountries.has(row.location)</span>
 <span class="cstat-no" title="statement not covered" >            ),</span>
 <span class="cstat-no" title="statement not covered" >            "European Union"</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >            // Drop the last day in aggregates containing Spain &amp; Sweden</span>
+<span class="cstat-no" title="statement not covered" >        ).filter((row) =&gt; row.date !== latestDate)</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return filtered.concat(continentRows, euRows)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2395,7 +2425,7 @@ export function perCapitaDivisorByMetric(metric: MetricKind) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Oct 05 2020 14:24:25 GMT+0000 (Coordinated Universal Time)
+                at Tue Oct 06 2020 15:10:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
