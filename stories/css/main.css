@@ -3880,7 +3880,7 @@ html.iframe .ChartPage .related-research-data {
   border-color: rgba(29, 61, 99, 0.8);
 }
 .cookie-notice .button .icon {
-  margin-right: 0.35rem;
+  margin-right: 0.5rem;
 }
 .cookie-notice .button.accept {
   background-color: #002147;
@@ -4860,6 +4860,46 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
 .article-content > section .wp-block-columns .wp-block-help .content a {
   color: currentColor;
   text-decoration: underline;
+}
+
+.cookie-preferences {
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border: 2px solid #002147;
+}
+@media (min-width: 55rem) {
+  .cookie-preferences {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.cookie-preferences .last-updated {
+  font-size: 0.9rem;
+}
+.cookie-preferences button {
+  margin-top: 1rem;
+}
+.cookie-preferences button .icon {
+  margin-right: 0.5rem;
+}
+
+.cookie-preference {
+  margin-bottom: 1rem;
+}
+.cookie-preference:last-child {
+  margin-bottom: 0;
+}
+.cookie-preference label {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 0.5rem;
 }
 
 /* HACK (Mispy): Fix search autozooming on iPhone Safari.
