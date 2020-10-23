@@ -3900,11 +3900,22 @@ html.iframe .ChartPage .related-research-data {
 @media (min-width: 55rem) {
   .site-tools {
     position: fixed;
+    display: block;
     z-index: 100;
-    display: flex;
-    right: 20px;
-    bottom: 20px;
+    right: 1rem;
+    bottom: 1rem;
     border: none;
+  }
+  .site-tools .hide-wrapper {
+    display: flex;
+    transition: all 0.3s;
+  }
+  .site-tools .hide-wrapper.hide {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  .site-tools .hide-wrapper > .active {
+    z-index: 100;
   }
   .site-tools .prompt {
     position: relative;
@@ -3919,12 +3930,10 @@ html.iframe .ChartPage .related-research-data {
     bottom: 0;
     background-color: rgba(255, 255, 255, 0.5);
   }
-  .site-tools > div.active {
-    z-index: 100;
-  }
   .site-tools .box {
     position: absolute;
     bottom: 100%;
+    margin-bottom: 1rem;
     right: 0;
     border-radius: 3px;
     width: 23rem;
@@ -3944,13 +3953,14 @@ html.iframe .ChartPage .related-research-data {
     flex-direction: column;
   }
   .site-tools .box button {
-    padding: 0.7rem 0.85rem;
+    padding: 0.2rem 0.5rem;
+    line-height: 1.6rem;
     border: none;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 0.875rem;
     background: #002147;
   }
   .site-tools .box button:disabled {
@@ -3962,13 +3972,14 @@ html.iframe .ChartPage .related-research-data {
     color: rgba(255, 255, 255, 0.75);
   }
   .site-tools button {
-    padding: 0.7rem 0.85rem;
+    padding: 0.2rem 0.5rem;
+    line-height: 1.6rem;
     border: none;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     color: white;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 0.875rem;
     background: #002147;
   }
   .site-tools button:disabled {
@@ -6493,13 +6504,14 @@ blockquote {
   flex-direction: column;
 }
 .FeedbackPage .box button {
-  padding: 0.7rem 0.85rem;
+  padding: 0.2rem 0.5rem;
+  line-height: 1.6rem;
   border: none;
   border-radius: 3px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   color: white;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.875rem;
   background: #002147;
 }
 .FeedbackPage .box button:disabled {
