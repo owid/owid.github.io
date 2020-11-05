@@ -4913,6 +4913,61 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
   margin-left: 0.5rem;
 }
 
+.expandable-inline-block button {
+  background-color: #ebeef2;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.25rem;
+  color: #002147;
+  transition: all 150ms;
+}
+.expandable-inline-block button:hover {
+  background-color: #d8e0e9;
+}
+
+.expandable-block-button {
+  background-color: #ebeef2;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0.25rem;
+  color: #002147;
+  transition: all 150ms;
+}
+.expandable-block-button:hover {
+  background-color: #d8e0e9;
+}
+
+.glossary-excerpt {
+  display: block;
+  margin: 1rem 0;
+  padding: 1.5rem;
+  font-weight: initial;
+  font-style: initial;
+  background-color: #ebeef2;
+}
+.glossary-excerpt .title {
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #92a5bb;
+}
+.glossary-excerpt a {
+  display: block;
+  margin-top: 1rem;
+  text-align: right;
+}
+.glossary-excerpt a svg {
+  font-size: 0.8em;
+  margin-left: 0.5rem;
+  margin-bottom: 1px;
+}
+
 /* HACK (Mispy): Fix search autozooming on iPhone Safari.
    http://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
