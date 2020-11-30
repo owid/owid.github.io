@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.05% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1102/1412</span>
+                <span class='fraction'>1102/1417</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.05% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1102/1412</span>
+                <span class='fraction'>1102/1417</span>
             </div>
         
             
@@ -1469,7 +1469,12 @@
 <a name='L1410'></a><a href='#L1410'>1410</a>
 <a name='L1411'></a><a href='#L1411'>1411</a>
 <a name='L1412'></a><a href='#L1412'>1412</a>
-<a name='L1413'></a><a href='#L1413'>1413</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1413'></a><a href='#L1413'>1413</a>
+<a name='L1414'></a><a href='#L1414'>1414</a>
+<a name='L1415'></a><a href='#L1415'>1415</a>
+<a name='L1416'></a><a href='#L1416'>1416</a>
+<a name='L1417'></a><a href='#L1417'>1417</a>
+<a name='L1418'></a><a href='#L1418'>1418</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1822,6 +1827,11 @@
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
 <span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3241,17 +3251,22 @@ export class Grapher extends GrapherDefaults implements TimeViz {
 <span class="cstat-no" title="statement not covered" >                    const entityCodes = EntityUrlBuilder.queryParamToEntities(</span>
 <span class="cstat-no" title="statement not covered" >                        country</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                    const matchedEntities = this.setSelectedEntitiesByCode(</span>
-<span class="cstat-no" title="statement not covered" >                        entityCodes</span>
-<span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                    const notFoundEntities = Array.from(</span>
-<span class="cstat-no" title="statement not covered" >                        matchedEntities.keys()</span>
-<span class="cstat-no" title="statement not covered" >                    ).filter((key) =&gt; !matchedEntities.get(key))</span>
+<span class="cstat-no" title="statement not covered" >                    this.setSelectedEntitiesByCode(entityCodes)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                    if (notFoundEntities.length)</span>
-<span class="cstat-no" title="statement not covered" >                        this.analytics.logEntitiesNotFoundError(</span>
-<span class="cstat-no" title="statement not covered" >                            notFoundEntities</span>
-<span class="cstat-no" title="statement not covered" >                        )</span>
+<span class="cstat-no" title="statement not covered" >                    // Commented out temporarily because it causes some errors.</span>
+<span class="cstat-no" title="statement not covered" >                    // Some of the logging functions call document which doesn't</span>
+<span class="cstat-no" title="statement not covered" >                    // exist during baking.</span>
+<span class="cstat-no" title="statement not covered" >                    //</span>
+<span class="cstat-no" title="statement not covered" >                    // const matchedEntities = this.setSelectedEntitiesByCode(</span>
+<span class="cstat-no" title="statement not covered" >                    //     entityCodes</span>
+<span class="cstat-no" title="statement not covered" >                    // )</span>
+<span class="cstat-no" title="statement not covered" >                    // const notFoundEntities = Array.from(</span>
+<span class="cstat-no" title="statement not covered" >                    //     matchedEntities.keys()</span>
+<span class="cstat-no" title="statement not covered" >                    // ).filter((key) =&gt; !matchedEntities.get(key))</span>
+<span class="cstat-no" title="statement not covered" >                    // if (notFoundEntities.length)</span>
+<span class="cstat-no" title="statement not covered" >                    //     this.analytics.logEntitiesNotFoundError(</span>
+<span class="cstat-no" title="statement not covered" >                    //         notFoundEntities</span>
+<span class="cstat-no" title="statement not covered" >                    //     )</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -4300,7 +4315,7 @@ export class Grapher extends GrapherDefaults implements TimeViz {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Nov 20 2020 16:56:25 GMT+0000 (Coordinated Universal Time)
+                at Mon Nov 30 2020 10:10:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
