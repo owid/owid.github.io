@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.53% </span>
+                <span class="strong">23.21% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/49</span>
+                <span class='fraction'>13/56</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.53% </span>
+                <span class="strong">23.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/49</span>
+                <span class='fraction'>13/56</span>
             </div>
         
             
@@ -106,7 +106,14 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -117,6 +124,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,9 +181,11 @@ export const ExpandableInlineBlock_name = "ExpandableInlineBlock"
 &nbsp;
 export const ExpandableInlineBlock = <span class="fstat-no" title="function not covered" >({</span>
 <span class="cstat-no" title="statement not covered" >    label,</span>
+<span class="cstat-no" title="statement not covered" >    type,</span>
 <span class="cstat-no" title="statement not covered" >    children,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    label: string</span>
+<span class="cstat-no" title="statement not covered" >    type: string</span>
 <span class="cstat-no" title="statement not covered" >    children: ReactElement</span>
 <span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const [isVisible, setVisible] = useState(false)</span>
@@ -178,7 +194,12 @@ export const ExpandableInlineBlock = <span class="fstat-no" title="function not 
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;span className="expandable-inline-block"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;button onClick={toggleVisibility}&gt;{label}&lt;/button&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;button</span>
+<span class="cstat-no" title="statement not covered" >                data-track-note={`${type.toLowerCase()}-toggle`}</span>
+<span class="cstat-no" title="statement not covered" >                onClick={toggleVisibility}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                {label}</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >            {isVisible &amp;&amp; &lt;span&gt;{children}&lt;/span&gt;}</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
@@ -197,7 +218,7 @@ export const runExpandableInlineBlock = <span class="fstat-no" title="function n
 <span class="cstat-no" title="statement not covered" >        const Component = availableComponents[subComponent]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        ReactDOM.render(</span>
-<span class="cstat-no" title="statement not covered" >            &lt;ExpandableInlineBlock label={label}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;ExpandableInlineBlock label={label} type={subComponent}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;Component {...props} label={label} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/ExpandableInlineBlock&gt;,</span>
 <span class="cstat-no" title="statement not covered" >            expandableInlineBlock.parentElement</span>
@@ -211,7 +232,7 @@ export const runExpandableInlineBlock = <span class="fstat-no" title="function n
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 17 2020 10:06:16 GMT+0000 (Coordinated Universal Time)
+                at Thu Dec 17 2020 13:58:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
