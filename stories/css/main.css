@@ -4075,11 +4075,15 @@ html.iframe #explorerContainer {
 .mobile-explorer .ExplorerControl.count {
   width: unset;
 }
+.mobile-explorer .ExplorerControl .intervalDropdown {
+  width: 100%;
+}
 
 .intervalDropdown {
   font-size: 13px;
   font-weight: 400;
-  min-width: 150px;
+  width: 150px;
+  max-width: 100%;
 }
 
 @keyframes slideUp {
