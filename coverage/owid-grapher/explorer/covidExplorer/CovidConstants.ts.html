@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>335/335</span>
+                <span class='fraction'>365/365</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>335/335</span>
+                <span class='fraction'>365/365</span>
             </div>
         
             
@@ -392,7 +392,67 @@
 <a name='L333'></a><a href='#L333'>333</a>
 <a name='L334'></a><a href='#L334'>334</a>
 <a name='L335'></a><a href='#L335'>335</a>
-<a name='L336'></a><a href='#L336'>336</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -807,6 +867,7 @@ export declare type MetricKind =
     | "case_fatality_rate"
     | "tests_per_case"
     | "positive_test_rate"
+    | "vaccinations"
 &nbsp;
 export const MetricOptions: MetricKind[] = [
     "deaths",
@@ -815,6 +876,7 @@ export const MetricOptions: MetricKind[] = [
     "case_fatality_rate",
     "tests_per_case",
     "positive_test_rate",
+    "vaccinations",
 ]
 &nbsp;
 export const sourceCharts = {
@@ -846,6 +908,11 @@ export const sourceCharts = {
     positive_test_rate_daily: 4198,
 &nbsp;
     case_fatality_rate_total: 4056,
+&nbsp;
+    vaccinations_total: 4702,
+    vaccinations_total_per_capita: 4703,
+    vaccinations_daily: 4718,
+    vaccinations_daily_per_capita: 4719,
 }
 &nbsp;
 export const sourceVariables = {
@@ -855,6 +922,7 @@ export const sourceVariables = {
     cases: 145450,
     deaths: 145451,
     tests: 142601,
+    vaccinations: 145569,
     days_since: 145465,
     continents: 123,
 }
@@ -904,6 +972,7 @@ export const metricLabels: { [key in MetricKind]: string } = {
     case_fatality_rate: "Case fatality rate",
     tests_per_case: "Tests per confirmed case",
     positive_test_rate: "Share of positive tests",
+    vaccinations: "Vaccinations",
 }
 &nbsp;
 export const intervalsAvailableByMetric: Map&lt;
@@ -916,6 +985,7 @@ export const intervalsAvailableByMetric: Map&lt;
     ["case_fatality_rate", new Set(["total"])],
     ["tests_per_case", new Set(["total", "smoothed"])],
     ["positive_test_rate", new Set(["total", "smoothed"])],
+    ["vaccinations", new Set(["total", "smoothed"])],
 ])
 &nbsp;
 // todo: auto import from covid repo.
@@ -962,6 +1032,10 @@ export interface ParsedCovidCsvRow {
     male_smokers: number
     handwashing_facilities: number
     hospital_beds_per_thousand: number
+    total_vaccinations: number | undefined
+    total_vaccinations_per_hundred: number | undefined
+    new_vaccinations: number | undefined
+    new_vaccinations_per_million: number | undefined
 }
 &nbsp;
 export interface CovidGrapherRow extends ParsedCovidCsvRow {
@@ -1059,6 +1133,22 @@ export const metricPickerColumnSpecs: Partial&lt;Record&lt;
         name: "New cases (per 1M)",
         type: ColumnTypeNames.Ratio,
     },
+    total_vaccinations: {
+        name: "Total vaccinations",
+        type: ColumnTypeNames.Integer,
+    },
+    total_vaccinations_per_hundred: {
+        name: "Total vaccinations (per 100)",
+        type: ColumnTypeNames.Ratio,
+    },
+    new_vaccinations: {
+        name: "New vaccinations",
+        type: ColumnTypeNames.Integer,
+    },
+    new_vaccinations_per_million: {
+        name: "New vaccinations (per 1M)",
+        type: ColumnTypeNames.Ratio,
+    },
 }
 // The ID of the Wordpress reusable block to show below the COVID explorer
 export const covidWpBlockId = 36313
@@ -1069,7 +1159,7 @@ export const covidWpBlockId = 36313
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jan 06 2021 17:43:05 GMT+0000 (Coordinated Universal Time)
+                at Fri Jan 08 2021 13:51:29 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
