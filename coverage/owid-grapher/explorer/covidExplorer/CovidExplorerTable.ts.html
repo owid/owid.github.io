@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">90.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>729/802</span>
+                <span class='fraction'>718/793</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.54% </span>
+                <span class="strong">88.46% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>139/157</span>
+                <span class='fraction'>138/156</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.43% </span>
+                <span class="strong">91.18% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>32/35</span>
+                <span class='fraction'>31/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">90.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>729/802</span>
+                <span class='fraction'>718/793</span>
             </div>
         
             
@@ -850,16 +850,7 @@
 <a name='L791'></a><a href='#L791'>791</a>
 <a name='L792'></a><a href='#L792'>792</a>
 <a name='L793'></a><a href='#L793'>793</a>
-<a name='L794'></a><a href='#L794'>794</a>
-<a name='L795'></a><a href='#L795'>795</a>
-<a name='L796'></a><a href='#L796'>796</a>
-<a name='L797'></a><a href='#L797'>797</a>
-<a name='L798'></a><a href='#L798'>798</a>
-<a name='L799'></a><a href='#L799'>799</a>
-<a name='L800'></a><a href='#L800'>800</a>
-<a name='L801'></a><a href='#L801'>801</a>
-<a name='L802'></a><a href='#L802'>802</a>
-<a name='L803'></a><a href='#L803'>803</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L794'></a><a href='#L794'>794</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -922,11 +913,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">248x</span>
@@ -1498,6 +1484,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -1522,6 +1509,11 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -1533,16 +1525,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -1675,6 +1657,7 @@
     fetchText,
     fetchJSON,
     max,
+    sum,
 } from "grapher/utils/Util"
 import moment from "moment"
 import { csv } from "d3-fetch"
@@ -1723,12 +1706,6 @@ interface AnnotationsRow {
 const stringColumnSlugs = new Set(
     `iso_code location date tests_units continent`.split(" ")
 )
-&nbsp;
-const addOrUndefined = (sum: number | undefined, value: number | undefined) =&gt; {
-    if (sum === undefined) return value<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (value === undefined) return sum</span>
-<span class="cstat-no" title="statement not covered" >    return sum + value</span>
-<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const buildColumnSlug = (
     name: MetricKind,
@@ -2299,6 +2276,7 @@ export class CovidExplorerTable {
         const rowsByDay = new Map&lt;string, CovidGrapherRow&gt;()
         const rows = sortBy(group, (row) =&gt; dateToYear(row.date))
         const groupMembers = new Set()
+        const totalVaccinationsByLocation = new Map&lt;string, number&gt;()
         rows.forEach((row) =&gt; {
             const day = row.date
             groupMembers.add(row.iso_code)
@@ -2323,38 +2301,33 @@ export class CovidExplorerTable {
             newRow.population += row.population
             newRow.new_cases += row.new_cases<span class="branch-0 cbranch-no" title="branch not covered" > || 0</span>
             newRow.new_deaths += row.new_deaths || 0
-            newRow.new_vaccinations = addOrUndefined(
-                newRow.new_vaccinations,
-                row.new_vaccinations
+            if (row.total_vaccinations !== undefined) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                totalVaccinationsByLocation.set(</span>
+<span class="cstat-no" title="statement not covered" >                    row.location,</span>
+<span class="cstat-no" title="statement not covered" >                    row.total_vaccinations</span>
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+            newRow.total_vaccinations = sum(
+                Array.from(totalVaccinationsByLocation.values())
             )
         })
         const newRows = Array.from(rowsByDay.values())
         let total_cases = 0
         let total_deaths = 0
-        let total_vaccinations: number | undefined = undefined
         let maxPopulation = 0
         const group_members = Array.from(groupMembers).join("")
         // We need to compute cumulatives again because sometimes data will stop for a country.
         newRows.forEach((row) =&gt; {
             total_cases += row.new_cases
             total_deaths += row.new_deaths
-            total_vaccinations = addOrUndefined(
-                total_vaccinations,
-                row.new_vaccinations
-            )
             row.total_cases = total_cases
             row.total_deaths = total_deaths
-            row.total_vaccinations = total_vaccinations
             row.group_members = group_members
             if (row.population &gt; maxPopulation) maxPopulation = row.population
 &nbsp;
             // Once we add a country to a group, we assume we will always have data for that country, so even if the
             // country is late in reporting the data keep that country in the population count.
             row.population = maxPopulation
-&nbsp;
-            // We want to drop new_vaccinations for aggregates, but we need them initially to
-            // calculate the total (this is a very very dirty fix)
-            row.new_vaccinations = undefined
         })
         return newRows
     }
@@ -2470,7 +2443,7 @@ export function perCapitaDivisorByMetricAndInterval(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jan 08 2021 13:51:29 GMT+0000 (Coordinated Universal Time)
+                at Sat Jan 09 2021 13:21:24 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
