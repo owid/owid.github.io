@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>133/133</span>
+                <span class='fraction'>129/130</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">57.89% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/16</span>
+                <span class='fraction'>11/19</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>133/133</span>
+                <span class='fraction'>129/130</span>
             </div>
         
             
@@ -187,10 +187,7 @@
 <a name='L128'></a><a href='#L128'>128</a>
 <a name='L129'></a><a href='#L129'>129</a>
 <a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -290,10 +287,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -324,9 +318,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { BAKED_GRAPHER_URL } from "settings"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFileAlt } from "@fortawesome/free-solid-svg-icons/faFileAlt"
-&nbsp;
 import * as React from "react"
 import urljoin from "url-join"
 import * as lodash from "lodash"
@@ -340,14 +331,16 @@ import { ChartListItemVariant } from "./ChartListItemVariant"
 import { LoadingIndicator } from "grapher/loadingIndicator/LoadingIndicator"
 import { EmbedDetector } from "./EmbedDetector"
 import { serializeJSONForHTML } from "utils/serializers"
+import { RelatedArticles } from "site/RelatedArticles/RelatedArticles"
+import { PostReference } from "adminSite/client/ChartEditor"
 &nbsp;
 export const GrapherPage = (props: {
     grapher: GrapherInterface
     post?: Post.Row
     relatedCharts?: RelatedChart[]
+    relatedArticles?: PostReference[]
 }) =&gt; {
-    const { grapher, post, relatedCharts } = props
-&nbsp;
+    const { grapher, relatedCharts, relatedArticles } = props
     const pageTitle = grapher.title
     const pageDesc =
         grapher.subtitle ||
@@ -419,15 +412,13 @@ try {
                         &lt;p&gt;Interactive visualization requires JavaScript&lt;/p&gt;
                     &lt;/noscript&gt;
 &nbsp;
-                    {post &amp;&amp; (
+                    {((relatedArticles<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; relatedArticles.length != 0)</span> ||
+                        (relatedCharts &amp;&amp; relatedCharts.length != 0)) &amp;&amp; (
                         &lt;div className="related-research-data"&gt;
-                            &lt;h2&gt;All our research and data on {post.title}&lt;/h2&gt;
-                            &lt;div className="research"&gt;
-                                &lt;a href={`/${post.slug}`}&gt;
-                                    &lt;FontAwesomeIcon icon={faFileAlt} /&gt;
-                                    Read the article
-                                &lt;/a&gt;
-                            &lt;/div&gt;
+                            &lt;h2&gt;All our related research and data&lt;/h2&gt;
+                            {relatedArticles<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; relatedArticles.length != 0<span class="branch-0 cbranch-no" title="branch not covered" > </span>&amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;RelatedArticles articles={relatedArticles} /&gt;</span>
+                            )}
                             {relatedCharts &amp;&amp; relatedCharts.length !== 0 &amp;&amp; (
                                 &lt;&gt;
                                     &lt;h3&gt;Charts&lt;/h3&gt;
@@ -463,7 +454,7 @@ try {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jan 11 2021 09:54:26 GMT+0000 (Coordinated Universal Time)
+                at Mon Jan 11 2021 10:45:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
