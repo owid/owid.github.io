@@ -26,6 +26,12 @@
  * Fonts
  */
 /*******************************************************************************
+ * Z-index
+ */
+/*******************************************************************************
+  * Coronavirus (COVID-19)
+  */
+/*******************************************************************************
  * Colors
  */
 /* Oxford Blue */
@@ -38,12 +44,6 @@
 /* Hyperlink colors */
 /* Category colors */
 /* Controls color */
-/*******************************************************************************
- * Z-index
- */
-/*******************************************************************************
-  * Coronavirus (COVID-19)
-  */
 /* Population Growth & Vital Statistics */
 .owid-data li:nth-of-type(1) h4,
 #topics-dropdown li.category:nth-of-type(1) > a,
@@ -4441,7 +4441,6 @@ html.iframe .CovidExplorerFigure,
   margin-left: 0.8rem;
 }
 .article-content .wp-block-owid-prominent-link a {
-  display: block;
   color: #1d3d63;
 }
 .article-content .wp-block-owid-prominent-link a:visited {
@@ -4481,6 +4480,7 @@ html.iframe .CovidExplorerFigure,
   margin: 0;
 }
 .article-content .wp-block-owid-prominent-link.is-style-default a {
+  display: block;
   padding: 1.5rem;
 }
 @media (min-width: 55rem) {
@@ -4786,6 +4786,76 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
 }
 .post-card .authors {
   font-weight: bold;
+}
+
+.wp-block-owid-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 1rem 0;
+}
+@media (min-width: 30rem) {
+  .wp-block-owid-grid {
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 55rem) {
+  .wp-block-owid-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 81.5rem) {
+  .wp-block-owid-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.wp-block-owid-card {
+  border: 1px solid #d8e0e9;
+  background-color: #ffffff;
+  transition: all 0.1s;
+}
+.wp-block-owid-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 0px, rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
+  border: 1px solid #92a5bb;
+}
+.wp-block-owid-card .text-wrapper {
+  padding: 0.75rem;
+  padding-top: 0.5rem;
+}
+.wp-block-owid-card figure,
+.wp-block-owid-card img {
+  margin: 0;
+  padding: 0;
+}
+.wp-block-owid-card img {
+  box-shadow: none;
+  border-bottom: 1px solid #ebeef2;
+}
+.wp-block-owid-card .title {
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.wp-block-owid-card .description {
+  font-size: 0.9rem;
+  line-height: normal;
+}
+.wp-block-owid-card p {
+  margin: 0;
+}
+.wp-block-owid-card a {
+  color: #1d3d63;
+}
+.wp-block-owid-card a:visited {
+  color: #1d3d63;
+}
+.wp-block-owid-card a:hover {
+  text-decoration: none;
+  color: #002147;
 }
 
 /* HACK (Mispy): Fix search autozooming on iPhone Safari.
@@ -6069,6 +6139,12 @@ blockquote {
  * Fonts
  */
 /*******************************************************************************
+ * Z-index
+ */
+/*******************************************************************************
+  * Coronavirus (COVID-19)
+  */
+/*******************************************************************************
  * Colors
  */
 /* Oxford Blue */
@@ -6081,12 +6157,6 @@ blockquote {
 /* Hyperlink colors */
 /* Category colors */
 /* Controls color */
-/*******************************************************************************
- * Z-index
- */
-/*******************************************************************************
-  * Coronavirus (COVID-19)
-  */
 .chart,
 .chart p,
 .chart ul,
