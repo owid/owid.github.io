@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.81% </span>
+                <span class="strong">88.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>723/805</span>
+                <span class='fraction'>715/805</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">87.82% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>138/161</span>
+                <span class='fraction'>137/156</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.81% </span>
+                <span class="strong">88.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>723/805</span>
+                <span class='fraction'>715/805</span>
             </div>
         
             
@@ -1104,16 +1104,6 @@
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1121,7 +1111,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1909,16 +1909,16 @@ export class CovidExplorerTable {
         const index = this.table.entityIndex
         const annotationRows = csvParse(covidAnnotations) as AnnotationsRow[]
         annotationRows.forEach((annoRow) =&gt; {
-            const rows = index.get(annoRow.location)
-            if (!rows) return<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const rows = index.get(annoRow.location)</span>
+<span class="cstat-no" title="statement not covered" >            if (!rows) return</span>
 <span class="cstat-no" title="statement not covered" >            // If no date on annotation apply to all rows</span>
 <span class="cstat-no" title="statement not covered" >            const applyTo = annoRow.date</span>
 <span class="cstat-no" title="statement not covered" >                ? rows.filter((row) =&gt; row.date === annoRow.date)</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >                : rows</span>
-            const datePrefix = annoRow.date
-<span class="branch-0 cbranch-no" title="branch not covered" >                ? moment(annoRow.date).format("MMM D") + ": "</span>
-<span class="branch-0 cbranch-no" title="branch not covered" >                : ""</span>
-            applyTo.forEach((row) =&gt; {
+<span class="cstat-no" title="statement not covered" >                : rows</span>
+<span class="cstat-no" title="statement not covered" >            const datePrefix = annoRow.date</span>
+<span class="cstat-no" title="statement not covered" >                ? moment(annoRow.date).format("MMM D") + ": "</span>
+<span class="cstat-no" title="statement not covered" >                : ""</span>
+<span class="cstat-no" title="statement not covered" >            applyTo.forEach((row) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                if (annoRow[caseSlug])</span>
 <span class="cstat-no" title="statement not covered" >                    row[caseSlug] = datePrefix + annoRow[caseSlug]</span>
 <span class="cstat-no" title="statement not covered" >                if (annoRow[deathSlug])</span>
@@ -1926,7 +1926,7 @@ export class CovidExplorerTable {
 <span class="cstat-no" title="statement not covered" >                row[cfrSlug] = `${datePrefix}${annoRow[caseSlug] || ""}${</span>
 <span class="cstat-no" title="statement not covered" >                    annoRow[deathSlug]</span>
 <span class="cstat-no" title="statement not covered" >                }`</span>
-            })
+<span class="cstat-no" title="statement not covered" >            })</span>
         })
     }
 &nbsp;
@@ -2479,7 +2479,7 @@ export function perCapitaDivisorByMetricAndInterval(metric: MetricKind) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Feb 04 2021 18:15:13 GMT+0000 (Coordinated Universal Time)
+                at Thu Feb 04 2021 18:16:27 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
