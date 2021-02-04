@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.16% </span>
+                <span class="strong">89.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>722/792</span>
+                <span class='fraction'>723/805</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.16% </span>
+                <span class="strong">89.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>722/792</span>
+                <span class='fraction'>723/805</span>
             </div>
         
             
@@ -849,7 +849,21 @@
 <a name='L790'></a><a href='#L790'>790</a>
 <a name='L791'></a><a href='#L791'>791</a>
 <a name='L792'></a><a href='#L792'>792</a>
-<a name='L793'></a><a href='#L793'>793</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L793'></a><a href='#L793'>793</a>
+<a name='L794'></a><a href='#L794'>794</a>
+<a name='L795'></a><a href='#L795'>795</a>
+<a name='L796'></a><a href='#L796'>796</a>
+<a name='L797'></a><a href='#L797'>797</a>
+<a name='L798'></a><a href='#L798'>798</a>
+<a name='L799'></a><a href='#L799'>799</a>
+<a name='L800'></a><a href='#L800'>800</a>
+<a name='L801'></a><a href='#L801'>801</a>
+<a name='L802'></a><a href='#L802'>802</a>
+<a name='L803'></a><a href='#L803'>803</a>
+<a name='L804'></a><a href='#L804'>804</a>
+<a name='L805'></a><a href='#L805'>805</a>
+<a name='L806'></a><a href='#L806'>806</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1112,6 +1126,18 @@
 <span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1656,6 +1682,7 @@
     fetchJSON,
     max,
     sum,
+    uniq,
 } from "grapher/utils/Util"
 import moment from "moment"
 import { csv } from "d3-fetch"
@@ -1905,9 +1932,21 @@ export class CovidExplorerTable {
 &nbsp;
     static async <span class="fstat-no" title="function not covered" >fetchAndParseData(): Promise&lt;CovidGrapherRow[]&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const rawData = (await csv(covidDataPath)) as any</span>
-<span class="cstat-no" title="statement not covered" >        const filtered: CovidGrapherRow[] = rawData</span>
-<span class="cstat-no" title="statement not covered" >            .map(CovidExplorerTable.parseCovidRow)</span>
-<span class="cstat-no" title="statement not covered" >            .filter((row: CovidGrapherRow) =&gt; row.location !== "International")</span>
+<span class="cstat-no" title="statement not covered" >        const rows: CovidGrapherRow[] = rawData.map(</span>
+<span class="cstat-no" title="statement not covered" >            CovidExplorerTable.parseCovidRow</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const continents = uniq(rows.map((row) =&gt; row.continent)).filter(</span>
+<span class="cstat-no" title="statement not covered" >            (v) =&gt; v</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        const locationsToDrop = new Set([</span>
+<span class="cstat-no" title="statement not covered" >            "International",</span>
+<span class="cstat-no" title="statement not covered" >            "European Union",</span>
+<span class="cstat-no" title="statement not covered" >            ...continents,</span>
+<span class="cstat-no" title="statement not covered" >        ])</span>
+<span class="cstat-no" title="statement not covered" >        const filtered = rows.filter(</span>
+<span class="cstat-no" title="statement not covered" >            (row) =&gt; !locationsToDrop.has(row.location)</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const latestDate = max(filtered.map((row) =&gt; row.date))</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2440,7 +2479,7 @@ export function perCapitaDivisorByMetricAndInterval(metric: MetricKind) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Feb 02 2021 19:23:38 GMT+0000 (Coordinated Universal Time)
+                at Thu Feb 04 2021 18:15:13 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
