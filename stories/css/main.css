@@ -3582,13 +3582,23 @@ html.iframe .ChartPage .related-research-data {
   bottom: 0;
   z-index: 110;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transition: transform 400ms ease, box-shadow 400ms ease;
-  transform: translate(0, 100%);
-  box-shadow: none;
+  display: none;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 .cookie-notice.open {
-  transform: translate(0, 0);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  display: block;
+  animation: 400ms ease slide-in forwards;
 }
 @media (min-width: 55rem) {
   .cookie-notice {
