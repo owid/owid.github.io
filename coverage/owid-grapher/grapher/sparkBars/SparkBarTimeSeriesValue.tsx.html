@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.37% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>38/43</span>
+                <span class='fraction'>25/40</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.37% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>38/43</span>
+                <span class='fraction'>25/40</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,67 +125,67 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
 import classnames from "classnames"
 &nbsp;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faQuestionCircle } from "@fortawesome/free-regular-svg-icons/faQuestionCircle"
 &nbsp;
-import { Tippy } from "grapher/chart/Tippy"
+import { Tippy } from "../chart/Tippy"
 &nbsp;
 export const SparkBarTimeSeriesValue = ({
     value,
     latest,
     tooltip,
     className,
-    formattedDate,
+    displayDate,
     valueColor,
 }: {
     value: string | undefined
     latest?: boolean
     tooltip?: JSX.Element | string
     className?: string
-    formattedDate?: string
+    displayDate?: string
     valueColor?: string
 }) =&gt; (
     &lt;div className={classnames("time-series-value", className)}&gt;
-        {value !== undefined ? (
-            &lt;&gt;
-                &lt;span className="count"&gt;
-                    &lt;span style={{ color: valueColor }}&gt;{value}&lt;/span&gt;{" "}
-                    {tooltip<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Tippy content={tooltip} maxWidth={250}&gt;</span>
+        {<span class="branch-0 cbranch-no" title="branch not covered" >value !== undefined ? (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;span className="count"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;span style={{ color: valueColor }}&gt;{value}&lt;/span&gt;{</span>" "}
+<span class="cstat-no" title="statement not covered" >                    {tooltip<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span></span>
+<span class="cstat-no" title="statement not covered" >                        &lt;Tippy content={too</span>ltip} maxWidth={250}&gt;
 <span class="cstat-no" title="statement not covered" >                            &lt;span className="help-icon"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FontAwesomeIcon icon={faQuestionCircle} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                &lt;FontAwesomeIcon icon={f</span>aQuestionCircle} /&gt;
 <span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/Tippy&gt;</span>
-                    )}
-                &lt;/span&gt;
-                &lt;span className={classnames("date", { latest: latest })}&gt;
-                    {formattedDate}
-                &lt;/span&gt;
-            &lt;/&gt;
-        ) <span class="branch-0 cbranch-no" title="branch not covered" >: undefined}</span>
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;/Tippy&gt;
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;span className={classnames("date", { latest: latest })}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    {displayDate}</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/&gt;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span>
+        ) : undefined}
     &lt;/div&gt;
-)<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span>
+)
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -193,7 +193,7 @@ export const SparkBarTimeSeriesValue = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Mar 15 2021 08:56:28 GMT+0000 (Coordinated Universal Time)
+                at Mon Mar 15 2021 14:14:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

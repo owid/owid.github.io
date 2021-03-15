@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.14% </span>
+                <span class="strong">45.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/51</span>
+                <span class='fraction'>28/62</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.15% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/13</span>
+                <span class='fraction'>5/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/8</span>
+                <span class='fraction'>2/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.14% </span>
+                <span class="strong">45.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/51</span>
+                <span class='fraction'>28/62</span>
             </div>
         
             
@@ -108,7 +108,18 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -138,10 +149,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -158,10 +165,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Grapher } from "grapher/core/Grapher"
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">// todo: remove
+&nbsp;
+import { Grapher } from "../core/Grapher"
 import { computed } from "mobx"
-import { DimensionProperty } from "grapher/core/GrapherConstants"
+import { DimensionProperty } from "../core/GrapherConstants"
+import { excludeUndefined, findIndex, sortBy } from "../../clientUtils/Util"
 &nbsp;
 export class DimensionSlot {
     private grapher: Grapher
@@ -171,45 +190,50 @@ export class DimensionSlot {
         this.property = property
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get name(): string {</span>
+    @computed <span class="fstat-no" title="function not covered" >get name() {</span>
 <span class="cstat-no" title="statement not covered" >        const names = {</span>
-<span class="cstat-no" title="statement not covered" >            y: this.grapher.isDiscreteBar ? "X axis" : "Y axis",</span>
-<span class="cstat-no" title="statement not covered" >            x: "X axis",</span>
-<span class="cstat-no" title="statement not covered" >            size: "Size",</span>
+<span class="cstat-no" title="statement not covered" ></span>            y: this.grapher.isDiscreteBar ? "X axis" : "Y axis",
+<span class="cstat-no" title="statement not covered" >            x: "X</span> axis",
+<span class="cstat-no" title="statement not covered" >            size: "Size"</span>,
 <span class="cstat-no" title="statement not covered" >            color: "Color",</span>
-<span class="cstat-no" title="statement not covered" >            filter: "Filter",</span>
+<span class="cstat-no" title="statement not covered" >            filter: "Filt</span>er",
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (names as any)[this.property] || ""</span>
+<span class="cstat-no" title="statement not covered" >        return (names as any)[</span>this.property] || ""
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get allowMultiple(): boolean {</span>
+    @<span class="fstat-no" title="function not covered" >computed get allowMultiple() {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            this.property === "y" &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            !(</span>
-<span class="cstat-no" title="statement not covered" >                this.grapher.isScatter ||</span>
-<span class="cstat-no" title="statement not covered" >                this.grapher.isTimeScatter ||</span>
-<span class="cstat-no" title="statement not covered" >                this.grapher.isSlopeChart</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >            this.property === DimensionProperty.y &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            this.grapher.supportsMultipleYColumns</span>
+<span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get isOptional(): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        return this.allowMultiple</span>
+    @<span class="fstat-no" title="function not covered" >computed get isOptional() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.all</span>owMultiple
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed <span class="fstat-no" title="function not covered" >get dimensions() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.grapher.dimensions.filter(</span>
+<span class="cstat-no" title="statement not covered" >        return this.</span>grapher.dimensions.filter(
 <span class="cstat-no" title="statement not covered" >            (d) =&gt; d.property === this.property</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get dimensionsWithData() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.grapher.filledDimensions.filter(</span>
-<span class="cstat-no" title="statement not covered" >            (d) =&gt; d.property === this.property</span>
+<span class="fstat-no" title="function not covered" >    @computed get dimensionsOrderedAsInPersistedSelection() {</span>
+<span class="cstat-no" title="statement not covered" >        const</span> legacyConfig = this.grapher.legacyConfigAsAuthored
+<span class="cstat-no" title="statement not covered" >        const variab</span>leIDsInSelectionOrder = excludeUndefined(
+<span class="cstat-no" title="statement not covered" >            legacyConfig.selectedData?.map(</span>
+<span class="cstat-no" title="statement not covered" ></span>                (item) =&gt; legacyConfig.dimensions?.[item.index]?.variableId
+<span class="cstat-no" title="statement not covered" >            ) ?? []</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n sortBy(this.grapher.filledDimensions || [], (dim) =&gt;
+<span class="cstat-no" title="statement not covered" >            findInde</span>x(
+<span class="cstat-no" title="statement not covered" >                variableIDsInSelectionOrder,</span>
+<span class="cstat-no" title="statement not covered" ></span>                (variableId) =&gt; dim.variableId === variableId
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >        ).filter((dim) =&gt; dim.property === this.p</span>roperty)
 <span class="cstat-no" title="statement not covered" >    }</span>
-}<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -217,7 +241,7 @@ export class DimensionSlot {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Mar 15 2021 08:56:28 GMT+0000 (Coordinated Universal Time)
+                at Mon Mar 15 2021 14:14:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

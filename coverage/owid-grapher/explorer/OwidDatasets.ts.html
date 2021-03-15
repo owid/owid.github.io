@@ -1,0 +1,3035 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for owid-grapher/explorer/OwidDatasets.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/explorer</a> OwidDatasets.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>989/989</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>989/989</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a>
+<a name='L325'></a><a href='#L325'>325</a>
+<a name='L326'></a><a href='#L326'>326</a>
+<a name='L327'></a><a href='#L327'>327</a>
+<a name='L328'></a><a href='#L328'>328</a>
+<a name='L329'></a><a href='#L329'>329</a>
+<a name='L330'></a><a href='#L330'>330</a>
+<a name='L331'></a><a href='#L331'>331</a>
+<a name='L332'></a><a href='#L332'>332</a>
+<a name='L333'></a><a href='#L333'>333</a>
+<a name='L334'></a><a href='#L334'>334</a>
+<a name='L335'></a><a href='#L335'>335</a>
+<a name='L336'></a><a href='#L336'>336</a>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a>
+<a name='L355'></a><a href='#L355'>355</a>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a>
+<a name='L358'></a><a href='#L358'>358</a>
+<a name='L359'></a><a href='#L359'>359</a>
+<a name='L360'></a><a href='#L360'>360</a>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a>
+<a name='L388'></a><a href='#L388'>388</a>
+<a name='L389'></a><a href='#L389'>389</a>
+<a name='L390'></a><a href='#L390'>390</a>
+<a name='L391'></a><a href='#L391'>391</a>
+<a name='L392'></a><a href='#L392'>392</a>
+<a name='L393'></a><a href='#L393'>393</a>
+<a name='L394'></a><a href='#L394'>394</a>
+<a name='L395'></a><a href='#L395'>395</a>
+<a name='L396'></a><a href='#L396'>396</a>
+<a name='L397'></a><a href='#L397'>397</a>
+<a name='L398'></a><a href='#L398'>398</a>
+<a name='L399'></a><a href='#L399'>399</a>
+<a name='L400'></a><a href='#L400'>400</a>
+<a name='L401'></a><a href='#L401'>401</a>
+<a name='L402'></a><a href='#L402'>402</a>
+<a name='L403'></a><a href='#L403'>403</a>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a>
+<a name='L416'></a><a href='#L416'>416</a>
+<a name='L417'></a><a href='#L417'>417</a>
+<a name='L418'></a><a href='#L418'>418</a>
+<a name='L419'></a><a href='#L419'>419</a>
+<a name='L420'></a><a href='#L420'>420</a>
+<a name='L421'></a><a href='#L421'>421</a>
+<a name='L422'></a><a href='#L422'>422</a>
+<a name='L423'></a><a href='#L423'>423</a>
+<a name='L424'></a><a href='#L424'>424</a>
+<a name='L425'></a><a href='#L425'>425</a>
+<a name='L426'></a><a href='#L426'>426</a>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a>
+<a name='L515'></a><a href='#L515'>515</a>
+<a name='L516'></a><a href='#L516'>516</a>
+<a name='L517'></a><a href='#L517'>517</a>
+<a name='L518'></a><a href='#L518'>518</a>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a>
+<a name='L537'></a><a href='#L537'>537</a>
+<a name='L538'></a><a href='#L538'>538</a>
+<a name='L539'></a><a href='#L539'>539</a>
+<a name='L540'></a><a href='#L540'>540</a>
+<a name='L541'></a><a href='#L541'>541</a>
+<a name='L542'></a><a href='#L542'>542</a>
+<a name='L543'></a><a href='#L543'>543</a>
+<a name='L544'></a><a href='#L544'>544</a>
+<a name='L545'></a><a href='#L545'>545</a>
+<a name='L546'></a><a href='#L546'>546</a>
+<a name='L547'></a><a href='#L547'>547</a>
+<a name='L548'></a><a href='#L548'>548</a>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a>
+<a name='L551'></a><a href='#L551'>551</a>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a>
+<a name='L555'></a><a href='#L555'>555</a>
+<a name='L556'></a><a href='#L556'>556</a>
+<a name='L557'></a><a href='#L557'>557</a>
+<a name='L558'></a><a href='#L558'>558</a>
+<a name='L559'></a><a href='#L559'>559</a>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a>
+<a name='L562'></a><a href='#L562'>562</a>
+<a name='L563'></a><a href='#L563'>563</a>
+<a name='L564'></a><a href='#L564'>564</a>
+<a name='L565'></a><a href='#L565'>565</a>
+<a name='L566'></a><a href='#L566'>566</a>
+<a name='L567'></a><a href='#L567'>567</a>
+<a name='L568'></a><a href='#L568'>568</a>
+<a name='L569'></a><a href='#L569'>569</a>
+<a name='L570'></a><a href='#L570'>570</a>
+<a name='L571'></a><a href='#L571'>571</a>
+<a name='L572'></a><a href='#L572'>572</a>
+<a name='L573'></a><a href='#L573'>573</a>
+<a name='L574'></a><a href='#L574'>574</a>
+<a name='L575'></a><a href='#L575'>575</a>
+<a name='L576'></a><a href='#L576'>576</a>
+<a name='L577'></a><a href='#L577'>577</a>
+<a name='L578'></a><a href='#L578'>578</a>
+<a name='L579'></a><a href='#L579'>579</a>
+<a name='L580'></a><a href='#L580'>580</a>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a>
+<a name='L593'></a><a href='#L593'>593</a>
+<a name='L594'></a><a href='#L594'>594</a>
+<a name='L595'></a><a href='#L595'>595</a>
+<a name='L596'></a><a href='#L596'>596</a>
+<a name='L597'></a><a href='#L597'>597</a>
+<a name='L598'></a><a href='#L598'>598</a>
+<a name='L599'></a><a href='#L599'>599</a>
+<a name='L600'></a><a href='#L600'>600</a>
+<a name='L601'></a><a href='#L601'>601</a>
+<a name='L602'></a><a href='#L602'>602</a>
+<a name='L603'></a><a href='#L603'>603</a>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a>
+<a name='L607'></a><a href='#L607'>607</a>
+<a name='L608'></a><a href='#L608'>608</a>
+<a name='L609'></a><a href='#L609'>609</a>
+<a name='L610'></a><a href='#L610'>610</a>
+<a name='L611'></a><a href='#L611'>611</a>
+<a name='L612'></a><a href='#L612'>612</a>
+<a name='L613'></a><a href='#L613'>613</a>
+<a name='L614'></a><a href='#L614'>614</a>
+<a name='L615'></a><a href='#L615'>615</a>
+<a name='L616'></a><a href='#L616'>616</a>
+<a name='L617'></a><a href='#L617'>617</a>
+<a name='L618'></a><a href='#L618'>618</a>
+<a name='L619'></a><a href='#L619'>619</a>
+<a name='L620'></a><a href='#L620'>620</a>
+<a name='L621'></a><a href='#L621'>621</a>
+<a name='L622'></a><a href='#L622'>622</a>
+<a name='L623'></a><a href='#L623'>623</a>
+<a name='L624'></a><a href='#L624'>624</a>
+<a name='L625'></a><a href='#L625'>625</a>
+<a name='L626'></a><a href='#L626'>626</a>
+<a name='L627'></a><a href='#L627'>627</a>
+<a name='L628'></a><a href='#L628'>628</a>
+<a name='L629'></a><a href='#L629'>629</a>
+<a name='L630'></a><a href='#L630'>630</a>
+<a name='L631'></a><a href='#L631'>631</a>
+<a name='L632'></a><a href='#L632'>632</a>
+<a name='L633'></a><a href='#L633'>633</a>
+<a name='L634'></a><a href='#L634'>634</a>
+<a name='L635'></a><a href='#L635'>635</a>
+<a name='L636'></a><a href='#L636'>636</a>
+<a name='L637'></a><a href='#L637'>637</a>
+<a name='L638'></a><a href='#L638'>638</a>
+<a name='L639'></a><a href='#L639'>639</a>
+<a name='L640'></a><a href='#L640'>640</a>
+<a name='L641'></a><a href='#L641'>641</a>
+<a name='L642'></a><a href='#L642'>642</a>
+<a name='L643'></a><a href='#L643'>643</a>
+<a name='L644'></a><a href='#L644'>644</a>
+<a name='L645'></a><a href='#L645'>645</a>
+<a name='L646'></a><a href='#L646'>646</a>
+<a name='L647'></a><a href='#L647'>647</a>
+<a name='L648'></a><a href='#L648'>648</a>
+<a name='L649'></a><a href='#L649'>649</a>
+<a name='L650'></a><a href='#L650'>650</a>
+<a name='L651'></a><a href='#L651'>651</a>
+<a name='L652'></a><a href='#L652'>652</a>
+<a name='L653'></a><a href='#L653'>653</a>
+<a name='L654'></a><a href='#L654'>654</a>
+<a name='L655'></a><a href='#L655'>655</a>
+<a name='L656'></a><a href='#L656'>656</a>
+<a name='L657'></a><a href='#L657'>657</a>
+<a name='L658'></a><a href='#L658'>658</a>
+<a name='L659'></a><a href='#L659'>659</a>
+<a name='L660'></a><a href='#L660'>660</a>
+<a name='L661'></a><a href='#L661'>661</a>
+<a name='L662'></a><a href='#L662'>662</a>
+<a name='L663'></a><a href='#L663'>663</a>
+<a name='L664'></a><a href='#L664'>664</a>
+<a name='L665'></a><a href='#L665'>665</a>
+<a name='L666'></a><a href='#L666'>666</a>
+<a name='L667'></a><a href='#L667'>667</a>
+<a name='L668'></a><a href='#L668'>668</a>
+<a name='L669'></a><a href='#L669'>669</a>
+<a name='L670'></a><a href='#L670'>670</a>
+<a name='L671'></a><a href='#L671'>671</a>
+<a name='L672'></a><a href='#L672'>672</a>
+<a name='L673'></a><a href='#L673'>673</a>
+<a name='L674'></a><a href='#L674'>674</a>
+<a name='L675'></a><a href='#L675'>675</a>
+<a name='L676'></a><a href='#L676'>676</a>
+<a name='L677'></a><a href='#L677'>677</a>
+<a name='L678'></a><a href='#L678'>678</a>
+<a name='L679'></a><a href='#L679'>679</a>
+<a name='L680'></a><a href='#L680'>680</a>
+<a name='L681'></a><a href='#L681'>681</a>
+<a name='L682'></a><a href='#L682'>682</a>
+<a name='L683'></a><a href='#L683'>683</a>
+<a name='L684'></a><a href='#L684'>684</a>
+<a name='L685'></a><a href='#L685'>685</a>
+<a name='L686'></a><a href='#L686'>686</a>
+<a name='L687'></a><a href='#L687'>687</a>
+<a name='L688'></a><a href='#L688'>688</a>
+<a name='L689'></a><a href='#L689'>689</a>
+<a name='L690'></a><a href='#L690'>690</a>
+<a name='L691'></a><a href='#L691'>691</a>
+<a name='L692'></a><a href='#L692'>692</a>
+<a name='L693'></a><a href='#L693'>693</a>
+<a name='L694'></a><a href='#L694'>694</a>
+<a name='L695'></a><a href='#L695'>695</a>
+<a name='L696'></a><a href='#L696'>696</a>
+<a name='L697'></a><a href='#L697'>697</a>
+<a name='L698'></a><a href='#L698'>698</a>
+<a name='L699'></a><a href='#L699'>699</a>
+<a name='L700'></a><a href='#L700'>700</a>
+<a name='L701'></a><a href='#L701'>701</a>
+<a name='L702'></a><a href='#L702'>702</a>
+<a name='L703'></a><a href='#L703'>703</a>
+<a name='L704'></a><a href='#L704'>704</a>
+<a name='L705'></a><a href='#L705'>705</a>
+<a name='L706'></a><a href='#L706'>706</a>
+<a name='L707'></a><a href='#L707'>707</a>
+<a name='L708'></a><a href='#L708'>708</a>
+<a name='L709'></a><a href='#L709'>709</a>
+<a name='L710'></a><a href='#L710'>710</a>
+<a name='L711'></a><a href='#L711'>711</a>
+<a name='L712'></a><a href='#L712'>712</a>
+<a name='L713'></a><a href='#L713'>713</a>
+<a name='L714'></a><a href='#L714'>714</a>
+<a name='L715'></a><a href='#L715'>715</a>
+<a name='L716'></a><a href='#L716'>716</a>
+<a name='L717'></a><a href='#L717'>717</a>
+<a name='L718'></a><a href='#L718'>718</a>
+<a name='L719'></a><a href='#L719'>719</a>
+<a name='L720'></a><a href='#L720'>720</a>
+<a name='L721'></a><a href='#L721'>721</a>
+<a name='L722'></a><a href='#L722'>722</a>
+<a name='L723'></a><a href='#L723'>723</a>
+<a name='L724'></a><a href='#L724'>724</a>
+<a name='L725'></a><a href='#L725'>725</a>
+<a name='L726'></a><a href='#L726'>726</a>
+<a name='L727'></a><a href='#L727'>727</a>
+<a name='L728'></a><a href='#L728'>728</a>
+<a name='L729'></a><a href='#L729'>729</a>
+<a name='L730'></a><a href='#L730'>730</a>
+<a name='L731'></a><a href='#L731'>731</a>
+<a name='L732'></a><a href='#L732'>732</a>
+<a name='L733'></a><a href='#L733'>733</a>
+<a name='L734'></a><a href='#L734'>734</a>
+<a name='L735'></a><a href='#L735'>735</a>
+<a name='L736'></a><a href='#L736'>736</a>
+<a name='L737'></a><a href='#L737'>737</a>
+<a name='L738'></a><a href='#L738'>738</a>
+<a name='L739'></a><a href='#L739'>739</a>
+<a name='L740'></a><a href='#L740'>740</a>
+<a name='L741'></a><a href='#L741'>741</a>
+<a name='L742'></a><a href='#L742'>742</a>
+<a name='L743'></a><a href='#L743'>743</a>
+<a name='L744'></a><a href='#L744'>744</a>
+<a name='L745'></a><a href='#L745'>745</a>
+<a name='L746'></a><a href='#L746'>746</a>
+<a name='L747'></a><a href='#L747'>747</a>
+<a name='L748'></a><a href='#L748'>748</a>
+<a name='L749'></a><a href='#L749'>749</a>
+<a name='L750'></a><a href='#L750'>750</a>
+<a name='L751'></a><a href='#L751'>751</a>
+<a name='L752'></a><a href='#L752'>752</a>
+<a name='L753'></a><a href='#L753'>753</a>
+<a name='L754'></a><a href='#L754'>754</a>
+<a name='L755'></a><a href='#L755'>755</a>
+<a name='L756'></a><a href='#L756'>756</a>
+<a name='L757'></a><a href='#L757'>757</a>
+<a name='L758'></a><a href='#L758'>758</a>
+<a name='L759'></a><a href='#L759'>759</a>
+<a name='L760'></a><a href='#L760'>760</a>
+<a name='L761'></a><a href='#L761'>761</a>
+<a name='L762'></a><a href='#L762'>762</a>
+<a name='L763'></a><a href='#L763'>763</a>
+<a name='L764'></a><a href='#L764'>764</a>
+<a name='L765'></a><a href='#L765'>765</a>
+<a name='L766'></a><a href='#L766'>766</a>
+<a name='L767'></a><a href='#L767'>767</a>
+<a name='L768'></a><a href='#L768'>768</a>
+<a name='L769'></a><a href='#L769'>769</a>
+<a name='L770'></a><a href='#L770'>770</a>
+<a name='L771'></a><a href='#L771'>771</a>
+<a name='L772'></a><a href='#L772'>772</a>
+<a name='L773'></a><a href='#L773'>773</a>
+<a name='L774'></a><a href='#L774'>774</a>
+<a name='L775'></a><a href='#L775'>775</a>
+<a name='L776'></a><a href='#L776'>776</a>
+<a name='L777'></a><a href='#L777'>777</a>
+<a name='L778'></a><a href='#L778'>778</a>
+<a name='L779'></a><a href='#L779'>779</a>
+<a name='L780'></a><a href='#L780'>780</a>
+<a name='L781'></a><a href='#L781'>781</a>
+<a name='L782'></a><a href='#L782'>782</a>
+<a name='L783'></a><a href='#L783'>783</a>
+<a name='L784'></a><a href='#L784'>784</a>
+<a name='L785'></a><a href='#L785'>785</a>
+<a name='L786'></a><a href='#L786'>786</a>
+<a name='L787'></a><a href='#L787'>787</a>
+<a name='L788'></a><a href='#L788'>788</a>
+<a name='L789'></a><a href='#L789'>789</a>
+<a name='L790'></a><a href='#L790'>790</a>
+<a name='L791'></a><a href='#L791'>791</a>
+<a name='L792'></a><a href='#L792'>792</a>
+<a name='L793'></a><a href='#L793'>793</a>
+<a name='L794'></a><a href='#L794'>794</a>
+<a name='L795'></a><a href='#L795'>795</a>
+<a name='L796'></a><a href='#L796'>796</a>
+<a name='L797'></a><a href='#L797'>797</a>
+<a name='L798'></a><a href='#L798'>798</a>
+<a name='L799'></a><a href='#L799'>799</a>
+<a name='L800'></a><a href='#L800'>800</a>
+<a name='L801'></a><a href='#L801'>801</a>
+<a name='L802'></a><a href='#L802'>802</a>
+<a name='L803'></a><a href='#L803'>803</a>
+<a name='L804'></a><a href='#L804'>804</a>
+<a name='L805'></a><a href='#L805'>805</a>
+<a name='L806'></a><a href='#L806'>806</a>
+<a name='L807'></a><a href='#L807'>807</a>
+<a name='L808'></a><a href='#L808'>808</a>
+<a name='L809'></a><a href='#L809'>809</a>
+<a name='L810'></a><a href='#L810'>810</a>
+<a name='L811'></a><a href='#L811'>811</a>
+<a name='L812'></a><a href='#L812'>812</a>
+<a name='L813'></a><a href='#L813'>813</a>
+<a name='L814'></a><a href='#L814'>814</a>
+<a name='L815'></a><a href='#L815'>815</a>
+<a name='L816'></a><a href='#L816'>816</a>
+<a name='L817'></a><a href='#L817'>817</a>
+<a name='L818'></a><a href='#L818'>818</a>
+<a name='L819'></a><a href='#L819'>819</a>
+<a name='L820'></a><a href='#L820'>820</a>
+<a name='L821'></a><a href='#L821'>821</a>
+<a name='L822'></a><a href='#L822'>822</a>
+<a name='L823'></a><a href='#L823'>823</a>
+<a name='L824'></a><a href='#L824'>824</a>
+<a name='L825'></a><a href='#L825'>825</a>
+<a name='L826'></a><a href='#L826'>826</a>
+<a name='L827'></a><a href='#L827'>827</a>
+<a name='L828'></a><a href='#L828'>828</a>
+<a name='L829'></a><a href='#L829'>829</a>
+<a name='L830'></a><a href='#L830'>830</a>
+<a name='L831'></a><a href='#L831'>831</a>
+<a name='L832'></a><a href='#L832'>832</a>
+<a name='L833'></a><a href='#L833'>833</a>
+<a name='L834'></a><a href='#L834'>834</a>
+<a name='L835'></a><a href='#L835'>835</a>
+<a name='L836'></a><a href='#L836'>836</a>
+<a name='L837'></a><a href='#L837'>837</a>
+<a name='L838'></a><a href='#L838'>838</a>
+<a name='L839'></a><a href='#L839'>839</a>
+<a name='L840'></a><a href='#L840'>840</a>
+<a name='L841'></a><a href='#L841'>841</a>
+<a name='L842'></a><a href='#L842'>842</a>
+<a name='L843'></a><a href='#L843'>843</a>
+<a name='L844'></a><a href='#L844'>844</a>
+<a name='L845'></a><a href='#L845'>845</a>
+<a name='L846'></a><a href='#L846'>846</a>
+<a name='L847'></a><a href='#L847'>847</a>
+<a name='L848'></a><a href='#L848'>848</a>
+<a name='L849'></a><a href='#L849'>849</a>
+<a name='L850'></a><a href='#L850'>850</a>
+<a name='L851'></a><a href='#L851'>851</a>
+<a name='L852'></a><a href='#L852'>852</a>
+<a name='L853'></a><a href='#L853'>853</a>
+<a name='L854'></a><a href='#L854'>854</a>
+<a name='L855'></a><a href='#L855'>855</a>
+<a name='L856'></a><a href='#L856'>856</a>
+<a name='L857'></a><a href='#L857'>857</a>
+<a name='L858'></a><a href='#L858'>858</a>
+<a name='L859'></a><a href='#L859'>859</a>
+<a name='L860'></a><a href='#L860'>860</a>
+<a name='L861'></a><a href='#L861'>861</a>
+<a name='L862'></a><a href='#L862'>862</a>
+<a name='L863'></a><a href='#L863'>863</a>
+<a name='L864'></a><a href='#L864'>864</a>
+<a name='L865'></a><a href='#L865'>865</a>
+<a name='L866'></a><a href='#L866'>866</a>
+<a name='L867'></a><a href='#L867'>867</a>
+<a name='L868'></a><a href='#L868'>868</a>
+<a name='L869'></a><a href='#L869'>869</a>
+<a name='L870'></a><a href='#L870'>870</a>
+<a name='L871'></a><a href='#L871'>871</a>
+<a name='L872'></a><a href='#L872'>872</a>
+<a name='L873'></a><a href='#L873'>873</a>
+<a name='L874'></a><a href='#L874'>874</a>
+<a name='L875'></a><a href='#L875'>875</a>
+<a name='L876'></a><a href='#L876'>876</a>
+<a name='L877'></a><a href='#L877'>877</a>
+<a name='L878'></a><a href='#L878'>878</a>
+<a name='L879'></a><a href='#L879'>879</a>
+<a name='L880'></a><a href='#L880'>880</a>
+<a name='L881'></a><a href='#L881'>881</a>
+<a name='L882'></a><a href='#L882'>882</a>
+<a name='L883'></a><a href='#L883'>883</a>
+<a name='L884'></a><a href='#L884'>884</a>
+<a name='L885'></a><a href='#L885'>885</a>
+<a name='L886'></a><a href='#L886'>886</a>
+<a name='L887'></a><a href='#L887'>887</a>
+<a name='L888'></a><a href='#L888'>888</a>
+<a name='L889'></a><a href='#L889'>889</a>
+<a name='L890'></a><a href='#L890'>890</a>
+<a name='L891'></a><a href='#L891'>891</a>
+<a name='L892'></a><a href='#L892'>892</a>
+<a name='L893'></a><a href='#L893'>893</a>
+<a name='L894'></a><a href='#L894'>894</a>
+<a name='L895'></a><a href='#L895'>895</a>
+<a name='L896'></a><a href='#L896'>896</a>
+<a name='L897'></a><a href='#L897'>897</a>
+<a name='L898'></a><a href='#L898'>898</a>
+<a name='L899'></a><a href='#L899'>899</a>
+<a name='L900'></a><a href='#L900'>900</a>
+<a name='L901'></a><a href='#L901'>901</a>
+<a name='L902'></a><a href='#L902'>902</a>
+<a name='L903'></a><a href='#L903'>903</a>
+<a name='L904'></a><a href='#L904'>904</a>
+<a name='L905'></a><a href='#L905'>905</a>
+<a name='L906'></a><a href='#L906'>906</a>
+<a name='L907'></a><a href='#L907'>907</a>
+<a name='L908'></a><a href='#L908'>908</a>
+<a name='L909'></a><a href='#L909'>909</a>
+<a name='L910'></a><a href='#L910'>910</a>
+<a name='L911'></a><a href='#L911'>911</a>
+<a name='L912'></a><a href='#L912'>912</a>
+<a name='L913'></a><a href='#L913'>913</a>
+<a name='L914'></a><a href='#L914'>914</a>
+<a name='L915'></a><a href='#L915'>915</a>
+<a name='L916'></a><a href='#L916'>916</a>
+<a name='L917'></a><a href='#L917'>917</a>
+<a name='L918'></a><a href='#L918'>918</a>
+<a name='L919'></a><a href='#L919'>919</a>
+<a name='L920'></a><a href='#L920'>920</a>
+<a name='L921'></a><a href='#L921'>921</a>
+<a name='L922'></a><a href='#L922'>922</a>
+<a name='L923'></a><a href='#L923'>923</a>
+<a name='L924'></a><a href='#L924'>924</a>
+<a name='L925'></a><a href='#L925'>925</a>
+<a name='L926'></a><a href='#L926'>926</a>
+<a name='L927'></a><a href='#L927'>927</a>
+<a name='L928'></a><a href='#L928'>928</a>
+<a name='L929'></a><a href='#L929'>929</a>
+<a name='L930'></a><a href='#L930'>930</a>
+<a name='L931'></a><a href='#L931'>931</a>
+<a name='L932'></a><a href='#L932'>932</a>
+<a name='L933'></a><a href='#L933'>933</a>
+<a name='L934'></a><a href='#L934'>934</a>
+<a name='L935'></a><a href='#L935'>935</a>
+<a name='L936'></a><a href='#L936'>936</a>
+<a name='L937'></a><a href='#L937'>937</a>
+<a name='L938'></a><a href='#L938'>938</a>
+<a name='L939'></a><a href='#L939'>939</a>
+<a name='L940'></a><a href='#L940'>940</a>
+<a name='L941'></a><a href='#L941'>941</a>
+<a name='L942'></a><a href='#L942'>942</a>
+<a name='L943'></a><a href='#L943'>943</a>
+<a name='L944'></a><a href='#L944'>944</a>
+<a name='L945'></a><a href='#L945'>945</a>
+<a name='L946'></a><a href='#L946'>946</a>
+<a name='L947'></a><a href='#L947'>947</a>
+<a name='L948'></a><a href='#L948'>948</a>
+<a name='L949'></a><a href='#L949'>949</a>
+<a name='L950'></a><a href='#L950'>950</a>
+<a name='L951'></a><a href='#L951'>951</a>
+<a name='L952'></a><a href='#L952'>952</a>
+<a name='L953'></a><a href='#L953'>953</a>
+<a name='L954'></a><a href='#L954'>954</a>
+<a name='L955'></a><a href='#L955'>955</a>
+<a name='L956'></a><a href='#L956'>956</a>
+<a name='L957'></a><a href='#L957'>957</a>
+<a name='L958'></a><a href='#L958'>958</a>
+<a name='L959'></a><a href='#L959'>959</a>
+<a name='L960'></a><a href='#L960'>960</a>
+<a name='L961'></a><a href='#L961'>961</a>
+<a name='L962'></a><a href='#L962'>962</a>
+<a name='L963'></a><a href='#L963'>963</a>
+<a name='L964'></a><a href='#L964'>964</a>
+<a name='L965'></a><a href='#L965'>965</a>
+<a name='L966'></a><a href='#L966'>966</a>
+<a name='L967'></a><a href='#L967'>967</a>
+<a name='L968'></a><a href='#L968'>968</a>
+<a name='L969'></a><a href='#L969'>969</a>
+<a name='L970'></a><a href='#L970'>970</a>
+<a name='L971'></a><a href='#L971'>971</a>
+<a name='L972'></a><a href='#L972'>972</a>
+<a name='L973'></a><a href='#L973'>973</a>
+<a name='L974'></a><a href='#L974'>974</a>
+<a name='L975'></a><a href='#L975'>975</a>
+<a name='L976'></a><a href='#L976'>976</a>
+<a name='L977'></a><a href='#L977'>977</a>
+<a name='L978'></a><a href='#L978'>978</a>
+<a name='L979'></a><a href='#L979'>979</a>
+<a name='L980'></a><a href='#L980'>980</a>
+<a name='L981'></a><a href='#L981'>981</a>
+<a name='L982'></a><a href='#L982'>982</a>
+<a name='L983'></a><a href='#L983'>983</a>
+<a name='L984'></a><a href='#L984'>984</a>
+<a name='L985'></a><a href='#L985'>985</a>
+<a name='L986'></a><a href='#L986'>986</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">export const OwidDatasets = `20th century deaths in US - CDC
+A Century of Work and Leisure - Ramey and Francis (2009)
+Abortion rates (per 1000 women) - Sedgh et al. (2016)
+Absolute deaths from ambient PM2.5 air pollution- State of Global Air
+Absolute number of people in poverty - OWID based on World Bank (Povcal) (2015)
+Absolute population change - OWID based on HYDE &amp; UN
+Access to electricity (% population)- World Bank
+Access to electricity (% rural population) - World Bank (2017)
+Access to financial account or services (%) - World Bank (2014)
+Active tuberculosis - IHME (2017)
+Active vs latent tuberculosis prevalence - IHME (2016)
+Adjusted net savings per capita (World Bank WDI (2017))
+Adult literacy proficiency - World Bank EdStats and STEP Skills Measurement Program
+Adult obesity by region - FAO (2017)
+Age of democracies at the end of 2015 (Boix, Miller, and Rosato, 2013, 2018)
+Age-adjusted female suicide rates, 1950-2005 - WHO (2005)
+Age-adjusted male suicide rates, 1950-2005 - WHO (2005)
+Age-adjusted suicide rates, 1950-2005 - WHO (2005)
+Age-standardised death rates from air pollution (per 100,000)- IHME GBD SDG indicators
+Agricultural Productivity – WDI and ILO (2016)
+Agricultural area per capita - FAO (2017)
+Agricultural policy support - (Agrimonitor, 2017)
+Agriculture in England 1270-1870 - Bank of England (2017) 
+Air Pollutant Emissions - OECD
+Air pollution by city - Fouquet and DPCC (2011)
+Air pollution death rate- world- IHME
+Air pollution death rates (from ozone) per 100,000- IHME
+Air pollution death rates (from particulate matter) per 100,000- IHME
+Air pollution death rates (indoor solid fuels) per 100,000- IHME
+Air pollution death rates (per 100,000)- IHME
+Air pollution death rates in 1990 vs. 2016 (IHME, 2017)
+Air pollution deaths as percentage total- IHME
+Air pollution deaths breakdown by age - IHME
+Air pollution sources in the UK - DEFRA
+Air travel trips per capita (Airbus, 2019)
+Airline hijacking - Aviation Safety Network
+Alcohol consumption by type since 1890 (Alexander &amp; Holmes, 2017)
+Alcohol consumption in USA since 1850 — NIAAA
+Alcohol consumption since 1890 (Alexander &amp; Holmes, 2017)
+Alcohol expenditure in the USA long-term (USDA, 2018)
+Allocation of time use - UN Gender Statistics (2016)
+Annual share of CO2 emissions (OWID based on GCP, 2017)
+Annual world population growth rate - OWID
+Antibiotic use in livestock - European Commission &amp; Van Boeckel et al.
+Antibiotic use in livestock 2030 - Boeckel et al. (2017)
+Arable land per crop output (PIN) (FAO, 2019)
+Armed forces personnel (% of total population) - World Bank (2017)
+Attitudes to Vaccines - Wellcome Trust (2019)
+Average monthly incomes or consumption by decile and quintile – PovcalNet (2019)
+Aviation accidents and fatalities by flight phase (ASN, 2019)
+Aviation passenger kilometres and CO2 emissions (ICCT)
+Basic reading and maths skills - World Development Report (2018)
+Berkley Land-Ocean Temperature Anomaly
+Biomass and taxa abundance (Bar-On et al. 2018)
+Births outside of marriage
+Bourguignon and Morrisson (2002) and World Bank (PovcalNet) (2015)
+Broadband Penetration by Country - World Bank (2015)
+Burden of Depressive Disorders – Ferrari et al. (2013)
+CFC consumption - UNEP
+CFC-11 expected and measured concentrations (Montzka et al. 2018)
+CFC-11 expected and measured rate of change (Montzka et al. 2018)
+CH4 concentration (EEA &amp; NOAA (2019))
+CO2 Footprint Breakdown Per Capita - Goodall (2011)
+CO2 concentrations - NOAA (2019)
+CO2 concentrations over the long-term - Scripps
+CO2 emission factors - IPCC (2006)
+CO2 emissions (Aggregate dataset (2020))
+CO2 emissions by city - C40 Cities (2018)
+CO2 emissions by fuel type (CDIAC &amp; GCP (2020))
+CO2 emissions by sector (CAIT, 2020)
+CO2 emissions by source - CDIAC (2016)
+CO2 emissions factors of energy sources (IPCC, 2014)
+CO2 emissions in trade as % production - Global Carbon Project (2014)
+CO2 emissions per capita- CDIAC
+CO2 emissions scenarios - Climate Action Tracker
+CO2 equivalent from energy sources - IPCC (2011)
+CO2 from cement - CDIAC (2017)
+CO2 from flaring - CDIAC (2017)
+CO2 from gas - CDIAC (2017)
+CO2 from liquid - CDIAC (2017)
+CO2 from solid fuel - CDIAC (2017)
+CO2 intensity of transport by mode (UK BEIS)
+CO2 intensity- (kgCO2!2011-$ PPP)- World Bank
+CO2 mitigation curves for 1.5C (Andrews &amp; GCP, 2019)
+CO2 mitigation curves for 2C (Andrews &amp; GCP, 2019)
+CO2 per year by region - CDIAC (2017)
+CO2-GDP Coupling - OWID based on World Bank
+COVID Government Response (OxBSG)
+COVID testing time series data
+COVID-19 Tests
+COVID-19 Tests per million people
+COVID-2019 - ECDC (2020)
+COVID-2019 - Hospital &amp; ICU
+Caloric Coefficient of Variation (CV) - FAO Food Security Indicators (2017)
+Calories lost by food group and region (WRI, 2013)
+Cancer death rates in the US over the long-term - American Cancer Society
+Cancer deaths grouped - OWID based on IHME
+Capital city population - UN Urbanization Prospects (2018)
+Carbon Tetrachloride emissions - UNEP
+Carbon intensity (kgCO2!$) - Madisson, World Bank, CDIAC
+Carbon tetrachloride consumption - UNEP
+Causes of child mortality – IHME Global Burden of Disease study (2017)
+Causes of death vs. media coverage (Shen et al. 2018)
+Causes of death vs. media coverage - Shen
+Causes of infant death in boys and girls (IHME, 2018)
+Cereal allocation to food, feed, fuel (OWID based on FAO)
+Cereal production index - WDI (2017)
+Cereal yield index - (World Bank (2017) &amp; OWID)
+Change in Global Hunger Index, 1992-2017 (listed 1992) (Global Hunger Index 2017)
+Change in Global Hunger Index, 1992-2017 (listed 2017) (Global Hunger Index 2017)
+Chartbook of Economic Inequality, Gini (2016)
+Child Labor (World 1950-1995) - Basu (1999)
+Child Labor (World ILO) - ILO (2017)
+Child Labor (all) - World Bank (2015)
+Child Labor (latest) - World Bank (2015)
+Child Labor - WDI (2015)
+Child Labor Italy (historic) - Toniolo, G., &amp; Vecchi, G. (2007)
+Child Labor UK (historic) - Cunningham, H. and Viazzo, P.P. (1996)
+Child Labor in US - Economic History Association (2017)
+Child Labor in US - Long (1958)
+Child Marriage – UNICEF (2017)
+Child Mortality Estimates - CME Info (2018)
+Child Mortality Rates (Complete Gapminder, v10) (2017)
+Child Mortality Rates (Selected Gapminder, v10) (2017)
+Child deaths by life stage (OWID based on UN IGME)
+Child deaths – United Nations Population Division (2015)
+Child mortality - Gapminder (2013)
+Child mortality by income level (1960-2012) - World Bank (WDI) (2016)
+Child mortality data - IHME (2017)
+Child mortality estimates - Gapminder (2015)
+Child mortality, 1950-2017 (IHME, 2017)
+Child violence – Ending Violence in Childhood Report (2017)
+Childhood deaths from five most lethal infectious diseases – IHME Global Burden of Disease (2017)
+Children that died before 5 years of age per woman - Gapminder (2017)
+Children that died before 5 years of age per woman - based on Gapminder (2015)
+Children that survived past 5 years of age per woman - Gapminder (2017)
+Children that survived past their 5th birthday per woman - based on Gapminder (2015)
+China coal consumption and production - BP Statistics (2016)
+China share of World Poverty - World Bank (WDI) (2017)
+Chlorofluorocarbon (CFCs) emissions - UNEP
+City populations (1950-2035) - UN Urbanization Prospects (2018)
+Clark, Flèche &amp; Senik – Happiness Inequality
+Coal output and employment in UK - BEIS (2020)
+Coal production - The SHIFT Project
+Colonial Regimes - Minner and Wim (2006)
+Conflict and Terrorism deaths - OWID based on IHME &amp; GTD
+Conflict and terrorism deaths – IHME (2017)
+Conflict deaths by country – UCDP (2019)
+Conflict deaths – UCDP Georeferenced Event Data (2019)
+Consumer expenditure on food - USDA (2017)
+Consumption shares in selected non-essential products - World Bank Global Consumption Database
+Consumption vs. production-based CO₂ emissions shares (based on GCP &amp; UN)
+Corporal Punishment in Schools - Longitudinal Evidence from Ethiopia, India, Peru and Vietnam (UNICE
+Correlates of War! National Material Capabilities (v4.0)
+Corruption Perception Index - Transparency International (2018)
+Countries Continents
+Countries Regions
+Country Income Classification - World Bank (2017)
+Country-level land precipitation - Delaware
+Cross-country literacy rates - World Bank, CIA World Factbook, and other sources
+Crude Birth and Death Rates (per 1,000), England and Wales 1541-2015 - Wrigley and Schofield, Mitche
+Crude Oil Consumption vs. Price - BP Statistics (2016)
+Crude marriage rate (OWID based on UN, OECD, Eurostat and other sources)
+Cumulative CO2 emissions (OWID based on GCP &amp; CDIAC (2018))
+Cumulative CO2 emissions share (OWID based on GCP, 2017)
+Cumulative share of marriages ending in divorce (England and Wales, UK ONS)
+Current GDP (British pounds) - Fouquin and Hugot (CEPII 2016)
+D1 vs D10-D1 income!consumption – Povcal (2018)
+DALY number from ambient PM2.5 air pollution - State of Global Air (2017)
+DALY rate from ambient PM2.5 air pollution - State of Global Air (2017)
+DRAFT Military expenditure data (COW &amp; SIPRI 2017)
+Daily caloric supply per capita -  FAO (2017) &amp; Various historical sources
+Daily fat supply- FAO (2017)
+Daily protein supply - FAO (2017)
+Days and hours of work in Old and New Worlds - Huberman and Minns (2007)
+Death rate by age group in England and Wales - ONS
+Death rate from ambient PM2.5 air pollution - State of Global Air (2017)
+Death rates (non age-standardized) from non-communicable diseases - IHME (2016)
+Death rates by cause and risk factor - Global Burden of Disease (2016)
+Deaths by World Region - WHO (2016)
+Deaths from Chernobyl (Range of long-term estimates) - WHO (2005), Fairlie &amp; Sumner (2006), Cardis e
+Deaths from Fukushima (WHO (2013; 2016))
+Deaths from HIV AIDS (GBD 2016)
+Deaths from Smalllpox and all causes in London 1629-1902
+Deaths from malaria (GBD 2016)
+Deaths from non-communicable diseases - IHME (2016)
+Deaths from smallpox per million population (Edwardes, 1902)
+Deaths per TWh energy production (Markandya &amp; Wilkinson; Sovacool et al.)
+Deaths per TWh from low-carbon energy (Sovacool et al., 2016)
+Decomposition of Gender Wage Gap - Blau, Kahn (2017)
+Decomposition of Gender Wage Gap 1980 - Blau and Kahn (2017)
+Decomposition of Gender Wage Gap 2010 - Blau and Kahn (2017)
+Decomposition times of marine debris
+Deforestation by commodity (Pendrill et al. (2019))
+Delivery points in the US - United States Postal Service (2018)
+Depression prevalence by education - OECD
+Development Health Assistance - IHME
+Diabetes Prevalence - NCD RisC (2017)
+Diabetes prevalence relative to obesity &amp; overweight - OWID based on WHO and WDI
+Diarrheal disease deaths in 70+ age group by attributable to risk factors (IHME 2018)
+Diet compositions by commodity categories - FAO (2017)
+Diet compositions by specific food commodities - FAO (2017)
+Dietary macronutrient compositions - FAO (2017)
+Difference in male and female life expectancy - Human Mortality Database
+Difference in the value of goods exported to and imported by the US for 2016 (DOTS (2017))
+Differences in population estimates - OWID based on UN vs US Census Bureau
+Diffusion of electrical appliances through the US economy - Greenwood, Seshadri and Yorukoglu (2005)
+Disability Adjusted Life Years - WHO (2015)
+Discrimination towards those with HIV - UNAIDS
+Distribution of bilateral and unilateral trade partnerships - Fouquin and Hugot (CEPII 2016)
+Drinking habits in Great Britain - UK ONS
+Drought Severity Index in US (NOAA)
+Duration of marriages ending in divorce (OWID based on national statistics)
+ECI Country Rankings (Observatory of Economic Complexity (2016) and the Atlas of Economic Complexity
+Earthquake deaths (NGDC-NOAA)
+Ease of Doing Business Ranking (World Bank (2018))
+Economic Freedom of the World - Fraser Institute (2018)
+Economic impacts 2vs1.5C - Pretis et al.
+Economic impacts of 1.5C - Pretis et al.
+Economic impacts of 2C - Pretis et al. (2018)
+Economic losses from disasters as a share of GDP (Pielke, 2018)
+Education Expenditure US 1949-2013 - NCES (2014)
+Education data deprivation (GEM Report (2017!18), UIS (2017))
+Educational Attainment - Barro Lee Education Dataset (2010) 
+Educational Outcomes – Hanushek and Woessmann (2012)
+Electricity mix from BP &amp; EMBER (2020)
+Electricity production by source - World Bank (2014)
+Elephant population (AfESG &amp;AsESG, 2019)
+Emissions air pollutants over long-term (DEFRA &amp; EPA)
+Emissions intensity &amp; value added by sector - Linus et al.
+Employment and Gender attitudes - Pew Research Centre (2012)
+Employment rate, ages 25-34, by education - Education at a Glance! OECD Indicators (2017)
+Endangered Species - IUCN (2019)
+Endemic and threatened invertebrate species by country (IUCN, 2019)
+Endemic vertebrate species by country (IUCN, 2019)
+Energy Prices - BP Statistics (2016)
+Energy efficiency by passenger mode in USA (BTS)
+Energy imports (% energy use) - World Bank (2014)
+Energy intensity (MJ per 2011 int$ GDP) - World Bank
+Energy mix from BP (2020)
+Energy mix in the UK (DUKES, 2018)
+Energy production by source 1900-2014 - SHIFT Project (2014)
+Enrollment in tertiary education and the number outbound students, both sexes (KZ)
+Environmental impacts of food (Poore &amp; Nemecek, 2018)
+Estimated average age at marriage, by gender (UN and OECD)
+Estimated average age at marriage, by gender (UN)
+Estimated funding and future needs for HIV in low and middle income countries - UNAIDS
+Estimated historical literacy rates - Buringh and Van Zanden (2009)
+Estimated percent of women who are married or in a union (UN)
+Ethnographic and Archaeological Evidence on Violent Deaths
+European urbanization - De Vries (1984)
+Excess Mortality Data – HMD (2020)
+Executions by country - Amnesty International
+Expected Years of Schooling - UNDP (2018)
+Experience Curves - LaFond (2017)
+Extensions in life expectancy (OWID calculations based on UN Population Division (2017 Revision))
+Extreme Poverty 2030 Projections by SSP - Crespo et al. (2018)
+Extreme Poverty in absolute numbers - Ravallion (2016) updated with World Bank (2019)
+Extreme Temperatures in US (NOAA)
+Extreme income poverty in Europe - Bradshaw and Mayhew (2011)
+Extreme precipitation in US (NOAA)
+FAO 2030-50 Projections of Arable Land - FAO (2017)
+FAO Undernourishment Comparison 2010 vs. 2012
+Family Benefits Public Spending - OECD (2016)
+Family Benefits Spending - OECD (2016)
+Fatal aviation accidents &amp; fatalties - Aviation Safety Network (ASN)
+Female and male life expectancy at birth - OWID based on UN Population Division (2017)
+Female labor force participation rate - OWID (2017)
+Female lung cancer deaths (per 100,000) - WHO (IARC) (2016)
+Female weekly hours worked – OECD (2017)
+Fertility - UN Population Division (2015 revision)
+Fertility Rate (Selected Gapminder, v12) (2017)
+Fertility Rate - WC-IIASA (2017)
+Fertility rate (Complete Gapminder, v12) (2017)
+Fertilizer prices - World Bank (2017)
+Fertilizer use per hectare of land -FAO &amp; Federico
+Financing healthcare by source - WHO (2017)
+Firms with financial constraints - World Bank Enterprise Survey (2019)
+Fishery catch breakdown - Pauly and Zeller (2016)
+Five year cancer survival rates - Allemani et al. 
+Five-year cancer survival rates - National Cancer Institute
+Food Prices expressed in hourly wages - U.S. Bureau of Labor Statistics (2015)
+Food expenditure in the USA - USDA
+Food miles by transport method (Poore &amp; Nemecek, 2018)
+Food supply (FAO, 2020)
+Food system efficiency for grapher - Hannah Test
+Food waste in the European Union - Europa (2010)
+Food waste in the supply chain (t) - WRAP (2015) &amp; Europa (2015)
+Foreign direct investment - World Bank WDI (2015)
+Forest Transition Phase (Hosonuma et al. 2012)
+Forest Transition Phase (Pendrill et al. 2019)
+Forest land, deforestation and change (FAO, 2020)
+Forestry area - FAO (2017)
+Fossil fuel consumption per capita - BP &amp; UN (2017 revision)
+Fossil fuel production (BP &amp; Shift (2020))
+Freedom of the Press Status - Freedom House (2017)
+Friends and family support – OECD based on Gallup (2016)
+Fund for Peace – Fragile States Index (Human Rights Dimension)
+Funding for HIV - UNAIDS
+GDP growth from previous year, 2020 Q2 (Eurostat, OECD, National sources)
+GDP in England (using BoE, 2017)
+GDP per capita 1960 and GDP per capita growth 1960-2014
+GDP per capita PPP 2011 – WDI (2016)
+GDP per capita indexed at 1950 - Maddison Project Data (2018)
+GHG Emissions by Country and Sector (CAIT)
+GHG emissions per capita (EDGAR, 2019)
+GISTEMP Temperature Anomaly
+Gapminder Ignorance Test Results (Gapminder)
+Gas production - Etemad &amp; Luciana
+Gender Inequality Index - Human Development Report (2015)
+Gender Wage Gap – OECD (2017)
+Gender preference for boss - Gallup (2017)
+Gender wage gap (assigning zeros for no work)
+Genome Production Costing - GSP
+Genuine saving estimates by various measures - Blum, Ducoing, McLaughlin (2017)
+German road deaths and accidents - destatis
+Gini Coefficient, Equivalized Income After Tax and Transfers – Chartbook of Economic Inequality (201
+Gini Coefficients – OECD (2016)
+Gini Index – World Bank (2016)
+Gini coefficients for lifetime inequality - Peltzman (2009)
+Global BMI in females - NCDRisC (2017)
+Global BMI in males - NCD RisC (2017)
+Global CO2 emissions - CDIAC and UN Population
+Global Carbon Budget (GCP, 2020)
+Global Carbon Budget for 2C - IPCC (2013)
+Global Data Set on Education Quality (1965-2015) - Altinok, Angrist, and Patrinos (2018)
+Global Hunger Index (IFPRI 2017)
+Global Hunger Index in 1992 (listed 2017) (Global Hunger Index 2017)
+Global Hunger Index in 2017 (listed 2017) (Global Hunger Index 2017)
+Global Hunger Index score in 1992
+Global Hunger Index- IFPRI (2018)
+Global Population by Region with projections - HYDE (2016) &amp; UN (2017)
+Global Primary Energy Consumption - Vaclav Smil (2017) &amp; BP Statistics (2020)
+Global Projection, Medium SSP2 - IIASA (2016)
+Global Revenue Statistics Database - OECD (2018)
+Global Smallpox Cases
+Global Tuberculosis Report! Case notifications - WHO (2019)
+Global Tuberculosis Report! TB burden estimates - WHO (2019)
+Global agricultural land by crop - FAO (2017)
+Global airline traffic and capacity (ICAO, 2020)
+Global average temperature anomaly - Hadley Centre
+Global child mortality (since 1800) - based on Gapminder and World Bank (2019)
+Global death rates from disasters (EMDAT; UN &amp; HYDE)
+Global deaths by cause and risk - Global Burden of Disease (2017)
+Global education (OECD + IIASA (2016))
+Global freshwater use since 1900 - IGB
+Global incidence and prevalence of active and latent tuberculosis - IHME (2016)
+Global literacy since 1800 (OWID based on OECD &amp; UNESCO (2019))
+Global meat projections to 2050 - FAO
+Global number of yaws cases - WHO Global Health Observatory (2018)
+Global plastic production - Geyer et al. (2017)
+Global population trends - US Census Bureau (2017)
+Global precipitation anomaly (NOAA)
+Global primary energy share (Smil &amp; BP)
+Global progress per day (World Bank (2015))
+Global temperature anomaly - Met Office (HadCRUT4)
+Global warming potential factors (GWP100) - IPCC (2014)
+Global year of last polio case plus certification status - GPEI (2017)
+Globalization over 5 centuries - PWT 9.0, Klasing &amp; Milionis (2014), and Estevadeordal, Frantz, and 
+Gold prices - Laurence &amp; Williamson (2017)
+Google Mobility Trends (2020)
+Government Education Expenditure 1960-2010 - Szirmai (2015)
+Government Expenditure – IMF based on Mauro et al. (2015)
+Government Revenue – Wallis (2000)
+Government Spending – Roine, Vlachos, Waldenström (2009) and US Historical Tables (2016)
+Government expenditure and learning outcomes
+Government spending – IFPRI (2015) and SPEED
+Government spending – OECD (2017)
+Government spending – World Bank
+Green Climate Fund Pledges - GCF
+Green Climate Fund Pledges- GCF (2017)
+Gross harvest of main crops (KZ)
+Growth of cities - Bairoch (1988)
+Guinea Worm Cases - The Carter Center (2016)
+Guinea Worm Cases - WHO (2018)
+Guinea worm WHO certification status - WHO 2018
+HALF Index (Land Use) - Alexander et al. (2016)
+HRV Transparency index - Hollyer, Rosendorff, and Vreeland (2014)
+HadCRUT Temperature Anomaly
+Halons consumption - UNEP
+Halons emissions - UNEP
+Happiness predictors – World Happiness Report (2017)
+Health Coverage – ILO (2014)
+Health Expenditure - Tanzi &amp; Schuktnecht (2000)
+Health Expenditure - World Bank (WDI) (2016)
+Health Expenditure Concentration (US) - NIHCM (2012)
+Health Expenditure UK 1950-2012 - Office of Health Economics (2012)
+Health Expenditure US 1929-2013 (US Census and WDI )
+Health Expenditure US 1929-2013 Private - US Census and WDI (2013)
+Health Expenditure US 1929-2013 Public - US Census and WDI (2013)
+Health Expenditure and Financing - OECDstat (2017)
+Health Insurance Coverage (US) - US Current Population Survey (2014)
+Health expenditure per capita - World Bank WDI (2018)
+Health expenditure per capita, PPP - World Bank (2016)
+Health provider absence rates - Chaudhury, Hammer, Kremer, Muralidharan, and Rogers (2006)
+Healthcare Access and Quality Index – IHME (2017)
+Healthcare capacity (OECD, 2020)
+Healthy Life Expectancy - IHME
+Heights of Early Europeans - based on Hermanussen (2003) and the NCD RisC (2017)
+Hidden Hunger Index in pre-school children - Muthayya et al. (2013)
+Historical GDP per capita – Maddison Project (2013)
+Historical Index of Human Development (without GDP) - Prados de la Escosura
+Historical Index of Human Development - Prados de la Escosura
+Historical UN Population Projections
+Historical employment and output by sector – OWID (2017)
+Historical gender equality index - How Was Life! (2014)
+Historical urban fraction estimates and total computed urban areas - HYDE 3.1 (2010)
+Homelessness and Precarious Housing - OECD (2016)
+Homelessness prevalence - Toro et al. (2007)
+Homicide Rates - Clio Infra
+Homicide rates in Europe over long-term (Eisner &amp; IHME)
+Homosexuality Laws – OWID based on Kenny &amp; Patel (2017)
+Homosexuality opinions – WVS (1981-2016)
+Homosexuality public opinion – Pew Research (2013)
+Household expenditure on Housing, water, electricity, gas and other fuels as a share of GDP - UN
+Households using solid fuels for cooking (Urban vs. Rural) - UN
+Households' actual and imputed rent as share of GDP – OECD
+How Europeans spend their time - European Commission (2004)
+Hubbert's Peak - Cavallo &amp; EIA
+Human Capital Index (World Bank, 2018)
+Human Capital in Long-Run - Lee-Lee (2016)
+Human Development Index - UNDP (2018)
+Human Height - NCD RisC (2017)
+Human Height - University of Tuebingen (2015)
+Human Rights Protection Score – Christopher Farris (2014) and Keith Schnakenberg
+Human Rights Scores – Schnakenberg and Fariss (2014), Fariss (2019)
+Hurricane Forecasting Error, NHC (2019)
+Hurricane Landfalls, Continental US (HURDAT, NOAA)
+Hydrochlorofluorocarbons (HCFCs) consumption - UNEP
+Hypothetical global CO2 emissions - CDIAC (2014)
+Hypothetical meat consumption - OWID based on FAO &amp; UN
+IQ Data - Pietschnig and Voracek (2015)
+Incidence of child labor (England, Italy, US, World) - Cunningham and Viazzo (1996) and others
+Incidence of managerial or professional jobs and collective-bargaining by gender - Blau and Kahn (20
+Income Classification - World Bank (2017)
+Income Inequality - World Bank (2016)
+Incomes across the Distribution Database (Nolan, Thewissen, Roser) in levels (2016)
+Incomes across the Distribution Database (authored by Nolan, Thewissen, Roser; based on LIS) indexed
+Incomes across the Distribution Database, Gini (2016)
+Indicators for !What is PPP!  - World Bank
+Industrial motive power in the UK 1800-70 (Musson (1976))
+Inequality before and after taxes – OECD (2008)
+Inequality in Latin America - SEDLAC (CEDLAS and the World Bank)
+Inequality in human development indices - UNDP (2019)
+Infant Mortality – IGME (2016)
+Infant mortality rate (IHME - 2017)
+Infant mortality under 1 year of age - Clio Infra (2016)
+Inheritance for women - How Was Life! (2014)
+Insufficient data (SDGs)
+Integrated Network for Societal Conflict Research! Political Instability Task Force (PITF)
+Intercontinental Trade - Costa, Palma and Reis (2015)
+International Historical Statistics (Births per 1,000) - Brian Mitchell (2013)
+International Historical Statistics (Deaths per 1,000) - Brian Mitchell (2013)
+International Historical Statistics! European trade - Brian Mitchell (2015)
+International migrant stock (share of population) – World Bank (2015)
+Internet Users by World Region - World Bank (2016)
+Interpersonal Trust - General Social Survey (GSS) (2016)
+Investment in Renewables by Region - IRENA (2016)
+Investment in renewables by technology - IRENA (2017)
+J. Doyne Farmer and François Lafond (2016)
+Job search methods US - Pew Research Center (2015)
+LGBT Marital Status in the US (Gallup 2017)
+LIS Key Figures – Luxumbourg Income Study
+Lab-grown meat prices - NextBigFuture (2017) and United States Bureau of Labor Statistics (BLS) (201
+Labor Force Participation Rates of Men Age 65 and Over in the US – OWID based on Short (2002) and OE
+Labor Productivity - The Conference Board Total Economy Database (2016) 
+Labor productivity in cotton spinning (Chapman (1972))
+Labor productivity in cotton spinning and weaving (Ellison (1886))
+Labor productivity per hour (Hill, Thomas, Dimsdale (2016), Bank of England)
+Labour cost ratio (45-54 year-old population) 2009 - OECD (2012)
+Labour productivity - The Conference Board Total Economy Database (2016)
+Land Use Data - HYDE (2017)
+Land Use Map by Area - OWID based on FAO
+Land sparing from cereal yields - World Bank (2017)
+Land surface temperature anomaly- Berkley Earth
+Land under cereal production index - World Bank (2017)
+Land use by food production type - Tilman &amp; Clark (2017)
+Largest cities by population density - UN Habitat (2014)
+Learning-Adjusted Years of Schooling - World Bank (2018)
+Legality Status of Abortion - Guttmacher Institute
+Length of the work day! from 1890s to 1991 - Costa (2000)
+Length of the workday in 1880 - Atack and Bateman (1992)
+Levels of Urbanization and per capita GNP in Various Regions - Bairoch (1988)
+Life Expectancy (1950-2015) – UN Population Division (2015)
+Life Expectancy (at birth) - World Bank (2015)
+Life Expectancy at Birth (both genders) – Clio Infra
+Life expectancy &amp; population - Gapminder (2019), UN (2019), and Our World In Data (2019)
+Life expectancy (Gapminder, UN, IHME)
+Life expectancy - OECD
+Life expectancy - Riley (2005) and UN 
+Life expectancy - Riley (2005), Clio Infra (2015), and UN (2019)
+Life expectancy at age 10, 1750-2100 - United Nations Population Division and Human Mortality Databa
+Life expectancy projections - UK ONS
+Life expectancy – James Riley for data 1990 and earlier; WHO and World Bank for later data (by Max R
+Life expectation by sex at ages 0, 15, and 45 - OWID based on Hacker (2010) and the US Social Securi
+Life satisfaction – Eurobarometer (2017)
+Life satisfaction – World Value Survey (2014)
+Lighting efficiency in UK - OWID based on Fouquet &amp; Pearson (2007)
+Lighting in UK by source - Fouquet &amp; Pearson (2007)
+Literacy in England, by sex - Schofield (1973), Houston (1982), Cressy (1980) 
+Literacy rate (% of total respondents) - DHS Surveys
+Livestock counts - HYDE &amp; FAO (2017)
+Living Planet Index – WWF (2020)
+Living Planet Index, Freshwater - WWF (2016)
+Living Planet Index, Marine - WWF (2016)
+Living Planet Index, Terrestrial - WWF (2016)
+Living Plant Index Global - WWF (2016)
+Long run life expectancy - Gapminder, UN
+Long run time use in Norway, by sex - Norway Statistics
+Long term productivity - Bergeaud, Cette, and Lecat (2016)
+Long-run series of health expenditure - World Bank (WDI) (2017)
+Long-term energy transition in Europe - Gales et al. (2007)
+Long-term energy transitions - Energy History, Harvard (2016)
+Long-term per capita fossil fuels - OWID based on UN, Gapminder, BP, Etemad &amp; Luciana
+Long-term wheat yields - FAO (2017) &amp; Bayliss-Smith (1984)
+Long-term yields in the United Kingdom - OWID (2017)
+Lost school grants - Reinikka and Svensson (2004)
+Lowest paying occupations, percent female – NWLC (2014)
+Lymphatic Filariasis, WHO Status - Enric Jané
+MDG Final Evaluation (UN MDG Report)
+Maddison Project Database 2018 (Bolt et al. (2018))
+Maddison region definitions (Maddison (2010))
+Malaria deaths - IHME (2016)
+Malaria deaths by country (WHO, 2015)
+Malaria deaths by region (IHME, 2017)
+Male and female life expectancy by age in the long run (Human Mortality Database (2018) and others)
+Male lung cancer deaths per 100,000 - WHO (IARC) (2016)
+Male-to-female ratio high school courses in USA - Goldin et al.
+Marine Energy - IRENA
+Market share of iodized salt in European countries - European Commission (2006)
+Maternal Mortality Ratio - Gapminder (2010) and World Bank (2015)
+Maternal deaths to 2030 (BAU vs. SDG Target) - based on World Bank &amp; UN (2018)
+Maternal mortality projection to 2030 (based on World Bank, 2018)
+Mean BMI - NCD RisC (2017)
+Mean years of schooling, women (15 to 49) – Our World In Data (2017)
+Measles London
+Measures and indicators for Poverty - PovcalNet (World Bank) (2017)
+Meat consumption in EU28 (OECD, 2018)
+Meat consumption in the USA (USDA, 2018)
+Meat conversion efficiencies - Alexander et al. (2016)
+Median UN Population Projections - Global vs Africa (OWID based on UN)
+Medium Projection – UN Population Division (2019 revision)
+Mental and substance use disorder disaggregated - IHME
+Mental health as risk factor for substance use - Swendsen et al. (2010)
+Mental health prevalence (IHME)
+Mental health services across incomes - Wang et al. (2007)
+Metal production - Clio Infra &amp; USGS
+Methane emissions by sector (CAIT, 2020)
+Methyl Chloroform - UNEP
+Methyl bromide - UNEP
+Methyl chloroform consumption - UNEP
+Microprocessor clock speed- Ray Kurzweil
+Milestones of Women's Political Representation - Paxton et al (2006)
+Military Personnel - COW (2017)
+Military expenditure as a share of GDP - OWID based on COW &amp; SIPRI (2017)
+Military expenditure per capita – OWID based on COW &amp; SIPRI (2017)
+Military expenditure, constant 2015 US$ - SIPRI (2017)
+Mineral production (BGS (2016))
+Minimum reading and maths proficiency (GEM Report (2017!8))
+Mismanaged plastic waste by region - OWID based on Jambeck et al. (2015)
+Missing plastic budget (Lebreton et al. 2019)
+Missing women estimates (Bongaarts &amp; Guilmoto, 2015)
+Mobile Bank Accounts by Region - GSMA (2019)
+Mobile cellular subscriptions - World Bank (2015)
+Mortality from all forms of violence  (IHME (2016))
+Motor vehicles per 1000 people - NationMaster (2014)
+Multinational Time Use Study (MTUS) - Gershuny and Fisher (2013)
+N2O concentration (EEA, 2019)
+National Poverty Lines - Jolliffe and Prydz (2016)
+Natural disasters from 1900 to 2019 - EMDAT (2020)
+Neglected Tropical Diseases (Lymphatic Filariasis) Population requiring PC not-treated and treated -
+Neonatal Mortality Rate - via Childmortality.org (2015)
+Neonatal tetanus incidence
+New estimates of hours of work per week, 1900-1957 - Jones (1963)
+Newsworthiness of disasters by disaster type and region - Eisensee and Strömberg (2007)
+Nitrogen fertilizer consumption - FAO (2017)
+Nitrogen fertilizer production - FAO (2017)
+Nitrous oxide emissions by sector (CAIT, 2020)
+Non-commercial flight distance records - Wikipedia
+Non-communicable disease age-standardized death rates - IHME (2017)
+Non-electric energy use for heating in London - Greater London Authority (2002)
+North Atlantic Hurricanes (HUDRAT, NOAA)
+Nuclear Weapons Testing - Oklahoma Geological Survey Observatory
+Nuclear energy (% electricity production) - World Bank (2014)
+Nuclear weapons inventory by country - FAS Nuclear Notebook
+Number and percentage of current smokers, by sex (American Lung Association (2011))
+Number of Cattle and Poultry (KZ)
+Number of Internet Users by Country - World Bank (2015)
+Number of Universities (KZ)
+Number of child deaths 1950-2017 (IHME, 2017)
+Number of children who are stunted (OWID based on UNICEF!WHO)
+Number of confirmed tetanus cases (WHO GHO - 2016)
+Number of countries with minimum urban population threshold (UN;2018)
+Number of deaths due to rabies
+Number of deaths due to tetanus
+Number of deaths from tuberculosis - GBD 2016
+Number of deaths in England and Wales by age - ONS
+Number of direct national elections — NELDA (2015)
+Number of infant deaths (IHME - 2017)
+Number of internet users (OWID based on WB &amp; UNWPP)
+Number of mobile cellular subscriptions - World Bank (2015)
+Number of neonatal deaths (IHME - 2017)
+Number of observations in Povcal per decade - OWID (2017)
+Number of parties to multilateral environmental agreements - UNCTAD
+Number of people requiring treatment for neglected tropical diseases - WHO
+Number of people who are undernourished - FAO SOFI (2018) &amp; World Bank (2017)
+Number of people with and without access to improved sanitation - OWID based on WDI
+Number of people with and without access to improved water - OWID based on WDI
+Number of people with and without access to improved water sources - World Bank and UN
+Number of people with and without electricity access (OWID based on WB, 2019)
+Number of people without access to safe water and sanitation (WHO Wash, 2019)
+Number of polio cases per one million population - WHO (2017)
+Number of published titles - Simons (2001)
+Number of tourist departures per 1000 - World Bank &amp; UN (2019)
+Number with and without access to clean cooking fuels (OWID based on WB, 2019)
+Numbers and Shares of Each Political Regime — V-Dem (2019)
+ODA for scholarships - OECD
+OECD Education! PISA Test Scores - PISA (2015)
+OECD Social Spending - Active labour market programmes
+OECD Social Spending- Family
+OECD Social Spending- Health
+OECD Social Spending- Housing
+OECD Social Spending- Incapacity related
+OECD Social Spending- Old Age
+OECD Social Spending- Other social policy areas
+OECD Social Spending- Survivors
+OECD Social Spending- Unemployment
+OECD – Consumption Tax Trends 2016
+OECD! Education Statistics (2017)
+OPHI Multidimensional Poverty Index - Alkire and Robles (2016)
+OWID country to WHO regions
+Obesity Prevalence - WHO (2019)
+Oil production - Etemad &amp; Luciana
+Oil&amp;Gas Employment and Rig Count - US Bureau of Labor Statistics (2017)
+Olympic competing nations and athletes (Olympic Database)
+Onshore wind LCOE (IRENA Cost Database, 2018)
+Onshore wind cost breakdown (IRENA, 2018)
+Onshore wind installed project cost (IRENA, 2018)
+Opioid deaths due to overuse in the US - CDC WONDER (2017)
+Other Fully Halogenated CFCs - UNEP
+Out-of-pocket expenditure per capita on healthcare - WHO Global Health Expenditure
+Outdoor air pollution deaths (IHME, 2019)
+Output of key industrial sectors in England - Bank of England (2017)
+Output of key industries in England - using Bank of England (2017)
+Output of key services sectors in England - using Bank of England (2017)
+Ozone and chlorine projections to 2100 (Scientific Assessment 2014)
+Ozone concentration-StateofGlobalAir
+Ozone depleting emissions since 1960 (Scientific Assessment 2014)
+Ozone depletion impacts on skin cancer incidence - Slaper et al.
+Ozone hole area and concentration - NASA
+Ozone-depleting emissions index - EEA
+PM2.5 concentration - State of Global Air (2017)
+Parties to Montreal Protocol - UNEP
+Patent and publication rates  - OWID based on World Bank &amp; UN
+Patents awarded in England, Scotland and Wales - Bottomley
+Peak Farmland Projection - Ausbuel et al. (2013)
+Penn World Table 9.0 - OWID's team elaboration
+People experiencing homelessness in the USA (PIT) by sheltering status - HUD (2016)
+Per capita energy use - World Bank (2017)
+Per capita pathways for 1.5C and 2C - OWID based on CAT
+Percentage deaths attributable to risk factors - IHME
+Percentage gained access to improved water and sanitation 1990-2015 - WHO
+Percentage of Americans living alone, by age - IPUMS
+Percentage of Individuals using the Internet (ICT) - ITU (2015)
+Percentage of adults living alone in the US and Canada- US Census Bureau &amp; Statistics Canada
+Percentage of persons without health insurance - Council of Economic Advisers and National Center fo
+Percentage point change in $1.90 poverty (World Bank, 2017)
+Perceptions of spending on health expenditure - IPSOS (2016)
+Phosphate fertilizers - FAO (2017)
+Pieces of mail and number of post offices - United States Postal Service (2018)
+Plastic Waste - Jambeck et al. (2015)
+Plastic bag substitute comparisons (Danish EPA, 2018)
+Plastic discarded, recycled, incinerated - Geyer et al. (2017)
+Plastic importers to China - Brooks et al. (2018)
+Plastic imports by China &amp; impact of ban - Brooks et al. (2018)
+Plastic inputs from rivers - Lebreton et al. (2017)
+Plastic product lifetime, production, waste by source - Geyer et al. (2017)
+Plastic waste generation by country - OWID based on Jambeck et al. &amp; World Bank
+Plastic waste percentages - Jambeck et al. (2015)
+PolcalNet Global Poverty (2017)
+Political Competition and Participation (How Was Life, OECD (2014))
+Political Regime - OWID based on Polity IV and Wimmer &amp; Min
+Political Regimes — V-Dem (2019)
+Polity IV + Wimmer and Min - Our World In Data (2006)
+Polity IV Index
+Population (Clio-infra (2016)), with Island of Ireland (Rep. + Northern)
+Population (Gapminder, HYDE (2016) &amp; UN (2019))
+Population Density - HYDE and UN Population Division (2008 Revision)
+Population Dynamics and Global Human Capital - IIASA (2015)
+Population Estimates and Projection - Wittgenstein Centre for Demography and Global Human Capital
+Population Growth -  UN Population Division (2015 revision)
+Population by Country - Clio Infra (2016)
+Population by age group to 2100 (based on UNWPP, 2017 medium scenario)
+Population by country, 1800 to 2100 (Gapminder &amp; UN)
+Population by income group (World Bank (2017))
+Population by region (HYDE (2016) &amp; UN (2019))
+Population covered by the internet - Internet World Stats (2019)
+Population data (Gapminder up to 1949; UN Population Division 1950 to 2015)
+Population fed by Haber-Bosch fertilizers - FAO (2017)
+Population growth 1992-2015 (listed 2017) (UN Population Division 2015)
+Population growth rate by region, 1955-2015 - UN Population Division (2015 revision)
+Population growth rate by region, 2020-2100 medium variant projection - UN Population Division (2015
+Population of the Island of Ireland, 1500-2000
+Population using informal saving (%) - World Bank World Development Report (2013)
+Postage rates - United States Postal Service (2018)
+Potash fertilizers - FAO (2017)
+Poverty Absolute Number by Region ($1.90) - World Bank (Povcal) (2016)
+Poverty Measures - World Bank (WDI) (2017)
+Poverty Share by Region ($1.90) - World Bank (PovcalNet) (2016)
+Poverty headcount (below $3.10 per day, 2011 PPP) - World Bank (WDI) (2016)
+Poverty headcount at $1.90 a day (2011 PPP) - High-income - World Bank (Povcal) (2017)
+Poverty headcount at $1.90 a day (2011 PPP) - World Bank (WDI) 2017
+Poverty rate (!50% of median) (LIS Key Figures, 2018)
+Precipitation anomaly in US (NOAA)
+Press Freedom - Reporters sans Frontieres (2019)
+Prevalence of Overweight Adults - WHO (2019)
+Prevalence of Undernourishment in Developing Countries - FAO (Food Security Indicators) (2017)
+Prevalence of Vitamin A deficiency in children - WHO (2017)
+Prevalence of alcohol drinking in the USA - CDC
+Prevalence of undernourishment - FAO (Food Security Indicators) (2017)
+Prevalence of undernourishment - World Bank (2017) &amp; UN SOFI (2018)
+Prevalence of undernourishment by region - UN FAO SOFI (2017 &amp; 2018)
+Prevalence of undernourishment since 2000 (FAOstats, 2018)
+Prevalence of vitamin-A deficiency in pregnant women - WHO (2009)
+Prevalence of weight categories in females - NCDRisC (2017)
+Prevalence of weight categories in males - NCDRisC (2017)
+Prevalence of zinc deficiency - Wessells et al. (2012)
+Price for Light – Fouquet
+Price of mobile data - Alliance for Affordable Internet (2019)
+Price of nails since 1695 (Daniel Sichels (2017))
+Primary energy consumption (BP &amp; Shift, 2020)
+Prisoners per 100 000 from World Prison Brief (downloaded September 2018)_country_standardized
+Product Complexity Index (PCI) - Observatory of Economic Complexity (2016)
+Production Value by Industry (KZ)
+Projected change in under-5 population by country 2015, 2050, 2100 - OWID based on UN Population (20
+Projected extreme poverty among different groupings of fragile states (Crespo Cuaresma et al, 2018; 
+Projections of peak agricultural land - FAO (2006), OECD (2012), MEA (2005)
+Proportion of 45-54 year-olds with tertiary education 2009 - OECD (2012)
+Proportion of children under 5 years of age who are developmentally on track - UNICEF
+Proportion of seats held by women in national parliaments (%) - World Bank (WDI) (2017)
+Proportion of youth and adults with ICT skills - UNESCO
+Public Expenditure on Education OECD - Tanzi &amp; Schuktnecht (2000)
+Public expenditure on health %GDP – OWID based on WHO and historical estimates
+Public expenditure on health in the long run - Lindert (1994), OECD, WHO
+Public support and opposition to nuclear energy- Ipsos MORI (2011)
+Public support for nuclear energy- Ipsos Mori
+RAND Database of Worldwide Terrorism Incidents
+Raised Blood Pressure Prevalence - NCD RisC (2017)
+Rate of Natural Population Increase – UN Population Division (2015)
+Rate of internationally observed elections - Hyde and Marinov (2012)
+Rate of internationally observed elections - Susan Hyde (2011)
+Real Commodity Price Index since 1850 - Jacks (2016)
+Real GDP at chained PPPs in 2011 US$ - Penn World Table 9.0 (2016)
+Real GDP per capita, London and Delhi - OWID
+Recycled plastic exports - Brooks et al. (2018)
+Relative earnings of adults, by educational attainment - Education at a Glance 2017! OECD Indicators
+Relative wages of craftsmen to labourers, 1200-2000 - Clark (2005)
+Religious Composition - Pew (2017)
+Renewable Energy (% electricity production) - World Bank (2015)
+Renewable Energy Capacity by Region - IRENA (2017)
+Renewable Energy Capacity by Technology - IRENA (2017)
+Renewable Investment as % of GDP - BNEP and World Bank
+Renewable energy costs (IRENA, 2020)
+Renewables Patents - IRENA (2016)
+Reported cases of measles, 1980-2019 - WHO (2019)
+Reported number and different estimations of polio cases (WHO, 2018)
+Required rate of maternal mortality decline for SDG - based on World Bank (2018)
+Reserves-Production Ratio - BP Statistics (2016)
+Revenue shares from tax – Flora (1983) and ICTD (2016)
+Rhino poaching rates (AfRSG, 2019)
+Rhino populations (AfRSG &amp; other sources, 2019)
+Risk attribution of cancer deaths to tobacco smoking - IHME
+Road deaths and injuries - OECD
+Rotavirus deaths and cases in under-5s (IHME, 2018)
+Rough Sleeping in England in the 2010s - OWID based on UK National Statistics (2018)
+Rural &amp; urban BMI - NCD RisC (2018)
+SEDLAC (for IARC paper)
+SO2 emissions by country (1850-2000) - Clio Infra
+SO2 emissions by region - OECD (2014) and Klimont et al. (2013)
+SO2 emissions, China and India - Klimont et al. (2013) 
+SO2 per capita - Clio Infra
+SRES A1 - GDP per capita; downscaling by Pretis &amp; Roser (2016)
+Same sex marriage law (Pew Research Center, CFR)
+Same-sex marriages by sex in the Netherlands – CBS (2016)
+Same-sex married households in the US
+School Attendance – UNESCO (2015)
+Self-reported loneliness in older adults - OWID (2018)
+Sex ratio at birth (Chao et al. 2019)
+Sex ratio at birth by birth order in S.Korea &amp; China (Jiang et al. 2017 &amp; NSO Korea)
+Sex ratio by age (OWID based on UNWPP, 2017)
+Sexual Violence – UNICEF (2017)
+Share of Top 1% in net personal wealth – World Wealth and Income Database (2018)
+Share of arable land which is organic - OWID based on FAO
+Share of countries where homosexuality is legal – OWID based on Kenny &amp; Patel (2017)
+Share of deaths attributed to air pollution (IHME, 2019)
+Share of deaths by risk factor (IHME, 2019)
+Share of employment in the financial sector (GGDC, 2017)
+Share of energy from cereals, roots and tubers - FAO (2017)
+Share of food lost by food type and region (FAO, 2019)
+Share of global natural gas reserves - BP Statistical Review (2016)
+Share of global oil reserves - BP Statistical Review (2016)
+Share of landowners who are female - FAO (2017)
+Share of marriages in England and Wales that ended in divorce (UK ONS, 2020)
+Share of people experiencing homelessness in the USA 2007-2016 (per 100,000) - HUD (2016) and U.S. C
+Share of people who are worried about losing their job - World Values Survey (2014)
+Share of people who report having intentions to start business - Global Entrepreneurship Monitor
+Share of population covered by social protection - ASPIRE World Bank (2019)
+Share of population with access to electricity - World Bank
+Share of pregnancies end in abortion - Sedgh et al. (2016)
+Share of primary-school children achieving minimum reading proficiency, rich vs poor - UNESCO
+Share of services in total exports - WDI (2017)
+Share of single parent families (UN Population Division 2018)
+Share of unintended pregnancies ending in abortion - Bearak et al. (2018)
+Share of women in top income groups – Atkinson, Casarico &amp; Voitchovsky (2018) [OLD]
+Share of world merchandise trade by type of trade - Fouquin and Hugot (CEPII 2016, Dyadic data)
+Shark attacks and fatalities - Global Shark Attack File (GSAF) (2018) 
+Significant earthquake events (NGDC-NASA)
+Significant volcanic eruptions (NGDC-WDS)
+Smallpox cases by country 1920-1977
+Smallpox cases reported and revised - Fenner et al. (1988)
+Smoking cigarette sales (International Smoking Statistics (2017)) 
+Smoking prevalence and cigarette consumption (IHME, GHDx (2012))
+Social Expenditure in the long run - Lindert 2004; OECD 1985; OECD (SOCX).
+Solar PV Cumulative Capacity - ITRPV (2016)
+Solar PV Module Costs &amp; Capacity - Lafond et al. (2017) &amp; IRENA
+Solar PV System Costs by Country - Barbose &amp; Darghouth (2016)
+Solar PV Systems Costs - Barbose &amp; Darghouth (2016)
+Solid fuel use for cooking by region - Bonjour et al. (2013)
+Son preference in education - World Values Survey (2014)
+Split of exports to different country groups - OWID calculations based on Fouquin and Hugot (CEPII 2
+State of Vaccine Confidence - Larson et al (2016)
+State-based battle deaths since 1946 by world region (UCDP-PRIO)
+Subnational inequality - OECD based on Royuela et al. (2014))
+Suicide rates by sex and age (IHME, 2019)
+Suicide rates in the United States - AFSP (2017)
+Suicides from pesticides (Mew et al., 2017)
+Supercomputer power (FLOPS)- TOP500 Database
+Surface ocean plastic by mass - Eriksen et al. (2014)
+Surface ocean plastic by particle count - Eriksen et al. (2014)
+Swedish Historical National Accounts - Schön and Krantz (2007, 2012, 2015)
+TEST – Poverty explorer dataset – Consumption_and_income_data
+Tax Revenue - World Bank
+Tax Revenue – Piketty (2014)
+Tax composition – !Arroyo Abad  and P. Lindert (2016)
+Tax composition – Todaro and Smith (2014)
+Taxes – ICTD GRD (2019)
+Teacher Absenteeism - Bold et al. (2017)
+Teaching time lost - World Development Report (2018)
+Technology Adoption - Isard (1942) and others
+Technology Diffusion - Comin and Hobijn (2004) and others
+Temporary accommodation in England - UK Government (2018)
+Terrain Ruggedness Index - Nunn and Puga (2012)
+Terrorism incidents, fatalities &amp; injuries (Global Terrorism Database, 2018)
+Terrorist attack by target type - Global Terrorism Database (2018)
+Terrorist attacks by type - Global Terrorism Database (2018)
+Terrorist attacks by weapon type - Global Terrorism Database (2018)
+Tetanus Neonatal Rate - calculated from WHO incidence (2017) and WDI population data - Hannah Behren
+The Conference Board Total Economy Database, GDP per capita data (2016) 
+The allocation of time over five decades - Aguiar and Hurst (2006)
+The world's number and share of vaccinated one-year-olds 
+Time spent on domestic work – UN (2017) and OECD (2014)
+Time spent, participation time, and participation rates - Eurostat
+Time that doctors spend with a patient - Das, Hammer, and Leonard (2008)
+Time use in Finland - Statistics Finland
+Time use in Sweden - Statistics Sweden
+Top 1% wealth shares - Chartbook of Economic Inequality (2017)
+Top Net Personal Wealth Shares – WID (2018)
+Top income shares – World Wealth and Income Database (2018)
+Top marginal income tax rate – Reynolds (2008)
+Total Economy Productivity - OECD
+Total Economy Productivity Growth - OECD
+Total Fertility Rate – Gapminder until 1950 then updated UN figures (2015)
+Total cases of poliomyelitis virus by country and year from 1980 onwards - WHO (2020)
+Total fertility by region, 1955-2015 - UN Population Division (2015 revision)
+Total fertility by region, 2020-2100 medium variant projection - UN Population Division (2015 revisi
+Total gross official disbursements for medical research and basic heath sectors - OECD
+Total number of workers by sector (GGDC, 2017)
+Total population - Gapminder, UN Population Division
+Total population by broad age group, both sexes, 1950-2100 - UN Population Division (2015)
+Total value of exports by country to world (%GDP) (OWID calculations based on Fouquin and Hugot (CEP
+Tourism data by World Region - UNWTO (2019)
+Trade Data - Penn World Tables v8.1 (2015)
+Trade as share of GDP - World Bank (2016)
+Trade share by type of trade (OWID calculations based on NBER- United Nations Trade Data 1962-2000)
+Trade share with capital- and labor-intensive countries (OWID calculations based on Fouquin and Hugo
+Trade – Giovanni and Tena-Junguito (2016)
+Trade – World Bank (2016) &amp; OECD Economic Outlook (2007)
+Transistors per microprocessor - Rupp &amp; Horowitz
+Tree density (Crowther et al. 2015)
+Tropical deforestation by country or region (Pendrill et al. (2019))
+Trust in Govt – OECD
+Trust in Science and Health Professionals - Wellcome Trust (2019)
+Trust – Eurostat
+Trust – US
+Trust – World Value Survey
+Tuberculosis by country, world region and world - WHO GHO (2016)
+Tuberculosis deaths - WHO GHO (2017)
+UCDP!PRIO Armed Conflict Dataset version 17.2 (direct form UCDP)
+UK Cholera Death over the long-term - ONS
+UK Defence Spending - ukpublicspending.com 
+UK Golden Cohort Table
+UK Nominal wage data, price data, and real wage – Bank of England (!Three centuries of macroeconomic
+UK electricity production by source - DECC (2016)
+UN Population Division (2015)
+UN Population Division (Median Age) (2015)
+UN Population Division (Median Age) (2017)
+UN Population by age group to 2100 - UN Population Statistics Division (2017)
+UNESCO metadata on literacy (UIS (2017))
+US Corn Yields - USDA (2017) &amp; FAO (2017)
+US Female Labor Force Participation 1890-2005 - Olivetti (2013)
+US Maternal Mortality and FLFP Index - OWID (2017)
+US Measles Cases and Deaths (OWID, 2017)
+US Opinion on wives working 1936-1998 - OWID compilation
+US Revenue Public Schools - US Bureau of the Census and NCES (2017)
+USA Consumer Price Index Goods and Services 1997-2017 - US Bureau of Labor Statistics (2017)
+USA Polio cases and deaths 1910-2010 - OWID based on US Public Health Service (1910-1951); US Center
+USA patents granted - US Patent &amp; Trademark Office
+Unadjusted female-male hourly wage ratios by percentile – Blau, Kahn (2017)
+Under 5 mortality rate [Our World in Data]
+Under five mortality rate - UN World Population Prospects (2015)
+Unemployment rate, ages 15-24, by education - ILOSTAT (2017)
+Unemployment rate, ages 25-54, by education - ILOSTAT (2017)
+Unemployment rate, all ages, by education - ILOSTAT (2017)
+Unintended pregnancy rates (per 1000 women) - Bearak et al. (2018)
+Union Density - Quality of Government (QoG) (2017)
+United Nations Peacekeeping
+United Nations! Human Development Index (HDI)
+Urban and rural population 1950-2050 - UN World Urbanization Prospects 2018
+Urban and rural populations in the United States - US Census Bureau (2010)
+Urban and rural share 1950-2050 - UN World Urbanization Prospects 2018
+Urban definition - population threshold (UN; 2018)
+Urban population living in slums (WB WDI)
+Urbanization and Development in Japan - Kuroda (1986)
+Urbanization in the long run - OWID based on the UN World Urbanization Prospects 2018 and others
+Urbanization share (European Commission, Atlas of the Human Planet)
+Use of different social media sites by demographic groups
+Vaccine Coverage and Disease Burden - WHO (2017)
+Value added to GDP by 10 sectors (GGDC, 2017)
+Value of global merchandise imports and exports - (Fouquin and Hugot (CEPII 2016) National data)
+Violent Victimization - US Bureau of Justice Statistics (2017)
+Violent discipline in the US (US General Social Survey (2017))
+Violent discipline – UNICEF (2017)
+Volcanic eruption deaths (NGDC!NOAA)
+Wages in the manufacturing sector vs. several food prices in the US – U.S. Bureau of Labor Statistic
+Water footprint food products - Mekonnen &amp; Hoekstra
+Water resources by continent - FAO AQUASTAT
+Water withdrawals and consumption - Aquastat
+Watts per MIPS- Kurzweil
+Wealth (total) by component for various country groupings - World Bank (2017)
+Wealth as percent national income by wealth type – Piketty (2014)
+Wealth per capita by component by country - World Bank (2017)
+Wealth per capita by component for various country groupings - World Bank (2017)
+Weather fatality rates in the US – OWID based on NOAA and Lopez Holle and population data
+Weekly home production hours in the USA - Ramey (2009) &amp; Ramey Francis (2009)
+Whale catch (Rocha et al.; IWC)
+Whale catch by decade (Rocha et al. &amp; IWC)
+Whale populations (Pershing et al. 2010)
+Wheat prices, long run, in England (Makridakis et al. 1997)
+Who Americans spend time with - American Time Use Survey (2009-2019)
+Wildfire data in the US (NIFC)
+Women's Economic Opportunity 2012 - Economist Intelligence Unit (2012)
+Women's weekly earnings as a percentage of men's - Bureau of Labor Statistics (2017)
+Women’s Political Representation using Paxton et al (2006), IPU (2017) &amp; WDI (2017) 
+Working Hours Data - Huberman &amp; Minns (2007)
+World Bank Economy &amp; Growth - World Bank EdStats (2015)
+World Bank Health - World Bank (2016)
+World Bank Income Thresholds - World Bank (2017)
+World Bank! Education Dataset - World Bank (2015)
+World GDP in 2011 int $ – OWID based on World Bank + Maddison (2017)
+World Happiness Report (2019)
+World Population Projections - HYDE and UN Population Division (2017)
+World Population by Fertility dataset - OWID (2016)
+World Population by Political Regime they live in - OWID (2016)
+World Population over 12000 years - various sources (2019)
+World Poverty Clock
+World Regions according to the World Bank
+World conflict death rate since 1989 (various sources)
+World conflict deaths (various sources)
+Yaws status and number of reported cases - WHO Global Health Observatory (2018)
+Year of Maternal and Neonatal Tetanus (MNT) elimination (WHO and KIWANIS, 2018)
+Year of last Rinderpest case - OIE (2018)
+Year of last recorded wild poliomyelitis virus - WHO (GPEI) (2017)
+Year of smallpox eradication by country - WHO (1988)
+Years of Schooling - based on Lee-Lee (2016), Barro-Lee (2018) and UNDP (2018)
+Youth Mortality Rate - UN IGME (2018)`.split("\n")
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Mon Mar 15 2021 14:14:14 GMT+0000 (Coordinated Universal Time)
+            </div>
+        </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
