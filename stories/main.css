@@ -4085,7 +4085,9 @@ html.IsInIframe .ExplorerFigure,
 }
 .ExplorerControlBar .ExplorerControl .ControlOption {
   line-height: 1.3;
-  margin-bottom: 9px;
+}
+.ExplorerControlBar .ExplorerControl .ControlOption + .ControlOption {
+  margin-top: 8px;
 }
 .ExplorerControlBar .ExplorerControl .UnavailableOption {
   opacity: 0.5;
@@ -4105,7 +4107,7 @@ html.IsInIframe .ExplorerFigure,
   right: 0;
   z-index: 100;
   border-radius: 0;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 .mobile-explorer .ExplorerControlBar .mobile-button {
   margin: 12px 0;
@@ -4133,11 +4135,18 @@ html.IsInIframe .ExplorerFigure,
   max-width: unset;
   padding-top: 0;
   padding-bottom: 0;
+  margin-right: 0;
 }
 .mobile-explorer .ExplorerControl.count {
   width: unset;
 }
 .mobile-explorer .ExplorerControl .intervalDropdown {
+  width: 100%;
+}
+.mobile-explorer .ExplorerControl + .ExplorerControl {
+  padding-top: 15px;
+}
+.mobile-explorer .ExplorerDropdown {
   width: 100%;
 }
 
@@ -6339,9 +6348,6 @@ blockquote {
 .mobile-explorer .EntityList {
   min-height: 150px;
   height: 35vh;
-}
-.mobile-explorer .ControlHeader {
-  padding-top: 6px;
 }
 .mobile-explorer .ExplorerFigure {
   min-height: 480px;
