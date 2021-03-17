@@ -1545,7 +1545,6 @@ figure[data-explorer-src] {
     flex: 1 0 44rem;
     max-width: 50rem;
     top: 0;
-    position: -webkit-sticky;
     position: sticky;
   }
   .page .wp-block-columns.is-style-sticky-right .wp-block-column:last-child > *:first-child {
@@ -1556,7 +1555,6 @@ figure[data-explorer-src] {
     flex: 1 0 44rem;
     max-width: 50rem;
     top: 0;
-    position: -webkit-sticky;
     position: sticky;
   }
   .page .wp-block-columns.is-style-sticky-left .wp-block-column:first-child > *:first-child {
@@ -2159,7 +2157,6 @@ legend {
 .entry-sidebar .entry-toc {
   top: 0;
   height: 100vh;
-  position: -webkit-sticky;
   position: sticky;
   line-height: 1.3em;
   padding: 1rem 0;
@@ -2231,7 +2228,6 @@ legend {
 @media only screen and (max-width: 113.9375rem) {
   .entry-sidebar .toggle-toc button {
     z-index: 20;
-    position: -webkit-sticky;
     position: sticky;
     top: 1rem;
     width: 2rem;
@@ -3054,7 +3050,6 @@ legend {
   padding-bottom: 8px;
   line-height: 1.3;
   vertical-align: bottom;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -6356,7 +6351,6 @@ blockquote {
 }
 
 .global-entity-control-container {
-  position: -webkit-sticky;
   position: sticky;
   top: 5px;
   z-index: 11;
@@ -6992,7 +6986,6 @@ blockquote {
 }
 .EntitySelectorSingle header,
 .EntitySelectorMulti header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: linear-gradient(white 75%, rgba(255, 255, 255, 0) 100%);
@@ -7236,7 +7229,6 @@ blockquote {
 }
 
 .tableTab .data-table th {
-  position: -webkit-sticky;
   position: sticky;
   z-index: 10;
   white-space: nowrap;
@@ -7251,7 +7243,6 @@ blockquote {
   top: 53px;
 }
 .tableTab .data-table .entity {
-  position: -webkit-sticky;
   position: sticky;
   left: 0;
   z-index: 10;
