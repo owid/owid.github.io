@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.37% </span>
+                <span class="strong">96.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>206/216</span>
+                <span class='fraction'>213/220</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.37% </span>
+                <span class="strong">96.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>206/216</span>
+                <span class='fraction'>213/220</span>
             </div>
         
             
@@ -468,7 +468,7 @@
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
@@ -523,9 +523,9 @@
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">74x</span>
@@ -551,22 +551,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -588,14 +588,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">70x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -742,7 +742,7 @@ export const legacyToOwidTableAndDimensions = (
         ?.filter((item) =&gt; item.entityId &amp;&amp; item.color)
         .forEach((item) =&gt; {
             entityColorMap.set(item.entityId, item.color!)
-            const varId<span class="branch-0 cbranch-no" title="branch not covered" > = dimens</span>ions[item.index]?.variableId
+            const varId = <span class="branch-0 cbranch-no" title="branch not covered" >dimens</span>ions[item.index]?.variableId
             if (varId) columnColorMap.set(varId.toString(), item.color!)
         })
 &nbsp;
@@ -786,8 +786,8 @@ export const legacyToOwidTableAndDimensions = (
 &nbsp;
         // Value column
         const valueColumnDef = columnDefFromLegacyVariable(variable)
-        const valueColumnColor<span class="branch-0 cbranch-no" title="branch not covered" > =</span>
-<span class="cstat-no" title="statement not covered" ></span>            dimension.display?.color ??
+        const valueColumnColor =
+<span class="branch-0 cbranch-no" title="branch not covered" >            dimension.displa</span>y?.color ??
             columnColorMap.get(dimension.variableId.toString())
         // Ensure the column slug is unique by copying it from the dimensions
         // (there can be two columns of the same variable with different targetTimes)
@@ -812,16 +812,16 @@ export const legacyToOwidTableAndDimensions = (
         // Column values
 &nbsp;
         const times = timeColumnValuesFromLegacyVariable(variable)
-        const entityIds<span class="branch-0 cbranch-no" title="branch not covered" > = variable.entiti</span>es ?? []
+        const entityIds = <span class="branch-0 cbranch-no" title="branch not covered" >vari</span>able.entities ?? []
         const entityNames = entityIds.map((id) =&gt; entityMetaById[id].name)
         const entityCodes = entityIds.map((id) =&gt; entityMetaById[id].code)
 &nbsp;
         // If there is a conversionFactor, apply it.
         let values = <span class="branch-0 cbranch-no" title="branch not covered" >variable.values || []</span>
-        const conversionFactor<span class="branch-0 cbranch-no" title="branch not covered" > = valueColumnDef.display?.c</span>onversionFactor
+        const conversionFacto<span class="branch-0 cbranch-no" title="branch not covered" >r</span> = valueColumnDef.display?.conversionFactor
         if (conversionFactor !== undefined) {
             values = values.map((value) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>                isNumber(value) ? value * conversionFactor : value
+<span class="branch-0 cbranch-no" title="branch not covered" >                isNumber(value) ? value * conversionFactor : value</span>
             )
         }
 &nbsp;
@@ -834,17 +834,17 @@ export const legacyToOwidTableAndDimensions = (
         }
 &nbsp;
         if (annotationColumnDef) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            columnStore[</span>
+<span class="cstat-no" title="statement not covered" ></span>            columnStore[
 <span class="cstat-no" title="statement not covered" >                annotationColumnDef.slug</span>
-<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; annotationMa</span>p!.get(entityName))
+<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; annotationMap!.get(entityName))</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         if (colorColumnSlug) {
             columnStore[colorColumnSlug] = entityIds.map(
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                (entityId) =&gt;</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                    grapherConfig.selectedEntityColors?.[
-<span class="cstat-no" title="statement not covered" ></span>                        entityMetaById[entityId].name
-                    ] ?? entityColorMap.get(entityId)
+                (entityId) =&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                    grapherConfig.selectedEntityColors?.[</span>
+<span class="cstat-no" title="statement not covered" >                        entityMetaById[entityId].name</span>
+<span class="cstat-no" title="statement not covered" ></span>                    ] ?? entityColorMap.get(entityId)
             )
         }
 &nbsp;
@@ -859,7 +859,7 @@ export const legacyToOwidTableAndDimensions = (
         // entities columns only, excluding any time columns.
         // We do this by dropping the column. We interpolate before which adds an originalTime
         // column which can be used to recover the time.
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        const targetTime = dimension?.targetYear
+        con<span class="branch-0 cbranch-no" title="branch not covered" >s</span>t targetTime = dimension?.targetYear
         if (
             grapherConfig.type === ChartTypeName.ScatterPlot &amp;&amp;
             isNumber(targetTime)
@@ -871,8 +871,8 @@ export const legacyToOwidTableAndDimensions = (
                 // the big join).
                 // This is why we use filterByTargetTimes() which handles that case.
                 .filterByTargetTimes(
-                    [targetTime]<span class="branch-0 cbranch-no" title="branch not covered" >,</span>
-<span class="cstat-no" title="statement not covered" >                    valueColumnDef</span>.display?.tolerance
+                    [targetTime],
+<span class="branch-0 cbranch-no" title="branch not covered" >                    valueColumnDef.display</span>?.tolerance
                 )
                 // Interpolate with 0 to add originalTimes column
                 .interpolateColumnWithTolerance(valueColumnDef.slug, 0)
@@ -884,8 +884,8 @@ export const legacyToOwidTableAndDimensions = (
     })
 &nbsp;
     let joinedVariablesTable = <span class="branch-0 cbranch-no" title="branch not covered" >variableTables.length</span>
-<span class="cstat-no" title="statement not covered" >        ? fullJoinTables(variableTables</span>)
-<span class="cstat-no" title="statement not covered" ></span>        : new OwidTable()
+<span class="cstat-no" title="statement not covered" >        ? fullJoinTables(variableTables)</span>
+        : new OwidTable()
 &nbsp;
     // Inject a common "time" column that is used as the main time column for the table
     // e.g. for the timeline.
@@ -910,11 +910,11 @@ const fullJoinTables = (tables: OwidTable[]) =&gt;
     tables.reduce((joinedTable, table) =&gt; joinedTable.fullJoin(table))
 &nbsp;
 const columnDefFromLegacyVariable = (
-    variable: LegacyVariableConfig<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span>
+    variable: LegacyVariableConfig
 ): OwidColumnDef =&gt; {
     const slug = variable.id.toString() // For now, the variableId will be the column slug
     const {
-        unit,
+        unit,<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span>
         shortUnit,
         description,
         coverage,
@@ -1021,7 +1021,7 @@ const annotationsToMap = (annotations: string) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

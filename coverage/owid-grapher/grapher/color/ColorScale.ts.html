@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.57% </span>
+                <span class="strong">98.38% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>362/371</span>
+                <span class='fraction'>365/371</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.57% </span>
+                <span class="strong">98.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>362/371</span>
+                <span class='fraction'>365/371</span>
             </div>
         
             
@@ -486,7 +486,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">77x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">77x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">77x</span>
@@ -516,7 +516,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">80x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">80x</span>
@@ -588,8 +588,8 @@
 <span class="cline-any cline-yes">92x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">37x</span>
-<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">77x</span>
@@ -669,9 +669,9 @@
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">53x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">53x</span>
+<span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">53x</span>
@@ -744,10 +744,10 @@
 <span class="cline-any cline-yes">77x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">192x</span>
-<span class="cline-any cline-yes">145x</span>
-<span class="cline-any cline-yes">145x</span>
-<span class="cline-any cline-yes">192x</span>
+<span class="cline-any cline-yes">188x</span>
+<span class="cline-any cline-yes">142x</span>
+<span class="cline-any cline-yes">142x</span>
+<span class="cline-any cline-yes">188x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { computed, toJS } from "mobx"
 import { mean, deviation } from "d3-array"
@@ -792,7 +792,7 @@ export class ColorScale {
     }
 &nbsp;
     @computed get customNumericValues() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.config.customNumericValues ?? []</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customNumericValues ?? []</span>
     }
 &nbsp;
     @computed get customNumericColorsActive() {
@@ -808,7 +808,7 @@ export class ColorScale {
     @computed get customHiddenCategories(): {
         [key: string]: true | undefined
     } {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.config.customHiddenCategories ?? {}</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customHiddenCategories ?? {}</span>
     }
 &nbsp;
     @computed get customNumericLabels() {
@@ -821,24 +821,24 @@ export class ColorScale {
     }
 &nbsp;
     @computed get isColorSchemeInverted() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.config.co</span>lorSchemeInvert ?? false
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.co</span>lorSchemeInvert ?? false
     }
 &nbsp;
     @computed private get customCategoryLabels(): {
         [key: string]: string | undefined
     } {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return thi</span>s.config.customCategoryLabels ?? {}
+        return <span class="branch-0 cbranch-no" title="branch not covered" >thi</span>s.config.customCategoryLabels ?? {}
     }
 &nbsp;
     @computed get baseColorScheme() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >(</span>
-            this.config.baseColorScheme ??
+        return (
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.config.</span>baseColorScheme ??
             this.manager.defaultBaseColorScheme ??
             ColorSchemeName.BuGn
         )
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get defaultColorScheme() {</span>
+    @computed private get de<span class="fstat-no" title="function not covered" >faultColorScheme() {</span>
 <span class="cstat-no" title="statement not covered" >        return ColorSchemes[ColorSchemeName.BuGn]</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -861,8 +861,8 @@ export class ColorScale {
     }
 &nbsp;
     @computed get sortedNumericValues() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(</span></span></span>
-<span class="cstat-no" title="statement not covered" >            this.colorS</span>caleColumn?.valuesAscending?.filter(
+        return (
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.colorS</span></span>caleColumn?.valuesAscending?.filter(</span>
 <span class="cstat-no" title="statement not covered" >                (x) =&gt; typeof x === "number"</span>
 <span class="cstat-no" title="statement not covered" >            ) ?? []</span>
         )
@@ -877,11 +877,11 @@ export class ColorScale {
     }
 &nbsp;
     @computed private get categoricalValues() {
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        return this.colorScaleColumn?.s</span>o</span>rtedUniqNonEmptyStringVals ?? []
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.colorScaleColumn?.s</span>o</span>rtedUniqNonEmptyStringVals ?? []
     }
 &nbsp;
     @computed private get colorScheme() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return ColorSchemes</span>[this.baseColorScheme] ?? this.defaultColorScheme
+        return <span class="branch-0 cbranch-no" title="branch not covered" >ColorSchemes</span>[this.baseColorScheme] ?? this.defaultColorScheme
     }
 &nbsp;
     @computed get singleColorScale() {
@@ -894,7 +894,7 @@ export class ColorScale {
     }
 &nbsp;
     @computed private get minBinValue() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.config.customNumericMinValue ?? t</span>his.autoMinBinValue
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customNumericMinValue ?? t</span>his.autoMinBinValue
     }
 &nbsp;
     @computed private get manualBinMaximums() {
@@ -953,7 +953,7 @@ export class ColorScale {
     }
 &nbsp;
     @computed get numAutoBins() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.config.binningStrategyBinCount ?? 5</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.binningStrategyBinCount ?? 5</span>
     }
 &nbsp;
     @computed get isManualBuckets() {
@@ -1014,10 +1014,10 @@ export class ColorScale {
             const color = customNumericColors[index] ?? baseColor
             const label = customNumericLabels[index]
 &nbsp;
-            const d<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >isplayMin =</span></span>
-<span class="cstat-no" title="statement not covered" >                this.colorScaleColumn?.formatValueShort</span>(min) ?? min.toString()
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const displayMax =</span></span>
-<span class="cstat-no" title="statement not covered" >                this</span>.colorScaleColumn?.formatValueShort(max) ?? max.toString()
+            const displayMin =
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this.colorScaleColumn?.f</span>ormatValueShort</span>(min) ?? min.toString()
+            const displayMax =
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this</span></span>.colorScaleColumn?.formatValueShort(max) ?? max.toString()
 &nbsp;
             const currentMin = min
             min = max
@@ -1092,7 +1092,7 @@ export class ColorScale {
     getColor(value: number | string | undefined) {
         return value === undefined
             ? this.noDataColor
-            :<span class="branch-0 cbranch-no" title="branch not covered" > this.l</span>egendBins.find((bin) =&gt; bin.contains(value))?.color
+            : <span class="branch-0 cbranch-no" title="branch not covered" >this.l</span>egendBins.find((bin) =&gt; bin.contains(value))?.color
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -1102,7 +1102,7 @@ export class ColorScale {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

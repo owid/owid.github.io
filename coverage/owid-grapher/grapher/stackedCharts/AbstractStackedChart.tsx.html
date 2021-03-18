@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.47% </span>
+                <span class="strong">97.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>301/312</span>
+                <span class='fraction'>304/313</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.47% </span>
+                <span class="strong">97.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>301/312</span>
+                <span class='fraction'>304/313</span>
             </div>
         
             
@@ -429,7 +429,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
@@ -534,7 +534,7 @@
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
@@ -584,15 +584,15 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -630,12 +630,12 @@
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
-<span class="cline-any cline-yes">7511x</span>
-<span class="cline-any cline-yes">7511x</span>
-<span class="cline-any cline-yes">7511x</span>
-<span class="cline-any cline-yes">7511x</span>
-<span class="cline-any cline-yes">7511x</span>
-<span class="cline-any cline-yes">7511x</span>
+<span class="cline-any cline-yes">7513x</span>
+<span class="cline-any cline-yes">7513x</span>
+<span class="cline-any cline-yes">7513x</span>
+<span class="cline-any cline-yes">7513x</span>
+<span class="cline-any cline-yes">7513x</span>
+<span class="cline-any cline-yes">7513x</span>
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
@@ -739,7 +739,7 @@ export class AbstactStackedChart
         return this.manager.baseFontSize ?? BASE_FONT_SIZE
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    protected get paddingForLegend() {</span>
+    protected get paddingForLeg<span class="fstat-no" title="function not covered" >end() {</span>
 <span class="cstat-no" title="statement not covered" >        return 0</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -804,7 +804,7 @@ export class AbstactStackedChart
     @computed private get horizontalAxisPart() {
         const axisConfig =
             this.manager.xAxis || new AxisConfig(this.manager.xAxisConfig, this)
-        if (this.manager.hideXAxis) <span class="branch-0 cbranch-no" title="branch not covered" >axisConfig.</span>hideAxis = true
+        if (this.manager.hi<span class="branch-0 cbranch-no" title="branch not covered" >d</span>eXAxis) axisConfig.hideAxis = true
 &nbsp;
         const axis = axisConfig.toHorizontalAxis()
         axis.updateDomainPreservingUserSettings(
@@ -824,7 +824,7 @@ export class AbstactStackedChart
         )
         const axisConfig =
             this.manager.yAxis || new AxisConfig(this.manager.yAxisConfig, this)
-        if (this.manager.hideYAxis) <span class="branch-0 cbranch-no" title="branch not covered" >axisC</span>onfig.hideAxis = true
+        if (this.manager.hideYAxis) <span class="branch-0 cbranch-no" title="branch not covered" >axisCon</span>fig.hideAxis = true
         const axis = axisConfig.toVerticalAxis()
         // Use user settings for axis, unless relative mode
         if (this.manager.isRelativeMode) axis.domain = [0, 100]
@@ -858,7 +858,7 @@ export class AbstactStackedChart
                 return {
                     isProjection,
                     seriesName,
-                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >owid</span>RowsByEntityName.get(seriesName) || [],
+                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >ow</span>idRowsByEntityName.get(seriesName) || [],
                 }
             })
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
@@ -876,22 +876,22 @@ export class AbstactStackedChart
 &nbsp;
     @computed get failMessage() {
         const { yColumnSlugs } = this
-        if (!yColu<span class="branch-0 cbranch-no" title="branch not covered" >m</span>nSlugs.length) return "Missing variable"
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!yColumnSlugs.length) return "Missing variable"
         if (!this.series.length) return "No matching data"
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!this.allStackedPoints.length) return "No matching points"
+        if (!this.allStackedPoints.l<span class="branch-0 cbranch-no" title="branch not covered" >e</span>ngth) return "No matching points"
         return ""
     }
 &nbsp;
     @computed private get colorScheme() {
-        cons<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >t scheme =</span></span>
-<span class="cstat-no" title="statement not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.ma</span>nager.baseColorScheme</span>
-<span class="cstat-no" title="statement not covered" >                ? ColorSchemes[this.manager.baseColorScheme]</span>
-<span class="cstat-no" title="statement not covered" ></span>                : null) ?? ColorSchemes.stackedAreaDefault
+        const scheme =
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (this.manager.baseColorScheme</span></span></span>
+<span class="cstat-no" title="statement not covered" >                ? Co</span>lorSchemes[this.manager.baseColorScheme]
+                : null) ?? ColorSchemes.stackedAreaDefault
         const seriesCount = this.isEntitySeries
             ? this.selectionArray.numSelectedEntities
             : this.yColumns.length
         const baseColors = scheme.getColors(seriesCount)
-        if (this.manager.invertColorScheme) <span class="branch-0 cbranch-no" title="branch not covered" >baseCol</span>ors.reverse()
+        if (this.ma<span class="branch-0 cbranch-no" title="branch not covered" >n</span>ager.invertColorScheme) baseColors.reverse()
         return scaleOrdinal(baseColors)
     }
 &nbsp;
@@ -900,7 +900,7 @@ export class AbstactStackedChart
         const color = this.isEntitySeries
             ? table.getColorForEntityName(seriesName)
             : table.getColorForColumnByDisplayName(seriesName)
-<span class="branch-0 cbranch-no" title="branch not covered" >        return color ?? this.colorScheme(seriesName) </span>?? "#ddd"
+        return <span class="branch-0 cbranch-no" title="branch not covered" >color</span> ?? this.colorScheme(seriesName) ?? "#ddd"
     }
 &nbsp;
     @computed protected get selectionArray() {
@@ -911,8 +911,8 @@ export class AbstactStackedChart
         return this.seriesStrategy === SeriesStrategy.entity
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get seriesColors() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.series.map((series) =&gt; series.color)</span>
+    @compute<span class="fstat-no" title="function not covered" >d get seriesColors() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.</span>series.map((series) =&gt; series.color)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get unstackedSeries() {
@@ -935,8 +935,8 @@ export class AbstactStackedChart
             })
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get series() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.unstackedSeries</span>
+    @compute<span class="fstat-no" title="function not covered" >d get series() {</span>
+<span class="cstat-no" title="statement not covered" >        return this.</span>unstackedSeries
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -946,7 +946,7 @@ export class AbstactStackedChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

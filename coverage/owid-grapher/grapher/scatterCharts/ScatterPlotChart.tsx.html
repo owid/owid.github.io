@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.2% </span>
+                <span class="strong">89.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>743/833</span>
+                <span class='fraction'>746/833</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.2% </span>
+                <span class="strong">89.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>743/833</span>
+                <span class='fraction'>746/833</span>
             </div>
         
             
@@ -1168,7 +1168,7 @@
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">71x</span>
-<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
@@ -1238,7 +1238,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">101x</span>
-<span class="cline-any cline-yes">100x</span>
+<span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">101x</span>
 <span class="cline-any cline-yes">101x</span>
@@ -1301,7 +1301,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -1392,13 +1392,13 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">40x</span>
@@ -1642,7 +1642,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">74x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
@@ -2128,8 +2128,8 @@ export class ScatterPlotChart
         }
 &nbsp;
         if (this.colorColumnSlug) {
-            const t<span class="branch-0 cbranch-no" title="branch not covered" >olerance =</span>
-                table.get(this.colorColumnSlug)?.display.tolerance ?? Infinity
+            const tolerance =
+<span class="branch-0 cbranch-no" title="branch not covered" >                table.get(this.colo</span>rColumnSlug)?.display.tolerance ?? Infinity
             table = table.interpolateColumnWithTolerance(
                 this.colorColumnSlug,
                 tolerance
@@ -2245,7 +2245,7 @@ export class ScatterPlotChart
         return this.props.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get canAddCountry() {</span>
+    @computed private get canAddCoun<span class="fstat-no" title="function not covered" >try() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        const { addCountryMode } = this.manager
 <span class="cstat-no" title="statement not covered" >        return addCountryMod</span>e &amp;&amp; addCountryMode !== EntitySelectionMode.Disabled
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -2352,14 +2352,14 @@ export class ScatterPlotChart
     }
 &nbsp;
     @computed get displayStartTime() {
-        return this.transformedTable.timeColumnFormatFunction<span class="branch-0 cbranch-no" title="branch not covered" >(</span>
-<span class="cstat-no" title="statement not covered" ></span>            this.transformedTable.minTime ?? 1900
+        return this.transformedTable.timeColumnFormatFunction(
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>            this.transformedTable.minTime ?? 1900
         )
     }
 &nbsp;
     @computed get displayEndTime() {
-        return this.transformedTable.timeColu<span class="branch-0 cbranch-no" title="branch not covered" >mnFormatFunction(</span>
-<span class="cstat-no" title="statement not covered" >            this.transformedTable.maxTime ?? 2000</span>
+        return this.transformedTable.timeColumnFormatFunction(
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.transformedTable.maxTime ?? 2000</span>
         )
     }
 &nbsp;
@@ -2602,8 +2602,8 @@ export class ScatterPlotChart
     }
 &nbsp;
     @computed get colorScaleConfig() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >(</span>
-<span class="cstat-no" title="statement not covered" >            C</span>olorScaleConfig.fromDSL(this.colorColumn.def) ??
+        return (
+<span class="branch-0 cbranch-no" title="branch not covered" >            C</span>olorScaleConfig.fromDSL(this.colorColumn.def) ??
             this.manager.colorScale
         )
     }
@@ -2746,7 +2746,7 @@ export class ScatterPlotChart
         return this.domainDefault("x")
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get selectedPoints() {</span>
+    @computed private get selectedPoints<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        const</span> seriesNamesSet = this.getSeriesNamesToShow(true)
 <span class="cstat-no" title="statement not covered" >        return this.</span>allPoints.filter(
 <span class="cstat-no" title="statement not covered" >            (point) =&gt; point.entityName &amp;&amp; seriesNamesSe</span>t.has(point.entityName)
@@ -2808,7 +2808,7 @@ export class ScatterPlotChart
     @computed private get xScaleType() {
         return this.manager.isRelativeMode
             ? ScaleType.linear
-            :<span class="branch-0 cbranch-no" title="branch not covered" > this.xAxisCo</span>nfig.scaleType ?? ScaleType.linear
+            : <span class="branch-0 cbranch-no" title="branch not covered" >this.xAxisCo</span>nfig.scaleType ?? ScaleType.linear
     }
 &nbsp;
     @computed private get xAxisLabelBase() {<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
@@ -2947,7 +2947,7 @@ export class ScatterPlotChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -495,7 +495,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -894,15 +894,15 @@ export class ExplorerProgram extends GridProgram {
         return new ExplorerProgram(json.slug, json.program, json.lastCommit)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get clone() {</span>
+    get clone<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return ExplorerProgram.fromJson(this.toJson())</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get isNewFile() {</span>
+    get isNewFile<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.slug === DefaultNewExplorerSlug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get filename() {</span>
+    g<span class="fstat-no" title="function not covered" >et filename() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.slug</span> + EXPLORER_FILE_SUFFIX
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -911,7 +911,7 @@ export class ExplorerProgram extends GridProgram {
         return this
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get fullPath() {</span>
+    get fullPath<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return makeFullPath(this.slug)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -933,7 +933,7 @@ export class ExplorerProgram extends GridProgram {
         return this.getLineValue(ExplorerGrammar.explorerTitle.keyword)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get title() {</span>
+    get title<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.title.keyword)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -941,7 +941,7 @@ export class ExplorerProgram extends GridProgram {
         return this.getLineValue(ExplorerGrammar.subNavId.keyword) as SubNavId
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get googleSheet() {</span>
+    get googleSheet<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.getLineValue(ExplorerGrammar.googleSheet.keyword)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -969,7 +969,7 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get selection() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.getLine(ExplorerGrammar.selection.keyword)</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.getLine(ExplorerGrammar.selection.keyword)</span>
             ?.split(this.cellDelimiter)
             .slice(1)
     }
@@ -981,7 +981,7 @@ export class ExplorerProgram extends GridProgram {
         return slugs<span class="branch-0 cbranch-no" title="branch not covered" > ? slugs.</span>split(" ") : undefined
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get hideControls() {</span>
+    get hideC<span class="fstat-no" title="function not covered" >ontrols() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.hideContr</span>ols.keyword)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -989,7 +989,7 @@ export class ExplorerProgram extends GridProgram {
         return this.getLineValue(ExplorerGrammar.downloadDataLink.keyword)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get isPublished() {</span>
+    get isPubl<span class="fstat-no" title="function not covered" >ished() {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            this.getLineValue(ExplorerGrammar.isPublished.ke</span>yword) ===
 <span class="cstat-no" title="statement not covered" >            GridBo</span>olean.true
@@ -1018,17 +1018,17 @@ export class ExplorerProgram extends GridProgram {
         return this.getBlock(keywordIndex)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get grapherCount() {</span>
+    get grapherCou<span class="fstat-no" title="function not covered" >nt() {</span>
 <span class="cstat-no" title="statement not covered" >        return </span>this.decisionMatrix.numRows || 1
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get tableCount() {</span>
+    get tableCoun<span class="fstat-no" title="function not covered" >t() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.lines.filter((line) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >            line.s</span>tartsWith(ExplorerGrammar.table.keyword)
 <span class="cstat-no" title="statement not covered" >        ).length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get inlineTableCount() {</span>
+    get inlineTableCount<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.lines</span>
 <span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; line.startsWith(ExplorerGrammar.table.keyword))</span>
 <span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; {</span>
@@ -1228,7 +1228,7 @@ export const trimAndParseObject = (config: any, grammar: Grammar) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

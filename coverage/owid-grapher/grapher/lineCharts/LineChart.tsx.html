@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.02% </span>
+                <span class="strong">69.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>430/623</span>
+                <span class='fraction'>431/623</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.02% </span>
+                <span class="strong">69.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>430/623</span>
+                <span class='fraction'>431/623</span>
             </div>
         
             
@@ -957,7 +957,7 @@
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">37x</span>
-<span class="cline-any cline-yes">1981x</span>
+<span class="cline-any cline-yes">1978x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">37x</span>
@@ -1066,7 +1066,7 @@
 <span class="cline-any cline-yes">85x</span>
 <span class="cline-any cline-yes">85x</span>
 <span class="cline-any cline-yes">51x</span>
-<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">51x</span>
@@ -1429,7 +1429,7 @@
 <span class="cline-any cline-yes">85x</span>
 <span class="cline-any cline-yes">85x</span>
 <span class="cline-any cline-yes">49x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">49x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">49x</span>
@@ -1627,7 +1627,7 @@ const BLUR_COLOR = "#eee"
 class Lines extends React.Component&lt;LinesProps&gt; {
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get allValues() {</span>
+    @computed private get allValues<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return flatt</span>en(this.props.placedSeries.map((series) =&gt; series.points))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1690,7 +1690,7 @@ class Lines extends React.Component&lt;LinesProps&gt; {
     }
 &nbsp;
     @computed private get strokeWidth() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.props.lin</span>eStrokeWidth ?? 1.5
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.lin</span>eStrokeWidth ?? 1.5
     }
 &nbsp;
     private renderFocusGroups() {
@@ -2019,7 +2019,7 @@ export class LineChart
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.hoveredS</span>eriesName ? [this.hoveredSeriesName] : []
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get isFocusMode() {</span>
+    @computed get isFocusMode<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.focusedSeriesNa</span>mes.length &gt; 0
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2167,7 +2167,7 @@ export class LineChart
 &nbsp;
     // todo: for now just works with 1 y column
     @computed private get annotationsMap() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.inputTable</span>
+        retu<span class="branch-0 cbranch-no" title="branch not covered" >rn this.inputTable</span>
 <span class="cstat-no" title="statement not covered" >            .getAnno</span>tationColumnForColumn(this.yColumnSlugs[0])
             ?.getUniqueValuesGroupedBy(this.inputTable.entityNameSlug)
     }
@@ -2183,8 +2183,8 @@ export class LineChart
     }
 &nbsp;
     @computed private get colorScheme(): ColorScheme {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >(</span></span>
-<span class="cstat-no" title="statement not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span>
+        return (
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span></span>
 <span class="cstat-no" title="statement not covered" >                ? ColorSc</span>hemes[this.manager.baseColorScheme]
 <span class="cstat-no" title="statement not covered" >                : null) ??</span> ColorSchemes["owid-distinct"]
         )
@@ -2329,7 +2329,7 @@ export class LineChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

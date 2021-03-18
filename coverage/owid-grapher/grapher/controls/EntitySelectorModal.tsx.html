@@ -674,21 +674,21 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    base: React.RefObject&lt;HTMLDivElement&gt; =</span> React.createRef()
 <span class="cstat-no" title="statement not covered" >    dismissable: bool</span>ean = true
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >get availableEntities()</span> {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get availableEntities<span class="fstat-no" title="function not covered" >()</span> {</span>
 <span class="cstat-no" title="statement not covered" >        return this</span>.props.selectionArray.availableEntityNames
 <span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >get fuzzy(): FuzzySearch</span>&lt;SearchableEntity&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get fuzzy<span class="fstat-no" title="function not covered" >(): FuzzySearch</span>&lt;SearchableEntity&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return new FuzzySearch(this.searchable</span>Entities, "name")
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >private get searchableEntities() {</span></span>
+<span class="cstat-no" title="statement not covered" >    @computed private get searchableEntities<span class="fstat-no" title="function not covered" >() {</span></span>
 <span class="cstat-no" title="statement not covered" >        return this.availableEntities.map((name)</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >            return { name } as SearchableEntity</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >get searchResul</span>ts() {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get searchResu<span class="fstat-no" title="function not covered" >l</span>ts() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.searchInput</span>
 <span class="cstat-no" title="statement not covered" >            ? this.fuzzy.search(t</span>his.searchInput)
 <span class="cstat-no" title="statement not covered" ></span>            : sortBy(this.searchableEntities, (result) =&gt; result.name)
@@ -831,7 +831,7 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    base: React.RefObject&lt;</span>HTMLDivElement&gt; = React.createRef()
 <span class="cstat-no" title="statement not covered" >    dismissable: boolean = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >private get availableEnt</span>ities() {</span>
+<span class="cstat-no" title="statement not covered" >    @computed private get availableEn<span class="fstat-no" title="function not covered" >t</span>ities() {</span>
 <span class="cstat-no" title="statement not covered" >        const availableItems: { id: string; label: string }[] </span>= []
 <span class="cstat-no" title="statement not covered" >        this</span>.props.selectionArray.availableEntityNames.forEach((name) =&gt; {
 <span class="cstat-no" title="statement not covered" >            availableItems.push({</span>
@@ -842,11 +842,11 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >        return uniqBy(availableItems, (d) =&gt; d.label)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >get fuzzy(): FuzzySearch&lt;{ id: string; label: string</span> }&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get fuzzy<span class="fstat-no" title="function not covered" >(): FuzzySearch&lt;{ id: string; label: string</span> }&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return new FuzzySearch(this.availableEntities, "</span>label")
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed <span class="fstat-no" title="function not covered" >get searchResults(): { </span>id: string; label: string }[] {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get searchResults<span class="fstat-no" title="function not covered" >(): { </span>id: string; label: string }[] {</span>
 <span class="cstat-no" title="statement not covered" >        return this.searchInput</span>
 <span class="cstat-no" title="statement not covered" ></span>            ? this.fuzzy.search(this.searchInput)
 <span class="cstat-no" title="statement not covered" >            : sortBy(this.a</span>vailableEntities, (result) =&gt; result.label)
@@ -955,7 +955,7 @@ export class EntitySelectorModal extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

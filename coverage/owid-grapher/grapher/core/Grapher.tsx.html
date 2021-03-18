@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.13% </span>
+                <span class="strong">82.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1972/2401</span>
+                <span class='fraction'>1975/2401</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.13% </span>
+                <span class="strong">82.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1972/2401</span>
+                <span class='fraction'>1975/2401</span>
             </div>
         
             
@@ -2871,7 +2871,7 @@
 <span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2902,7 +2902,7 @@
 <span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-yes">94x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2984,8 +2984,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3531,7 +3531,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4004,10 +4004,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">266x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">266x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">246x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4501,7 +4501,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
@@ -4986,7 +4986,7 @@ export class Grapher
 &nbsp;
     // TODO: Pass these 5 in as options, don't get them as globals.
     isDev = this.props.env === "development"
-    analytics = new GrapherAnalytics<span class="branch-0 cbranch-no" title="branch not covered" >(this.props.env ?? "</span>")
+    analytics = new GrapherAnalytics(<span class="branch-0 cbranch-no" title="branch not covered" >this.props.env ?? "</span>")
     isEditor =
         typeof window !== "undefined" &amp;&amp; (window as any).isEditor === true
     @observable bakedGrapherURL = BAKED_GRAPHER_URL
@@ -5064,7 +5064,7 @@ export class Grapher
         if (obj.maxTime) <span class="branch-0 cbranch-no" title="branch not covered" >obj.</span>maxTime = maxTimeToJSON(this.maxTime) as any
 &nbsp;
         // todo: remove dimensions concept
-<span class="branch-0 cbranch-no" title="branch not covered" >        if (this.l</span>egacyConfigAsAuthored?.dimensions)
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.l</span>egacyConfigAsAuthored?.dimensions)
 <span class="branch-0 cbranch-no" title="branch not covered" >            obj.</span>dimensions = this.legacyConfigAsAuthored.dimensions
 &nbsp;
         return obj
@@ -5184,9 +5184,9 @@ export class Grapher
             this.timelineMaxTime === undefined
         )
             return table
-        return table.filterByTimeRa<span class="branch-0 cbranch-no" title="branch not covered" >nge(</span>
-            this.timelineMinTime ?? -Infinity<span class="branch-0 cbranch-no" title="branch not covered" >,</span>
-<span class="cstat-no" title="statement not covered" >            this.timelineMaxTime ?? Infinity</span>
+        return table.filterByTimeRange(
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.timelineMinTime ?? -Infinity,</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.timelineMaxTime ?? Infinity</span>
         )
     }
 &nbsp;
@@ -5216,8 +5216,8 @@ export class Grapher
         const chartTypeName = this
             .typeExceptWhenLineChartAndSingleTimeThenWillBeBarChart
 &nbsp;
-        c<span class="branch-0 cbranch-no" title="branch not covered" >onst ChartClass =</span>
-<span class="cstat-no" title="statement not covered" >            ChartComponentClassMap.get(chartTypeName) ?? DefaultChartClass</span>
+        const ChartClass =
+<span class="branch-0 cbranch-no" title="branch not covered" >            ChartComponentClassMap.get(chartTypeName) ?? DefaultChartClass</span>
         return new ChartClass({ manager: this })
     }
 &nbsp;
@@ -5274,12 +5274,12 @@ export class Grapher
     @observable isPlaying = false
     @observable.ref isSelectingData = false
 &nbsp;
-<span class="fstat-no" title="function not covered" >    private get isStaging() {</span>
+    p<span class="fstat-no" title="function not covered" >rivate get isStaging() {</span>
 <span class="cstat-no" title="statement not covered" >        if (typeof location === undefined) r</span>eturn false
 <span class="cstat-no" title="statement not covered" >        return location.host.includes("staging")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get editUrl() {</span>
+    @computed get editUrl<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.showAdminControls &amp;&amp; !th</span>is.isDev &amp;&amp; !this.isStaging)
 <span class="cstat-no" title="statement not covered" >            return undefined</span>
 <span class="cstat-no" title="statement not covered" >        return `${this.adm</span>inBaseUrl}/admin/${
@@ -5310,7 +5310,7 @@ export class Grapher
     /**
      * Whether the chart is rendered in an Admin context (e.g. on owid.cloud).
      */
-    @computed <span class="fstat-no" title="function not covered" >get useAdminAPI() {</span>
+    @computed get useAdminAPI<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        if (typeof window === "undefined") return false</span>
 <span class="cstat-no" title="statement not covered" >        return window.admin </span>!== undefined
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -5319,7 +5319,7 @@ export class Grapher
      * Whether the user viewing the chart is an admin and we should show admin controls,
      * like the "Edit" option in the share menu.
      */
-    @computed <span class="fstat-no" title="function not covered" >get showAdminControls() {</span>
+    @computed get showAdminControls<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        // This cookie is set by visiting ourworldindat</span>a.org/identifyadmin on the static site.
 <span class="cstat-no" title="statement not covered" >        // There</span> is an iframe on owid.cloud to trigger a visit to that page.
 <span class="cstat-no" title="statement not covered" >        ret</span>urn !!Cookies.get(CookieKey.isAdmin)
@@ -5533,13 +5533,13 @@ export class Grapher
         return uniq(this.dimensions.map((d) =&gt; d.variableId))
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get dataFileName() {</span>
+    @computed private get dataFileName<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return `${this.variableIds.join("+")}</span>.json?v=${
 <span class="cstat-no" title="statement not covered" >            this.isEditor ? undefined : this.cacheTag</span>
 <span class="cstat-no" title="statement not covered" >        }`</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get dataUrl() {</span>
+    @computed get dataUrl<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return `${this.ba</span>kedGrapherURL ?? ""}/data/variables/${
 <span class="cstat-no" title="statement not covered" >            this.dataFileName</span>
 <span class="cstat-no" title="statement not covered" >        }`</span>
@@ -5554,7 +5554,7 @@ export class Grapher
     }
 &nbsp;
     // todo: did this name get botched in a merge?
-    @computed <span class="fstat-no" title="function not covered" >get hasFatalErrors() {</span>
+    @computed get hasFatalE<span class="fstat-no" title="function not covered" >rrors() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.relatedQu</span>estions.some(
 <span class="cstat-no" title="statement not covered" ></span>            (question) =&gt; !!getErrorMessageRelatedQuestionUrl(question)
 <span class="cstat-no" title="statement not covered" ></span>        )
@@ -5593,7 +5593,7 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" >        this.disposers.push(...disposers)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get validDimensions() {</span>
+    @computed private get validDimensions<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        const { dimensions } = this</span>
 <span class="cstat-no" title="statement not covered" >        const validProperties = this</span>.dimensionSlots.map((d) =&gt; d.property)
 <span class="cstat-no" title="statement not covered" >        let validDimensions </span>= dimensions.filter((dim) =&gt;
@@ -5837,24 +5837,24 @@ export class Grapher
     }
 &nbsp;
     @computed get xColumnSlug() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.xSlug ?</span>? this.getSlugForProperty(DimensionProperty.x)
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.xSlug ?</span>? this.getSlugForProperty(DimensionProperty.x)
     }
 &nbsp;
     @computed get sizeColumnSlug() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.sizeSlug ?? t</span>his.getSlugForProperty(DimensionProperty.size)
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.sizeSlug ?? t</span>his.getSlugForProperty(DimensionProperty.size)
     }
 &nbsp;
     @computed get colorColumnSlug() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            this.colorSlug ??</span> this.getSlugForProperty(DimensionProperty.color)
+        return (
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.colorSlug ??</span> this.getSlugForProperty(DimensionProperty.color)
         )
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get yScaleType() {</span>
+    @computed get yScaleType<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.yAxis.scaleType
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get xScaleType() {</span>
+    @computed get xScaleType<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        retu</span>rn this.xAxis.scaleType
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -5875,7 +5875,7 @@ export class Grapher
     }
 &nbsp;
     @computed get sourcesLine() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        return this.sourceDesc ?? t</span>his.defaultSourcesLine
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.sourceDesc ?? t</span>his.defaultSourcesLine
     }
 &nbsp;
     // All columns that are _currently_ part of the visualization
@@ -5918,7 +5918,7 @@ export class Grapher
 &nbsp;
     @computed private get defaultSourcesLine() {
         let sourceNames = this.columnsWithSources.map(
-            (column) =&gt;<span class="branch-0 cbranch-no" title="branch not covered" > column.source.na</span>me ?? ""
+            (column) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >column.source.na</span>me ?? ""
         )
 &nbsp;
         // Shorten automatic source names for certain major sources: todo: this sort of thing we could do in a smarter editor, and not at runtime
@@ -5979,7 +5979,7 @@ export class Grapher
     }
 &nbsp;
     // Returns an object ready to be serialized to JSON
-    @computed <span class="fstat-no" title="function not covered" >get object() {</span>
+    @computed get object<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.toObject()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6016,17 +6016,17 @@ export class Grapher
         return this.isLineChart &amp;&amp; this.areHandlesOnSameTime
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get activeColorScale() {</span>
+    @computed get activeColorScale<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        const chart = this.chartInstance as</span> any
 <span class="cstat-no" title="statement not covered" >        return chart.colorScale</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get activeColorScaleExceptMap() {</span>
+    @computed get act<span class="fstat-no" title="function not covered" >iveColorScaleExceptMap() {</span>
 <span class="cstat-no" title="statement not covered" >        const chart = this.chartInstanceExcept</span>Map as any
 <span class="cstat-no" title="statement not covered" ></span>        return chart.colorScale
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get supportsMultipleYColumns() {</span>
+    @computed get supportsMultipleYColumns<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return !(this.isScatt</span>er || this.isTimeScatter || this.isSlopeChart)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6045,7 +6045,7 @@ export class Grapher
     }
 &nbsp;
     // todo: this is only relevant for scatter plots. move to scatter plot class?
-<span class="fstat-no" title="function not covered" >    set xOverrideTime(value: number | undefined) {</span>
+    set xOverrideTime<span class="fstat-no" title="function not covered" >(value: number | undefined) {</span>
 <span class="cstat-no" title="statement not covered" >        this.xDimension!.</span>targetYear = value
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6055,11 +6055,11 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" >            : new Bounds(0, 0, 850, 600)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get hasYDimension() {</span>
+    @computed get hasYD<span class="fstat-no" title="function not covered" >imension() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.dimensions.some((d</span>) =&gt; d.property === DimensionProperty.y)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    get staticSVG() {</span>
+    get staticSVG<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return ReactDOMServer.render</span>ToStaticMarkup(
 <span class="cstat-no" title="statement not covered" >            &lt;StaticCaptionedChart mana</span>ger={this} bounds={this.idealBounds} /&gt;
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -6069,7 +6069,7 @@ export class Grapher
         return this.map
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get cacheTag() {</span>
+    @computed get cacheTag<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.version.toString()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6081,7 +6081,7 @@ export class Grapher
         )
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get relativeToggleLabel() {</span>
+    @computed get relativeToggleLabel<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.isScatter || this.isTimeS</span>catter) return "Average annual change"
 <span class="cstat-no" title="statement not covered" ></span>        else if (this.isLineChart) return "Relative change"
 <span class="cstat-no" title="statement not covered" >        return "Relative"</span>
@@ -6104,7 +6104,7 @@ export class Grapher
     }
 &nbsp;
     // Filter data to what can be display on the map (across all times)
-    @computed <span class="fstat-no" title="function not covered" >get mappableData() {</span>
+    @computed get mappableDa<span class="fstat-no" title="function not covered" >ta() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.inputTable</span>
 <span class="cstat-no" title="statement not covered" >            .get(this.mapColumnSlug)</span>
 <span class="cstat-no" title="statement not covered" >            .owidRows.fi</span>lter((row) =&gt; isOnTheMap(row.entityName))
@@ -6149,7 +6149,7 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get isMobile() {</span>
+    @computed get isMobile<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return</span> isMobile()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6204,7 +6204,7 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // If we have a big screen to be in, we can define our own aspect ratio and sit in the center
-    @computed <span class="fstat-no" title="function not covered" >private get scaleToFitIdeal() {</span>
+    @computed p<span class="fstat-no" title="function not covered" >rivate get scaleToFitIdeal() {</span>
 <span class="cstat-no" title="statement not covered" >        return Math.min(</span>
 <span class="cstat-no" title="statement not covered" >            (this.bounds.width * 0.95) / this.widthForDeviceOrientation,</span>
 <span class="cstat-no" title="statement not covered" >            (this.bounds.</span>height * 0.95) / this.heightForDeviceOrientation
@@ -6450,7 +6450,7 @@ export class Grapher
         return this.yColumnSlugs.length &gt; 1
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get selectedColumnSlugs(): ColumnSlug[] {</span>
+    @computed get sel<span class="fstat-no" title="function not covered" >ectedColumnSlugs(): ColumnSlug[] {</span>
 <span class="cstat-no" title="statement not covered" >        const { selectedData } = this.legacyConfigAsAuthored</span>
 <span class="cstat-no" title="statement not covered" >        const</span> dimensions = this.filledDimensions
 <span class="cstat-no" title="statement not covered" ></span>
@@ -6825,7 +6825,7 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" >        return this.</span>manager.embedDialogUrl ?? this.canonicalUrl
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >get embedDialogAdditionalElements() {</span>
+    @computed get e<span class="fstat-no" title="function not covered" >mbedDialogAdditionalElements() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manager.embedDialogAdditionalElements</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -7009,7 +7009,7 @@ export const getErrorMessageRelatedQuestionUrl = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Mar 18 2021 11:34:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Mar 18 2021 12:22:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
