@@ -4610,6 +4610,28 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
   color: #002147;
 }
 
+.wp-block-media-text.is-style-biography {
+  display: flex;
+  margin: 1rem 0 2rem;
+}
+.wp-block-media-text.is-style-biography figure {
+  margin-right: 2rem;
+  flex: 0 0 8rem;
+}
+.wp-block-media-text.is-style-biography img {
+  margin: 0;
+  padding: 0;
+  border-radius: 80px;
+}
+.wp-block-media-text.is-style-biography h4,
+.wp-block-media-text.is-style-biography h5 {
+  margin: 0 !important;
+}
+.wp-block-media-text.is-style-biography h5 {
+  font-weight: normal !important;
+  color: #577291;
+}
+
 .expandable-inline-block button {
   background-color: #ebeef2;
   border-radius: 3px;
