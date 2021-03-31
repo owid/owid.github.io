@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.82% </span>
+                <span class="strong">96.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>213/220</span>
+                <span class='fraction'>216/223</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.82% </span>
+                <span class="strong">96.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>213/220</span>
+                <span class='fraction'>216/223</span>
             </div>
         
             
@@ -376,7 +376,10 @@
 <a name='L317'></a><a href='#L317'>317</a>
 <a name='L318'></a><a href='#L318'>318</a>
 <a name='L319'></a><a href='#L319'>319</a>
-<a name='L320'></a><a href='#L320'>320</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L320'></a><a href='#L320'>320</a>
+<a name='L321'></a><a href='#L321'>321</a>
+<a name='L322'></a><a href='#L322'>322</a>
+<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -528,6 +531,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
 <span class="cline-any cline-yes">74x</span>
@@ -812,16 +818,16 @@ export const legacyToOwidTableAndDimensions = (
         // Column values
 &nbsp;
         const times = timeColumnValuesFromLegacyVariable(variable)
-        const entityIds = <span class="branch-0 cbranch-no" title="branch not covered" >vari</span>able.entities ?? []
+        const entityIds = <span class="branch-0 cbranch-no" title="branch not covered" >variable.entities ?? []</span>
         const entityNames = entityIds.map((id) =&gt; entityMetaById[id].name)
         const entityCodes = entityIds.map((id) =&gt; entityMetaById[id].code)
 &nbsp;
         // If there is a conversionFactor, apply it.
         let values = <span class="branch-0 cbranch-no" title="branch not covered" >variable.values || []</span>
-        const conversionFacto<span class="branch-0 cbranch-no" title="branch not covered" >r</span> = valueColumnDef.display?.conversionFactor
+        const conversionFactor = <span class="branch-0 cbranch-no" title="branch not covered" >valueCol</span>umnDef.display?.conversionFactor
         if (conversionFactor !== undefined) {
             values = values.map((value) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" >                isNumber(value) ? value * conversionFactor : value</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                isNumber(value</span>) ? value * conversionFactor : value
             )
         }
 &nbsp;
@@ -833,17 +839,17 @@ export const legacyToOwidTableAndDimensions = (
             [valueColumnDef.slug]: values,
         }
 &nbsp;
-        if (annotationColumnDef) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>            columnStore[
+<span class="branch-0 cbranch-no" title="branch not covered" >        if (annotationColumnDef) {</span>
+<span class="cstat-no" title="statement not covered" >            columnStore[</span>
 <span class="cstat-no" title="statement not covered" >                annotationColumnDef.slug</span>
-<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; annotationMap!.get(entityName))</span>
+<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; anno</span>tationMap!.get(entityName))
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         if (colorColumnSlug) {
             columnStore[colorColumnSlug] = entityIds.map(
                 (entityId) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                    grapherConfig.selectedEntityColors?.[</span>
-<span class="cstat-no" title="statement not covered" >                        entityMetaById[entityId].name</span>
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    grapherConfig.selectedEntityColors?.[</span></span>
+<span class="cstat-no" title="statement not covered" ></span>                        entityMetaById[entityId].name
 <span class="cstat-no" title="statement not covered" ></span>                    ] ?? entityColorMap.get(entityId)
             )
         }
@@ -852,7 +858,10 @@ export const legacyToOwidTableAndDimensions = (
 &nbsp;
         let variableTable = new OwidTable(
             columnStore,
-            Array.from(columnDefs.values())
+            Array.from(columnDefs.values()),
+            // Because database columns can contain mixed types, we want to avoid
+            // parsing for Grapher data until we fix that.
+            { skipParsing: true }
         )
 &nbsp;
         // If there is a targetTime set on the dimension, we need to perform the join on the
@@ -1021,7 +1030,7 @@ const annotationsToMap = (annotations: string) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Mar 30 2021 20:43:44 GMT+0000 (Coordinated Universal Time)
+                at Wed Mar 31 2021 09:40:42 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
