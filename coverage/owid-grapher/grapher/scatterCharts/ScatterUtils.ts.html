@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.39% </span>
+                <span class="strong">61.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>98/165</span>
+                <span class='fraction'>102/165</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.68% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>28/37</span>
+                <span class='fraction'>33/42</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.39% </span>
+                <span class="strong">61.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>98/165</span>
+                <span class='fraction'>102/165</span>
             </div>
         
             
@@ -304,10 +304,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -325,11 +325,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -358,14 +358,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -525,7 +525,7 @@ export const makeStartLabel = (
     const fontSize = hideConnectedScatte<span class="branch-0 cbranch-no" title="branch not covered" >rLines</span>
         ? FONT_SIZE_WHEN_HIDDEN_LINES
         : <span class="branch-0 cbranch-no" title="branch not covered" >series.isForeground</span>
-<span class="cstat-no" title="statement not covered" >        ? isSubtleForeground<span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" >        ? isSubtleForeground</span>
 <span class="cstat-no" title="statement not covered" >            ? 8</span>
 <span class="cstat-no" title="statement not covered" >            : 9</span>
 <span class="cstat-no" title="statement not covered" >        : 7</span>
@@ -578,12 +578,12 @@ export const makeMidLabels = (
         series.points.length &lt;= 1 ||
         (!series.isHover &amp;&amp; isSubtleForeground)
     )
-<span class="branch-0 cbranch-no" title="branch not covered" >        return []</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const font<span class="branch-0 cbranch-no" title="branch not covered" >S</span>ize = hideConnectedScatterLines</span>
-<span class="cstat-no" title="statement not covered" >        ? FONT_SIZE_WHEN_HIDDEN_LINES</span>
-<span class="cstat-no" title="statement not covered" >        : </span>series.isForeground
-<span class="cstat-no" title="statement not covered" >        ? isSubtleForeground</span>
+        return []
+&nbsp;
+    const font<span class="branch-0 cbranch-no" title="branch not covered" >Size = hideConnectedScatterLines</span>
+        ? FONT_SIZE_WHEN_HIDDEN_LINES
+        :<span class="branch-0 cbranch-no" title="branch not covered" > series.isForeground</span>
+<span class="cstat-no" title="statement not covered" >        ? isSubtleForeground<span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
 <span class="cstat-no" title="statement not covered" >            ? 8</span>
 <span class="cstat-no" title="statement not covered" >            : 9</span>
 <span class="cstat-no" title="statement not covered" >        : 7</span>
@@ -715,7 +715,7 @@ export const makeEndLabel = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 07 2021 15:30:29 GMT+0000 (Coordinated Universal Time)
+                at Wed Apr 07 2021 19:08:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
