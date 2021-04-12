@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.36% </span>
+                <span class="strong">94.4% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>435/461</span>
+                <span class='fraction'>438/464</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.36% </span>
+                <span class="strong">94.4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>435/461</span>
+                <span class='fraction'>438/464</span>
             </div>
         
             
@@ -553,7 +553,10 @@
 <a name='L494'></a><a href='#L494'>494</a>
 <a name='L495'></a><a href='#L495'>495</a>
 <a name='L496'></a><a href='#L496'>496</a>
-<a name='L497'></a><a href='#L497'>497</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1014,6 +1017,9 @@
 <span class="cline-any cline-yes">53x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1411,7 +1417,7 @@ export class DiscreteBarChart
                                 }, 0)`}
                                 fill="#666"
                                 dominantBaseline="middle"
-                                textAnchor={isNegativ<span class="branch-0 cbranch-no" title="branch not covered" >e</span> ? "end" : "start"}
+                                textAnchor={isN<span class="branch-0 cbranch-no" title="branch not covered" >e</span>gative ? "end" : "start"}
                                 {...this.valueLabelStyle}
                             &gt;
                                 {valueLabel}
@@ -1509,10 +1515,10 @@ export class DiscreteBarChart
 &nbsp;
     @computed private get valuesToColorsMap() {
         const { manager } = this
-        const colorScheme = manager.baseColo<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >r</span></span></span></span></span></span></span></span></span>Scheme
+        const colorScheme = manager.baseColorScheme
             ? ColorSchemes[manager.baseColorScheme]
             : undefined
-        if (!colorScheme) return undefined
+        if (!colorScheme) return undefined<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
 &nbsp;
         return colorScheme.getUniqValueColorMap(
             uniq(this.sortedRawSeries.map((series) =&gt; series.row.value)),
@@ -1526,19 +1532,22 @@ export class DiscreteBarChart
 &nbsp;
     @computed get series() {
         const { valuesToColorsMap, seriesColorMap } = this
-        return this.sortedRawSeries.reverse().map((rawSeries) =&gt; {
-            const { row, seriesName, color } = rawSeries
-            const series: DiscreteBarSeries = {
-                ...row,
-                seriesName,
-                color:
-                    color ??
-                    seriesColorMap.get(seriesName) ?? // This provides line chart colors if it was a line chart in a prior life
-                    valuesToColorsMap?.get(row.value) ??
-                    DEFAULT_BAR_COLOR,
-            }
-            return series
-        })
+        return this.sortedRawSeries
+            .slice() // we need to clone/slice here so `.reverse()` doesn't modify `this.sortedRawSeries` in-place
+            .reverse()
+            .map((rawSeries) =&gt; {
+                const { row, seriesName, color } = rawSeries
+                const series: DiscreteBarSeries = {
+                    ...row,
+                    seriesName,
+                    color:
+                        color ??
+                        seriesColorMap.get(seriesName) ?? // This provides line chart colors if it was a line chart in a prior life
+                        valuesToColorsMap?.get(row.value) ??
+                        DEFAULT_BAR_COLOR,
+                }
+                return series
+            })
     }
 &nbsp;
     @computed private get isLogScale() {
@@ -1552,7 +1561,7 @@ export class DiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 07 2021 19:55:38 GMT+0000 (Coordinated Universal Time)
+                at Mon Apr 12 2021 11:40:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
