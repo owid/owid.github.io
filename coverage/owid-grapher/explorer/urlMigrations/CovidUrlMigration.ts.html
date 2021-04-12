@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/grapher/text/Text.tsx</title>
+    <title>Code coverage report for owid-grapher/explorer/urlMigrations/CovidUrlMigration.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/grapher/text</a> Text.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/explorer/urlMigrations</a> CovidUrlMigration.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>30/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/10</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">71.43% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>2/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>37/37</span>
+                <span class='fraction'>30/32</span>
             </div>
         
             
@@ -89,7 +89,10 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -102,56 +105,62 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
-<span class="cline-any cline-yes">98x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
-import { Bounds } from "../../clientUtils/Bounds"
-import { omit } from "../../clientUtils/Util"
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Url } from "../../clientUtils/urls/Url"
+import { UrlMigration } from "../../clientUtils/urls/UrlMigration"
+import {
+    getExplorerSlugFromUrl,
+    QueryParamTransformMap,
+    transformQueryParams,
+} from "./ExplorerUrlMigrationUtils"
 &nbsp;
-// The default SVG text behavior is to put the text on *top* of the specified y coordinate
-// Nothing else we do works like that though, so this wraps it to use the same spatial behavior
-// as other components
+const EXPLORER_SLUG = "coronavirus-data-explorer"
 &nbsp;
-interface TextProps extends React.SVGProps&lt;SVGTextElement&gt; {
-    x: number
-    y: number
-    fontSize: number
-    children: string
+const transformMap: QueryParamTransformMap = {
+    Metric: {
+        transformValue: (value) =&gt; {
+            // Since we introduced multiple vaccinations metrics, we want to
+            // differentiate between them.
+            // And while we're there, reduce the length of "Tests per confirmed
+            // case", because it wraps to 2 lines.
+            //
+            // -@danielgavrilov, 2021-03-30
+            //
+            if (value === "Vaccinations") return "Vaccine doses"
+<span class="branch-0 cbranch-no" title="branch not covered" >            if (value === "Tests per confirmed case") return "Tests per case"</span>
+<span class="cstat-no" title="statement not covered" ></span>            return value
+<span class="cstat-no" title="statement not covered" >        },</span>
+    },
 }
 &nbsp;
-export class Text extends React.Component&lt;TextProps&gt; {
-    render() {
-        const bounds = Bounds.forText(this.props.children, {
-            fontSize: this.props.fontSize,
-            fontFamily: this.props["fontFamily"],
-        })
-        const y = this.props.y + bounds.height - bounds.height * 0.2
-&nbsp;
-        return (
-            &lt;text
-                {...omit(this.props, ["children"])}
-                y={y}
-                dangerouslySetInnerHTML={{ __html: this.props.children }}
-            /&gt;
-        )
-    }
+export const covidUrlMigration: UrlMigration = (url: Url) =&gt; {
+    // if it's not the /explorer/energy path, skip it
+    const explorerSlug = getExplorerSlugFromUrl(url)
+    if (explorerSlug !== EXPLORER_SLUG) return url
+    return url.setQueryParams(
+        transformQueryParams(url.queryParams, transformMap)
+    )
 }
 &nbsp;</pre></td></tr></table></pre>
 
