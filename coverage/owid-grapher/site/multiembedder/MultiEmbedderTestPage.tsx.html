@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>63/63</span>
+                <span class='fraction'>68/68</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>63/63</span>
+                <span class='fraction'>68/68</span>
             </div>
         
             
@@ -150,7 +150,38 @@
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
 <a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -213,6 +244,37 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -261,12 +323,17 @@ export const MultiEmbedderTestPage = <span class="fstat-no" title="function not 
         height: "400px",
         border: "1px solid blue",
     }
+    const styleExplorer = {
+        ...style,
+        width: "1200px",
+        height: "600px",
+    }
     return (
         &lt;html&gt;
             &lt;Head canonicalUrl={slug} pageTitle={title} baseUrl="/" /&gt;
             &lt;body&gt;
                 &lt;SiteHeader baseUrl={""} /&gt;
-                &lt;main&gt;
+                &lt;main style={{ padding: "1rem" }}&gt;
                     {globalEntitySelector ? (
                         &lt;div
                             {...{ [GLOBAL_ENTITY_SELECTOR_DATA_ATTR]: true }}
@@ -279,6 +346,7 @@ export const MultiEmbedderTestPage = <span class="fstat-no" title="function not 
                     &lt;/p&gt;
                     &lt;h1&gt;A grapher about sharks&lt;/h1&gt;
                     &lt;figure
+                        data-test="within-bounds"
                         style={style}
                         {...{
                             [GRAPHER_EMBEDDED_FIGURE_ATTR]:
@@ -290,41 +358,66 @@ export const MultiEmbedderTestPage = <span class="fstat-no" title="function not 
                         (time=latest)
                     &lt;/h1&gt;
                     &lt;figure
+                        data-test="within-bounds"
                         style={style}
                         {...{
                             [GRAPHER_EMBEDDED_FIGURE_ATTR]:
                                 "http://localhost:3030/grapher/total-shark-attacks-per-year?time=latest",
                         }}
                     /&gt;
+                    &lt;h1&gt;
+                        The same grapher loaded through an iframe (embed on
+                        external sites)
+                    &lt;/h1&gt;
+                    Note: the MultiEmbedder is not being called in this context.
+                    The rendering paths of external embeds and charts on content
+                    pages do converge at some point, but later. So any change on
+                    the MultiEmbedder has no effe<span class="branch-0 cbranch-no" title="branch not covered" >c</span>t on the charts embedded on
+                    external sites (and the grapher pages they rely on).
+                    &lt;pre&gt;
+                        {`
+        Chart on   ─────► MultiEmbedder  ───────────────────────────►  renderGrapherIntoContainer()
+        OWID page                                                                   ▲
+                                                                                    │
+                                                                                    │
+     Grapher page  ─────► renderSingleGrapherOnGrapherPage() ───────────────────────┘
+&nbsp;
+          ▲
+          │
+          │
+          │
+&nbsp;
+Chart embedded on
+    external site
+                        `}
+                    &lt;/pre&gt;
+                    &lt;iframe
+                        src="http://localhost:3030/grapher/total-shark-attacks-per-year?time=latest"
+                        loading="lazy"
+                        style={{ ...style, marginLeft: "40px" }}
+                    &gt;&lt;/iframe&gt;
                     &lt;h1&gt;An explorer about co2&lt;/h1&gt;
                     &lt;figure
-                        style={style}
+                        data-test="within-bounds"
+                        style={styleExplorer}
                         {...{
                             [EXPLORER_EMBEDDED_FIGURE_SELECTOR]:
                                 "http://localhost:3030/explorers/co2",
                         }}
                     /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;br /&gt;
-                    &lt;h1&gt;
-                        An explorer far down the page, hopefully loaded lazily
+                    &lt;h1 data-test="heading-before-spacer"&gt;
+                        When you see this, the explorer located 2 viewports
+                        below will start loading.
                     &lt;/h1&gt;
+                    200vh matches MultiEmbedder's IntersectionObserver
+                    rootMargin parameter of 200%. You can manually test this by
+                    adding a console.log() to renderInteractiveFigure(), or look
+                    into the DOM and check whether the figure element below is
+                    populated (it shouldn't be until you reveal this text).
+                    &lt;div style={{ height: "200vh" }}&gt;&lt;/div&gt;
                     &lt;figure
-                        style={style}
+                        data-test="out-of-bounds"
+                        style={styleExplorer}
                         {...{
                             [EXPLORER_EMBEDDED_FIGURE_SELECTOR]:
                                 "http://localhost:3030/explorers/co2",
@@ -343,7 +436,7 @@ export const MultiEmbedderTestPage = <span class="fstat-no" title="function not 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 12 2021 16:02:45 GMT+0000 (Coordinated Universal Time)
+                at Tue Apr 13 2021 09:42:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
