@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.54% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>90/104</span>
+                <span class='fraction'>85/102</span>
             </div>
         
             
@@ -857,16 +857,16 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">62x</span>
 <span class="cline-any cline-yes">64x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">165x</span>
-<span class="cline-any cline-yes">62x</span>
+<span class="cline-any cline-yes">64x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">167x</span>
+<span class="cline-any cline-yes">64x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -876,21 +876,21 @@
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">41x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -976,7 +976,7 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -1017,7 +1017,7 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
@@ -1413,15 +1413,15 @@ export class MapNumericColorLegend extends MapLegend {
 &nbsp;
         for (let index = 0; index &lt; labels.length; index++) {
             const l1 = labels[index]
-            if (l1.hidden) continue
+            if (l1.hidden) <span class="branch-0 cbranch-no" title="branch not covered" >continue</span>
 &nbsp;
             for (let j = index + 1; j &lt; labels.length; j++) {
                 const l2 = labels[j]
                 if (
                     l1.bounds.right + 5 &gt;= l2.bounds.centerX ||
-                    (l2.bounds.left - 5 &lt;= l1.bounds.centerX &amp;&amp; !l2.priority)
+                    (<span class="branch-0 cbranch-no" title="branch not covered" >l2.bounds.left - 5 &lt;= l</span>1.bounds.centerX &amp;&amp; !l2.priority)
                 )
-                    l2.hidden = true
+<span class="branch-0 cbranch-no" title="branch not covered" >                    l2.</span>hidden = true
             }
         }
 &nbsp;
@@ -1735,7 +1735,7 @@ export class MapCategoricalColorLegend extends MapLegend {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Apr 13 2021 17:04:28 GMT+0000 (Coordinated Universal Time)
+                at Tue Apr 13 2021 18:00:21 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
