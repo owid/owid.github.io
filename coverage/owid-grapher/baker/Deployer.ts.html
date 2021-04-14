@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.05% </span>
+                <span class="strong">25.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>81/311</span>
+                <span class='fraction'>81/312</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.05% </span>
+                <span class="strong">25.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>81/311</span>
+                <span class='fraction'>81/312</span>
             </div>
         
             
@@ -369,7 +369,8 @@
 <a name='L310'></a><a href='#L310'>310</a>
 <a name='L311'></a><a href='#L311'>311</a>
 <a name='L312'></a><a href='#L312'>312</a>
-<a name='L313'></a><a href='#L313'>313</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -561,6 +562,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -718,7 +720,7 @@ export class Deployer {
         this.progressBar = new ProgressBar(
             `Baking and deploying to ${target} [:bar] :current/:total :elapseds :name\n`,
             {
-                total: 21 + testSteps,
+                total: 22 + testSteps,
                 renderThrottle: 0, // print on every tick
                 stream: (this.stream as unknown) as WriteStream,
             }
@@ -892,12 +894,13 @@ export class Deployer {
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const scripts: any = {</span>
 <span class="cstat-no" title="statement not covered" >            clearOldTemporaryRepo: `rm -rf ${rsyncTargetDirTmp}`,</span>
-<span class="cstat-no" title="statement not covered" >            copySyncedRepo: `cp -r ${rsyncTargetDir} ${rsyncTargetDirTmp}`, // Copy the synced repo-- this is be</span>cause we're about to move it, and we want the original target to stay around to make future syncs faster
-<span class="cstat-no" title="statement not covered" >            createDataSoftlinks: `mkdir -p ${finalDataDir}/bakedSite &amp;&amp; ln -sf ${finalDataDir}/ba</span>kedSite ${rsyncTargetDirTmp}/bakedSite`,
-<span class="cstat-no" title="statement not covered" >            createDatasetSoftlinks: `mkdir -p ${finalDataDir}/datasetsExport &amp;&amp; ln -sf ${finalDataDir}/datasetsExport ${rsyncTargetDirTmp}/datasetsExport`,</span>
-<span class="cstat-no" title="statement not covered" >            createSettingsSoftlinks: `ln -sf ${finalDataDir}/</span>.env ${rsyncTargetDirTmp}/.env`,
-<span class="cstat-no" title="statement not covered" >            yarn: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn install --production --</span>frozen-lockfile`,
+<span class="cstat-no" title="statement not covered" >            copySyncedRepo: `cp -r ${rsyncTargetDir} ${rsyncTargetDirTmp}`, //</span> Copy the synced repo-- this is because we're about to move it, and we want the original target to stay around to make future syncs faster
+<span class="cstat-no" title="statement not covered" >            createDataSoftlinks: `mkdir -p ${finalDataDir}/bakedSite &amp;&amp; ln -sf ${finalDataDir}/bakedSite ${rsync</span>TargetDirTmp}/bakedSite`,
+<span class="cstat-no" title="statement not covered" >            createDatasetSoftlinks: `mkdir -p ${finalDataDir}/datasetsExport &amp;&amp; ln -sf ${finalDat</span>aDir}/datasetsExport ${rsyncTargetDirTmp}/datasetsExport`,
+<span class="cstat-no" title="statement not covered" >            createSettingsSoftlinks: `ln -sf ${finalDataDir}/.env ${rsyncTargetDirTmp}/.env`,</span>
+<span class="cstat-no" title="statement not covered" >            yarn: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn install --</span>production --frozen-lockfile`,
 <span class="cstat-no" title="statement not covered" >            webpack: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn buildWebpack`,</span>
+<span class="cstat-no" title="statement not covered" >            migrateDb: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn runDbMigrations`,</span>
 <span class="cstat-no" title="statement not covered" >            algolia: `cd ${rsyncTargetDirTmp} &amp;&amp; node itsJustJavascript/baker/algolia/configureAlgolia.js`,</span>
 <span class="cstat-no" title="statement not covered" >            createQueueFile: `cd ${rsyncTargetDirTmp} &amp;&amp; touch .qu</span>eue &amp;&amp; chmod 0666 .queue`,
 <span class="cstat-no" title="statement not covered" >            swa</span>pFolders: `rm -rf ${oldRepoBackupDir} &amp;&amp; mv ${finalTargetDir} ${oldRepoBackupDir} || true &amp;&amp; mv ${rsyncTargetDirTmp} ${finalTargetDir}`,
@@ -1000,7 +1003,7 @@ export class Deployer {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Apr 13 2021 18:00:21 GMT+0000 (Coordinated Universal Time)
+                at Wed Apr 14 2021 10:14:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
