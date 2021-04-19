@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>85/85</span>
+                <span class='fraction'>89/89</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.38% </span>
+                <span class="strong">10.2% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/47</span>
+                <span class='fraction'>5/49</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>85/85</span>
+                <span class='fraction'>89/89</span>
             </div>
         
             
@@ -159,7 +159,12 @@
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -244,6 +249,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -266,14 +276,19 @@
 &nbsp;
 import path from "path"
 import dotenv from "dotenv"
-dotenv.config()
+import findBaseDir from "./findBaseDir"
+&nbsp;
+const baseDir = findBaseDir(__dirname)
+if (baseDir === u<span class="branch-0 cbranch-no" title="branch not covered" >n</span>defined) throw new Error("could not locate base package.json")
+&nbsp;
+dotenv.config({ path: `${baseDir}/.env` })
 &nbsp;
 import * as clientSettings from "./clientSettings"
 import { parseIntOrUndefined } from "../clientUtils/Util"
 &nbsp;
 const serverSettings = <span class="branch-0 cbranch-no" title="branch not covered" >process.env ?? {}</span>
 &nbsp;
-export const BASE_DIR: string = path.resolve(__dirname, "../..")
+export const BASE_DIR: string = baseDir
 export const ENV: "development" | "production" = clientSettings.ENV
 &nbsp;
 export const ADMIN_SERVER_PORT: number = clientSettings.ADMIN_SERVER_PORT
@@ -287,28 +302,28 @@ export const BAKED_GRAPHER_URL: string =
 <span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.BAKED_GRAPHER_URL ?? `</span>${BAKED_BASE_URL}/grapher`
 &nbsp;
 export const OPTIMIZE_SVG_EXPORTS: boolean =
-<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.OPTIMIZE_SVG_EXPORTS === "true" ?? false</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.OPTIMIZE_SVG_EXPORTS === "true"</span> ?? false
 &nbsp;
 export const GITHUB_USERNAME: string =
 <span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.GITHUB_USERNAME ?? "</span>owid-test"
 export const GIT_DEFAULT_USERNAME: string =
 <span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.GIT_DEFAULT_USERNAME ?? "</span>Our World in Data"
 export const GIT_DEFAULT_EMAIL: string =
-<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.GIT_DEFAULT_EMAIL ?? "</span>info@ourworldindata.org"
+<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.GIT_DEFAU</span>LT_EMAIL ?? "info@ourworldindata.org"
 &nbsp;
 export const BLOG_POSTS_PER_PAGE: number =
 <span class="branch-0 cbranch-no" title="branch not covered" >    parseIntOrUndefined(serverSettings.BLOG_POSTS_PER_PAGE) ??</span> 21
-export const BLOG_SLUG: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.BLOG_SLUG ?? "</span>blog"
+export const BLOG_SLUG: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.BLOG_SLU</span>G ?? "blog"
 &nbsp;
-export const DB_NAME: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_NAME ??</span> "owid"
-export const DB_USER: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_USER </span>?? "root"
+export const DB_NAME: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_NAME </span>?? "owid"
+export const DB_USER: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_USER ?? "</span>root"
 export const DB_PASS: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_PASS ?? "</span>"
 export const DB_HOST: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.DB_HOST ?? "</span>localhost"
 export const DB_PORT: number =
 <span class="branch-0 cbranch-no" title="branch not covered" >    parseIntOrUndefined(serverSettings.DB_PORT) ?? 3</span>306
 &nbsp;
 export const BAKED_SITE_DIR: string =
-<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.BAKED_SITE_DIR ?? `</span>${BASE_DIR}/bakedSite` // Where the static build output goes
+<span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.BAKED_SITE_DIR ?? p</span>ath.resolve(BASE_DIR, "bakedSite") // Where the static build output goes
 export const SECRET_KEY: string =
 <span class="branch-0 cbranch-no" title="branch not covered" >    serverSettings.SECRET_KEY ??</span>
     "fejwiaof jewiafo jeioa fjieowajf isa fjidosajfgj"
@@ -344,8 +359,8 @@ export const EMAIL_USE_TLS: boolean =
 &nbsp;
 // Wordpress target setting
 export const WORDPRESS_DIR: string = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.WORDPRESS_DIR ?? "</span>"
-export const HTTPS_ONLY: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >serverSettings.HTTPS_ONLY !== "false" ?? true</span>
-<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+export const HTTPS_ONLY: boolean = <span class="branch-0 cbranch-no" title="branch not covered" >serverS<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >e</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>ttings.HTTPS_ONLY !== "false" ?? true
+&nbsp;
 // Node slack webhook to report errors to using express-error-slac
 export const SLACK_ERRORS_WEBHOOK_URL: string =
     serverSettings.SLACK_ERRORS_WEBHOOK_URL ?? ""
@@ -370,7 +385,7 @@ export const CLOUDFLARE_AUD: string = serverSettings.CLOUDFLARE_AUD ?? ""
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Apr 17 2021 06:45:19 GMT+0000 (Coordinated Universal Time)
+                at Mon Apr 19 2021 12:49:55 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
