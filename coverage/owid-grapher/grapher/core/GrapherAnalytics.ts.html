@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.17% </span>
+                <span class="strong">55.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/120</span>
+                <span class='fraction'>67/121</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.17% </span>
+                <span class="strong">55.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>65/120</span>
+                <span class='fraction'>67/121</span>
             </div>
         
             
@@ -260,6 +260,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">290x</span>
 <span class="cline-any cline-yes">290x</span>
 <span class="cline-any cline-yes">290x</span>
@@ -300,10 +302,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -329,6 +327,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -341,6 +341,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -384,8 +385,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const DEBUG = false
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { findDOMParent } from "../../clientUtils/Util"
+&nbsp;
+const DEBUG = false
 &nbsp;
 declare var window: any
 &nbsp;
@@ -432,16 +434,16 @@ export class GrapherAnalytics {
     private isDev: boolean
 &nbsp;
 <span class="fstat-no" title="function not covered" >    logGrapherViewError(error: any, info: any) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.logToAmplitude(EventNames.grapherViewError, { error, info })
-<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.GrapherError, EventNa</span>mes.grapherViewError)
+<span class="cstat-no" title="statement not covered" >        this.logToAmplitude(EventNames.grapherViewErr</span>or, { error, info })
+<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.GrapherError, EventNames.grapherViewError)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    logEntitiesNotFoundError(entities: string[]) {</span>
-<span class="cstat-no" title="statement not covered" >        this.logToAmplitude(EventNames.entitiesNotFound, { entities })</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.logToGA(
+<span class="cstat-no" title="statement not covered" ></span>        this.logToAmplitude(EventNames.entitiesNotFound, { entities })
+<span class="cstat-no" title="statement not covered" >        this.logToGA(</span>
 <span class="cstat-no" title="statement not covered" >            Categories.GrapherError,</span>
-<span class="cstat-no" title="statement not covered" >            EventNames.entitiesNotFound,</span>
-<span class="cstat-no" title="statement not covered" ></span>            JSON.stringify(entities)
+<span class="cstat-no" title="statement not covered" ></span>            EventNames.entitiesNotFound,
+<span class="cstat-no" title="statement not covered" >            JSON.stringify(</span>entities)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -450,46 +452,44 @@ export class GrapherAnalytics {
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    logGlobalEntitySelector(action: entityControlEvent, note?: string) {</span>
-<span class="cstat-no" title="statement not covered" >        this.logToGA(Cat</span>egories.GlobalEntitySelectorUsage, action, note)
+<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.GlobalEntitySelectorUsage, action, note)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    logEntityPickerEvent(</span>
 <span class="cstat-no" title="statement not covered" >        pickerSlug: string,</span>
-<span class="cstat-no" title="statement not covered" >        action: countrySelectorEvent,</span>
-<span class="cstat-no" title="statement not covered" >        note?</span>: string
-<span class="cstat-no" title="statement not covered" >    ) </span>{
-<span class="cstat-no" title="statement not covered" >        this.logToGA(`${pickerSlug</span>}ExplorerCountrySelectorUsage`, action, note)
+<span class="cstat-no" title="statement not covered" >        actio</span>n: countrySelectorEvent,
+<span class="cstat-no" title="statement not covered" ></span>        note?: string
+<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >        this.logToGA(`${pickerSlug}ExplorerCountrySe</span>lectorUsage`, action, note)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logSiteClick(text: string, note?: string, href?: string) {</span>
-<span class="cstat-no" title="statement not covered" >        this.logToGA(</span>
-<span class="cstat-no" title="statement not covered" >            Categories.SiteClick,</span>
-<span class="cstat-no" title="statement not covered" >            note || href </span>|| "unknown-category",
-<span class="cstat-no" title="statement not covered" >            text</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="fstat-no" title="function not covered" >    logSiteClick(action: string = "unknown-action", label: string) {</span>
+<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.SiteClick, action, label)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    logKeyboardShortcut(shortcut: string, combo: string) {</span>
-<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories</span>.KeyboardShortcut, shortcut, combo)
+<span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.KeyboardShortcut, shortcut, combo)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    startClickTracking() {</span>
-<span class="cstat-no" title="statement not covered" >        // Todo: add a Story and tests for this OR even better rem</span>ove and use Google Tag Manager or similar fully SAAS tracking.
-<span class="cstat-no" title="statement not covered" >        // Todo: have different Attributes for Grapher char</span>ts vs Site.
-<span class="cstat-no" title="statement not covered" >        const dataTrackA</span>ttr = "data-track-note"
-<span class="cstat-no" title="statement not covered" >        document.addEventListe</span>ner("click", async (ev) =&gt; {
-<span class="cstat-no" title="statement not covered" >            const targetEle</span>ment = ev.target as HTMLElement
-<span class="cstat-no" title="statement not covered" >            const tracked</span>Attr = targetElement.getAttribute(dataTrackAttr)
-<span class="cstat-no" title="statement not covered" >            if (!tracked</span>Attr) return
+<span class="cstat-no" title="statement not covered" >        // Todo: add</span> a Story and tests for this OR even better remove and use Google Tag Manager or similar fully SAAS tracking.
+<span class="cstat-no" title="statement not covered" >        // Todo: have different Attributes for Grapher charts vs </span>Site.
+<span class="cstat-no" title="statement not covered" ></span>        const dataTrackAttr = "data-track-note"
+<span class="cstat-no" title="statement not covered" >        document.addEventListener("click", async (ev) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const targetElement = ev.target as HTMLElement</span>
+<span class="cstat-no" title="statement not covered" >            const tracke</span>dElement = findDOMParent(
+<span class="cstat-no" title="statement not covered" >                targetElement,</span>
+<span class="cstat-no" title="statement not covered" >                (el: HTMLEl</span>ement) =&gt; el.getAttribute(dataTrackAttr) !== null
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            if (!tracked</span>Element) return
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>            // Note that browsers will cancel all pending requests once a user
 <span class="cstat-no" title="statement not covered" >            // navigates away from </span>a page. An earlier implementation had a
 <span class="cstat-no" title="statement not covered" >            // timeout to send the event before nav</span>igating, but it broke
 <span class="cstat-no" title="statement not covered" >            // CMD+CLICK for opening a new tab.</span>
 <span class="cstat-no" title="statement not covered" >            this.log</span>SiteClick(
-<span class="cstat-no" title="statement not covered" ></span>                targetElement.innerText,
-<span class="cstat-no" title="statement not covered" >                trackedA</span>ttr || undefined,
-<span class="cstat-no" title="statement not covered" >                targ</span>etElement.getAttribute("href") || undefined
+<span class="cstat-no" title="statement not covered" ></span>                trackedElement.getAttribute(dataTrackAttr) || undefined,
+<span class="cstat-no" title="statement not covered" >                trackedE</span>lement.innerText
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -498,14 +498,14 @@ export class GrapherAnalytics {
 <span class="cstat-no" title="statement not covered" >        const allProps = {</span>
 <span class="cstat-no" title="statement not covered" >            context: {</span>
 <span class="cstat-no" title="statement not covered" >                siteVersion: this.version,</span>
-<span class="cstat-no" title="statement not covered" >                pageHref:</span> window.location.href,
-<span class="cstat-no" title="statement not covered" >                pagePath: window.loca</span>tion.pathname,
-<span class="cstat-no" title="statement not covered" ></span>                pageTitle: document.title.replace(/ - [^-]+/, ""),
+<span class="cstat-no" title="statement not covered" >                pageHref: window.location.h</span>ref,
+<span class="cstat-no" title="statement not covered" >                pagePath:</span> window.location.pathname,
+<span class="cstat-no" title="statement not covered" >                pageTitle: document.t</span>itle.replace(/ - [^-]+/, ""),
 <span class="cstat-no" title="statement not covered" ></span>            },
 <span class="cstat-no" title="statement not covered" ></span>            ...props,
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span>
-        if (DEBUG &amp;&amp; this.isDev) {
+<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (DEBUG &amp;&amp; this.isDev) {<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span>
             // eslint-disable-next-line no-console
             console.log("Analytics.logToAmplitude", name, allProps)
             return
@@ -556,7 +556,7 @@ export class GrapherAnalytics {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Apr 23 2021 08:12:48 GMT+0000 (Coordinated Universal Time)
+                at Mon Apr 26 2021 06:38:06 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
