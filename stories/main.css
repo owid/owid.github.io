@@ -2000,7 +2000,7 @@ legend {
 }
 .page .supertitle {
   font-family: Lato, "Helvetica Neue", Arial, sans-serif;
-  font-weight: lighter;
+  color: #577291;
 }
 .page .subtitle {
   font-size: 1.1rem;
@@ -2038,28 +2038,29 @@ legend {
 .page .blog-info p {
   margin-bottom: 0.5rem;
 }
-.page .last-updated {
-  margin-top: 2rem;
-  color: #616161;
-}
 .page .tools {
-  display: flex;
   margin-top: 3rem;
+  color: #577291;
+  font-size: 0.875rem;
+}
+.page .tools > * {
+  margin-right: 1rem;
+}
+@media (min-width: 81.5rem) {
+  .page .tools .last-updated {
+    display: inline;
+  }
 }
 .page .tools a {
-  margin-right: 1rem;
-  font-size: 0.8125rem;
-  color: #616161;
+  color: inherit;
+  text-decoration: underline;
   transition: all 0.2s;
 }
 .page .tools a:hover {
   color: #d42b21;
 }
-.page .tools a svg {
+.page .tools svg {
   margin-right: 0.5rem;
-}
-.page .tools strong {
-  text-decoration: underline;
 }
 .page.large-banner .offset-header {
   background-color: #ebeef2;
