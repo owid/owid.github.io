@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>190/190</span>
+                <span class='fraction'>194/194</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>190/190</span>
+                <span class='fraction'>194/194</span>
             </div>
         
             
@@ -484,7 +484,17 @@
 <a name='L425'></a><a href='#L425'>425</a>
 <a name='L426'></a><a href='#L426'>426</a>
 <a name='L427'></a><a href='#L427'>427</a>
-<a name='L428'></a><a href='#L428'>428</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -674,6 +684,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -921,6 +941,7 @@ import { formatAuthors, formatDate } from "../site/formatting"
 import { SiteSubnavigation } from "./SiteSubnavigation"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBook } from "@fortawesome/free-solid-svg-icons/faBook"
+import { faSync } from "@fortawesome/free-solid-svg-icons/faSync"
 import { faCreativeCommons } from "@fortawesome/free-brands-svg-icons/faCreativeCommons"
 import { TableOfContents } from "../site/TableOfContents"
 import {
@@ -1082,25 +1103,34 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                     /&gt;
                                 )}
 &nbsp;
-                                {post.lastUpdated &amp;&amp; (
-                                    &lt;div
-                                        className="last-updated"
-                                        dangerouslySetInnerHTML={{
-                                            __html: post.lastUpdated,
-                                        }}
-                                    /&gt;
-                                )}
-                                {(isPost || isEntry || isSubEntry) &amp;&amp; (
+                                {(isPost ||
+                                    isEntry ||
+                                    isSubEntry ||
+                                    post.lastUpdated) &amp;&amp; (
                                     &lt;div className="tools"&gt;
-                                        &lt;a href="#licence"&gt;
-                                            &lt;FontAwesomeIcon
-                                                icon={faCreativeCommons}
-                                            /&gt;
-                                            Reuse our work{" "}
-                                            &lt;strong&gt;freely&lt;/strong&gt;
-                                        &lt;/a&gt;
+                                        {post.lastUpdated &amp;&amp; (
+                                            &lt;div className="last-updated"&gt;
+                                                &lt;FontAwesomeIcon
+                                                    icon={faSync}
+                                                /&gt;
+                                                &lt;span
+                                                    dangerouslySetInnerHTML={{
+                                                        __html:
+                                                            post.lastUpdated,
+                                                    }}
+                                                /&gt;
+                                            &lt;/div&gt;
+                                        )}
+                                        {(isPost || isEntry || isSubEntry) &amp;&amp; (
+                                            &lt;a href="#licence"&gt;
+                                                &lt;FontAwesomeIcon
+<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                                    icon={faCreativeCommons}
+                                                /&gt;
+                                                Reuse our work freely
+                                            &lt;/a&gt;
+                                        )}
                                         {(isEntry || isSubEntry) &amp;&amp; (
-<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                            &lt;a href="#citation"&gt;
+                                            &lt;a href="#citation"&gt;
                                                 &lt;FontAwesomeIcon
                                                     icon={faBook}
                                                 /&gt;
@@ -1345,7 +1375,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Apr 26 2021 06:38:06 GMT+0000 (Coordinated Universal Time)
+                at Wed Apr 28 2021 16:10:33 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
