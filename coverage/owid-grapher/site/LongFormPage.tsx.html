@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>194/194</span>
+                <span class='fraction'>196/196</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>194/194</span>
+                <span class='fraction'>196/196</span>
             </div>
         
             
@@ -494,7 +494,18 @@
 <a name='L435'></a><a href='#L435'>435</a>
 <a name='L436'></a><a href='#L436'>436</a>
 <a name='L437'></a><a href='#L437'>437</a>
-<a name='L438'></a><a href='#L438'>438</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -688,6 +699,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -950,6 +972,7 @@ import {
     PageType,
     TocHeading,
 } from "../clientUtils/owidTypes"
+import { Breadcrumb } from "./Breadcrumb/Breadcrumb"
 &nbsp;
 export interface PageOverrides {
     pageTitle?: string
@@ -1074,6 +1097,16 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                             {post.subtitle}
                                         &lt;/div&gt;
                                     )}
+                                    {formattingOptions.subnavId &amp;&amp; (
+                                        &lt;Breadcrumb
+                                            subnavId={
+                                                formattingOptions.subnavId
+                                            }
+                                            subnavCurrentId={
+                                                formattingOptions.subnavCurrentId
+                                            }
+                                        /&gt;
+                                    )}
                                 &lt;/div&gt;
                                 {!formattingOptions.hideAuthors &amp;&amp; (
                                     &lt;div className="authors-byline"&gt;
@@ -1115,7 +1148,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                                 /&gt;
                                                 &lt;span
                                                     dangerouslySetInnerHTML={{
-                                                        __html:
+<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                                        __html:
                                                             post.lastUpdated,
                                                     }}
                                                 /&gt;
@@ -1124,7 +1157,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                         {(isPost || isEntry || isSubEntry) &amp;&amp; (
                                             &lt;a href="#licence"&gt;
                                                 &lt;FontAwesomeIcon
-<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                                    icon={faCreativeCommons}
+                                                    icon={faCreativeCommons}
                                                 /&gt;
                                                 Reuse our work freely
                                             &lt;/a&gt;
@@ -1375,7 +1408,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 28 2021 16:10:33 GMT+0000 (Coordinated Universal Time)
+                at Mon May 03 2021 09:31:50 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

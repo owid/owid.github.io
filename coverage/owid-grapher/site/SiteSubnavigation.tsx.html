@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">88.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>255/290</span>
+                <span class='fraction'>256/290</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.93% </span>
+                <span class="strong">88.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>255/290</span>
+                <span class='fraction'>256/290</span>
             </div>
         
             
@@ -361,7 +361,9 @@
 <a name='L302'></a><a href='#L302'>302</a>
 <a name='L303'></a><a href='#L303'>303</a>
 <a name='L304'></a><a href='#L304'>304</a>
-<a name='L305'></a><a href='#L305'>305</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -650,7 +652,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -670,14 +672,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft"
 import { SubNavId } from "../clientUtils/owidTypes"
 &nbsp;
-interface SubnavItem {
+export interface SubnavItem {
     label: string
     href: string
     id: string
     highlight?: boolean
+    parentId?: string
 }
 &nbsp;
-const subnavs: { [key in SubNavId]: SubnavItem[] } = {
+export const subnavs: { [key in SubNavId]: SubnavItem[] } = {
     about: [
         // `label` is shown in the UI, `id` is specified as a formatting option
         // on a page (the top html comment in WordPress)
@@ -922,39 +925,39 @@ export class SiteSubnavigation extends React.Component&lt;{
 <span class="fstat-no" title="function not covered" >    render() {</span>
 <span class="cstat-no" title="statement not covered" >        const { subnavId, subnavCurrentId } = this.prop</span>s
 <span class="cstat-no" title="statement not covered" >        const subnavLinks = subnavs[subnavId]</span>
-<span class="cstat-no" title="statement not covered" >        return subnavLinks ? (</span>
+<span class="cstat-no" title="statement not covered" >        ret</span>urn subnavLinks ? (
 <span class="cstat-no" title="statement not covered" ></span>            &lt;div className="offset-subnavigation"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                &lt;div className="site-subnavigation"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;div className="site-subnavigation-scroll"&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;ul className="site-subnav</span>igation-links"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            {subnavLinks.map(
-<span class="cstat-no" title="statement not covered" >                                ({ href, label, id, highli</span>ght }, idx) =&gt; {
-<span class="cstat-no" title="statement not covered" >                                    const class</span>es: string[] = []
+<span class="cstat-no" title="statement not covered" >                    &lt;div className="site-subnaviga</span>tion-scroll"&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;ul className="site-subnavigation-links"&gt;
+<span class="cstat-no" title="statement not covered" >                            {subnavLinks.map(</span>
+<span class="cstat-no" title="statement not covered" >                                ({ href, label, id, hig</span>hlight }, idx) =&gt; {
+<span class="cstat-no" title="statement not covered" >                                    const classes: string[] = []</span>
 <span class="cstat-no" title="statement not covered" >                                    const dataTrackNote = [</span>
 <span class="cstat-no" title="statement not covered" >                                        subnavId,</span>
 <span class="cstat-no" title="statement not covered" >                                        "subnav",</span>
 <span class="cstat-no" title="statement not covered" >                                        id,</span>
-<span class="cstat-no" title="statement not covered" >                                    ].join("</span>-")
-<span class="cstat-no" title="statement not covered" >                                    if (id === s</span>ubnavCurrentId)
+<span class="cstat-no" title="statement not covered" >                                    ].join("-")</span>
+<span class="cstat-no" title="statement not covered" >                                    if</span> (id === subnavCurrentId)
 <span class="cstat-no" title="statement not covered" ></span>                                        classes.push("current")
-<span class="cstat-no" title="statement not covered" >                                    if</span> (highlight) classes.push("highlight")
-<span class="cstat-no" title="statement not covered" ></span>                                    return (
-<span class="cstat-no" title="statement not covered" ></span>                                        &lt;li
-<span class="cstat-no" title="statement not covered" >                                            classNam</span>e={
-<span class="cstat-no" title="statement not covered" >                                                (clas</span>ses.length &amp;&amp;
-<span class="cstat-no" title="statement not covered" ></span>                                                    classes.join(" ")) ||
+<span class="cstat-no" title="statement not covered" ></span>                                    if (highlight) classes.push("highlight")
+<span class="cstat-no" title="statement not covered" >                                    r</span>eturn (
+<span class="cstat-no" title="statement not covered" >                                        &lt;li</span>
+<span class="cstat-no" title="statement not covered" >                                            className</span>={
+<span class="cstat-no" title="statement not covered" ></span>                                                (classes.length &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                                                    cla</span>sses.join(" ")) ||
 <span class="cstat-no" title="statement not covered" >                                                ""</span>
 <span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            key={href}</span>
+<span class="cstat-no" title="statement not covered" >                                            key={</span>href}
 <span class="cstat-no" title="statement not covered" >                                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;a</span>
-<span class="cstat-no" title="statement not covered" ></span>                                                href={href}
-<span class="cstat-no" title="statement not covered" >                                                data-track-note={dataTrackNote}</span>
+<span class="cstat-no" title="statement not covered" ></span>                                            &lt;a
+<span class="cstat-no" title="statement not covered" >                                                href={href}</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                data-track-note={dataTrackNote}
 <span class="cstat-no" title="statement not covered" ></span>                                            &gt;
 <span class="cstat-no" title="statement not covered" ></span>                                                {label}
 <span class="cstat-no" title="statement not covered" ></span>                                                {idx === 0 &amp;&amp; (
-<span class="cstat-no" title="statement not covered" ></span>                                                    &lt;FontAwesomeIcon
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                                        icon={faChevronLeft}
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>                                                    &lt;FontAwesomeIcon
+                                                        icon={faChevronLeft}
                                                     /&gt;
                                                 )}
                                             &lt;/a&gt;
@@ -976,7 +979,7 @@ export class SiteSubnavigation extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 28 2021 16:10:33 GMT+0000 (Coordinated Universal Time)
+                at Mon May 03 2021 09:31:50 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
