@@ -4740,6 +4740,25 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
   font-weight: bold;
 }
 
+.breadcrumb {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #577291;
+}
+.breadcrumb a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.breadcrumb a:hover {
+  color: #c0023e;
+}
+.breadcrumb .separator {
+  margin: 0 0.5rem;
+  vertical-align: -0.0625em;
+  color: #92a5bb;
+}
+
 /* HACK (Mispy): Fix search autozooming on iPhone Safari.
    http://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
