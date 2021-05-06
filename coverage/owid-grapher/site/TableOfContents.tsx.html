@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>157/157</span>
+                <span class='fraction'>160/160</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>157/157</span>
+                <span class='fraction'>160/160</span>
             </div>
         
             
@@ -273,7 +273,15 @@
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
 <a name='L216'></a><a href='#L216'>216</a>
-<a name='L217'></a><a href='#L217'>217</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -430,6 +438,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -493,11 +509,12 @@
 import { useState, useEffect, useRef } from "react"
 import * as ReactDOM from "react-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faListAlt } from "@fortawesome/free-solid-svg-icons/faListAlt"
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft"
 import { useTriggerWhenClickOutside } from "./hooks"
+import { wrapInDiv } from "../clientUtils/Util"
 &nbsp;
-const TOC_CLASS_NAME = "entry-sidebar"
+const TOC_WRAPPER_CLASSNAME = "toc-wrapper"
 &nbsp;
 interface TableOfContentsData {
     headings: { isSubheading: boolean; slug: string; text: string }[]
@@ -636,74 +653,81 @@ export const TableOfContents = <span class="fstat-no" title="function not covere
     }, [])
 &nbsp;
     return (
-        &lt;aside
-            ref={tocRef}
-            className={`${TOC_CLASS_NAME}${isToggled ? " toggled" : ""}${
-                isSticky ? " sticky" : ""
-            }`}
-        &gt;
-            &lt;div className="sticky-sentinel" ref={stickySentinelRef} /&gt;
-            &lt;nav className="entry-toc"&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span>
-                        &lt;a
-                            onClick={() =&gt; {
-                                toggle()
-                                setActiveHeading("")
-                            }}
-                            href="#"
-                        &gt;
-                            {pageTitle}
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    {headings
-                        .filter((heading) =&gt;
-                            hideSubheadings &amp;&amp; heading.isSubheading
-                                ? false
-                                : true
-                        )
-                        .map((heading, i: number) =&gt; (
-                            &lt;li
-                                key={i}
-                                className={
-                                    (heading.isSubheading
-                                        ? "subsection"
-                                        : "section") +
-                                    (heading.slug === activeHeading
-                                        ? " active"
-                                        : "")
-                                }
+        &lt;div className={TOC_WRAPPER_CLASSNAME}&gt;
+            &lt;aside
+                className={`entry-sidebar${isToggled ? " toggled" : ""}${
+                    isSticky ? " sticky" : ""
+                }`}
+            &gt;
+                &lt;div className="sticky-sentinel" ref={stickySentinelRef} /&gt;
+                &lt;nav className="entry-toc" ref={tocRef}&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;
+                            &lt;a
+                                onClick={()<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" > </span></span></span></span></span></span></span>=&gt; {
+                                    toggle()
+                                    setActiveHeading("")
+                                }}
+                                href="#"
                             &gt;
-                                &lt;a onClick={toggle} href={`#${heading.slug}`}&gt;
-                                    {heading.text}
-                                &lt;/a&gt;
-                            &lt;/li&gt;
-                        ))}
-                &lt;/ul&gt;
-            &lt;/nav&gt;
-            &lt;div className="toggle-toc"&gt;
-                &lt;button
-                    data-track-note="page-toggle-toc"
-                    aria-label={`${
-                        isToggled ? "Close" : "Open"
-                    } table of contents`}
-                    onClick={toggle}
-                &gt;
-                    &lt;FontAwesomeIcon
-                        icon={isToggled ? faChevronLeft : faListAlt}
-                    /&gt;
-                &lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/aside&gt;
+                                {pageTitle}
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        {headings
+                            .filter((heading) =&gt;
+                                hideSubheadings &amp;&amp; heading.isSubheading
+                                    ? false
+                                    : true
+                            )
+                            .map((heading, i: number) =&gt; (
+                                &lt;li
+                                    key={i}
+                                    className={
+                                        (heading.isSubheading
+                                            ? "subsection"
+                                            : "section") +
+                                        (heading.slug === activeHeading
+                                            ? " active"
+                                            : "")
+                                    }
+                                &gt;
+                                    &lt;a
+                                        onClick={toggle}
+                                        href={`#${heading.slug}`}
+                                    &gt;
+                                        {heading.text}
+                                    &lt;/a&gt;
+                                &lt;/li&gt;
+                            ))}
+                    &lt;/ul&gt;
+                &lt;/nav&gt;
+                &lt;div className="toggle-toc"&gt;
+                    &lt;button
+                        data-track-note="page-toggle-toc"
+                        aria-label={`${
+                            isToggled ? "Close" : "Open"
+                        } table of contents`}
+                        onClick={toggle}
+                    &gt;
+                        &lt;FontAwesomeIcon
+                            icon={isToggled ? faChevronLeft : faBars}
+                        /&gt;
+                        Contents
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
+        &lt;/div&gt;
     )
 }
 &nbsp;
 export const runTableOfContents = (tocData: TableOfContentsData) =&gt; {
-    const tocEl = document.querySelector&lt;HTMLElement&gt;(`.${TOC_CLASS_NAME}`)
-    if (tocEl) {
-        const tocWrapper = tocEl.parentElement
-        ReactDOM.hydrate(&lt;TableOfContents {...tocData} /&gt;, tocWrapper)
-    }
+    const tocWrapperEl = document.querySelector&lt;HTMLElement&gt;(
+        `.${TOC_WRAPPER_CLASSNAME}`
+    )
+    if (!tocWrapperEl) return
+&nbsp;
+    const sidebarRootEl = wrapInDiv(tocWrapperEl, ["sidebar-root"])
+    ReactDOM.hydrate(&lt;TableOfContents {...tocData} /&gt;, sidebarRootEl)
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -712,7 +736,7 @@ export const runTableOfContents = (tocData: TableOfContentsData) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 06 2021 11:58:24 GMT+0000 (Coordinated Universal Time)
+                at Thu May 06 2021 15:20:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
