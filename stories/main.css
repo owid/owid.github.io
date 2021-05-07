@@ -1523,7 +1523,7 @@ figure[data-explorer-src] {
 /*******************************************************************************
  * Gutenberg (wordpress editor) blocks
  */
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .page .wp-block-columns {
     display: flex;
     align-items: flex-start;
@@ -1569,7 +1569,7 @@ figure[data-explorer-src] {
     margin-top: 1rem;
   }
 }
-@media (min-width: 81.5rem) and (max-width: 97.4375rem) {
+@media (min-width: 80rem) and (max-width: 95.9375rem) {
   .page .wp-block-columns.is-style-side-by-side {
     display: block;
     margin: 0 auto;
@@ -1581,7 +1581,7 @@ figure[data-explorer-src] {
     margin: 0;
   }
 }
-@media only screen and (min-width: 97.5rem) {
+@media only screen and (min-width: 96rem) {
   .page .wp-block-columns.is-style-side-by-side .wp-block-column {
     flex: 0 0 45rem;
     max-width: 45rem;
@@ -1963,7 +1963,7 @@ legend {
     max-width: 54rem;
   }
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .page .content-and-footnotes,
 .page .article-header,
 .page .site-subnavigation {
@@ -1979,7 +1979,7 @@ legend {
   .page.with-sidebar .offset-header,
 .page.with-sidebar .offset-content,
 .page.with-sidebar .offset-subnavigation {
-    padding-left: 1.5rem;
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 114rem) {
@@ -2046,7 +2046,7 @@ legend {
 .page .tools > * {
   margin-right: 1rem;
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .page .tools .last-updated {
     display: inline;
   }
@@ -2085,7 +2085,7 @@ legend {
     font-size: 3rem;
   }
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .page.large-banner .article-header {
     padding-top: 4rem;
   }
@@ -2097,7 +2097,7 @@ legend {
     font-size: 4rem;
   }
 }
-@media only screen and (min-width: 97.5rem) {
+@media only screen and (min-width: 96rem) {
   .page.large-banner .article-header {
     padding-top: 6rem;
     padding-bottom: 3rem;
@@ -2147,8 +2147,21 @@ legend {
 
 /* Page Navigation Sidebar
 --------------------------------------------- */
+@media only screen and (max-width: 113.9375rem) {
+  .toc-wrapper {
+    height: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (min-width: 114rem) {
+  .toc-wrapper {
+    height: 100%;
+  }
+}
+
 .entry-sidebar {
   width: 18rem;
+  z-index: 20;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
 }
@@ -2203,7 +2216,7 @@ legend {
     position: absolute;
     top: 0;
     bottom: 0;
-    margin-left: -16.5rem;
+    margin-left: -18rem;
     transition: margin 300ms ease;
   }
 }
@@ -2218,38 +2231,43 @@ legend {
     top: 0;
     bottom: 0;
     padding: 1rem 0;
-    right: -1rem;
+    left: 18rem;
+    margin-left: 1.5rem;
+    pointer-events: none;
   }
 }
-@media only screen and (max-width: 113.9375rem) and (max-width: 54.9375rem) {
+@media only screen and (max-width: 113.9375rem) and (min-width: 55rem) {
   .entry-sidebar .toggle-toc {
-    right: -2.75rem;
+    margin-left: 2rem;
   }
 }
 @media only screen and (max-width: 113.9375rem) {
   .entry-sidebar .toggle-toc button {
+    padding: 0.2rem 0.5rem;
+    line-height: 1.6rem;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 0.875rem;
+    background: #002147;
+    outline: none;
     z-index: 20;
     position: sticky;
     top: 1rem;
-    width: 2rem;
-    height: 2rem;
-    background-color: #002147;
-    color: #ffffff;
-    border-radius: 50%;
-    outline: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+    pointer-events: auto;
+    white-space: nowrap;
   }
-}
-@media only screen and (max-width: 113.9375rem) and (max-width: 54.9375rem) {
-  .entry-sidebar .toggle-toc button {
-    top: 0.75rem;
-  }
-}
-@media only screen and (max-width: 113.9375rem) {
   .entry-sidebar .toggle-toc button:hover {
     background-color: #365578;
+  }
+  .entry-sidebar .toggle-toc button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  .entry-sidebar .toggle-toc button svg {
+    margin-right: 0.5rem;
   }
 }
 @media only screen and (max-width: 113.9375rem) {
@@ -2259,16 +2277,22 @@ legend {
 }
 @media only screen and (max-width: 113.9375rem) {
   .entry-sidebar.toggled {
-    z-index: 20;
     margin-left: 0;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 2px 0px, rgba(0, 0, 0, 0.25) 0px 2px 2px 0px;
   }
   .entry-sidebar.toggled .toggle-toc {
-    right: -2rem;
+    margin-left: -1rem;
   }
-  .entry-sidebar.toggled .toggle-toc button {
-    border-radius: 0 50% 50% 0;
+}
+@media only screen and (max-width: 113.9375rem) and (max-width: 54.9375rem) {
+  .entry-sidebar.toggled .toggle-toc svg {
+    margin: 0 0.25rem;
   }
+  .entry-sidebar.toggled .toggle-toc .label {
+    display: none;
+  }
+}
+@media only screen and (max-width: 113.9375rem) {
   .entry-sidebar.toggled ul {
     display: block;
   }
@@ -2605,7 +2629,7 @@ legend {
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 1rem;
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .homepage-posts--explainers {
     padding: 2.5rem 0 2.75rem;
   }
@@ -3689,7 +3713,6 @@ html.IsInIframe .StandaloneGrapherOrExplorerPage .related-research-data {
   }
   .site-tools .prompt {
     position: relative;
-    outline: none;
     margin-left: 0.75rem;
   }
   .site-tools .overlay {
@@ -3732,14 +3755,17 @@ html.IsInIframe .StandaloneGrapherOrExplorerPage .related-research-data {
     cursor: pointer;
     font-size: 0.875rem;
     background: #002147;
+    outline: none;
+  }
+  .site-tools .box button:hover {
+    background-color: #365578;
   }
   .site-tools .box button:disabled {
     opacity: 0.5;
     cursor: auto;
   }
   .site-tools .box button svg {
-    margin-right: 0.15rem;
-    color: rgba(255, 255, 255, 0.75);
+    margin-right: 0.5rem;
   }
   .site-tools button {
     padding: 0.2rem 0.5rem;
@@ -3751,14 +3777,17 @@ html.IsInIframe .StandaloneGrapherOrExplorerPage .related-research-data {
     cursor: pointer;
     font-size: 0.875rem;
     background: #002147;
+    outline: none;
+  }
+  .site-tools button:hover {
+    background-color: #365578;
   }
   .site-tools button:disabled {
     opacity: 0.5;
     cursor: auto;
   }
   .site-tools button svg {
-    margin-right: 0.15rem;
-    color: rgba(255, 255, 255, 0.75);
+    margin-right: 0.5rem;
   }
 }
 .newsletter-subscription form p {
@@ -4558,7 +4587,7 @@ body.is-not-chart-interactive .article-content > section .wp-block-columns .wp-b
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .wp-block-owid-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -4959,7 +4988,7 @@ h6:hover .deep-link {
   background-color: #5b011d;
 }
 
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .owid-data .link-container {
     display: flex;
     flex-flow: row wrap;
@@ -5282,7 +5311,7 @@ div.owid-presentations li:nth-of-type(1) a:hover {
     max-width: 54rem;
   }
 }
-@media (min-width: 81.5rem) {
+@media (min-width: 80rem) {
   .article-content .section-heading .wrapper {
     max-width: 96rem;
   }
@@ -5353,16 +5382,9 @@ div.owid-presentations li:nth-of-type(1) a:hover {
   margin-right: 0.5rem;
 }
 
-@media (min-width: 55rem) {
-  .with-sidebar .section-heading {
-    position: relative;
-    width: calc(100vw - 1.5rem);
-    left: 1.5rem;
-    margin-left: calc(50% - 50vw - 0.75rem);
-  }
-}
 @media only screen and (min-width: 114rem) {
   .with-sidebar .section-heading {
+    position: relative;
     width: calc(100vw - 18rem);
     margin-left: calc( 50% - 50vw - 9rem );
     left: 18rem;
@@ -6018,14 +6040,17 @@ blockquote {
   cursor: pointer;
   font-size: 0.875rem;
   background: #002147;
+  outline: none;
+}
+.FeedbackPage .box button:hover {
+  background-color: #365578;
 }
 .FeedbackPage .box button:disabled {
   opacity: 0.5;
   cursor: auto;
 }
 .FeedbackPage .box button svg {
-  margin-right: 0.15rem;
-  color: rgba(255, 255, 255, 0.75);
+  margin-right: 0.5rem;
 }
 /*******************************************************************************
  * Spacing
@@ -6395,6 +6420,7 @@ blockquote {
 .global-entity-control-container {
   position: sticky;
   top: 5px;
+  margin-left: 7rem;
   z-index: 11;
 }
 
