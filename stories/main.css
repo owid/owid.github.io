@@ -822,37 +822,30 @@ address a:hover {
 }
 
 .header-logos-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.header-logos-wrapper a {
   display: none;
+  color: white;
+  opacity: 0.8;
+  transition: color 150ms ease;
+  line-height: 1;
 }
-@media (min-width: 55rem) {
-  .header-logos-wrapper {
-    display: flex;
-    align-items: center;
+@media (min-width: 68rem) {
+  .header-logos-wrapper a {
+    display: initial;
   }
-  .header-logos-wrapper .oxford-logo {
-    width: 126px;
-  }
-  .header-logos-wrapper .gcdl-logo {
-    width: 50px;
-    margin-left: 0.35rem;
-  }
-  .header-logos-wrapper .oxford-logo,
-.header-logos-wrapper .gcdl-logo {
-    opacity: 0.75;
-    display: flex;
-    align-items: center;
-  }
-  .header-logos-wrapper .oxford-logo img,
+}
+.header-logos-wrapper a:hover {
+  opacity: initial;
+}
+.header-logos-wrapper .oxford-logo img {
+  margin-right: 7px;
+  width: 126px;
+}
 .header-logos-wrapper .gcdl-logo img {
-    height: auto;
-    width: 100%;
-  }
-}
-@media (min-width: 55rem) and (max-width: 68rem) {
-  .header-logos-wrapper .oxford-logo,
-.header-logos-wrapper .gcdl-logo {
-    display: none;
-  }
+  width: 49px;
 }
 
 /* Subnavigation */
