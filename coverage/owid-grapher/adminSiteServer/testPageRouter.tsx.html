@@ -647,7 +647,9 @@
 <a name='L588'></a><a href='#L588'>588</a>
 <a name='L589'></a><a href='#L589'>589</a>
 <a name='L590'></a><a href='#L590'>590</a>
-<a name='L591'></a><a href='#L591'>591</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L591'></a><a href='#L591'>591</a>
+<a name='L592'></a><a href='#L592'>592</a>
+<a name='L593'></a><a href='#L593'>593</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -917,6 +919,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1077,13 +1081,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1338,11 +1342,11 @@ interface EmbedTestPageQueryParams {
 <span class="cstat-no" title="statement not covered" >                    `(</span>
 <span class="cstat-no" title="statement not covered" ></span>                        config-&gt;"$.type" = "LineChart"
 <span class="cstat-no" title="statement not covered" >                        OR confi</span>g-&gt;"$.type" IS NULL
-<span class="cstat-no" title="statement not covered" >                    ) AND config-&gt;"$.hasChartTab" IS TRUE`</span>
+<span class="cstat-no" title="statement not covered" >                    ) AND COALESCE(config-&gt;"$.hasChartTab", TRUE) IS TRUE`</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            } el</span>se {
 <span class="cstat-no" title="statement not covered" >                query = query.andWhere(</span>
-<span class="cstat-no" title="statement not covered" ></span>                    `config-&gt;"$.type" = :type AND config-&gt;"$.hasChartTab" IS TRUE`,
+<span class="cstat-no" title="statement not covered" ></span>                    `config-&gt;"$.type" = :type AND COALESCE(config-&gt;"$.hasChartTab", TRUE) IS TRUE`,
 <span class="cstat-no" title="statement not covered" >                    { type: params.ty</span>pe }
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -1424,88 +1428,90 @@ interface EmbedTestPageQueryParams {
 <span class="cstat-no" title="statement not covered" >    if (tab === GrapherTabOption.map) {</span>
 <span class="cstat-no" title="statement not covered" >        query = query.andWhere(`config-&gt;"$.hasMapTab" IS TRUE`)</span>
 <span class="cstat-no" title="statement not covered" >    } else if (tab === GrapherTabOption.chart) {</span>
-<span class="cstat-no" title="statement not covered" >        query = query.andWhere(`config-&gt;"$.hasChartTab" I</span>S TRUE`)
+<span class="cstat-no" title="statement not covered" >        query = query.andWhere(</span>
+<span class="cstat-no" title="statement not covered" >            `C</span>OALESCE(config-&gt;"$.hasChartTab", TRUE) IS TRUE`
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Exc</span>lude charts that have the "Private" tag assigned, unless `includePrivate` is passed.
-<span class="cstat-no" title="statement not covered" >    // The data for these charts is not included in the publi</span>c database dump used to populate
-<span class="cstat-no" title="statement not covered" >    // staging and loc</span>al, so they are not comparable.
-<span class="cstat-no" title="statement not covered" >    if (params.includePrivate ===</span> undefined) {
-<span class="cstat-no" title="statement not covered" >        query</span>.andWhere(`
-<span class="cstat-no" title="statement not covered" >            NOT EXI</span>STS(
+<span class="cstat-no" title="statement not covered" >    // Exclude charts </span>that have the "Private" tag assigned, unless `includePrivate` is passed.
+<span class="cstat-no" title="statement not covered" >    // The data for these charts </span>is not included in the public database dump used to populate
+<span class="cstat-no" title="statement not covered" >    // stagin</span>g and local, so they are not comparable.
+<span class="cstat-no" title="statement not covered" >    if (params.incl</span>udePrivate === undefined) {
+<span class="cstat-no" title="statement not covered" >        query.andWhere(`</span>
+<span class="cstat-no" title="statement not covered" ></span>            NOT EXISTS(
 <span class="cstat-no" title="statement not covered" >                SELECT *</span>
-<span class="cstat-no" title="statement not covered" ></span>                FROM tags
-<span class="cstat-no" title="statement not covered" >                JOIN chart_tags ON chart_tags.</span>tagId = tags.id
-<span class="cstat-no" title="statement not covered" >                WHERE chart_tags.chartId = charts.id</span>
+<span class="cstat-no" title="statement not covered" >                FROM tags</span>
+<span class="cstat-no" title="statement not covered" >                JOIN chart_tags ON chart_tags.tagId = tags.id</span>
+<span class="cstat-no" title="statement not covered" >                WHERE chart_tags.char</span>tId = charts.id
 <span class="cstat-no" title="statement not covered" >                AND tags.name = 'Private'</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        `)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (datasetIds.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered" >        const datasetIds = params.datasetIds</span>
-<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
-<span class="cstat-no" title="statement not covered" >            `</span>
-<span class="cstat-no" title="statement not covered" >            EXIST</span>S(
-<span class="cstat-no" title="statement not covered" >                SELECT *</span>
-<span class="cstat-no" title="statement not covered" >                FROM variables</span>
-<span class="cstat-no" title="statement not covered" >                INNER JOIN c</span>hart_dimensions ON chart_dimensions.variableId = variables.id
-<span class="cstat-no" title="statement not covered" >                WHERE variables</span>.datasetId IN (:datasetIds)
-<span class="cstat-no" title="statement not covered" >                AND chart_dimensio</span>ns.chartId = charts.id
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        `,</span>
-<span class="cstat-no" title="statement not covered" ></span>            { datasetIds }
-<span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (namespaces.le</span>ngth &gt; 0) {
-<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+<span class="cstat-no" title="statement not covered" >    if (datasetIds.length</span> &gt; 0) {
+<span class="cstat-no" title="statement not covered" >        const datasetIds </span>= params.datasetIds
+<span class="cstat-no" title="statement not covered" >        query.and</span>Where(
 <span class="cstat-no" title="statement not covered" >            `</span>
 <span class="cstat-no" title="statement not covered" >            EXISTS(</span>
 <span class="cstat-no" title="statement not covered" >                SELECT *</span>
-<span class="cstat-no" title="statement not covered" ></span>                FROM datasets
-<span class="cstat-no" title="statement not covered" ></span>                INNER JOIN variables ON variables.datasetId = datasets.id
-<span class="cstat-no" title="statement not covered" >                INNER JOI</span>N chart_dimensions ON chart_dimensions.variableId = variables.id
-<span class="cstat-no" title="statement not covered" >                WHERE d</span>atasets.namespace IN (:namespaces)
-<span class="cstat-no" title="statement not covered" >                AND c</span>hart_dimensions.chartId = charts.id
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        `,</span>
-<span class="cstat-no" title="statement not covered" ></span>            { namespaces: namespaces }
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >                FROM variables</span>
+<span class="cstat-no" title="statement not covered" >                INNER JOIN chart_d</span>imensions ON chart_dimensions.variableId = variables.id
+<span class="cstat-no" title="statement not covered" >                WHERE variables.datasetId IN (:datasetIds)</span>
+<span class="cstat-no" title="statement not covered" ></span>                AND chart_dimensions.chartId = charts.id
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" ></span>        `,
+<span class="cstat-no" title="statement not covered" >            { datasetIds }</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const </span>charts: ChartItem[] = (await query.getMany()).map((c) =&gt; ({
-<span class="cstat-no" title="statement not covered" ></span>        id: c.id,
-<span class="cstat-no" title="statement not covered" >        slug: c</span>.config.slug,
+<span class="cstat-no" title="statement not covered" >    if (namespaces.leng</span>th &gt; 0) {
+<span class="cstat-no" title="statement not covered" >        query.andWhere(</span>
+<span class="cstat-no" title="statement not covered" >            `</span>
+<span class="cstat-no" title="statement not covered" ></span>            EXISTS(
+<span class="cstat-no" title="statement not covered" ></span>                SELECT *
+<span class="cstat-no" title="statement not covered" >                FROM data</span>sets
+<span class="cstat-no" title="statement not covered" >                INNER J</span>OIN variables ON variables.datasetId = datasets.id
+<span class="cstat-no" title="statement not covered" >                INNER</span> JOIN chart_dimensions ON chart_dimensions.variableId = variables.id
+<span class="cstat-no" title="statement not covered" >                WHERE datas</span>ets.namespace IN (:namespaces)
+<span class="cstat-no" title="statement not covered" >                AND chart_</span>dimensions.chartId = charts.id
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" ></span>        `,
+<span class="cstat-no" title="statement not covered" >            { nam</span>espaces: namespaces }
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const chart</span>s: ChartItem[] = (await query.getMany()).map((c) =&gt; ({
+<span class="cstat-no" title="statement not covered" >        id: c.id,</span>
+<span class="cstat-no" title="statement not covered" >        slug: c.config.</span>slug,
 <span class="cstat-no" title="statement not covered" >    }))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (tab) {</span>
-<span class="cstat-no" title="statement not covered" >        ch</span>arts.forEach((c) =&gt; (c.slug += `?tab=${tab}`))
-<span class="cstat-no" title="statement not covered" ></span>    }
+<span class="cstat-no" title="statement not covered" ></span>    if (tab) {
+<span class="cstat-no" title="statement not covered" >        charts.forEach((</span>c) =&gt; (c.slug += `?tab=${tab}`))
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const count = await que</span>ry.getCount()
-<span class="cstat-no" title="statement not covered" >    const numPages = Math.ceil(co</span>unt / perPage)
+<span class="cstat-no" title="statement not covered" >    const count = await query.getCoun</span>t()
+<span class="cstat-no" title="statement not covered" >    const numPages = Math</span>.ceil(count / perPage)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const originalUrl = U</span>rl.fromURL(params.originalUrl)
-<span class="cstat-no" title="statement not covered" >    const </span>prevPageUrl =
-<span class="cstat-no" title="statement not covered" ></span>        page &gt; 1
-<span class="cstat-no" title="statement not covered" >            ?</span> originalUrl.updateQueryParams({ page: (page - 1).toString() })
-<span class="cstat-no" title="statement not covered" >                  .fullU</span>rl
+<span class="cstat-no" title="statement not covered" ></span>    const originalUrl = Url.fromURL(params.originalUrl)
+<span class="cstat-no" title="statement not covered" >    const pre</span>vPageUrl =
+<span class="cstat-no" title="statement not covered" >        page &gt; 1</span>
+<span class="cstat-no" title="statement not covered" >            ? originalUrl.update</span>QueryParams({ page: (page - 1).toString() })
+<span class="cstat-no" title="statement not covered" >                  .full</span>Url
+<span class="cstat-no" title="statement not covered" ></span>            : undefined
+<span class="cstat-no" title="statement not covered" ></span>    const nextPageUrl =
+<span class="cstat-no" title="statement not covered" >        page &lt; numPages</span>
+<span class="cstat-no" title="statement not covered" >            ? originalUrl</span>.updateQueryParams({ page: (page + 1).toString() })
+<span class="cstat-no" title="statement not covered" >                  .fullUrl</span>
 <span class="cstat-no" title="statement not covered" >            : undefined</span>
-<span class="cstat-no" title="statement not covered" >    const nextPageUrl =</span>
-<span class="cstat-no" title="statement not covered" >        pa</span>ge &lt; numPages
-<span class="cstat-no" title="statement not covered" ></span>            ? originalUrl.updateQueryParams({ page: (page + 1).toString() })
-<span class="cstat-no" title="statement not covered" >                  .fullUr</span>l
-<span class="cstat-no" title="statement not covered" >            : undefined</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" >        pr</span>evPageUrl: prevPageUrl,
-<span class="cstat-no" title="statement not covered" ></span>        nextPageUrl: nextPageUrl,
-<span class="cstat-no" title="statement not covered" >        charts: char</span>ts,
+<span class="cstat-no" title="statement not covered" ></span>    return {
+<span class="cstat-no" title="statement not covered" >        prevPageUrl:</span> prevPageUrl,
+<span class="cstat-no" title="statement not covered" >        nextPageUrl: nextPage</span>Url,
+<span class="cstat-no" title="statement not covered" >        charts: charts,</span>
 <span class="cstat-no" title="statement not covered" >        currentPage: page,</span>
 <span class="cstat-no" title="statement not covered" >        totalPages: numPages,</span>
-<span class="cstat-no" title="statement not covered" >        comparisonUrl: params.c</span>omparisonUrl ?? "https://ourworldindata.org",
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >        co</span>mparisonUrl: params.comparisonUrl ?? "https://ourworldindata.org",
+<span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 interface EmbedTestPageProps {
@@ -1523,113 +1529,113 @@ interface EmbedTestPageProps {
 <span class="cstat-no" title="statement not covered" >            height: 100%;</span>
 <span class="cstat-no" title="statement not covered" >            margin: 0;</span>
 <span class="cstat-no" title="statement not covered" >            background-color: #f1f1f1;</span>
-<span class="cstat-no" title="statement not covered" >            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;</span>
+<span class="cstat-no" title="statement not covered" >            font-family: "Helvetica Neue", Helvetica, Arial, san</span>s-serif;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        figure, iframe {</span>
 <span class="cstat-no" title="statement not covered" >            border: 0;</span>
 <span class="cstat-no" title="statement not covered" >            flex: 1;</span>
 <span class="cstat-no" title="statement not covered" >            height: 450px;</span>
-<span class="cstat-no" title="statement not covered" >            margin: 10px;</span>
+<span class="cstat-no" title="statement not covered" >            margin: 1</span>0px;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        figure {</span>
-<span class="cstat-no" title="statement not covered" >            padding-top: 3px;</span>
+<span class="cstat-no" title="statement not covered" >            padding-t</span>op: 3px;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        .row {</span>
+<span class="cstat-no" title="statement not covered" ></span>        .row {
 <span class="cstat-no" title="statement not covered" >            padding: 10px;</span>
-<span class="cstat-no" title="statement not covered" ></span>            margin: 0;
+<span class="cstat-no" title="statement not covered" >            margin: 0;</span>
 <span class="cstat-no" title="statement not covered" >            border-bottom: 1px solid #ddd;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        .side-by-side {
+<span class="cstat-no" title="statement not covered" >        .side-by-side {</span>
 <span class="cstat-no" title="statement not covered" >            display: flex;</span>
-<span class="cstat-no" title="statement not covered" >            align-items: cente</span>r;
-<span class="cstat-no" title="statement not covered" >            justify-content: center;</span>
-<span class="cstat-no" title="statement not covered" >            width: 100%;</span>
+<span class="cstat-no" title="statement not covered" >            align-items: center;</span>
+<span class="cstat-no" title="statement not covered" >            justify</span>-content: center;
+<span class="cstat-no" title="statement not covered" >            width</span>: 100%;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        h3 {</span>
-<span class="cstat-no" title="statement not covered" >            wi</span>dth: 50%;
-<span class="cstat-no" title="statement not covered" >            text-align: center</span>;
-<span class="cstat-no" title="statement not covered" >            margin: 0;</span>
+<span class="cstat-no" title="statement not covered" >            width: 50%;</span>
+<span class="cstat-no" title="statement not covered" >            tex</span>t-align: center;
+<span class="cstat-no" title="statement not covered" ></span>            margin: 0;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        nav.pagination {</span>
-<span class="cstat-no" title="statement not covered" ></span>            width: 100%;
+<span class="cstat-no" title="statement not covered" >        nav</span>.pagination {
+<span class="cstat-no" title="statement not covered" >            width: 100%;</span>
 <span class="cstat-no" title="statement not covered" ></span>            text-align: center;
-<span class="cstat-no" title="statement not covered" >            padding: 15px;</span>
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" ></span>            padding: 15px;
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        .chart-id {</span>
-<span class="cstat-no" title="statement not covered" >            font-siz</span>e: 18px;
-<span class="cstat-no" title="statement not covered" >            font-weig</span>ht: bold;
-<span class="cstat-no" title="statement not covered" >            padding-top: 1</span>0px;
-<span class="cstat-no" title="statement not covered" >            text-align:</span> center;
+<span class="cstat-no" title="statement not covered" >            font-size: 18p</span>x;
+<span class="cstat-no" title="statement not covered" >            font-weight</span>: bold;
+<span class="cstat-no" title="statement not covered" ></span>            padding-top: 10px;
+<span class="cstat-no" title="statement not covered" ></span>            text-align: center;
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        .chart</span>-id a {
-<span class="cstat-no" title="statement not covered" >            text-decorat</span>ion: underline;
-<span class="cstat-no" title="statement not covered" ></span>            text-decoration-color: #ccc;
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >        .c</span>hart-id a {
+<span class="cstat-no" title="statement not covered" ></span>            text-decoration: underline;
+<span class="cstat-no" title="statement not covered" >            text-decorati</span>on-color: #ccc;
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    `</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;html&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;Head
-<span class="cstat-no" title="statement not covered" ></span>                canonicalUrl=""
+<span class="cstat-no" title="statement not covered" >    return</span> (
+<span class="cstat-no" title="statement not covered" ></span>        &lt;html&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;Head</span>
+<span class="cstat-no" title="statement not covered" >                canonicalUrl=""</span>
 <span class="cstat-no" title="statement not covered" >                pageTitle="Test Embeds"</span>
 <span class="cstat-no" title="statement not covered" >                baseUrl={BAKED_BASE_URL}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;style dangerouslySetInnerHTML={{ __html: style }</span>} /&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;style dangerouslySetInnerHTML={{ __html: style }} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Head&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;body&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div className="row"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div className="side-by-side"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;h3&gt;{props.comparisonUrl}&lt;/h3&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {!IS_LIVE &amp;&amp; &lt;h3&gt;{BAKED_BASE_URL}&lt;/h3&gt;}</span>
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;h3&gt;{props.comparisonUrl}&lt;/h3&gt;
+<span class="cstat-no" title="statement not covered" >                        {!IS_LIVE &amp;&amp; &lt;h3</span>&gt;{BAKED_BASE_URL}&lt;/h3&gt;}
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;/div&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                {pro</span>ps.charts.map((chart) =&gt; (
-<span class="cstat-no" title="statement not covered" >                    &lt;</span>div key={chart.slug} className="row"&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;d</span>iv className="chart-id"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            &lt;a
-<span class="cstat-no" title="statement not covered" >                                href={q</span>ueryParamsToStr({
-<span class="cstat-no" title="statement not covered" >                                    ids: chart.id.toString(),</span>
+<span class="cstat-no" title="statement not covered" >                &lt;/div</span>&gt;
+<span class="cstat-no" title="statement not covered" >                {props.cha</span>rts.map((chart) =&gt; (
+<span class="cstat-no" title="statement not covered" >                    &lt;di</span>v key={chart.slug} className="row"&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;div className=</span>"chart-id"&gt;
+<span class="cstat-no" title="statement not covered" >                            &lt;a</span>
+<span class="cstat-no" title="statement not covered" ></span>                                href={queryParamsToStr({
+<span class="cstat-no" title="statement not covered" ></span>                                    ids: chart.id.toString(),
 <span class="cstat-no" title="statement not covered" ></span>                                    comparisonUrl: props.comparisonUrl,
 <span class="cstat-no" title="statement not covered" ></span>                                })}
 <span class="cstat-no" title="statement not covered" ></span>                            &gt;
 <span class="cstat-no" title="statement not covered" ></span>                                {chart.id}
 <span class="cstat-no" title="statement not covered" ></span>                            &lt;/a&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;/d</span>iv&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;d</span>iv className="side-by-side"&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;div className="side-by-side"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                            &lt;iframe
 <span class="cstat-no" title="statement not covered" ></span>                                src={`${props.comparisonUrl}/grapher/${chart.slug}`}
 <span class="cstat-no" title="statement not covered" ></span>                                loading="lazy"
-<span class="cstat-no" title="statement not covered" ></span>                            /&gt;
+<span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                            {!IS_LIVE &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                                &lt;figure</span>
+<span class="cstat-no" title="statement not covered" ></span>                                &lt;figure
 <span class="cstat-no" title="statement not covered" ></span>                                    data-grapher-src={`${BAKED_GRAPHER_URL}/${chart.slug}`}
 <span class="cstat-no" title="statement not covered" ></span>                                /&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            )}
-<span class="cstat-no" title="statement not covered" >                        &lt;/d</span>iv&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                ))}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;nav clas</span>sName="pagination"&gt;
+<span class="cstat-no" title="statement not covered" >                            )}</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;/div</span>&gt;
+<span class="cstat-no" title="statement not covered" ></span>                ))}
+<span class="cstat-no" title="statement not covered" ></span>                &lt;nav className="pagination"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                    {props.prevPageUrl &amp;&amp; (
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;a href={props.prevPageUrl}&gt;&amp;lt;&amp;lt; Prev&lt;/a&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    )}{" "}
-<span class="cstat-no" title="statement not covered" >                    {pro</span>ps.currentPage !== undefined &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                        props.to</span>talPages !== undefined &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    )}{" "}</span>
+<span class="cstat-no" title="statement not covered" >                    {pr</span>ops.currentPage !== undefined &amp;&amp;
+<span class="cstat-no" title="statement not covered" ></span>                        props.totalPages !== undefined &amp;&amp;
 <span class="cstat-no" title="statement not covered" ></span>                        `Page ${props.currentPage} of ${props.totalPages}`}{" "}
-<span class="cstat-no" title="statement not covered" ></span>                    {props.nextPageUrl &amp;&amp; (
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;a href={props.nextPageUrl}&gt;Next &amp;gt;&amp;gt;&lt;/a&gt;
+<span class="cstat-no" title="statement not covered" >                    {prop</span>s.nextPageUrl &amp;&amp; (
+<span class="cstat-no" title="statement not covered" >                        &lt;</span>a href={props.nextPageUrl}&gt;Next &amp;gt;&amp;gt;&lt;/a&gt;
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/nav&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;script src={`${</span>BAKED_GRAPHER_URL}/embedCharts.js`} /&gt;
-<span class="cstat-no" title="statement not covered" >            &lt;/body&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/</span>html&gt;
-<span class="cstat-no" title="statement not covered" ></span>    )
+<span class="cstat-no" title="statement not covered" ></span>                &lt;script src={`${BAKED_GRAPHER_URL}/embedCharts.js`} /&gt;
+<span class="cstat-no" title="statement not covered" ></span>            &lt;/body&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;/html&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 testPageRouter.get("/embeds", async (req, res) =&gt; {
@@ -1667,13 +1673,13 @@ testPageRouter.get("/embeds/:id", async (req, res) =&gt; {
     }
 })
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >funct</span>ion PreviewTestPage(props: { charts: any[] }) {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function PreviewTestPage(props: { charts: any[] }) {</span></span>
 <span class="cstat-no" title="statement not covered" >    const style = `</span>
 <span class="cstat-no" title="statement not covered" >        html, body {</span>
-<span class="cstat-no" title="statement not covered" >            height: 100%;</span>
-<span class="cstat-no" title="statement not covered" >            margin: 0;</span>
-<span class="cstat-no" title="statement not covered" ></span>        }
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" ></span>            height: 100%;
+<span class="cstat-no" title="statement not covered" >            margin: 0;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span>
+        }
+&nbsp;
         img {
             width: 45%;
         }
@@ -1834,7 +1840,7 @@ export { testPageRouter }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed May 19 2021 12:09:23 GMT+0000 (Coordinated Universal Time)
+                at Wed May 19 2021 12:23:18 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
