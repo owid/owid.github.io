@@ -389,7 +389,7 @@
 &nbsp;
 const DEBUG = false
 &nbsp;
-declare var window: any
+declare let window: any
 &nbsp;
 // Docs on GA's event interface: https://developers.google.com/analytics/devguides/collection/analyticsjs/events
 interface GAEvent {
@@ -433,12 +433,12 @@ export class GrapherAnalytics {
     private version: string // Ideally the Git hash commit
     private isDev: boolean
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logGrapherViewError(error: any, info: any) {</span>
+<span class="fstat-no" title="function not covered" >    logGrapherViewError(error: any, info: any): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.logToAmplitude(EventNames.grapherViewErr</span>or, { error, info })
 <span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.GrapherError, EventNames.grapherViewError)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logEntitiesNotFoundError(entities: string[]) {</span>
+<span class="fstat-no" title="function not covered" >    logEntitiesNotFoundError(entities: string[]): void {</span>
 <span class="cstat-no" title="statement not covered" ></span>        this.logToAmplitude(EventNames.entitiesNotFound, { entities })
 <span class="cstat-no" title="statement not covered" >        this.logToGA(</span>
 <span class="cstat-no" title="statement not covered" >            Categories.GrapherError,</span>
@@ -447,11 +447,11 @@ export class GrapherAnalytics {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    logGrapherTimelinePlay(slug?: string) {
+    logGrapherTimelinePlay(slug?: string): void {
         this.logToGA(Categories.GrapherUsage, EventNames.timelinePlay, slug)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logGlobalEntitySelector(action: entityControlEvent, note?: string) {</span>
+<span class="fstat-no" title="function not covered" >    logGlobalEntitySelector(action: entityControlEvent, note?: string): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.GlobalEntitySelectorUsage, action, note)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -459,19 +459,19 @@ export class GrapherAnalytics {
 <span class="cstat-no" title="statement not covered" >        pickerSlug: string,</span>
 <span class="cstat-no" title="statement not covered" >        actio</span>n: countrySelectorEvent,
 <span class="cstat-no" title="statement not covered" ></span>        note?: string
-<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >    ): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.logToGA(`${pickerSlug}ExplorerCountrySe</span>lectorUsage`, action, note)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logSiteClick(action: string = "unknown-action", label: string) {</span>
+<span class="fstat-no" title="function not covered" >    logSiteClick(action: string = "unknown-action", label: string): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.SiteClick, action, label)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    logKeyboardShortcut(shortcut: string, combo: string) {</span>
+<span class="fstat-no" title="function not covered" >    logKeyboardShortcut(shortcut: string, combo: string): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.logToGA(Categories.KeyboardShortcut, shortcut, combo)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    startClickTracking() {</span>
+<span class="fstat-no" title="function not covered" >    startClickTracking(): void {</span>
 <span class="cstat-no" title="statement not covered" >        // Todo: add</span> a Story and tests for this OR even better remove and use Google Tag Manager or similar fully SAAS tracking.
 <span class="cstat-no" title="statement not covered" >        // Todo: have different Attributes for Grapher charts vs </span>Site.
 <span class="cstat-no" title="statement not covered" ></span>        const dataTrackAttr = "data-track-note"
@@ -494,7 +494,7 @@ export class GrapherAnalytics {
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    protected <span class="fstat-no" title="function not covered" >logToAmplitude(name: string, props?: any) {</span>
+    protected <span class="fstat-no" title="function not covered" >logToAmplitude(name: string, props?: any): void {</span>
 <span class="cstat-no" title="statement not covered" >        const allProps = {</span>
 <span class="cstat-no" title="statement not covered" >            context: {</span>
 <span class="cstat-no" title="statement not covered" >                siteVersion: this.version,</span>
@@ -520,7 +520,7 @@ export class GrapherAnalytics {
         eventAction: string,
         eventLabel?: string,
         eventValue?: number
-    ) {
+    ): void {
         // Todo: send the Grapher (or site) version to Git
         const event: GAEvent = {
             hitType: "event",
@@ -556,7 +556,7 @@ export class GrapherAnalytics {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

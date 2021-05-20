@@ -916,13 +916,13 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">24x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -1291,27 +1291,27 @@ export interface HorizontalColorLegendManager {
 class HorizontalColorLegend extends React.Component&lt;{
     manager: HorizontalColorLegendManager
 }&gt; {
-    @computed get manager() {
+    @computed get manager(): HorizontalColorLegendManager {
         return this.props.manager
     }
 &nbsp;
-    @computed get legendX() {
+    @computed get legendX(): number {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.legendX ?? 0</span>
     }
 &nbsp;
-    @computed get categoryLegendY<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get categoryLegendY<span class="fstat-no" title="function not covered" >(): number {</span>
 <span class="cstat-no" title="statement not covered" >        retur</span>n this.manager.categoryLegendY ?? 0
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get numericLegendY() {
+    @computed get numericLegendY(): number {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>manager.numericLegendY ?? 0
     }
 &nbsp;
-    @computed get legendWidth() {
+    @computed get legendWidth(): number {
         return this.manager.legendWidth ?? 200
     }
 &nbsp;
-    @computed get legendHeig<span class="fstat-no" title="function not covered" >ht() {</span>
+    @computed get legendHeig<span class="fstat-no" title="function not covered" >ht(): number {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manager.legendHeigh</span>t ?? 200
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1320,7 +1320,7 @@ class HorizontalColorLegend extends React.Component&lt;{
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.legendAlign ?? L</span>egendAlign.center
     }
 &nbsp;
-    @computed get fontSize() {
+    @computed get fontSize(): number {
         return this.manager.fontSize ?? BASE_FONT_SIZE
     }
 }
@@ -1329,39 +1329,39 @@ class HorizontalColorLegend extends React.Component&lt;{
 export class HorizontalNumericColorLegend extends HorizontalColorLegend {
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
 &nbsp;
-    @computed get numericLegendData() {
+    @computed get numericLegendData(): ColorScaleBin[] {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.m</span>anager.numericLegendData ?? []
     }
 &nbsp;
-    @computed get numericBins() {
+    @computed get numericBins(): NumericBin[] {
         return this.numericLegendData.filter(
-            (bin) =&gt; bin instanceof NumericBin
-        ) as NumericBin[]
+            (bin): bin is NumericBin =&gt; bin instanceof NumericBin
+        )
     }
     rectHeight = 10
 &nbsp;
-    @computed get tickFontSize() {
+    @computed get tickFontSize(): number {
         return 0.75 * this.fontSize
     }
 &nbsp;
     // NumericColorLegend wants to map a range to a width. However, sometimes we are given
     // data without a clear min/max. So we must fit these scurrilous bins into the width somehow.
-    @computed get minValue() {
+    @computed get minValue(): number {
         return min(this.numericBins.map((bin) =&gt; bin.min)) as number
     }
-    @computed get maxValue() {
+    @computed get maxValue(): number {
         return max(this.numericBins.map((bin) =&gt; bin.max)) as number
     }
-    @computed get rangeSize() {
+    @computed get rangeSize(): number {
         return this.maxValue - this.minValue
     }
-    @computed get categoryBinWidth() {
+    @computed get categoryBinWidth(): number {
         return Bounds.forText("No data", { fontSize: this.tickFontSize }).width
     }
-    @computed get categoryBinMargin() {
+    @computed get categoryBinMargin(): number {
         return this.rectHeight * 1.5
     }
-    @computed get totalCategoricalWidth() {
+    @computed get totalCategoricalWidth(): number {
         const { numericLegendData } = this
         const { categoryBinWidth, categoryBinMargin } = this
         const widths = numericLegendData.map((bin) =&gt;
@@ -1371,11 +1371,11 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         )
         return sum(widths)
     }
-    @computed get availableNumericWidth() {
+    @computed get availableNumericWidth(): number {
         return this.legendWidth - this.totalCategoricalWidth
     }
 &nbsp;
-    @computed get positionedBins() {
+    @computed get positionedBins(): PositionedBin[] {
         const {
             manager,
             rangeSize,
@@ -1408,18 +1408,18 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
                 width,
                 margin,
                 bin: bin,
-            } as PositionedBin
+            }
         })
     }
 &nbsp;
-    @computed get numericLabels() {
+    @computed get numericLabels(): NumericLabel[] {
         const { rectHeight, positionedBins, tickFontSize } = this
 &nbsp;
         const makeBoundaryLabel = (
             bin: PositionedBin,
             minOrMax: "min" | "max",
             text: string
-        ) =&gt; {
+        ): NumericLabel =&gt; {
             const labelBounds = Bounds.forText(text, { fontSize: tickFontSize })
             const x =
                 bin.x +
@@ -1435,7 +1435,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
             }
         }
 &nbsp;
-        const makeRangeLabel = (bin: PositionedBin) =&gt; {
+        const makeRangeLabel = (bin: PositionedBin): NumericLabel =&gt; {
             const labelBounds = Bounds.forText(bin.bin.text, {
                 fontSize: tickFontSize,
             })
@@ -1502,13 +1502,13 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         return labels
     }
 &nbsp;
-    @computed get height() {
+    @computed get height(): number {
         return Math.abs(
 <span class="branch-0 cbranch-no" title="branch not covered" >            min(this.numericLabels.map((label) =&gt; label</span>.bounds.y)) ?? 0
         )
     }
 &nbsp;
-    @computed get bounds<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get bounds<span class="fstat-no" title="function not covered" >(): Bounds {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return new Bounds(
 <span class="cstat-no" title="statement not covered" ></span>            this.legendX,
 <span class="cstat-no" title="statement not covered" >            t</span>his.numericLegendY,
@@ -1517,7 +1517,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound onMouseMove(ev: MouseEvent | TouchEvent) {</span>
+    @action.<span class="fstat-no" title="function not covered" >bound onMouseMove(ev: MouseEvent | TouchEvent): void {</span>
 <span class="cstat-no" title="statement not covered" >        const { mana</span>ger, base, positionedBins } = this
 <span class="cstat-no" title="statement not covered" >        const { numericFocusBracket } = manager</span>
 <span class="cstat-no" title="statement not covered" >        const</span> mouse = getRelativeMouse(base.current, ev)
@@ -1550,12 +1550,12 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
 <span class="cstat-no" title="statement not covered" >            m</span>anager.onLegendMouseOver(newFocusBracket)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    componentDidMount() {
+    componentDidMount(): void {
         document.documentElement.addEventListener("mousemove", this.onMouseMove)
         document.documentElement.addEventListener("touchmove", this.onMouseMove)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentWillUnmount() {</span>
+<span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
 <span class="cstat-no" title="statement not covered" >        document.documentElement.removeEvent</span>Listener(
 <span class="cstat-no" title="statement not covered" >            "mousemove",</span>
 <span class="cstat-no" title="statement not covered" >            this.onMouseMove</span>
@@ -1566,7 +1566,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const {
             manager,
             numericLabels,
@@ -1641,11 +1641,11 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
 &nbsp;
 @observer
 export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
-    @computed get categoricalLegendData() {
+    @computed get categoricalLegendData(): CategoricalBin[] {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.categorical</span>LegendData ?? []
     }
 &nbsp;
-    @computed private get markLines() {
+    @computed private get markLines(): MarkLine[] {
         const manager = this.manager
         const scal<span class="branch-0 cbranch-no" title="branch not covered" >e</span> = manager.scale ?? 1
         const rectSize = 12 * scale
@@ -1698,11 +1698,11 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
         return lines
     }
 &nbsp;
-    @computed get width() {
+    @computed get width(): number {
         return max(this.markLines.map((l) =&gt; l.totalWidth)) as number
     }
 &nbsp;
-    @computed get marks() {
+    @computed get marks(): CategoricalMark[] {
         const lines = this.markLines
         const align = this.legendAlign
 &nbsp;
@@ -1725,11 +1725,11 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
         return flatten(lines.map((l) =&gt; l.marks))
     }
 &nbsp;
-    @computed get height() {
+    @computed get height(): number {
         return max(this.marks.map((mark) =&gt; mark.y + mark.rectSize)) as number
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const { manager, marks } = this
 &nbsp;
         return (
@@ -1739,12 +1739,12 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
                         return (
                             &lt;g
                                 key={index}
-                                onMouseOver={() =&gt;
+                                onMouseOver={(): void =&gt;
                                     manager.onLegendMouseOver
                                         ? manager.onLegendMouseOver(mark.bin)
                                         : undefined
                                 }
-                                onMouseLeave={() =&gt;
+                                onMouseLeave={(): void =&gt;
                                     manager.onLegendMouseLeave
                                         ? manager.onLegendMouseLeave()
                                         : undefined
@@ -1786,7 +1786,7 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

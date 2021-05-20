@@ -196,8 +196,8 @@
 <span class="cline-any cline-yes">348x</span>
 <span class="cline-any cline-yes">348x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">213x</span>
-<span class="cline-any cline-yes">213x</span>
+<span class="cline-any cline-yes">210x</span>
+<span class="cline-any cline-yes">210x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -205,11 +205,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">321x</span>
-<span class="cline-any cline-yes">321x</span>
+<span class="cline-any cline-yes">319x</span>
+<span class="cline-any cline-yes">319x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">313x</span>
-<span class="cline-any cline-yes">313x</span>
+<span class="cline-any cline-yes">311x</span>
+<span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-yes">47x</span>
@@ -224,16 +224,16 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">225x</span>
-<span class="cline-any cline-yes">229x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">229x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">223x</span>
+<span class="cline-any cline-yes">227x</span>
+<span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">135x</span>
+<span class="cline-any cline-yes">227x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -304,35 +304,35 @@ abstract class AbstractColorScaleBin&lt;T extends BinProps&gt; {
     constructor(props: T) {
         this.props = props
     }
-    get color() {
+    get color(): string {
         return this.props.color
     }
-    get label() {
+    get label(): string | undefined {
         return this.props.label
     }
 }
 &nbsp;
 export class NumericBin extends AbstractColorScaleBin&lt;NumericBinProps&gt; {
-    get min() {
+    get min(): number {
         return this.props.min
     }
-    get max() {
+    get max(): number {
         return this.props.max
     }
-    get minText() {
+    get minText(): string {
         return (<span class="branch-0 cbranch-no" title="branch not covered" >this.props.isOpenLeft ? `&lt;` : "</span>") + this.props.displayMin
     }
-    get maxText() {
+    get maxText(): string {
         return (this.props.isOpenRight ? `&gt;` : "") + this.props.displayMax
     }
-    get text() {
+    get text(): string {
         return this.props.label || ""
     }
-    get isHidden() {
+    get isHidden(): boolean {
         return false
     }
 &nbsp;
-    contains(value: string | number | undefined) {
+    contains(value: string | number | undefined): boolean {
         if (value ==<span class="branch-0 cbranch-no" title="branch not covered" >=</span> undefined) return false
 &nbsp;
 <span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (this.props.isOpenLeft) return value &lt;= this.max
@@ -344,7 +344,7 @@ export class NumericBin extends AbstractColorScaleBin&lt;NumericBinProps&gt; {
         return value &gt; this.min &amp;&amp; value &lt;= this.max
     }
 &nbsp;
-    equals(other: ColorScaleBin) {
+    equals(other: ColorScaleBin): boolean {
         return (
             other instanceof NumericBin &amp;&amp;
             this.min === other.min &amp;&amp;
@@ -354,28 +354,28 @@ export class NumericBin extends AbstractColorScaleBin&lt;NumericBinProps&gt; {
 }
 &nbsp;
 export class CategoricalBin extends AbstractColorScaleBin&lt;CategoricalBinProps&gt; {
-    get index() {
+    get index(): number {
         return this.props.index
     }
-    get value() {
+    get value(): string {
         return this.props.value
     }
-    get isHidden() {
+    get isHidden(): boolean | undefined {
         return this.props.isHidden
     }
 &nbsp;
-    get text() {
+    get text(): string {
         return this.props.label || this.props.value
     }
 &nbsp;
-    contains(value: string | number | undefined) {
+    contains(value: string | number | undefined): boolean {
         return (
             (value === undefined &amp;&amp; this.props.value === "No data") ||
             (value !== undefined &amp;&amp; value === this.props.value)
         )
     }
 &nbsp;
-    equals(other: ColorScaleBin) {
+    equals(other: ColorScaleBin): boolean {
         return (
             other instanceof CategoricalBin &amp;&amp;
             this.props.index === other.props.index
@@ -391,7 +391,7 @@ export type ColorScaleBin = CategoricalBin | NumericBin
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

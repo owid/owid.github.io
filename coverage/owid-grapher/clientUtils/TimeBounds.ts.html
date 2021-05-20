@@ -193,7 +193,9 @@
 <a name='L134'></a><a href='#L134'>134</a>
 <a name='L135'></a><a href='#L135'>135</a>
 <a name='L136'></a><a href='#L136'>136</a>
-<a name='L137'></a><a href='#L137'>137</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -222,6 +224,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -257,7 +261,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -289,11 +293,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-yes">51x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -357,8 +361,10 @@ enum TimeBoundValueStr {
     unboundedRight = "latest",
 }
 &nbsp;
-export const timeFromTimebounds = (timeBound: TimeBound, fallbackTime: Time) =&gt;
-    Math.abs(timeBound) !== Infinity ? timeBound : fallbackTime
+export const timeFromTimebounds = (
+    timeBound: TimeBound,
+    fallbackTime: Time
+): number =&gt; (Math.abs(timeBound) !== Infinity ? timeBound : fallbackTime)
 &nbsp;
 const hasAnInfinity = (timeBound: TimeBound): timeBound is TimeBoundValue =&gt;
     isNegativeInfinity(timeBound) || isPositiveInfinity(timeBound)
@@ -371,7 +377,7 @@ export const isPositiveInfinity = (
     timeBound: TimeBound
 ): timeBound is TimeBoundValue =&gt; timeBound === TimeBoundValue.positiveInfinity
 &nbsp;
-const formatTimeBound = (timeBound: TimeBound) =&gt; {
+const formatTimeBound = (timeBound: TimeBound): string =&gt; {
     if (isNegativeInfinity(timeBound)) return TimeBoundValueStr.unboundedLeft
     if (isPositiveInfinity(timeBound)) return TimeBoundValueStr.unboundedRight
     return `${timeBound}`
@@ -388,7 +394,7 @@ const parseTimeBound = (str: string): TimeBound | undefined =&gt; {
 }
 &nbsp;
 // Use this to not repeat logic
-const fromJSON = (value: TimeBound | string | undefined) =&gt;
+const fromJSON = (value: TimeBound | string | undefined): number | undefined =&gt;
     isString(value) ? parseTimeBound(value) : value
 &nbsp;
 const toJSON = (bound: TimeBound | undefined): string | number | undefined =&gt; {
@@ -415,7 +421,7 @@ const reISODate = new RegExp(`^(${reISODateComponent.source})$`)
 export const timeBoundToTimeBoundString = (
     timeBound: TimeBound,
     isDate: boolean
-) =&gt; {
+): string =&gt; {
     if (hasAnInfinity(timeBound)) return formatTimeBound(timeBound)
     return isDate
         ? formatDay(timeBound, { format: "YYYY-MM-DD" })
@@ -427,9 +433,9 @@ const parseTimeURIComponent = (param: string): TimeBound | undefined =&gt;
         ? diffDateISOStringInDays(param, EPOCH_DATE)
         : parseTimeBound(param)
 &nbsp;
-const upgradeLegacyTimeString = (time: string) =&gt; {
+const upgradeLegacyTimeString = (time:<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" > </span></span></span>string): string =&gt; {
     // In the past we supported unbounded time parameters like time=2015.. which would be
-    // equivalent to time=2015..latest<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >.</span></span></span> We don't actively generate these kinds of URL any
+    // equivalent to time=2015..latest. We don't actively generate these kinds of URL any
     // more because URLs ending with dots are not interpreted correctly by many services
     // (Twitter, Facebook and others) - but we still want to recognize incoming requests
     // for these "legacy" URLs!
@@ -472,7 +478,7 @@ export const getTimeDomainFromQueryString = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

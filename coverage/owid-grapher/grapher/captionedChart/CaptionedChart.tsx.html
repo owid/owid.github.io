@@ -418,7 +418,11 @@
 <a name='L359'></a><a href='#L359'>359</a>
 <a name='L360'></a><a href='#L360'>360</a>
 <a name='L361'></a><a href='#L361'>361</a>
-<a name='L362'></a><a href='#L362'>362</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -609,7 +613,7 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
-<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
@@ -685,8 +689,8 @@
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -816,6 +820,8 @@ import { faPencilAlt } from "@fortawesome/free-solid-svg-icons/faPencilAlt"
 import { FooterManager } from "../footer/FooterManager"
 import { HeaderManager } from "../header/HeaderManager"
 import { exposeInstanceOnWindow } from "../../clientUtils/Util"
+import { SelectionArray } from "../selection/SelectionArray"
+import { EntityName } from "../../coreTable/OwidTableConstants"
 &nbsp;
 export interface CaptionedChartManager
     extends ChartManager,
@@ -859,33 +865,33 @@ const PADDING_ABOVE_FOOTER = 25
 &nbsp;
 @observer
 export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
-    @computed protected get manager() {
+    @computed protected get manager(): CaptionedChartManager {
         return this.props.manager
     }
 &nbsp;
-    @computed private get containerElement() {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return this.manager?.containerElement
+    @computed private get containerElement(): HTMLDivElement | undefined {
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>manager?.containerElement
     }
 &nbsp;
-    @computed private get maxWidth() {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return this.props.maxWidth ?? this.bounds.width - OUTSIDE_PADDING * 2
+    @computed private get maxWidth(): number {
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.m</span>axWidth ?? this.bounds.width - OUTSIDE_PADDING * 2
     }
 &nbsp;
-    @computed protected get header() {
+    @computed protected get header(): Header {
         return new Header({
             manager: this.manager,
             maxWidth: this.maxWidth,
         })
     }
 &nbsp;
-    @computed protected get footer() {
+    @computed protected get footer(): Footer {
         return new Footer({
             manager: this.manager,
             maxWidth: this.maxWidth,
         })
     }
 &nbsp;
-    @computed protected get chartHeight() {
+    @computed protected get chartHeight(): number {
         const controlsRowHeight = this.controls.length ? CONTROLS_ROW_HEIGHT : 0
         return (
             this.bounds.height -
@@ -897,23 +903,23 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
     }
 &nbsp;
     // todo: should we remove this and not make a distinction between map and chart tabs?
-    @computed protected get isMapTab() {
+    @computed protected get isMapTab(): boolean {
         return this.manager.tab === GrapherTabOption.map
     }
 &nbsp;
-    @computed protected get bounds() {
+    @computed protected get bounds(): Bounds {
         return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.props.boun</span></span>ds ?? this.manager.tabBounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
     // The bounds for the middle chart part
-    @computed protected get boundsForChart() {
+    @computed protected get boundsForChart(): Bounds {
         return new Bounds(0, 0, this.bounds.width, this.chartHeight)
             .padWidth(OUTSIDE_PADDING)
             .padTop(this.isMapTab ? 0 : PADDING_BELOW_HEADER)
             .padBottom(OUTSIDE_PADDING)
     }
 &nbsp;
-    renderChart() {
+    renderChart(): JSX.Element {
         const { manager } = this
         const bounds = this.boundsForChart
 &nbsp;
@@ -923,7 +929,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
               manager.type ??
               ChartTypeName.LineChart
         const ChartClass =
-<span class="branch-0 cbranch-no" title="branch not covered" >            ChartComponentClassMap.get(ch</span>artTypeName) ?? DefaultChartClass
+<span class="branch-0 cbranch-no" title="branch not covered" >            ChartComponentClassMap.get(chartTypeName</span>) ?? DefaultChartClass
 &nbsp;
         // Todo: make FacetChart a chart type name?
         if (!this.isMapTab &amp;&amp; manager.facetStrategy)
@@ -944,15 +950,15 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         )
     }
 &nbsp;
-    componentDidMount() {
+    componentDidMount(): void {
         exposeInstanceOnWindow(this, "captionedChart")
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >startSelecting() {</span>
-<span class="cstat-no" title="statement not covered" >        this.manager.isSelectingData =</span> true
+    @action.bound <span class="fstat-no" title="function not covered" >startSelecting(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.manager.isSelectingData = true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get controls() {
+    @computed get controls(): JSX.Element[] {
         const manager = this.manager
         // Todo: we don't yet show any controls on Maps, but seems like we would want to.
         if (!manager.isReady || this.isMapTab) return []
@@ -966,7 +972,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
                 &lt;ScaleSelector
                     key="scaleSelector"
                     manager={manager.yAxis!}
-                    prefix={showXScaleToggle<span class="branch-0 cbranch-no" title="branch not covered" > ? "Y: "</span> : ""}
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>                    prefix={showXScaleToggle ? "Y: " : ""}
                 /&gt;
             )
 &nbsp;
@@ -995,7 +1001,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
             )
 &nbsp;
         if (manager.showChangeEntityButton)
-<span class="branch-0 cbranch-no" title="branch not covered" >            c</span>ontrols.push(
+<span class="branch-0 cbranch-no" title="branch not covered" >            controls.</span>push(
                 &lt;button
                     type="button"
                     key="grapher-change-entities"
@@ -1017,10 +1023,10 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
             controls.push(&lt;ZoomToggle key="ZoomToggle" manager={manager} /&gt;)
 &nbsp;
         if (manager.showAbsRelToggle)
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            controls.push(&lt;AbsRelToggle key="AbsRelToggle" manager={manager} /&gt;)
+<span class="branch-0 cbranch-no" title="branch not covered" >            controls.</span>push(&lt;AbsRelToggle key="AbsRelToggle" manager={manager} /&gt;)
 &nbsp;
         if (manager.showHighlightToggle)
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            controls.push(
+<span class="branch-0 cbranch-no" title="branch not covered" >            controls.</span>push(
                 &lt;HighlightToggle key="highlight-toggle" manager={manager} /&gt;
             )
 &nbsp;
@@ -1035,19 +1041,19 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         return controls
     }
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed get selectionArray() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.manager.selection
+    @compute<span class="fstat-no" title="function not covered" >d get selectionArray(): SelectionArray | EntityName[] | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        return this.</span>manager.selection
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private renderControlsRow() {
+    private renderControlsRow(): JSX.Element | null {
         return this.controls.length ? (
             &lt;div className="controlsRow"&gt;
                 &lt;CollapsibleList&gt;{this.controls}&lt;/CollapsibleList&gt;
             &lt;/div&gt;
         ) : null
-    }
+    }<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
 &nbsp;
-    private renderLoadingIndicator() {<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
+    private renderLoadingIndicator(): JSX.Element {
         return (
             &lt;foreignObject {...this.boundsForChart.toProps()}&gt;
                 &lt;LoadingIndicator title={this.manager.whatAreWeWaitingFor} /&gt;
@@ -1055,7 +1061,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         )
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const { bounds, chartHeight, maxWidth } = this
         const { width } = bounds
 &nbsp;
@@ -1107,19 +1113,19 @@ export class StaticCaptionedChart extends CaptionedChart {
         super(props)
     }
 &nbsp;
-    @computed private get paddedBounds() {
+    @computed private get paddedBounds(): Bounds {
         return this.bounds.pad(OUTSIDE_PADDING)
     }
 &nbsp;
     // The bounds for the middle chart part
-    @computed protected get boundsForChart() {
+    @computed protected get boundsForChart(): Bounds {
         return this.paddedBounds
             .padTop(this.header.height)
             .padBottom(this.footer.height + PADDING_ABOVE_FOOTER)
             .padTop(this.isMapTab ? 0 : PADDING_BELOW_HEADER)
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const { bounds, paddedBounds } = this
         const { width, height } = bounds
 &nbsp;
@@ -1147,7 +1153,7 @@ export class StaticCaptionedChart extends CaptionedChart {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

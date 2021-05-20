@@ -224,7 +224,11 @@
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -320,6 +324,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -333,13 +338,16 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -353,10 +361,10 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -428,18 +436,18 @@ export class CollapsibleList extends React.Component {
         )
     }
 &nbsp;
-    private updateOuterContainerWidth() {
+    private updateOuterContainerWidth(): void {
         this.outerContainerWidth =
             this.outerContainerRef.current?.clientWidth ?? 0
     }
 &nbsp;
-    private calculateItemWidths() {
+    private calculateItemWidths(): void {
         this.outerContainerRef.current
             ?.querySelectorAll(".list-item.visible")
-            .forEach((item) =&gt; this.itemsWidths.push(item.clientWidth))
+            .forEach((item): number =&gt; this.itemsWidths.push(item.clientWidth))
     }
 &nbsp;
-    @action private updateNumItemsVisible() {
+    @action private updateNumItemsVisible(): void {
         const numItemsVisibleWithoutMoreButton = numItemsVisible(
             this.itemsWidths,
             this.outerContainerWidth
@@ -455,26 +463,26 @@ export class CollapsibleList extends React.Component {
                   )
     }
 &nbsp;
-    private get visibleItems() {
+    private get visibleItems(): ListChild[] {
         return this.children.slice(0, this.numItemsVisible)
     }
 &nbsp;
-    private get dropdownItems() {
+    private get dropdownItems(): ListChild[] {
         return this.numItemsVisible
             ? this.children.slice(this.numItemsVisible)
             : []
     }
 &nbsp;
-    @action private onResize = throttle(() =&gt; {
+    @action private onResize = throttle((): void =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>        this.updateItemVisibility()
     }, 100)
 &nbsp;
-    @action private updateItemVisibility() {
+    @action private updateItemVisibility(): void {
         this.updateOuterContainerWidth()
         this.updateNumItemsVisible()
     }
 &nbsp;
-    componentDidMount() {
+    componentDidMount(): void {
         window.addEventListener("resize", this.onResize)
 &nbsp;
         this.moreButtonWidth = this.moreButtonRef.current?.clientWidth ?? 0
@@ -482,49 +490,53 @@ export class CollapsibleList extends React.Component {
         this.updateItemVisibility()
     }
 &nbsp;
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         window.removeEventListener("resize", this.onResize)
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         return (
             &lt;div className="collapsibleList" ref={this.outerContainerRef}&gt;
                 &lt;ul&gt;
-                    {this.visibleItems.map((item) =&gt; (
-                        &lt;li key={item.index} className="list-item visible"&gt;
-                            {item.child}
-                        &lt;/li&gt;
-                    ))}
+                    {this.visibleItems.map(
+                        (item): JSX.Element =&gt; (
+                            &lt;li key={item.index} className="list-item visible"&gt;
+                                {item.child}
+                            &lt;/li&gt;
+                        )
+                    )}
                     &lt;li
                         className="list-item moreButton"
                         ref={this.moreButtonRef}
                         style={{
-<span class="branch-0 cbranch-no" title="branch not covered" >                            visibility: this.dropdownItems.length</span>
-<span class="cstat-no" title="statement not covered" >                                ? "visib</span>le"
+                            visibility: <span class="branch-0 cbranch-no" title="branch not covered" >this.dropdownItems.length</span>
+<span class="cstat-no" title="statement not covered" >                                ? "visible"</span>
                                 : "hidden",
                         }}
                     &gt;
                         &lt;MoreButton
-                            options={this.dropdownItems.map((item) =&gt; (
-<span class="cstat-no" title="statement not covered" ></span>                                &lt;li
-                                    key={item.index}
-                                    className="list-item dropdown"
-                                &gt;
-                                    {item.child}
-                                &lt;/li&gt;
-                            ))}
+                            options={this.dropdownItems.map(
+                                (item): JSX.Element =&gt; (
+<span class="cstat-no" title="statement not covered" >                                    &lt;li</span>
+                                        key={item.index}
+                                        className="list-item dropdown"
+                                    &gt;
+                                        {item.child}
+                                    &lt;/li&gt;
+                                )
+                            )}
                         /&gt;
                     &lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/div&gt;
         )
     }
-}
+}<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
 &nbsp;
 export class MoreButton extends React.Component&lt;{
     options: React.ReactElement[]
-}&gt; {<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
-    render() {
+}&gt; {
+    render(): JSX.Element {
         const { options } = this.props
         return (
             &lt;Tippy
@@ -550,7 +562,7 @@ export function numItemsVisible(
     itemWidths: number[],
     containerWidth: number,
     startingWidth: number = 0
-) {
+): number {
     let total = startingWidth
     for (let i = 0; i &lt; itemWidths.length; i++) {
         if (total + itemWidths[i] &gt; containerWidth) return i
@@ -565,7 +577,7 @@ export function numItemsVisible(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

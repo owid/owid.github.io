@@ -581,40 +581,40 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get<span class="fstat-no" title="function not covered" > manager() {</span>
+    @computed get<span class="fstat-no" title="function not covered" > manager(): ShareMenuManager {</span>
 <span class="cstat-no" title="statement not covered" >        return t</span>his.props.manager
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get titl<span class="fstat-no" title="function not covered" >e() {</span>
+    @computed get titl<span class="fstat-no" title="function not covered" >e(): string {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manager.current</span>Title ?? ""
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get isDisabled<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get isDisabled<span class="fstat-no" title="function not covered" >(): boolean {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return !this.manager.slug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed get canonicalUrl() {</span>
+    @<span class="fstat-no" title="function not covered" >computed get canonicalUrl(): string | undefined {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manag</span>er.canonicalUrl
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound dismiss() {</span>
+    @action.<span class="fstat-no" title="function not covered" >bound dismiss(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.props.onDismiss()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onClickSomewhere() {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onClickSomewhere(): void {</span>
 <span class="cstat-no" title="statement not covered" ></span>        if (this.dismissable) this.dismiss()
 <span class="cstat-no" title="statement not covered" >        else this.dismissable</span> = true
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentDidMount() {</span>
+<span class="fstat-no" title="function not covered" >    componentDidMount(): void {</span>
 <span class="cstat-no" title="statement not covered" >        document.addEventListene</span>r("click", this.onClickSomewhere)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentWillUnmount() {</span>
+<span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
 <span class="cstat-no" title="statement not covered" ></span>        document.removeEventListener("click", this.onClickSomewhere)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onEmbed() {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onEmbed(): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.canoni</span>calUrl) return
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        this.manager.addPopup(</span>
@@ -623,7 +623,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        this.dismi</span>ss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound async <span class="fstat-no" title="function not covered" >onNavigatorShare() {</span>
+    @action.bound async <span class="fstat-no" title="function not covered" >onNavigatorShare(): Promise&lt;void&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.canonicalUrl || !navigator.share) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        cons</span>t shareData = {
@@ -638,13 +638,13 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onCopy() {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onCopy(): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.can</span>onicalUrl) return
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (copy(this.can</span>onicalUrl)) this.setState({ copied: true })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get twitterHref<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get twitterHref<span class="fstat-no" title="function not covered" >(): string {</span>
 <span class="cstat-no" title="statement not covered" >        let href =</span>
 <span class="cstat-no" title="statement not covered" ></span>            "https://twitter.com/intent/tweet/?text=" +
 <span class="cstat-no" title="statement not covered" >            enc</span>odeURIComponent(this.title)
@@ -653,7 +653,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        return href</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get facebookHref<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get facebookHref<span class="fstat-no" title="function not covered" >(): string {</span>
 <span class="cstat-no" title="statement not covered" >        let href =</span>
 <span class="cstat-no" title="statement not covered" >            "https://www.facebook.com/dialog/share?app_id=1149943818390250&amp;display=page"</span>
 <span class="cstat-no" title="statement not covered" >        if (this.canonicalUrl)</span>
@@ -661,7 +661,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        return href</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    render() {</span>
+<span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        const { twitterHref, facebookHref, isDisabled, manager } = this</span>
 <span class="cstat-no" title="statement not covered" >        const { editUrl } = manager</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -740,28 +740,28 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >}&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    dismissable = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickSomewhere() {</span>
+<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickSomewhere(): void {</span>
 <span class="cstat-no" title="statement not covered" ></span>        if (this.dismissable) this.manager.removePopup(EmbedMenu)
 <span class="cstat-no" title="statement not covered" >        else </span>this.dismissable = true
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @compute<span class="fstat-no" title="function not covered" >d</span> get manager() {</span>
+<span class="cstat-no" title="statement not covered" >    @compute<span class="fstat-no" title="function not covered" >d</span> get manager(): ShareMenuManager {</span>
 <span class="cstat-no" title="statement not covered" >        return this.</span>props.manager
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onClic</span>k() {</span>
+<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onClic</span>k(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.dismissable = false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDi</span>dMount() {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDi</span>dMount(): void {</span>
 <span class="cstat-no" title="statement not covered" >        document.addEventListener("cl<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >i</span></span></span></span></span></span></span></span>ck", this.onClickSomewhere)
     }
 &nbsp;
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         document.removeEventListener("click", this.onClickSomewhere)
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const url = this.manager.embedUrl ?? this.manager.canonicalUrl
         return (
             &lt;div className="embedMenu" onClick={this.onClick}&gt;
@@ -769,7 +769,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
                 &lt;p&gt;Paste this into any HTML page:&lt;/p&gt;
                 &lt;textarea
                     readOnly={true}
-                    onFocus={(evt) =&gt; evt.currentTarget.select()}
+                    onFocus={(evt): void =&gt; evt.currentTarget.select()}
                     value={`&lt;iframe src="${url}" loading="lazy" style="width: 100%; height: 600px; border: 0px none;"&gt;&lt;/iframe&gt;`}
                 /&gt;
                 {this.manager.embedDialogAdditionalElements}
@@ -784,7 +784,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

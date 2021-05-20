@@ -393,7 +393,31 @@
 <a name='L334'></a><a href='#L334'>334</a>
 <a name='L335'></a><a href='#L335'>335</a>
 <a name='L336'></a><a href='#L336'>336</a>
-<a name='L337'></a><a href='#L337'>337</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L337'></a><a href='#L337'>337</a>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -471,7 +495,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">39x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
@@ -632,18 +656,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -730,9 +754,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { flatten } from "../clientUtils/Util"
-import { ColumnSlug, CoreColumnStore, Time } from "./CoreTableConstants"
+import {
+    ColumnSlug,
+    CoreColumnStore,
+    Time,
+    CoreValueType,
+} from "./CoreTableConstants"
 import { CoreColumnDef } from "./CoreColumnDef"
-import { ErrorValue, ErrorValueTypes, isNotErrorValue } from "./ErrorValues"
+import {
+    ErrorValue,
+    ErrorValueTypes,
+    isNotErrorValue,
+    MissingValuePlaceholder,
+    ValueTooLow,
+    DivideByZeroError,
+} from "./ErrorValues"
 &nbsp;
 // In Grapher we return just the years for which we have values for. This puts MissingValuePlaceholder
 // in the spots where we are missing values (added to make computing rolling windows easier).
@@ -742,7 +778,7 @@ import { ErrorValue, ErrorValueTypes, isNotErrorValue } from "./ErrorValues"
 export const insertMissingValuePlaceholders = (
     values: number[],
     times: number[]
-) =&gt; {
+): (number | MissingValuePlaceholder)[] =&gt; {
     const startTime = times[0]
     const endTime = times[times.length - 1]
     const filledRange = []
@@ -767,7 +803,7 @@ export function computeRollingAverage(
     numbers: (number | undefined | null | ErrorValue)[],
     windowSize: number,
     align: "right" | "center" = "right"
-) {
+): (number | ErrorValue)[] {
     const result: (number | ErrorValue)[] = []
 &nbsp;
     for (let valueIndex = 0; valueIndex &lt; numbers.length; valueIndex++) {
@@ -822,13 +858,13 @@ export function computeRollingAverage(
 &nbsp;
 // Assumptions: data is sorted by entity, then time
 // todo: move tests over from CE
-co<span class="fstat-no" title="function not covered" >n</span>st timeSinceEntityExceededThreshold = (
+const timeSinceEntityExcee<span class="fstat-no" title="function not covered" >dedThreshold = (</span>
     columnStore: CoreColumnStore,
     timeSlug: ColumnSlug,
     entitySlug: ColumnSlug,
     columnSlug: ColumnSlug,
     thresholdAsString: string
-) =&gt; {
+): (number | ValueTooLow)[] =&gt; {
     const threshold = parseFloat(thresholdAsString)
     const groupValues = columnStore[entitySlug] as string[]
     const columnValues = columnStore[columnSlug] as number[]
@@ -851,13 +887,13 @@ co<span class="fstat-no" title="function not covered" >n</span>st timeSinceEntit
 &nbsp;
 // Assumptions: data is sorted by entity, then time
 // todo: move tests over from CE
-const<span class="fstat-no" title="function not covered" > </span>rollingAverage = (
+const rollingAverage = <span class="fstat-no" title="function not covered" >(</span>
     columnStore: CoreColumnStore,
     timeSlug: ColumnSlug,
     entitySlug: ColumnSlug,
     columnSlug: ColumnSlug,
     windowSize: number
-) =&gt; {
+): (number | ErrorValue)[] =&gt; {
     const entityNames = columnStore[entitySlug] as string[]
     const columnValues = columnStore[columnSlug] as number[]
     const timeValues = columnStore[timeSlug] as number[]
@@ -895,7 +931,7 @@ const divideBy = <span class="fstat-no" title="function not covered" >(</span>
     columnStore: CoreColumnStore,
     numeratorSlug: ColumnSlug,
     denominatorSlug: ColumnSlug
-) =&gt; {
+): (number | DivideByZeroError)[] =&gt; {
     const numeratorValues = columnStore[numeratorSlug] as number[]
     const denominatorValues = columnStore[denominatorSlug] as number[]
     return denominatorValues.map((denominator, index) =&gt; {
@@ -913,7 +949,7 @@ const multiplyBy = (
     factor: number
 ) =&gt;
     columnStore[columnSlug].map((value) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" >        isNotErrorValue(value) ? (value as number) * factor : value</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >        isNotErrorValue(value) ? (value as number) * factor : va</span>lue
     )
 &nbsp;
 const subtract = <span class="fstat-no" title="function not covered" >(</span>
@@ -941,12 +977,12 @@ enum WhereOperators {
 }
 // Todo: add tests/expand capabilities/remove?
 // Currently this just supports `columnSlug where someColumnSlug (isNot|is) this or that or this`
-const w<span class="fstat-no" title="function not covered" >here = (</span>
+const where = <span class="fstat-no" title="function not covered" >(</span>
     columnStore: CoreColumnStore,
     columnSlug: ColumnSlug,
     conditionSlug: ColumnSlug,
     ...condition: string[]
-) =&gt; {
+): CoreValueType[] =&gt; {
     const values = columnStore[columnSlug]
     const conditionValues = columnStore[conditionSlug]
     const operator = condition.shift()
@@ -967,7 +1003,7 @@ const w<span class="fstat-no" title="function not covered" >here = (</span>
 &nbsp;
     return values.map((value, index) =&gt;
         passes(conditionValues[index]) ? value : ErrorValueTypes.FilteredValue
-    )
+    )<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span>
 }
 &nbsp;
 // Assumptions: data is sorted by entity, then time, and time is a continous integer with a row for each time step.
@@ -978,8 +1014,8 @@ const percentChange = (
     entitySlug: ColumnSlug,
     columnSlug: ColumnSlug,
     windowSize: number
-) =&gt; {
-    const entityNames = columnStore[en<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >t</span></span></span></span></span></span></span></span>itySlug] as string[]
+): (number | ErrorValue)[] =&gt; {
+    const entityNames = columnStore[entitySlug] as string[]
     const columnValues = columnStore[columnSlug] as number[]
 &nbsp;
     // If windowSize is 0 then there is zero change for every valid value
@@ -1015,7 +1051,7 @@ const asPercentageOf = (
     columnStore: CoreColumnStore,
     numeratorSlug: ColumnSlug,
     denominatorSlug: ColumnSlug
-) =&gt;
+): (number | DivideByZeroError)[] =&gt;
     divideBy(columnStore, numeratorSlug, denominatorSlug).map((num) =&gt;
         typeof num === "number" ? 100 * num : num
     )
@@ -1036,14 +1072,14 @@ export const AvailableTransforms = Object.keys(availableTransforms)
 export const applyTransforms = (
     columnStore: CoreColumnStore,
     defs: CoreColumnDef[]
-) =&gt; {
+): CoreColumnStore =&gt; {
     defs.forEach((def) =&gt; {
         const words = def.transform!.split(" ")
         const transformName = words.find(
             (word) =&gt; availableTransforms[word] !== undefined
         )
         if (!transformName) {
-            console.log(`Warning: transform '${transformName}' not found`)
+            console.warn(`Warning: transform '${transformName}' not found`)
             return
         }
         const params = words.filter((word) =&gt; word !== transformName)
@@ -1072,7 +1108,7 @@ export const applyTransforms = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

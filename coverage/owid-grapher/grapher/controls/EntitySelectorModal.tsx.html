@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.32% </span>
+                <span class="strong">6.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/253</span>
+                <span class='fraction'>16/259</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.32% </span>
+                <span class="strong">6.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/253</span>
+                <span class='fraction'>16/259</span>
             </div>
         
             
@@ -354,7 +354,17 @@
 <a name='L295'></a><a href='#L295'>295</a>
 <a name='L296'></a><a href='#L296'>296</a>
 <a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -522,6 +532,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -607,6 +621,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -674,7 +694,7 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    base: React.RefObject&lt;HTMLDivElement&gt; =</span> React.createRef()
 <span class="cstat-no" title="statement not covered" >    dismissable: bool</span>ean = true
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed get availableEntities<span class="fstat-no" title="function not covered" >()</span> {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get availableEntities<span class="fstat-no" title="function not covered" >()</span>: string[] {</span>
 <span class="cstat-no" title="statement not covered" >        return this</span>.props.selectionArray.availableEntityNames
 <span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" ></span>
@@ -682,23 +702,23 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >        return new FuzzySearch(this.searchable</span>Entities, "name")
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed private get searchableEntities<span class="fstat-no" title="function not covered" >() {</span></span>
+<span class="cstat-no" title="statement not covered" >    @computed private get searchableEntities<span class="fstat-no" title="function not covered" >(): Se</span>archableEntity[] {</span>
 <span class="cstat-no" title="statement not covered" >        return this.availableEntities.map((name)</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >            return { name } as SearchableEntity</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed get searchResu<span class="fstat-no" title="function not covered" >l</span>ts() {</span>
+<span class="cstat-no" title="statement not covered" >    @computed get searchResu<span class="fstat-no" title="function not covered" >l</span>ts(): SearchableEntity[] {</span>
 <span class="cstat-no" title="statement not covered" >        return this.searchInput</span>
 <span class="cstat-no" title="statement not covered" >            ? this.fuzzy.search(t</span>his.searchInput)
-<span class="cstat-no" title="statement not covered" ></span>            : sortBy(this.searchableEntities, (result) =&gt; result.name)
+<span class="cstat-no" title="statement not covered" ></span>            : sortBy(this.searchableEntities, (result): any =&gt; result.name)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent) {</span>
+<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.d</span>ismissable) this.props.onDismiss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDidMount() {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDidMount(): void {</span></span>
 <span class="cstat-no" title="statement not covered" >        // HACK (Mispy): The normal ways of doing this</span> (stopPropagation etc) don't seem to work here
 <span class="cstat-no" title="statement not covered" >        this.base.current!.ad</span>dEventListener("click", () =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>            this.dismissable = false
@@ -711,73 +731,77 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >        if (!isTouchDevi</span>ce()) this.searchField.focus()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount() {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount(): void {</span>
 <span class="cstat-no" title="statement not covered" >        document.removeEve</span>ntListener("click", this.onClickOutside)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onSearchKeyDown(e: R</span>eact.KeyboardEvent&lt;HTMLInputElement&gt;) {</span>
-<span class="cstat-no" title="statement not covered" >        if (e.key === "Enter" &amp;&amp; this.searchResults.length &gt; 0</span>) {
-<span class="cstat-no" title="statement not covered" ></span>            this.props.selectionArray.selectEntity(this.searchResults[0].name)
+<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onSearchKeyDown(</span></span>
+<span class="cstat-no" title="statement not covered" >        e: React.KeyboardEvent&lt;HTMLInputElement&gt;</span>
+<span class="cstat-no" title="statement not covered" >    ): void </span>{
+<span class="cstat-no" title="statement not covered" >        if (e.key === "Enter" &amp;&amp; this.searchResults.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            this.props.selectionArray</span>.selectEntity(this.searchResults[0].name)
 <span class="cstat-no" title="statement not covered" >            this.searchInput = ""</span>
-<span class="cstat-no" title="statement not covered" >        } else if (e.key === "Escape"</span>) this.props.onDismiss()
+<span class="cstat-no" title="statement not covered" ></span>        } else if (e.key === "Escape") this.props.onDismiss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onClear() {</span></span>
-<span class="cstat-no" title="statement not covered" >        this.props.selectionArray.clearSelection()</span>
+<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClear(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.props.select</span>ionArray.clearSelection()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() {</span></span>
-<span class="cstat-no" title="statement not covered" >        const { selectionArray } = this.props</span>
-<span class="cstat-no" title="statement not covered" >        const { searchResults, sear</span>chInput } = this
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span></span>
+<span class="cstat-no" title="statement not covered" >        co</span>nst { selectionArray } = this.props
+<span class="cstat-no" title="statement not covered" >        const { searchResults, search</span>Input } = this
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const selectedEntityNames = s</span>electionArray.selectedEntityNames
+<span class="cstat-no" title="statement not covered" ></span>        const selectedEntityNames = selectionArray.selectedEntityNames
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        return (
-<span class="cstat-no" title="statement not covered" >            &lt;div</span> className="entitySelectorOverlay"&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;div ref={this.base} className="Enti</span>tySelectorMulti"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;header className="wrapper"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;h2&gt;
-<span class="cstat-no" title="statement not covered" >                            Choose data to show</span>{" "}
-<span class="cstat-no" title="statement not covered" >                            &lt;button onClick={this.pro</span>ps.onDismiss}&gt;
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" ></span>            &lt;div className="entitySelectorOverlay"&gt;
+<span class="cstat-no" title="statement not covered" ></span>                &lt;div ref={this.base} className="EntitySelectorMulti"&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;header className="wrapper"</span>&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;h2&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            Choose data to show{" "}</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;button onClick={this.props.onDismiss}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;FontAwesomeIcon icon={faTimes} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;/button&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;/h2&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/header&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className="entities wrapper</span>"&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;div className="searchR</span>esults"&gt;
-<span class="cstat-no" title="statement not covered" >                            &lt;</span>input
+<span class="cstat-no" title="statement not covered" >                    &lt;div clas</span>sName="entities wrapper"&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;div className="searchResults"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;input</span>
 <span class="cstat-no" title="statement not covered" >                                type="search"</span>
 <span class="cstat-no" title="statement not covered" >                                placeholder="Search..."</span>
 <span class="cstat-no" title="statement not covered" >                                value={searchInput}</span>
-<span class="cstat-no" title="statement not covered" >                                onInput={(e) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    (this.searchInput = e.currentTarget.value)</span>
-<span class="cstat-no" title="statement not covered" >                                }</span>
+<span class="cstat-no" title="statement not covered" >                                onInput={(e): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                    this.searchInput = e.currentTarget.value</span>
+<span class="cstat-no" title="statement not covered" >                                }}</span>
 <span class="cstat-no" title="statement not covered" >                                onKeyDown={this.onSearchKeyDown}</span>
-<span class="cstat-no" title="statement not covered" >                                ref={(e) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                ref={(e): HTMLInputElement =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    (this.searchField = e as HTMLInputElement)</span>
 <span class="cstat-no" title="statement not covered" >                                }</span>
 <span class="cstat-no" title="statement not covered" >                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;u</span>l&gt;
-<span class="cstat-no" title="statement not covered" >                                {searchResults.map((result) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                    return (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;li key={result.name}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;label className="clickable"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                &lt;input</span>
-<span class="cstat-no" title="statement not covered" ></span>                                                    type="checkbox"
-<span class="cstat-no" title="statement not covered" ></span>                                                    checked={selectionArray.selectedSet.has(
-<span class="cstat-no" title="statement not covered" ></span>                                                        result.name
-<span class="cstat-no" title="statement not covered" >                                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                                    onChange={() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                                        selectionArray.toggleSelection(</span>
+<span class="cstat-no" title="statement not covered" >                                {searchResults.map(</span>
+<span class="cstat-no" title="statement not covered" >                                    (result): JSX.Element =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                                        return (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;li key={result.name}&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                &lt;label className="clickable"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;input</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                        type="checkbox"
+<span class="cstat-no" title="statement not covered" ></span>                                                        checked={selectionArray.selectedSet.has(
 <span class="cstat-no" title="statement not covered" ></span>                                                            result.name
-<span class="cstat-no" title="statement not covered" >                                                        )</span>
-<span class="cstat-no" title="statement not covered" ></span>                                                    }
-<span class="cstat-no" title="statement not covered" ></span>                                                /&gt;{" "}
-<span class="cstat-no" title="statement not covered" ></span>                                                {result.name}
-<span class="cstat-no" title="statement not covered" ></span>                                            &lt;/label&gt;
-<span class="cstat-no" title="statement not covered" >                                        &lt;/li&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    )
-<span class="cstat-no" title="statement not covered" ></span>                                })}
+<span class="cstat-no" title="statement not covered" ></span>                                                        )}
+<span class="cstat-no" title="statement not covered" >                                                        onChange={(): SelectionArray =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                            selectionArray.togg</span>leSelection(
+<span class="cstat-no" title="statement not covered" >                                                                result.name</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                            )
+<span class="cstat-no" title="statement not covered" >                                                        }</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                    /&gt;{" "}
+<span class="cstat-no" title="statement not covered" ></span>                                                    {result.name}
+<span class="cstat-no" title="statement not covered" ></span>                                                &lt;/label&gt;
+<span class="cstat-no" title="statement not covered" ></span>                                            &lt;/li&gt;
+<span class="cstat-no" title="statement not covered" >                                        )</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    }
+<span class="cstat-no" title="statement not covered" ></span>                                )}
 <span class="cstat-no" title="statement not covered" >                            &lt;/ul&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;/div&gt;
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;div className="selectedData"&gt;
@@ -789,11 +813,11 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" ></span>                                                &lt;input
 <span class="cstat-no" title="statement not covered" >                                                    type="</span>checkbox"
 <span class="cstat-no" title="statement not covered" ></span>                                                    checked={true}
-<span class="cstat-no" title="statement not covered" ></span>                                                    onChange={() =&gt;
+<span class="cstat-no" title="statement not covered" ></span>                                                    onChange={(): void =&gt; {
 <span class="cstat-no" title="statement not covered" >                                                        sel</span>ectionArray.deselectEntity(
 <span class="cstat-no" title="statement not covered" ></span>                                                            name
 <span class="cstat-no" title="statement not covered" ></span>                                                        )
-<span class="cstat-no" title="statement not covered" >                                                    }</span>
+<span class="cstat-no" title="statement not covered" >                                                    }}</span>
 <span class="cstat-no" title="statement not covered" ></span>                                                /&gt;{" "}
 <span class="cstat-no" title="statement not covered" ></span>                                                {name}
 <span class="cstat-no" title="statement not covered" >                                            &lt;/label&gt;</span>
@@ -831,7 +855,7 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    base: React.RefObject&lt;</span>HTMLDivElement&gt; = React.createRef()
 <span class="cstat-no" title="statement not covered" >    dismissable: boolean = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed private get availableEn<span class="fstat-no" title="function not covered" >t</span>ities() {</span>
+<span class="cstat-no" title="statement not covered" >    @computed private get availableEn<span class="fstat-no" title="function not covered" >t</span>ities(): { id: string; label: string }[] {</span>
 <span class="cstat-no" title="statement not covered" >        const availableItems: { id: string; label: string }[] </span>= []
 <span class="cstat-no" title="statement not covered" >        this</span>.props.selectionArray.availableEntityNames.forEach((name) =&gt; {
 <span class="cstat-no" title="statement not covered" >            availableItems.push({</span>
@@ -849,15 +873,15 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    @computed get searchResults<span class="fstat-no" title="function not covered" >(): { </span>id: string; label: string }[] {</span>
 <span class="cstat-no" title="statement not covered" >        return this.searchInput</span>
 <span class="cstat-no" title="statement not covered" ></span>            ? this.fuzzy.search(this.searchInput)
-<span class="cstat-no" title="statement not covered" >            : sortBy(this.a</span>vailableEntities, (result) =&gt; result.label)
+<span class="cstat-no" title="statement not covered" >            : sortBy(this.a</span>vailableEntities, (result): any =&gt; result.label)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent) {</span>
+<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (thi</span>s.base &amp;&amp; !this.base.current!.contains(e.target as Node))
 <span class="cstat-no" title="statement not covered" >            this.props.onDismiss()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDidMount() {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDidMount(): void {</span></span>
 <span class="cstat-no" title="statement not covered" >        // HACK (Mispy): The normal ways of doing th</span>is (stopPropagation etc) don't seem to work here
 <span class="cstat-no" title="statement not covered" >        this.base.current!.addEventListener("cl</span>ick", () =&gt; {
 <span class="cstat-no" title="statement not covered" >            this.dismissable </span>= false
@@ -867,26 +891,28 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >            () =&gt; document.addEventListener("click", this.onClickOutside),</span>
 <span class="cstat-no" title="statement not covered" >            1</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        if (!this.props.isMob</span>ile) this.searchField.focus()
+<span class="cstat-no" title="statement not covered" >        if (!this.props.isMobile) this.searchField.focus()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    component</span>WillUnmount() {</span>
-<span class="cstat-no" title="statement not covered" >        document.remov</span>eEventListener("click", this.onClickOutside)
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount(): void {</span>
+<span class="cstat-no" title="statement not covered" ></span>        document.removeEventListener("click", this.onClickOutside)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >on</span>SearchKeyDown(e: React.KeyboardEvent&lt;HTMLInputElement&gt;) {</span>
+<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onSearchKeyDown(</span></span>
+<span class="cstat-no" title="statement not covered" >        e: Re</span>act.KeyboardEvent&lt;HTMLInputElement&gt;
+<span class="cstat-no" title="statement not covered" >    ): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (e.key === "Enter" &amp;&amp; this.searchResults.length &gt; 0)</span> {
 <span class="cstat-no" title="statement not covered" >            t</span>his.onSelect(this.searchResults[0].label)
 <span class="cstat-no" title="statement not covered" >            this.sea</span>rchInput = ""
 <span class="cstat-no" title="statement not covered" >        } else if (e.key === "Escape") this.props.o</span>nDismiss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onSelect(entityName: string) {</span></span>
+<span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onSelect(entityName: string): void {</span></span>
 <span class="cstat-no" title="statement not covered" >        this.</span>props.selectionArray.setSelectedEntities([entityName])
 <span class="cstat-no" title="statement not covered" >        this.props.onDis</span>miss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render(): JSX.Elemen</span>t {</span>
 <span class="cstat-no" title="statement not covered" >        const { searchResults, searchInput } = this</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
@@ -905,26 +931,30 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >                            type="search"</span>
 <span class="cstat-no" title="statement not covered" >                            placeholder="Search<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >.</span></span></span></span></span></span></span></span></span>.."
                             value={searchInput}
-                            onInput={(e) =&gt;
-                                (this.searchInput = e.currentTarget.value)
-                            }
+                            onInput={(e): void =&gt; {
+                                this.searchInput = e.currentTarget.value
+                            }}
                             onKeyDown={this.onSearchKeyDown}
-                            ref={(e) =&gt;
+                            ref={(e): HTMLInputElement =&gt;
                                 (this.searchField = e as HTMLInputElement)
                             }
                         /&gt;
                         &lt;ul&gt;
-                            {searchResults.map((d) =&gt; {
-                                return (
-                                    &lt;li
-                                        key={d.id}
-                                        className="clickable"
-                                        onClick={() =&gt; this.onSelect(d.id)}
-                                    &gt;
-                                        {d.label}
-                                    &lt;/li&gt;
-                                )
-                            })}
+                            {searchResults.map(
+                                (d): JSX.Element =&gt; {
+                                    return (
+                                        &lt;li
+                                            key={d.id}
+                                            className="clickable"
+                                            onClick={(): void =&gt;
+                                                this.onSelect(d.id)
+                                            }
+                                        &gt;
+                                            {d.label}
+                                        &lt;/li&gt;
+                                    )
+                                }
+                            )}
                         &lt;/ul&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -940,7 +970,7 @@ export class EntitySelectorModal extends React.Component&lt;{
     isMobile: boolean
     onDismiss: () =&gt; void
 }&gt; {
-    render() {
+    render(): JSX.Element {
         return this.props.canChangeEntity ? (
             &lt;EntitySelectorSingle {...this.props} /&gt;
         ) : (
@@ -955,7 +985,7 @@ export class EntitySelectorModal extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

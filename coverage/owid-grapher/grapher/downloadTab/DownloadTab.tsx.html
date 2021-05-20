@@ -763,9 +763,9 @@ interface DownloadTabProps {
     manager: DownloadTabManager
 }
 &nbsp;
-declare var Blob: any
+declare let Blob: any
 &nbsp;
-co<span class="fstat-no" title="function not covered" >n</span>st polyfillToBlob = () =&gt; {
+co<span class="fstat-no" title="function not covered" >n</span>st polyfillToBlob = (): void =&gt; {
     // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob#Polyfill
     Object.defineProperty(HTMLCanvasElement.prototype, "toBlob", {
         value: function (
@@ -792,27 +792,27 @@ co<span class="fstat-no" title="function not covered" >n</span>st polyfillToBlob
 &nbsp;
 // Wrapped because JSDOM does not support this method yet:
 // https://stackoverflow.com/questions/52968969/jest-url-createobjecturl-is-not-a-function/56643520#56643520
-const createObjectURL = (obj: any) =&gt;
+const createObjectURL = (obj: any): string =&gt;
 <span class="branch-0 cbranch-no" title="branch not covered" ></span>    URL.createObjectURL ? URL.createObjectURL(obj) : ""
 &nbsp;
 @observer
 export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
-    @computed private get idealBounds<span class="fstat-no" title="function not covered" >() {</span>
+    @computed private get idealBounds<span class="fstat-no" title="function not covered" >(): Bounds {</span>
 <span class="cstat-no" title="statement not covered" >        return this.</span>manager.idealBounds ?? DEFAULT_BOUNDS
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get bounds() {
+    @computed private get bounds(): Bounds {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.prop</span>s.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed private get targetWidth() {</span>
+    @<span class="fstat-no" title="function not covered" >computed private get targetWidth(): number {</span>
 <span class="cstat-no" title="statement not covered" >        return this</span>.idealBounds.width
 <span class="cstat-no" title="statement not covered" >    }</span>
-    @computed private get targetHeight<span class="fstat-no" title="function not covered" >() {</span>
+    @computed private get targetHeight<span class="fstat-no" title="function not covered" >(): number {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.idealBounds.height
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get manager() {
+    @computed private get manager(): DownloadTabManager {
         return this.props.manager
     }
 &nbsp;
@@ -823,18 +823,18 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
     @observable private pngDownloadUrl?: string
     @observable private pngPreviewUrl?: string
     @observable private isReady: boolean = false
-    @action.bound private export() {
+    @action.bound private export(): void {
         if (!HTMLCanvasElement.pr<span class="branch-0 cbranch-no" title="branch not covered" >o</span>totype.toBlob) polyfillToBlob()
         this.createSvg()
         const reader = new FileReader()
-        re<span class="fstat-no" title="function not covered" >ader.onload = (ev: any) =&gt; {</span>
+        re<span class="fstat-no" title="function not covered" >ader.onload = (ev: any): void =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            this.svgPreviewUrl = ev.target.r</span>esult as string
 <span class="cstat-no" title="statement not covered" ></span>            this.tryCreatePng(this.svgPreviewUrl)
 <span class="cstat-no" title="statement not covered" >        }</span>
         reader.readAsDataURL(this.svgBlob as Blob)
     }
 &nbsp;
-    @action.bound private createSvg() {
+    @action.bound private createSvg(): void {
         const staticSVG = this.manager.staticSVG
         this.svgBlob = new Blob([staticSVG], {
             type: "image/svg+xml;charset=utf-8",
@@ -842,11 +842,11 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
         this.svgDownloadUrl = createObjectURL(this.svgBlob)
     }
 &nbsp;
-    @action.bound<span class="fstat-no" title="function not covered" > private tryCreatePng(svgPreviewUrl: string) {</span>
+    @action.bound<span class="fstat-no" title="function not covered" > private tryCreatePng(svgPreviewUrl: string): void {</span>
 <span class="cstat-no" title="statement not covered" >        const { targetWidth, targetHeight } = this</span>
 <span class="cstat-no" title="statement not covered" >        // Client-side SVG =&gt; PNG export. Somewhat experimental, so there's a lot of cross-browser f</span>iddling and fallbacks here.
 <span class="cstat-no" title="statement not covered" >        const img = new Image()</span>
-<span class="cstat-no" title="statement not covered" >        img.onload = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        img.onload = (): void =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            try {</span>
 <span class="cstat-no" title="statement not covered" >                const canvas = doc</span>ument.createElement("canvas")
 <span class="cstat-no" title="statement not covered" >                // W</span>e draw the chart at 4x res then scale it down again -- much better text quality
@@ -869,27 +869,27 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >                this.markAsReady()</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        img.onerror = (err) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        img.onerror = (err): void</span> =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>            console.error(JSON.stringify(err))
 <span class="cstat-no" title="statement not covered" >            this.mar</span>kAsReady()
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>        img.src = svgPreviewUrl
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >action.bound private markAsReady() {</span>
+    @<span class="fstat-no" title="function not covered" >action.bound private markAsReady(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.isReady = tr</span>ue
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private g<span class="fstat-no" title="function not covered" >et fallbackPngUrl() {</span>
+    @computed private g<span class="fstat-no" title="function not covered" >et fallbackPngUrl(): string {</span>
 <span class="cstat-no" title="statement not covered" >        return `${this.manager.baseUrl || "</span>"}.png${this.manager.queryStr || ""}`
 <span class="cstat-no" title="statement not covered" >    }</span>
-    @computed private get baseFi<span class="fstat-no" title="function not covered" >lename() {</span>
+    @computed private get baseFi<span class="fstat-no" title="function not covered" >lename(): string {</span>
 <span class="cstat-no" title="statement not covered" >        re</span>turn this.manager.displaySlug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onPNGDownload(</span>
 <span class="cstat-no" title="statement not covered" >        ev: React.Mo</span>useEvent&lt;HTMLAnchorElement&gt;
-<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >    ): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (window.navigator.</span>msSaveBlob) {
 <span class="cstat-no" title="statement not covered" ></span>            window.navigator.msSaveBlob(
 <span class="cstat-no" title="statement not covered" >                this.pn</span>gBlob,
@@ -901,18 +901,18 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onSVGDownload(</span>
 <span class="cstat-no" title="statement not covered" >        ev: React.MouseEvent&lt;H</span>TMLAnchorElement&gt;
-<span class="cstat-no" title="statement not covered" >    ) {</span>
+<span class="cstat-no" title="statement not covered" >    ): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (!window.navigator.msSaveBlob) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        wi</span>ndow.navigator.msSaveBlob(this.svgBlob, this.baseFilename + ".svg")
 <span class="cstat-no" title="statement not covered" >        ev.prev</span>entDefault()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get inputTable<span class="fstat-no" title="function not covered" >() {</span>
+    @computed private get inputTable<span class="fstat-no" title="function not covered" >(): OwidTable {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manager.table </span>?? BlankOwidTable()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >onCsvDownload(ev: React.MouseEvent&lt;HTMLAnchorElement&gt;) {</span>
+    private <span class="fstat-no" title="function not covered" >onCsvDownload(ev: React.MouseEvent&lt;HTMLAnchorElement&gt;): void {</span>
 <span class="cstat-no" title="statement not covered" >        const { manager, inputTabl</span>e } = this
 <span class="cstat-no" title="statement not covered" >        const csvFilename = manager.displaySlug + ".csv"</span>
 <span class="cstat-no" title="statement not covered" >        const csv = inputTable.toPrettyCsv() || ""</span>
@@ -935,7 +935,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get<span class="fstat-no" title="function not covered" > csvButton() {</span>
+    @computed private get<span class="fstat-no" title="function not covered" > csvButton(): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        const { manager } =</span> this
 <span class="cstat-no" title="statement not covered" >        const externalCsvLink = m</span>anager.externalCsvLink
 <span class="cstat-no" title="statement not covered" >        const csvFilename = manager.displaySlug + ".csv"</span>
@@ -945,7 +945,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" ></span>                  download: csvFilename,
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            : {</span>
-<span class="cstat-no" title="statement not covered" ></span>                  onClick: (ev: React.MouseEvent&lt;HTMLAnchorElement&gt;) =&gt;
+<span class="cstat-no" title="statement not covered" ></span>                  onClick: (ev: React.MouseEvent&lt;HTMLAnchorElement&gt;): void =&gt;
 <span class="cstat-no" title="statement not covered" >                      this.</span>onCsvDownload(ev),
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -966,7 +966,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >renderReady() {</span>
+    private <span class="fstat-no" title="function not covered" >renderReady(): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >            targetWidth,</span>
 <span class="cstat-no" title="statement not covered" >            targetHeight,</span>
@@ -1049,18 +1049,18 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    componentDidMount() {
+    componentDidMount(): void {
         this.export()
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentWillUnmount() {</span>
+<span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.pngDownlo</span>adUrl !== undefined)
 <span class="cstat-no" title="statement not covered" >            URL.r</span>evokeObjectURL(this.pngDownloadUrl)
 <span class="cstat-no" title="statement not covered" >        if (this.svgDownloadUrl !==</span> undefined)
 <span class="cstat-no" title="statement not covered" >            URL.revokeObjectURL(this.sv<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >g</span></span></span></span></span></span></span></span></span></span>DownloadUrl)
     }
 &nbsp;
-    render() {
+    render(): JSX.Element {
         return (
             &lt;div
                 className={classNames("DownloadTab", {
@@ -1084,7 +1084,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

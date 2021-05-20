@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.77% </span>
+                <span class="strong">89.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>193/215</span>
+                <span class='fraction'>189/211</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.77% </span>
+                <span class="strong">89.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>193/215</span>
+                <span class='fraction'>189/211</span>
             </div>
         
             
@@ -279,9 +279,8 @@
 <a name='L220'></a><a href='#L220'>220</a>
 <a name='L221'></a><a href='#L221'>221</a>
 <a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a>
-<a name='L225'></a><a href='#L225'>225</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L223'></a><a href='#L223'>223</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -349,9 +348,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
@@ -494,8 +490,8 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -507,7 +503,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react"
 import { observer } from "mobx-react"
-import { DEFAULT_BOUNDS } from "../../clientUtils/Bounds"
+import { Bounds, DEFAULT_BOUNDS } from "../../clientUtils/Bounds"
 import { computed } from "mobx"
 import {
     ChartTypeName,
@@ -519,7 +515,6 @@ import {
     DefaultChartClass,
 } from "../chart/ChartTypeMap"
 import { ChartManager } from "../chart/ChartManager"
-import { makeGrid } from "../../clientUtils/Util"
 import { ChartInterface } from "../chart/ChartInterface"
 import { getChartPadding, getFontSize } from "./FacetChartUtils"
 import {
@@ -529,6 +524,8 @@ import {
 } from "./FacetChartConstants"
 import { OwidTable } from "../../coreTable/OwidTable"
 import { autoDetectYColumnSlugs, makeSelectionArray } from "../chart/ChartUtils"
+import { SelectionArray } from "../selection/SelectionArray"
+import { CoreColumn } from "../../coreTable/CoreTableColumns"
 &nbsp;
 const facetBackgroundColor = "transparent" // we don't use color yet but may use it for background later
 &nbsp;
@@ -536,29 +533,28 @@ const facetBackgroundColor = "transparent" // we don't use color yet but may use
 export class FacetChart
     extends React.Component&lt;FacetChartProps&gt;
     implements ChartInterface {
-<span class="fstat-no" title="function not covered" >    transformTable(table: OwidTable) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return table
+<span class="fstat-no" title="function not covered" >    transformTable(table: OwidTable): OwidTable {</span>
+<span class="cstat-no" title="statement not covered" >        return t</span>able
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get inputTable() {
+    @computed get inputTable(): OwidTable {
         return this.manager.table
     }
 &nbsp;
-    @computed get transformedTable<span class="fstat-no" title="function not covered" >() {</span>
+    @computed get transformedTable<span class="fstat-no" title="function not covered" >(): OwidTable {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            this.manager.transformedTable ??</span>
-<span class="cstat-no" title="statement not covered" >            this.transformTable(this.inputTable)</span>
+<span class="cstat-no" title="statement not covered" >            this.tra</span>nsformTable(this.inputTable)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get placedSeries() {
+    @computed get placedSeries(): PlacedFacetSeries[] {
         const { manager, series } = this
         const chartTypeName =
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.props.chartTypeName ?? ChartTypeName.LineChart</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.props.chartTypeName ?? Cha</span>rtTypeName.LineChart
         const count = series.length
 &nbsp;
         const boundsArr = this.bounds.split(count, getChartPadding(count))
-        const { columns, rows } = makeGrid(count)
         const {
             yColumnSlug,
             xColumnSlug,
@@ -569,14 +565,12 @@ export class FacetChart
         } = manager
 &nbsp;
         const baseFontSize = getFontSize(count, manager.baseFontSize)
-        const lineStrokeWidt<span class="branch-0 cbranch-no" title="branch not covered" >h</span> = count &gt; 16 ? 1 : undefined
+        const lineStrokeWidth =<span class="branch-0 cbranch-no" title="branch not covered" > </span>count &gt; 16 ? 1 : undefined
 &nbsp;
         const table = this.inputTable
 &nbsp;
         return series.map((series, index) =&gt; {
             const bounds = boundsArr[index]
-            const column = index % columns
-            const row = Math.floor(index / columns)
             const hideXAxis = false // row &lt; rows - 1 // todo: figure out design issues here
             const hideYAxis = false // column &gt; 0 // todo: figure out design issues here
             const hideLegend = false // !(column !== columns - 1) // todo: only show 1?
@@ -604,14 +598,14 @@ export class FacetChart
             }
             return {
                 bounds,
-                chartTypeN<span class="branch-0 cbranch-no" title="branch not covered" >a</span>me: series.chartTypeName ?? chartTypeName,
+                chartTyp<span class="branch-0 cbranch-no" title="branch not covered" >e</span>Name: series.chartTypeName ?? chartTypeName,
                 manager,
                 seriesName: series.seriesName,
             } as PlacedFacetSeries
         })
     }
 &nbsp;
-    @computed private get selectionArray() {
+    @computed private get selectionArray(): SelectionArray {
         return makeSelectionArray(this.manager)
     }
 &nbsp;
@@ -622,21 +616,21 @@ export class FacetChart
         const yDomain = table.domainFor(this.yColumnSlugs)
         const scaleType = this.manager.yAxis?.scaleType
         const sameYAxis = true
-<span class="branch-0 cbranch-no" title="branch not covered" >        const yAxisConfig = sameYAxis</span>
+        const yAxisConfig = sameYAxis<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            ? {</span>
 <span class="cstat-no" title="statement not covered" >                  max: yDomain[1],</span>
-<span class="cstat-no" title="statement not covered" >                  min</span>: yDomain[0],
-<span class="cstat-no" title="statement not covered" >                  scaleType,</span>
+<span class="cstat-no" title="statement not covered" >                  min: yDomain[0],</span>
+<span class="cstat-no" title="statement not covered" >                  scaleType</span>,
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            : undefined</span>
         const sameXAxis = true
         const xAxisConfig = sameXAxis<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            ? {</span>
-<span class="cstat-no" title="statement not covered" >                  max: table.maxTime,</span>
-<span class="cstat-no" title="statement not covered" >                  m</span>in: table.minTime,
+<span class="cstat-no" title="statement not covered" ></span>                  max: table.maxTime,
+<span class="cstat-no" title="statement not covered" ></span>                  min: table.minTime,
 <span class="cstat-no" title="statement not covered" ></span>                  scaleType,
-<span class="cstat-no" title="statement not covered" ></span>              }
-<span class="cstat-no" title="statement not covered" ></span>            : undefined
+<span class="cstat-no" title="statement not covered" >              }</span>
+<span class="cstat-no" title="statement not covered" >            : undefined</span>
 &nbsp;
         const hideLegend = this.manager.yColumnSlugs?.length === 1
 &nbsp;
@@ -671,44 +665,44 @@ export class FacetChart
         })
     }
 &nbsp;
-    @computed private get yColumns() {
+    @computed private get yColumns(): CoreColumn[] {
         return this.yColumnSlugs.map((slug) =&gt; this.inputTable.get(slug))
     }
 &nbsp;
-    @computed private get yColumnSlugs() {
+    @computed private get yColumnSlugs(): string[] {
         return autoDetectYColumnSlugs(this.manager)
     }
 &nbsp;
-    @computed get series() {
+    @computed get series(): FacetSeries[] {
         const { facetStrategy } = this.manager
         return facetStrategy === FacetStrategy.column
             ? this.columnFacets
             : this.countryFacets
     }
 &nbsp;
-    @computed protected get bounds() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.bounds ?? DEFAULT_BOUNDS</span>
+    @computed protected get bounds(): Bounds {
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>props.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
-    @computed protected get manager() {
+    @computed protected get manager(): ChartManager {
         return this.props.manager
     }
 &nbsp;
-    @compute<span class="fstat-no" title="function not covered" >d get failMessage() {</span>
-<span class="cstat-no" title="statement not covered" >        return ""</span>
+    @computed get failMessage<span class="fstat-no" title="function not covered" >(): string {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n ""
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get subtitleFontSize() {
+    @computed private get subtitleFontSize(): number {
         const { placedSeries, manager } = this
         return getFontSize(placedSeries.length, manager.baseFontSize)
     }
 &nbsp;
-    render() {
+    render(): JSX.Element[] {
         const { subtitleFontSize } = this
         return this.placedSeries.map((smallChart, index: number) =&gt; {
             const ChartClass =
 <span class="branch-0 cbranch-no" title="branch not covered" >                ChartComponentClassMap.get(smallChart.chartTypeName) ??</span>
-<span class="cstat-no" title="statement not covered" >                DefaultChartClass</span>
+<span class="cstat-no" title="statement not covered" >                Defa</span>ultChartClass
             const { bounds, seriesName } = smallChart
             const shiftTop =
                 smallChart.chartTypeName === ChartTypeName.LineChart ? 6 : 10
@@ -717,9 +711,9 @@ export class FacetChart
                     &lt;text
                         x={bounds.x}
                         y={bounds.top - shiftTop}
-                        fill={"#1d3d63"}
+                        fill={"#1d3d63<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >"</span></span></span></span>}
                         fontSize={subtitleFontSize}
-                        style={{ fontW<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >e</span></span></span></span>ight: 700 }}
+                        style={{ fontWeight: 700 }}
                     &gt;
                         {seriesName}
                     &lt;/text&gt;
@@ -736,7 +730,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

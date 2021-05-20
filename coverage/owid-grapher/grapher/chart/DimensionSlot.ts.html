@@ -116,7 +116,9 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -181,6 +183,7 @@ import { Grapher } from "../core/Grapher"
 import { computed } from "mobx"
 import { DimensionProperty } from "../core/GrapherConstants"
 import { excludeUndefined, findIndex, sortBy } from "../../clientUtils/Util"
+import { ChartDimension } from "./ChartDimension"
 &nbsp;
 export class DimensionSlot {
     private grapher: Grapher
@@ -190,48 +193,48 @@ export class DimensionSlot {
         this.property = property
     }
 &nbsp;
-    @computed get name<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        const names = {</span>
-<span class="cstat-no" title="statement not covered" ></span>            y: this.grapher.isDiscreteBar ? "X axis" : "Y axis",
-<span class="cstat-no" title="statement not covered" >            x: "X</span> axis",
-<span class="cstat-no" title="statement not covered" >            size: "Size"</span>,
-<span class="cstat-no" title="statement not covered" >            color: "Color",</span>
-<span class="cstat-no" title="statement not covered" >            filter: "Filt</span>er",
+    @computed get name<span class="fstat-no" title="function not covered" >(): string {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const names = {
+<span class="cstat-no" title="statement not covered" >            y: th</span>is.grapher.isDiscreteBar ? "X axis" : "Y axis",
+<span class="cstat-no" title="statement not covered" >            x: "X axis",</span>
+<span class="cstat-no" title="statement not covered" >            size: "Size",</span>
+<span class="cstat-no" title="statement not covered" >            color: "Color</span>",
+<span class="cstat-no" title="statement not covered" >            filter: "Filte</span>r",
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (names as any)[</span>this.property] || ""
+<span class="cstat-no" title="statement not covered" >        ret</span>urn (names as any)[this.property] || ""
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed get allowMultiple() {</span>
+    @computed get allowMu<span class="fstat-no" title="function not covered" >ltiple(): boolean {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            this.property === DimensionProperty.y &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            this.grapher.supportsMultipleYColumns</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" ></span>            this.grapher.supportsMultipleYColumns
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed get isOptional() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.all</span>owMultiple
+    @computed get isOp<span class="fstat-no" title="function not covered" >tional(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        return this.allowMultiple</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get dimensions<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.</span>grapher.dimensions.filter(
+    @computed get d<span class="fstat-no" title="function not covered" >imensions(): ChartDimension[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.grapher.dimensions.filter(</span>
 <span class="cstat-no" title="statement not covered" >            (d) =&gt; d.property === this.property</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    @computed get dimensionsOrderedAsInPersistedSelection() {</span>
-<span class="cstat-no" title="statement not covered" >        const</span> legacyConfig = this.grapher.legacyConfigAsAuthored
-<span class="cstat-no" title="statement not covered" >        const variab</span>leIDsInSelectionOrder = excludeUndefined(
-<span class="cstat-no" title="statement not covered" >            legacyConfig.selectedData?.map(</span>
-<span class="cstat-no" title="statement not covered" ></span>                (item) =&gt; legacyConfig.dimensions?.[item.index]?.variableId
+    @compute<span class="fstat-no" title="function not covered" >d get dimensionsOrderedAsInPersistedSelection(): ChartDimension[] {</span>
+<span class="cstat-no" title="statement not covered" >        const legacy</span>Config = this.grapher.legacyConfigAsAuthored
+<span class="cstat-no" title="statement not covered" >        const variableIDsInSelectionOrder =</span> excludeUndefined(
+<span class="cstat-no" title="statement not covered" >            l</span>egacyConfig.selectedData?.map(
+<span class="cstat-no" title="statement not covered" >                (ite</span>m) =&gt; legacyConfig.dimensions?.[item.index]?.variableId
 <span class="cstat-no" title="statement not covered" >            ) ?? []</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n sortBy(this.grapher.filledDimensions || [], (dim) =&gt;
-<span class="cstat-no" title="statement not covered" >            findInde</span>x(
-<span class="cstat-no" title="statement not covered" >                variableIDsInSelectionOrder,</span>
-<span class="cstat-no" title="statement not covered" ></span>                (variableId) =&gt; dim.variableId === variableId
+<span class="cstat-no" title="statement not covered" >        return sortB</span>y(this.grapher.filledDimensions || [], (dim) =&gt;
+<span class="cstat-no" title="statement not covered" >            findIndex(</span>
+<span class="cstat-no" title="statement not covered" ></span>                variableIDsInSelectionOrder,
+<span class="cstat-no" title="statement not covered" >                (var</span>iableId) =&gt; dim.variableId === variableId
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        ).filter((dim) =&gt; dim.property === this.p</span>roperty)
+<span class="cstat-no" title="statement not covered" >        ).fil</span>ter((dim) =&gt; dim.property === this.property)
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -241,7 +244,7 @@ export class DimensionSlot {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 20 2021 08:00:50 GMT+0000 (Coordinated Universal Time)
+                at Thu May 20 2021 11:43:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
