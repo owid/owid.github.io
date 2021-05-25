@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.15% </span>
+                <span class="strong">61.38% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>84/142</span>
+                <span class='fraction'>89/145</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.15% </span>
+                <span class="strong">61.38% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>84/142</span>
+                <span class='fraction'>89/145</span>
             </div>
         
             
@@ -254,7 +254,11 @@
 <a name='L195'></a><a href='#L195'>195</a>
 <a name='L196'></a><a href='#L196'>196</a>
 <a name='L197'></a><a href='#L197'>197</a>
-<a name='L198'></a><a href='#L198'>198</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -302,7 +306,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -319,6 +323,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -395,7 +403,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -499,7 +507,7 @@ const pageContainsGlobalEntitySelector = <span class="fstat-no" title="function 
 <span class="cstat-no" title="statement not covered" >    globalEntitySelectorElement() !=</span>= null
 &nbsp;
 const glo<span class="fstat-no" title="function not covered" >balEntitySelectorElement = () =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    do</span>cument.querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
+    document.querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
 &nbsp;
 class MultiEmbedder {
     private figuresObserver: IntersectionObserver | undefined
@@ -507,14 +515,18 @@ class MultiEmbedder {
     graphersAndExplorersToUpdate: Set&lt;SelectionArray&gt; = new Set()
 &nbsp;
     constructor() {
-        if (typeof window !== "undefined" &amp;&amp;<span class="branch-0 cbranch-no" title="branch not covered" > "IntersectionObserver" in window) {</span>
+        if (typeof window !== "undefined" &amp;&amp; "Intersec<span class="branch-0 cbranch-no" title="branch not covered" >tionObserver" in window) {</span>
 <span class="cstat-no" title="statement not covered" ></span>            this.figuresObserver = new IntersectionObserver(
-<span class="cstat-no" title="statement not covered" >                t</span>his.onIntersecting.bind(this),
+<span class="cstat-no" title="statement not covered" >                this.onIntersecting.bind(this),</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
 <span class="cstat-no" title="statement not covered" ></span>                    rootMargin: "200%",
-<span class="cstat-no" title="statement not covered" ></span>                }
+<span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" ></span>        } else {
+            console.warn(
+                "IntersectionObserver not available; interactive embeds won't load on this page"
+            )
+        }
     }
 &nbsp;
     /**
@@ -555,44 +567,44 @@ class MultiEmbedder {
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >renderInteractiveFigure(figure: Element) {</span>
-<span class="cstat-no" title="statement not covered" >        const i</span>sExplorer = figure.hasAttribute(
-<span class="cstat-no" title="statement not covered" >            EXPLORER_EMBEDDED_FIGURE_SELECTOR</span>
+<span class="cstat-no" title="statement not covered" >        const isExplorer = figure.hasAttribute(</span>
+<span class="cstat-no" title="statement not covered" >            EXPLORER_EMBEDDED_</span>FIGURE_SELECTOR
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const dataSrc = figure.getAtt</span>ribute(
+<span class="cstat-no" title="statement not covered" >        const dataSrc = figure.getAttribute(</span>
 <span class="cstat-no" title="statement not covered" >            isExplorer</span>
-<span class="cstat-no" title="statement not covered" >                ? EXPLORER_EMBEDDED_FIGURE_SELECTOR</span>
-<span class="cstat-no" title="statement not covered" ></span>                : GRAPHER_EMBEDDED_FIGURE_ATTR
+<span class="cstat-no" title="statement not covered" ></span>                ? EXPLORER_EMBEDDED_FIGURE_SELECTOR
+<span class="cstat-no" title="statement not covered" >                : G</span>RAPHER_EMBEDDED_FIGURE_ATTR
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (!dataSrc) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const hasPreview =</span> isExplorer ? false : !!figure.querySelector("img")
+<span class="cstat-no" title="statement not covered" >        const hasPreview = isExplorer ? false : !!figure.querySelector("img")</span>
 <span class="cstat-no" title="statement not covered" >        if (!shouldProgressiveEmbed() &amp;&amp; hasPreview) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Stop observing visibility as soon as possible, that is not before</span>
-<span class="cstat-no" title="statement not covered" >        // sho</span>uldProgressiveEmbed gets a chance to reevaluate a possible change
-<span class="cstat-no" title="statement not covered" >        // i</span>n screen size on mobile (i.e. after a rotation). Stopping before
-<span class="cstat-no" title="statement not covered" ></span>        // shouldProgressiveEmbed would prevent rendering interactive charts
-<span class="cstat-no" title="statement not covered" >        // when going from portrait to land</span>scape mode (without page reload).
-<span class="cstat-no" title="statement not covered" >        this.figuresObserver?.unobserve(figure)</span>
+<span class="cstat-no" title="statement not covered" >        // Sto</span>p observing visibility as soon as possible, that is not before
+<span class="cstat-no" title="statement not covered" >        // s</span>houldProgressiveEmbed gets a chance to reevaluate a possible change
+<span class="cstat-no" title="statement not covered" ></span>        // in screen size on mobile (i.e. after a rotation). Stopping before
+<span class="cstat-no" title="statement not covered" >        // shouldProgressiveEmbed would pre</span>vent rendering interactive charts
+<span class="cstat-no" title="statement not covered" >        // when going from portrait to landscape mode (</span>without page reload).
+<span class="cstat-no" title="statement not covered" >        this.figuresOb</span>server?.unobserve(figure)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { full</span>Url, queryStr } = Url.fromURL(dataSrc)
+<span class="cstat-no" title="statement not covered" >        const { fullUrl, queryStr } = Url.fromURL(dataSrc)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const common: GrapherProgrammaticInterface = {</span>
-<span class="cstat-no" title="statement not covered" >            isEmbeddedInAnOwidPage: true</span>,
-<span class="cstat-no" title="statement not covered" >            queryStr,</span>
+<span class="cstat-no" title="statement not covered" >        const common: GrapherProgrammati</span>cInterface = {
+<span class="cstat-no" title="statement not covered" >            isEmbeddedInAnOwidPage: true,</span>
+<span class="cstat-no" title="statement not covered" >            quer</span>yStr,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        co</span>nst html = await fetchText(fullUrl)
+<span class="cstat-no" title="statement not covered" >        const html = await fetchText(fullUrl)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (isExplorer) {</span>
 <span class="cstat-no" title="statement not covered" >            const props: ExplorerProps = {</span>
-<span class="cstat-no" title="statement not covered" >                ...common,</span>
+<span class="cstat-no" title="statement not covered" ></span>                ...common,
 <span class="cstat-no" title="statement not covered" ></span>                ...deserializeJSONFromHTML(html, EMBEDDED_EXPLORER_DELIMITER),
-<span class="cstat-no" title="statement not covered" ></span>                grapherConfigs: deserializeJSONFromHTML(
-<span class="cstat-no" title="statement not covered" >                    html,</span>
-<span class="cstat-no" title="statement not covered" >                    EMBEDDED_EXPLORER_GRA<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >P</span></span></span></span>HER_CONFIGS
+<span class="cstat-no" title="statement not covered" >                grapherConfigs: deserializeJSONFromHTM</span>L(
+<span class="cstat-no" title="statement not covered" >                    html,<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span>
+                    EMBEDDED_EXPLORER_GRAPHER_CONFIGS
                 ),
                 queryStr,
                 selection: new SelectionArray(
@@ -655,7 +667,7 @@ export const MultiEmbedderSingleton = new MultiEmbedder()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 25 2021 15:39:00 GMT+0000 (Coordinated Universal Time)
+                at Tue May 25 2021 15:53:09 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
