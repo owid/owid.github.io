@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.06% </span>
+                <span class="strong">95.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>154/162</span>
+                <span class='fraction'>156/164</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.06% </span>
+                <span class="strong">95.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>154/162</span>
+                <span class='fraction'>156/164</span>
             </div>
         
             
@@ -237,7 +237,25 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -392,13 +410,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -425,7 +443,12 @@ import { renderToHtmlPage } from "../baker/siteRenderers"
 import { Post } from "../db/model/Post"
 import { urlToSlug, without } from "../clientUtils/Util"
 import { isPresent } from "../clientUtils/isPresent"
-import { getRelatedArticles, getRelatedCharts } from "../db/wpdb"
+import {
+    getRelatedArticles,
+    getRelatedCharts,
+    isWordpressAPIEnabled,
+    isWordpressDBEnabled,
+} from "../db/wpdb"
 import { getVariableData } from "../db/model/Variable"
 import * as fs from "fs-extra"
 import { deserializeJSONFromHTML } from "../clientUtils/serializers"
@@ -445,10 +468,14 @@ import { isPathRedirectedToExplorer } from "../explorerAdmin/ExplorerRedirects"
 const grapherConfigToHtmlPage = async (<span class="fstat-no" title="function not covered" >grapher: GrapherInterface) =&gt; {</span>
     const postSlug = urlToSlug(grapher.originUrl || "")
     const post = postSlug ? await Post.bySlug(postSlug) : undefined
-    const relatedCharts = post ? await getRelatedCharts(post.id) : undefined
-    const relatedArticles = grapher.slug
-        ? await getRelatedArticles(grapher.slug)
-        : undefined
+    const relatedCharts =
+        post &amp;&amp; isWordpressDBEnabled
+            ? await getRelatedCharts(post.id)
+            : undefined
+    const relatedArticles =
+        grapher.slug &amp;&amp; isWordpressAPIEnabled
+            ? await getRelatedArticles(grapher.slug)
+            : undefined
 &nbsp;
     return renderToHtmlPage(
         &lt;GrapherPage
@@ -462,16 +489,16 @@ const grapherConfigToHtmlPage = async (<span class="fstat-no" title="function no
     )
 }
 &nbsp;
-export const grapherSlugToHtmlPage = asy<span class="fstat-no" title="function not covered" >n</span>c (slug: string) =&gt; {
+export const grapherSlugToHtmlPage = async (<span class="fstat-no" title="function not covered" >slug:</span> string) =&gt; {
     const entity = await Chart.getBySlug(slug)
     if (!entity) throw new JsonError("No such chart", 404)
     return grapherConfigToHtmlPage(entity.config)
 }
 &nbsp;
-const bakeVariableData = <span class="fstat-no" title="function not covered" >async (</span>
+con<span class="fstat-no" title="function not covered" >st bakeVariableData = async (</span>
 <span class="cstat-no" title="statement not covered" >    bakedSiteDir: string,</span>
 <span class="cstat-no" title="statement not covered" >    variableIds: number[],</span>
-<span class="cstat-no" title="statement not covered" >    outPath: string</span>
+<span class="cstat-no" title="statement not covered" >    outPath: stri</span>ng
 <span class="cstat-no" title="statement not covered" >): Promise&lt;string&gt; =&gt; {</span>
     await fs.mkdirp(`${bakedSiteDir}/grapher/data/variables/`)
     const vardata = await getVariableData(variableIds)
@@ -480,9 +507,9 @@ const bakeVariableData = <span class="fstat-no" title="function not covered" >as
     return vardata
 }
 &nbsp;
-const bakeGrapherPageAndVariablesPngAndSVGIfChange<span class="fstat-no" title="function not covered" >d = async (</span>
-<span class="cstat-no" title="statement not covered" ></span>    bakedSiteDir: string,
-<span class="cstat-no" title="statement not covered" >    grapher: GrapherInterface</span>
+const bakeGrapherPageAndV<span class="fstat-no" title="function not covered" >ariablesPngAndSVGIfChanged = async (</span>
+<span class="cstat-no" title="statement not covered" >    bakedSiteDir: st</span>ring,
+<span class="cstat-no" title="statement not covered" ></span>    grapher: GrapherInterface
 <span class="cstat-no" title="statement not covered" >) =&gt; {</span>
     const htmlPath = `${bakedSiteDir}/grapher/${grapher.slug}.html`
     let isSameVersion = false
@@ -536,7 +563,7 @@ const bakeGrapherPageAndVariablesPngAndSVGIfChange<span class="fstat-no" title="
     }
 }
 &nbsp;
-const deleteOldGraphers = <span class="fstat-no" title="function not covered" >async (bakedSiteDir: string, newSlugs: string[]) =&gt; {</span>
+const deleteOldGraphers = <span class="fstat-no" title="function not covered" >async (bakedSiteDir: string, newSlugs</span>: string[]) =&gt; {
     // Delete any that are missing from the database
     const oldSlugs = glob
         .sync(`${bakedSiteDir}/grapher/*.html`)
@@ -571,14 +598,14 @@ export const bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers =
     const progressBar = new ProgressBar(
         "BakeGrapherPageVarPngAndSVGIfChanged [:bar] :current/:total :elapseds :rate/s :etas :name\n",
         {
-            width: 20,
+            width: 20,<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>
             total: rows.length + 1,
         }
     )
     for (const row of rows) {
         const grapher: GrapherInterface = JSON.parse(row.config)
         grapher.id = row.id
-        newSlugs.push(grapher.slug)<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>
+        newSlugs.push(grapher.slug)
 &nbsp;
         // Avoid baking paths that have an Explorer redirect.
         // Redirects take precedence.
@@ -604,7 +631,7 @@ export const bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers =
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed May 26 2021 14:12:09 GMT+0000 (Coordinated Universal Time)
+                at Thu May 27 2021 08:26:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

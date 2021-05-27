@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.3% </span>
+                <span class="strong">47.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>67/119</span>
+                <span class='fraction'>57/119</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/25</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.38% </span>
+                <span class="strong">17.65% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>11/21</span>
+                <span class='fraction'>3/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.3% </span>
+                <span class="strong">47.9% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>67/119</span>
+                <span class='fraction'>57/119</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -182,25 +182,25 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -273,26 +273,26 @@ export class DatabaseConnection {
     config: mysql.PoolConfig
     pool!: mysql.Pool
 &nbsp;
-    constructor(config: mysql.PoolConfig) {
-        this.config = config
-    }
-&nbsp;
-    async connect(): Promise&lt;void&gt; {
-        this.pool = mysql.createPool(this.config)
-<span class="branch-0 cbranch-no" title="branch not covered" >        await this.getConnection()</span>
+<span class="fstat-no" title="function not covered" >    constructor(config: mysql.PoolConfig) {</span>
+<span class="cstat-no" title="statement not covered" >        this.config = co</span>nfig
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    getConnection(): Promise&lt;mysql.PoolConnection&gt; {
-        return new Promise((resolve, reject) =&gt; {
-            this.pool.getConnection((poolerr, conn) =&gt; {
-<span class="branch-0 cbranch-no" title="branch not covered" >                if (poolerr) {</span>
+    async <span class="fstat-no" title="function not covered" >connect(): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.pool = mysql.createPool(this.config)</span>
+<span class="cstat-no" title="statement not covered" >        await this.getConnection()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    getConnection(): Promise&lt;mysql.PoolConnection&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return n</span>ew Promise((resolve, reject) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>            this.pool.getConnection((poolerr, conn) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>                if (poolerr) {
 <span class="cstat-no" title="statement not covered" >                    reject(poo</span>lerr)
 <span class="cstat-no" title="statement not covered" >                } else {</span>
 <span class="cstat-no" title="statement not covered" >                    resolve(conn)</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
-            })
-        })
-    }
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     a<span class="fstat-no" title="function not covered" >sync transaction&lt;T&gt;(</span>
 <span class="cstat-no" title="statement not covered" ></span>        callback: (t: TransactionContext) =&gt; Promise&lt;T&gt;
@@ -340,7 +340,7 @@ export class DatabaseConnection {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed May 26 2021 14:12:09 GMT+0000 (Coordinated Universal Time)
+                at Thu May 27 2021 08:26:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
