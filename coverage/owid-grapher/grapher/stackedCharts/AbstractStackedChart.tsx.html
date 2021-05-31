@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.72% </span>
+                <span class="strong">96.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>295/305</span>
+                <span class='fraction'>301/311</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.27% </span>
+                <span class="strong">84.95% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>75/89</span>
+                <span class='fraction'>79/93</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.1% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>27/31</span>
+                <span class='fraction'>28/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.72% </span>
+                <span class="strong">96.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>295/305</span>
+                <span class='fraction'>301/311</span>
             </div>
         
             
@@ -350,7 +350,17 @@
 <a name='L291'></a><a href='#L291'>291</a>
 <a name='L292'></a><a href='#L292'>292</a>
 <a name='L293'></a><a href='#L293'>293</a>
-<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -582,7 +592,7 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">40x</span>
@@ -620,20 +630,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">47x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">45x</span>
+<span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
-<span class="cline-any cline-yes">7373x</span>
-<span class="cline-any cline-yes">7373x</span>
-<span class="cline-any cline-yes">7373x</span>
-<span class="cline-any cline-yes">7373x</span>
-<span class="cline-any cline-yes">7373x</span>
-<span class="cline-any cline-yes">7373x</span>
+<span class="cline-any cline-yes">7370x</span>
+<span class="cline-any cline-yes">7370x</span>
+<span class="cline-any cline-yes">7370x</span>
+<span class="cline-any cline-yes">7370x</span>
+<span class="cline-any cline-yes">7370x</span>
+<span class="cline-any cline-yes">7370x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
@@ -855,7 +875,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
                 return {
                     isProjection,
                     seriesName,
-                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >owidRowsByEntityName.get(seriesName) </span>|| [],
+                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >ow</span>idRowsByEntityName.get(seriesName) || [],
                 }
             })
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
@@ -873,22 +893,22 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
 &nbsp;
     @computed get failMessage(): string {
         const { yColumnSlugs } = this
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!yColumnSlugs.length) return "Missing variable"
+        if (!y<span class="branch-0 cbranch-no" title="branch not covered" >C</span>olumnSlugs.length) return "Missing variable"
         if (!this.series.length) return "No matching data"
-        if (!this.a<span class="branch-0 cbranch-no" title="branch not covered" >l</span>lStackedPoints.length) return "No matching points"
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!this.allStackedPoints.length) return "No matching points"
         return ""
     }
 &nbsp;
     @computed private get colorScheme(): ScaleOrdinal&lt;string, string&gt; {
         const scheme =
 <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span></span>
-<span class="cstat-no" title="statement not covered" >                ? ColorSchemes[this.manager.baseColo</span>rScheme]
+<span class="cstat-no" title="statement not covered" >                ? ColorSchemes[this.manager.baseColorSc</span>heme]
 <span class="cstat-no" title="statement not covered" ></span>                : null) ?? ColorSchemes.stackedAreaDefault
         const seriesCount = this.isEntitySeries
             ? this.selectionArray.numSelectedEntities
             : this.yColumns.length
         const baseColors = scheme.getColors(seriesCount)
-        if (this.manager.invertColorScheme) <span class="branch-0 cbranch-no" title="branch not covered" >baseColor</span>s.reverse()
+        if (this.manager.invertColorScheme) <span class="branch-0 cbranch-no" title="branch not covered" >baseColo</span>rs.reverse()
         return scaleOrdinal(baseColors)
     }
 &nbsp;
@@ -897,7 +917,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         const color = this.isEntitySeries
             ? table.getColorForEntityName(seriesName)
             : table.getColorForColumnByDisplayName(seriesName)
-        return <span class="branch-0 cbranch-no" title="branch not covered" >color ?? this.colorScheme(seriesName) ?? "</span>#ddd"
+        return <span class="branch-0 cbranch-no" title="branch not covered" >color ?? this.colorScheme(seriesName) ?</span>? "#ddd"
     }
 &nbsp;
     @computed protected get selectionArray(): SelectionArray {
@@ -909,12 +929,22 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
     }
 &nbsp;
     @computed get s<span class="fstat-no" title="function not covered" >eriesColors(): string[] {</span>
-<span class="cstat-no" title="statement not covered" >        return this.series.map((series) =&gt; series.color)</span>
+<span class="cstat-no" title="statement not covered" >        return this.series.map((series) =&gt; series.col</span>or)
 <span class="cstat-no" title="statement not covered" >    }</span>
+&nbsp;
+    /** Whether we want to display series with only zeroes. Defaults to true but e.g. StackedArea charts want to set this to false */
+    get showAllZeroSeries(): boolean {
+        return true
+    }
 &nbsp;
     @computed get unstackedSeries(): readonly StackedSeries&lt;PositionType&gt;[] {
         return this.rawSeries
-            .filter((series) =&gt; series.rows.length)
+            .filter(
+                (series) =&gt;
+                    series.rows.length &amp;&amp;
+                    (this.showAllZeroSeries ||
+                        series.rows.some((row) =&gt; row.value !== 0))
+            )
             .map((series) =&gt; {
                 const { isProjection, seriesName, rows } = series
                 return {
@@ -932,8 +962,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             })
     }
 &nbsp;
-    @computed get s<span class="fstat-no" title="function not covered" >eries(): readonly StackedSeries&lt;PositionType&gt;[] {</span>
-<span class="cstat-no" title="statement not covered" >        return this.unstackedSeries</span>
+    @computed get series<span class="fstat-no" title="function not covered" >(): readonly StackedSeries&lt;PositionType&gt;[] {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.unstackedSeries
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -943,7 +973,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 15:09:39 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 16:07:09 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
