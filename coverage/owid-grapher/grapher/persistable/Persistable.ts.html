@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.43% </span>
+                <span class="strong">91.55% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>64/70</span>
+                <span class='fraction'>65/71</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.43% </span>
+                <span class="strong">91.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>64/70</span>
+                <span class='fraction'>65/71</span>
             </div>
         
             
@@ -136,7 +136,9 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -175,37 +177,37 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1189x</span>
-<span class="cline-any cline-yes">1189x</span>
-<span class="cline-any cline-yes">1122x</span>
-<span class="cline-any cline-yes">34714x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">1252x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">1391x</span>
-<span class="cline-any cline-yes">34714x</span>
-<span class="cline-any cline-yes">503x</span>
+<span class="cline-any cline-yes">1191x</span>
+<span class="cline-any cline-yes">1191x</span>
+<span class="cline-any cline-yes">1124x</span>
+<span class="cline-any cline-yes">34726x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">1254x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">1393x</span>
+<span class="cline-any cline-yes">34726x</span>
+<span class="cline-any cline-yes">505x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">103x</span>
-<span class="cline-any cline-yes">965x</span>
-<span class="cline-any cline-yes">965x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">971x</span>
+<span class="cline-any cline-yes">971x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">965x</span>
+<span class="cline-any cline-yes">971x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,6 +218,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { toJS } from "mobx"
+import { isEqual } from "../../clientUtils/Util"
 &nbsp;
 // Any classes that the user can edit, save, and then rehydrate should implement this interface
 export interface Persistable {
@@ -285,9 +288,9 @@ export function deleteRuntimeAndUnchangedProps&lt;T&gt;(
 <span class="cstat-no" title="statement not covered" ></span>            return
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
-        const currentValue = JSON.stringify(obj[key])
-        const defaultValue = JSON.stringify(defaultObj[key])
-        if (currentValue === defaultValue) {
+        const currentValue = obj[key]
+        const defaultValue = defaultObj[key]
+        if (isEqual(currentValue, defaultValue)) {
             // Don't persist any values that weren't changed from the default
             delete obj[key]
         }
@@ -301,7 +304,7 @@ export function deleteRuntimeAndUnchangedProps&lt;T&gt;(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 13:27:49 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 14:38:39 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
