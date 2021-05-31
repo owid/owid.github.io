@@ -547,7 +547,9 @@
 <a name='L488'></a><a href='#L488'>488</a>
 <a name='L489'></a><a href='#L489'>489</a>
 <a name='L490'></a><a href='#L490'>490</a>
-<a name='L491'></a><a href='#L491'>491</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -854,7 +856,7 @@
 <span class="cline-any cline-yes">19320x</span>
 <span class="cline-any cline-yes">19320x</span>
 <span class="cline-any cline-yes">1910x</span>
-<span class="cline-any cline-yes">1910x</span>
+<span class="cline-any cline-yes">19320x</span>
 <span class="cline-any cline-yes">234x</span>
 <span class="cline-any cline-yes">213x</span>
 <span class="cline-any cline-yes">209x</span>
@@ -951,7 +953,7 @@
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
-<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1066,6 +1068,7 @@ import { ColorSchemeName } from "../color/ColorConstants"
 import { stackSeries, withMissingValuesAsZeroes } from "./StackedUtils"
 import { makeClipPath } from "../chart/ChartUtils"
 import { Time } from "../../clientUtils/owidTypes"
+import { ColorScaleConfigDefaults } from "../color/ColorScaleConfig"
 &nbsp;
 interface StackedBarSegmentProps extends React.SVGAttributes&lt;SVGGElement&gt; {
     bar: StackedPoint&lt;Time&gt;
@@ -1088,31 +1091,31 @@ class StackedBarSegment extends React.Component&lt;StackedBarSegmentProps&gt; {
 &nbsp;
     @observable mouseOver: boolean = false
 &nbsp;
-    @computed get yPos() {
+    @computed get yPos(): number {
         const { bar, yAxis } = this.props
         return yAxis.place(bar.value + bar.valueOffset)
     }
 &nbsp;
-    @computed get barHeight() {
+    @computed get barHeight(): number {
         const { bar, yAxis } = this.props
         return yAxis.place(bar.valueOffset) - this.yPos
     }
 &nbsp;
-    @computed get trueOpacity() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.mouseOver ? 1 : t</span>his.props.opacity
+    @computed get trueOpacity(): number {
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return this.mouseOver ? 1 : this.props.opacity
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseOver() {</span>
-<span class="cstat-no" title="statement not covered" >        this.mouseOver = true</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.props.onBarMouseOver(this.props.bar, this.props.series)
+    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseOver(): void {</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.mouseOver = true
+<span class="cstat-no" title="statement not covered" >        this.pr</span>ops.onBarMouseOver(this.props.bar, this.props.series)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseLeave() {</span>
-<span class="cstat-no" title="statement not covered" >        this.mouseOver = false</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseLeave(): void {</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.mouseOver = false
 <span class="cstat-no" title="statement not covered" ></span>        this.props.onBarMouseLeave()
-<span class="cstat-no" title="statement not covered" ></span>    }
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    render() {
+    render(): JSX.Element {
         const { color, xOffset, barWidth } = this.props
         const { yPos, barHeight, trueOpacity } = this
 &nbsp;
@@ -1148,43 +1151,43 @@ export class StackedBarChart
     @observable hoverBar?: StackedPoint&lt;Time&gt;
     @observable hoverSeries?: StackedSeries&lt;Time&gt;
 &nbsp;
-    @computed private get baseFontSize() {
+    @computed private get baseFontSize(): number {
         return this.manager.baseFontSize ?? BASE_FONT_SIZE
     }
 &nbsp;
-    @computed get tickFontSize() {
+    @computed get tickFontSize(): number {
         return 0.9 * this.baseFontSize
     }
 &nbsp;
-    @computed get barWidth() {
+    @computed get barWidth(): number {
         const { dualAxis } = this
 &nbsp;
         return (0.8 * dualAxis.innerBounds.width) / this.xValues.length
     }
 &nbsp;
-    @computed get barSpacing() {
+    @computed get barSpacing(): number {
         return (
             this.dualAxis.innerBounds.width / this.xValues.length -
             this.barWidth
         )
     }
 &nbsp;
-    @computed get barFon<span class="fstat-no" title="function not covered" >tSize() {</span>
-<span class="cstat-no" title="statement not covered" >        return 0.75 * this.baseFontS</span>ize
+    @computed get barFontSize<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        return 0.75 * this.baseFontSize</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed protected get paddingForLegend() {
+    @computed protected get paddingForLegend(): number {
         return this.sidebarWidth + 20
     }
 &nbsp;
     // All currently hovered group keys, combining the legend and the main UI
-    @computed get hoverKeys() {
+    @computed get hoverKeys(): string[] {
         const { hoverColor } = this
 &nbsp;
         const hoverKeys =
 <span class="branch-0 cbranch-no" title="branch not covered" >            hoverColor === undefined</span>
 <span class="cstat-no" title="statement not covered" >                ? []</span>
-<span class="cstat-no" title="statement not covered" >                : uniq(</span>
+<span class="cstat-no" title="statement not covered" ></span>                : uniq(
                       this.series
                           .filter((g) =&gt; g.color === hoverColor)
                           .map((g) =&gt; g.seriesName)
@@ -1193,18 +1196,18 @@ export class StackedBarChart
         return hoverKeys
     }
 &nbsp;
-    @computed get activeColors() {
+    @computed get activeColors(): string[] {
         const { hoverKeys } = this
-        const activeKeys = <span class="branch-0 cbranch-no" title="branch not covered" >h</span>overKeys.length &gt; 0 ? hoverKeys : []
+        const activ<span class="branch-0 cbranch-no" title="branch not covered" >e</span>Keys = hoverKeys.length &gt; 0 ? hoverKeys : []
 &nbsp;
         if (!activeKeys.length)
             // No hover means they're all active by default
 <span class="branch-0 cbranch-no" title="branch not covered" >            return uniq(this.series.map((g) =&gt; g.color))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        return uniq(
+<span class="cstat-no" title="statement not covered" >        return uniq(</span>
 <span class="cstat-no" title="statement not covered" >            this.series</span>
-<span class="cstat-no" title="statement not covered" >                .filter((g) =&gt; activeKeys.indexOf(g.seriesName) !== -1)</span>
-<span class="cstat-no" title="statement not covered" ></span>                .map((g) =&gt; g.color)
+<span class="cstat-no" title="statement not covered" ></span>                .filter((g) =&gt; activeKeys.indexOf(g.seriesName) !== -1)
+<span class="cstat-no" title="statement not covered" >                .map</span>((g) =&gt; g.color)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1219,17 +1222,17 @@ export class StackedBarChart
             .reverse() // Vertical legend orders things in the opposite direction we want
     }
 &nbsp;
-    @computed get maxLegendWidth() {
+    @computed get maxLegendWidth(): number {
         return this.sidebarMaxWidth
     }
 &nbsp;
-    @computed get sidebarMaxWidth() {
+    @computed get sidebarMaxWidth(): number {
         return this.bounds.width / 5
     }
-    @computed get sidebarMinWidth() {
+    @computed get sidebarMinWidth(): number {
         return 100
     }
-    @computed get sidebarWidth() {
+    @computed get sidebarWidth(): number {
         const { sidebarMinWidth, sidebarMaxWidth, legendDimensions } = this
         return Math.max(
             Math.min(legendDimensions.width, sidebarMaxWidth),
@@ -1241,7 +1244,7 @@ export class StackedBarChart
         return new VerticalColorLegend({ manager: this })
     }
 &nbsp;
-    @computed get tooltip() {
+    @computed get tooltip(): JSX.Element | undefined {
         const {
             hoverBar,
             mapXValueToOffset,
@@ -1253,31 +1256,31 @@ export class StackedBarChart
         } = this
         if (hoverBar === undefined) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const xPos = </span>mapXValueToOffset.get(hoverBar.position)
-<span class="cstat-no" title="statement not covered" >        if (xPos === u</span>ndefined) return
+<span class="cstat-no" title="statement not covered" >        const xPos = m</span>apXValueToOffset.get(hoverBar.position)
+<span class="cstat-no" title="statement not covered" >        if (xPos === undefined) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const yPos = dualAxis.verticalAxis.place(</span>
-<span class="cstat-no" title="statement not covered" >            hoverBar.valueOffset + hoverBar.value</span>
+<span class="cstat-no" title="statement not covered" >            hoverBar</span>.valueOffset + hoverBar.value
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const y</span>Column = yColumns[0] // we can just use the first column for formatting, b/c we assume all columns have same type
-<span class="cstat-no" title="statement not covered" >        retu</span>rn (
-<span class="cstat-no" title="statement not covered" ></span>            &lt;Tooltip
-<span class="cstat-no" title="statement not covered" >                to</span>oltipManager={this.props.manager}
+<span class="cstat-no" title="statement not covered" >        cons</span>t yColumn = yColumns[0] // we can just use the first column for formatting, b/c we assume all columns have same type
+<span class="cstat-no" title="statement not covered" ></span>        return (
+<span class="cstat-no" title="statement not covered" >            &lt;Toolt</span>ip
+<span class="cstat-no" title="statement not covered" >                tooltipManager={this.prop</span>s.manager}
 <span class="cstat-no" title="statement not covered" >                x={xPos + barWidth}</span>
 <span class="cstat-no" title="statement not covered" >                y={yPos}</span>
 <span class="cstat-no" title="statement not covered" >                style={{ textAlign: "center" }}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;h3</span>
 <span class="cstat-no" title="statement not covered" >                    style={{</span>
-<span class="cstat-no" title="statement not covered" >                        padding: "0.3em 0.9em",</span>
-<span class="cstat-no" title="statement not covered" >                        margin: 0</span>,
-<span class="cstat-no" title="statement not covered" >                        backgroundColor: "#f</span>cfcfc",
-<span class="cstat-no" title="statement not covered" >                        borderBottom: "1px solid #ebebeb",</span>
-<span class="cstat-no" title="statement not covered" >                        fontWeight: "normal"</span>,
-<span class="cstat-no" title="statement not covered" >                        f</span>ontSize: "1em",
-<span class="cstat-no" title="statement not covered" >                    }}</span>
-<span class="cstat-no" title="statement not covered" >                &gt;</span>
+<span class="cstat-no" title="statement not covered" >                        padding: </span>"0.3em 0.9em",
+<span class="cstat-no" title="statement not covered" >                        margin: 0,</span>
+<span class="cstat-no" title="statement not covered" >                        backgroundColor: "#fcfcfc",</span>
+<span class="cstat-no" title="statement not covered" >                        borderBottom: "1px s</span>olid #ebebeb",
+<span class="cstat-no" title="statement not covered" >                        f</span>ontWeight: "normal",
+<span class="cstat-no" title="statement not covered" >                        fontSize: "1em",</span>
+<span class="cstat-no" title="statement not covered" ></span>                    }}
+<span class="cstat-no" title="statement not covered" ></span>                &gt;
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>                    {hoverSeries?.seriesName}
                 &lt;/h3&gt;
                 &lt;p
@@ -1299,7 +1302,7 @@ export class StackedBarChart
         )
     }
 &nbsp;
-    @computed get mapXValueToOffset() {
+    @computed get mapXValueToOffset(): Map&lt;number, number&gt; {
         const { dualAxis, barWidth, barSpacing } = this
 &nbsp;
         const xValueToOffset = new Map&lt;number, number&gt;()
@@ -1355,31 +1358,31 @@ export class StackedBarChart
         return tickPlacements.filter((t) =&gt; !t.isHidden)
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(color: string) {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>hoverColor = color
+    @action.<span class="fstat-no" title="function not covered" >bound onLegendMouseOver(color: string): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverCo</span>lor = color
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound onLegendMouseLeave() {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoverCo</span>lor = undefined
+    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverColor = undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >on</span>LegendClick() {}
+    @action.bound <span class="fstat-no" title="function not covered" >onLegendClick(): void {}</span>
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound onBarMouseOver(</span>
-<span class="cstat-no" title="statement not covered" >        bar: Stacked</span>Point&lt;Time&gt;,
-<span class="cstat-no" title="statement not covered" >        series: StackedSeries&lt;Time&gt;</span>
-<span class="cstat-no" title="statement not covered" >    ) {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoverBa</span>r = bar
-<span class="cstat-no" title="statement not covered" >        this.hoverSeries = series</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseOver(</span>
+<span class="cstat-no" title="statement not covered" >        bar: StackedPoint&lt;Time&gt;,</span>
+<span class="cstat-no" title="statement not covered" >        serie</span>s: StackedSeries&lt;Time&gt;
+<span class="cstat-no" title="statement not covered" >    ): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverBar = bar</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>hoverSeries = series
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseLeave() {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>hoverBar = undefined
+    @action.<span class="fstat-no" title="function not covered" >bound onBarMouseLeave(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverBa</span>r = undefined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    render() {
+    render(): JSX.Element {
         if (this.failMessage)
-<span class="branch-0 cbranch-no" title="branch not covered" >            return (</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            r</span>eturn (
                 &lt;NoDataModal
                     manager={this.manager}
                     bounds={this.bounds}
@@ -1440,8 +1443,8 @@ export class StackedBarChart
                     {ticks.map((tick, i) =&gt; {
                         return (
                             &lt;Text
-                                key={i}
-                                x={tick.bou<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >n</span></span></span></span></span></span></span></span></span></span>ds.x}
+                                key={i}<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span>
+                                x={tick.bounds.x}
                                 y={tick.bounds.y}
                                 fill={textColor}
                                 fontSize={this.tickFontSize}
@@ -1505,25 +1508,25 @@ export class StackedBarChart
         )
     }
 &nbsp;
-    @computed get legendY() {
+    @computed get legendY(): number {
         return this.bounds.top
     }
 &nbsp;
-    @computed get legendX() {
+    @computed get legendX(): number {
         return this.bounds.right - this.sidebarWidth
     }
 &nbsp;
-    @computed private get xValues() {
+    @computed private get xValues(): number[] {
         return uniq(this.allStackedPoints.map((bar) =&gt; bar.position))
     }
 &nbsp;
-    @computed get colorScaleConfig() {
+    @computed get colorScaleConfig(): ColorScaleConfigDefaults | undefined {
         return this.manager.colorScale
     }
 &nbsp;
     defaultBaseColorScheme = ColorSchemeName.stackedAreaDefault
 &nbsp;
-    @computed get series() {
+    @computed get series(): readonly StackedSeries&lt;number&gt;[] {
         return stackSeries(withMissingValuesAsZeroes(this.unstackedSeries))
     }
 }
@@ -1534,7 +1537,7 @@ export class StackedBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 14:57:38 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 15:09:17 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

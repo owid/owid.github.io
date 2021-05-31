@@ -348,7 +348,11 @@
 <a name='L289'></a><a href='#L289'>289</a>
 <a name='L290'></a><a href='#L290'>290</a>
 <a name='L291'></a><a href='#L291'>291</a>
-<a name='L292'></a><a href='#L292'>292</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -578,7 +582,7 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">40x</span>
@@ -599,7 +603,7 @@
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">115x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">40x</span>
@@ -624,12 +628,12 @@
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
-<span class="cline-any cline-yes">7353x</span>
-<span class="cline-any cline-yes">7353x</span>
-<span class="cline-any cline-yes">7353x</span>
-<span class="cline-any cline-yes">7353x</span>
-<span class="cline-any cline-yes">7353x</span>
-<span class="cline-any cline-yes">7353x</span>
+<span class="cline-any cline-yes">7362x</span>
+<span class="cline-any cline-yes">7362x</span>
+<span class="cline-any cline-yes">7362x</span>
+<span class="cline-any cline-yes">7362x</span>
+<span class="cline-any cline-yes">7362x</span>
+<span class="cline-any cline-yes">7362x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-yes">115x</span>
@@ -639,7 +643,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { DualAxis } from "../axis/Axis"
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { DualAxis, HorizontalAxis, VerticalAxis } from "../axis/Axis"
 import { AxisConfig, FontSizeManager } from "../axis/AxisConfig"
 import { ChartInterface } from "../chart/ChartInterface"
 import { ChartManager } from "../chart/ChartManager"
@@ -665,8 +669,10 @@ import {
     autoDetectYColumnSlugs,
     makeSelectionArray,
 } from "../chart/ChartUtils"
-import { easeLinear, scaleOrdinal, select } from "d3"
+import { easeLinear, ScaleOrdinal, scaleOrdinal, select, Series } from "d3"
 import { ColorSchemes } from "../color/ColorSchemes"
+import { CoreColumn } from "../../coreTable/CoreTableColumns"
+import { SelectionArray } from "../selection/SelectionArray"
 &nbsp;
 export interface AbstactStackedChartProps {
     bounds?: Bounds
@@ -678,7 +684,7 @@ export interface AbstactStackedChartProps {
 export class AbstactStackedChart&lt;PositionType extends StackedPointPositionType&gt;
     extends React.Component&lt;AbstactStackedChartProps&gt;
     implements ChartInterface, FontSizeManager {
-    transformTable(table: OwidTable) {
+    transformTable(table: OwidTable): OwidTable {
         table = table.filterByEntityNames(
             this.selectionArray.selectedEntityNames
         )
@@ -711,41 +717,41 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return table
     }
 &nbsp;
-    @computed get inputTable() {
+    @computed get inputTable(): OwidTable {
         return this.manager.table
     }
 &nbsp;
-    @computed get transformedTable() {
+    @computed get transformedTable(): OwidTable {
         return (
             this.manager.transformedTable ??
             this.transformTable(this.inputTable)
         )
     }
 &nbsp;
-    @computed get manager() {
+    @computed get manager(): ChartManager {
         return this.props.manager
     }
-    @computed get bounds() {
+    @computed get bounds(): Bounds {
         return this.props.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
-    @computed get fontSize() {
+    @computed get fontSize(): number {
         return this.manager.baseFontSize ?? BASE_FONT_SIZE
     }
 &nbsp;
-    protected get paddingFor<span class="fstat-no" title="function not covered" >Legend() {</span>
-<span class="cstat-no" title="statement not covered" >        return 0</span>
+    protected get paddingForLegend<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return 0
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get renderUid() {
+    @computed get renderUid(): number {
         return guid()
     }
 &nbsp;
-    @computed protected get yColumns() {
+    @computed protected get yColumns(): CoreColumn[] {
         return this.transformedTable.getColumns(this.yColumnSlugs)
     }
 &nbsp;
-    @computed protected get yColumnSlugs() {
+    @computed protected get yColumnSlugs(): string[] {
         return (
             this.manager.yColumnSlugsInSelectionOrder ??
             autoDetectYColumnSlugs(this.manager)
@@ -760,7 +766,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
     &gt;
 &nbsp;
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
-    componentDidMount() {
+    componentDidMount(): void {
         // Fancy intro animation
         this.animSelection = select(this.base.current)
             .selectAll("clipPath &gt; rect")
@@ -776,15 +782,15 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         exposeInstanceOnWindow(this)
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    componentWillUnmount() {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.animSelectio</span>n) this.animSelection.interrupt()
+<span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.anim</span>Selection) this.animSelection.interrupt()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get seriesStrategy() {
+    @computed get seriesStrategy(): SeriesStrategy {
         return autoDetectSeriesStrategy(this.manager)
     }
 &nbsp;
-    @computed protected get dualAxis() {
+    @computed protected get dualAxis(): DualAxis {
         const {
             bounds,
             horizontalAxisPart,
@@ -798,10 +804,10 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         })
     }
 &nbsp;
-    @computed private get horizontalAxisPart() {
+    @computed private get horizontalAxisPart(): HorizontalAxis {
         const axisConfig =
             this.manager.xAxis || new AxisConfig(this.manager.xAxisConfig, this)
-        if (this.manager.hideXAxis)<span class="branch-0 cbranch-no" title="branch not covered" > </span>axisConfig.hideAxis = true
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (this.manager.hideXAxis) axisConfig.hideAxis = true
 &nbsp;
         const axis = axisConfig.toHorizontalAxis()
         axis.updateDomainPreservingUserSettings(
@@ -813,7 +819,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return axis
     }
 &nbsp;
-    @computed private get verticalAxisPart() {
+    @computed private get verticalAxisPart(): VerticalAxis {
         // const lastSeries = this.series[this.series.length - 1]
         // const yValues = lastSeries.points.map((d) =&gt; d.yOffset + d.y)
         const yValues = this.allStackedPoints.map(
@@ -849,7 +855,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
                 return {
                     isProjection,
                     seriesName,
-                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >owidRowsByEntityName.get(s</span>eriesName) || [],
+                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >owidRowsByEntityName.get(seriesName) </span>|| [],
                 }
             })
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
@@ -865,45 +871,45 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return flatten(this.series.map((series) =&gt; series.points))
     }
 &nbsp;
-    @computed get failMessage() {
+    @computed get failMessage(): string {
         const { yColumnSlugs } = this
-        if (!yColumnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >ret</span>urn "Missing variable"
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!yColumnSlugs.length) return "Missing variable"
         if (!this.series.length) return "No matching data"
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!this.allStackedPoints.length) return "No matching points"
+        if (!this.a<span class="branch-0 cbranch-no" title="branch not covered" >l</span>lStackedPoints.length) return "No matching points"
         return ""
     }
 &nbsp;
-    @computed private get colorScheme() {
+    @computed private get colorScheme(): ScaleOrdinal&lt;string, string&gt; {
         const scheme =
 <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>                ? ColorSchemes[this.manager.baseColorScheme]
-<span class="cstat-no" title="statement not covered" >                : nu</span>ll) ?? ColorSchemes.stackedAreaDefault
+<span class="cstat-no" title="statement not covered" >                ? ColorSchemes[this.manager.baseColo</span>rScheme]
+<span class="cstat-no" title="statement not covered" ></span>                : null) ?? ColorSchemes.stackedAreaDefault
         const seriesCount = this.isEntitySeries
             ? this.selectionArray.numSelectedEntities
             : this.yColumns.length
         const baseColors = scheme.getColors(seriesCount)
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >t</span>his.manager.invertColorScheme) baseColors.reverse()
+        if (this.manager.invertColorScheme) <span class="branch-0 cbranch-no" title="branch not covered" >baseColor</span>s.reverse()
         return scaleOrdinal(baseColors)
     }
 &nbsp;
-    getColorForSeries(seriesName: SeriesName) {
+    getColorForSeries(seriesName: SeriesName): string {
         const table = this.transformedTable
         const color = this.isEntitySeries
             ? table.getColorForEntityName(seriesName)
             : table.getColorForColumnByDisplayName(seriesName)
-        retu<span class="branch-0 cbranch-no" title="branch not covered" >r</span>n color ?? this.colorScheme(seriesName) ?? "#ddd"
+        return <span class="branch-0 cbranch-no" title="branch not covered" >color ?? this.colorScheme(seriesName) ?? "</span>#ddd"
     }
 &nbsp;
-    @computed protected get selectionArray() {
+    @computed protected get selectionArray(): SelectionArray {
         return makeSelectionArray(this.manager)
     }
 &nbsp;
-    @computed get isEntitySeries() {
+    @computed get isEntitySeries(): boolean {
         return this.seriesStrategy === SeriesStrategy.entity
     }
 &nbsp;
-    @computed get seriesColors<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.series.map((series) =&gt; series.color)
+    @computed get s<span class="fstat-no" title="function not covered" >eriesColors(): string[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.series.map((series) =&gt; series.color)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get unstackedSeries(): readonly StackedSeries&lt;PositionType&gt;[] {
@@ -926,8 +932,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             })
     }
 &nbsp;
-    @computed get series<span class="fstat-no" title="function not covered" >(): readonly StackedSeries&lt;PositionType&gt;[] {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.unstackedSeries
+    @computed get s<span class="fstat-no" title="function not covered" >eries(): readonly StackedSeries&lt;PositionType&gt;[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.unstackedSeries</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -937,7 +943,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 14:57:38 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 15:09:17 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
