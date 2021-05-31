@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">90.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/54</span>
+                <span class='fraction'>49/54</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">90.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>48/54</span>
+                <span class='fraction'>49/54</span>
             </div>
         
             
@@ -116,7 +116,8 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -141,13 +142,14 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">5000x</span>
 <span class="cline-any cline-yes">5000x</span>
 <span class="cline-any cline-yes">5000x</span>
 <span class="cline-any cline-yes">5000x</span>
 <span class="cline-any cline-yes">5000x</span>
 <span class="cline-any cline-yes">5000x</span>
-<span class="cline-any cline-yes">5000x</span>
+<span class="cline-any cline-yes">4999x</span>
 <span class="cline-any cline-yes">3982x</span>
 <span class="cline-any cline-yes">3982x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -169,7 +171,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,12 +187,13 @@ export function generateComparisonLinePoints(
     yScaleDomain: [number, number],
     xScaleType: ScaleType,
     yScaleType: ScaleType
-) {
+): [number, number][] {
     con<span class="branch-0 cbranch-no" title="branch not covered" >s</span>t expr = parseEquation(lineFunction)?.simplify({
         e: Math.E,
         pi: Math.PI,
     })
-    const yFunc = (x: number) =&gt; evalExpression(expr, { x }, undefined)
+    const yFunc = (x: number): number | undefined =&gt;
+        evalExpression(expr, { x }, undefined)
 &nbsp;
     // Construct control data by running the equation across sample points
     const numPoints = 500
@@ -203,8 +206,8 @@ export function generateComparisonLinePoints(
         const x = scale.invert(i)
         const y = yFunc(x)
 &nbsp;
-        if (y === und<span class="branch-0 cbranch-no" title="branch not covered" >e</span>fined || Number.isNaN(x) || Number.isNaN(y)) continue
-        if (xScaleType === ScaleT<span class="branch-0 cbranch-no" title="branch not covered" >y</span>pe.log &amp;&amp; x &lt;= 0) continue
+        if (y === undefined || Nu<span class="branch-0 cbranch-no" title="branch not covered" >m</span>ber.isNaN(x) || Number.isNaN(y)) continue
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (xScaleType === ScaleType.log &amp;&amp; x &lt;= 0) continue
         if (yScaleType === ScaleType.log &amp;&amp; y &lt;= 0) continue
         if (y &gt; yScaleDomain[1]) continue
         controlData.push([x, y])
@@ -217,18 +220,18 @@ function evalExpression&lt;D&gt;(
     expr: Expression | undefined,
     context: Record&lt;string, number&gt;,
     defaultOnError: D
-) {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>    if (expr === undefined) return defaultOnError
+): number | D {
+    if (expr === undefined) <span class="branch-0 cbranch-no" title="branch not covered" >return </span>defaultOnError
 <span class="branch-0 cbranch-no" title="branch not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        re</span>turn expr.evaluate(context) as number
-<span class="cstat-no" title="statement not covered" >    } catch (e) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return defaultOnError
+<span class="cstat-no" title="statement not covered" >        return expr.evaluate(context) as number</span>
+<span class="cstat-no" title="statement not covered" >    } </span>catch (e) {
+<span class="cstat-no" title="statement not covered" >        return d</span>efaultOnError
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
-function parseEquation(equation: string) {
+function parseEquation(equation: string): Expression | undefined {
 <span class="branch-0 cbranch-no" title="branch not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        return Parser.parse(equation)</span>
+        return Parser.parse(equation)
     } catch (e) {
         console.error(e)
         return undefined
@@ -241,7 +244,7 @@ function parseEquation(equation: string) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 14:50:51 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 14:51:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
