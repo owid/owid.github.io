@@ -788,7 +788,7 @@ import { faPause } from "@fortawesome/free-solid-svg-icons/faPause"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Tippy from "@tippyjs/react"
 import classNames from "classnames"
-import { TimelineController, TimelineManager } from "./TimelineController"
+import { TimelineController } from "./TimelineController"
 import { timeFromTimebounds } from "../../clientUtils/TimeBounds"
 &nbsp;
 const HANDLE_TOOLTIP_FADE_TIME_MS = 2000
@@ -801,19 +801,19 @@ export class TimelineComponent extends React.Component&lt;{
 &nbsp;
     @observable private dragTarget?: "start" | "end" | "both"
 &nbsp;
-    @computed priv<span class="fstat-no" title="function not covered" >ate get isDragging(): boolean {</span>
+    @computed priv<span class="fstat-no" title="function not covered" >ate get isDragging() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return !!this.dragTarget
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get manager(): TimelineManager {
+    @computed private get manager() {
         return this.props.timelineController.manager
     }
 &nbsp;
-    @computed private get controller(): TimelineController {
+    @computed private get controller() {
         return this.props.timelineController
     }
 &nbsp;
-    private get sliderBounds<span class="fstat-no" title="function not covered" >(): Bounds {</span>
+    private get sliderBounds<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.slider</span>
 <span class="cstat-no" title="statement not covered" >            ? Bounds.fromRect(this.slider.getBoundingClientRect())</span>
 <span class="cstat-no" title="statement not covered" >            : new Bounds(0, 0, 100, 100)</span>
@@ -822,7 +822,7 @@ export class TimelineComponent extends React.Component&lt;{
     private slider?: Element | HTMLElement | null
     private playButton?: Element | HTMLElement | null
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >getInputTimeFromMouse(event: MouseEvent): number {</span>
+    private <span class="fstat-no" title="function not covered" >getInputTimeFromMouse(event: MouseEvent) {</span>
 <span class="cstat-no" title="statement not covered" >        const { minTime, maxT</span>ime } = this.controller
 <span class="cstat-no" title="statement not covered" >        const mouseX = getRelativeMouse</span>(this.slider, event).x
 <span class="cstat-no" title="statement not covered" ></span>
@@ -830,7 +830,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        return minTime + fracWidth * (maxTime </span>- minTime)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onDrag(inputTime: number): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onDrag(inputTime: number) {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.manager.isPlaying) this</span>.manager.userHasSetTimeline = true
 <span class="cstat-no" title="statement not covered" >        this.dragTarget = this.controller.</span>dragHandleToTime(
 <span class="cstat-no" title="statement not covered" >            this.dragTarget!,</span>
@@ -839,7 +839,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.showTooltips()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >showTooltips(): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >showTooltips() {</span>
 <span class="cstat-no" title="statement not covered" ></span>        this.hideStartTooltip.cancel()
 <span class="cstat-no" title="statement not covered" >        this.hideEndToo</span>ltip.cancel()
 <span class="cstat-no" title="statement not covered" >        this.startTooltipVisible = true</span>
@@ -858,7 +858,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        inputTime: numbe</span>r,
 <span class="cstat-no" title="statement not covered" >        isStartMarker: boolean,</span>
 <span class="cstat-no" title="statement not covered" >        isEndMarker: boolean</span>
-<span class="cstat-no" title="statement not covered" >    ): "both" | "start" | "end" {</span>
+<span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >        const { startHandleTi</span>meBound, endHandleTimeBound } = this.manager
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
@@ -872,7 +872,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        return "both"</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onMouseDown(event: any): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onMouseDown(event: any) {</span>
 <span class="cstat-no" title="statement not covered" >        const logic = this.control</span>ler
 <span class="cstat-no" title="statement not covered" >        const targetEl = select(event</span>.target)
 <span class="cstat-no" title="statement not covered" ></span>
@@ -891,7 +891,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private queuedDrag?: boolean
-    @action.bound private <span class="fstat-no" title="function not covered" >onMouseMove(event: MouseEvent | TouchEvent): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onMouseMove(event: MouseEvent | TouchEvent) {</span>
 <span class="cstat-no" title="statement not covered" >        const { dragTarget } = this</span>
 <span class="cstat-no" title="statement not covered" >        if (!dragTarget) return</span>
 <span class="cstat-no" title="statement not covered" >        if (this.queuedDrag) ret</span>urn
@@ -901,7 +901,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.queuedDrag = false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onMouseUp(): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onMouseUp() {</span>
 <span class="cstat-no" title="statement not covered" >        this.dragTar</span>get = undefined
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (this.manager.isPlaying) return</span>
@@ -916,7 +916,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private mouseHoveringOverTimeline: boolean = false
-    @acti<span class="fstat-no" title="function not covered" >on.bound private onMouseOver(): void {</span>
+    @acti<span class="fstat-no" title="function not covered" >on.bound private onMouseOver() {</span>
 <span class="cstat-no" title="statement not covered" >        this.mouseHoveringOverTimeline = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        this.hideStartTooltip.cancel()</span>
@@ -926,7 +926,7 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.endTooltipVisible = true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onMouseLeave(): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onMouseLeave() {</span>
 <span class="cstat-no" title="statement not covered" >        if (!this.manager.isPlaying &amp;&amp; </span>!this.isDragging) {
 <span class="cstat-no" title="statement not covered" ></span>            this.startTooltipVisible = false
 <span class="cstat-no" title="statement not covered" >            this.endT</span>ooltipVisible = false
@@ -941,17 +941,17 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.endTooltipVisible </span>= false
     }, HANDLE_TOOLTIP_FADE_TIME_MS)
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onPlayTouchEnd(evt: Event): void {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onPlayTouchEnd(evt: Event) {</span>
 <span class="cstat-no" title="statement not covered" >        evt.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" ></span>        evt.stopPropagation()
 <span class="cstat-no" title="statement not covered" >        this.controller.to</span>gglePlay()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private <span class="fstat-no" title="function not covered" >get isPlayingOrDragging(): boolean {</span>
+    @computed private <span class="fstat-no" title="function not covered" >get isPlayingOrDragging() {</span>
 <span class="cstat-no" title="statement not covered" >        return this.manager.isPlaying || this.isDragging</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    componentDidMount(): void {
+    componentDidMount() {
         const current = this.base.current
 &nbsp;
         if (current) {
@@ -972,7 +972,7 @@ export class TimelineComponent extends React.Component&lt;{
         })
     }
 &nbsp;
-    componentWillUnmount(): void {
+    componentWillUnmount() {
         document.documentElement.removeEventListener("mouseup", this.onMouseUp)
         document.documentElement.removeEventListener(
             "mouseleave",
@@ -995,20 +995,20 @@ export class TimelineComponent extends React.Component&lt;{
         } as EventListenerOptions)
     }
 &nbsp;
-    private formatTime(time: number): string {
+    private formatTime(time: number) {
         return this.manager.formatTimeFn
             ? this.manager.formatTimeFn(time)
             : time.toString()
     }
 &nbsp;
-    private timelineEdgeMarker(markerType: "start" | "end"): JSX.Element {
+    private timelineEdgeMarker(markerType: "start" | "end") {
         const { controller } = this
         const time =
             markerType === "start" ? controller.minTime : controller.maxTime
         return (
             &lt;div
                 className="date clickable"
-                onClick={<span class="fstat-no" title="function not covered" >(): void =&gt;</span>
+                onClick={<span class="fstat-no" title="function not covered" >() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    markerType === "start"</span>
 <span class="cstat-no" title="statement not covered" >                        ? controller.resetStartToMin()</span>
                         : controller.resetEndToMax()
@@ -1023,17 +1023,17 @@ export class TimelineComponent extends React.Component&lt;{
     @observable private endTooltipVisible: boolean = false
     @observable private lastUpdatedTooltip?: "startMarker" | "endMarker"
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >togglePlay(): void {</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >togglePlay() {</span>
 <span class="cstat-no" title="statement not covered" >        this.</span>controller.togglePlay()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    convertToTime(time: number): number {</span>
+<span class="fstat-no" title="function not covered" >    convertToTime(time: number) {</span>
 <span class="cstat-no" title="statement not covered" >        if (time ===</span> -Infinity) return this.controller.minTime
 <span class="cstat-no" title="statement not covered" >        if (time === +Infinity) return this.controlle</span>r.maxTime
 <span class="cstat-no" title="statement not covered" >        retur</span>n time
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    render(): JSX.Element {
+    render() {
         const { manager, controller } = this
         const {
             startTimeProgress,
@@ -1144,7 +1144,7 @@ const TimelineHandle = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 14:56:43 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 14:56:50 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
