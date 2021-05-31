@@ -264,7 +264,12 @@
 <a name='L205'></a><a href='#L205'>205</a>
 <a name='L206'></a><a href='#L206'>206</a>
 <a name='L207'></a><a href='#L207'>207</a>
-<a name='L208'></a><a href='#L208'>208</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -398,7 +403,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">7x</span>
@@ -434,15 +439,18 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -487,7 +495,8 @@ export interface TimelineManager {
     onPlay?: () =&gt; void
 }
 &nbsp;
-const delay = (ms: number) =&gt; new Promise((resolve) =&gt; setTimeout(resolve, ms))
+const delay = (ms: number): Promise&lt;void&gt; =&gt;
+    new Promise((resolve) =&gt; setTimeout(resolve, ms))
 &nbsp;
 export class TimelineController {
     manager: TimelineManager
@@ -496,55 +505,55 @@ export class TimelineController {
         this.manager = manager
     }
 &nbsp;
-    private get timesAsc() {
+    private get timesAsc(): number[] {
         // Note: assumes times is sorted in asc
         return this.manager.times
     }
 &nbsp;
-    private get startTime() {
+    private get startTime(): number {
         return findClosestTime(
             this.timesAsc,
             this.manager.startHandleTimeBound
         )!
     }
 &nbsp;
-    private get endTime() {
+    private get endTime(): number {
         return findClosestTime(this.timesAsc, this.manager.endHandleTimeBound)!
     }
 &nbsp;
-    get minTime() {
+    get minTime(): number {
         return this.timesAsc[0]
     }
 &nbsp;
-    get maxTime() {
+    get maxTime(): number {
         return last(this.timesAsc)!
     }
 &nbsp;
-    get startTimeProgress() {
+    get startTimeProgress(): number {
         return (this.startTime - this.minTime) / (this.maxTime - this.minTime)
     }
 &nbsp;
-    get endTimeProgress() {
+    get endTimeProgress(): number {
         return (this.endTime - this.minTime) / (this.maxTime - this.minTime)
     }
 &nbsp;
-    getNextTime(time: number) {
+    getNextTime(time: number): number {
         // Todo: speed up?
         return this.timesAsc[this.timesAsc.indexOf(time) + 1] ?? this.maxTime
     }
 &nbsp;
     // By default, play means extend the endTime to the right. Toggle this to play one time unit at a time.
     private rangeMode = true
-    toggleRangeMode() {
+    toggleRangeMode(): this {
         this.rangeMode = !this.rangeMode
         return this
     }
 &nbsp;
-    private isAtEnd() {
+    private isAtEnd(): boolean {
         return this.endTime === this.maxTime
     }
 &nbsp;
-    private resetToBeginning() {
+    private resetToBeginning(): void {
         const { manager } = this
         const beginning =
             manager.endHandleTimeBound !== manager.startHandleTimeBound
@@ -554,7 +563,7 @@ export class TimelineController {
         manager.startHandleTimeBound = beginning
     }
 &nbsp;
-    async play(numberOfTicks?: number) {
+    async play(numberOfTicks?: number): Promise&lt;number&gt; {
         const { manager } = this
         manager.isPlaying = true
 &nbsp;
@@ -579,27 +588,27 @@ export class TimelineController {
         return tickCount
     }
 &nbsp;
-    private stop() {
+    private stop(): void {
         this.manager.isPlaying = false
     }
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >pause() {</span>
-<span class="cstat-no" title="statement not covered" >        this.man</span>ager.isPlaying = false
+    private <span class="fstat-no" title="function not covered" >pause(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.manager.isPlaying = false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async <span class="fstat-no" title="function not covered" >togglePlay() {</span>
+    async <span class="fstat-no" title="function not covered" >togglePlay(): Promise&lt;void&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.manager.isPlaying) this.pause()</span>
 <span class="cstat-no" title="statement not covered" >        else await this.play()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private dragOffsets: [number, number] = [0, 0]
 &nbsp;
-<span class="fstat-no" title="function not covered" >    setDragOffsets(inputTime: number) {</span>
+<span class="fstat-no" title="function not covered" >    setDragOffsets(inputTime: number): void {</span>
 <span class="cstat-no" title="statement not covered" >        const closestTime =</span>
-<span class="cstat-no" title="statement not covered" >            findClosestTime(this.timesAsc, inputTime) ?? in</span>putTime
+<span class="cstat-no" title="statement not covered" >            findClosestTime(this.timesAsc, inputTime) ?? </span>inputTime
 <span class="cstat-no" title="statement not covered" >        this.dragOffsets = [</span>
-<span class="cstat-no" title="statement not covered" >            this.startTime - closes</span>tTime,
-<span class="cstat-no" title="statement not covered" >            this.endTime - closes</span>tTime,
+<span class="cstat-no" title="statement not covered" >            this.startTime - clos</span>estTime,
+<span class="cstat-no" title="statement not covered" >            this.endTime - closestTime,</span>
 <span class="cstat-no" title="statement not covered" >        ]</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -607,26 +616,26 @@ export class TimelineController {
         if (inputTime &lt; this.minTime) return TimeBoundValue.negativeInfinity
         if (inputTime &gt; this.maxTime) return TimeBoundValue.positiveInfinity
         const closestTime =
-<span class="branch-0 cbranch-no" title="branch not covered" >            findClosestTime(this.time</span>sAsc, inputTime) ?? inputTime
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>            findClosestTime(this.timesAsc, inputTime) ?? inputTime
         return Math.min(this.maxTime, Math.max(this.minTime, closestTime))
     }
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >dragRangeToTime(time: Time) {</span>
-<span class="cstat-no" title="statement not covered" >        const { minTime, maxTime } = this</span>
-<span class="cstat-no" title="statement not covered" >        const closes</span>tTime = findClosestTime(this.timesAsc, time) ?? time
+    private <span class="fstat-no" title="function not covered" >dragRangeToTime(time: Time): void {</span>
+<span class="cstat-no" title="statement not covered" >        const { minT</span>ime, maxTime } = this
+<span class="cstat-no" title="statement not covered" >        const closestTime = findClosestTime(this.timesAs</span>c, time) ?? time
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let startTime = th</span>is.dragOffsets[0] + closestTime
-<span class="cstat-no" title="statement not covered" >        let endTime = this</span>.dragOffsets[1] + closestTime
+<span class="cstat-no" title="statement not covered" >        let endTime = this.dragOffsets[1] + </span>closestTime
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (startTime &lt; minTime) {</span>
-<span class="cstat-no" title="statement not covered" >            startTime = minTime</span>
-<span class="cstat-no" title="statement not covered" >            endTi</span>me = this.getTimeBoundFromDrag(
-<span class="cstat-no" title="statement not covered" >                minTime + (this.dragOffsets[1] - this.dragOffsets[</span>0])
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >            start</span>Time = minTime
+<span class="cstat-no" title="statement not covered" >            endTime = this.getTimeBoundFromDrag(</span>
+<span class="cstat-no" title="statement not covered" ></span>                minTime + (this.dragOffsets[1] - this.dragOffsets[0])
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        } else if (endTime &gt; maxTime) {</span>
-<span class="cstat-no" title="statement not covered" >            startTime = this.getTimeBoun</span>dFromDrag(
-<span class="cstat-no" title="statement not covered" >                maxTime + (this.dragOf</span>fsets[0] - this.dragOffsets[1])
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >            startTime = this.getTimeBo</span>undFromDrag(
+<span class="cstat-no" title="statement not covered" ></span>                maxTime + (this.dragOffsets[0] - this.dragOffsets[1])
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >            endTime = maxTime</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -634,7 +643,10 @@ export class TimelineController {
 <span class="cstat-no" title="statement not covered" >        this.updateEndTime(endTime)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    dragHandleToTime(handle: "start" | "end" | "both", inputTime: number) {
+    dragHandleToTime(
+        handle: "start" | "end" | "both",
+        inputTime: number
+    ): "start" | "end" | "both" {
         const { manager } = this
 &nbsp;
         const time = this.getTimeBoundFromDrag(inputTime)
@@ -645,11 +657,11 @@ export class TimelineController {
                 : handle === "end" &amp;&amp; time &lt; this.startTime
                 ? "start"
                 : handle
-&nbsp;
+<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
         if (constrainedHandle !== handle) {
             if (handle === "start")
-<span class="branch-0 cbranch-no" title="branch not covered" >                this.u</span>pdateStartTime(manager.endHandleTimeBound)
-            else this.updateEndTime(manager.st<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >a</span></span></span></span></span></span></span></span>rtHandleTimeBound)
+                this.updateStartTime(manager.endHandleTimeBound)
+            else this.updateEndTime(manager.startHandleTimeBound)
         }
 &nbsp;
         if (manager.isPlaying &amp;&amp; !this.rangeMode) {
@@ -662,19 +674,19 @@ export class TimelineController {
         return constrainedHandle
     }
 &nbsp;
-    private updateStartTime(timeBound: TimeBound) {
+    private updateStartTime(timeBound: TimeBound): void {
         this.manager.startHandleTimeBound = timeBound
     }
 &nbsp;
-    private updateEndTime(timeBound: TimeBound) {
+    private updateEndTime(timeBound: TimeBound): void {
         this.manager.endHandleTimeBound = timeBound
     }
 &nbsp;
-    resetStartToMin() {
+    resetStartToMin(): void {
         this.updateStartTime(TimeBoundValue.negativeInfinity)
     }
 &nbsp;
-    resetEndToMax() {
+    resetEndToMax(): void {
         this.updateEndTime(TimeBoundValue.positiveInfinity)
     }
 }
@@ -685,7 +697,7 @@ export class TimelineController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon May 31 2021 14:56:50 GMT+0000 (Coordinated Universal Time)
+                at Mon May 31 2021 14:57:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
