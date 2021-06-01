@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.01% </span>
+                <span class="strong">86.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>162/182</span>
+                <span class='fraction'>154/178</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.57% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>31/35</span>
+                <span class='fraction'>32/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">79.17% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>20/25</span>
+                <span class='fraction'>19/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.01% </span>
+                <span class="strong">86.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>162/182</span>
+                <span class='fraction'>154/178</span>
             </div>
         
             
@@ -206,8 +206,10 @@
 <a name='L147'></a><a href='#L147'>147</a>
 <a name='L148'></a><a href='#L148'>148</a>
 <a name='L149'></a><a href='#L149'>149</a>
-<a name='L150'></a><a href='#L150'>150</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -246,22 +248,26 @@
 <span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">134x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">125x</span>
+<span class="cline-any cline-yes">125x</span>
+<span class="cline-any cline-yes">125x</span>
+<span class="cline-any cline-yes">125x</span>
 <span class="cline-any cline-yes">125x</span>
 <span class="cline-any cline-yes">125x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -359,7 +365,6 @@
     EntityCode,
     EntityId,
     EntityName,
-    OwidTableSlugs,
 } from "../../coreTable/OwidTableConstants"
 import { difference, mapBy } from "../../clientUtils/Util"
 import { isPresent } from "../../clientUtils/isPresent"
@@ -386,47 +391,51 @@ export class SelectionArray {
     @observable selectedEntityNames: EntityName[]
     @observable private availableEntities: Entity[]
 &nbsp;
-    @computed get availableEntityNames() {
+    @computed get availableEntityNames(): string[] {
         return this.availableEntities.map((entity) =&gt; entity.entityName)
     }
 &nbsp;
-    @computed get availableEntityNameSet() {
+    @computed get availableEntityNameSet(): Set&lt;string&gt; {
         return new Set(this.availableEntityNames)
     }
 &nbsp;
-    private mapBy(col: keyof Entity, val: keyof Entity) {
+    @computed get entityNameToIdMap(): Map&lt;string, number | undefined&gt; {
         return mapBy(
             this.availableEntities,
-            (v) =&gt; v[col],
-            (v) =&gt; v[val]
+            (e) =&gt; e.entityName,
+            (e) =&gt; e.entityId
         )
     }
 &nbsp;
-    @computed get entityNameToIdMap() {
-        return this.mapBy(OwidTableSlugs.entityName, OwidTableSlugs.entityId)
-    }
-&nbsp;
-    @computed get entityCodeToNameMap<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.mapBy(OwidTableSlugs.e</span>ntityCode, OwidTableSlugs.entityName)
+    @computed get entityCodeToNameMap<span class="fstat-no" title="function not covered" >(): Map&lt;string | undefined, string&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return mapBy(</span>
+<span class="cstat-no" title="statement not covered" >            this.availableEntities,</span>
+<span class="cstat-no" title="statement not covered" >            (e) =&gt; e.entityCode,</span>
+<span class="cstat-no" title="statement not covered" ></span>            (e) =&gt; e.entityName
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get entityIdToNameMap() {
-        return this.mapBy(OwidTableSlugs.entityId, OwidTableSlugs.entityName)
+    @computed get entityIdToNameMap(): Map&lt;number | undefined, string&gt; {
+        return mapBy(
+            this.availableEntities,
+            (e) =&gt; e.entityId,
+            (e) =&gt; e.entityName
+        )
     }
 &nbsp;
-    @computed get hasSelection() {
+    @computed get hasSelection(): boolean {
         return this.selectedEntityNames.length &gt; 0
     }
 &nbsp;
-    @computed get unselectedEntityNames() {
+    @computed get unselectedEntityNames(): string[] {
         return difference(this.availableEntityNames, this.selectedEntityNames)
     }
 &nbsp;
-    @computed get numSelectedEntities() {
+    @computed get numSelectedEntities(): number {
         return this.selectedEntityNames.length
     }
 &nbsp;
-    @computed get selectedSet() {
+    @computed get selectedSet(): Set&lt;EntityName&gt; {
         return new Set&lt;EntityName&gt;(this.selectedEntityNames)
     }
 &nbsp;
@@ -438,66 +447,66 @@ export class SelectionArray {
     }
 &nbsp;
     // Clears and sets selected entities
-    @action.bound setSelectedEntities(entityNames: EntityName[]) {
+    @action.bound setSelectedEntities(entityNames: EntityName[]): this {
         this.clearSelection()
         return this.addToSelection(entityNames)
     }
 &nbsp;
-    @action.bound addToSelection(entityNames: EntityName[]) {
+    @action.bound addToSelection(entityNames: EntityName[]): this {
         this.selectedEntityNames = this.selectedEntityNames.concat(entityNames)
         return this
     }
 &nbsp;
-    @action.bound addAvailableEntityNames(entities: Entity[]) {
+    @action.bound addAvailableEntityNames(entities: Entity[]): this {
         this.availableEntities.push(...entities)
         return this
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >setSelectedEntitiesByCode(entityCodes: EntityCode[]) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        const map = this.entityCodeToNameMap
-<span class="cstat-no" title="statement not covered" >        const codesInData = entit</span>yCodes.filter((code) =&gt; map.has(code))
-<span class="cstat-no" title="statement not covered" >        return this.setSelectedEntities(</span>
-<span class="cstat-no" title="statement not covered" >            codesInDa</span>ta.map((code) =&gt; map.get(code)!)
-<span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" ></span>    }
+    @action.<span class="fstat-no" title="function not covered" >bound setSelectedEntitiesByCode(entityCodes: EntityCode[]): this {</span>
+<span class="cstat-no" title="statement not covered" >        const map = th</span>is.entityCodeToNameMap
+<span class="cstat-no" title="statement not covered" >        const codesInData = entityCodes.filter((code</span>) =&gt; map.has(code))
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.setSelectedEntities(
+<span class="cstat-no" title="statement not covered" >            codesInDat</span>a.map((code) =&gt; map.get(code)!)
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound setSelectedEntitiesByEntityId(entityIds: EntityId[]) {
+    @action.bound setSelectedEntitiesByEntityId(entityIds: EntityId[]): this {
         const map = this.entityIdToNameMap
         return this.setSelectedEntities(entityIds.map((id) =&gt; map.get(id)!))
     }
 &nbsp;
-    @action.bound selectAll() {
+    @action.bound selectAll(): this {
         return this.addToSelection(this.unselectedEntityNames)
     }
 &nbsp;
-    @action.bound clearSelection() {
+    @action.bound clearSelection(): void {
         this.selectedEntityNames = []
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >toggleSelection(entityName: EntityName) {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.selectedSet.has(entityName)
-<span class="cstat-no" title="statement not covered" >            ? this.d</span>eselectEntity(entityName)
-<span class="cstat-no" title="statement not covered" >            : this.selectEntity(entityName)</span>
+    @action.<span class="fstat-no" title="function not covered" >bound toggleSelection(entityName: EntityName): this {</span>
+<span class="cstat-no" title="statement not covered" >        return this.</span>selectedSet.has(entityName)
+<span class="cstat-no" title="statement not covered" >            ? this.deselectEntity(entityName)</span>
+<span class="cstat-no" title="statement not covered" >            :</span> this.selectEntity(entityName)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get numAvailableEntityNames() {
+    @computed get numAvailableEntityNames(): number {
         return this.availableEntityNames.length
     }
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound selectEntity(entityName: EntityName) {</span>
-<span class="cstat-no" title="statement not covered" >        if (!this.se</span>lectedSet.has(entityName))
-<span class="cstat-no" title="statement not covered" >            return this.addToSelection([entityName])</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this
+    @action.bound <span class="fstat-no" title="function not covered" >selectEntity(entityName: EntityName): this {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.selectedSet.has(entityName))</span>
+<span class="cstat-no" title="statement not covered" >            r</span>eturn this.addToSelection([entityName])
+<span class="cstat-no" title="statement not covered" >        return this</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Mainly for testing
-    @action.bound <span class="fstat-no" title="function not covered" >selectSample(howMany = 1) {</span>
-<span class="cstat-no" title="statement not covered" >        return this.setSelectedEntities(</span>
-<span class="cstat-no" title="statement not covered" >            t</span>his.availableEntityNames.slice(0, howMany)
+    @action.bound <span class="fstat-no" title="function not covered" >selectSample(howMany = 1): this {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.setSelectedEntities(
+<span class="cstat-no" title="statement not covered" >            this.availab</span>leEntityNames.slice(0, howMany)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound deselectEntity(entityName: EntityName) {
+    @action.bound deselectEntity(entityName: EntityName): this {
         this.selectedEntityNames = this.selectedEntityNames.filter(
             (name) =&gt; name !== entityName
         )
@@ -511,7 +520,7 @@ export class SelectionArray {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 01 2021 12:07:45 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 01 2021 12:14:05 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
