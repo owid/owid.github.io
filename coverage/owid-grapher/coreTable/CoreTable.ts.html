@@ -1608,9 +1608,7 @@
 <a name='L1549'></a><a href='#L1549'>1549</a>
 <a name='L1550'></a><a href='#L1550'>1550</a>
 <a name='L1551'></a><a href='#L1551'>1551</a>
-<a name='L1552'></a><a href='#L1552'>1552</a>
-<a name='L1553'></a><a href='#L1553'>1553</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L1552'></a><a href='#L1552'>1552</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2012,7 +2010,7 @@
 <span class="cline-any cline-yes">12628x</span>
 <span class="cline-any cline-yes">12628x</span>
 <span class="cline-any cline-yes">12628x</span>
-<span class="cline-any cline-yes">12723x</span>
+<span class="cline-any cline-yes">1164x</span>
 <span class="cline-any cline-yes">12723x</span>
 <span class="cline-any cline-yes">12723x</span>
 <span class="cline-any cline-yes">12723x</span>
@@ -2119,11 +2117,11 @@
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">311x</span>
-<span class="cline-any cline-yes">27786x</span>
-<span class="cline-any cline-yes">27786x</span>
-<span class="cline-any cline-yes">27786x</span>
-<span class="cline-any cline-yes">27786x</span>
-<span class="cline-any cline-yes">27786x</span>
+<span class="cline-any cline-yes">27862x</span>
+<span class="cline-any cline-yes">27862x</span>
+<span class="cline-any cline-yes">27862x</span>
+<span class="cline-any cline-yes">27862x</span>
+<span class="cline-any cline-yes">27862x</span>
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">311x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2164,8 +2162,8 @@
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2276,11 +2274,11 @@
 <span class="cline-any cline-yes">242x</span>
 <span class="cline-any cline-yes">242x</span>
 <span class="cline-any cline-yes">242x</span>
-<span class="cline-any cline-yes">9964x</span>
+<span class="cline-any cline-yes">9962x</span>
 <span class="cline-any cline-yes">939x</span>
 <span class="cline-any cline-yes">939x</span>
 <span class="cline-any cline-yes">939x</span>
-<span class="cline-any cline-yes">9964x</span>
+<span class="cline-any cline-yes">9962x</span>
 <span class="cline-any cline-yes">242x</span>
 <span class="cline-any cline-yes">242x</span>
 <span class="cline-any cline-yes">242x</span>
@@ -2534,7 +2532,7 @@
 <span class="cline-any cline-yes">1822x</span>
 <span class="cline-any cline-yes">1822x</span>
 <span class="cline-any cline-yes">1821x</span>
-<span class="cline-any cline-yes">1821x</span>
+<span class="cline-any cline-yes">4851x</span>
 <span class="cline-any cline-yes">1821x</span>
 <span class="cline-any cline-yes">1821x</span>
 <span class="cline-any cline-yes">1821x</span>
@@ -2621,7 +2619,7 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3229,7 +3227,6 @@ import {
 } from "./ErrorValues"
 import { OwidTableSlugs } from "./OwidTableConstants"
 import { applyTransforms } from "./Transforms"
-import { Transform } from "node:stream"
 &nbsp;
 interface AdvancedOptions {
     tableDescription?: string
@@ -3303,12 +3300,12 @@ export class CoreTable&lt;
 &nbsp;
     // A method currently used just in debugging but may be useful in the author backend.
     // If your charts look funny, a good thing to check is if the autodetected columns are wrong.
-    get autodetectedColumnDefs<span class="fstat-no" title="function not covered" >(): CoreTable {</span>
+    get autodetectedCol<span class="fstat-no" title="function not covered" >umnDefs(): CoreTable {</span>
 <span class="cstat-no" title="statement not covered" >        const providedSlugs = new Set(</span>
 <span class="cstat-no" title="statement not covered" >            this.inputColumnDefs.map((def) =&gt; def.slug)</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        return new CoreTable(</span>
-<span class="cstat-no" title="statement not covered" >            this.defs.filter((def) =&gt; !p</span>rovidedSlugs.has(def.slug))
+<span class="cstat-no" title="statement not covered" >            this.defs.filter((def) =&gt; !providedSlugs.has(def.slug))</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -3318,11 +3315,11 @@ export class CoreTable&lt;
 <span class="branch-0 cbranch-no" title="branch not covered" >            return a</span>dvancedOptions.transformCategory
 &nbsp;
         if (inputType === InputType.Delimited)
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            return TransformType.LoadFromDelimited
-        if (inputType === InputType.Matrix) <span class="branch-0 cbranch-no" title="branch not covered" >return T</span>ransformType.LoadFromMatrix
+<span class="branch-0 cbranch-no" title="branch not covered" >            return T</span>ransformType.LoadFromDelimited
+        i<span class="branch-0 cbranch-no" title="branch not covered" >f</span> (inputType === InputType.Matrix) return TransformType.LoadFromMatrix
         if (inputType === InputType.RowStore)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return TransformType.LoadFromRowStore</span>
-<span class="cstat-no" title="statement not covered" >        return TransformType.L</span>oadFromColumnStore
+<span class="cstat-no" title="statement not covered" ></span>        return TransformType.LoadFromColumnStore
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // If the input is a column store, returns that. If it is DSV, parses that and turns it into a column store.
@@ -3466,15 +3463,15 @@ export class CoreTable&lt;
             )
         }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return columnsAsArray.filter</span>(
+<span class="cstat-no" title="statement not covered" >        return columnsAsArray.fil</span>ter(
 <span class="cstat-no" title="statement not covered" >            (col) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                !alreadyTypedSlugs.has(col.slug) ||
-<span class="cstat-no" title="statement not covered" >                col.ne</span>edsParsing(firstInputRow[col.slug])
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >                !alreadyTypedSlugs.has(col.</span>slug) ||
+<span class="cstat-no" title="statement not covered" ></span>                col.needsParsing(firstInputRow[col.slug])
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    toOneDimensionalArray(): any {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return flatten(this.toTypedMatrix().slice(1))
+<span class="cstat-no" title="statement not covered" >        return flatten(this.toTypedMatrix().sl</span>ice(1))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private setColumn(def: COL_DEF_TYPE): void {
@@ -3505,7 +3502,7 @@ export class CoreTable&lt;
     // could be do to other sync code executing between transforms.
     private get betweenTime<span class="fstat-no" title="function not covered" >(): number {</span>
 <span class="cstat-no" title="statement not covered" >        return this.parent</span>
-<span class="cstat-no" title="statement not covered" >            ? this.initTi</span>me - (this.parent.initTime + this.parent.timeToLoad)
+<span class="cstat-no" title="statement not covered" >            ? this.initTime - (this.</span>parent.initTime + this.parent.timeToLoad)
 <span class="cstat-no" title="statement not covered" >            : 0</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -3519,8 +3516,8 @@ export class CoreTable&lt;
 &nbsp;
     *[Symbol.iterator](): Generator&lt;CoreRow, void, unknown&gt; {
 <span class="cstat-no" title="statement not covered" >        const { columnStore, numRows } = this</span>
-<span class="cstat-no" title="statement not covered" >        for (let index = 0; index &lt; numRows; index+</span>+) {
-<span class="cstat-no" title="statement not covered" ></span>            yield makeRowFromColumnStore(index, columnStore)
+<span class="cstat-no" title="statement not covered" >        for (let index = 0; index &lt; numRows; index++) </span>{
+<span class="cstat-no" title="statement not covered" >            yield makeRowFromColumnStore(index, col</span>umnStore)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -3550,7 +3547,7 @@ export class CoreTable&lt;
 &nbsp;
     @imemo get numRows(): number {
         const firstColValues = Object.values(this.columnStore)[0]
-        retur<span class="branch-0 cbranch-no" title="branch not covered" >n</span> firstColValues ? firstColValues.length : 0
+        return firstColValu<span class="branch-0 cbranch-no" title="branch not covered" >e</span>s ? firstColValues.length : 0
     }
 &nbsp;
     @imemo get numColumns(): number {
@@ -3598,18 +3595,18 @@ export class CoreTable&lt;
         // column on explorers.
         return (
 <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.columnsAsArray.find(</span></span>
-<span class="cstat-no" title="statement not covered" >                (col) =&gt; col instanceof ColumnTypeMap.Day</span>
-<span class="cstat-no" title="statement not covered" ></span>            ) ??
-<span class="cstat-no" title="statement not covered" >            this.co</span>lumnsAsArray.find(
-<span class="cstat-no" title="statement not covered" >                (col) =&gt; col </span>instanceof ColumnTypeMap.Date
-<span class="cstat-no" title="statement not covered" ></span>            ) ??
-<span class="cstat-no" title="statement not covered" >            this.columnsAs</span>Array.find(
-<span class="cstat-no" title="statement not covered" >                (col) =&gt; col </span>instanceof ColumnTypeMap.Year
+<span class="cstat-no" title="statement not covered" >                (col) =&gt; col instanceof </span>ColumnTypeMap.Day
 <span class="cstat-no" title="statement not covered" >            ) ??</span>
-<span class="cstat-no" title="statement not covered" >            this.columnsAsArray.f</span>ind(
-<span class="cstat-no" title="statement not covered" ></span>                (col) =&gt; col instanceof ColumnTypeMap.Quarter
+<span class="cstat-no" title="statement not covered" ></span>            this.columnsAsArray.find(
+<span class="cstat-no" title="statement not covered" >                (co</span>l) =&gt; col instanceof ColumnTypeMap.Date
 <span class="cstat-no" title="statement not covered" >            ) ??</span>
-<span class="cstat-no" title="statement not covered" >            maybeTimeColumn</span>
+<span class="cstat-no" title="statement not covered" ></span>            this.columnsAsArray.find(
+<span class="cstat-no" title="statement not covered" >                (col) =&gt; c</span>ol instanceof ColumnTypeMap.Year
+<span class="cstat-no" title="statement not covered" >            ) ??</span>
+<span class="cstat-no" title="statement not covered" >            this.columnsAsAr</span>ray.find(
+<span class="cstat-no" title="statement not covered" >                (col) =&gt; col inst</span>anceof ColumnTypeMap.Quarter
+<span class="cstat-no" title="statement not covered" ></span>            ) ??
+<span class="cstat-no" title="statement not covered" >            maybeTime</span>Column
         )
     }
 &nbsp;
@@ -3630,8 +3627,8 @@ export class CoreTable&lt;
     // on the column itself, and not tied tightly to the idea of a time column.
     @imemo get timeColumnFormatFunction(): (year: number) =&gt; string {
         return <span class="branch-0 cbranch-no" title="branch not covered" >!this.timeColumn.isMissing</span>
-<span class="cstat-no" title="statement not covered" ></span>            ? this.timeColumn.formatValue
-<span class="cstat-no" title="statement not covered" >            : formatYe</span>ar
+<span class="cstat-no" title="statement not covered" >            ? this.timeColumn.formatValue</span>
+<span class="cstat-no" title="statement not covered" ></span>            : formatYear
     }
 &nbsp;
     formatTime(value: any): string {
@@ -3647,11 +3644,11 @@ export class CoreTable&lt;
     }
 &nbsp;
     @imemo get numErrorValues<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return sum(this.columnsAsArray.map</span>((col) =&gt; col.numErrorValues))
+<span class="cstat-no" title="statement not covered" >        return sum(this.columnsAsArray.map((col) =&gt; col.numErrorValues))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @imemo get numValidCells<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return sum(this.columnsAsArray.map((col) =&gt; col.numValues))
+<span class="cstat-no" title="statement not covered" >        return sum(this.columnsAsArray</span>.map((col) =&gt; col.numValues))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get rootTable(): this {
@@ -3723,7 +3720,7 @@ export class CoreTable&lt;
     get opposite(): this {
         const { parent } = this
         const { filterMask } = this.advancedOptions
-        if (!filterMask || !parent) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his
+        if (!filterMa<span class="branch-0 cbranch-no" title="branch not covered" >s</span>k || !parent) return this
         return this.transform(
             parent.columnStore,
             this.defs,
@@ -3734,7 +3731,7 @@ export class CoreTable&lt;
     }
 &nbsp;
     @imemo get oppositeColumns(): this {
-        if (this.isRoot) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his
+        if (thi<span class="branch-0 cbranch-no" title="branch not covered" >s</span>.isRoot) return this
         const columnsToDrop = new Set(this.columnSlugs)
         const defs = this.parent!.columnsAsArray.filter(
             (col) =&gt; !columnsToDrop.has(col.slug)
@@ -3813,8 +3810,8 @@ export class CoreTable&lt;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    reverse(): this {</span>
-<span class="cstat-no" title="statement not covered" >        return this.transform(</span>
-<span class="cstat-no" title="statement not covered" >            reverseColumnStore(this.c</span>olumnStore),
+<span class="cstat-no" title="statement not covered" ></span>        return this.transform(
+<span class="cstat-no" title="statement not covered" >            reverseColumnStore(this.columnStore),</span>
 <span class="cstat-no" title="statement not covered" >            this.defs,</span>
 <span class="cstat-no" title="statement not covered" >            `Reversed row order`,</span>
 <span class="cstat-no" title="statement not covered" >            TransformType.SortRows</span>
@@ -3891,11 +3888,11 @@ export class CoreTable&lt;
         return [min(mins), max(maxes)]
     }
 &nbsp;
-    privat<span class="fstat-no" title="function not covered" >e extract(slugs = this.columnSlugs): any[][] {</span>
-<span class="cstat-no" title="statement not covered" >        return this.rows.map((row) =&gt;</span>
+    private <span class="fstat-no" title="function not covered" >extract(slugs = this.columnSlugs): any[][] {</span>
+<span class="cstat-no" title="statement not covered" >        ret</span>urn this.rows.map((row) =&gt;
 <span class="cstat-no" title="statement not covered" >            slugs.map((slug) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                isNotErrorValue(row[slug]) ? row[slug] : undefined
-<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >                isNotErrorValue(row[slug]) ? row[slug] : undefined</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -3904,37 +3901,37 @@ export class CoreTable&lt;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    dump(rowLimit = 30): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.dump</span>Pipeline()
-<span class="cstat-no" title="statement not covered" >        this.dumpColumns()</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.dumpPipeline()
+<span class="cstat-no" title="statement not covered" >        this.dump</span>Columns()
 <span class="cstat-no" title="statement not covered" >        this.dumpRows(rowLimit)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    dumpPipeline(): void {</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-disa</span>ble-next-line no-console
-<span class="cstat-no" title="statement not covered" >        console.table(this.ancestors.map</span>((tb) =&gt; tb.explanation))
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-console</span>
+<span class="cstat-no" title="statement not covered" >        console.table(</span>this.ancestors.map((tb) =&gt; tb.explanation))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    dumpColumns(): void {</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-di</span>sable-next-line no-console
-<span class="cstat-no" title="statement not covered" >        console.table(this.</span>explainColumns)
+<span class="cstat-no" title="statement not covered" ></span>        // eslint-disable-next-line no-console
+<span class="cstat-no" title="statement not covered" >        console.tabl</span>e(this.explainColumns)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    rowsFrom(start: number, end: number): any {</span>
-<span class="cstat-no" title="statement not covered" >        if (start &gt;= th</span>is.numRows) return []
-<span class="cstat-no" title="statement not covered" ></span>        if (end &gt; this.numRows) end = this.numRows
-<span class="cstat-no" title="statement not covered" >        retur</span>n range(start, end).map((index) =&gt;
-<span class="cstat-no" title="statement not covered" >            makeR</span>owFromColumnStore(index, this.columnStore)
+<span class="cstat-no" title="statement not covered" >        if (</span>start &gt;= this.numRows) return []
+<span class="cstat-no" title="statement not covered" >        if (end &gt; this.</span>numRows) end = this.numRows
+<span class="cstat-no" title="statement not covered" ></span>        return range(start, end).map((index) =&gt;
+<span class="cstat-no" title="statement not covered" >            m</span>akeRowFromColumnStore(index, this.columnStore)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    dumpRows(rowLimit = 30): void {</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-console</span>
-<span class="cstat-no" title="statement not covered" >        conso</span>le.table(this.rowsFrom(0, rowLimit), this.columnSlugs)
+<span class="cstat-no" title="statement not covered" ></span>        // eslint-disable-next-line no-console
+<span class="cstat-no" title="statement not covered" >        console.table(this.rowsFrom(0, rowLimi</span>t), this.columnSlugs)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    dumpInputTable(): void {</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-con</span>sole
-<span class="cstat-no" title="statement not covered" >        console.table(this.i</span>nputAsTable)
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no</span>-console
+<span class="cstat-no" title="statement not covered" >        console.table(this.inputAsTable)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @imemo private get inputType(): InputType {
@@ -3951,40 +3948,40 @@ export class CoreTable&lt;
 <span class="cstat-no" title="statement not covered" >        string,</span>
 <span class="cstat-no" title="statement not covered" >        CoreValueType</span>
 <span class="cstat-no" title="statement not covered" >    &gt;[] {</span>
-<span class="cstat-no" title="statement not covered" >        return c</span>olumnStoreToRows(this.inputColumnStore)
+<span class="cstat-no" title="statement not covered" >        return columnStoreToRows(this.inputColumnStore)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >imemo private get inputAsTable() {</span>
-<span class="cstat-no" title="statement not covered" >        const { inputType } = this</span>
-<span class="cstat-no" title="statement not covered" >        return inputType === InputType.</span>ColumnStore
-<span class="cstat-no" title="statement not covered" >            ? this.inputColumnStoreToRows</span>
+    @imemo private get in<span class="fstat-no" title="function not covered" >putAsTable() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const { inputType } = this
+<span class="cstat-no" title="statement not covered" >        return inputType === InputType.ColumnStore</span>
+<span class="cstat-no" title="statement not covered" >            ? this.inputColumnStoreToRo</span>ws
 <span class="cstat-no" title="statement not covered" >            : inputType === InputType.Matrix</span>
 <span class="cstat-no" title="statement not covered" >            ? rowsFromMatrix(this.originalInput as CoreMatrix)</span>
-<span class="cstat-no" title="statement not covered" ></span>            : this.originalInput
+<span class="cstat-no" title="statement not covered" >            : this.originalInput</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @i<span class="fstat-no" title="function not covered" >memo private get explainColumns() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.columnsAsArray.map((</span>col) =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>            const {
+    @imemo private get explainColumns<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return this.columnsAsArray.map((col) =&gt; {
+<span class="cstat-no" title="statement not covered" >            const {</span>
 <span class="cstat-no" title="statement not covered" ></span>                slug,
+<span class="cstat-no" title="statement not covered" ></span>                jsType,
+<span class="cstat-no" title="statement not covered" >                name,</span>
+<span class="cstat-no" title="statement not covered" >                numVa</span>lues,
+<span class="cstat-no" title="statement not covered" >                numEr</span>rorValues,
+<span class="cstat-no" title="statement not covered" >                displa</span>yName,
+<span class="cstat-no" title="statement not covered" ></span>                def,
+<span class="cstat-no" title="statement not covered" ></span>            } = col
+<span class="cstat-no" title="statement not covered" >            return {</span>
+<span class="cstat-no" title="statement not covered" ></span>                slug,
+<span class="cstat-no" title="statement not covered" ></span>                type: def.type,
 <span class="cstat-no" title="statement not covered" >                jsType,</span>
 <span class="cstat-no" title="statement not covered" >                name,</span>
 <span class="cstat-no" title="statement not covered" >                numVa</span>lues,
-<span class="cstat-no" title="statement not covered" >                numErr</span>orValues,
-<span class="cstat-no" title="statement not covered" ></span>                displayName,
-<span class="cstat-no" title="statement not covered" ></span>                def,
-<span class="cstat-no" title="statement not covered" >            } = col</span>
-<span class="cstat-no" title="statement not covered" ></span>            return {
-<span class="cstat-no" title="statement not covered" ></span>                slug,
-<span class="cstat-no" title="statement not covered" >                type: def.typ</span>e,
-<span class="cstat-no" title="statement not covered" >                jsTyp</span>e,
-<span class="cstat-no" title="statement not covered" >                name,</span>
-<span class="cstat-no" title="statement not covered" >                numVa</span>lues,
-<span class="cstat-no" title="statement not covered" >                numErr</span>orValues,
+<span class="cstat-no" title="statement not covered" >                numEr</span>rorValues,
 <span class="cstat-no" title="statement not covered" >                displa</span>yName,
 <span class="cstat-no" title="statement not covered" >                color:</span> def.color,
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>        })
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get ancestors(): this[] {
@@ -3992,14 +3989,14 @@ export class CoreTable&lt;
     }
 &nbsp;
     @imemo private get numColsToParse<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.colsToParse.length
+<span class="cstat-no" title="statement not covered" >        return this.colsToParse.length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private static guids = 0
     private guid = ++CoreTable.guids
 &nbsp;
-    p<span class="fstat-no" title="function not covered" >rivate get explanation() {</span>
-<span class="cstat-no" title="statement not covered" >        // todo: is there a bett</span>er way to do this in JS?
+    private get explanation<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        // todo: is there a better way to do this in JS?
 <span class="cstat-no" title="statement not covered" >        const {</span>
 <span class="cstat-no" title="statement not covered" >            tableDescription,</span>
 <span class="cstat-no" title="statement not covered" >            transformCategory,</span>
@@ -4007,34 +4004,34 @@ export class CoreTable&lt;
 <span class="cstat-no" title="statement not covered" >            numColumns,</span>
 <span class="cstat-no" title="statement not covered" >            numRows,</span>
 <span class="cstat-no" title="statement not covered" >            betweenTime,</span>
-<span class="cstat-no" title="statement not covered" >            time</span>ToLoad,
-<span class="cstat-no" title="statement not covered" ></span>            numColsToParse,
-<span class="cstat-no" title="statement not covered" >            numValidCells,</span>
-<span class="cstat-no" title="statement not covered" ></span>            numErrorValues,
-<span class="cstat-no" title="statement not covered" >            numColumnsWithError</span>Values,
+<span class="cstat-no" title="statement not covered" >            timeToLoad,</span>
+<span class="cstat-no" title="statement not covered" >            numC</span>olsToParse,
+<span class="cstat-no" title="statement not covered" ></span>            numValidCells,
+<span class="cstat-no" title="statement not covered" >            numErrorValues,</span>
+<span class="cstat-no" title="statement not covered" ></span>            numColumnsWithErrorValues,
 <span class="cstat-no" title="statement not covered" >        } = this</span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >            tableDescription: trun</span>cate(tableDescription, 40),
-<span class="cstat-no" title="statement not covered" ></span>            transformCategory,
-<span class="cstat-no" title="statement not covered" >            guid,</span>
-<span class="cstat-no" title="statement not covered" >            numColumns,</span>
-<span class="cstat-no" title="statement not covered" ></span>            numRows,
-<span class="cstat-no" title="statement not covered" >            betweenT</span>ime,
-<span class="cstat-no" title="statement not covered" >            timeToLoad,</span>
+<span class="cstat-no" title="statement not covered" >            tableDescription: truncate(tableDescripti</span>on, 40),
+<span class="cstat-no" title="statement not covered" >            transformCategory,</span>
+<span class="cstat-no" title="statement not covered" ></span>            guid,
+<span class="cstat-no" title="statement not covered" >            numColum</span>ns,
+<span class="cstat-no" title="statement not covered" >            numRows,</span>
+<span class="cstat-no" title="statement not covered" ></span>            betweenTime,
+<span class="cstat-no" title="statement not covered" >            timeToLo</span>ad,
 <span class="cstat-no" title="statement not covered" >            numColsToParse,</span>
 <span class="cstat-no" title="statement not covered" >            numValidCells,</span>
 <span class="cstat-no" title="statement not covered" >            numErrorValues,</span>
-<span class="cstat-no" title="statement not covered" >            numColumnsWithErrorValues,</span>
+<span class="cstat-no" title="statement not covered" >            numColumnsWithErrorValue</span>s,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Output a pretty table for consles
 <span class="fstat-no" title="function not covered" >    toAlignedTextTable(options?: AlignedTextTableOptions): string {</span>
-<span class="cstat-no" title="statement not covered" >        return toAlignedTextTable(this.columnSlugs, this.rows, options)</span>
+<span class="cstat-no" title="statement not covered" >        return toAlignedTextTable(this.c</span>olumnSlugs, this.rows, options)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    toMarkdownTable(): string {</span>
-<span class="cstat-no" title="statement not covered" >        return toMarkdownTable(this.columnSlugs, this.</span>rows)
+<span class="cstat-no" title="statement not covered" >        return toMarkdownTable(this.columnSlugs, this.row</span>s)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     toDelimited(
@@ -4046,7 +4043,7 @@ export class CoreTable&lt;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    toTsv(): string {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.toDelimited("\t")
+<span class="cstat-no" title="statement not covered" >        return this.t</span>oDelimited("\t")
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     toCsvWithColumnNames(): string {
@@ -4058,7 +4055,7 @@ export class CoreTable&lt;
         const body = this.rows
             .map((row) =&gt;
                 this.columnsAsArray.map(
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>                    (col) =&gt; col.formatForCsv(row[col.slug]) ?? ""
+                    (col) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >col.formatForCsv(row[col.slu</span>g]) ?? ""
                 )
             )
             .map((row) =&gt; row.join(delimiter))
@@ -4092,7 +4089,7 @@ export class CoreTable&lt;
     }
 &nbsp;
     indexOf(row: ROW_TYPE): any {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.findRow</span>sIndices(row)[0] ?? -1
+        retu<span class="branch-0 cbranch-no" title="branch not covered" >r</span>n this.findRowsIndices(row)[0] ?? -1
     }
 &nbsp;
     where(query: CoreQuery): this {
@@ -4117,16 +4114,16 @@ export class CoreTable&lt;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    limit(howMany: number, offset: number = 0): this {</span>
-<span class="cstat-no" title="statement not covered" >        const start = offset</span>
-<span class="cstat-no" title="statement not covered" >        const</span> end = offset + howMany
-<span class="cstat-no" title="statement not covered" >        return this.transfo</span>rm(
-<span class="cstat-no" title="statement not covered" >            this.columnStore,</span>
-<span class="cstat-no" title="statement not covered" >            t</span>his.defs,
-<span class="cstat-no" title="statement not covered" >            `Kept ${howMany</span>} rows starting at ${offset}`,
-<span class="cstat-no" title="statement not covered" >            TransformType.FilterRows,</span>
-<span class="cstat-no" title="statement not covered" >            n</span>ew FilterMask(
-<span class="cstat-no" title="statement not covered" >                this.numRow</span>s,
-<span class="cstat-no" title="statement not covered" >                this.indices.map((index) =&gt; </span>index &gt;= start &amp;&amp; index &lt; end)
+<span class="cstat-no" title="statement not covered" >        const start = offse</span>t
+<span class="cstat-no" title="statement not covered" >        const end = offset + howMany</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.transform(
+<span class="cstat-no" title="statement not covered" >            this.columnStor</span>e,
+<span class="cstat-no" title="statement not covered" >            this.defs,</span>
+<span class="cstat-no" title="statement not covered" >            `</span>Kept ${howMany} rows starting at ${offset}`,
+<span class="cstat-no" title="statement not covered" >            TransformType.F</span>ilterRows,
+<span class="cstat-no" title="statement not covered" >            new FilterMask(</span>
+<span class="cstat-no" title="statement not covered" ></span>                this.numRows,
+<span class="cstat-no" title="statement not covered" >                this.indice</span>s.map((index) =&gt; index &gt;= start &amp;&amp; index &lt; end)
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -4141,10 +4138,10 @@ export class CoreTable&lt;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    limitColumns(howMany: number, offset: number = 0): this {</span>
-<span class="cstat-no" title="statement not covered" >        const slugs = this.columnSlugs.slice(offset, h</span>owMany + offset)
-<span class="cstat-no" title="statement not covered" >        return this.dropColumns</span>(
+<span class="cstat-no" title="statement not covered" >        const slugs = this.</span>columnSlugs.slice(offset, howMany + offset)
+<span class="cstat-no" title="statement not covered" >        return this.dropColumns(</span>
 <span class="cstat-no" title="statement not covered" >            slugs,</span>
-<span class="cstat-no" title="statement not covered" >            `Kept ${howMany} columns and dropped '${</span>slugs}'`
+<span class="cstat-no" title="statement not covered" >            `Kept $</span>{howMany} columns and dropped '${slugs}'`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -4172,8 +4169,8 @@ export class CoreTable&lt;
     dropColumns(slugs: ColumnSlug[], message?: string): this {
         const columnsToDrop = new Set(slugs)
         const newStore = {
-            ...this.columnStore,<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
-        }
+            ...this.columnStore,
+        }<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
         const defs = this.columnsAsArray
             .filter((col) =&gt; !columnsToDrop.has(col.slug))
             .map((col) =&gt; col.def) as COL_DEF_TYPE[]
@@ -4720,7 +4717,7 @@ export const columnDefinitionsFromDelimited = &lt;T&gt;(delimited: string): T[] 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 11:22:26 GMT+0000 (Coordinated Universal Time)
+                at Wed Jun 02 2021 11:32:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
