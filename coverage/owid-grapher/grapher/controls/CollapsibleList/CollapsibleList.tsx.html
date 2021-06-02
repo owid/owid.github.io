@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.99% </span>
+                <span class="strong">97.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>129/133</span>
+                <span class='fraction'>130/133</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.99% </span>
+                <span class="strong">97.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>129/133</span>
+                <span class='fraction'>130/133</span>
             </div>
         
             
@@ -226,9 +226,7 @@
 <a name='L167'></a><a href='#L167'>167</a>
 <a name='L168'></a><a href='#L168'>168</a>
 <a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a>
-<a name='L171'></a><a href='#L171'>171</a>
-<a name='L172'></a><a href='#L172'>172</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -243,8 +241,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -261,7 +257,7 @@
 <span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">246x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">246x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -329,7 +325,7 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-yes">96x</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -361,8 +357,8 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -415,9 +411,7 @@ interface ListChild {
 /** A UI component inspired by the "Priority+ Navbar" or "Progressively Collapsing Navbar"*/
 @observer
 export class CollapsibleList extends React.Component {
-    private outerContainerRef: React.RefObject&lt;
-        HTMLDivElement
-    &gt; = React.createRef()
+    private outerContainerRef: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
     private moreButtonRef: React.RefObject&lt;HTMLLIElement&gt; = React.createRef()
     private outerContainerWidth: number = 0
     private moreButtonWidth: number = 0
@@ -432,7 +426,7 @@ export class CollapsibleList extends React.Component {
                     index: i,
                     child,
                 }
-<span class="cstat-no" title="statement not covered" >            }) ?</span>? []
+            }) ?? []
         )
     }
 &nbsp;
@@ -474,7 +468,7 @@ export class CollapsibleList extends React.Component {
     }
 &nbsp;
     @action private onResize = throttle((): void =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>        this.updateItemVisibility()
+<span class="cstat-no" title="statement not covered" >        this.updateItemVisibility()</span>
     }, 100)
 &nbsp;
     @action private updateItemVisibility(): void {
@@ -509,15 +503,15 @@ export class CollapsibleList extends React.Component {
                         className="list-item moreButton"
                         ref={this.moreButtonRef}
                         style={{
-                            visibility: <span class="branch-0 cbranch-no" title="branch not covered" >this.dropdownItems.length</span>
-<span class="cstat-no" title="statement not covered" >                                ? "visible"</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                            visibility: this.dropdownItems.length</span>
+<span class="cstat-no" title="statement not covered" >                                ? "visib</span>le"
                                 : "hidden",
                         }}
                     &gt;
                         &lt;MoreButton
                             options={this.dropdownItems.map(
                                 (item): JSX.Element =&gt; (
-<span class="cstat-no" title="statement not covered" >                                    &lt;li</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    &lt;li
                                         key={item.index}
                                         className="list-item dropdown"
                                     &gt;
@@ -531,9 +525,9 @@ export class CollapsibleList extends React.Component {
             &lt;/div&gt;
         )
     }
-}<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+}
 &nbsp;
-export class MoreButton extends React.Component&lt;{
+export class MoreButton extends React.Compo<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >n</span></span></span>ent&lt;{
     options: React.ReactElement[]
 }&gt; {
     render(): JSX.Element {
@@ -577,7 +571,7 @@ export function numItemsVisible(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 11:32:14 GMT+0000 (Coordinated Universal Time)
+                at Wed Jun 02 2021 11:56:11 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

@@ -713,10 +713,7 @@
 <a name='L654'></a><a href='#L654'>654</a>
 <a name='L655'></a><a href='#L655'>655</a>
 <a name='L656'></a><a href='#L656'>656</a>
-<a name='L657'></a><a href='#L657'>657</a>
-<a name='L658'></a><a href='#L658'>658</a>
-<a name='L659'></a><a href='#L659'>659</a>
-<a name='L660'></a><a href='#L660'>660</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L657'></a><a href='#L657'>657</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -803,9 +800,6 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -830,7 +824,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -868,7 +862,7 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-yes">99x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-yes">99x</span>
 <span class="cline-any cline-yes">99x</span>
@@ -1208,7 +1202,7 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -1235,9 +1229,9 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1442,21 +1436,18 @@ export class EntityPicker extends React.Component&lt;{
     }
 &nbsp;
     @observable private searchInput?: string
-    @observable private searchInputRef: React.RefObject&lt;
-        HTMLInputElement
-    &gt; = React.createRef()
+    @observable
+    private searchInputRef: React.RefObject&lt;HTMLInputElement&gt; = React.createRef()
 &nbsp;
     @observable private focusIndex?: number
-    @observable private focusRef: React.RefObject&lt;
-        HTMLLabelElement
-    &gt; = React.createRef()
+    @observable
+    private focusRef: React.RefObject&lt;HTMLLabelElement&gt; = React.createRef()
     @observable private scrollFocusedIntoViewOnUpdate = false
 &nbsp;
     @observable private blockOptionHover = false
 &nbsp;
-    @observable private scrollContainerRef: React.RefObject&lt;
-        HTMLDivElement
-    &gt; = React.createRef()
+    @observable
+    private scrollContainerRef: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
 &nbsp;
     @observable private isOpen = false
 &nbsp;
@@ -1464,16 +1455,16 @@ export class EntityPicker extends React.Component&lt;{
         return !!this.props.isDropdownMenu
     }
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >action.bound private selectEntity(</span>
-<span class="cstat-no" title="statement not covered" >        name: EntityName,</span>
-<span class="cstat-no" title="statement not covered" >        checked?</span>: boolean
-<span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.manager.selection</span>.toggleSelection(name)
-<span class="cstat-no" title="statement not covered" >        // Clear search input</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.searchInput = ""
-<span class="cstat-no" title="statement not covered" >        this.manager.analytics?.logEntityPic</span>kerEvent(
-<span class="cstat-no" title="statement not covered" >            this</span>.analyticsNamespace,
-<span class="cstat-no" title="statement not covered" >            checked ? "select" : "deselect",</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >selectEntity(</span>
+<span class="cstat-no" title="statement not covered" >        name: E</span>ntityName,
+<span class="cstat-no" title="statement not covered" >        chec</span>ked?: boolean
+<span class="cstat-no" title="statement not covered" >    ):</span> void {
+<span class="cstat-no" title="statement not covered" >        this.manager.selection.toggle</span>Selection(name)
+<span class="cstat-no" title="statement not covered" >        // Clear</span> search input
+<span class="cstat-no" title="statement not covered" >        this.searchInput =</span> ""
+<span class="cstat-no" title="statement not covered" >        this.manager.analytics</span>?.logEntityPickerEvent(
+<span class="cstat-no" title="statement not covered" >            this.analyticsNamespace,</span>
+<span class="cstat-no" title="statement not covered" ></span>            checked ? "select" : "deselect",
 <span class="cstat-no" title="statement not covered" >            name</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -1489,20 +1480,20 @@ export class EntityPicker extends React.Component&lt;{
     @computed private get sortOrder(): SortOrder {
         // On mobile, only allow sorting by entityName (ascending)
         if (this.isDropdownMenu) return SortOrder.asc
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.</span>entityPickerSort ?? SortOrder.asc
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.entityPickerSort ?? S</span>ortOrder.asc
     }
 &nbsp;
-    @computed <span class="fstat-no" title="function not covered" >private get pickerColumnDefs(): CoreColumnDef[] {</span>
-<span class="cstat-no" title="statement not covered" >        retu</span>rn this.manager.entityPickerColumnDefs ?? []
+    @computed private get p<span class="fstat-no" title="function not covered" >ickerColumnDefs(): CoreColumnDef[] {</span>
+<span class="cstat-no" title="statement not covered" >        return this.manager</span>.entityPickerColumnDefs ?? []
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get metricOptions<span class="fstat-no" title="function not covered" >(): { label: string; value: string }[] {</span>
+    @comput<span class="fstat-no" title="function not covered" >ed private get metricOptions(): { label: string; value: string }[] {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.pickerColumnDefs.map((col): {
-<span class="cstat-no" title="statement not covered" >            label: strin</span>g
+<span class="cstat-no" title="statement not covered" >            label: string</span>
 <span class="cstat-no" title="statement not covered" >            value: string</span>
 <span class="cstat-no" title="statement not covered" ></span>        } =&gt; {
 <span class="cstat-no" title="statement not covered" >            return {</span>
-<span class="cstat-no" title="statement not covered" >                label: col.name || col.</span>slug,
+<span class="cstat-no" title="statement not covered" >                label: col.name || col.slug,</span>
 <span class="cstat-no" title="statement not covered" ></span>                value: col.slug,
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
@@ -1510,7 +1501,7 @@ export class EntityPicker extends React.Component&lt;{
 &nbsp;
     @computed private get activePickerMetricColumn(): CoreColumn | undefined {
 <span class="branch-0 cbranch-no" title="branch not covered" >        if (!this.metric) return undefined</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.manage</span></span></span>r.entityPickerTable?.getColumns([this.metric])[0]
+<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >thi</span></span></span>s.manager.entityPickerTable?.getColumns([this.metric])[0]
     }
 &nbsp;
     @computed private get availableEntitiesForCurrentView(): Set&lt;string&gt; {
@@ -1526,8 +1517,8 @@ export class EntityPicker extends React.Component&lt;{
         const entityNames = selection.availableEntityNames.slice().sort()
         return entityNames.map((entityName) =&gt; {
             const plotValue =
-<span class="branch-0 cbranch-no" title="branch not covered" >                col<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; pi</span>ckerTable</span>
-<span class="cstat-no" title="statement not covered" ></span>                    ? (pickerTable.getLatestValueForEntity(
+<span class="branch-0 cbranch-no" title="branch not covered" >                col<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; pic</span>kerTable</span>
+                    ? (pickerTable.getLatestValueForEntity(
                           entityName,
                           col.slug
                       ) as string | number)
@@ -1561,9 +1552,9 @@ export class EntityPicker extends React.Component&lt;{
         return new Set(this.selection.selectedEntityNames)
     }
 &nbsp;
-    @computed private get fuzzy<span class="fstat-no" title="function not covered" >(): FuzzySearch&lt;EntityOptionWithMetricValue&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return new FuzzySea</span>rch(
-<span class="cstat-no" title="statement not covered" >            this.e</span>ntitiesWithMetricValue,
+    @computed private get<span class="fstat-no" title="function not covered" > fuzzy(): FuzzySearch&lt;EntityOptionWithMetricValue&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return new FuzzySearch(</span>
+<span class="cstat-no" title="statement not covered" >            this.entitiesWithMetricValue,</span>
 <span class="cstat-no" title="statement not covered" >            OwidTableSlugs.entityName</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -1584,14 +1575,14 @@ export class EntityPicker extends React.Component&lt;{
         return [...selected, ...unselected]
     }
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >normalizeFocusIndex(index: number): number | undefined {</span>
-<span class="cstat-no" title="statement not covered" ></span>        if (this.searchResults.length === 0) return undefined
-<span class="cstat-no" title="statement not covered" >        return mod(ind</span>ex, this.searchResults.length)
+    p<span class="fstat-no" title="function not covered" >rivate normalizeFocusIndex(index: number): number | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.sea</span>rchResults.length === 0) return undefined
+<span class="cstat-no" title="statement not covered" >        return m</span>od(index, this.searchResults.length)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get focusedOption<span class="fstat-no" title="function not covered" >(): string | undefined {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.focusIndex !== undefined
-<span class="cstat-no" title="statement not covered" >            ? this.se</span>archResults[this.focusIndex].entityName
+    @computed private<span class="fstat-no" title="function not covered" > get focusedOption(): string | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        return this.focusInd</span>ex !== undefined
+<span class="cstat-no" title="statement not covered" >            ? this.searchResults[this.focus</span>Index].entityName
 <span class="cstat-no" title="statement not covered" >            : undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1599,84 +1590,84 @@ export class EntityPicker extends React.Component&lt;{
         return this.isDropdownMenu &amp;&amp; this.isOpen
     }
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >focusOptionDirection(</span>
-<span class="cstat-no" title="statement not covered" ></span>        direction: FocusDirection
+    @action.bound p<span class="fstat-no" title="function not covered" >rivate focusOptionDirection(</span>
+<span class="cstat-no" title="statement not covered" >        di</span>rection: FocusDirection
 <span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (direction === FocusDirec</span>tion.first)
-<span class="cstat-no" title="statement not covered" >            this.focusIndex = this.no</span>rmalizeFocusIndex(0)
-<span class="cstat-no" title="statement not covered" ></span>        else if (direction === FocusDirection.last)
-<span class="cstat-no" title="statement not covered" >            this.fo</span>cusIndex = this.normalizeFocusIndex(-1)
-<span class="cstat-no" title="statement not covered" >        else if (direction === FocusDi</span>rection.up) {
+<span class="cstat-no" title="statement not covered" >        if (direction === FocusDirect</span>ion.first)
+<span class="cstat-no" title="statement not covered" ></span>            this.focusIndex = this.normalizeFocusIndex(0)
+<span class="cstat-no" title="statement not covered" >        else if (dire</span>ction === FocusDirection.last)
+<span class="cstat-no" title="statement not covered" >            this.focusIndex = this.n</span>ormalizeFocusIndex(-1)
+<span class="cstat-no" title="statement not covered" >        else if (direction === FocusD</span>irection.up) {
 <span class="cstat-no" title="statement not covered" ></span>            const newIndex =
-<span class="cstat-no" title="statement not covered" >                this.</span>focusIndex === undefined ? -1 : this.focusIndex - 1
-<span class="cstat-no" title="statement not covered" >            this.focusIndex = this.norm</span>alizeFocusIndex(newIndex)
+<span class="cstat-no" title="statement not covered" >                thi</span>s.focusIndex === undefined ? -1 : this.focusIndex - 1
+<span class="cstat-no" title="statement not covered" >            this.focusIndex = this.nor</span>malizeFocusIndex(newIndex)
 <span class="cstat-no" title="statement not covered" ></span>        } else if (direction === FocusDirection.down) {
-<span class="cstat-no" title="statement not covered" >            const newIndex =</span>
-<span class="cstat-no" title="statement not covered" >                this.focusIndex =</span>== undefined ? 0 : this.focusIndex + 1
-<span class="cstat-no" title="statement not covered" >            this.focusIndex = th</span>is.normalizeFocusIndex(newIndex)
-<span class="cstat-no" title="statement not covered" >        } else return // Exi</span>t without updating scroll
-<span class="cstat-no" title="statement not covered" ></span>        this.scrollFocusedIntoViewOnUpdate = true
+<span class="cstat-no" title="statement not covered" >            const new</span>Index =
+<span class="cstat-no" title="statement not covered" >                this.focusIndex === und</span>efined ? 0 : this.focusIndex + 1
+<span class="cstat-no" title="statement not covered" ></span>            this.focusIndex = this.normalizeFocusIndex(newIndex)
+<span class="cstat-no" title="statement not covered" >        } else return // Exit</span> without updating scroll
+<span class="cstat-no" title="statement not covered" >        this.scrollFocusedIntoVie</span>wOnUpdate = true
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private<span class="fstat-no" title="function not covered" > clearSearchInput(): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.searchInput) this.searchInput = ""</span>
+    @<span class="fstat-no" title="function not covered" >action.bound private clearSearchInput(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.searchInput</span>) this.searchInput = ""
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onKeyDown(</span>
-<span class="cstat-no" title="statement not covered" >        event: React.KeyboardEvent&lt;HTMLDivElement&gt;</span>
+<span class="cstat-no" title="statement not covered" >        event: React.</span>KeyboardEvent&lt;HTMLDivElement&gt;
 <span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        // We want to block hover if a key is pressed.</span>
-<span class="cstat-no" title="statement not covered" >        // The hover will be unblocked iff </span>the user moves the mouse (relative to the menu).
+<span class="cstat-no" title="statement not covered" >        // We want to block</span> hover if a key is pressed.
+<span class="cstat-no" title="statement not covered" >        // The hover will be unblocked iff the user moves</span> the mouse (relative to the menu).
 <span class="cstat-no" title="statement not covered" >        this.blockHover()</span>
 <span class="cstat-no" title="statement not covered" >        switch (event.key) {</span>
 <span class="cstat-no" title="statement not covered" >            case "Enter":</span>
-<span class="cstat-no" title="statement not covered" >                if (event.keyCod</span>e === 229) {
-<span class="cstat-no" title="statement not covered" ></span>                    // ignore the keydown event from an Input Method Editor(IME)
-<span class="cstat-no" title="statement not covered" ></span>                    // ref. https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
-<span class="cstat-no" title="statement not covered" ></span>                    break
+<span class="cstat-no" title="statement not covered" >                if (event.keyCode === 229) {</span>
+<span class="cstat-no" title="statement not covered" >                    // ignore </span>the keydown event from an Input Method Editor(IME)
+<span class="cstat-no" title="statement not covered" >                    // ref.</span> https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode
+<span class="cstat-no" title="statement not covered" >                    break</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" ></span>                if (!this.focusedOption) return
-<span class="cstat-no" title="statement not covered" >                const name = this.focusedOption</span>
-<span class="cstat-no" title="statement not covered" ></span>                this.selectEntity(name)
-<span class="cstat-no" title="statement not covered" >                this.</span>clearSearchInput()
+<span class="cstat-no" title="statement not covered" >                c</span>onst name = this.focusedOption
+<span class="cstat-no" title="statement not covered" >                this.selectEntity(name)</span>
+<span class="cstat-no" title="statement not covered" ></span>                this.clearSearchInput()
 <span class="cstat-no" title="statement not covered" >                this.manager.analytics?.logEntityPickerEvent(</span>
-<span class="cstat-no" title="statement not covered" >                    this.analyticsNamespace,</span>
-<span class="cstat-no" title="statement not covered" >                    "enter",</span>
+<span class="cstat-no" title="statement not covered" ></span>                    this.analyticsNamespace,
+<span class="cstat-no" title="statement not covered" >                    "</span>enter",
 <span class="cstat-no" title="statement not covered" >                    name</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >                break</span>
-<span class="cstat-no" title="statement not covered" ></span>            case "ArrowUp":
-<span class="cstat-no" title="statement not covered" >                this.focus</span>OptionDirection(FocusDirection.up)
+<span class="cstat-no" title="statement not covered" >            case "ArrowUp":</span>
+<span class="cstat-no" title="statement not covered" >                this.focusOptionDirection(FocusDirection.up)</span>
 <span class="cstat-no" title="statement not covered" >                break</span>
-<span class="cstat-no" title="statement not covered" >            case "ArrowDown":</span>
-<span class="cstat-no" title="statement not covered" ></span>                this.focusOptionDirection(FocusDirection.down)
+<span class="cstat-no" title="statement not covered" ></span>            case "ArrowDown":
+<span class="cstat-no" title="statement not covered" >                this.focus</span>OptionDirection(FocusDirection.down)
 <span class="cstat-no" title="statement not covered" >                break</span>
 <span class="cstat-no" title="statement not covered" >            default:</span>
-<span class="cstat-no" title="statement not covered" >                return</span>
+<span class="cstat-no" title="statement not covered" ></span>                return
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @bind<span class="fstat-no" title="function not covered" > private focusSearch(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.searchInputRef.current?.focus()
+    @bind private <span class="fstat-no" title="function not covered" >focusSearch(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.searchInputRef.current?.focus()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onSearchFocus(): void {</span>
+    @<span class="fstat-no" title="function not covered" >action.bound private onSearchFocus(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.isOpen = true</span>
-<span class="cstat-no" title="statement not covered" >        if (this.focusIndex === undefined)</span>
-<span class="cstat-no" title="statement not covered" >            this.focusOptionDirection(FocusDirection.f</span>irst)
+<span class="cstat-no" title="statement not covered" >        if (this.focusIn</span>dex === undefined)
+<span class="cstat-no" title="statement not covered" >            this.focusOptionDirection(FocusDirection.first)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onSearchBlur(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        // Do not allow focus on elements inside menu; shift focus back to search input.
+<span class="cstat-no" title="statement not covered" >        // Do not allow focus on elements inside menu;</span> shift focus back to search input.
 <span class="cstat-no" title="statement not covered" >        if (</span>
 <span class="cstat-no" title="statement not covered" >            this.scrollContainerRef.current &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" ></span>            this.scrollContainerRef.current.contains(document.activeElement)
 <span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >            this.focusSearch()</span>
-<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" ></span>            return
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        this.isOpen = fal</span>se
+<span class="cstat-no" title="statement not covered" >        this.isOpen = false</span>
 <span class="cstat-no" title="statement not covered" >        this.focusIndex = undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1685,36 +1676,36 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >blockHover(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.blockOptionHover = true</span>
+<span class="cstat-no" title="statement not covered" >        this.blockOptionHover =</span> true
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >unblockHover(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.blockOptionHover = false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound pr<span class="fstat-no" title="function not covered" >ivate onMenuMouseDown(</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onMenuMouseDown(</span>
 <span class="cstat-no" title="statement not covered" >        event: React.MouseEvent&lt;HTMLDivElement, MouseEvent&gt;</span>
 <span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        event.stopPropagation()</span>
-<span class="cstat-no" title="statement not covered" ></span>        event.preventDefault()
-<span class="cstat-no" title="statement not covered" >        this.fo</span>cusSearch()
+<span class="cstat-no" title="statement not covered" >        event.stopPro</span>pagation()
+<span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
+<span class="cstat-no" title="statement not covered" >        this.focusSearch()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @bind private highlightLabel(label: string): string | JSX.Element {
-        if (!this.searchInput) <span class="branch-0 cbranch-no" title="branch not covered" >return label</span>
+        if (!th<span class="branch-0 cbranch-no" title="branch not covered" >is.searchInput) return label</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const result = this.fuzzy.single(this.searchInput, label)</span>
+<span class="cstat-no" title="statement not covered" >        const result = this.fuzzy.single(this</span>.searchInput, label)
 <span class="cstat-no" title="statement not covered" >        if (!result) return label</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const tokens: { match: boolean; text: string }[] = []</span>
-<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; result.target.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; result.target.length;</span> i++) {
 <span class="cstat-no" title="statement not covered" >            const currentToken = last(tokens)</span>
 <span class="cstat-no" title="statement not covered" >            const match = result.indexes.includes(i)</span>
 <span class="cstat-no" title="statement not covered" >            const char = result.target[i]</span>
 <span class="cstat-no" title="statement not covered" >            if (!currentToken || currentToken.match !== match) {</span>
 <span class="cstat-no" title="statement not covered" >                tokens.push({</span>
 <span class="cstat-no" title="statement not covered" >                    match,</span>
-<span class="cstat-no" title="statement not covered" >                    text: cha</span>r,
+<span class="cstat-no" title="statement not covered" >                    text: char,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
 <span class="cstat-no" title="statement not covered" >            } else currentToken.text += char</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -1722,12 +1713,12 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >            &lt;React.Fragment&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {tokens.map((token, i) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    token.match ? (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;mark key={i}&gt;{token</span>.text}&lt;/mark&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;mark key={i}&gt;{token.text}</span>&lt;/mark&gt;
 <span class="cstat-no" title="statement not covered" >                    ) : (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;Rea</span>ct.Fragment key={i}&gt;{token.text}&lt;/React.Fragment&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;React.Fragment key={i}&gt;{token.text}&lt;/React.Fragment&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/React.Fragment&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/React.Fragment</span>&gt;
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1738,7 +1729,7 @@ export class EntityPicker extends React.Component&lt;{
                 .filter(isNumber)
         )
         return scaleLinear()
-            .domain([0, <span class="branch-0 cbranch-no" title="branch not covered" >maxValue </span>?? 1])
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>            .domain([0, maxValue ?? 1])
             .range([0, 1])
     }
 &nbsp;
@@ -1753,7 +1744,7 @@ export class EntityPicker extends React.Component&lt;{
     componentDidUpdate(): void {
         if (
 <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.focusIndex !== undefined &amp;&amp;</span></span></span>
-<span class="cstat-no" title="statement not covered" >            this.scrollFocusedIntoViewOnUpdate &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            this.scrollFocusedIntoViewOnUpdate &amp;</span>&amp;
 <span class="cstat-no" title="statement not covered" >            t</span>his.scrollContainerRef.current &amp;&amp;
 <span class="cstat-no" title="statement not covered" >            this.focus</span>Ref.current
         ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
@@ -1767,10 +1758,10 @@ export class EntityPicker extends React.Component&lt;{
 &nbsp;
     @action private <span class="fstat-no" title="function not covered" >updateMetric(columnSlug: ColumnSlug): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.</span>manager.setEntityPicker?.({
-<span class="cstat-no" title="statement not covered" >            metric: colu</span>mnSlug,
-<span class="cstat-no" title="statement not covered" >            sort: this.isActivePickerColumnTypeNum</span>eric
+<span class="cstat-no" title="statement not covered" >            metric: </span>columnSlug,
+<span class="cstat-no" title="statement not covered" >            sort: this.isActivePickerColumnTypeNumer</span>ic
 <span class="cstat-no" title="statement not covered" ></span>                ? SortOrder.desc
-<span class="cstat-no" title="statement not covered" >                : So</span>rtOrder.asc,
+<span class="cstat-no" title="statement not covered" >                : SortOr</span>der.asc,
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >        this.</span>manager.analytics?.logEntityPickerEvent(
 <span class="cstat-no" title="statement not covered" >            this.ana</span>lyticsNamespace,
@@ -1780,7 +1771,7 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed priva<span class="fstat-no" title="function not covered" >te get isActivePickerColumnTypeNumeric(): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        return this.activePickerMetricColumn instanceo</span>f ColumnTypeMap.Numeric
+<span class="cstat-no" title="statement not covered" >        return this.activePickerMetricColumn in</span>stanceof ColumnTypeMap.Numeric
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private get pickerMenu(): JSX.Element | null {
@@ -1801,13 +1792,13 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                    )}</span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>                    onChange={(option): void =&gt; {</span>
 <span class="cstat-no" title="statement not covered" ></span>                        const value = first(asArray(option))?.value
-<span class="cstat-no" title="statement not covered" >                        if (value) this.updateM</span>etric(value)
+<span class="cstat-no" title="statement not covered" >                        if (value) this.updateMet</span>ric(value)
 <span class="cstat-no" title="statement not covered" ></span>                    }}
 <span class="cstat-no" title="statement not covered" ></span>                    menuPlacement="bottom"
 <span class="cstat-no" title="statement not covered" >                    components={{</span>
 <span class="cstat-no" title="statement not covered" ></span>                        IndicatorSeparator: null,
 <span class="cstat-no" title="statement not covered" ></span>                    }}
-<span class="cstat-no" title="statement not covered" >                    styles={getStylesForTar</span>getHeight(26)}
+<span class="cstat-no" title="statement not covered" >                    styles={getStylesForTargetHeig</span>ht(26)}
 <span class="cstat-no" title="statement not covered" ></span>                    isSearchable={false}
 <span class="cstat-no" title="statement not covered" ></span>                    isLoading={this.manager.entityPickerTableIsLoading}
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
@@ -1816,7 +1807,7 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                    onClick={<span class="fstat-no" title="function not covered" >(): void =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" ></span>                        const sortOrder = toggleSort(this.sortOrder)
 <span class="cstat-no" title="statement not covered" ></span>                        this.manager.setEntityPicker?.({ sort: sortOrder })
-<span class="cstat-no" title="statement not covered" >                        this.manager.analytics?.logE</span>ntityPickerEvent(
+<span class="cstat-no" title="statement not covered" >                        this.manager.analytics?.log</span>EntityPickerEvent(
 <span class="cstat-no" title="statement not covered" ></span>                            this.analyticsNamespace,
 <span class="cstat-no" title="statement not covered" ></span>                            "sortOrder",
 <span class="cstat-no" title="statement not covered" >                            sortOrder</span>
@@ -1825,7 +1816,7 @@ export class EntityPicker extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;SortIcon
 <span class="cstat-no" title="statement not covered" ></span>                        type={
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                            this.isActivePicker</span>ColumnTypeNumeric</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                            this.isActivePickerColumnT</span>ypeNumeric</span>
 <span class="cstat-no" title="statement not covered" ></span>                                ? "numeric"
 <span class="cstat-no" title="statement not covered" ></span>                                : "text"
                         }
@@ -1867,7 +1858,7 @@ export class EntityPicker extends React.Component&lt;{
                         &lt;FontAwesomeIcon icon={faSearch} /&gt;
                     &lt;/div&gt;
                     {<span class="branch-0 cbranch-no" title="branch not covered" >this.showDoneButton &amp;&amp; (</span>
-                        &lt;div className="done"&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;div className="done"&gt;
                             &lt;button&gt;Done&lt;/button&gt;
                         &lt;/div&gt;
                     )}
@@ -1893,10 +1884,10 @@ export class EntityPicker extends React.Component&lt;{
                             &gt;
                                 &lt;Flipper
                                     spring={{
-<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                                        s</span></span></span></span></span></span></span></span></span></span>tiffness: 300,
+                                        stiffness: 300,
                                         damping: 33,
                                     }}
-                                    // We only want to animate when the selection changes, but not on changes due to
+                                    // W<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >e</span></span></span></span></span></span></span></span></span></span> only want to animate when the selection changes, but not on changes due to
                                     // searching
                                     flipKey={selectedEntityNames.join(",")}
                                 &gt;
@@ -2041,7 +2032,7 @@ class PickerOption extends React.Component&lt;PickerOptionProps&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 11:32:14 GMT+0000 (Coordinated Universal Time)
+                at Wed Jun 02 2021 11:56:11 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
