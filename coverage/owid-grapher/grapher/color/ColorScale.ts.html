@@ -407,9 +407,7 @@
 <a name='L348'></a><a href='#L348'>348</a>
 <a name='L349'></a><a href='#L349'>349</a>
 <a name='L350'></a><a href='#L350'>350</a>
-<a name='L351'></a><a href='#L351'>351</a>
-<a name='L352'></a><a href='#L352'>352</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L351'></a><a href='#L351'>351</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -635,7 +633,7 @@
 <span class="cline-any cline-yes">86x</span>
 <span class="cline-any cline-yes">86x</span>
 <span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-yes">86x</span>
 <span class="cline-any cline-yes">86x</span>
 <span class="cline-any cline-yes">86x</span>
@@ -754,10 +752,10 @@
 <span class="cline-any cline-yes">83x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">200x</span>
-<span class="cline-any cline-yes">150x</span>
-<span class="cline-any cline-yes">150x</span>
-<span class="cline-any cline-yes">200x</span>
+<span class="cline-any cline-yes">203x</span>
+<span class="cline-any cline-yes">153x</span>
+<span class="cline-any cline-yes">153x</span>
+<span class="cline-any cline-yes">203x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { computed, toJS } from "mobx"
 import { mean, deviation } from "d3-array"
@@ -769,7 +767,6 @@ import {
 import {
     isEmpty,
     reverse,
-    toArray,
     first,
     last,
     roundSigFig,
@@ -807,7 +804,7 @@ export class ColorScale {
     }
 &nbsp;
     @computed get customNumericValues(): number[] {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customNumericValues ?? []</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.con</span>fig.customNumericValues ?? []
     }
 &nbsp;
     @computed get customNumericColorsActive(): boolean {
@@ -823,38 +820,38 @@ export class ColorScale {
     @computed get customHiddenCategories(): {
         [key: string]: true | undefined
     } {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return this.config.customHiddenCategories ?? {}
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customHiddenCategories ?? {}</span>
     }
 &nbsp;
     @computed get customNumericLabels(): (string | undefined)[] {
         if (!this.isManualBuckets) return []
 &nbsp;
         const labels =
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            mapNullToUndefined(toJS(this.config.customNumericLabels)) || []
+<span class="branch-0 cbranch-no" title="branch not covered" >            mapNullToUndefined(toJS(this.config.customNumericLabels)) || []</span>
         while (labels.length &lt; this.numBins) labels.push(undefined)
         return labels
     }
 &nbsp;
     @computed get isColorSchemeInverted(): boolean {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return this.config.colorSchemeInvert ?? false
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.colorSchemeInvert ?</span>? false
     }
 &nbsp;
     @computed private get customCategoryLabels(): {
         [key: string]: string | undefined
     } {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.conf</span>ig.customCategoryLabels ?? {}
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.custo</span>mCategoryLabels ?? {}
     }
 &nbsp;
     @computed get baseColorScheme(): ColorSchemeName {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            this.config.baseColorScheme ??
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.config.baseColorScheme ??</span>
             this.manager.defaultBaseColorScheme ??
             ColorSchemeName.BuGn
         )
     }
 &nbsp;
-    @computed private get defaultColorScheme<span class="fstat-no" title="function not covered" >(): ColorScheme {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return ColorSchemes[ColorSchemeName.BuGn]
+    @computed priva<span class="fstat-no" title="function not covered" >te get defaultColorScheme(): ColorScheme {</span>
+<span class="cstat-no" title="statement not covered" >        return ColorSchemes[ColorSchemeName.BuGn]</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get defaultNoDataColor(): string {
@@ -877,8 +874,8 @@ export class ColorScale {
 &nbsp;
     @computed get sortedNumericValues(): any[] {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.colorScaleColumn?.v</span>alue</span>sAscending?.filter(</span>
-<span class="cstat-no" title="statement not covered" >                (x) =&gt; typeof x === "number"</span>
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.colorScaleC</span></span>olumn?.valuesAscending?.filter(</span>
+<span class="cstat-no" title="statement not covered" >                (x) =&gt; typeof x === "num</span>ber"
 <span class="cstat-no" title="statement not covered" >            ) ?? []</span>
         )
     }
@@ -892,11 +889,11 @@ export class ColorScale {
     }
 &nbsp;
     @computed private get categoricalValues(): any[] {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.colorScaleColumn</span></span>?.sortedUniqNonEmptyStringVals ?? []
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.colorSc</span></span>aleColumn?.sortedUniqNonEmptyStringVals ?? []
     }
 &nbsp;
     @computed private get colorScheme(): ColorScheme {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >ColorSchemes[this.baseColorScheme] ?? this.</span>defaultColorScheme
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        return ColorSchemes[this.baseColorScheme] ?? this.defaultColorScheme
     }
 &nbsp;
     @computed get singleColorScale(): boolean {
@@ -909,17 +906,17 @@ export class ColorScale {
     }
 &nbsp;
     @computed private get minBinValue(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.con</span>fig.customNumericMinValue ?? this.autoMinBinValue
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.config.customNum</span>ericMinValue ?? this.autoMinBinValue
     }
 &nbsp;
     @computed private get manualBinMaximums(): number[] {
-        if (!this.sortedNumericValues.length || this.numBins &lt;= 0) <span class="branch-0 cbranch-no" title="branch not covered" >return [</span>]
+        if (!th<span class="branch-0 cbranch-no" title="branch not covered" >i</span>s.sortedNumericValues.length || this.numBins &lt;= 0) return []
 &nbsp;
         const { numBins, customNumericValues } = this
 &nbsp;
-        let values = toArray(customNumericValues)
-        while (valu<span class="branch-0 cbranch-no" title="branch not covered" >e</span>s.length &lt; numBins) values.push(0)
-        while (values.length &gt; numB<span class="branch-0 cbranch-no" title="branch not covered" >i</span>ns) values = values.slice(0, numBins)
+        let values = [...customNumericValues]
+<span class="branch-0 cbranch-no" title="branch not covered" ></span>        while (values.length &lt; numBins) values.push(0)
+        while (valu<span class="branch-0 cbranch-no" title="branch not covered" >e</span>s.length &gt; numBins) values = values.slice(0, numBins)
         return values
     }
 &nbsp;
@@ -962,7 +959,7 @@ export class ColorScale {
         const numColors = bucketMaximums.length + categoricalValues.length
         const colors = colorScheme.getColors(numColors)
 &nbsp;
-        if (isColorSchemeInverted) <span class="branch-0 cbranch-no" title="branch not covered" >reverse(c</span>olors)
+        if (isColorSchemeInverted) <span class="branch-0 cbranch-no" title="branch not covered" >rev</span>erse(colors)
 &nbsp;
         return colors
     }
@@ -1030,9 +1027,9 @@ export class ColorScale {
             const label = customNumericLabels[index]
 &nbsp;
             const displayMin =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this</span></span>.colorScaleColumn?.formatValueShort(min) ?? min.toString()
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                this.colorScaleColumn?.formatValueShort(min) ?? min.toString()
             const displayMax =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                this.colorScaleColumn?.formatValueShort(max) ?? max.toString()
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this.colorScaleColumn?.f</span>ormatValueShort</span>(max) ?? max.toString()
 &nbsp;
             const currentMin = min
             min = max
@@ -1092,7 +1089,7 @@ export class ColorScale {
                 : bucketMaximums.length - 1
             const baseColor = baseColors[index + boundingOffset]
             const color = customCategoryColors[value] ?? baseColor
-<span class="branch-0 cbranch-no" title="branch not covered" >            c</span>onst label = customCategoryLabels[value] ?? value
+            const label = <span class="branch-0 cbranch-no" title="branch not covered" >customCategoryLabels[valu</span>e] ?? value
 &nbsp;
             return new CategoricalBin({
                 index,
@@ -1117,7 +1114,7 @@ export class ColorScale {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 08:06:38 GMT+0000 (Coordinated Universal Time)
+                at Wed Jun 02 2021 11:22:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
