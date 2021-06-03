@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.53% </span>
+                <span class="strong">15.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/161</span>
+                <span class='fraction'>25/162</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.53% </span>
+                <span class="strong">15.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/161</span>
+                <span class='fraction'>25/162</span>
             </div>
         
             
@@ -240,7 +240,8 @@
 <a name='L181'></a><a href='#L181'>181</a>
 <a name='L182'></a><a href='#L182'>182</a>
 <a name='L183'></a><a href='#L183'>183</a>
-<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -268,6 +269,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -452,24 +454,25 @@ export namespace Variable {
 }
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >exp</span>ort async function getVariableData(variableIds: number[]): Promise&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    variableIds = lodash.uniq(variableIds)</span>
 <span class="cstat-no" title="statement not covered" >    const data: any = { variables: {}, entityKey: {} }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const variableQuery = db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT v.*, v.shortUnit, d.name as dataset</span>Name, d.id as datasetId, s.id as s_id, s.name as s_name, s.description as s_description FROM variables as v
-<span class="cstat-no" title="statement not covered" >            JO</span>IN datasets as d ON v.datasetId = d.id
-<span class="cstat-no" title="statement not covered" >            JOIN source</span>s as s on v.sourceId = s.id
+<span class="cstat-no" title="statement not covered" >        SELECT</span> v.*, v.shortUnit, d.name as datasetName, d.id as datasetId, s.id as s_id, s.name as s_name, s.description as s_description FROM variables as v
+<span class="cstat-no" title="statement not covered" >            JOIN datase</span>ts as d ON v.datasetId = d.id
+<span class="cstat-no" title="statement not covered" >            JOIN sources as s on v</span>.sourceId = s.id
 <span class="cstat-no" title="statement not covered" >            WHERE v.id IN (?)</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [variableIds]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const dataQuery = db.q</span>ueryMysql(
-<span class="cstat-no" title="statement not covered" ></span>        `
-<span class="cstat-no" title="statement not covered" >            SELECT value, </span>year, variableId as variableId, entities.id as entityId,
-<span class="cstat-no" title="statement not covered" >            entities.name as entityName, entities.code as en</span>tityCode
+<span class="cstat-no" title="statement not covered" >    co</span>nst dataQuery = db.queryMysql(
+<span class="cstat-no" title="statement not covered" >        `</span>
+<span class="cstat-no" title="statement not covered" >            SELECT value, year, variableId as variableId, en</span>tities.id as entityId,
+<span class="cstat-no" title="statement not covered" >            entities.name as entityName,</span> entities.code as entityCode
 <span class="cstat-no" title="statement not covered" >            FROM data_values</span>
-<span class="cstat-no" title="statement not covered" >            LEFT JOIN entities ON data_values.entityId = e</span>ntities.id
+<span class="cstat-no" title="statement not covered" >            LEFT JOIN entities ON data_values.en</span>tityId = entities.id
 <span class="cstat-no" title="statement not covered" >            WHERE data_values.variableId IN (?)</span>
 <span class="cstat-no" title="statement not covered" >            ORDER BY variableId ASC, year ASC</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
@@ -613,7 +616,7 @@ export namespace Variable {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 14:30:37 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
