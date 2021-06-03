@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.57% </span>
+                <span class="strong">36.07% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/61</span>
+                <span class='fraction'>22/61</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.73% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/11</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.44% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/9</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.57% </span>
+                <span class="strong">36.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>40/61</span>
+                <span class='fraction'>22/61</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -133,24 +133,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -192,24 +192,24 @@ interface CountrySelectOption {
 const analytics = new SiteAnalytics()
 &nbsp;
 const SearchCountry = (<span class="fstat-no" title="function not covered" >props: { countryProfileRootPath: string }) =&gt; {</span>
-    const [isLoading, setIsLoading] = useState(false)
-    const sorted = sortBy(countries, "name")
-    return (
-        &lt;Select
-            options={sorted.map((c) =&gt; {
-                return { label: c.name, value: c.slug }
-            })}
-            onChange={(selected: ValueType&lt;CountrySelectOption&gt;) =&gt; {
-                const country = asArray(selected)[0].value
-                analytics.logCovidCountryProfileSearch(country)
-                setIsLoading(true)
-                window.location.href = `${props.countryProfileRootPath}/${country}`
-            }}
-            isLoading={isLoading}
-            placeholder="Search for a country..."
-        /&gt;
-    )
-}
+<span class="cstat-no" title="statement not covered" >    const [isLoading, setIsLoading] =</span> useState(false)
+<span class="cstat-no" title="statement not covered" >    const sorted = </span>sortBy(countries, "name")
+<span class="cstat-no" title="statement not covered" ></span>    return (
+<span class="cstat-no" title="statement not covered" >        &lt;Select</span>
+<span class="cstat-no" title="statement not covered" >            options={sorted.map((c) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>                return { label: c.name, value: c.slug }
+<span class="cstat-no" title="statement not covered" >            })}</span>
+<span class="cstat-no" title="statement not covered" >            onChange={(selected: Va</span>lueType&lt;CountrySelectOption&gt;) =&gt; {
+<span class="cstat-no" title="statement not covered" >                const country = asArray(selected</span>)[0].value
+<span class="cstat-no" title="statement not covered" >                analytics.logCovidCountryProfileSearch(coun</span>try)
+<span class="cstat-no" title="statement not covered" >                setIsLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >                window.location.href = `${props.countryPr</span>ofileRootPath}/${country}`
+<span class="cstat-no" title="statement not covered" >            }}</span>
+<span class="cstat-no" title="statement not covered" >            isLoading={isLoading}</span>
+<span class="cstat-no" title="statement not covered" >            placeholder="Search for a country..."</span>
+<span class="cstat-no" title="statement not covered" >        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function runSearchCountry() {</span></span>
 <span class="cstat-no" title="statement not covered" >    const searchElements = document.querySelectorAll(</span>
@@ -241,7 +241,7 @@ export default SearchCountry
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

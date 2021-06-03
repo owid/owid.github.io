@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.57% </span>
+                <span class="strong">90.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>189/211</span>
+                <span class='fraction'>191/211</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.6% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>36/47</span>
+                <span class='fraction'>20/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.35% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/17</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.57% </span>
+                <span class="strong">90.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>189/211</span>
+                <span class='fraction'>191/211</span>
             </div>
         
             
@@ -395,7 +395,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -403,7 +403,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -565,7 +565,7 @@ export class FacetChart
         } = manager
 &nbsp;
         const baseFontSize = getFontSize(count, manager.baseFontSize)
-        const lineStrokeWidth =<span class="branch-0 cbranch-no" title="branch not covered" > </span>count &gt; 16 ? 1 : undefined
+        const lineStrokeWidth = count &gt; 16 ? 1 : undefined
 &nbsp;
         const table = this.inputTable
 &nbsp;
@@ -598,7 +598,7 @@ export class FacetChart
             }
             return {
                 bounds,
-                chartTyp<span class="branch-0 cbranch-no" title="branch not covered" >e</span>Name: series.chartTypeName ?? chartTypeName,
+                chartTypeName: series.chartTypeName ?? chartTypeName,
                 manager,
                 seriesName: series.seriesName,
             } as PlacedFacetSeries
@@ -616,16 +616,16 @@ export class FacetChart
         const yDomain = table.domainFor(this.yColumnSlugs)
         const scaleType = this.manager.yAxis?.scaleType
         const sameYAxis = true
-        const yAxisConfig = sameYAxis<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            ? {</span>
+        const yAxisConfig = sameYAxis
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >                  max: yDomain[1],</span>
 <span class="cstat-no" title="statement not covered" >                  min: yDomain[0],</span>
 <span class="cstat-no" title="statement not covered" >                  scaleType</span>,
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            : undefined</span>
         const sameXAxis = true
-        const xAxisConfig = sameXAxis<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            ? {</span>
+        const xAxisConfig = sameXAxis
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" ></span>                  max: table.maxTime,
 <span class="cstat-no" title="statement not covered" ></span>                  min: table.minTime,
 <span class="cstat-no" title="statement not covered" ></span>                  scaleType,
@@ -701,8 +701,8 @@ export class FacetChart
         const { subtitleFontSize } = this
         return this.placedSeries.map((smallChart, index: number) =&gt; {
             const ChartClass =
-<span class="branch-0 cbranch-no" title="branch not covered" >                ChartComponentClassMap.get(smallChart.chartTypeName) ??</span>
-<span class="cstat-no" title="statement not covered" >                Defa</span>ultChartClass
+                ChartComponentClassMap.get(smallChart.chartTypeName) ??
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                Defa</span></span>ultChartClass
             const { bounds, seriesName } = smallChart
             const shiftTop =
                 smallChart.chartTypeName === ChartTypeName.LineChart ? 6 : 10
@@ -711,7 +711,7 @@ export class FacetChart
                     &lt;text
                         x={bounds.x}
                         y={bounds.top - shiftTop}
-                        fill={"#1d3d63<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >"</span></span></span></span>}
+                        fill={"#1d3d63"}
                         fontSize={subtitleFontSize}
                         style={{ fontWeight: 700 }}
                     &gt;
@@ -730,7 +730,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

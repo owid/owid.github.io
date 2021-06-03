@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">39.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/23</span>
+                <span class='fraction'>9/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.65% </span>
+                <span class="strong">39.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/23</span>
+                <span class='fraction'>9/23</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,19 +94,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,19 +121,19 @@ import { Url } from "../clientUtils/urls/Url"
 export const replaceIframesWithExplorerRedirectsInWordPressPost = (
 <span class="fstat-no" title="function not covered" >    cheerio: CheerioStatic</span>
 <span class="cstat-no" title="statement not covered" >) =&gt;</span>
-    cheerio("iframe")
-        .toArray()
-        .forEach((el) =&gt; {
-            let url = Url.fromURL(el.attribs["src"].trim())
-            if (!url.pathname) return
-&nbsp;
-            const explorerRedirect = getExplorerRedirectForPath(url.pathname)
-            if (explorerRedirect) {
-                const { migrationId, baseQueryStr } = explorerRedirect
-                const { migrateUrl } = explorerUrlMigrationsById[migrationId]
-                url = migrateUrl(url, baseQueryStr)
-            }
-&nbsp;
+<span class="cstat-no" title="statement not covered" >    cheerio("iframe")</span>
+<span class="cstat-no" title="statement not covered" >        .toArray</span>()
+<span class="cstat-no" title="statement not covered" >        .forEach((el) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            let url = Url.fr</span>omURL(el.attribs["src"].trim())
+<span class="cstat-no" title="statement not covered" >            if (!url.pathname) return</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const explorerRedirect = getExplo</span>rerRedirectForPath(url.pathname)
+<span class="cstat-no" title="statement not covered" ></span>            if (explorerRedirect) {
+<span class="cstat-no" title="statement not covered" >                const { migrationId, baseQueryStr } = explo</span>rerRedirect
+<span class="cstat-no" title="statement not covered" >                const { migrateUrl } </span>= explorerUrlMigrationsById[migrationId]
+<span class="cstat-no" title="statement not covered" ></span>                url = migrateUrl(url, baseQueryStr)
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
             url = migrateExplorerUrl(url)
 &nbsp;
             el.attribs["src"] = url.fullUrl
@@ -145,7 +145,7 @@ export const replaceIframesWithExplorerRedirectsInWordPressPost = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

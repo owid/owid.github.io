@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">48.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>14/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">48.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/29</span>
+                <span class='fraction'>14/29</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,22 +97,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {
     hydrate as hydrateAdditionalInformation,
     render as renderAdditionalInformation,
@@ -125,22 +125,22 @@ import { runDataTokens } from "../../site/runDataTokens"
 import { shouldProgressiveEmbed } from "../../site/multiembedder/MultiEmbedder"
 &nbsp;
 export const renderBlocks = (<span class="fstat-no" title="function not covered" >cheerioEl: CheerioStatic) =&gt; {</span>
-    renderAdditionalInformation(cheerioEl)
-    renderHelp(cheerioEl)
-}
+<span class="cstat-no" title="statement not covered" ></span>    renderAdditionalInformation(cheerioEl)
+<span class="cstat-no" title="statement not covered" >    renderHelp(cheerioEl)</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 export const runBlocks = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-    if (!shouldProgressiveEmbed()) {
-        // Used by Help blocks. Pierces encapsulation but considered not worth going through hydration / client side rendering for this.
-        // If hydration required for other purposes, then reassess.
-        document
-            .getElementsByTagName("body")[0]
-            .classList.add("is-not-chart-interactive")
-    }
-    runDataTokens()
-    runExpandableInlineBlock()
-    runSearchCountry()
-    hydrateAdditionalInformation()
-}
+<span class="cstat-no" title="statement not covered" >    if (!shouldProgressiveEmbed()) {</span>
+<span class="cstat-no" title="statement not covered" >        // Used by Help blocks. Pierces encapsulation but considered</span> not worth going through hydration / client side rendering for this.
+<span class="cstat-no" title="statement not covered" >        // If hyd</span>ration required for other purposes, then reassess.
+<span class="cstat-no" title="statement not covered" >        document</span>
+<span class="cstat-no" title="statement not covered" >            .getElementsByTagName("body")[0]</span>
+<span class="cstat-no" title="statement not covered" ></span>            .classList.add("is-not-chart-interactive")
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    runDataTokens()</span>
+<span class="cstat-no" title="statement not covered" >    runExpandableInlineBlock()</span>
+<span class="cstat-no" title="statement not covered" >    runSearchCountry()</span>
+<span class="cstat-no" title="statement not covered" ></span>    hydrateAdditionalInformation()
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +148,7 @@ export const runBlocks = <span class="fstat-no" title="function not covered" >()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

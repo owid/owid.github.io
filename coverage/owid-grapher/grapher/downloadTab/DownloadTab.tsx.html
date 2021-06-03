@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.38% </span>
+                <span class="strong">30.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>120/321</span>
+                <span class='fraction'>97/321</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>26/36</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">43.75% </span>
+                <span class="strong">30.43% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/32</span>
+                <span class='fraction'>7/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.38% </span>
+                <span class="strong">30.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>120/321</span>
+                <span class='fraction'>97/321</span>
             </div>
         
             
@@ -426,29 +426,29 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -765,35 +765,35 @@ interface DownloadTabProps {
 &nbsp;
 declare let Blob: any
 &nbsp;
-co<span class="fstat-no" title="function not covered" >n</span>st polyfillToBlob = (): void =&gt; {
-    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob#Polyfill
-    Object.defineProperty(HTMLCanvasElement.prototype, "toBlob", {
-        value: function (
-            callback: (blob: Blob) =&gt; void,
-            type: string,
-            quality: any
-        ) {
-            const binStr = atob(
-                (this as HTMLCanvasElement)
-                    .toDataURL(type, quality)
-                    .split(",")[1]
-            )
-            const len = binStr.length
-            const arr = new Uint8Array(len)
-&nbsp;
-            for (let i = 0; i &lt; len; i++) {
-                arr[i] = binStr.charCodeAt(i)
-            }
-&nbsp;
-            callback(new Blob([arr], { type: type || "image/png" }))
-        },
-    })
-}
+const polyfillToBlob = (): void =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    // https://developer.mozilla.org/en-US/docs/Web/API/HTMLCan</span>vasElement/toBlob#Polyfill</span>
+<span class="cstat-no" title="statement not covered" >    Object.defineProperty(HTML</span>CanvasElement.prototype, "toBlob", {
+<span class="cstat-no" title="statement not covered" >        value: function (</span>
+<span class="cstat-no" title="statement not covered" >            callback: (blob: Blob) =&gt; void,</span>
+<span class="cstat-no" title="statement not covered" >            type: string,</span>
+<span class="cstat-no" title="statement not covered" >            quality: any</span>
+<span class="cstat-no" title="statement not covered" >        ) {</span>
+<span class="cstat-no" title="statement not covered" >            const binStr = atob(</span>
+<span class="cstat-no" title="statement not covered" >                (this as HTMLCanvasElement)</span>
+<span class="cstat-no" title="statement not covered" >                    .toDataURL(type, quality)</span>
+<span class="cstat-no" title="statement not covered" >                    .split(",")[1]</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            const len = binStr.</span>length
+<span class="cstat-no" title="statement not covered" >            const arr = new Uint8Array(len)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                arr[i] = binStr.charC</span>odeAt(i)
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            callback(new Blob([arr], { </span>type: type || "image/png" }))
+<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // Wrapped because JSDOM does not support this method yet:
 // https://stackoverflow.com/questions/52968969/jest-url-createobjecturl-is-not-a-function/56643520#56643520
 const createObjectURL = (obj: any): string =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>    URL.createObjectURL ? URL.createObjectURL(obj) : ""
+    URL.createObjectURL ? URL.createObjectURL(obj) : ""
 &nbsp;
 @observer
 export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
@@ -805,8 +805,8 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.prop</span>s.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed private get targetWidth(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this</span>.idealBounds.width
+    @computed private get targetWidth(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this</span>.idealBounds.width</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
     @computed private get targetHeight<span class="fstat-no" title="function not covered" >(): number {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return this.idealBounds.height
@@ -824,11 +824,11 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
     @observable private pngPreviewUrl?: string
     @observable private isReady: boolean = false
     @action.bound private export(): void {
-        if (!HTMLCanvasElement.pr<span class="branch-0 cbranch-no" title="branch not covered" >o</span>totype.toBlob) polyfillToBlob()
+        if (!HTMLCanvasElement.prototype.toBlob) polyfillToBlob()
         this.createSvg()
         const reader = new FileReader()
-        re<span class="fstat-no" title="function not covered" >ader.onload = (ev: any): void =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            this.svgPreviewUrl = ev.target.r</span>esult as string
+        reader.onload = (ev: any): void =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >            this.svgPreviewUrl = ev.target.r</span>esult as string</span>
 <span class="cstat-no" title="statement not covered" ></span>            this.tryCreatePng(this.svgPreviewUrl)
 <span class="cstat-no" title="statement not covered" >        }</span>
         reader.readAsDataURL(this.svgBlob as Blob)
@@ -842,8 +842,8 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
         this.svgDownloadUrl = createObjectURL(this.svgBlob)
     }
 &nbsp;
-    @action.bound<span class="fstat-no" title="function not covered" > private tryCreatePng(svgPreviewUrl: string): void {</span>
-<span class="cstat-no" title="statement not covered" >        const { targetWidth, targetHeight } = this</span>
+    @action.bound private tryCreatePng(svgPreviewUrl: string): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const { targetWidth, targetHeight } = this</span></span>
 <span class="cstat-no" title="statement not covered" >        // Client-side SVG =&gt; PNG export. Somewhat experimental, so there's a lot of cross-browser f</span>iddling and fallbacks here.
 <span class="cstat-no" title="statement not covered" >        const img = new Image()</span>
 <span class="cstat-no" title="statement not covered" >        img.onload = (): void =&gt; {</span>
@@ -876,15 +876,15 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" ></span>        img.src = svgPreviewUrl
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >action.bound private markAsReady(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.isReady = tr</span>ue
+    @action.bound private markAsReady(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.isReady = tr</span>ue</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private g<span class="fstat-no" title="function not covered" >et fallbackPngUrl(): string {</span>
-<span class="cstat-no" title="statement not covered" >        return `${this.manager.baseUrl || "</span>"}.png${this.manager.queryStr || ""}`
+    @computed private get fallbackPngUrl(): string {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return `${this.manager.baseUrl || "</span>"}.png${this.manager.queryStr || ""}`</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    @computed private get baseFi<span class="fstat-no" title="function not covered" >lename(): string {</span>
-<span class="cstat-no" title="statement not covered" >        re</span>turn this.manager.displaySlug
+    @computed private get baseFilename(): string {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        re</span>turn this.manager.displaySlug</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onPNGDownload(</span>
@@ -935,8 +935,8 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get<span class="fstat-no" title="function not covered" > csvButton(): JSX.Element {</span>
-<span class="cstat-no" title="statement not covered" >        const { manager } =</span> this
+    @computed private get csvButton(): JSX.Element {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const { manager } =</span> this</span>
 <span class="cstat-no" title="statement not covered" >        const externalCsvLink = m</span>anager.externalCsvLink
 <span class="cstat-no" title="statement not covered" >        const csvFilename = manager.displaySlug + ".csv"</span>
 <span class="cstat-no" title="statement not covered" >        const props = externalCsvLink</span>
@@ -1057,7 +1057,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
 <span class="cstat-no" title="statement not covered" >        if (this.pngDownlo</span>adUrl !== undefined)
 <span class="cstat-no" title="statement not covered" >            URL.r</span>evokeObjectURL(this.pngDownloadUrl)
 <span class="cstat-no" title="statement not covered" >        if (this.svgDownloadUrl !==</span> undefined)
-<span class="cstat-no" title="statement not covered" >            URL.revokeObjectURL(this.sv<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >g</span></span></span></span></span></span></span></span></span></span>DownloadUrl)
+<span class="cstat-no" title="statement not covered" >            URL.revokeObjectURL(this.svg</span>DownloadUrl)
     }
 &nbsp;
     render(): JSX.Element {
@@ -1084,7 +1084,7 @@ export class DownloadTab extends React.Component&lt;DownloadTabProps&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

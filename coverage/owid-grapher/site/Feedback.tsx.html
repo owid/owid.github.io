@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.21% </span>
+                <span class="strong">51.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>142/232</span>
+                <span class='fraction'>120/232</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.83% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/24</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">23.53% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/21</span>
+                <span class='fraction'>4/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.21% </span>
+                <span class="strong">51.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>142/232</span>
+                <span class='fraction'>120/232</span>
             </div>
         
             
@@ -316,28 +316,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -564,28 +564,28 @@ import classnames from "classnames"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane"
 &nbsp;
 const sendFeedback = (<span class="fstat-no" title="function not covered" >feedback: Feedback) =&gt;</span>
-    new Promise((resolve, reject) =&gt; {
-        const json = toJS(feedback)
-        const req = new XMLHttpRequest()
-&nbsp;
-        json.environment = `Current URL: ${window.location.href}\nUser Agent: ${navigator.userAgent}\nViewport: ${window.innerWidth}x${window.innerHeight}`
-&nbsp;
-        req.addEventListener("readystatechange", () =&gt; {
-            if (req.readyState === 4) {
-                if (req.status !== 200)
-                    reject(`${req.status} ${req.statusText}`)
-                else resolve(undefined)
-            }
-        })
-&nbsp;
-        req.open(
-            "POST",
-            `https://owid-feedback.netlify.app/.netlify/functions/hello`
-        )
-        req.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
-&nbsp;
-        req.send(JSON.stringify(json))
-    })
+<span class="cstat-no" title="statement not covered" >    new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const json = toJS(feedback)</span>
+<span class="cstat-no" title="statement not covered" >        const req = new XMLHttpRequest()</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>        json.environment = `Current URL: ${window.location.href}\nUser Agent: ${navigator.userAgent}\nViewport: ${window.innerWidth}x${window.innerHeight}`
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        req.addEventListener("readystatechange", () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>            if (req.readyState === 4) {
+<span class="cstat-no" title="statement not covered" >                if (req.status !== 200)</span>
+<span class="cstat-no" title="statement not covered" >                    reject(`${req.status} ${req.statusText}`)</span>
+<span class="cstat-no" title="statement not covered" >                else resolve(undefined)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        req.open(</span>
+<span class="cstat-no" title="statement not covered" >            "POST",</span>
+<span class="cstat-no" title="statement not covered" >            `https://owid-feedba</span>ck.netlify.app/.netlify/functions/hello`
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        req.setRequestHeader("Content-Type", "application/json;charset=UTF-8")</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        req.send(JSON.stringify(json))</span>
+<span class="cstat-no" title="statement not covered" >    })</span>
 &nbsp;
 class Feedback {
     @observable name: string = ""
@@ -593,8 +593,8 @@ class Feedback {
     @observable message: string = ""
     environment: string = ""
 &nbsp;
-    @acti<span class="fstat-no" title="function not covered" >on.bound clear() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.name = ""
+    @action.bound clear() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        this.name = ""</span>
 <span class="cstat-no" title="statement not covered" >        this.email = ""</span>
 <span class="cstat-no" title="statement not covered" >        this.message = ""</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -610,8 +610,8 @@ export class FeedbackForm extends React.Component&lt;{
     @observable done: boolean = false
     @observable error: string | undefined
 &nbsp;
-    a<span class="fstat-no" title="function not covered" >sync submit() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        try {
+    async submit() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        try {</span>
 <span class="cstat-no" title="statement not covered" >            a</span>wait sendFeedback(this.feedback)
 <span class="cstat-no" title="statement not covered" >            this.feedb</span>ack.clear()
 <span class="cstat-no" title="statement not covered" >            this.done = true</span>
@@ -630,8 +630,8 @@ export class FeedbackForm extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.submit()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >action.bound onName(e: React.ChangeEvent&lt;HTMLInputElement&gt;) {</span>
-<span class="cstat-no" title="statement not covered" >        this.fe</span>edback.name = e.currentTarget.value
+    @action.bound onName(e: React.ChangeEvent&lt;HTMLInputElement&gt;) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.fe</span>edback.name = e.currentTarget.value</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onEmail(e: React.ChangeEvent&lt;HTMLInputElement&gt;) {</span>
@@ -652,9 +652,9 @@ export class FeedbackForm extends React.Component&lt;{
 &nbsp;
     renderBody() {
         const { loading, done } = this
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        const autofocus = this.props.autofocus ?? true
-        if (don<span class="branch-0 cbranch-no" title="branch not covered" >e) {</span>
-<span class="cstat-no" title="statement not covered" >            return (</span>
+        const autofocus = this.props.autofocus ?? true
+        if (done) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            return (</span></span>
 <span class="cstat-no" title="statement not covered" ></span>                &lt;div className="doneMessage"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;div className="icon"&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;FontAwesomeIcon icon={faPape</span>rPlane} /&gt;
@@ -712,11 +712,11 @@ export class FeedbackForm extends React.Component&lt;{
                             disabled={loading}
                         /&gt;
                     &lt;/div&gt;
-                    {<span class="branch-0 cbranch-no" title="branch not covered" >this.error ? (</span>
-                        &lt;div style={{ color: "red" }}&gt;{this.error}&lt;/div&gt;
+                    {this.error ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >                        &lt;div s</span>tyle={{ color: "red" }}&gt;{this.error}&lt;/div&gt;
                     ) : undefined}
-                    {<span class="branch-0 cbranch-no" title="branch not covered" >this.done ? (</span>
-                        &lt;div style={{ color: "green" }}&gt;
+                    {this.done ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >                        &lt;div s</span>tyle={{ color: "green" }}&gt;
                             Thanks for your feedback!
                         &lt;/div&gt;
                     ) : undefined}
@@ -784,7 +784,7 @@ export class FeedbackForm extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                        className="prompt"</span>
 <span class="cstat-no" title="statement not covered" ></span>                        data-track-note="page-open-feedback"
 <span class="cstat-no" title="statement not covered" >                        onClick={this.toggl</span>eOpen}
-<span class="cstat-no" title="statement not covered" >                    &gt;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >                    &gt;</span>
                         &lt;FontAwesomeIcon icon={faCommentAlt} /&gt; Feedback
                     &lt;/button&gt;
                 )}
@@ -808,7 +808,7 @@ export function runFeedbackPage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

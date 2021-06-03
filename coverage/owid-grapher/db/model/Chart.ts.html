@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.64% </span>
+                <span class="strong">58.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>161/253</span>
+                <span class='fraction'>149/253</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/16</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.78% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/18</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.64% </span>
+                <span class="strong">58.89% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>161/253</span>
+                <span class='fraction'>149/253</span>
             </div>
         
             
@@ -465,18 +465,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import {
     Entity,
     PrimaryGeneratedColumn,
@@ -534,8 +534,8 @@ export class Chart extends BaseEntity {
     static table: string = "charts"
 &nbsp;
     // Only considers published charts, because only in that case the mapping slug -&gt; id is unique
-    stati<span class="fstat-no" title="function not covered" >c async mapSlugsToIds(): Promise&lt;{ [slug: string]: number }&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        co</span>nst redirects = await db.queryMysql(
+    static async mapSlugsToIds(): Promise&lt;{ [slug: string]: number }&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        co</span>nst redirects = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" ></span>            `SELECT chart_id, slug FROM chart_slug_redirects`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        co</span>nst rows = await db.queryMysql(`
@@ -561,8 +561,8 @@ export class Chart extends BaseEntity {
 <span class="cstat-no" title="statement not covered" >        return</span> await Chart.findOne({ id: slugsById[slug] })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    static as<span class="fstat-no" title="function not covered" >ync setTags(chartId: number, tagIds: number[]): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        await db.transaction(</span>async (t) =&gt; {
+    static async setTags(chartId: number, tagIds: number[]): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        await db.transaction(</span>async (t) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" ></span>            const tagRows = tagIds.map((tagId) =&gt; [tagId, chartId])
 <span class="cstat-no" title="statement not covered" ></span>            await t.execute(`DELETE FROM chart_tags WHERE chartId=?`, [chartId])
 <span class="cstat-no" title="statement not covered" >            if (tagRows.lengt</span>h)
@@ -608,8 +608,8 @@ export class Chart extends BaseEntity {
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    s<span class="fstat-no" title="function not covered" >tatic async all(): Promise&lt;ChartRow[]&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const rows </span>= await db.knexTable(Chart.table)
+    static async all(): Promise&lt;ChartRow[]&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const rows </span>= await db.knexTable(Chart.table)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        for (const row of rows) {</span>
 <span class="cstat-no" title="statement not covered" >            row.config = JSON.parse(ro</span>w.config)
@@ -674,19 +674,19 @@ export class OldChart {
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
-export con<span class="fstat-no" title="function not covered" >s</span>t getGrapherById = async (grapherId: number): Promise&lt;any&gt; =&gt; {
-    const grapher = (
-        await db.queryMysql(`SELECT id, config FROM charts WHERE id=?`, [
-            grapherId,
-        ])
-    )[0]
-&nbsp;
-    if (!grapher) return undefined
-&nbsp;
-    const config = JSON.parse(grapher.config)
-    config.id = grapher.id
-    return config
-}
+export const getGrapherById = async (grapherId: number): Promise&lt;any&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const grapher = (</span></span>
+<span class="cstat-no" title="statement not covered" >        await db.queryMysql(`SELECT id, config</span> FROM charts WHERE id=?`, [
+<span class="cstat-no" title="statement not covered" >            graph</span>erId,
+<span class="cstat-no" title="statement not covered" >        ])</span>
+<span class="cstat-no" title="statement not covered" >    )[0]</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    if (!grapher) return undefined</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    co</span>nst config = JSON.parse(grapher.config)
+<span class="cstat-no" title="statement not covered" >    config.id = grapher.id</span>
+<span class="cstat-no" title="statement not covered" >    return config</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -694,7 +694,7 @@ export con<span class="fstat-no" title="function not covered" >s</span>t getGrap
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

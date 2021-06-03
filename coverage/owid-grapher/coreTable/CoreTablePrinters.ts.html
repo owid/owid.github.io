@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.86% </span>
+                <span class="strong">87.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/70</span>
+                <span class='fraction'>61/70</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.71% </span>
+                <span class="strong">41.18% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>22/34</span>
+                <span class='fraction'>7/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.86% </span>
+                <span class="strong">87.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>65/70</span>
+                <span class='fraction'>61/70</span>
             </div>
         
             
@@ -226,11 +226,11 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -306,7 +306,7 @@ export const toAlignedTextTable = (
     rows.forEach((row) =&gt; {
         headerSlugs.forEach((slug, index) =&gt; {
             const cellValue = row[slug]
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>            if (!cellValue) return
+            if (!cellValue) return
             const length = cellValue.toString().length
             if (length &gt; colWidths[index])
 <span class="branch-0 cbranch-no" title="branch not covered" >                colWidths[</span>index] =
@@ -320,8 +320,8 @@ export const toAlignedTextTable = (
     let runningWidth = 0
     const finalHeaderSlugs = headerSlugs.filter((slug, index) =&gt; {
         runningWidth = runningWidth + colWidths[index]
-<span class="branch-0 cbranch-no" title="branch not covered" >        if (runningWidth &lt;= maxCharactersPerLine) return true</span>
-<span class="cstat-no" title="statement not covered" >        return false</span>
+        if (runningWidth &lt;= maxCharactersPerLine) return true
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        return false</span></span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 &nbsp;
     const cellFn = (cellText = "", row: number, col: number) =&gt; {
@@ -334,17 +334,17 @@ export const toAlignedTextTable = (
         const padding = " ".repeat(width - cellLength)
 <span class="branch-0 cbranch-no" title="branch not covered" >        return alignRight<span class="branch-0 cbranch-no" title="branch not covered" > ? padding + cellV</span>alue : cellValue + padding</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    return (
-        (<span class="branch-0 cbranch-no" title="branch not covered" >finalHeaderSlugs.length !== headerSlugs.length</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" >        (<span class="branch-0 cbranch-no" title="branch not covered" >finalHeaderSlugs.length !== headerSlugs.length</span></span>
 <span class="cstat-no" title="statement not covered" >            ? `Showing ${finalHeaderSlugs.length} of ${headerSlugs.length} columns\n`</span>
-            : "") + toDelimited(" ", finalHeaderSlugs, rows, cellFn)
-    )
-}
+<span class="cstat-no" title="statement not covered" >            : "") + toDelimited(" ", finalHeaderSlugs, rows, cellFn)</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const toMarkdownTable = (
     slugs: string[],
     rows: any[],
-    formatFn?: CellFormatter<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
+    formatFn?: CellFormatter
 ): string =&gt;
     [
         slugs,
@@ -391,7 +391,7 @@ export const toDelimited = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/40</span>
+                <span class='fraction'>35/40</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/14</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/40</span>
+                <span class='fraction'>35/40</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,18 +125,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -167,22 +167,22 @@ export const SparkBarTimeSeriesValue = ({
     valueColor?: string
 }): JSX.Element =&gt; (
     &lt;div className={classnames("time-series-value", className)}&gt;
-        {<span class="branch-0 cbranch-no" title="branch not covered" >value !== undefined ? (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;span className="count"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;span style={{ color: valueColor }}&gt;{value}&lt;/span&gt;{</span>" "}
-<span class="cstat-no" title="statement not covered" >                    {tooltip<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span></span>
+        {value !== undefined ? (
+            &lt;&gt;
+                &lt;span className="count"&gt;
+                    &lt;span style={{ color: valueColor }}&gt;{value}&lt;/span&gt;{" "}
+                    {tooltip<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;Tippy content={too</span>ltip} maxWidth={250}&gt;
 <span class="cstat-no" title="statement not covered" >                            &lt;span className="help-icon"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;FontAwesomeIcon icon={f</span>aQuestionCircle} /&gt;
-<span class="cstat-no" title="statement not covered" >                            &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;/Tippy&gt;
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;span className={classnames("date", { latest: latest })}&gt;</span>
+                                &lt;FontAwesomeIcon icon={faQuestionCircle} /&gt;
+                            &lt;/span&gt;
+                        &lt;/Tippy&gt;
+                    )}
+                &lt;/span&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >                &lt;span className={classnames("date", { latest: latest })}&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    {displayDate}</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/span&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/&gt;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >            &lt;/&gt;</span>
         ) : undefined}
     &lt;/div&gt;
 )
@@ -193,7 +193,7 @@ export const SparkBarTimeSeriesValue = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.98% </span>
+                <span class="strong">85.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>53/57</span>
+                <span class='fraction'>49/57</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.98% </span>
+                <span class="strong">85.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/57</span>
+                <span class='fraction'>49/57</span>
             </div>
         
             
@@ -129,22 +129,22 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import * as shell from "shelljs"
 import * as util from "util"
 import { quote } from "shell-quote"
@@ -173,22 +173,22 @@ export const execWrapper = (
     options?: shell.ExecOptions
 ): Promise&lt;ExecReturn&gt; =&gt;
     new Promise((resolve, reject) =&gt; {
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        shell.exec(command, options || {}, (code, stdout, stderr) =&gt;
+        shell.exec(command, options || {}, (code, stdout, stderr) =&gt;
             code === 0
                 ? resolve({ code, stdout, stderr })
                 : reject(new ExecError({ code, stdout, stderr }))
         )
     })
 &nbsp;
-export const execFormatt<span class="fstat-no" title="function not covered" >ed = async (</span>
-<span class="cstat-no" title="statement not covered" >    cmd: string,</span>
+export const execFormatted = async (
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    cmd: string,</span></span>
 <span class="cstat-no" title="statement not covered" >    args: string[],</span>
 <span class="cstat-no" title="statement not covered" >    verbose = true</span>
 <span class="cstat-no" title="statement not covered" >): Promise&lt;ExecReturn&gt; =&gt; {</span>
-    const formatCmd = util.format(cmd, ...args.map((word) =&gt; quote([word])))
-    if (verbose) console.log(formatCmd)
-    return await execWrapper(formatCmd, { silent: !verbose })
-}
+<span class="cstat-no" title="statement not covered" >    co</span>nst formatCmd = util.format(cmd, ...args.map((word) =&gt; quote([word])))
+<span class="cstat-no" title="statement not covered" ></span>    if (verbose) console.log(formatCmd)
+<span class="cstat-no" title="statement not covered" >    return await execWrapper(fo</span>rmatCmd, { silent: !verbose })
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -196,7 +196,7 @@ export const execFormatt<span class="fstat-no" title="function not covered" >ed 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

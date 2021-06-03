@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.61% </span>
+                <span class="strong">82.61% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>52/67</span>
+                <span class='fraction'>19/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92% </span>
+                <span class="strong">91.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>23/25</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
@@ -375,8 +375,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -407,8 +407,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -695,7 +695,7 @@ export class GitCmsServer {
     }
 &nbsp;
     private async autopush() {
-        if (t<span class="branch-0 cbranch-no" title="branch not covered" >h</span>is.options.shouldAutoPush) this.git.push()
+        if (this.options.shouldAutoPush) this.git.push()
     }
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >pullCommand() {</span>
@@ -714,7 +714,7 @@ export class GitCmsServer {
     private async readFileCommand(
         filepath: string
     ): Promise&lt;GitCmsReadResponse&gt; {
-<span class="branch-0 cbranch-no" title="branch not covered" >        try {</span>
+        try {
             ensureNoParentLinksInFilePath(filepath)
 &nbsp;
             const absolutePath = this.baseDir + filepath
@@ -758,7 +758,7 @@ export class GitCmsServer {
         authorEmail = GIT_DEFAULT_EMAIL
     ): Promise&lt;GitCmsResponse&gt; {
         const filepath = rawFilepath.replace(/\~/g, "/")
-<span class="branch-0 cbranch-no" title="branch not covered" >        try {</span>
+        try {
             ensureNoParentLinksInFilePath(filepath)
 &nbsp;
             const absolutePath = this.baseDir + filepath
@@ -772,7 +772,7 @@ export class GitCmsServer {
 &nbsp;
             await this.autopush()
             return { success: true }
-        } catch (error) {
+        }<span class="branch-0 cbranch-no" title="branch not covered" > c</span>atch (error) {
             if (this.verbose) <span class="branch-0 cbranch-no" title="branch not covered" >console.</span>log(error)
             return { success: false, error }
         }
@@ -785,20 +785,20 @@ export class GitCmsServer {
         authorEmail = GIT_DEFAULT_EMAIL,
         commitMessage?: string
     ): Promise&lt;GitCmsResponse&gt; {
-<span class="branch-0 cbranch-no" title="branch not covered" >        try {</span>
+        try {
             ensureNoParentLinksInFilePath(filename)
 &nbsp;
             const absolutePath = this.baseDir + filename
             await writeFile(absolutePath, content, "utf8")
 &nbsp;
-<span class="branch-0 cbranch-no" title="branch not covered" >            const commitMsg = commitMessage</span>
-<span class="cstat-no" title="statement not covered" ></span>                ? commitMessage
+            const commitMsg = commitMessage
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                ? commitMessage</span>
 <span class="cstat-no" title="statement not covered" >                : existsSync(absolute</span>Path)
 <span class="cstat-no" title="statement not covered" >                ? `Updating ${filename}`</span>
 <span class="cstat-no" title="statement not covered" >                : `Adding ${filen</span>ame}`
 &nbsp;
             await this.commitFile(filename, commitMsg, authorName, authorEmail)
-            await this.autopush()<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
+            await this.autopush()
             return { success: true }
         } catch (error) {
             if (this.verbose) console.log(error)
@@ -880,7 +880,7 @@ const ensureNoParentLinksInFilePath = (filename: string) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

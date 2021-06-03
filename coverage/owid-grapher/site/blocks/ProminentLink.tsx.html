@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.42% </span>
+                <span class="strong">53.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>64/86</span>
+                <span class='fraction'>46/86</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/18</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.86% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/14</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.42% </span>
+                <span class="strong">53.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>64/86</span>
+                <span class='fraction'>46/86</span>
             </div>
         
             
@@ -187,24 +187,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
 import ReactDOM from "react-dom"
 import { observer } from "mobx-react"
@@ -233,8 +233,8 @@ class ProminentLink extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >    @computed private get originalSelectedEntities(): EntityName[] {</span>
-<span class="cstat-no" title="statement not covered" >        return getSelectedEntityNamesParam(this.originalUrl) ??</span> []
+    @computed private get originalSelectedEntities(): EntityName[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return getSelectedEntityNamesParam(this.originalUrl) ??</span> []</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get entitiesInGlobalEntitySelection<span class="fstat-no" title="function not covered" >(): EntityName[] {</span>
@@ -260,25 +260,25 @@ class ProminentLink extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
-export const r<span class="fstat-no" title="function not covered" >enderProminentLink = (globalEntitySelection?: SelectionArray) =&gt;</span>
-    document
-        .querySelectorAll&lt;HTMLElement&gt;(`.${PROMINENT_LINK_CLASSNAME}`)
-        .forEach((el) =&gt; {
-            const anchorTag = el.querySelector("a")
-            if (!anchorTag) return
-&nbsp;
-            const rendered = (
-                &lt;ProminentLink
-                    originalAnchorAttributes={getAttributesOfHTMLElement(
-                        anchorTag
-                    )}
-                    innerHTML={anchorTag.innerHTML}
-                    globalEntitySelection={globalEntitySelection}
-                /&gt;
-            )
-&nbsp;
-            ReactDOM.render(rendered, el)
-        })
+export const renderProminentLink = (globalEntitySelection?: SelectionArray) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    document</span></span>
+<span class="cstat-no" title="statement not covered" >        .querySelectorAll&lt;HTMLElement&gt;(`.${PROMINENT_LINK_CLASSNAME}`)</span>
+<span class="cstat-no" title="statement not covered" ></span>        .forEach((el) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>            const anchorTag = el.querySelector("a")
+<span class="cstat-no" title="statement not covered" >            i</span>f (!anchorTag) return
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const rendered = (</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;ProminentLink
+<span class="cstat-no" title="statement not covered" ></span>                    originalAnchorAttributes={getAttributesOfHTMLElement(
+<span class="cstat-no" title="statement not covered" >                        anchorTag</span>
+<span class="cstat-no" title="statement not covered" ></span>                    )}
+<span class="cstat-no" title="statement not covered" ></span>                    innerHTML={anchorTag.innerHTML}
+<span class="cstat-no" title="statement not covered" >                    globalEntitySelection={globalEntitySelection}</span>
+<span class="cstat-no" title="statement not covered" ></span>                /&gt;
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            ReactDOM.render(r</span>endered, el)
+<span class="cstat-no" title="statement not covered" >        })</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -286,7 +286,7 @@ export const r<span class="fstat-no" title="function not covered" >enderProminen
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

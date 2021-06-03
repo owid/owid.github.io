@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.25% </span>
+                <span class="strong">13.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/126</span>
+                <span class='fraction'>17/126</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/11</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.25% </span>
+                <span class="strong">13.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/126</span>
+                <span class='fraction'>17/126</span>
             </div>
         
             
@@ -222,12 +222,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -371,13 +371,13 @@ import filenamify from "filenamify"
 import { execFormatted } from "../db/execWrapper"
 import { JsonError } from "../clientUtils/owidTypes"
 &nbsp;
-const datasetToReadme = async (<span class="fstat-no" title="function not covered" >dataset: Dat</span>aset): Promise&lt;string&gt; =&gt; {
-    const source = await Source.findOne({ datasetId: dataset.id })
-    return `# ${dataset.name}\n\n${
-        (source &amp;&amp; source.description &amp;&amp; source.description.additionalInfo) ||
-        ""
-    }`
-}
+const datasetToReadme = async (<span class="fstat-no" title="function not covered" >dataset: Dataset): Promise&lt;string&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const source = aw</span>ait Source.findOne({ datasetId: dataset.id })
+<span class="cstat-no" title="statement not covered" >    return `# ${dataset.name}\n\n${</span>
+<span class="cstat-no" title="statement not covered" >        (source &amp;&amp; source.description</span> &amp;&amp; source.description.additionalInfo) ||
+<span class="cstat-no" title="statement not covered" >        ""</span>
+<span class="cstat-no" title="statement not covered" ></span>    }`
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function removeDatasetFromGitRepo(</span></span>
 <span class="cstat-no" title="statement not covered" >    datasetName: string,</span>
@@ -482,7 +482,7 @@ const datasetToReadme = async (<span class="fstat-no" title="function not covere
 <span class="cstat-no" title="statement not covered" ></span>        repoDir,
 <span class="cstat-no" title="statement not covered" ></span>        finalDatasetDir,
 <span class="cstat-no" title="statement not covered" >        tmpDatasetDir,</span>
-<span class="cstat-no" title="statement not covered" >        finalDatasetDir,<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >        finalDatasetDir,</span>
         finalDatasetDir,
     ])
 &nbsp;
@@ -514,7 +514,7 @@ const datasetToReadme = async (<span class="fstat-no" title="function not covere
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

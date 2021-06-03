@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">56.67% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/30</span>
+                <span class='fraction'>6/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.86% </span>
+                <span class="strong">23.08% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/35</span>
+                <span class='fraction'>6/26</span>
             </div>
         
             
@@ -1044,8 +1044,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
         this.manager.loadingIndicatorSetting = "off"
     }
 &nbsp;
-    @action.bound priva<span class="fstat-no" title="function not covered" >te loadingModalOn() {</span>
-<span class="cstat-no" title="statement not covered" >        this.manager.loadingIndicatorSetting = "loadin</span>g"
+    @action.bound private loadingModalOn() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.manager.loadingIndicatorSetting = "loadin</span>g"</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >resetLoadingModal() {</span>
@@ -1056,8 +1056,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
         this.loadingModalOff()
         exposeInstanceOnWindow(this, "explorerEditor")
 &nbsp;
-        if (this.props.doNotFetch)<span class="branch-0 cbranch-no" title="branch not covered" > return</span>
-<span class="cstat-no" title="statement not covered" ></span>
+        if (this.props.doNotFetch) return
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
 <span class="cstat-no" title="statement not covered" >        this.fetchExplorerProgramOnLoad()</span>
 <span class="cstat-no" title="statement not covered" >        this.startPollingLocalStorageForPreviewChanges()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -1117,8 +1117,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
 &nbsp;
     @observable.ref private program = new ExplorerProgram(this.props.slug, "")
 &nbsp;
-    @action.bound priva<span class="fstat-no" title="function not covered" >te async _save(slug: string, commitMessage: string) {</span>
-<span class="cstat-no" title="statement not covered" >        this.loadingModalOn()</span>
+    @action.bound private async _save(slug: string, commitMessage: string) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.loadingModalOn()</span></span>
 <span class="cstat-no" title="statement not covered" >        this.program.slug</span> = slug
 <span class="cstat-no" title="statement not covered" >        await this.gitCmsClient.writeRemoteFile({</span>
 <span class="cstat-no" title="statement not covered" >            filepath: th</span>is.program.fullPath,
@@ -1131,8 +1131,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        this.clearDraft()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound pr<span class="fstat-no" title="function not covered" >ivate async saveAs() {</span>
-<span class="cstat-no" title="statement not covered" >        const userSlug = prompt(</span>
+    @action.bound private async saveAs() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const userSlug = prompt(</span></span>
 <span class="cstat-no" title="statement not covered" >            `Create </span>a slug (URL friendly name) for this explorer. Your new file will be pushed to the '${this.props.gitCmsBranchName}' branch on GitHub.`,
 <span class="cstat-no" title="statement not covered" >            this.program.slug</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -1154,8 +1154,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        window.location.href = slu</span>g
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bo<span class="fstat-no" title="function not covered" >und private clearChanges() {</span>
-<span class="cstat-no" title="statement not covered" >        if (!confirm("Are y</span>ou sure you want to clear your local changes?"))
+    @action.bound private clearChanges() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (!confirm("Are y</span>ou sure you want to clear your local changes?"))</span>
 <span class="cstat-no" title="statement not covered" >            return</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        this.setProgram(this.programOnDisk.to</span>String())
@@ -1183,8 +1183,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render() {
-<span class="branch-0 cbranch-no" title="branch not covered" >        if (!this.isReady) return &lt;LoadingIndicator /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
+        if (!this.isReady) return &lt;LoadingIndicator /&gt;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
 <span class="cstat-no" title="statement not covered" >        const { prog</span>ram, isModified } = this
 <span class="cstat-no" title="statement not covered" >        const { isNewFile, slug } = program</span>
 <span class="cstat-no" title="statement not covered" >        const</span> previewLink = `/admin/${EXPLORERS_PREVIEW_ROUTE}/${slug}`
@@ -1208,8 +1208,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
                 key="saveAs"
                 disabled={isNewFile}
                 title={
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    isNewFile</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                        ? "You need to save this file first."
+                    isNewFile
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                        ? "You need to save this file first."</span>
 <span class="cstat-no" title="statement not covered" >                        : "Saves file to disk, commits and pushes to G</span>itHub"
                 }
                 className={classNames("btn", "btn-secondary")}
@@ -1223,7 +1223,7 @@ export class ExplorerCreatePage extends React.Component&lt;{
             &lt;button
                 key="clear"
                 disabled={!isModified}
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                title={isModified ? "" : "No changes"}
+                title={isModified ? "" : "No changes"}
                 className={classNames("btn", "btn-secondary")}
                 onClick={this.clearChanges}
             &gt;
@@ -1275,8 +1275,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >}&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    private hotTableComponent = React.createRef&lt;HotTable&gt;()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed private g<span class="fstat-no" title="function not covered" >e</span>t program() {</span>
-<span class="cstat-no" title="statement not covered" >        return t</span>his.props.program
+<span class="cstat-no" title="statement not covered" >    @computed private ge</span>t program() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return t</span>his.props.program</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    @computed private get programOnDisk<span class="fstat-no" title="function not covered" >() {</span></span>
@@ -1402,7 +1402,7 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() </span>{</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;HotTable</span>
-<span class="cstat-no" title="statement not covered" >                settings={this.hotSettings}<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >                settings={this.hotSettings}</span>
                 ref={this.hotTableComponent as any}
                 licenseKey={"non-commercial-and-evaluation"}
             /&gt;
@@ -1471,7 +1471,7 @@ class TemplatesComponent extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

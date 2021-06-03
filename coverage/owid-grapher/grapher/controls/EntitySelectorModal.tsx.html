@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.27% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>17/22</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.24% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/29</span>
+                <span class='fraction'>0/21</span>
             </div>
         
             
@@ -708,14 +708,14 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed get searchResu<span class="fstat-no" title="function not covered" >l</span>ts(): SearchableEntity[] {</span>
-<span class="cstat-no" title="statement not covered" >        return this.searchInput</span>
+<span class="cstat-no" title="statement not covered" >    @computed get searchResul</span>ts(): SearchableEntity[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.searchInput</span></span>
 <span class="cstat-no" title="statement not covered" >            ? this.fuzzy.search(t</span>his.searchInput)
 <span class="cstat-no" title="statement not covered" ></span>            : sortBy(this.searchableEntities, (result): any =&gt; result.name)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.d</span>ismissable) this.props.onDismiss()
+<span class="cstat-no" title="statement not covered" >    @a</span>ction.bound onClickOutside(e: MouseEvent): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (this.d</span>ismissable) this.props.onDismiss()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDidMount(): void {</span></span>
@@ -744,8 +744,8 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" ></span>        } else if (e.key === "Escape") this.props.onDismiss()
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClear(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.props.select</span>ionArray.clearSelection()
+<span class="cstat-no" title="statement not covered" >    @a</span>ction.bound onClear(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.props.select</span>ionArray.clearSelection()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span></span>
@@ -855,8 +855,8 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >    base: React.RefObject&lt;</span>HTMLDivElement&gt; = React.createRef()
 <span class="cstat-no" title="statement not covered" >    dismissable: boolean = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed private get availableEn<span class="fstat-no" title="function not covered" >t</span>ities(): { id: string; label: string }[] {</span>
-<span class="cstat-no" title="statement not covered" >        const availableItems: { id: string; label: string }[] </span>= []
+<span class="cstat-no" title="statement not covered" >    @computed private get availableEnt</span>ities(): { id: string; label: string }[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const availableItems: { id: string; label: string }[] </span>= []</span>
 <span class="cstat-no" title="statement not covered" >        this</span>.props.selectionArray.availableEntityNames.forEach((name) =&gt; {
 <span class="cstat-no" title="statement not covered" >            availableItems.push({</span>
 <span class="cstat-no" title="statement not covered" >                id: name,</span>
@@ -876,8 +876,8 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >            : sortBy(this.a</span>vailableEntities, (result): any =&gt; result.label)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickOutside(e: MouseEvent): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (thi</span>s.base &amp;&amp; !this.base.current!.contains(e.target as Node))
+<span class="cstat-no" title="statement not covered" >    @a</span>ction.bound onClickOutside(e: MouseEvent): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (thi</span>s.base &amp;&amp; !this.base.current!.contains(e.target as Node))</span>
 <span class="cstat-no" title="statement not covered" >            this.props.onDismiss()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -929,7 +929,7 @@ interface SearchableEntity {
 <span class="cstat-no" title="statement not covered" >                    &lt;div c</span>lassName="wrapper"&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;</span>input
 <span class="cstat-no" title="statement not covered" >                            type="search"</span>
-<span class="cstat-no" title="statement not covered" >                            placeholder="Search<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >.</span></span></span></span></span></span></span></span></span>.."
+<span class="cstat-no" title="statement not covered" >                            placeholder="Search.</span>.."
                             value={searchInput}
                             onInput={(e): void =&gt; {
                                 this.searchInput = e.currentTarget.value
@@ -985,7 +985,7 @@ export class EntitySelectorModal extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

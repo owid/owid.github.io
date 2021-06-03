@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/15</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/25</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -581,24 +581,24 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get<span class="fstat-no" title="function not covered" > manager(): ShareMenuManager {</span>
-<span class="cstat-no" title="statement not covered" >        return t</span>his.props.manager
+    @computed get manager(): ShareMenuManager {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return t</span>his.props.manager</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get titl<span class="fstat-no" title="function not covered" >e(): string {</span>
-<span class="cstat-no" title="statement not covered" >        return this.manager.current</span>Title ?? ""
+    @computed get title(): string {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.manager.current</span>Title ?? ""</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get isDisabled<span class="fstat-no" title="function not covered" >(): boolean {</span>
 <span class="cstat-no" title="statement not covered" ></span>        return !this.manager.slug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed get canonicalUrl(): string | undefined {</span>
-<span class="cstat-no" title="statement not covered" >        return this.manag</span>er.canonicalUrl
+    @computed get canonicalUrl(): string | undefined {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.manag</span>er.canonicalUrl</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.<span class="fstat-no" title="function not covered" >bound dismiss(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.props.onDismiss()</span>
+    @action.bound dismiss(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.props.onDismiss()</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onClickSomewhere(): void {</span>
@@ -740,13 +740,13 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >}&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    dismissable = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @<span class="fstat-no" title="function not covered" >a</span>ction.bound onClickSomewhere(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        if (this.dismissable) this.manager.removePopup(EmbedMenu)
+<span class="cstat-no" title="statement not covered" >    @a</span>ction.bound onClickSomewhere(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        if (this.dismissable) this.manager.removePopup(EmbedMenu)</span>
 <span class="cstat-no" title="statement not covered" >        else </span>this.dismissable = true
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @compute<span class="fstat-no" title="function not covered" >d</span> get manager(): ShareMenuManager {</span>
-<span class="cstat-no" title="statement not covered" >        return this.</span>props.manager
+<span class="cstat-no" title="statement not covered" >    @computed</span> get manager(): ShareMenuManager {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>props.manager</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    @action.bound <span class="fstat-no" title="function not covered" >onClic</span>k(): void {</span>
@@ -754,7 +754,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    componentDi</span>dMount(): void {</span>
-<span class="cstat-no" title="statement not covered" >        document.addEventListener("cl<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >i</span></span></span></span></span></span></span></span>ck", this.onClickSomewhere)
+<span class="cstat-no" title="statement not covered" >        document.addEventListener("cli</span>ck", this.onClickSomewhere)
     }
 &nbsp;
     componentWillUnmount(): void {
@@ -784,7 +784,7 @@ export class ShareMenu extends React.Component&lt;ShareMenuProps, ShareMenuState
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

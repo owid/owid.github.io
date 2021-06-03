@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>50/50</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">42.86% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/7</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>31/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>1/2</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>50/50</span>
+                <span class='fraction'>31/50</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -195,25 +195,25 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -304,29 +304,29 @@ interface ExplorerPageSettings {
     urlMigrationSpec?: ExplorerPageUrlMigrationSpec
 }
 &nbsp;
-co<span class="fstat-no" title="function not covered" >n</span>st ExplorerContent = ({ content }: { content: string }) =&gt; {
-    return (
-        &lt;div className="explorerContentContainer"&gt;
-            &lt;div className="sidebar"&gt;&lt;/div&gt;
-            &lt;div className="article-content"&gt;
-                &lt;section&gt;
-                    &lt;div className="wp-block-columns is-style-sticky-right"&gt;
-                        &lt;div
-                            className="wp-block-column"
-                            dangerouslySetInnerHTML={{
-                                __html: formatReusableBlock(content),
-                            }}
-                        &gt;&lt;/div&gt;
-                        &lt;div className="wp-block-column"&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/section&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    )
-}
+const ExplorerContent = ({ content }: { content: string }) =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    return (</span></span>
+<span class="cstat-no" title="statement not covered" >        &lt;div className="explorerContentContainer"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="sidebar"&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;div className="article-content"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;section&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;div className="wp-block-columns is-style-sticky-right"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
+<span class="cstat-no" title="statement not covered" >                            className="wp-block-column"</span>
+<span class="cstat-no" title="statement not covered" >                            dangerouslySetInnerHTML={{</span>
+<span class="cstat-no" title="statement not covered" >                                __html: formatReusableBlock(content),</span>
+<span class="cstat-no" title="statement not covered" >                            }}</span>
+<span class="cstat-no" title="statement not covered" >                        &gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;div className="wp-block-column"&gt;&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;/section&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const ExplorerPage = (props: ExplorerPageSettings) =&gt; {
-    const {<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span>
+    const {
         wpContent,
         program,
         grapherConfigs,
@@ -394,7 +394,7 @@ window.Explorer.renderSingleExplorerOnExplorerPage(explorerProgram, grapherConfi
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

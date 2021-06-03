@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.45% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>31/44</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>11/16</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
@@ -261,18 +261,18 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">20x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">19x</span>
@@ -331,7 +331,7 @@ export class SparkBars&lt;T&gt; extends React.Component&lt;SparkBarsProps&lt;T&g
     }
 &nbsp;
     @computed get maxY(): number | undefined {
-        return m<span class="branch-0 cbranch-no" title="branch not covered" >a</span>x(this.bars.map((d) =&gt; (d ? this.props.y(d) ?? 0 : 0)))
+        return max(this.bars.map((d) =&gt; (d ? this.props.y(d) ?? 0 : 0)))
     }
 &nbsp;
     @computed get barHeightScale(): ScaleLinear&lt;number, number&gt; {
@@ -353,9 +353,9 @@ export class SparkBars&lt;T&gt; extends React.Component&lt;SparkBarsProps&lt;T&g
     }
 &nbsp;
     @bind barState(d: number): BarState {
-        if (d === this.props.highlight<span class="branch-0 cbranch-no" title="branch not covered" >e</span>dX) return BarState.highlighted
-        if (d === this.props.current<span class="branch-0 cbranch-no" title="branch not covered" >X) return BarState.current</span>
-<span class="cstat-no" title="statement not covered" >        if (this.props.highlightedX !== undefined) </span>return BarState.faint
+        if (d === this.props.highlightedX) return BarState.highlighted
+        if (d === this.props.currentX) return BarState.current
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        if (this.props.highlightedX !== undefined) </span>return BarState.faint</span>
 <span class="cstat-no" title="statement not covered" >        return BarState.normal</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -379,7 +379,7 @@ export class SparkBars&lt;T&gt; extends React.Component&lt;SparkBarsProps&lt;T&g
                     &lt;div
                         key={i}
                         className="bar-wrapper"
-<span class="fstat-no" title="function not covered" ></span>                        onMouseEnter={() =&gt; this.props.onHover?.(d, i)}
+                        onMouseEnter={() =&gt; this.props.onHover?.(d, i)}
                     &gt;
                         {<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.props.highlightedX === i &amp;&amp;</span></span></span>
 <span class="cstat-no" title="statement not covered" >                            d </span>!== undefined &amp;&amp;
@@ -404,7 +404,7 @@ export class SparkBars&lt;T&gt; extends React.Component&lt;SparkBarsProps&lt;T&g
             &lt;/div&gt;
         )
     }
-}<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -412,7 +412,7 @@ export class SparkBars&lt;T&gt; extends React.Component&lt;SparkBarsProps&lt;T&g
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

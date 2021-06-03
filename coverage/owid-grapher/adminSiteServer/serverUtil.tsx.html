@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.3% </span>
+                <span class="strong">79.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/54</span>
+                <span class='fraction'>43/54</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.3% </span>
+                <span class="strong">79.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/54</span>
+                <span class='fraction'>43/54</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,17 +94,17 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -122,18 +122,18 @@ import { ADMIN_BASE_URL } from "../settings/serverSettings"
 import { JsonError } from "../clientUtils/owidTypes"
 &nbsp;
 // Fail-fast integer conversion, for e.g. ids in url params
-expo<span class="fstat-no" title="function not covered" >r</span>t const expectInt = (value: any): number =&gt; {
-    const num = parseInt(value)
-    if (isNaN(num))
-        throw new JsonError(`Expected integer value, not '${value}'`, 400)
-    return num
-}
+export const expectInt = (value: any): number =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const num = parseInt(value)</span></span>
+<span class="cstat-no" title="statement not covered" >    if (isNaN(num))</span>
+<span class="cstat-no" title="statement not covered" >        throw new Json</span>Error(`Expected integer value, not '${value}'`, 400)
+<span class="cstat-no" title="statement not covered" >    return num</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const tryInt = <span class="fstat-no" title="function not covered" >(value: any, defaultNum: number): number =&gt; {</span>
-    const num = parseInt(value)
-    if (isNaN(num)) return defaultNum
-    return num
-}
+<span class="cstat-no" title="statement not covered" >    const num = parse</span>Int(value)
+<span class="cstat-no" title="statement not covered" >    if (isNaN(num)) return defaultNum</span>
+<span class="cstat-no" title="statement not covered" >    return num</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // Generate a static html page string from a given JSX element
 export const renderToHtmlPage = (<span class="fstat-no" title="function not covered" >element: any) =&gt;</span>
@@ -151,7 +151,7 @@ export const absoluteUrl = (<span class="fstat-no" title="function not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

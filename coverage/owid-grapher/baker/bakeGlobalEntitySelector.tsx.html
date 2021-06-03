@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">48.89% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/45</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>5/8</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">42.86% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>3/7</span>
+                <span class='fraction'>22/45</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">48.89% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>45/45</span>
+                <span class='fraction'>22/45</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,29 +102,29 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
 import * as ReactDOMServer from "react-dom/server"
 import { ENV } from "../settings/serverSettings"
@@ -135,30 +135,30 @@ import {
 } from "../grapher/controls/globalEntitySelector/GlobalEntitySelectorConstants"
 import { SelectionArray } from "../grapher/selection/SelectionArray"
 &nbsp;
-export const bakeGlob<span class="fstat-no" title="function not covered" >alEntitySelector = (cheerioEl: CheerioStatic) =&gt; {</span>
-    // The data attr used to be `data-entity-select`, but later changed for consistency in the code.
-    // But we should still support the old attribute.
-    cheerioEl(`*[data-entity-select], ${GLOBAL_ENTITY_SELECTOR_ELEMENT}`).each(
-        (_, el) =&gt; {
-            const $el = cheerioEl(el)
-            const $section = $el.closest("section")
-&nbsp;
-            const rendered = ReactDOMServer.renderToString(
-                &lt;GlobalEntitySelector
-                    environment={ENV}
-                    selection={new SelectionArray()}
-                /&gt;
-            )
-&nbsp;
-            // Move the element to top-level where &lt;section&gt;s are,
-            // in order to make position:sticky work.
-            $el.remove()
-            $el.attr(GLOBAL_ENTITY_SELECTOR_DATA_ATTR, "")
-            $el.addClass("global-entity-control-container")
-            $el.html(rendered).insertAfter($section)
-        }
-    )
-}
+export const bakeGlobalEntitySelector = (cheerioEl: CheerioStatic) =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    // The data attr u</span>sed to be `data-entity-select`, but later changed for consistency in the code.</span>
+<span class="cstat-no" title="statement not covered" ></span>    // But we should still support the old attribute.
+<span class="cstat-no" title="statement not covered" >    cheerioEl(`*[data-entity-select], ${GLOBAL_ENTITY_SELECTOR_ELEM</span>ENT}`).each(
+<span class="cstat-no" title="statement not covered" >        (_, el) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const $el</span> = cheerioEl(el)
+<span class="cstat-no" title="statement not covered" >            const $section = $el.closest("section")</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const r</span>endered = ReactDOMServer.renderToString(
+<span class="cstat-no" title="statement not covered" ></span>                &lt;GlobalEntitySelector
+<span class="cstat-no" title="statement not covered" >                    environment={ENV}</span>
+<span class="cstat-no" title="statement not covered" >                    selection={new Selectio</span>nArray()}
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            // Move the element to top-level where &lt;section&gt;s are,</span>
+<span class="cstat-no" title="statement not covered" >            // in order to make position:sticky work.</span>
+<span class="cstat-no" title="statement not covered" >            $el.remove()</span>
+<span class="cstat-no" title="statement not covered" >            $el.attr(GLOBAL_ENTITY_SELECTOR_DATA_A</span>TTR, "")
+<span class="cstat-no" title="statement not covered" >            $el.addClass("global-entity-control-container")</span>
+<span class="cstat-no" title="statement not covered" >            $el.html(rendered).insertAfter($section)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -166,7 +166,7 @@ export const bakeGlob<span class="fstat-no" title="function not covered" >alEnti
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.79% </span>
+                <span class="strong">94.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>169/197</span>
+                <span class='fraction'>186/197</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.93% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>33/56</span>
+                <span class='fraction'>16/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.3% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>21/23</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.79% </span>
+                <span class="strong">94.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>169/197</span>
+                <span class='fraction'>186/197</span>
             </div>
         
             
@@ -467,23 +467,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -577,7 +577,7 @@ export class MapTooltip extends React.Component&lt;MapTooltipProps&gt; {
 &nbsp;
     @computed private get sparkBarsData(): SparkBarsDatum[] {
         const tooltipDatum = this.props.tooltipDatum
-<span class="branch-0 cbranch-no" title="branch not covered" ></span>        if (!tooltipDatum) return []
+        if (!tooltipDatum) return []
 &nbsp;
         const sparkBarValues: SparkBarsDatum[] = []
 <span class="branch-0 cbranch-no" title="branch not covered" >        this.sparkBarColumn.valueByEntityNameAndTime</span>
@@ -598,7 +598,7 @@ export class MapTooltip extends React.Component&lt;MapTooltipProps&gt; {
     @computed private get sparkBarsDomain(): [number, number] {
         const lastVal = last(this.sparkBarsData)
 &nbsp;
-        const end = lastVal<span class="branch-0 cbranch-no" title="branch not covered" > </span>? this.sparkBarsDatumXAccessor(lastVal) : 0
+        const end = lastVal ? this.sparkBarsDatumXAccessor(lastVal) : 0
         const start = <span class="branch-0 cbranch-no" title="branch not covered" >end &gt; 0 ? end - this.sparkBarsToDis</span>play + 1 : 0
 &nbsp;
         return [start, end]
@@ -696,24 +696,24 @@ export class MapTooltip extends React.Component&lt;MapTooltipProps&gt; {
                         padding: "0.3em 0.3em",
                     }}
                 &gt;
-                    {tooltipDatum<span class="branch-0 cbranch-no" title="branch not covered" > ? (</span>
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;div className="map-tooltip"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            &lt;div className="trend"&gt;
-<span class="cstat-no" title="statement not covered" >                                {renderSparkBars &amp;&amp;</span> (
-<span class="cstat-no" title="statement not covered" ></span>                                    &lt;div className="plot"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                                        &lt;SparkBars&lt;SparkBarsDatum&gt;
-<span class="cstat-no" title="statement not covered" >                                            {...this.sparkBar</span>sProps}
-<span class="cstat-no" title="statement not covered" ></span>                                            currentX={this.currentSparkBar}
-<span class="cstat-no" title="statement not covered" ></span>                                            color={barColor}
-<span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    &lt;/div&gt;
-<span class="cstat-no" title="statement not covered" ></span>                                )}
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    className={
-<span class="cstat-no" title="statement not covered" ></span>                                        "value" +
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                                        (renderSparkBars ? "" : " no-plot")
-<span class="cstat-no" title="statement not covered" ></span>                                    }
-<span class="cstat-no" title="statement not covered" >                                &gt;<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span></span></span></span></span></span></span>
+                    {tooltipDatum ? (
+                        &lt;div className="map-tooltip"&gt;
+                            &lt;div className="trend"&gt;
+                                {renderSparkBars &amp;&amp; (
+                                    &lt;div className="plot"&gt;
+                                        &lt;SparkBars&lt;SparkBarsDatum&gt;
+                                            {...this.sparkBarsProps}
+                                            currentX={this.currentSparkBar}
+                                            color={barColor}
+                                        /&gt;
+                                    &lt;/div&gt;
+                                )}
+                                &lt;div
+                                    className={
+                                        "value" +
+                                        (renderSparkBars ? "" : " no-plot")
+                                    }
+                                &gt;
                                     &lt;SparkBarTimeSeriesValue
                                         className="current"
                                         value={tooltipDatum.displayValue}
@@ -754,7 +754,7 @@ export class MapTooltip extends React.Component&lt;MapTooltipProps&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

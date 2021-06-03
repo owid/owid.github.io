@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>3/9</span>
             </div>
         
             
@@ -314,7 +314,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -322,11 +322,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -498,16 +498,16 @@ const figuresFromDOM = (
 // Determine whether this device is powerful enough to handle
 // loading a bunch of inline interactive charts
 // 680px is also used in CSS – keep it in sync if you change this
-export const shouldPr<span class="fstat-no" title="function not covered" >ogressiveEmbed = () =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    !isMobile() ||</span>
+export const shouldProgressiveEmbed = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    !isMobile() ||</span></span>
 <span class="cstat-no" title="statement not covered" >    window.screen.width &gt; 680 ||</span>
 <span class="cstat-no" title="statement not covered" >    pageContainsGlobalEntitySelector()</span>
 &nbsp;
 const pageContainsGlobalEntitySelector = <span class="fstat-no" title="function not covered" >() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    globalEntitySelectorElement() !=</span>= null
 &nbsp;
-const glo<span class="fstat-no" title="function not covered" >balEntitySelectorElement = () =&gt;</span>
-    document.querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
+const globalEntitySelectorElement = () =&gt;
+<span class="fstat-no" title="function not covered" >    document.</span>querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
 &nbsp;
 class MultiEmbedder {
     private figuresObserver: IntersectionObserver | undefined
@@ -515,8 +515,8 @@ class MultiEmbedder {
     graphersAndExplorersToUpdate: Set&lt;SelectionArray&gt; = new Set()
 &nbsp;
     constructor() {
-        if (typeof window !== "undefined" &amp;&amp; "Intersec<span class="branch-0 cbranch-no" title="branch not covered" >tionObserver" in window) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            this.figuresObserver = new IntersectionObserver(
+        if (typeof window !== "undefined" &amp;&amp; "IntersectionObserver" in window) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>            this.figuresObserver = new IntersectionObserver(</span>
 <span class="cstat-no" title="statement not covered" >                this.onIntersecting.bind(this),</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
 <span class="cstat-no" title="statement not covered" ></span>                    rootMargin: "200%",
@@ -603,7 +603,7 @@ class MultiEmbedder {
 <span class="cstat-no" title="statement not covered" ></span>                ...common,
 <span class="cstat-no" title="statement not covered" ></span>                ...deserializeJSONFromHTML(html, EMBEDDED_EXPLORER_DELIMITER),
 <span class="cstat-no" title="statement not covered" >                grapherConfigs: deserializeJSONFromHTM</span>L(
-<span class="cstat-no" title="statement not covered" >                    html,<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >                    html,</span>
                     EMBEDDED_EXPLORER_GRAPHER_CONFIGS
                 ),
                 queryStr,
@@ -667,7 +667,7 @@ export const MultiEmbedderSingleton = new MultiEmbedder()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

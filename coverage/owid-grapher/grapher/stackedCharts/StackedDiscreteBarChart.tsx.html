@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.47% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>40/53</span>
+                <span class='fraction'>10/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.3% </span>
+                <span class="strong">20.59% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>18/47</span>
+                <span class='fraction'>7/34</span>
             </div>
         
             
@@ -1480,34 +1480,34 @@ export class StackedDiscreteBarChart
         return this.props.manager
     }
 &nbsp;
-    @computed privat<span class="fstat-no" title="function not covered" >e get bounds(): Bounds {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return (this.props.bounds ?? DEFAULT_BOUNDS).padRight(10)
+    @computed private get bounds(): Bounds {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        return (this.props.bounds ?? DEFAULT_BOUNDS).padRight(10)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get baseFontSiz<span class="fstat-no" title="function not covered" >e(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.manager.baseFontSize </span>?? BASE_FONT_SIZE
+    @computed private get baseFontSize(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.manager.baseFontSize </span>?? BASE_FONT_SIZE</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed private get labelStyle() {</span>
-<span class="cstat-no" title="statement not covered" >        return {</span>
+    @computed private get labelStyle() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return {</span></span>
 <span class="cstat-no" title="statement not covered" >            fontSize: 0.75 * this.baseFontSize,</span>
 <span class="cstat-no" title="statement not covered" ></span>            fontWeight: 700,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Account for the width of the legend
-    @computed private get labe<span class="fstat-no" title="function not covered" >lWidth(): number {</span>
-<span class="cstat-no" title="statement not covered" >        const labels = this.items.map((item) =&gt; item.label)</span>
+    @computed private get labelWidth(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const labels = this.items.map((item) =&gt; item.label)</span></span>
 <span class="cstat-no" title="statement not covered" >        const longestLabel = maxBy(labels, (d) =&gt; d.length)</span>
 <span class="cstat-no" title="statement not covered" >        return Bounds.forTex</span>t(longestLabel, this.labelStyle).width
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get <span class="fstat-no" title="function not covered" >x0(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return 0</span>
+    @computed private get x0(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return 0</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed pr<span class="fstat-no" title="function not covered" >ivate get allPoints(): StackedPoint&lt;EntityName&gt;[] {</span>
-<span class="cstat-no" title="statement not covered" >        retu</span>rn flatten(this.series.map((series) =&gt; series.points))
+    @computed private get allPoints(): StackedPoint&lt;EntityName&gt;[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        retu</span>rn flatten(this.series.map((series) =&gt; series.points))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Now we can work out the main x axis scale
@@ -1525,8 +1525,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        return [this.bound</span>s.left + this.labelWidth, this.bounds.right]
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private<span class="fstat-no" title="function not covered" > get yAxis(): AxisConfig {</span>
-<span class="cstat-no" title="statement not covered" >        return this.manager.yAxis || new AxisConfig()</span>
+    @computed private get yAxis(): AxisConfig {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.manager.yAxis || new AxisConfig()</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get axis<span class="fstat-no" title="function not covered" >(): HorizontalAxis {</span>
@@ -1540,8 +1540,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" ></span>        return axis
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @<span class="fstat-no" title="function not covered" >computed private get innerBounds(): Bounds {</span>
-<span class="cstat-no" title="statement not covered" >        return this.boun</span>ds
+    @computed private get innerBounds(): Bounds {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.boun</span>ds</span>
 <span class="cstat-no" title="statement not covered" >            .padLeft(this.labelWid</span>th)
 <span class="cstat-no" title="statement not covered" ></span>            .padBottom(this.axis.height)
 <span class="cstat-no" title="statement not covered" >            .padTop(this</span>.legendPaddingTop)
@@ -1587,8 +1587,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get <span class="fstat-no" title="function not covered" >barHeight(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return (0.8 * this</span>.innerBounds.height) / this.items.length
+    @computed private get barHeight(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return (0.8 * this</span>.innerBounds.height) / this.items.length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get barSpacing<span class="fstat-no" title="function not covered" >(): number {</span>
@@ -1613,8 +1613,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        return this.bounds.width</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @comput<span class="fstat-no" title="function not covered" >ed get legendAlign(): LegendAlign {</span>
-<span class="cstat-no" title="statement not covered" >        return LegendAlign.left</span>
+    @computed get legendAlign(): LegendAlign {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return LegendAlign.left</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get fontSize<span class="fstat-no" title="function not covered" >(): number {</span>
@@ -1865,7 +1865,7 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" ></span>                                &lt;/td&gt;
 <span class="cstat-no" title="statement not covered" ></span>                                &lt;td
 <span class="cstat-no" title="statement not covered" >                                    style={{</span>
-<span class="cstat-no" title="statement not covered" >                                        paddingRigh<span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >t</span></span></span></span></span></span></span></span></span></span></span></span></span></span>: "0.8em",
+<span class="cstat-no" title="statement not covered" >                                        paddingRight</span>: "0.8em",
                                         fontSize: "0.9em",
                                     }}
                                 &gt;
@@ -2011,7 +2011,7 @@ export class StackedDiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 10:34:27 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 03 2021 13:09:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
