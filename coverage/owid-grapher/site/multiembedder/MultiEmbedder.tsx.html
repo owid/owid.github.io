@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.38% </span>
+                <span class="strong">59.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>89/145</span>
+                <span class='fraction'>94/159</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">61.38% </span>
+                <span class="strong">59.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>89/145</span>
+                <span class='fraction'>94/159</span>
             </div>
         
             
@@ -258,7 +258,21 @@
 <a name='L199'></a><a href='#L199'>199</a>
 <a name='L200'></a><a href='#L200'>200</a>
 <a name='L201'></a><a href='#L201'>201</a>
-<a name='L202'></a><a href='#L202'>202</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -321,7 +335,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -366,6 +380,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -403,9 +418,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -486,6 +508,9 @@ import {
     migrateSelectedEntityNamesParam,
 } from "../../grapher/core/EntityUrlBuilder"
 import { hydrateGlobalEntitySelectorIfAny } from "../../grapher/controls/globalEntitySelector/GlobalEntitySelector"
+import { action } from "mobx"
+import { Annotation } from "../../clientUtils/owidTypes"
+import { hydrateAnnotatingDataValue } from "../AnnotatingDataValue"
 &nbsp;
 const figuresFromDOM = (
     container: HTMLElement | Document = document,
@@ -503,11 +528,11 @@ export const shouldProgressiveEmbed = () =&gt;
 <span class="cstat-no" title="statement not covered" >    window.screen.width &gt; 680 ||</span>
 <span class="cstat-no" title="statement not covered" >    pageContainsGlobalEntitySelector()</span>
 &nbsp;
-const pageContainsGlobalEntitySelector = <span class="fstat-no" title="function not covered" >() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    globalEntitySelectorElement() !=</span>= null
+const pageContainsGlobalEntitySelector = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    globalEntitySele</span></span>ctorElement() !== null
 &nbsp;
-const globalEntitySelectorElement = () =&gt;
-<span class="fstat-no" title="function not covered" >    document.</span>querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
+const globalEntitySelectorElement = <span class="fstat-no" title="function not covered" >() =&gt;</span>
+    document.querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
 &nbsp;
 class MultiEmbedder {
     private figuresObserver: IntersectionObserver | undefined
@@ -519,10 +544,10 @@ class MultiEmbedder {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>            this.figuresObserver = new IntersectionObserver(</span>
 <span class="cstat-no" title="statement not covered" >                this.onIntersecting.bind(this),</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    rootMargin: "200%",
+<span class="cstat-no" title="statement not covered" >                    rootMargin: "200%",</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>        } else {
+<span class="cstat-no" title="statement not covered" ></span>            )
+        } else {
             console.warn(
                 "IntersectionObserver not available; interactive embeds won't load on this page"
             )
@@ -539,7 +564,7 @@ class MultiEmbedder {
      * thoroughly before making any changes.
      */
 <span class="fstat-no" title="function not covered" >    embedAll() {</span>
-<span class="cstat-no" title="statement not covered" >        this.observeFigures()</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.observeFigures()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     /**
@@ -560,40 +585,41 @@ class MultiEmbedder {
 &nbsp;
     async <span class="fstat-no" title="function not covered" >onIntersecting(entries: IntersectionObserverEntry[]) {</span>
 <span class="cstat-no" title="statement not covered" >        entries.forEach((entry) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            if (entry.isIntersecting) {</span>
+<span class="cstat-no" title="statement not covered" >            if (entry.is</span>Intersecting) {
 <span class="cstat-no" title="statement not covered" >                this.renderInteractiveFigure(entry.target)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async <span class="fstat-no" title="function not covered" >renderInteractiveFigure(figure: Element) {</span>
-<span class="cstat-no" title="statement not covered" >        const isExplorer = figure.hasAttribute(</span>
-<span class="cstat-no" title="statement not covered" >            EXPLORER_EMBEDDED_</span>FIGURE_SELECTOR
+    @action.bound
+    async <span class="fstat-no" title="function not covered" >renderInteractiveFigure(figure: Element, annotation?: Annotation) {</span>
+<span class="cstat-no" title="statement not covered" >        const isExplorer = fi</span>gure.hasAttribute(
+<span class="cstat-no" title="statement not covered" >            EXPLORER_EMBEDDED_FIGURE_SELECTOR</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const dataSrc = figure.getAttribute(</span>
 <span class="cstat-no" title="statement not covered" >            isExplorer</span>
-<span class="cstat-no" title="statement not covered" ></span>                ? EXPLORER_EMBEDDED_FIGURE_SELECTOR
-<span class="cstat-no" title="statement not covered" >                : G</span>RAPHER_EMBEDDED_FIGURE_ATTR
+<span class="cstat-no" title="statement not covered" >                ? EXPLORER_EMBEDDED_FIGURE_SELECTOR</span>
+<span class="cstat-no" title="statement not covered" >                : GRAPHER_EMBEDDED_FI</span>GURE_ATTR
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (!dataSrc) return</span>
+<span class="cstat-no" title="statement not covered" >        if (!d</span>ataSrc) return
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const hasPreview = isExplorer ? false : !!figure.querySelector("img")</span>
+<span class="cstat-no" title="statement not covered" >        const hasPreview = isExplorer ? false : !!figure.qu</span>erySelector("img")
 <span class="cstat-no" title="statement not covered" >        if (!shouldProgressiveEmbed() &amp;&amp; hasPreview) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Sto</span>p observing visibility as soon as possible, that is not before
-<span class="cstat-no" title="statement not covered" >        // s</span>houldProgressiveEmbed gets a chance to reevaluate a possible change
-<span class="cstat-no" title="statement not covered" ></span>        // in screen size on mobile (i.e. after a rotation). Stopping before
-<span class="cstat-no" title="statement not covered" >        // shouldProgressiveEmbed would pre</span>vent rendering interactive charts
-<span class="cstat-no" title="statement not covered" >        // when going from portrait to landscape mode (</span>without page reload).
-<span class="cstat-no" title="statement not covered" >        this.figuresOb</span>server?.unobserve(figure)
+<span class="cstat-no" title="statement not covered" >        // Stop observing visibility a</span>s soon as possible, that is not before
+<span class="cstat-no" title="statement not covered" >        // shouldProgressiveEmbed gets a chance to reevaluate a possible change</span>
+<span class="cstat-no" title="statement not covered" >        // in screen size on mobile (i.e. after a rotation). Stopping before</span>
+<span class="cstat-no" title="statement not covered" >        // shouldProgressiveEmbed would prevent rendering interactive charts</span>
+<span class="cstat-no" title="statement not covered" >        // when going from portrait to</span> landscape mode (without page reload).
+<span class="cstat-no" title="statement not covered" >        this.figuresObserver</span>?.unobserve(figure)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { fullUrl, queryStr } = Url.fromURL(dataSrc)</span>
+<span class="cstat-no" title="statement not covered" >        const </span>{ fullUrl, queryStr } = Url.fromURL(dataSrc)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const common: GrapherProgrammati</span>cInterface = {
+<span class="cstat-no" title="statement not covered" ></span>        const common: GrapherProgrammaticInterface = {
 <span class="cstat-no" title="statement not covered" >            isEmbeddedInAnOwidPage: true,</span>
-<span class="cstat-no" title="statement not covered" >            quer</span>yStr,
+<span class="cstat-no" title="statement not covered" >            queryStr,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const html = await fetchText(fullUrl)</span>
@@ -601,19 +627,19 @@ class MultiEmbedder {
 <span class="cstat-no" title="statement not covered" >        if (isExplorer) {</span>
 <span class="cstat-no" title="statement not covered" >            const props: ExplorerProps = {</span>
 <span class="cstat-no" title="statement not covered" ></span>                ...common,
-<span class="cstat-no" title="statement not covered" ></span>                ...deserializeJSONFromHTML(html, EMBEDDED_EXPLORER_DELIMITER),
-<span class="cstat-no" title="statement not covered" >                grapherConfigs: deserializeJSONFromHTM</span>L(
+<span class="cstat-no" title="statement not covered" >                ...deserializeJSON</span>FromHTML(html, EMBEDDED_EXPLORER_DELIMITER),
+<span class="cstat-no" title="statement not covered" ></span>                grapherConfigs: deserializeJSONFromHTML(
 <span class="cstat-no" title="statement not covered" >                    html,</span>
-                    EMBEDDED_EXPLORER_GRAPHER_CONFIGS
-                ),
-                queryStr,
-                selection: new SelectionArray(
-                    this.selection.selectedEntityNames
-                ),
-            }
-            if (props.selection)
-                this.graphersAndExplorersToUpdate.add(props.selection)
-            ReactDOM.render(&lt;Explorer {...props} /&gt;, figure)
+<span class="cstat-no" title="statement not covered" >                    EMBEDDED_EXPLORER_GRAPHER_CONFIGS</span>
+<span class="cstat-no" title="statement not covered" >                ),</span>
+<span class="cstat-no" title="statement not covered" >                queryStr,</span>
+<span class="cstat-no" title="statement not covered" ></span>                selection: new SelectionArray(
+<span class="cstat-no" title="statement not covered" ></span>                    this.selection.selectedEntityNames
+<span class="cstat-no" title="statement not covered" ></span>                ),
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            if (props.selection)</span>
+<span class="cstat-no" title="statement not covered" >                this.graphersAndExplorersToUpdate.add(</span>props.selection)
+<span class="cstat-no" title="statement not covered" >            ReactDOM.render(&lt;Explorer {...</span>props} /&gt;, figure)
         } else {
             figure.classList.remove("grapherPreview")
             const config: GrapherProgrammaticInterface = {
@@ -624,10 +650,17 @@ class MultiEmbedder {
                         this.selection.selectedEntityNames
                     ),
                 },
+                annotation,
             }
             if (config.manager?.selection)
                 this.graphersAndExplorersToUpdate.add(config.manager.selection)
-            Grapher.renderGrapherIntoContainer(config, figure)
+&nbsp;
+            const grapherInstance = Grapher.renderGrapherIntoContainer(
+                config,
+                figure
+            )
+            if (!grapherInstance) return
+            hydrateAnnotatingDataValue(grapherInstance, figure)
         }
     }
 &nbsp;
@@ -667,7 +700,7 @@ export const MultiEmbedderSingleton = new MultiEmbedder()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 09 2021 09:22:03 GMT+0000 (Coordinated Universal Time)
+                at Thu Jun 10 2021 09:18:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

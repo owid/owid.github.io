@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/adminSiteServer/LoginPage.tsx</title>
+    <title>Code coverage report for owid-grapher/site/AnnotatingDataValue.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/adminSiteServer</a> LoginPage.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/site</a> AnnotatingDataValue.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.35% </span>
+                <span class="strong">22.39% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/69</span>
+                <span class='fraction'>15/67</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.35% </span>
+                <span class="strong">22.39% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/69</span>
+                <span class='fraction'>15/67</span>
             </div>
         
             
@@ -134,9 +134,22 @@
 <a name='L75'></a><a href='#L75'>75</a>
 <a name='L76'></a><a href='#L76'>76</a>
 <a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -178,20 +191,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -211,82 +211,88 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { faChartLine } from "@fortawesome/free-solid-svg-icons/faChartLine"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { useEffect, useState } from "react"
+import ReactDOM from "react-dom"
+import { DataValueProps } from "../clientUtils/owidTypes"
+import { Grapher } from "../grapher/core/Grapher"
+import { ENV } from "../settings/clientSettings"
+import { DataValue, processTemplate } from "./DataValue"
+import { SiteAnalytics } from "./SiteAnalytics"
 &nbsp;
-export const LoginPage = (<span class="fstat-no" title="function not covered" >props: { next?: string; errorMessage?: string }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const style = `</span>
-<span class="cstat-no" title="statement not covered" >        html, body {</span>
-<span class="cstat-no" title="statement not covered" >            height: 100%;</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+const AnnotatingDataValue_name = "AnnotatingDataValue"
+const analytics = new SiteAnalytics(ENV)
+&nbsp;
+export const AnnotatingDataValue = <span class="fstat-no" title="function not covered" >({</span>
+<span class="cstat-no" title="statement not covered" >    dataValueProps,</span>
+<span class="cstat-no" title="statement not covered" >    grapherInstance,</span>
+<span class="cstat-no" title="statement not covered" >}: {</span>
+<span class="cstat-no" title="statement not covered" >    dataValueProps: DataValueProps</span>
+<span class="cstat-no" title="statement not covered" >    grapherInstance</span>?: Grapher
+<span class="cstat-no" title="statement not covered" >}) </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >    const [isInteractive, setInteractive] = useState(false)</span>
+<span class="cstat-no" title="statement not covered" >    const [label] = useState(processTemplate(dataValueProps))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        body {</span>
-<span class="cstat-no" title="statement not covered" >            display: flex;</span>
-<span class="cstat-no" title="statement not covered" >            align-item</span>s: center;
-<span class="cstat-no" title="statement not covered" >            justify-co</span>ntent: center;
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >    const renderAnnotationInGrapher = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        grapherInstance?.renderAnnotation({</span>
+<span class="cstat-no" title="statement not covered" >            entityName: dataValueProps.entityName,</span>
+<span class="cstat-no" title="statement not covered" >            year: Number(dataValueProps.year),</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >        analytics.logDataValueAnnotate(label)</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        h1 {</span>
-<span class="cstat-no" title="statement not covered" >            margin-bo</span>ttom: 0.4em;
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setInteractive(true)</span>
+<span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        button {</span>
-<span class="cstat-no" title="statement not covered" ></span>            cursor: pointer;
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    `</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;html lang="en"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;head&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;titl</span>e&gt;owid-admin&lt;/title&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;meta name</span>="description" content="" /&gt;
-<span class="cstat-no" title="statement not covered" ></span>                &lt;link
-<span class="cstat-no" title="statement not covered" ></span>                    rel="stylesheet"
-<span class="cstat-no" title="statement not covered" ></span>                    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;style&gt;{style}&lt;/s</span>tyle&gt;
-<span class="cstat-no" title="statement not covered" >            &lt;/head&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;body&gt;
-<span class="cstat-no" title="statement not covered" ></span>                &lt;form method="POST"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;h1&gt;owid-admin&lt;/h1&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;div className</span>="form-group"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;label&gt;Email address&lt;/label&gt;
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;input
-<span class="cstat-no" title="statement not covered" ></span>                            name="username"
-<span class="cstat-no" title="statement not covered" >                            t</span>ype="email"
-<span class="cstat-no" title="statement not covered" ></span>                            className="form-control"
-<span class="cstat-no" title="statement not covered" ></span>                            placeholder="Enter email"
-<span class="cstat-no" title="statement not covered" >                            required</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div className="form-group"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;label&gt;Password&lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;input</span>
-<span class="cstat-no" title="statement not covered" >                            name="password</span>"
-<span class="cstat-no" title="statement not covered" >                            type="password"</span>
-<span class="cstat-no" title="statement not covered" >                            className="form-control"</span>
-<span class="cstat-no" title="statement not covered" >                            placeholder="Password"</span>
-<span class="cstat-no" title="statement not covered" >                            required</span>
-<span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;input type="hidden" name="next" value={props.ne</span>xt} /&gt;
-<span class="cstat-no" title="statement not covered" >                    {props.errorMessage &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className="alert alert-danger"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            {props.errorMessage}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    )}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        Having trouble logging in? Go to{" "}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;a</span> href="https://owid.slack.com/messages/tech-issues/"&gt;
-<span class="cstat-no" title="statement not covered" >                            #tech-issues</span>
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;/a&gt;
-<span class="cstat-no" title="statement not covered" >                        .</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;/p&gt;</span>
-                    &lt;button type="submit" className="btn btn-primary"&gt;
-                        Login
-                    &lt;/button&gt;
-                &lt;/form&gt;
-            &lt;/body&gt;
-        &lt;/html&gt;
-    )
+<span class="cstat-no" title="statement not covered" >        &lt;span className="annotating-data-value"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;script</span>
+<span class="cstat-no" title="statement not covered" >                data-type={AnnotatingDataValue_name}</span>
+<span class="cstat-no" title="statement not covered" >                type="component/props"</span>
+<span class="cstat-no" title="statement not covered" >                dangerouslySetInnerHTML={{</span>
+<span class="cstat-no" title="statement not covered" ></span>                    __html: JSON.stringify(dataValueProps),
+<span class="cstat-no" title="statement not covered" >                }}</span>
+<span class="cstat-no" title="statement not covered" ></span>            &gt;&lt;/script&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;span</span>
+<span class="cstat-no" title="statement not covered" >                onMouseEnter={</span>renderAnnotationInGrapher}
+<span class="cstat-no" title="statement not covered" ></span>                onMouseLeave={grapherInstance?.resetAnnotation}
+<span class="cstat-no" title="statement not covered" >                className={isInteractive ? "interactive" : ""}</span>
+<span class="cstat-no" title="statement not covered" >            &gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;DataValue label={label}&gt;&lt;/DataValue&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {i</span>sInteractive ? &lt;FontAwesomeIcon icon={faChartLine} /&gt; : null}
+<span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >        &lt;/span&gt;</span>
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function hydrateAnnotatingDataValue(</span></span>
+<span class="cstat-no" title="statement not covered" >    grapherInsta</span>nce: Grapher,
+<span class="cstat-no" title="statement not covered" >    figure: Element</span>
+<span class="cstat-no" title="statement not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >    // todo: handle more layouts</span>
+<span class="cstat-no" title="statement not covered" >    const annotatingDataValueConfigInPreviousColumn:</span>
+<span class="cstat-no" title="statement not covered" >        | NodeListOf&lt;Element&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>        | undefined = figure
+<span class="cstat-no" title="statement not covered" ></span>        ?.closest(".wp-block-column")
+<span class="cstat-no" title="statement not covered" >        ?.previousElementSibling?.querySelectorAll(</span>
+<span class="cstat-no" title="statement not covered" >            `[data-type=${AnnotatingDataValue_na</span>me}]`
+        )
+    annotatingDataValueConfigInPreviousColumn?.forEach((config) =&gt; {
+        const dataValueProps = JSON.parse(config.innerHTML)
+        ReactDOM.hydrate(
+            &lt;AnnotatingDataValue
+                dataValueProps={dataValueProps}
+                grapherInstance={grapherInstance}
+            /&gt;,
+            config.parentElement
+        )
+    })
 }
 &nbsp;</pre></td></tr></table></pre>
 

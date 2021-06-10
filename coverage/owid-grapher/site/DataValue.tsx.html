@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/db/cleanup.ts</title>
+    <title>Code coverage report for owid-grapher/site/DataValue.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/db</a> cleanup.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/site</a> DataValue.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.97% </span>
+                <span class="strong">34.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/31</span>
+                <span class='fraction'>8/23</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.97% </span>
+                <span class="strong">34.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/31</span>
+                <span class='fraction'>8/23</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -77,10 +77,20 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -92,31 +102,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">type Handler = () =&gt; any
-const handlers: Handler[] = []
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react"
+import { DataValueProps } from "../clientUtils/owidTypes"
 &nbsp;
-export const cleanup = <span class="fstat-no" title="function not covered" >async (): Promise&lt;Handler[]&gt; =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    await Promise.all(handlers)</span>
+export const DATA_VALUE = "DataValue"
 &nbsp;
-export const exit = <span class="fstat-no" title="function not covered" >async (): Promise&lt;never&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" ></span>        await cleanup()
-<span class="cstat-no" title="statement not covered" ></span>        process.exit(0)
-<span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(err)</span>
-<span class="cstat-no" title="statement not covered" >        process.exit(</span>1)
-<span class="cstat-no" title="statement not covered" >    }</span>
+export const processTemplate = (<span class="fstat-no" title="function not covered" >props: DataValueProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return props.template</span>
+<span class="cstat-no" title="statement not covered" >        .replace("%value", props.v</span>alue)
+<span class="cstat-no" title="statement not covered" >        .replace("%year", props.year </span>|| "")
+<span class="cstat-no" title="statement not covered" >        .replace("%unit", </span>props.unit || "")
+<span class="cstat-no" title="statement not covered" >        .replace("%entity", props.entity</span>Name || "")
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const registerExitHandler = (fn: Handler): number =&gt; handlers.push(fn)
-&nbsp;
-process.on("SIGINT", exit)
-process.on("SIGTERM", exit)
+export const DataValue = <span class="fstat-no" title="function not covered" >({ label }: { label: string }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>    return (
+<span class="cstat-no" title="statement not covered" >        &lt;span</span>
+<span class="cstat-no" title="statement not covered" >            className="data-value"</span>
+<span class="cstat-no" title="statement not covered" >            dangerouslySetInnerHTML={{</span>
+<span class="cstat-no" title="statement not covered" >                __html: lab</span>el,
+<span class="cstat-no" title="statement not covered" >            }}</span>
+<span class="cstat-no" title="statement not covered" ></span>        &gt;&lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
