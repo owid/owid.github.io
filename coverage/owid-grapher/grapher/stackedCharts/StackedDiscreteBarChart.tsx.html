@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.34% </span>
+                <span class="strong">38.2% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>199/519</span>
+                <span class='fraction'>199/521</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.34% </span>
+                <span class="strong">38.2% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>199/519</span>
+                <span class='fraction'>199/521</span>
             </div>
         
             
@@ -726,7 +726,9 @@
 <a name='L667'></a><a href='#L667'>667</a>
 <a name='L668'></a><a href='#L668'>668</a>
 <a name='L669'></a><a href='#L669'>669</a>
-<a name='L670'></a><a href='#L670'>670</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L670'></a><a href='#L670'>670</a>
+<a name='L671'></a><a href='#L671'>671</a>
+<a name='L672'></a><a href='#L672'>672</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1022,6 +1024,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1443,7 +1447,7 @@ import { HorizontalAxis } from "../axis/Axis"
 import { SelectionArray } from "../selection/SelectionArray"
 import { ColorScheme } from "../color/ColorScheme"
 import { Flipper, Flipped } from "react-flip-toolkit"
-import { prefersReducedMotion } from "../../clientUtils/BrowserUtil"
+import { isSafari, prefersReducedMotion } from "../../clientUtils/BrowserUtil"
 &nbsp;
 const labelToBarPadding = 5
 &nbsp;
@@ -1618,7 +1622,7 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        if (this.manager.isRel</span>ativeMode) {
 <span class="cstat-no" title="statement not covered" >            // TODO: This is more of a stopgap to prevent the chart from being super jumpy in</span>
 <span class="cstat-no" title="statement not covered" >            // relative mode. Once we have an option to sort by a specific </span>metric, that'll help.
-<span class="cstat-no" title="statement not covered" >            // Until then, we're sorting by label to prevent any jump</span>ing.
+<span class="cstat-no" title="statement not covered" >            // Until then, we're sorting by label to prevent any jumping.</span>
 <span class="cstat-no" title="statement not covered" >            return sortBy(items, (item) =&gt; item.label)</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            return sortBy(items, (item) =&gt; {</span>
@@ -1630,11 +1634,11 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get barHeight<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return (0.8 * this.</span>innerBounds.height) / this.items.length
+<span class="cstat-no" title="statement not covered" >        return (0.8 * this.innerBounds.height) / this.items.length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get barSpacing<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.innerBounds.height / this.items.l</span>ength - this.barHeight
+    @computed private get barSpacing(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.innerBounds.height / this.items.le</span>ngth - this.barHeight</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // legend props
@@ -1648,7 +1652,7 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get categoryLegendY(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.bounds.top</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this</span>.bounds.top</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get legendWidth<span class="fstat-no" title="function not covered" >(): number {</span>
@@ -1660,7 +1664,7 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get fontSize<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        retu</span>rn this.baseFontSize
+<span class="cstat-no" title="statement not covered" >        return this.baseFontSize</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get categoricalLegendData(): CategoricalBin[] {
@@ -1675,15 +1679,15 @@ export class StackedDiscreteBarChart
     }
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(bin: CategoricalBin): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.focusSeriesName = bin.value
+<span class="cstat-no" title="statement not covered" >        this.focusSeriesNa</span>me = bin.value
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.focusSeriesName = unde</span>fined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get legend(): HorizontalCategoricalColorLegend {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return new HorizontalCategoricalColorLe</span>gend({ manager: this })</span>
+    @computed private get legend<span class="fstat-no" title="function not covered" >(): HorizontalCategoricalColorLegend {</span>
+<span class="cstat-no" title="statement not covered" >        return new HorizontalCategorical</span>ColorLegend({ manager: this })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get formatColumn<span class="fstat-no" title="function not covered" >(): CoreColumn {</span>
@@ -1694,15 +1698,17 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        if (this.failMessage)</span>
 <span class="cstat-no" title="statement not covered" >            return (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;NoDataModal</span>
-<span class="cstat-no" title="statement not covered" >                    manager={this.manager}</span>
+<span class="cstat-no" title="statement not covered" >                    manager={this.manage</span>r}
 <span class="cstat-no" title="statement not covered" >                    bounds={this.bounds}</span>
 <span class="cstat-no" title="statement not covered" >                    message={this.failMessage}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { bounds, axis, innerBounds, barHe</span>ight, barSpacing } = this
+<span class="cstat-no" title="statement not covered" >        const { bounds, axis, innerBounds</span>, barHeight, barSpacing } = this
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const shouldAnimate = !prefersReducedMotion()</span>
+<span class="cstat-no" title="statement not covered" >        // Animation don't work correctly on Saf</span>ari at the moment - see https://github.com/aholachek/react-flip-toolkit/issues/159
+<span class="cstat-no" title="statement not covered" >        // a stopgap, they are currently disab</span>led on Safari until we find a better solution
+<span class="cstat-no" title="statement not covered" >        const shouldAnimate = !prefersReducedMotion() </span>&amp;&amp; !isSafari
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let yOffset = innerBounds.top + barHe</span>ight / 2
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2071,7 +2077,7 @@ export class StackedDiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 10 2021 16:11:22 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 11 2021 12:39:05 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
