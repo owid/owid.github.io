@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/site/covid/CovidLastUpdated.tsx</title>
+    <title>Code coverage report for owid-grapher/site/covid/LastUpdated.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/site/covid</a> CovidLastUpdated.tsx</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/site/covid</a> LastUpdated.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.29% </span>
+                <span class="strong">42.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/59</span>
+                <span class='fraction'>26/61</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.29% </span>
+                <span class="strong">42.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/59</span>
+                <span class='fraction'>26/61</span>
             </div>
         
             
@@ -100,14 +100,18 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -148,35 +152,37 @@ import dayjs, { Dayjs } from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 dayjs.extend(relativeTime)
 &nbsp;
-export const CovidLastUpdated = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [date, s</span>etDate] = useState&lt;null | Dayjs&gt;(null)
-<span class="cstat-no" title="statement not covered" ></span>
+export interface LastUpdatedTokenProps {
+    timestampUrl?: string
+}
+&nbsp;
+export const LastUpdated = <span class="fstat-no" title="function not covered" >({ timestampUrl }: LastUpdatedTokenProps) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const [date, setDa</span>te] = useState&lt;null | Dayjs&gt;(null)
 <span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const fetchTimeStamp = async () =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const resp</span>onse = await fetch(
-<span class="cstat-no" title="statement not covered" >                "https</span>://covid.ourworldindata.org/data/owid-covid-data-last-updated-timestamp.txt"
-<span class="cstat-no" title="statement not covered" ></span>            )
-<span class="cstat-no" title="statement not covered" >            if (!response.ok) return</span>
-<span class="cstat-no" title="statement not covered" >            const timestamp = await respons</span>e.text()
+<span class="cstat-no" title="statement not covered" ></span>        const fetchTimeStamp = async () =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (!timestampUrl) return</span>
+<span class="cstat-no" title="statement not covered" >            const response = await fetch(ti</span>mestampUrl)
+<span class="cstat-no" title="statement not covered" >            if (!resp</span>onse.ok) return
+<span class="cstat-no" title="statement not covered" >            const timestamp = await response.text()</span>
 <span class="cstat-no" title="statement not covered" >            setDate(</span>
-<span class="cstat-no" title="statement not covered" >                timestamp.length &lt; 20</span>
-<span class="cstat-no" title="statement not covered" >                    ? dayjs(`${timest</span>amp}Z`)
-<span class="cstat-no" title="statement not covered" ></span>                    : dayjs(timestamp)
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >                tim</span>estamp.length &lt; 20
+<span class="cstat-no" title="statement not covered" ></span>                    ? dayjs(`${timestamp}Z`)
+<span class="cstat-no" title="statement not covered" >                    : dayjs(timestamp)</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        fetchTimeStamp()</span>
 <span class="cstat-no" title="statement not covered" >    }, [])</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        date &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;span&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                Last update: &lt;strong&gt;{date.fromNow()}&lt;/strong&gt;.
-<span class="cstat-no" title="statement not covered" ></span>                {/* (
-<span class="cstat-no" title="statement not covered" >                {date.toDate().toLocaleString("en-US", {</span>
+<span class="cstat-no" title="statement not covered" ></span>        date &amp;&amp; (
+<span class="cstat-no" title="statement not covered" ></span>            &lt;span&gt;
+<span class="cstat-no" title="statement not covered" >                Last update: &lt;strong&gt;{date.fromNow()}&lt;/strong&gt;.</span>
+<span class="cstat-no" title="statement not covered" >                {/* (</span>
+<span class="cstat-no" title="statement not covered" ></span>                {date.toDate().toLocaleString("en-US", {
 <span class="cstat-no" title="statement not covered" >                    year: "numeric",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    month: "long",
+<span class="cstat-no" title="statement not covered" >                    month: "lo</span>ng",
 <span class="cstat-no" title="statement not covered" >                    day: "numeric",</span>
-<span class="cstat-no" title="statement not covered" >                    hour: "numeric"</span>,
+<span class="cstat-no" title="statement not covered" >                    hour: "numeric",</span>
 <span class="cstat-no" title="statement not covered" >                    minute: "2-digit",</span>
 <span class="cstat-no" title="statement not covered" >                    timeZone: "UTC",</span>
 <span class="cstat-no" title="statement not covered" >                    timeZoneName: "short",</span>
@@ -193,7 +199,7 @@ export const CovidLastUpdated = <span class="fstat-no" title="function not cover
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 11 2021 16:40:27 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 15 2021 06:17:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

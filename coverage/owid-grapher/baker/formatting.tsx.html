@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">73.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>91/126</span>
+                <span class='fraction'>94/128</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.22% </span>
+                <span class="strong">73.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>91/126</span>
+                <span class='fraction'>94/128</span>
             </div>
         
             
@@ -188,7 +188,10 @@
 <a name='L129'></a><a href='#L129'>129</a>
 <a name='L130'></a><a href='#L130'>130</a>
 <a name='L131'></a><a href='#L131'>131</a>
-<a name='L132'></a><a href='#L132'>132</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -279,24 +282,27 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -313,7 +319,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -414,14 +420,17 @@ export const parseKeyValueArgs = (text: string): KeyValueProps =&gt; {
     text.split(/\s+/)
         // filter out empty strings
         .filter((s) =&gt; s &amp;&amp; s.length &gt; 0)
-        // populate options object
         .forEach((option: string) =&gt; {
-            const [name, value] = option.split(":") as [
+            // using regex instead of split(":") to handle ":" in value
+            // e.g. {{LastUpdated timestampUrl:https://...}}
+            const optionRegex = /([^:]+):?(.*)/
+            const [, name, value] = option.match(optionRegex) as [
+                any,
                 string,
-                string | undefined
+                string
             ]
             let parsedValue
-            if (value === undefined || value === "true") parsedValue = true
+            if (value === "" || value === "true") parsedValue = true
             else if (value === "false") parsedValue = false
             else parsedValue = value
             options[name] = parsedValue
@@ -429,8 +438,8 @@ export const parseKeyValueArgs = (text: string): KeyValueProps =&gt; {
     return options
 }
 &nbsp;
-export const formatCountryProfile = (
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    post: FormattedPost,</span></span>
+export const formatCountryProfile = <span class="fstat-no" title="function not covered" >(</span>
+<span class="cstat-no" title="statement not covered" >    post: FormattedPost,</span>
 <span class="cstat-no" title="statement not covered" >    country: Country</span>
 <span class="cstat-no" title="statement not covered" >): FormattedPost =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    // Localize country selector</span>
@@ -439,12 +448,12 @@ export const formatCountryProfile = (
 <span class="cstat-no" title="statement not covered" >        country.code</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const cheerioEl = cheerio.load(htmlWithLocalized</span>CountrySelector)
+<span class="cstat-no" title="statement not covered" >    cons</span>t cheerioEl = cheerio.load(htmlWithLocalizedCountrySelector)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Inject country names on h3 headings which have been already identified as subsections</span>
-<span class="cstat-no" title="statement not covered" ></span>    // (filtering them out based on whether they have a deep link anchor attached to them)
-<span class="cstat-no" title="statement not covered" >    cheerioEl(`h3 a.${DEEP_LINK_CLASS}`).each((_, dee</span>pLinkAnchor) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const $deepLinkAnchor = cheerio</span>El(deepLinkAnchor)
+<span class="cstat-no" title="statement not covered" ></span>    // Inject country names on h3 headings which have been already identified as subsections
+<span class="cstat-no" title="statement not covered" >    // (filtering them out based on whether they have</span> a deep link anchor attached to them)
+<span class="cstat-no" title="statement not covered" >    cheerioEl(`h3 a.${DEEP_LINK_CLASS}`</span>).each((_, deepLinkAnchor) =&gt; {
+        const $deepLinkAnchor = cheerioEl(deepLinkAnchor)
         $deepLinkAnchor.after(`${country.name}: `)
     })
 &nbsp;
@@ -457,7 +466,7 @@ export const formatCountryProfile = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 11 2021 16:40:27 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 15 2021 06:17:01 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
