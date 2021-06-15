@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.84% </span>
+                <span class="strong">93.98% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>198/211</span>
+                <span class='fraction'>203/216</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.76% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>24/29</span>
+                <span class='fraction'>24/30</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.84% </span>
+                <span class="strong">93.98% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>198/211</span>
+                <span class='fraction'>203/216</span>
             </div>
         
             
@@ -279,7 +279,15 @@
 <a name='L220'></a><a href='#L220'>220</a>
 <a name='L221'></a><a href='#L221'>221</a>
 <a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -404,15 +412,21 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -488,8 +502,8 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -507,6 +521,7 @@ import { Bounds, DEFAULT_BOUNDS } from "../../clientUtils/Bounds"
 import { computed } from "mobx"
 import {
     ChartTypeName,
+    FacetAxisRange,
     FacetStrategy,
     SeriesStrategy,
 } from "../core/GrapherConstants"
@@ -551,7 +566,7 @@ export class FacetChart
     @computed get placedSeries(): PlacedFacetSeries[] {
         const { manager, series } = this
         const chartTypeName =
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.props.chartTypeName ?? Cha</span>rtTypeName.LineChart
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.props.chartTypeName ?? ChartTypeNa</span>me.LineChart
         const count = series.length
 &nbsp;
         const boundsArr = this.bounds.split(count, getChartPadding(count))
@@ -565,7 +580,7 @@ export class FacetChart
         } = manager
 &nbsp;
         const baseFontSize = getFontSize(count, manager.baseFontSize)
-        const lineStrokeWidth = count &gt; 16 ? 1 : undefined
+        const lineStrokeWidth = <span class="branch-0 cbranch-no" title="branch not covered" >count &gt; 16 ? 1 : u</span>ndefined
 &nbsp;
         const table = this.transformedTable
 &nbsp;
@@ -613,33 +628,39 @@ export class FacetChart
         const table = this.transformedTable.filterByEntityNames(
             this.selectionArray.selectedEntityNames
         )
-        const yDomain = table.domainFor(this.yColumnSlugs)
-        const scaleType = this.manager.yAxis?.scaleType
-        const sameYAxis = true
-        const yAxisConfig = sameYAxis
-            ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                  max: yDomain[1],</span>
-<span class="cstat-no" title="statement not covered" >                  min: yDomain[0],</span>
-<span class="cstat-no" title="statement not covered" >                  scaleType</span>,
-<span class="cstat-no" title="statement not covered" >              }</span>
-<span class="cstat-no" title="statement not covered" >            : undefined</span>
+        const sharedYDomain = table.domainFor(this.yColumnSlugs)
+        const scaleType = <span class="branch-0 cbranch-no" title="branch not covered" >this.ma</span>nager.yAxis?.scaleType
         const sameXAxis = true
         const xAxisConfig = sameXAxis
-            ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>                  max: table.maxTime,
-<span class="cstat-no" title="statement not covered" ></span>                  min: table.minTime,
-<span class="cstat-no" title="statement not covered" ></span>                  scaleType,
+            ? {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                  max: table.maxTime,</span>
+<span class="cstat-no" title="statement not covered" >                  min: ta</span>ble.minTime,
+<span class="cstat-no" title="statement not covered" >                  scaleType,</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            : undefined</span>
 &nbsp;
         const hideLegend = this.manager.yColumnSlugs?.length === 1
 &nbsp;
         return this.selectionArray.selectedEntityNames.map((seriesName) =&gt; {
+            const seriesTable = table.filterByEntityNames([seriesName])
+            const seriesYDomain = seriesTable.domainFor(this.yColumnSlugs)
+            const yAxisConfig =
+                this.manager.yAxis!.facetAxisRange == FacetAxisRange.shared
+                    ? {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                          max: sharedYDomain[1],</span>
+<span class="cstat-no" title="statement not covered" ></span>                          min: sharedYDomain[0],
+<span class="cstat-no" title="statement not covered" >                          scaleType,</span>
+<span class="cstat-no" title="statement not covered" ></span>                      }
+<span class="cstat-no" title="statement not covered" >                    : {</span>
+                          max: seriesYDomain[1],
+                          min: seriesYDomain[0],
+                          scaleType,
+                      }
             return {
                 seriesName,
                 color: facetBackgroundColor,
                 manager: {
-                    table: table.filterByEntityNames([seriesName]),
+                    table: seriesTable,
                     selection: [seriesName],
                     seriesStrategy: SeriesStrategy.column,
                     hideLegend,
@@ -681,15 +702,15 @@ export class FacetChart
     }
 &nbsp;
     @computed protected get bounds(): Bounds {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>props.bounds ?? DEFAULT_BOUNDS
+        return this.props.bounds ?? DEFAULT_BOUNDS
     }
 &nbsp;
     @computed protected get manager(): ChartManager {
         return this.props.manager
     }
 &nbsp;
-    @computed get failMessage<span class="fstat-no" title="function not covered" >(): string {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n ""
+    @computed get failMessage(): string {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return ""</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get subtitleFontSize(): number {
@@ -701,8 +722,8 @@ export class FacetChart
         const { subtitleFontSize } = this
         return this.placedSeries.map((smallChart, index: number) =&gt; {
             const ChartClass =
-                ChartComponentClassMap.get(smallChart.chartTypeName) ??
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                Defa</span></span>ultChartClass
+<span class="branch-0 cbranch-no" title="branch not covered" >                ChartComponentClassMap.get(smallChart.chartTypeName) ??</span>
+<span class="cstat-no" title="statement not covered" ></span>                DefaultChartClass
             const { bounds, seriesName } = smallChart
             const shiftTop =
                 smallChart.chartTypeName === ChartTypeName.LineChart ? 6 : 10
@@ -730,7 +751,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 15 2021 08:06:36 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 15 2021 08:22:34 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

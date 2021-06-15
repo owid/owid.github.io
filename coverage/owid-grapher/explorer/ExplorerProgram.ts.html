@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.13% </span>
+                <span class="strong">55.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>172/312</span>
+                <span class='fraction'>174/314</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.36% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/22</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.13% </span>
+                <span class="strong">55.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>172/312</span>
+                <span class='fraction'>174/314</span>
             </div>
         
             
@@ -500,7 +500,11 @@
 <a name='L441'></a><a href='#L441'>441</a>
 <a name='L442'></a><a href='#L442'>442</a>
 <a name='L443'></a><a href='#L443'>443</a>
-<a name='L444'></a><a href='#L444'>444</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -557,12 +561,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -687,10 +693,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -812,6 +818,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -977,6 +985,7 @@ import { ColumnGrammar } from "./ColumnGrammar"
 import { DecisionMatrix } from "./ExplorerDecisionMatrix"
 import { CoreColumnDef } from "../coreTable/CoreColumnDef"
 import { PromiseCache } from "../clientUtils/PromiseCache"
+import { FacetAxisRange } from "../grapher/core/GrapherConstants"
 &nbsp;
 export const EXPLORER_FILE_SUFFIX = ".explorer.tsv"
 &nbsp;
@@ -991,6 +1000,7 @@ interface ExplorerGrapherInterface extends GrapherInterface {
     tableSlug?: string
     yScaleToggle?: boolean
     yAxisMin?: number
+    facetYRange?: FacetAxisRange
 }
 &nbsp;
 const ExplorerRootDef: CellDef = {
@@ -1003,7 +1013,7 @@ export class ExplorerProgram extends GridProgram {
         super(slug, tsv, lastCommit, ExplorerRootDef)
         this.decisionMatrix = new DecisionMatrix(
             this.decisionMatrixCode ?? "",
-<span class="branch-0 cbranch-no" title="branch not covered" >            lastCommit?.hash</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            lastCommit?.ha</span>sh
         )
     }
 &nbsp;
@@ -1013,16 +1023,16 @@ export class ExplorerProgram extends GridProgram {
         return new ExplorerProgram(json.slug, json.program, json.lastCommit)
     }
 &nbsp;
-    get clone() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return ExplorerP</span>rogram.fromJson(this.toJson())</span>
+    get clone<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return ExplorerProgram.fromJson(this.toJson())
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get isNewFile<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.slug === DefaultNewExplorerSlug</span>
+<span class="cstat-no" title="statement not covered" ></span>        return this.slug === DefaultNewExplorerSlug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get filename<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.slug + EXPLORER_FILE_SUFFIX</span>
+    get filename() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.sl</span>ug + EXPLORER_FILE_SUFFIX</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     initDecisionMatrix(choiceParams: ExplorerChoiceParams) {
@@ -1030,22 +1040,22 @@ export class ExplorerProgram extends GridProgram {
         return this
     }
 &nbsp;
-    get fullPath<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return makeFullPath(this.slug)</span>
+    get fullPath() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return makeFul</span>lPath(this.slug)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get currentlySelectedGrapherRow() {
         const row = this.getKeywordIndex(ExplorerGrammar.graphers.keyword)
-        return row === -1
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? undefined</span></span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >row === -1</span>
+<span class="cstat-no" title="statement not covered" >            ? undefined</span>
             : row + this.decisionMatrix.selectedRowIndex + 2
     }
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >fromMatrix(slug: string, matrix: CoreMatrix) {</span>
-<span class="cstat-no" title="statement not covered" >        const str = matrix</span>
-<span class="cstat-no" title="statement not covered" ></span>            .map((row) =&gt; row.join(GRID_CELL_DELIMITER))
-<span class="cstat-no" title="statement not covered" >            .join(GRID_NODE_D</span>ELIMITER)
-<span class="cstat-no" title="statement not covered" >        return new ExplorerProgram(slug, str)</span>
+    static fromMatrix(slug: string, matrix: CoreMatrix) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const str = matrix</span></span>
+<span class="cstat-no" title="statement not covered" >            .map((row) =&gt; row.join(GRID_CELL_DELIMITER))</span>
+<span class="cstat-no" title="statement not covered" ></span>            .join(GRID_NODE_DELIMITER)
+<span class="cstat-no" title="statement not covered" >        return new Explo</span>rerProgram(slug, str)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get explorerTitle() {
@@ -1053,7 +1063,7 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get title<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.getLineValue(ExplorerGrammar.title.keyword)
+<span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.title.keyword)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get subNavId(): SubNavId | undefined {
@@ -1061,7 +1071,7 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get googleSheet<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.getLineVal</span>ue(ExplorerGrammar.googleSheet.keyword)
+<span class="cstat-no" title="statement not covered" ></span>        return this.getLineValue(ExplorerGrammar.googleSheet.keyword)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get hideAlertBanner() {
@@ -1088,20 +1098,20 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get selection() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.getLine(ExplorerGrammar.selection.keyw</span>ord)
+        return this.getLine(ExplorerGrammar.selection.keyword)
             ?.split(this.cellDelimiter)
             .slice(1)
     }
 &nbsp;
-    get pickerColumnSlugs() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const slugs = this.getLineValue(</span></span>
+    get pickerColumnSlugs<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        const slugs = this.getLineValu</span>e(
 <span class="cstat-no" title="statement not covered" >            ExplorerGrammar.pickerColumnSlugs.keyword</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        return slugs ? slugs.split(" ") : undefined</span>
+<span class="cstat-no" title="statement not covered" >        return slugs ? slugs.split(" ") : unde</span>fined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get hideControls<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return</span> this.getLineValue(ExplorerGrammar.hideControls.keyword)
+<span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.hideControls.keyword)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get downloadDataLink() {
@@ -1110,13 +1120,13 @@ export class ExplorerProgram extends GridProgram {
 &nbsp;
     get isPublished<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            this.getLineValue(Exp</span>lorerGrammar.isPublished.keyword) ===
-<span class="cstat-no" title="statement not covered" >            GridBo</span>olean.true
+<span class="cstat-no" title="statement not covered" >            this.getLineValue(ExplorerGrammar.isPublished.keyword) ===</span>
+<span class="cstat-no" title="statement not covered" >            GridBoolean.true</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    setPublished(value: boolean) {</span>
-<span class="cstat-no" title="statement not covered" >        return this.clone.</span>setLineValue(
+<span class="cstat-no" title="statement not covered" >        return thi</span>s.clone.setLineValue(
 <span class="cstat-no" title="statement not covered" >            ExplorerGrammar.isPublished.keyword,</span>
 <span class="cstat-no" title="statement not covered" >            value </span>? GridBoolean.true : GridBoolean.false
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -1138,40 +1148,40 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get grapherCount<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.decisionMatrix.numRows || 1</span>
+<span class="cstat-no" title="statement not covered" >        return this.decisionMatri</span>x.numRows || 1
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get tableCount() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.lines.filter((line) =&gt;</span></span>
-<span class="cstat-no" title="statement not covered" >            line.startsWith(ExplorerGrammar.table.keyword)</span>
+    get tableCount<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" >        return this</span>.lines.filter((line) =&gt;
+<span class="cstat-no" title="statement not covered" >            lin</span>e.startsWith(ExplorerGrammar.table.keyword)
 <span class="cstat-no" title="statement not covered" >        ).length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get inlineTableCount<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return thi</span>s.lines
 <span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; line.startsWith(ExplorerGramma</span>r.table.keyword))
-<span class="cstat-no" title="statement not covered" >            .filte</span>r((line) =&gt; {
-<span class="cstat-no" title="statement not covered" >                const data = this.getTableDef(line.split(thi</span>s.cellDelimiter)[1])
+<span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>                const data = this.getTableDef(line.split(this.cellDelimiter)[1])
 <span class="cstat-no" title="statement not covered" >                    ?.inlineData</span>
-<span class="cstat-no" title="statement not covered" ></span>                return data ? data.trim() : false
+<span class="cstat-no" title="statement not covered" >                return data ? data.</span>trim() : false
 <span class="cstat-no" title="statement not covered" >            }).length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get tableSlugs<span class="fstat-no" title="function not covered" >(): (TableSlug | undefined)[] {</span>
-<span class="cstat-no" title="statement not covered" >        return this.lines</span>
-<span class="cstat-no" title="statement not covered" >            .filt</span>er((line) =&gt; line.startsWith(ExplorerGrammar.table.keyword))
-<span class="cstat-no" title="statement not covered" >            .map((line) =&gt; line.split(this.cellDelimiter)[2])</span>
+    get tableSlugs(): (TableSlug | undefined)[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.lines</span></span>
+<span class="cstat-no" title="statement not covered" >            .filter((line)</span> =&gt; line.startsWith(ExplorerGrammar.table.keyword))
+<span class="cstat-no" title="statement not covered" ></span>            .map((line) =&gt; line.split(this.cellDelimiter)[2])
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get columnDefsByTableSlug(): Map&lt;TableSlug | undefined, CoreColumnDef[]&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const result = new</span> Map&lt;TableSlug | undefined, CoreColumnDef[]&gt;()</span>
+    get columnDefsByTableSlug<span class="fstat-no" title="function not covered" >(): Map&lt;TableSlug | undefined, CoreColumnDef[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const result = new Map&lt;TableSlug | undefine</span>d, CoreColumnDef[]&gt;()
 <span class="cstat-no" title="statement not covered" >        this.tableSlugs.forEach((tableSlug) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const tableDef = this.getTableDef(table</span>Slug)
-<span class="cstat-no" title="statement not covered" >            if (tableDef &amp;&amp; tableDef.columnDefinitions)</span> {
-<span class="cstat-no" title="statement not covered" >                result.set(tableSlug, ta</span>bleDef.columnDefinitions)
-<span class="cstat-no" title="statement not covered" ></span>            }
+<span class="cstat-no" title="statement not covered" >            const tableDef = this.getTab</span>leDef(tableSlug)
+<span class="cstat-no" title="statement not covered" ></span>            if (tableDef &amp;&amp; tableDef.columnDefinitions) {
+<span class="cstat-no" title="statement not covered" >                result.set(tableSlug, tableDef.columnDefinitions)</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        return result</span>
+<span class="cstat-no" title="statement not covered" >        re</span>turn result
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >replaceTableWithInlineDataAndAutofilledColumnDefsCommand(</span>
@@ -1281,9 +1291,11 @@ export class ExplorerProgram extends GridProgram {
         })
 &nbsp;
         const selectedGrapherRow = this.decisionMatrix.selectedRow
-        return selectedGrapherRow &amp;&amp; Object.keys(selectedGrapherRow).length
-            ? { ...rootObject, ...selectedGrapherRow }
-            : rootObject
+        if (selectedGrapherRow &amp;&amp; Object.keys(selectedGrapherRow).length) {
+            return { ...rootObject, ...selectedGrapherRow }
+        }
+&nbsp;
+        return rootObject
     }
 &nbsp;
     /**
@@ -1393,7 +1405,7 @@ export const trimAndParseObject = (config: any, grammar: Grammar) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 15 2021 08:06:36 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 15 2021 08:22:34 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

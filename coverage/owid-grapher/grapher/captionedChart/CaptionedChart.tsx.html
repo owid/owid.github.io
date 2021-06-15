@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.17% </span>
+                <span class="strong">95.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>256/269</span>
+                <span class='fraction'>264/277</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.67% </span>
+                <span class="strong">86.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>41/49</span>
+                <span class='fraction'>45/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.67% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>14/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.17% </span>
+                <span class="strong">95.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>256/269</span>
+                <span class='fraction'>264/277</span>
             </div>
         
             
@@ -420,7 +420,24 @@
 <a name='L361'></a><a href='#L361'>361</a>
 <a name='L362'></a><a href='#L362'>362</a>
 <a name='L363'></a><a href='#L363'>363</a>
-<a name='L364'></a><a href='#L364'>364</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -555,6 +572,10 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -664,6 +685,11 @@
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
@@ -684,11 +710,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -813,6 +839,8 @@ import {
     SmallCountriesFilterManager,
     AbsRelToggleManager,
     HighlightToggleManager,
+    FacetYRangeToggle,
+    FacetYRangeToggleManager,
 } from "../controls/Controls"
 import { ScaleSelector } from "../controls/ScaleSelector"
 import { AddEntityButton } from "../controls/AddEntityButton"
@@ -830,7 +858,8 @@ export interface CaptionedChartManager
         HighlightToggleManager,
         AbsRelToggleManager,
         FooterManager,
-        HeaderManager {
+        HeaderManager,
+        FacetYRangeToggleManager {
     containerElement?: HTMLDivElement
     tabBounds?: Bounds
     fontSize?: number
@@ -846,6 +875,7 @@ export interface CaptionedChartManager
     showXScaleToggle?: boolean
     showZoomToggle?: boolean
     showAbsRelToggle?: boolean
+    showFacetYRangeToggle?: boolean
     showHighlightToggle?: boolean
     showChangeEntityButton?: boolean
     showAddEntityButton?: boolean
@@ -870,11 +900,11 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
     }
 &nbsp;
     @computed private get containerElement(): HTMLDivElement | undefined {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>manager?.containerElement
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>?.containerElement
     }
 &nbsp;
     @computed private get maxWidth(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.m</span>axWidth ?? this.bounds.width - OUTSIDE_PADDING * 2
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.maxWidth ?? t</span>his.bounds.width - OUTSIDE_PADDING * 2
     }
 &nbsp;
     @computed protected get header(): Header {
@@ -908,7 +938,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
     }
 &nbsp;
     @computed protected get bounds(): Bounds {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.props.boun</span></span>ds ?? this.manager.tabBounds ?? DEFAULT_BOUNDS
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.props.bounds ?? t</span>his.manager.tabBounds ?? DEFAULT_BOUNDS</span>
     }
 &nbsp;
     // The bounds for the middle chart part
@@ -917,6 +947,10 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
             .padWidth(OUTSIDE_PADDING)
             .padTop(this.isMapTab ? 0 : PADDING_BELOW_HEADER)
             .padBottom(OUTSIDE_PADDING)
+    }
+&nbsp;
+    @computed get isFaceted(): boolean {
+        return !this.isMapTab &amp;&amp; !!this.manager.facetStrategy
     }
 &nbsp;
     renderChart(): JSX.Element {
@@ -929,10 +963,10 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
               manager.type ??
               ChartTypeName.LineChart
         const ChartClass =
-<span class="branch-0 cbranch-no" title="branch not covered" >            ChartComponentClassMap.get(chartTypeName</span>) ?? DefaultChartClass
+            ChartComponentClassMap.get(chartTypeName) ?? DefaultChartClass
 &nbsp;
         // Todo: make FacetChart a chart type name?
-        if (!this.isMapTab &amp;&amp; manager.facetStrategy)
+        if (this.isFaceted)
             return (
                 &lt;FacetChart
                     bounds={bounds}
@@ -1025,9 +1059,14 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         if (manager.showAbsRelToggle)
 <span class="branch-0 cbranch-no" title="branch not covered" >            controls.</span>push(&lt;AbsRelToggle key="AbsRelToggle" manager={manager} /&gt;)
 &nbsp;
+        if (this.isFaceted &amp;&amp; manager.showFacetYRangeToggle)
+            controls.push(
+                &lt;FacetYRangeToggle key="FacetYRangeToggle" manager={manager} /&gt;
+            )
+&nbsp;
         if (manager.showHighlightToggle)
-<span class="branch-0 cbranch-no" title="branch not covered" >            controls.push(</span>
-<span class="cstat-no" title="statement not covered" >                &lt;HighlightToggle </span>key="highlight-toggle" manager={manager} /&gt;
+            controls.push(
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                &lt;HighlightToggle key="highlight-toggle" manager={manager} /&gt;
             )
 &nbsp;
         if (manager.showSmallCountriesFilterToggle)
@@ -1041,8 +1080,8 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         return controls
     }
 &nbsp;
-    @computed get selectionArray(): SelectionArray | EntityName[] | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>manager.selection</span>
+    @computed get selectionArray<span class="fstat-no" title="function not covered" >(): SelectionArray | EntityName[] | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        return this.manager.selectio</span>n
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private renderControlsRow(): JSX.Element | null {
@@ -1153,7 +1192,7 @@ export class StaticCaptionedChart extends CaptionedChart {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 15 2021 08:06:36 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 15 2021 08:22:34 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
