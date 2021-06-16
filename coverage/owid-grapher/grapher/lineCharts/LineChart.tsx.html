@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.48% </span>
+                <span class="strong">69.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>444/639</span>
+                <span class='fraction'>451/646</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.01% </span>
+                <span class="strong">63.16% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>46/73</span>
+                <span class='fraction'>48/76</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.48% </span>
+                <span class="strong">69.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>444/639</span>
+                <span class='fraction'>451/646</span>
             </div>
         
             
@@ -839,7 +839,14 @@
 <a name='L780'></a><a href='#L780'>780</a>
 <a name='L781'></a><a href='#L781'>781</a>
 <a name='L782'></a><a href='#L782'>782</a>
-<a name='L783'></a><a href='#L783'>783</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L783'></a><a href='#L783'>783</a>
+<a name='L784'></a><a href='#L784'>784</a>
+<a name='L785'></a><a href='#L785'>785</a>
+<a name='L786'></a><a href='#L786'>786</a>
+<a name='L787'></a><a href='#L787'>787</a>
+<a name='L788'></a><a href='#L788'>788</a>
+<a name='L789'></a><a href='#L789'>789</a>
+<a name='L790'></a><a href='#L790'>790</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -963,9 +970,6 @@
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
@@ -973,6 +977,15 @@
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">106x</span>
@@ -990,17 +1003,18 @@
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">1964x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">1949x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
+<span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
@@ -1724,8 +1738,8 @@ class Lines extends React.Component&lt;LinesProps&gt; {
         const { focusedSeriesNames } = this.props
         // If nothing is focused, everything is
         if (!focusedSeriesNames.length) <span class="branch-0 cbranch-no" title="branch not covered" >return this.props.placedSeries</span>
-<span class="cstat-no" title="statement not covered" >        return this.props.placedSeries.filter((series) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            focusedSeriesNames.includes(series.seriesName)
+<span class="cstat-no" title="statement not covered" >        return this.props.placedSeries</span>.filter((series) =&gt;
+<span class="cstat-no" title="statement not covered" >            focusedSeriesNames.includes(series.seriesName)</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1741,11 +1755,8 @@ class Lines extends React.Component&lt;LinesProps&gt; {
     @computed private get hasMarkers(): boolean {
         if (this.props.hidePoints) return false
         return (
-            sum(
-                this.props.placedSeries.map(
-                    (series) =&gt; series.placedPoints.length
-                )
-            ) &lt; 500
+            sum(this.focusedLines.map((series) =&gt; series.placedPoints.length)) &lt;
+            500
         )
     }
 &nbsp;
@@ -1754,35 +1765,45 @@ class Lines extends React.Component&lt;LinesProps&gt; {
     }
 &nbsp;
     private renderFocusGroups(): JSX.Element[] {
-        return this.focusedLines.map((series, index) =&gt; (
-            &lt;g key={index}&gt;
-                &lt;path
-                    stroke={series.color}
-                    strokeLinecap="round"
-                    d={pointsToPath(
-                        series.placedPoints.map((value) =&gt; [
-                            value.x,
-                            value.y,
-                        ]) as [number, number][]
+        return this.focusedLines.map((series, index) =&gt; {
+            // If the series only contains one point, then we will always want to show a marker/circle
+            // because we can't draw a line.
+            const showMarkers =
+                (this.hasMarkers || series.placedPoints.length === 1) &amp;&amp;
+                !series.isProjection
+&nbsp;
+            return (
+                &lt;g key={index}&gt;
+                    &lt;path
+                        stroke={series.color}
+                        strokeLinecap="round"
+                        d={pointsToPath(
+                            series.placedPoints.map((value) =&gt; [
+                                value.x,
+                                value.y,
+                            ]) as [number, number][]
+                        )}
+                        fill="none"
+                        strokeWidth={this.strokeWidth}
+                        strokeDasharray={
+<span class="branch-0 cbranch-no" title="branch not covered" >                            series.isPro</span>jection ? "1,4" : undefined
+                        }
+                    /&gt;
+                    {showMarkers &amp;&amp; (
+                        &lt;g fill={series.color}&gt;
+                            {series.placedPoints.map((value, index) =&gt; (
+                                &lt;circle
+                                    key={index}
+                                    cx={value.x}
+                                    cy={value.y}
+                                    r={2}
+                                /&gt;
+                            ))}
+                        &lt;/g&gt;
                     )}
-                    fill="none"
-                    strokeWidth={this.strokeWidth}
-                    strokeDasharray={series.isProjection ? "1,4" : undefined}
-                /&gt;
-                {this.hasMarkers &amp;&amp; !series.isProjection &amp;&amp; (
-                    &lt;g fill={series.color}&gt;
-                        {series.placedPoints.map((value, index) =&gt; (
-                            &lt;circle
-                                key={index}
-                                cx={value.x}
-                                cy={value.y}
-                                r={2}
-                            /&gt;
-                        ))}
-                    &lt;/g&gt;
-                )}
-            &lt;/g&gt;
-        ))
+                &lt;/g&gt;
+            )
+        })
     }
 &nbsp;
     private renderBackgroundGroups(): JSX.Element[] {
@@ -2410,7 +2431,7 @@ export class LineChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 16 2021 10:42:28 GMT+0000 (Coordinated Universal Time)
+                at Wed Jun 16 2021 11:00:55 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
