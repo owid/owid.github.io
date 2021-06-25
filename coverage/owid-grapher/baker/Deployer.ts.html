@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25.8% </span>
+                <span class="strong">26.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>81/314</span>
+                <span class='fraction'>82/314</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25.8% </span>
+                <span class="strong">26.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>81/314</span>
+                <span class='fraction'>82/314</span>
             </div>
         
             
@@ -371,9 +371,7 @@
 <a name='L312'></a><a href='#L312'>312</a>
 <a name='L313'></a><a href='#L313'>313</a>
 <a name='L314'></a><a href='#L314'>314</a>
-<a name='L315'></a><a href='#L315'>315</a>
-<a name='L316'></a><a href='#L316'>316</a>
-<a name='L317'></a><a href='#L317'>317</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L315'></a><a href='#L315'>315</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -618,8 +616,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -687,8 +683,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as fs from "fs-extra"
 import * as prompts from "prompts"
 import ProgressBar = require("progress")
@@ -891,8 +887,6 @@ export class Deployer {
 <span class="cstat-no" title="statement not covered" >            rsyncTargetDirTmp,</span>
 <span class="cstat-no" title="statement not covered" >            finalTargetDir,</span>
 <span class="cstat-no" title="statement not covered" >            rsyncTargetDir,</span>
-<span class="cstat-no" title="statement not covered" >            owidUserHomeTmpDir,</span>
-<span class="cstat-no" title="statement not covered" >            owidUserHomeDir,</span>
 <span class="cstat-no" title="statement not covered" >            oldRepoBackupDir,</span>
 <span class="cstat-no" title="statement not covered" >            finalDataDir,</span>
 <span class="cstat-no" title="statement not covered" >        } = this.pathsOnTarget</span>
@@ -903,107 +897,107 @@ export class Deployer {
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const scripts: any = {</span>
 <span class="cstat-no" title="statement not covered" >            clearOldTemporaryRepo: `rm -rf ${rsyncTargetDirTmp}`,</span>
-<span class="cstat-no" title="statement not covered" >            copySyncedRepo: `cp -r ${rsyncTargetDir} ${rsyncTargetDirTmp}`, // Copy the synced repo-- this is be</span>cause we're about to move it, and we want the original target to stay around to make future syncs faster
-<span class="cstat-no" title="statement not covered" >            createDataSoftlinks: `mkdir -p ${finalDataDir}/bakedSite &amp;&amp; ln -sf ${finalDataDir}/ba</span>kedSite ${rsyncTargetDirTmp}/bakedSite`,
-<span class="cstat-no" title="statement not covered" >            createDatasetSoftlinks: `mkdir -p ${finalDataDir}/datasetsExport &amp;&amp; ln -sf ${finalDataDir}/datasetsExport ${rsyncTargetDirTmp}/datasetsExport`,</span>
-<span class="cstat-no" title="statement not covered" >            createSettingsSoftlinks: `ln -sf ${finalDataDir}/</span>.env ${rsyncTargetDirTmp}/.env`,
-<span class="cstat-no" title="statement not covered" >            yarn: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn install --production --</span>frozen-lockfile`,
-<span class="cstat-no" title="statement not covered" >            webpack: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn buildWebpack`,</span>
+<span class="cstat-no" title="statement not covered" >            copySyncedRepo: `cp -r ${rsyncTargetDir} ${rsyncTargetDirTmp}</span>`, // Copy the synced repo-- this is because we're about to move it, and we want the original target to stay around to make future syncs faster
+<span class="cstat-no" title="statement not covered" >            createDataSoftlinks: `mkdir -p ${finalDataDir}/bakedSite &amp;&amp; ln -sf</span> ${finalDataDir}/bakedSite ${rsyncTargetDirTmp}/bakedSite`,
+<span class="cstat-no" title="statement not covered" >            createDatasetSoftlinks: `mkdir -p ${finalDataDir}/datasetsExport &amp;&amp; ln -sf ${finalDataDir}/datasetsE</span>xport ${rsyncTargetDirTmp}/datasetsExport`,
+<span class="cstat-no" title="statement not covered" >            createSettingsSoftlinks: `ln -sf ${finalDataDir}/.env ${rsyncTargetDirTmp}/.env`,</span>
+<span class="cstat-no" title="statement not covered" >            yarn: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn install --production --frozen-lockfile`,</span>
+<span class="cstat-no" title="statement not covered" >            webpack: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn buildWe</span>bpack`,
 <span class="cstat-no" title="statement not covered" >            migrateDb: `cd ${rsyncTargetDirTmp} &amp;&amp; yarn runDbMigrations`,</span>
-<span class="cstat-no" title="statement not covered" >            algolia: `cd ${rsyncTargetDirTmp} &amp;&amp; node itsJustJavas</span>cript/baker/algolia/configureAlgolia.js`,
-<span class="cstat-no" title="statement not covered" >            cre</span>ateQueueFile: `cd ${rsyncTargetDirTmp} &amp;&amp; touch .queue &amp;&amp; chmod 0666 .queue`,
-<span class="cstat-no" title="statement not covered" >            swapFolders: `rm -rf ${oldRepoBackupDir} </span>&amp;&amp; mv ${finalTargetDir} ${oldRepoBackupDir} || true &amp;&amp; mv ${rsyncTargetDirTmp} ${finalTargetDir}`,
-<span class="cstat-no" title="statement not covered" >            restartAdminServer: `pm2 restart ${target}`,</span>
-<span class="cstat-no" title="statement not covered" >            stopDeployQueueServer: `pm2 stop ${target}-deploy-queue`</span>,
-<span class="cstat-no" title="statement not covered" >            bakeSiteOnStagingServer: `cd ${final</span>TargetDir} &amp;&amp; node itsJustJavascript/baker/bakeSiteOnStagingServer.js`,
-<span class="cstat-no" title="statement not covered" >            depl</span>oyToNetlify: `cd ${finalTargetDir} &amp;&amp; node itsJustJavascript/baker/deploySiteFromStagingServer.js "${gitEmail}" "${gitName}"`,
-<span class="cstat-no" title="statement not covered" >            restartQueue: `pm2 start ${target}-deploy-queue`</span>,
+<span class="cstat-no" title="statement not covered" >            algolia: `cd ${rsyncTargetDirTmp} &amp;&amp; node itsJustJavascript/baker/algolia/configureAlgolia.js`,</span>
+<span class="cstat-no" title="statement not covered" >            createQueueFile: `cd ${rsyncTargetDirTmp} &amp;&amp; touch .queue &amp;&amp; chmod 0666 .queue`,</span>
+<span class="cstat-no" title="statement not covered" >            swapFolders: `rm -rf ${oldRepoBackupDir} &amp;&amp; mv ${final</span>TargetDir} ${oldRepoBackupDir} || true &amp;&amp; mv ${rsyncTargetDirTmp} ${finalTargetDir}`,
+<span class="cstat-no" title="statement not covered" >            res</span>tartAdminServer: `pm2 restart ${target}`,
+<span class="cstat-no" title="statement not covered" >            stopDeployQueueServer: `pm2 stop ${target</span>}-deploy-queue`,
+<span class="cstat-no" title="statement not covered" >            bakeSiteOnStagingServer: `cd ${finalTargetDir} &amp;&amp; node itsJustJavascript/baker/bakeSit</span>eOnStagingServer.js`,
+<span class="cstat-no" title="statement not covered" >            deployToNetlify: `cd ${finalTargetDir} &amp;&amp; node itsJustJa</span>vascript/baker/deploySiteFromStagingServer.js "${gitEmail}" "${gitName}"`,
+<span class="cstat-no" title="statement not covered" >            restartQueue: `pm2 start ${target}-d</span>eploy-queue`,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        Object.keys(scripts).forEach((name)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        Object.key</span>s(scripts).forEach((name) =&gt; {
 <span class="cstat-no" title="statement not covered" >            const localPath = `${owidGrapherRootDir}/${TEMP_DEPLOY_SCRIPT_PREFIX}${name}.sh`</span>
-<span class="cstat-no" title="statement not covered" >            fs.writeFileSync(localPath, scripts[name], "utf8")</span>
+<span class="cstat-no" title="statement not covered" >            fs.writeFileSync(localPath, scr</span>ipts[name], "utf8")
 <span class="cstat-no" title="statement not covered" >            fs.chmodSync(localPath, "755")</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await this.copyLocalRepoToServerTmpDirectory()</span>
+<span class="cstat-no" title="statement not covered" >        await this</span>.copyLocalRepoToServerTmpDirectory()
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for await (con</span>st name of Object.keys(scripts)) {
-<span class="cstat-no" title="statement not covered" >            await this.runAndStreamScriptOnRemoteServerViaSSH(</span>
-<span class="cstat-no" title="statement not covered" >                `$</span>{rsyncTargetDir}/${TEMP_DEPLOY_SCRIPT_PREFIX}${name}.sh`
+<span class="cstat-no" title="statement not covered" >        for await (const name of Object.keys(scripts))</span> {
+<span class="cstat-no" title="statement not covered" >            await this</span>.runAndStreamScriptOnRemoteServerViaSSH(
+<span class="cstat-no" title="statement not covered" >                `${rsy</span>ncTargetDir}/${TEMP_DEPLOY_SCRIPT_PREFIX}${name}.sh`
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            co</span>nst localPath = `${owidGrapherRootDir}/${TEMP_DEPLOY_SCRIPT_PREFIX}${name}.sh`
-<span class="cstat-no" title="statement not covered" ></span>            fs.removeSync(localPath)
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >            const </span>localPath = `${owidGrapherRootDir}/${TEMP_DEPLOY_SCRIPT_PREFIX}${name}.sh`
+<span class="cstat-no" title="statement not covered" >            fs.removeSync(localPath)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    printAndExit(message: string) {</span>
-<span class="cstat-no" title="statement not covered" >        // eslint-disabl</span>e-next-line no-console
-<span class="cstat-no" title="statement not covered" ></span>        console.log(message)
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-console</span>
+<span class="cstat-no" title="statement not covered" >        console.log(message)</span>
 <span class="cstat-no" title="statement not covered" >        process.exit()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >ensureTmpDirExistsOnServer() {</span>
 <span class="cstat-no" title="statement not covered" >        const { sshHost } = this</span>
-<span class="cstat-no" title="statement not covered" >        const { owidUserHomeTmpDir }</span> = this.pathsOnTarget
+<span class="cstat-no" title="statement not covered" >        const { owidUserHomeTmpDir } = this.pathsOnTarget</span>
 <span class="cstat-no" title="statement not covered" >        await execWrapper(`ssh ${sshHost} mkdir -p ${owidUserHomeTmpDir}`)</span>
-<span class="cstat-no" title="statement not covered" >        this.pro</span>gressBar.tick({
-<span class="cstat-no" title="statement not covered" ></span>            name: `✅ 📡 finished ensuring ${owidUserHomeTmpDir} exists on ${sshHost}`,
-<span class="cstat-no" title="statement not covered" ></span>        })
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({</span>
+<span class="cstat-no" title="statement not covered" >            name: `✅ 📡 finished ensuring ${owidUserHomeTmpDir} exists on ${sshHost}`,</span>
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >copyLocalRepoToServerTmpDirectory() {</span>
 <span class="cstat-no" title="statement not covered" >        const { owidGrapherRootDir } = this.options</span>
 <span class="cstat-no" title="statement not covered" >        const { rsyncTargetDir } = this.pathsOnTarget</span>
-<span class="cstat-no" title="statement not covered" >        const RSYNC = `rsync -havz --no-perms --progress --delete --delete-excluded --exclude-from=${owidGrapherRo</span>otDir}/.rsync-ignore`
+<span class="cstat-no" title="statement not covered" >        const RSYNC = `rsync -havz --no-perms --progress --</span>delete --delete-excluded --exclude-from=${owidGrapherRootDir}/.rsync-ignore`
 <span class="cstat-no" title="statement not covered" >        await execWrapper(</span>
 <span class="cstat-no" title="statement not covered" >            `${RSYNC} ${owidGrapherRootDir}/ ${this.sshHost}:${rsyncTargetDir}`</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this</span>.progressBar.tick({
-<span class="cstat-no" title="statement not covered" ></span>            name: `✅ 📡 finished rsync of ${owidGrapherRootDir} to ${this.sshHost} ${rsyncTargetDir}`,
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({</span>
+<span class="cstat-no" title="statement not covered" >            name</span>: `✅ 📡 finished rsync of ${owidGrapherRootDir} to ${this.sshHost} ${rsyncTargetDir}`,
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >runAndStreamScriptOnRemoteServerViaSSH(path: string) {</span>
 <span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line no-console</span>
 <span class="cstat-no" title="statement not covered" >        console.log(`📡 Running ${path} on ${this.sshHost}`)</span>
-<span class="cstat-no" title="statement not covered" >        const bashTerminateIf</span>AnyNonZero = "bash -e" // https://stackoverflow.com/questions/9952177/whats-the-meaning-of-the-parameter-e-for-bash-shell-command-line/9952249
-<span class="cstat-no" title="statement not covered" >        const pseudoTty = "</span>-tt" // https://stackoverflow.com/questions/7114990/pseudo-terminal-will-not-be-allocated-because-stdin-is-not-a-terminal
+<span class="cstat-no" title="statement not covered" >        const bashTerminateIfAnyNonZero = "bash -e" // https://stackoverflow.com/questions/9952177/whats-the-meaning-of-the-parameter-e-for-bash-shell-command-line/9952249</span>
+<span class="cstat-no" title="statement not covered" >        const pseudoTty = "-tt" // https://stackoverflow.com/questions/7114990/pseudo-terminal-will-not-be-allocated-because-stdin-is-not-a-terminal</span>
 <span class="cstat-no" title="statement not covered" >        const params = [</span>
 <span class="cstat-no" title="statement not covered" >            pseudoTty,</span>
-<span class="cstat-no" title="statement not covered" >            this.sshHo</span>st,
-<span class="cstat-no" title="statement not covered" >            bas</span>hTerminateIfAnyNonZero,
+<span class="cstat-no" title="statement not covered" >            this.sshHost,</span>
+<span class="cstat-no" title="statement not covered" >            bashTerminateIfAnyNonZero,</span>
 <span class="cstat-no" title="statement not covered" >            path,</span>
 <span class="cstat-no" title="statement not covered" >        ]</span>
 <span class="cstat-no" title="statement not covered" >        const child = spawn(`ssh`, params)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        child.stdout.on("dat</span>a", (data) =&gt; {
-<span class="cstat-no" title="statement not covered" >            const trimmed = data.toString().trim()</span>
-<span class="cstat-no" title="statement not covered" >            if (!trimmed) return</span>
-<span class="cstat-no" title="statement not covered" >            // e</span>slint-disable-next-line no-console
+<span class="cstat-no" title="statement not covered" >        child.stdout.on("data", (data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const trimmed = da</span>ta.toString().trim()
+<span class="cstat-no" title="statement not covered" >            if (!trimmed) re</span>turn
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-console</span>
 <span class="cstat-no" title="statement not covered" >            console.log(trimmed)</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        child.stderr.on("dat</span>a", (data) =&gt; {
-<span class="cstat-no" title="statement not covered" >            const trimmed = data.toString().trim()</span>
-<span class="cstat-no" title="statement not covered" >            if (!trimmed) return</span>
-<span class="cstat-no" title="statement not covered" >            // e</span>slint-disable-next-line no-console
+<span class="cstat-no" title="statement not covered" >        child.stderr.on("data", (data) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const trimmed = da</span>ta.toString().trim()
+<span class="cstat-no" title="statement not covered" >            if (!trimmed) re</span>turn
+<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-console</span>
 <span class="cstat-no" title="statement not covered" >            console.error(trimmed)</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const exitCode = awa</span>it new Promise((resolve) =&gt; {
-<span class="cstat-no" title="statement not covered" >            child.on("close", resolve)</span>
+<span class="cstat-no" title="statement not covered" >        const exitCode = await new Promise((</span>resolve) =&gt; {
+<span class="cstat-no" title="statement not covered" >            chil</span>d.on("close", resolve)
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (exitCode) {</span>
-<span class="cstat-no" title="statement not covered" >            // eslint-disable-next-line no-console</span>
-<span class="cstat-no" title="statement not covered" >            cons</span>ole.log(`Exit code: ${exitCode}`)
+<span class="cstat-no" title="statement not covered" >            //</span> eslint-disable-next-line no-console
+<span class="cstat-no" title="statement not covered" >            console.log(`Exit code: </span>${exitCode}`)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        this.progressBar.tick({
-<span class="cstat-no" title="statement not covered" >            name: `✅ 📡 finis</span>hed running ${path}`,
-<span class="cstat-no" title="statement not covered" >        })</span>
-    }
+<span class="cstat-no" title="statement not covered" >        this</span>.progressBar.tick({
+<span class="cstat-no" title="statement not covered" ></span>            name: `✅ 📡 finished running ${path}`,
+<span class="cstat-no" title="statement not covered" ></span>        })
+<span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -1012,7 +1006,7 @@ export class Deployer {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 25 2021 16:05:21 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 25 2021 16:31:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

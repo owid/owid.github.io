@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.31% </span>
+                <span class="strong">30.4% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>107/353</span>
+                <span class='fraction'>107/352</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.31% </span>
+                <span class="strong">30.4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>107/353</span>
+                <span class='fraction'>107/352</span>
             </div>
         
             
@@ -524,8 +524,7 @@
 <a name='L465'></a><a href='#L465'>465</a>
 <a name='L466'></a><a href='#L466'>466</a>
 <a name='L467'></a><a href='#L467'>467</a>
-<a name='L468'></a><a href='#L468'>468</a>
-<a name='L469'></a><a href='#L469'>469</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L468'></a><a href='#L468'>468</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -679,7 +678,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1121,8 +1119,8 @@ export class SiteBaker {
 &nbsp;
     // Bake an individual post/page
     private async <span class="fstat-no" title="function not covered" >bakePost(post: FullPost) {</span>
-<span class="cstat-no" title="statement not covered" >        const pageType = await wpdb.getPageTy</span>pe(post)
-<span class="cstat-no" title="statement not covered" >        const formattingOptions = extrac</span>tFormattingOptions(post.content)
+<span class="cstat-no" title="statement not covered" >        const pageType = await wpdb.getP</span>ageType(post)
+<span class="cstat-no" title="statement not covered" >        const formattingOptions = extractFormatting</span>Options(post.content)
 <span class="cstat-no" title="statement not covered" >        const formatted = await formatPost(</span>
 <span class="cstat-no" title="statement not covered" >            post,</span>
 <span class="cstat-no" title="statement not covered" >            formattingOptions,</span>
@@ -1130,16 +1128,16 @@ export class SiteBaker {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        const html = renderToHtml</span>Page(
 <span class="cstat-no" title="statement not covered" >            &lt;LongFormPage</span>
-<span class="cstat-no" title="statement not covered" >                pageType={pageTy</span>pe}
-<span class="cstat-no" title="statement not covered" >                post={formatted}</span>
-<span class="cstat-no" title="statement not covered" >                formattingOpti</span>ons={formattingOptions}
+<span class="cstat-no" title="statement not covered" >                pageType={pageType}</span>
+<span class="cstat-no" title="statement not covered" >                post={formatte</span>d}
+<span class="cstat-no" title="statement not covered" >                formattingOptions={formattingOpt</span>ions}
 <span class="cstat-no" title="statement not covered" >                baseUrl={this.baseUrl}</span>
-<span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" ></span>            /&gt;
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const outP</span>ath = path.join(this.bakedSiteDir, `${post.slug}.html`)
+<span class="cstat-no" title="statement not covered" >        const outPath = path.join(this.bakedSiteDir, `${post.s</span>lug}.html`)
 <span class="cstat-no" title="statement not covered" >        await fs.mkdirp(path.dirname(outPath))</span>
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(outPath, html)</span>
+<span class="cstat-no" title="statement not covered" >        await this.stageWrite(outP</span>ath, html)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Returns the slugs of posts which exist on the filesystem but are not in the DB anymore.
@@ -1150,15 +1148,14 @@ export class SiteBaker {
 <span class="cstat-no" title="statement not covered" >        const existingSlugs = glob</span>
 <span class="cstat-no" title="statement not covered" >            .sync(`${this.bakedSiteDir}/**/*.html`)</span>
 <span class="cstat-no" title="statement not covered" >            .map((path) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                path.replace(`${this.bakedSiteDir}/`, "").replace(".h</span>tml", "")
+<span class="cstat-no" title="statement not covered" >                path.replace(`${this.baked</span>SiteDir}/`, "").replace(".html", "")
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            .filter(</span>
-<span class="cstat-no" title="statement not covered" ></span>                (path) =&gt;
-<span class="cstat-no" title="statement not covered" >                    !path.startsWith("uploads") &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            .f</span>ilter(
+<span class="cstat-no" title="statement not covered" >                (path) =&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("uploads") &amp;&amp;
 <span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("grapher") &amp;&amp;
-<span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("countries") &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    !path.startsWith</span>("country") &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    !path</span>.startsWith("subscribe") &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    !path.startsWith</span>("countries") &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    !path</span>.startsWith("country") &amp;&amp;
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("blog") &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("entries-by-year") &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("explore") &amp;&amp;</span>
@@ -1468,7 +1465,7 @@ export class SiteBaker {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 25 2021 16:05:21 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 25 2021 16:31:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
