@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.51% </span>
+                <span class="strong">30.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>108/354</span>
+                <span class='fraction'>107/353</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.51% </span>
+                <span class="strong">30.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>108/354</span>
+                <span class='fraction'>107/353</span>
             </div>
         
             
@@ -525,12 +525,7 @@
 <a name='L466'></a><a href='#L466'>466</a>
 <a name='L467'></a><a href='#L467'>467</a>
 <a name='L468'></a><a href='#L468'>468</a>
-<a name='L469'></a><a href='#L469'>469</a>
-<a name='L470'></a><a href='#L470'>470</a>
-<a name='L471'></a><a href='#L471'>471</a>
-<a name='L472'></a><a href='#L472'>472</a>
-<a name='L473'></a><a href='#L473'>473</a>
-<a name='L474'></a><a href='#L474'>474</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L469'></a><a href='#L469'>469</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -602,7 +597,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -742,9 +736,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -790,7 +781,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -883,11 +873,11 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1023,7 +1013,6 @@ import { LongFormPage } from "../site/LongFormPage"
 import {
     renderToHtmlPage,
     renderFrontPage,
-    renderSubscribePage,
     renderBlogByPageNum,
     renderChartsPage,
     renderMenuJson,
@@ -1076,64 +1065,64 @@ export class SiteBaker {
     }
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >bakeEmbeds() {</span>
-<span class="cstat-no" title="statement not covered" >        // Find all grapher urls used </span>as embeds in all posts on the site
-<span class="cstat-no" title="statement not covered" >        const rows = await wpdb.singleton.query(</span>
-<span class="cstat-no" title="statement not covered" >            `SELECT post_content FROM wp_posts W</span>HERE (post_type='page' OR post_type='post' OR post_type='wp_block') AND post_status='publish'`
+<span class="cstat-no" title="statement not covered" >        // Find all grapher urls u</span>sed as embeds in all posts on the site
+<span class="cstat-no" title="statement not covered" >        const rows = await wpdb.single</span>ton.query(
+<span class="cstat-no" title="statement not covered" >            `SELECT post_content FROM wp_posts WHERE (post</span>_type='page' OR post_type='post' OR post_type='wp_block') AND post_status='publish'`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        let grapherUrls = []</span>
 <span class="cstat-no" title="statement not covered" >        for (const row of rows) {</span>
-<span class="cstat-no" title="statement not covered" >            co</span>nst $ = cheerio.load(row.post_content)
-<span class="cstat-no" title="statement not covered" >            grapherUrls.push(</span>
+<span class="cstat-no" title="statement not covered" >            const $ = cheerio.load(row.post_content)</span>
+<span class="cstat-no" title="statement not covered" >            gr</span>apherUrls.push(
 <span class="cstat-no" title="statement not covered" >                ...$("iframe")</span>
 <span class="cstat-no" title="statement not covered" >                    .toArray()</span>
 <span class="cstat-no" title="statement not covered" >                    .filter((el) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                        (el.attribs["src"] || "").match(/\/grapher\//)
+<span class="cstat-no" title="statement not covered" >                        (el.attribs["src"] || "").match(/\/grap</span>her\//)
 <span class="cstat-no" title="statement not covered" ></span>                    )
-<span class="cstat-no" title="statement not covered" >                    .map((el</span>) =&gt; el.attribs["src"].trim())
+<span class="cstat-no" title="statement not covered" ></span>                    .map((el) =&gt; el.attribs["src"].trim())
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        grapherUrls = lodash.uniq(grapherUrls)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        await bakeGrapherUrls(grapherUrls)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        this.grapherExports = await getGrapherExportsByUrl()</span>
+<span class="cstat-no" title="statement not covered" >        this.grapherExports = await getGrapherExportsByUrl</span>()
 <span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked embeds" })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >bakeCountryProfiles() {</span>
-<span class="cstat-no" title="statement not covered" >        countryProfile</span>Specs.forEach(async (spec) =&gt; {
-<span class="cstat-no" title="statement not covered" >            // Del</span>ete all country profiles before regenerating them
-<span class="cstat-no" title="statement not covered" >            await</span> fs.remove(`${this.bakedSiteDir}/${spec.rootPath}`)
+<span class="cstat-no" title="statement not covered" >        countryProfileSpecs.forEach(async (spec) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            // Delete </span>all country profiles before regenerating them
+<span class="cstat-no" title="statement not covered" >            await </span>fs.remove(`${this.bakedSiteDir}/${spec.rootPath}`)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>            // Not necessary, as this is done by stageWrite already
+<span class="cstat-no" title="statement not covered" >            // Not necessary, as this is done by stageWrite already</span>
 <span class="cstat-no" title="statement not covered" ></span>            // await this.ensureDir(profile.rootPath)
-<span class="cstat-no" title="statement not covered" >            for (const country of co</span>untries) {
-<span class="cstat-no" title="statement not covered" >                const</span> html = await renderCountryProfile(
-<span class="cstat-no" title="statement not covered" >                    spec,</span>
+<span class="cstat-no" title="statement not covered" ></span>            for (const country of countries) {
+<span class="cstat-no" title="statement not covered" >                const html = await r</span>enderCountryProfile(
+<span class="cstat-no" title="statement not covered" >                    s</span>pec,
 <span class="cstat-no" title="statement not covered" >                    country,</span>
 <span class="cstat-no" title="statement not covered" >                    this.grapherExports</span>
 <span class="cstat-no" title="statement not covered" >                ).catch(() =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    console.error(</span>
-<span class="cstat-no" title="statement not covered" >                        `${country.name} country profile not baked for project </span>"${spec.project}". Check that both pages "${spec.landingPageSlug}" and "${spec.genericProfileSlug}" exist and are published.`
+<span class="cstat-no" title="statement not covered" >                        `${country.name} country profile not baked for project "${spec.project}". Check that both pages "${spec.landingPageSlug}" and "${spec.genericProfileSlug}" exist and are published.`</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>                if (html) {
-<span class="cstat-no" title="statement not covered" >                    const outPath = path.join(</span>
+<span class="cstat-no" title="statement not covered" ></span>                    const outPath = path.join(
 <span class="cstat-no" title="statement not covered" >                        this.bakedSiteDir,</span>
 <span class="cstat-no" title="statement not covered" >                        `${spec.rootPath}/${country.slug}.html`</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                    await this.stageWrite(ou</span>tPath, html)
+<span class="cstat-no" title="statement not covered" >                    await this.stageWrite(outPath, html)</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked country profil</span>es" })
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked country profiles" })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Bake an individual post/page
     private async <span class="fstat-no" title="function not covered" >bakePost(post: FullPost) {</span>
-<span class="cstat-no" title="statement not covered" >        const pageType = await wpdb.getP</span>ageType(post)
-<span class="cstat-no" title="statement not covered" >        const formattingOptions = extractFormatting</span>Options(post.content)
+<span class="cstat-no" title="statement not covered" >        const pageType = await wpdb.getPageTy</span>pe(post)
+<span class="cstat-no" title="statement not covered" >        const formattingOptions = extrac</span>tFormattingOptions(post.content)
 <span class="cstat-no" title="statement not covered" >        const formatted = await formatPost(</span>
 <span class="cstat-no" title="statement not covered" >            post,</span>
 <span class="cstat-no" title="statement not covered" >            formattingOptions,</span>
@@ -1141,16 +1130,16 @@ export class SiteBaker {
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        const html = renderToHtml</span>Page(
 <span class="cstat-no" title="statement not covered" >            &lt;LongFormPage</span>
-<span class="cstat-no" title="statement not covered" >                pageType={pageType}</span>
-<span class="cstat-no" title="statement not covered" >                post={formatte</span>d}
-<span class="cstat-no" title="statement not covered" >                formattingOptions={formattingOpt</span>ions}
+<span class="cstat-no" title="statement not covered" >                pageType={pageTy</span>pe}
+<span class="cstat-no" title="statement not covered" >                post={formatted}</span>
+<span class="cstat-no" title="statement not covered" >                formattingOpti</span>ons={formattingOptions}
 <span class="cstat-no" title="statement not covered" >                baseUrl={this.baseUrl}</span>
-<span class="cstat-no" title="statement not covered" ></span>            /&gt;
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >            /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const outPath = path.join(this.bakedSiteDir, `${post.s</span>lug}.html`)
+<span class="cstat-no" title="statement not covered" >        const outP</span>ath = path.join(this.bakedSiteDir, `${post.slug}.html`)
 <span class="cstat-no" title="statement not covered" >        await fs.mkdirp(path.dirname(outPath))</span>
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(outP</span>ath, html)
+<span class="cstat-no" title="statement not covered" >        await this.stageWrite(outPath, html)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Returns the slugs of posts which exist on the filesystem but are not in the DB anymore.
@@ -1161,15 +1150,15 @@ export class SiteBaker {
 <span class="cstat-no" title="statement not covered" >        const existingSlugs = glob</span>
 <span class="cstat-no" title="statement not covered" >            .sync(`${this.bakedSiteDir}/**/*.html`)</span>
 <span class="cstat-no" title="statement not covered" >            .map((path) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                path.replace(`${this.baked</span>SiteDir}/`, "").replace(".html", "")
+<span class="cstat-no" title="statement not covered" >                path.replace(`${this.bakedSiteDir}/`, "").replace(".h</span>tml", "")
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            .f</span>ilter(
-<span class="cstat-no" title="statement not covered" >                (path) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("uploads") &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            .filter(</span>
+<span class="cstat-no" title="statement not covered" ></span>                (path) =&gt;
+<span class="cstat-no" title="statement not covered" >                    !path.startsWith("uploads") &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("grapher") &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    !path.startsWith</span>("countries") &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    !path</span>.startsWith("country") &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    !path.startsWith("subscribe") &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" ></span>                    !path.startsWith("countries") &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    !path.startsWith</span>("country") &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    !path</span>.startsWith("subscribe") &amp;&amp;
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("blog") &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("entries-by-year") &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    !path.startsWith("explore") &amp;&amp;</span>
@@ -1220,147 +1209,143 @@ export class SiteBaker {
 <span class="cstat-no" title="statement not covered" >            await renderF</span>rontPage()
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/subscribe.html`,</span>
-<span class="cstat-no" title="statement not covered" >            await renderSubscribePage()</span>
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/donate.html`,</span>
+<span class="cstat-no" title="statement not covered" >            await renderDonatePage()</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>        await this.stageWrite(
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteD</span>ir}/donate.html`,
-<span class="cstat-no" title="statement not covered" >            await r</span>enderDonatePage()
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/feedback.html`,</span>
-<span class="cstat-no" title="statement not covered" >            await feedbackPage()</span>
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteD</span>ir}/feedback.html`,
+<span class="cstat-no" title="statement not covered" >            await f</span>eedbackPage()
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
 <span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/charts.html`,</span>
-<span class="cstat-no" title="statement not covered" ></span>            await renderChartsPage()
+<span class="cstat-no" title="statement not covered" >            await renderChartsPage()</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/search.html`,</span>
+<span class="cstat-no" title="statement not covered" ></span>            await renderSearchPage()
 <span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" >        await this.sta</span>geWrite(
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/search.html`,</span>
-<span class="cstat-no" title="statement not covered" >            await renderSearchPage()</span>
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/404.html`,</span>
+<span class="cstat-no" title="statement not covered" >            await renderNotFoundPage()</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/404.html`,</span>
-<span class="cstat-no" title="statement not covered" ></span>            await renderNotFoundPage()
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/headerMenu.json`,</span>
+<span class="cstat-no" title="statement not covered" ></span>            await renderMenuJson()
 <span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" >        await this.stageWri</span>te(
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/headerMenu.json`,</span>
-<span class="cstat-no" title="statement not covered" >            await renderMenuJson()</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/</span>sitemap.xml`,
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/sitemap.xml`,</span>
 <span class="cstat-no" title="statement not covered" >            await makeSitemap()</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        cons</span>t explorerAdminServer = new ExplorerAdminServer(
-<span class="cstat-no" title="statement not covered" ></span>            GIT_CMS_DIR,
+<span class="cstat-no" title="statement not covered" >        const explorerAdminServer </span>= new ExplorerAdminServer(
+<span class="cstat-no" title="statement not covered" >            GIT_CMS_DIR,</span>
 <span class="cstat-no" title="statement not covered" >            this.baseUrl</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await explorerAdminServer.bakeAllEx</span>plorerRedirects(this.bakedSiteDir)
+<span class="cstat-no" title="statement not covered" ></span>        await explorerAdminServer.bakeAllExplorerRedirects(this.bakedSiteDir)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        await explorerAdminServer.bakeAllPublishedExplorers(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/${</span>EXPLORERS_ROUTE_FOLDER}/`
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/${EXPLORERS_ROUTE_FOLDE</span>R}/`
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.pro</span>gressBar.tick({ name: "✅ baked special pages" })
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked</span> special pages" })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Pages that are expected by google scholar for indexing
-    private async <span class="fstat-no" title="function not covered" >bakeGoogleScholar() {</span>
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            `${this.bakedS</span>iteDir}/entries-by-year/index.html`,
-<span class="cstat-no" title="statement not covered" >            awai</span>t entriesByYearPage()
+    private async bakeGoogleScholar() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        awai</span>t this.stageWrite(</span>
+<span class="cstat-no" title="statement not covered" ></span>            `${this.bakedSiteDir}/entries-by-year/index.html`,
+<span class="cstat-no" title="statement not covered" >            await entriesByYea</span>rPage()
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        const rows = (await db
+<span class="cstat-no" title="statement not covered" >        const rows = (awai</span>t db
 <span class="cstat-no" title="statement not covered" >            .kne</span>xTable(Post.table)
 <span class="cstat-no" title="statement not covered" >            .where({ status: "publish" })</span>
-<span class="cstat-no" title="statement not covered" >            .join("post_tags", { "post_tags.post_id": "</span>posts.id" })
-<span class="cstat-no" title="statement not covered" >            .join("tags", { "ta</span>gs.id": "post_tags.tag_id" })
-<span class="cstat-no" title="statement not covered" >            .where({ "tags.name": "Entries" }</span>)
-<span class="cstat-no" title="statement not covered" >            .select(db.knexRaw("distinct year(pub</span>lished_at) as year"))
-<span class="cstat-no" title="statement not covered" >            .orderBy("year", "D</span>ESC")) as { year: number }[]
+<span class="cstat-no" title="statement not covered" ></span>            .join("post_tags", { "post_tags.post_id": "posts.id" })
+<span class="cstat-no" title="statement not covered" ></span>            .join("tags", { "tags.id": "post_tags.tag_id" })
+<span class="cstat-no" title="statement not covered" >            .whe</span>re({ "tags.name": "Entries" })
+<span class="cstat-no" title="statement not covered" >            .select(db.knexRaw("distinct year(published_at) as</span> year"))
+<span class="cstat-no" title="statement not covered" >            .orderBy("year", "DESC")) as { year: number</span> }[]
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        const years = rows.map((r) =&gt; r.year)
+<span class="cstat-no" title="statement not covered" >        const years = rows.map((r) =&gt; r.year)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for (const year of years) {</span>
-<span class="cstat-no" title="statement not covered" >            await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >                `${this.bakedSiteDir}/</span>entries-by-year/${year}.html`,
-<span class="cstat-no" title="statement not covered" ></span>                await entriesByYearPage(year)
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >        for (const year of year</span>s) {
+<span class="cstat-no" title="statement not covered" ></span>            await this.stageWrite(
+<span class="cstat-no" title="statement not covered" ></span>                `${this.bakedSiteDir}/entries-by-year/${year}.html`,
+<span class="cstat-no" title="statement not covered" >                await ent</span>riesByYearPage(year)
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked google scholar" })</span>
+<span class="cstat-no" title="statement not covered" >        this</span>.progressBar.tick({ name: "✅ baked google scholar" })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Bake the blog index
-    private async bakeBlogIndex() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const allPosts = await wpdb</span>.getBlogIndex()</span>
-<span class="cstat-no" title="statement not covered" >        const numPages = Math.ceil(allPosts.length / BLOG_POST</span>S_PER_PAGE)
+    private async <span class="fstat-no" title="function not covered" >bakeBlogIndex() {</span>
+<span class="cstat-no" title="statement not covered" >        const allPosts = await wpdb.getBlogIndex()</span>
+<span class="cstat-no" title="statement not covered" >        const numPages = Math.cei</span>l(allPosts.length / BLOG_POSTS_PER_PAGE)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for (let i = 1; i &lt;= numPages; i++) {</span>
-<span class="cstat-no" title="statement not covered" >            const slug = i === 1 </span>? "blog" : `blog/page/${i}`
-<span class="cstat-no" title="statement not covered" ></span>            const html = await renderBlogByPageNum(i)
-<span class="cstat-no" title="statement not covered" ></span>            await this.stageWrite(`${this.bakedSiteDir}/${slug}.html`, html)
+<span class="cstat-no" title="statement not covered" ></span>        for (let i = 1; i &lt;= numPages; i++) {
+<span class="cstat-no" title="statement not covered" >            const slug = i === 1 ? </span>"blog" : `blog/page/${i}`
+<span class="cstat-no" title="statement not covered" >            const html = await renderBlogByPageNum(i)</span>
+<span class="cstat-no" title="statement not covered" >            await this.stageWrite(`${this.bakedSiteD</span>ir}/${slug}.html`, html)
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name:</span> "✅ baked blog index" })
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ n</span>ame: "✅ baked blog index" })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Bake the RSS feed
     private async <span class="fstat-no" title="function not covered" >bakeRSS() {</span>
-<span class="cstat-no" title="statement not covered" >        await this</span>.stageWrite(
-<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/atom.xml`,</span>
-<span class="cstat-no" title="statement not covered" >            aw</span>ait makeAtomFeed()
+<span class="cstat-no" title="statement not covered" ></span>        await this.stageWrite(
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/atom</span>.xml`,
+<span class="cstat-no" title="statement not covered" >            await makeAtomFeed()</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked rss" })</span>
+<span class="cstat-no" title="statement not covered" >        this.progr</span>essBar.tick({ name: "✅ baked rss" })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Bake the static assets
-    private async bakeAssets() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        await execWrapper(</span></span>
-<span class="cstat-no" title="statement not covered" >            `rsync -havL --delete ${WORDPRESS_DIR}/web/app/upl</span>oads ${this.bakedSiteDir}/`
-<span class="cstat-no" title="statement not covered" >        )</span>
+    private async <span class="fstat-no" title="function not covered" >bakeAssets() {</span>
 <span class="cstat-no" title="statement not covered" >        await execWrapper(</span>
-<span class="cstat-no" title="statement not covered" >            `rm -rf ${this.bakedSiteDir}/assets &amp;&amp; cp -r ${BA</span>SE_DIR}/itsJustJavascript/webpack ${this.bakedSiteDir}/assets`
+<span class="cstat-no" title="statement not covered" >            `r</span>sync -havL --delete ${WORDPRESS_DIR}/web/app/uploads ${this.bakedSiteDir}/`
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>        await execWrapper(
+<span class="cstat-no" title="statement not covered" >            `rm -rf ${this.bakedSiteDir}/assets &amp;&amp; cp -r ${BASE_DIR}/itsJu</span>stJavascript/webpack ${this.bakedSiteDir}/assets`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        await execWrapper(</span>
 <span class="cstat-no" title="statement not covered" >            `rsync -hav --delete ${BASE_DIR}/public/* ${this.bakedSiteDir}/`</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        await fs.writeFile(</span>
-<span class="cstat-no" title="statement not covered" >            `$</span>{this.bakedSiteDir}/grapher/embedCharts.js`,
+<span class="cstat-no" title="statement not covered" >            `${this.bakedSiteDir}/grapher/embedCharts.js`,</span>
 <span class="cstat-no" title="statement not covered" >            bakeEmbedSnippet(this.baseUrl)</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.stage(`${this.bakedSiteDir}/grapher/embedCharts.j</span>s`)
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked assets" })</span>
+<span class="cstat-no" title="statement not covered" >        this.stage(`${this.bakedSiteDir}/grapher/embedCharts.js`)</span>
+<span class="cstat-no" title="statement not covered" >        this.p</span>rogressBar.tick({ name: "✅ baked assets" })
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >bakeRedirects() {</span>
 <span class="cstat-no" title="statement not covered" >        const redirects = await getRedirects()</span>
-<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ got redirects" </span>})
-<span class="cstat-no" title="statement not covered" >        await this.stageWrite(</span>
-<span class="cstat-no" title="statement not covered" >            path.</span>join(this.bakedSiteDir, `_redirects`),
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ got redirects" })</span>
+<span class="cstat-no" title="statement not covered" >        await this.stage</span>Write(
+<span class="cstat-no" title="statement not covered" >            path.join(this.bakedSiteDir, `_redir</span>ects`),
 <span class="cstat-no" title="statement not covered" >            redirects.join("\n")</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this</span>.progressBar.tick({ name: "✅ baked redirects" })
+<span class="cstat-no" title="statement not covered" >        this.progressBar.tick({ name: "✅ baked redirects" })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >bakeWordpressPages() {</span>
-<span class="cstat-no" title="statement not covered" >        await this.bakeRedirects()</span>
+<span class="cstat-no" title="statement not covered" >        awai</span>t this.bakeRedirects()
 <span class="cstat-no" title="statement not covered" ></span>        await this.bakeEmbeds()
-<span class="cstat-no" title="statement not covered" >        await this.</span>bakeBlogIndex()
+<span class="cstat-no" title="statement not covered" >        await this.bakeBl</span>ogIndex()
 <span class="cstat-no" title="statement not covered" >        await this.bakeRSS()</span>
-<span class="cstat-no" title="statement not covered" >        await this.bakeAsse</span>ts()
-<span class="cstat-no" title="statement not covered" >        await this.bakeGoogleScholar()</span>
-<span class="cstat-no" title="statement not covered" >        await this.bakePosts()</span>
+<span class="cstat-no" title="statement not covered" >        await this.bakeAssets()</span>
+<span class="cstat-no" title="statement not covered" ></span>        await this.bakeGoogleScholar()
+<span class="cstat-no" title="statement not covered" >        await this.</span>bakePosts()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private async <span class="fstat-no" title="function not covered" >_bakeNonWordpressPages() {</span>
 <span class="cstat-no" title="statement not covered" >        await bakeCountries(this)</span>
-        await this.bakeSpecialPages()
-        await this.bakeCountryProfiles()
-        await bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers(
-            this.bakedSiteDir
+<span class="cstat-no" title="statement not covered" ></span>        await this.bakeSpecialPages()
+<span class="cstat-no" title="statement not covered" ></span>        await this.bakeCountryProfiles()
+<span class="cstat-no" title="statement not covered" >        await bakeAllChangedGra</span>pherPagesVariablesPngSvgAndDeleteRemovedGraphers(
+<span class="cstat-no" title="statement not covered" >            this.bakedSiteDir</span>
         )
         this.progressBar.tick({
             name:
@@ -1483,7 +1468,7 @@ export class SiteBaker {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 25 2021 08:17:10 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 25 2021 16:05:21 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

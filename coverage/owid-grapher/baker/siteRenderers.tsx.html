@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.21% </span>
+                <span class="strong">32.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>88/265</span>
+                <span class='fraction'>85/262</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.21% </span>
+                <span class="strong">32.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>88/265</span>
+                <span class='fraction'>85/262</span>
             </div>
         
             
@@ -446,11 +446,7 @@
 <a name='L387'></a><a href='#L387'>387</a>
 <a name='L388'></a><a href='#L388'>388</a>
 <a name='L389'></a><a href='#L389'>389</a>
-<a name='L390'></a><a href='#L390'>390</a>
-<a name='L391'></a><a href='#L391'>391</a>
-<a name='L392'></a><a href='#L392'>392</a>
-<a name='L393'></a><a href='#L393'>393</a>
-<a name='L394'></a><a href='#L394'>394</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L390'></a><a href='#L390'>390</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -500,7 +496,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -614,15 +609,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -715,7 +707,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -851,7 +843,6 @@ import { CovidPage } from "../site/CovidPage"
 import { SearchPage } from "../site/SearchPage"
 import { NotFoundPage } from "../site/NotFoundPage"
 import { DonatePage } from "../site/DonatePage"
-import { SubscribePage } from "../site/SubscribePage"
 import * as React from "react"
 import * as ReactDOMServer from "react-dom/server"
 import * as lodash from "lodash"
@@ -986,51 +977,48 @@ export const renderFrontPage = <span class="fstat-no" title="function not covere
 <span class="cstat-no" title="statement not covered" >    const posts = await getBlogIndex()</span>
 <span class="cstat-no" title="statement not covered" >    const totalCharts = (</span>
 <span class="cstat-no" title="statement not covered" >        await queryMysql(</span>
-<span class="cstat-no" title="statement not covered" >            `SELECT COUNT(*) AS count</span>
+<span class="cstat-no" title="statement not covered" ></span>            `SELECT COUNT(*) AS count
 <span class="cstat-no" title="statement not covered" >            FROM charts</span>
-<span class="cstat-no" title="statement not covered" ></span>            WHERE
+<span class="cstat-no" title="statement not covered" >            WHERE</span>
 <span class="cstat-no" title="statement not covered" >                is_indexable IS TRUE</span>
 <span class="cstat-no" title="statement not covered" >                AND publishedAt IS NOT NULL</span>
-<span class="cstat-no" title="statement not covered" >                AND config -&gt; "$.isPublished"</span> IS TRUE`
+<span class="cstat-no" title="statement not covered" >                AND config -&gt; "$.isPublished" IS </span>TRUE`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    )[0].count as number</span>
-<span class="cstat-no" title="statement not covered" >    return renderToHtmlPag</span>e(
+<span class="cstat-no" title="statement not covered" >    return renderToHtmlPage(</span>
 <span class="cstat-no" title="statement not covered" >        &lt;FrontPage</span>
 <span class="cstat-no" title="statement not covered" >            entries={entries}</span>
 <span class="cstat-no" title="statement not covered" >            posts={posts}</span>
-<span class="cstat-no" title="statement not covered" >            totalCharts={totalCharts}</span>
+<span class="cstat-no" title="statement not covered" >            totalCharts={totalCha</span>rts}
 <span class="cstat-no" title="statement not covered" >            baseUrl={BAKED_BASE_URL}</span>
 <span class="cstat-no" title="statement not covered" >        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const renderDonatePage = <span class="fstat-no" title="function not covered" >() =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    renderToHtmlPage(</span>
-<span class="cstat-no" title="statement not covered" ></span>        &lt;DonatePage
+export const renderDonatePage = () =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    renderToHtmlPage(</span></span>
+<span class="cstat-no" title="statement not covered" >        &lt;DonatePage</span>
             baseUrl={BAKED_BASE_URL}
             recaptchaKey={RECAPTCHA_SITE_KEY}
         /&gt;
     )
 &nbsp;
-export const renderSubscribePage = () =&gt;
-<span class="fstat-no" title="function not covered" >    renderToHtmlPage(&lt;</span>SubscribePage baseUrl={BAKED_BASE_URL} /&gt;)
-&nbsp;
-export const renderBlogByPageNum = async (<span class="fstat-no" title="function not covered" >pageNum: number) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const allPosts = await getBlogIndex()</span>
+export const renderBlogByPageNum = async (pageNum: number) =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const allPosts = await getBlogIndex()</span></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const numPages = Math.c</span>eil(allPosts.length / BLOG_POSTS_PER_PAGE)
-<span class="cstat-no" title="statement not covered" >    const posts = allPosts.slice(</span>
-<span class="cstat-no" title="statement not covered" >        (pageNum - 1) * BLO</span>G_POSTS_PER_PAGE,
-<span class="cstat-no" title="statement not covered" >        pageNum * BLOG_POSTS_PER_PAGE</span>
+<span class="cstat-no" title="statement not covered" >    const numPages = Math.ceil(allPosts.length / BLOG_POSTS_PER_PA</span>GE)
+<span class="cstat-no" title="statement not covered" >    const posts = allPosts.</span>slice(
+<span class="cstat-no" title="statement not covered" >        (pageNum - 1) * BLOG_POSTS_PER_PAGE,</span>
+<span class="cstat-no" title="statement not covered" >        pageNum * BLOG_POST</span>S_PER_PAGE
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return renderToHtmlPa</span>ge(
-<span class="cstat-no" title="statement not covered" ></span>        &lt;BlogIndexPage
+<span class="cstat-no" title="statement not covered" >    return </span>renderToHtmlPage(
+<span class="cstat-no" title="statement not covered" >        &lt;BlogIndexPage</span>
 <span class="cstat-no" title="statement not covered" ></span>            posts={posts}
-<span class="cstat-no" title="statement not covered" >            pageNum={</span>pageNum}
-<span class="cstat-no" title="statement not covered" ></span>            numPages={numPages}
+<span class="cstat-no" title="statement not covered" ></span>            pageNum={pageNum}
+<span class="cstat-no" title="statement not covered" >            numPages=</span>{numPages}
 <span class="cstat-no" title="statement not covered" ></span>            baseUrl={BAKED_BASE_URL}
-<span class="cstat-no" title="statement not covered" >        /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>        /&gt;
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -1040,72 +1028,72 @@ export const renderSearchPage = <span class="fstat-no" title="function not cover
 export const renderNotFoundPage = <span class="fstat-no" title="function not covered" >() =&gt;</span>
     renderToHtmlPage(&lt;NotFoundPage baseUrl={BAKED_BASE_URL} /&gt;)
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function makeAtomFeed() {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export async function makeAt</span>omFeed() {</span>
 <span class="cstat-no" title="statement not covered" >    const postsApi = await getPosts(["post"], 10)</span>
-<span class="cstat-no" title="statement not covered" ></span>    const posts = await Promise.all(
-<span class="cstat-no" title="statement not covered" >        postsApi.map((postApi) =&gt; getFullPost(p</span>ostApi, true))
+<span class="cstat-no" title="statement not covered" >    const posts = await Promise.all(</span>
+<span class="cstat-no" title="statement not covered" ></span>        postsApi.map((postApi) =&gt; getFullPost(postApi, true))
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const feed = `&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="cstat-no" title="statement not covered" >    const feed = `&lt;?xml version="1.0" encodin</span>g="utf-8"?&gt;
 <span class="cstat-no" title="statement not covered" >&lt;feed xmlns="http://www.w3.org/2005/Atom"&gt;</span>
-<span class="cstat-no" title="statement not covered" >&lt;title&gt;Our World in Data&lt;</span>/title&gt;
-<span class="cstat-no" title="statement not covered" >&lt;subtitle&gt;Research and data to make progress</span> against the world’s largest problems&lt;/subtitle&gt;
+<span class="cstat-no" title="statement not covered" >&lt;title&gt;Our World in Data&lt;/title&gt;</span>
+<span class="cstat-no" title="statement not covered" >&lt;subtitle&gt;Research and da</span>ta to make progress against the world’s largest problems&lt;/subtitle&gt;
 <span class="cstat-no" title="statement not covered" >&lt;id&gt;${BAKED_BASE_URL}/&lt;/id&gt;</span>
-<span class="cstat-no" title="statement not covered" >&lt;link type="text/html" </span>rel="alternate" href="${BAKED_BASE_URL}"/&gt;
-<span class="cstat-no" title="statement not covered" >&lt;link type="applicatio</span>n/atom+xml" rel="self" href="${BAKED_BASE_URL}/atom.xml"/&gt;
-<span class="cstat-no" title="statement not covered" >&lt;updated&gt;${posts[0]</span>.date.toISOString()}&lt;/updated&gt;
+<span class="cstat-no" title="statement not covered" >&lt;link type="text/html" rel="alternate" href="${BAK</span>ED_BASE_URL}"/&gt;
+<span class="cstat-no" title="statement not covered" >&lt;link type="application</span>/atom+xml" rel="self" href="${BAKED_BASE_URL}/atom.xml"/&gt;
+<span class="cstat-no" title="statement not covered" >&lt;updated&gt;${posts[0].da</span>te.toISOString()}&lt;/updated&gt;
 <span class="cstat-no" title="statement not covered" >${posts</span>
 <span class="cstat-no" title="statement not covered" >    .map((post) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const postUrl = `${BAKED_BASE_URL}/${post.path}`</span>
+<span class="cstat-no" title="statement not covered" >        const postUrl = `${BAKED_BASE_URL}/${post.pat</span>h}`
 <span class="cstat-no" title="statement not covered" >        const image = post.imageUrl</span>
-<span class="cstat-no" title="statement not covered" >            ? `&lt;br&gt;&lt;br&gt;&lt;a href</span>="${postUrl}" target="_blank"&gt;&lt;img src="${post.imageUrl}"/&gt;&lt;/a&gt;`
+<span class="cstat-no" title="statement not covered" >            ? `&lt;br&gt;&lt;br&gt;&lt;a href="${postUrl}" target="_</span>blank"&gt;&lt;img src="${post.imageUrl}"/&gt;&lt;/a&gt;`
 <span class="cstat-no" title="statement not covered" >            : ""</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return `&lt;entry&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;title&gt;&lt;![CDATA[${post.title}]]&gt;&lt;/title&gt;
-<span class="cstat-no" title="statement not covered" >            &lt;id&gt;${postUrl}&lt;/id&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;link rel="alternate" href="${postUrl}"/&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;published&gt;${post.date.to</span>ISOString()}&lt;/published&gt;
-<span class="cstat-no" title="statement not covered" >            &lt;updated&gt;${post.modifiedDate.toISOString()}&lt;/updated&gt;</span>
+<span class="cstat-no" title="statement not covered" >        return `&lt;e</span>ntry&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;title&gt;&lt;![CDATA[${post.title}]]&gt;&lt;/title&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>            &lt;id&gt;${postUrl}&lt;/id&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;link rel="alternate" href="${p</span>ostUrl}"/&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;published&gt;${post.date.toISOString()}&lt;/published&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;updated&gt;${post.modifiedD</span>ate.toISOString()}&lt;/updated&gt;
 <span class="cstat-no" title="statement not covered" >            ${post.authors</span>
 <span class="cstat-no" title="statement not covered" >                .map(</span>
 <span class="cstat-no" title="statement not covered" >                    (author: string) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        `&lt;author&gt;&lt;name&gt;${author}&lt;/name&gt;&lt;/author&gt;`</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >                .join("")}</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;summary&gt;&lt;![CDATA[${post.excerpt}${image}]]&gt;&lt;/summary&gt;
-<span class="cstat-no" title="statement not covered" >            &lt;/entry&gt;`</span>
+<span class="cstat-no" title="statement not covered" >            &lt;summary&gt;&lt;![CDATA[${post.excerpt}${image}]</span>]&gt;&lt;/summary&gt;
+<span class="cstat-no" title="statement not covered" ></span>            &lt;/entry&gt;`
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    .join("\n")}</span>
 <span class="cstat-no" title="statement not covered" >&lt;/feed&gt;</span>
 <span class="cstat-no" title="statement not covered" >`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return feed</span>
+<span class="cstat-no" title="statement not covered" >    r</span>eturn feed
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // These pages exist largely just for Google Scholar
-export const entriesByYearPage = async (year?: number) =&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const entries = (await knexTable(Post.table)</span></span>
+export const entriesByYearPage = async (<span class="fstat-no" title="function not covered" >year?: number) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const entries = (awa</span>it knexTable(Post.table)
 <span class="cstat-no" title="statement not covered" >        .where({ status: "publish" })</span>
-<span class="cstat-no" title="statement not covered" >        .join("post_tags", { "post_t</span>ags.post_id": "posts.id" })
-<span class="cstat-no" title="statement not covered" >        .join("tags", { "tags.id": "post_tags.tag_id" })</span>
+<span class="cstat-no" title="statement not covered" >        .join("post_tags", { "post_tag</span>s.post_id": "posts.id" })
+<span class="cstat-no" title="statement not covered" >        .join("tags", { "tags.id": "</span>post_tags.tag_id" })
 <span class="cstat-no" title="statement not covered" >        .where({ "tags.name": "Entries" })</span>
-<span class="cstat-no" title="statement not covered" >        .select("title", "slug", "publi</span>shed_at")) as Pick&lt;
+<span class="cstat-no" title="statement not covered" >        .select("title", "slug", "publishe</span>d_at")) as Pick&lt;
 <span class="cstat-no" title="statement not covered" >        PostRow,</span>
 <span class="cstat-no" title="statement not covered" >        "title" | "slug" | "published_at"</span>
 <span class="cstat-no" title="statement not covered" >    &gt;[]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    if (year !== undefined)
-<span class="cstat-no" title="statement not covered" >        return renderToHtmlPage(</span>
+<span class="cstat-no" title="statement not covered" >    if (year !== undefined)</span>
+<span class="cstat-no" title="statement not covered" ></span>        return renderToHtmlPage(
 <span class="cstat-no" title="statement not covered" >            &lt;EntriesForYearPage</span>
 <span class="cstat-no" title="statement not covered" >                entries={entries}</span>
-<span class="cstat-no" title="statement not covered" >                ye</span>ar={year}
-<span class="cstat-no" title="statement not covered" >                baseUrl={BAKED_BASE_URL}</span>
+<span class="cstat-no" title="statement not covered" >                year={year}</span>
+<span class="cstat-no" title="statement not covered" >                ba</span>seUrl={BAKED_BASE_URL}
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return renderToHtmlPage(</span>
-<span class="cstat-no" title="statement not covered" >        &lt;EntriesByYearPage entries={entries} baseUrl={BAKED_BASE_URL} /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>    return renderToHtmlPage(
+<span class="cstat-no" title="statement not covered" >        &lt;EntriesByYearPage entries={entries} baseUrl={BAKED_BAS</span>E_URL} /&gt;
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -1243,7 +1231,7 @@ export const flushCache = () =&gt; getCountryProfilePost.cache.clear?.()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jun 25 2021 08:17:10 GMT+0000 (Coordinated Universal Time)
+                at Fri Jun 25 2021 16:05:21 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
