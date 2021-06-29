@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.02% </span>
+                <span class="strong">78.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>403/510</span>
+                <span class='fraction'>401/510</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>36/52</span>
+                <span class='fraction'>36/54</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>24/30</span>
+                <span class='fraction'>24/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.02% </span>
+                <span class="strong">78.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>403/510</span>
+                <span class='fraction'>401/510</span>
             </div>
         
             
@@ -742,15 +742,7 @@
 <a name='L683'></a><a href='#L683'>683</a>
 <a name='L684'></a><a href='#L684'>684</a>
 <a name='L685'></a><a href='#L685'>685</a>
-<a name='L686'></a><a href='#L686'>686</a>
-<a name='L687'></a><a href='#L687'>687</a>
-<a name='L688'></a><a href='#L688'>688</a>
-<a name='L689'></a><a href='#L689'>689</a>
-<a name='L690'></a><a href='#L690'>690</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L686'></a><a href='#L686'>686</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1017,7 +1009,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1136,7 +1128,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">70x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -1256,10 +1248,10 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1448,7 +1440,7 @@ import {
 } from "../explorer/ExplorerControls"
 import ReactDOM from "react-dom"
 import { ExplorerProgram } from "../explorer/ExplorerProgram"
-import { SerializedGridProgram } from "../clientUtils/owidTypes"
+import { ColumnSlug, SerializedGridProgram } from "../clientUtils/owidTypes"
 import {
     Grapher,
     GrapherManager,
@@ -1480,11 +1472,7 @@ import {
 } from "./ExplorerConstants"
 import { EntityPickerManager } from "../grapher/controls/entityPicker/EntityPickerConstants"
 import { SelectionArray } from "../grapher/selection/SelectionArray"
-import {
-    ColumnSlug,
-    SortOrder,
-    TableSlug,
-} from "../coreTable/CoreTableConstants"
+import { SortOrder, TableSlug } from "../coreTable/CoreTableConstants"
 import { isNotErrorValue } from "../coreTable/ErrorValues"
 import { Bounds, DEFAULT_BOUNDS } from "../clientUtils/Bounds"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -1517,25 +1505,25 @@ const renderLivePreviewVersion = (<span class="fstat-no" title="function not cov
 <span class="cstat-no" title="statement not covered" >    let renderedVersion: string</span>
 <span class="cstat-no" title="statement not covered" >    setInterval(() =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        const versionToRender =</span>
-<span class="cstat-no" title="statement not covered" >            localStorage.getItem(UNS</span>AVED_EXPLORER_DRAFT + props.slug) ??
+<span class="cstat-no" title="statement not covered" >            localStorage.getItem(UNSAVED_EXPLORER_DRAFT + props.slug) ??</span>
 <span class="cstat-no" title="statement not covered" >            props.program</span>
-<span class="cstat-no" title="statement not covered" >        if (versionToRender === renderedVersion) return</span>
+<span class="cstat-no" title="statement not covered" >        if (versionToRender === renderedVersion) </span>return
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const newProps = { ...</span>props, program: versionToRender }
+<span class="cstat-no" title="statement not covered" >        const newProps = { ...props,</span> program: versionToRender }
 <span class="cstat-no" title="statement not covered" >        ReactDOM.render(</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Ex</span>plorer
+<span class="cstat-no" title="statement not covered" >            &lt;Explorer</span>
 <span class="cstat-no" title="statement not covered" ></span>                {...newProps}
-<span class="cstat-no" title="statement not covered" ></span>                queryStr={window.location.search}
+<span class="cstat-no" title="statement not covered" >                queryStr={wind</span>ow.location.search}
 <span class="cstat-no" title="statement not covered" >                key={Date.now()}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;,</span>
-<span class="cstat-no" title="statement not covered" >            document.getElementById(ExplorerContainerId)</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>            document.getElementById(ExplorerContainerId)
+<span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" >        renderedVersion = versionToRender</span>
 <span class="cstat-no" title="statement not covered" >    }, 1000)</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 const isNarrow = () =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" >    window.screen.width &lt; 450 || document.documentElement.clientWidth &lt;= 800</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >    window.screen.wi</span>dth &lt; 450 || document.documentElement.clientWidth &lt;= 800
 &nbsp;
 @observer
 export class Explorer
@@ -1545,52 +1533,52 @@ export class Explorer
         EntityPickerManager,
         GrapherManager {
     // caution: do a ctrl+f to find untyped usages
-    static renderSingleExplorerOnExplorerPage(
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        program: ExplorerProps,</span></span>
+    static <span class="fstat-no" title="function not covered" >renderSingleExplorerOnExplorerPage(</span>
+<span class="cstat-no" title="statement not covered" >        program: Ex</span>plorerProps,
 <span class="cstat-no" title="statement not covered" >        grapherConfigs: GrapherInterface[],</span>
-<span class="cstat-no" title="statement not covered" >        urlMigrationSpec?: ExplorerPageUrlMigrationSpec</span>
+<span class="cstat-no" title="statement not covered" >        urlMig</span>rationSpec?: ExplorerPageUrlMigrationSpec
 <span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >        const props: ExplorerProps = {</span>
 <span class="cstat-no" title="statement not covered" >            ...program,</span>
 <span class="cstat-no" title="statement not covered" >            grapherConfigs,</span>
 <span class="cstat-no" title="statement not covered" >            isEmbeddedInAnOwidPage: false,</span>
-<span class="cstat-no" title="statement not covered" ></span>            isInStandalonePage: true,
+<span class="cstat-no" title="statement not covered" >            isInStandalonePage: true,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        if (window.location.href.includes(EXPLORERS_PREVIEW_ROUTE)) {
-<span class="cstat-no" title="statement not covered" >            renderLivePrevi</span>ewVersion(props)
+<span class="cstat-no" title="statement not covered" >        if (window.location.href.includes(EXPLORERS_PREVIEW_ROUTE)) {</span>
+<span class="cstat-no" title="statement not covered" ></span>            renderLivePreviewVersion(props)
 <span class="cstat-no" title="statement not covered" >            return</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        let url = Url.fromURL(wind</span>ow.location.href)
+<span class="cstat-no" title="statement not covered" >        let url = Url.fromU</span>RL(window.location.href)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Handle redirect</span> spec that's baked on the page.
-<span class="cstat-no" title="statement not covered" >        // e.g. the </span>old COVID Grapher to Explorer redirects are implemented this way.
+<span class="cstat-no" title="statement not covered" >        // Handle redirect spec that's baked </span>on the page.
+<span class="cstat-no" title="statement not covered" >        // e.g. the old COVID Grapher to Explorer redirects are implemented</span> this way.
 <span class="cstat-no" title="statement not covered" >        if (urlMigrationSpec) {</span>
-<span class="cstat-no" title="statement not covered" >            const { explorerUrlMigrationId</span>, baseQueryStr } = urlMigrationSpec
-<span class="cstat-no" title="statement not covered" >            const migration = explorerUr</span>lMigrationsById[explorerUrlMigrationId]
-<span class="cstat-no" title="statement not covered" >            if (migration) {</span>
-<span class="cstat-no" title="statement not covered" >                url = migration.migrateUrl(url, baseQueryStr)</span>
+<span class="cstat-no" title="statement not covered" ></span>            const { explorerUrlMigrationId, baseQueryStr } = urlMigrationSpec
+<span class="cstat-no" title="statement not covered" >            const migratio</span>n = explorerUrlMigrationsById[explorerUrlMigrationId]
+<span class="cstat-no" title="statement not covered" >            if (migr</span>ation) {
+<span class="cstat-no" title="statement not covered" >                url = migration.migrateUrl(url, ba</span>seQueryStr)
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" ></span>                console.error(
-<span class="cstat-no" title="statement not covered" >                    `No explorer URL migration with id ${explorerUrlMigrationId}`</span>
+<span class="cstat-no" title="statement not covered" >                console.error(</span>
+<span class="cstat-no" title="statement not covered" >                    `No explorer URL migration with id ${explorerUrlMi</span>grationId}`
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Handle explorer-specific migrati</span>ons.
-<span class="cstat-no" title="statement not covered" >        // This is how we migrate</span> the old CO2 explorer to the new CO2 explorer.
-<span class="cstat-no" title="statement not covered" ></span>        // Because they are on the same path, we can't handle it like we handle
-<span class="cstat-no" title="statement not covered" >        // the COVID explorer</span> redirects above.
-<span class="cstat-no" title="statement not covered" >        url = migrateExplorerUrl(url</span>)
+<span class="cstat-no" title="statement not covered" >        // Handle explorer-specific migrations.</span>
+<span class="cstat-no" title="statement not covered" >        // This is how we migrate the old CO2 explorer to the new CO2 </span>explorer.
+<span class="cstat-no" title="statement not covered" >        // Because they are on the same path, we can't handle it li</span>ke we handle
+<span class="cstat-no" title="statement not covered" >        // the COVID explorer redirects above.</span>
+<span class="cstat-no" title="statement not covered" >        url = migrateExplorerUrl(url)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>        // Update the window URL
-<span class="cstat-no" title="statement not covered" >        setWindowUrl(u</span>rl)
+<span class="cstat-no" title="statement not covered" >        setWindowUrl(url)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        ReactDOM.render(</span>
-<span class="cstat-no" title="statement not covered" >            &lt;Explore</span>r {...props} queryStr={url.queryStr} /&gt;,
-<span class="cstat-no" title="statement not covered" >            document.getElementById(ExplorerContainerId)</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" ></span>            &lt;Explorer {...props} queryStr={url.queryStr} /&gt;,
+<span class="cstat-no" title="statement not covered" >            document.g</span>etElementById(ExplorerContainerId)
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private initialQueryParams = Url.fromQueryStr(this.props.queryStr ?? "")
@@ -1618,7 +1606,7 @@ export class Explorer
     }
 &nbsp;
     @computed get grapherConfigs() {
-        const arr = this.props.grapherConfigs || []
+        const arr = <span class="branch-0 cbranch-no" title="branch not covered" >this.props.grapherConfigs || []</span>
         const grapherConfigsMap: Map&lt;number, GrapherInterface&gt; = new Map()
         arr.forEach((config) =&gt; grapherConfigsMap.set(config.id!, config))
         return grapherConfigsMap
@@ -1631,11 +1619,11 @@ export class Explorer
 &nbsp;
         let url = Url.fromQueryParams(this.initialQueryParams)
 &nbsp;
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.props.selection?.hasSelection) <span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" >            url = setSelectedEntityNamesParam(</span>
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.props.selection?.hasSelec</span>tion) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            url = setSelected</span>EntityNamesParam(</span>
 <span class="cstat-no" title="statement not covered" >                url,</span>
-<span class="cstat-no" title="statement not covered" >                this.props.s</span>election.selectedEntityNames
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >                this.props.selection.selectedEntityNames</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
 <span class="branch-0 cbranch-no" title="branch not covered" >        this.grapher?.p</span>opulateFromQueryParams(url.queryParams)
@@ -1649,8 +1637,8 @@ export class Explorer
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    componentWillUnmount() {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.onResiz</span>eThrottled)
-<span class="cstat-no" title="statement not covered" >            window.removeEv</span>entListener("resize", this.onResizeThrottled)
+<span class="cstat-no" title="statement not covered" >        if (this.onResizeThrottl</span>ed)
+<span class="cstat-no" title="statement not covered" >            window.removeEventListener("resize", this.onR</span>esizeThrottled)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private initSlideshow() {
@@ -1702,7 +1690,7 @@ export class Explorer
 &nbsp;
     private futureGrapherTable = new PromiseSwitcher&lt;OwidTable&gt;({
         onResolve: (table) =&gt; this.setGrapherTable(table),
-        onReject: (error) =&gt; this.grapher?.setError(error),
+        onReject: (<span class="fstat-no" title="function not covered" >error) =&gt; this.grapher?.setError(er</span>ror),
     })
 &nbsp;
     tableLoader = new PromiseCache((slug: TableSlug | undefined) =&gt;
@@ -1724,28 +1712,28 @@ export class Explorer
         const hasGrapherId = grapherId &amp;&amp; isNotErrorValue(grapherId)
 &nbsp;
         const grapherConfig = hasGrapherId
-            ? this.grapherConfigs.get(grapherId!) ?? {}
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >this.grapherConfigs.</span>get(grapherId!) ?? {}
             : {}
 &nbsp;
         const config: GrapherProgrammaticInterface = {
             ...grapherConfig,
             ...grapherConfigFromExplorer,
             hideEntityControls: this.showExplorerControls,
-            manuallyProvideData: tableSlug<span class="branch-0 cbranch-no" title="branch not covered" > ? true </span>: false,
+            manuallyProvideData: tableSlug ? true : false,
         }
 &nbsp;
         grapher.setAuthoredVersion(config)
         grapher.reset()
         grapher.yAxis.canChangeScaleType = yScaleToggle
         grapher.yAxis.min = yAxisMin
-        if (facetYRange) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            grapher.yAxis.facetAxisRange = facetYRang</span>e
+        if (facetYRange) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            grapher.yAxis.facetAxisRange = facetYRange</span></span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         grapher.updateFromObject(config)
 &nbsp;
         if (!hasGrapherId) {
             // Clear any error messages, they are likely to be related to dataset loading.
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.grapher?.c</span>learErrors()
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.g</span>rapher?.clearErrors()
             // Set a table immediately. A BlankTable shows a loading animation.
             this.setGrapherTable(
                 BlankOwidTable(tableSlug, `Loading table '${tableSlug}'`)
@@ -1762,10 +1750,10 @@ export class Explorer
 <span class="branch-0 cbranch-no" title="branch not covered" >            grapher.</span>externalCsvLink = this.downloadDataLink
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >setSlide(choiceParams: ExplorerFullQueryParams) {</span>
-<span class="cstat-no" title="statement not covered" >        this.explorerProgram.decisionMatrix.setValuesFromChoicePara</span>ms(
-<span class="cstat-no" title="statement not covered" >            choicePa</span>rams
-<span class="cstat-no" title="statement not covered" ></span>        )
+    @action.bound setSlide(choiceParams: ExplorerFullQueryParams) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.explorerProgram.decisionMatrix.setValuesFromChoiceParams(</span></span>
+<span class="cstat-no" title="statement not covered" ></span>            choiceParams
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get currentChoiceParams(): ExplorerChoiceParams {
@@ -1777,7 +1765,7 @@ export class Explorer
         if (!this.grapher) <span class="branch-0 cbranch-no" title="branch not covered" >return {</span>}
 &nbsp;
         if (window.location.href.includes(EXPLORERS_PREVIEW_ROUTE))
-<span class="branch-0 cbranch-no" title="branch not covered" >            loca</span>lStorage.setItem(
+<span class="branch-0 cbranch-no" title="branch not covered" >            localStor</span>age.setItem(
                 UNSAVED_EXPLORER_PREVIEW_QUERYPARAMS +
                     this.explorerProgram.slug,
                 JSON.stringify(this.currentChoiceParams)
@@ -1796,7 +1784,7 @@ export class Explorer
         url = setSelectedEntityNamesParam(
             url,
 <span class="branch-0 cbranch-no" title="branch not covered" >            this.selection.hasSelection</span>
-<span class="cstat-no" title="statement not covered" >                ? this.selection.selectedEntit</span>yNames
+<span class="cstat-no" title="statement not covered" ></span>                ? this.selection.selectedEntityNames
 <span class="cstat-no" title="statement not covered" >                : undefined</span>
         )
 &nbsp;
@@ -1808,15 +1796,15 @@ export class Explorer
     }
 &nbsp;
     private <span class="fstat-no" title="function not covered" >bindToWindow() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        // There is a surprisingly considerable performance overhead to updating the url
-<span class="cstat-no" title="statement not covered" >        // while animating, so we d</span>ebounce to allow e.g. smoother timelines
+<span class="cstat-no" title="statement not covered" >        // There is a surprisingly co</span>nsiderable performance overhead to updating the url
+<span class="cstat-no" title="statement not covered" >        //</span> while animating, so we debounce to allow e.g. smoother timelines
 <span class="cstat-no" title="statement not covered" >        const pushParams = () =&gt; setWindowUrl(this.currentUrl)</span>
-<span class="cstat-no" title="statement not covered" >        const debouncedPushParams = debounce(pushParam</span>s, 100)
+<span class="cstat-no" title="statement not covered" >        const debouncedPushParams = debounce(pushParams, 100)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        reaction(</span>
 <span class="cstat-no" title="statement not covered" >            () =&gt; this.queryParams,</span>
-<span class="cstat-no" title="statement not covered" ></span>            () =&gt;
-<span class="cstat-no" title="statement not covered" ></span>                this.grapher?.debounceMode
+<span class="cstat-no" title="statement not covered" >            () =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                this.grapher?.debounceMode</span>
 <span class="cstat-no" title="statement not covered" >                    ? debouncedPushParams()</span>
 <span class="cstat-no" title="statement not covered" >                    : pushParams()</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -1868,10 +1856,10 @@ export class Explorer
 &nbsp;
     @computed private get showExplorerControls() {
 <span class="branch-0 cbranch-no" title="branch not covered" >        if (!this.props.isEmbeddedInAnOwidPage &amp;&amp; !this.isInIFrame) return true</span>
-<span class="cstat-no" title="statement not covered" >        // On</span>ly allow hiding controls on embedded pages
-<span class="cstat-no" title="statement not covered" >        return !(</span>
-<span class="cstat-no" title="statement not covered" >            this.explorerProgram.hideControl</span>s ||
-<span class="cstat-no" title="statement not covered" >            t</span>his.initialQueryParams.hideControls === "true"
+<span class="cstat-no" title="statement not covered" >        // Only allow hiding controls on emb</span>edded pages
+<span class="cstat-no" title="statement not covered" >        retur</span>n !(
+<span class="cstat-no" title="statement not covered" >            this.explo</span>rerProgram.hideControls ||
+<span class="cstat-no" title="statement not covered" >            this.initialQueryParams.hideCont</span>rols === "true"
         )
     }
 &nbsp;
@@ -1910,26 +1898,26 @@ export class Explorer
 &nbsp;
     private onResizeThrottled?: () =&gt; void
 &nbsp;
-    @action.bound private toggleMobileControls() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.showMob</span>ileControlsPopup = !this.showMobileControlsPopup</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >toggleMobileControls() {</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>showMobileControlsPopup = !this.showMobileControlsPopup
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private onResize() {
         this.isNarrow = isNarrow()
-        this.grapherBounds = this.getGrapherBounds() || this.grapherBounds
+        this.grapherBounds = <span class="branch-0 cbranch-no" title="branch not covered" >this.getGrapherBoun</span>ds() || this.grapherBounds
     }
 &nbsp;
     // Todo: add better logic to maximize the size of the Grapher
     private getGrapherBounds() {
         const grapherContainer = this.grapherContainerRef.current
-        return grapherContainer
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? new Boun</span>ds(</span>
+        return grapherContainer<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            ?</span> new Bounds(
 <span class="cstat-no" title="statement not covered" >                  0,</span>
-<span class="cstat-no" title="statement not covered" ></span>                  0,
-<span class="cstat-no" title="statement not covered" >                  grap</span>herContainer.clientWidth,
-<span class="cstat-no" title="statement not covered" >                  grapherContainer.clientHeight</span>
-<span class="cstat-no" title="statement not covered" ></span>              )
-<span class="cstat-no" title="statement not covered" >            : undefined</span>
+<span class="cstat-no" title="statement not covered" >                  0,</span>
+<span class="cstat-no" title="statement not covered" ></span>                  grapherContainer.clientWidth,
+<span class="cstat-no" title="statement not covered" >                  grap</span>herContainer.clientHeight
+<span class="cstat-no" title="statement not covered" >              )</span>
+<span class="cstat-no" title="statement not covered" >            :</span> undefined
     }
 &nbsp;
     @observable private showMobileControlsPopup = false
@@ -1946,8 +1934,8 @@ export class Explorer
     }
 &nbsp;
     @action.bound private closeControls() {
-        this.showMobileControlsPopup = false
-    }
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.s</span>howMobileControlsPopup = false</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // todo: add tests for this and better tests for this class in general
     @computed private get showHeaderElement() {
@@ -2131,7 +2119,7 @@ export class Explorer
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 28 2021 11:59:20 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 29 2021 05:35:58 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.67% </span>
+                <span class="strong">13.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>75/592</span>
+                <span class='fraction'>80/600</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.67% </span>
+                <span class="strong">13.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>75/592</span>
+                <span class='fraction'>80/600</span>
             </div>
         
             
@@ -788,7 +788,31 @@
 <a name='L729'></a><a href='#L729'>729</a>
 <a name='L730'></a><a href='#L730'>730</a>
 <a name='L731'></a><a href='#L731'>731</a>
-<a name='L732'></a><a href='#L732'>732</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L732'></a><a href='#L732'>732</a>
+<a name='L733'></a><a href='#L733'>733</a>
+<a name='L734'></a><a href='#L734'>734</a>
+<a name='L735'></a><a href='#L735'>735</a>
+<a name='L736'></a><a href='#L736'>736</a>
+<a name='L737'></a><a href='#L737'>737</a>
+<a name='L738'></a><a href='#L738'>738</a>
+<a name='L739'></a><a href='#L739'>739</a>
+<a name='L740'></a><a href='#L740'>740</a>
+<a name='L741'></a><a href='#L741'>741</a>
+<a name='L742'></a><a href='#L742'>742</a>
+<a name='L743'></a><a href='#L743'>743</a>
+<a name='L744'></a><a href='#L744'>744</a>
+<a name='L745'></a><a href='#L745'>745</a>
+<a name='L746'></a><a href='#L746'>746</a>
+<a name='L747'></a><a href='#L747'>747</a>
+<a name='L748'></a><a href='#L748'>748</a>
+<a name='L749'></a><a href='#L749'>749</a>
+<a name='L750'></a><a href='#L750'>750</a>
+<a name='L751'></a><a href='#L751'>751</a>
+<a name='L752'></a><a href='#L752'>752</a>
+<a name='L753'></a><a href='#L753'>753</a>
+<a name='L754'></a><a href='#L754'>754</a>
+<a name='L755'></a><a href='#L755'>755</a>
+<a name='L756'></a><a href='#L756'>756</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -848,6 +872,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -902,6 +931,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1380,6 +1412,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1552,6 +1600,7 @@ import {
     dataValueRegex,
     DEEP_LINK_CLASS,
     extractDataValuesConfiguration,
+    formatDataValue,
     formatLinks,
     getHtmlContentWithStyles,
     parseKeyValueArgs,
@@ -1564,7 +1613,11 @@ import { RegisterHTMLHandler } from "mathjax-full/js/handlers/html"
 import { AllPackages } from "mathjax-full/js/input/tex/AllPackages"
 import { replaceIframesWithExplorerRedirectsInWordPressPost } from "./replaceExplorerRedirects"
 import { EXPLORERS_ROUTE_FOLDER } from "../explorer/ExplorerConstants"
-import { getDataValue } from "../db/model/Variable"
+import {
+    getDataValue,
+    getLegacyChartDimensionConfigForVariable,
+    getLegacyVariableDisplayConfig,
+} from "../db/model/Variable"
 import { AnnotatingDataValue } from "../site/AnnotatingDataValue"
 &nbsp;
 const initMathJax = () =&gt; {
@@ -1582,7 +1635,7 @@ const initMathJax = () =&gt; {
 <span class="cstat-no" title="statement not covered" >        const node = doc.convert(latex, {</span>
 <span class="cstat-no" title="statement not covered" >            display: true,</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        return adaptor.outerHTML(node) // as HTML</span>
+<span class="cstat-no" title="statement not covered" >        return adaptor.outerHTML(node) //</span> as HTML
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
@@ -1594,76 +1647,76 @@ const INTERACTIVE_ICON_SVG = `&lt;svg aria-hidden="true" focusable="false" data-
     &lt;path fill="currentColor" opacity="0.6" d="M239.76,234.78A27.5,27.5,0,0,1,217,192a87.76,87.76,0,1,0-145.9,0A27.5,27.5,0,1,1,25.37,222.6,142.17,142.17,0,0,1,1.24,143.17C1.24,64.45,65.28.41,144,.41s142.76,64,142.76,142.76a142.17,142.17,0,0,1-24.13,79.43A27.47,27.47,0,0,1,239.76,234.78Z" transform="translate(0 -0.41)"/&gt;
 &lt;/svg&gt;`
 &nbsp;
-const extractLatex = (<span class="fstat-no" title="function not covered" >html: string): [string, string[]] =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const latexBlocks: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >    html = html.replace(/\[</span>latex\]([\s\S]*?)\[\/latex\]/gm, (_, latex) =&gt; {
-<span class="cstat-no" title="statement not covered" >        late</span>xBlocks.push(
-<span class="cstat-no" title="statement not covered" >            latex.replace("\\[", "").replace("\\]",</span> "").replace(/\$\$/g, "")
-<span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" ></span>        return "[latex]"
+const extractLatex = (html: string): [string, string[]] =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>    const latexBlocks: string[] = []</span>
+<span class="cstat-no" title="statement not covered" >    html = html.replace(/\[latex\]([\</span>s\S]*?)\[\/latex\]/gm, (_, latex) =&gt; {
+<span class="cstat-no" title="statement not covered" >        latexBlocks.push(</span>
+<span class="cstat-no" title="statement not covered" >            latex.replace("\\[", "").replace("\\]", "").replace(/\$\$/g, "")</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        return "[latex]"</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    return [html, latexBlocks]</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 const formatLatex = <span class="fstat-no" title="function not covered" >async (</span>
-<span class="cstat-no" title="statement not covered" >    html:</span> string,
-<span class="cstat-no" title="statement not covered" >    latexBlocks?: string[]</span>
+<span class="cstat-no" title="statement not covered" >    html: string,</span>
+<span class="cstat-no" title="statement not covered" >    late</span>xBlocks?: string[]
 <span class="cstat-no" title="statement not covered" >): Promise&lt;string&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!latexBlocks) [html, latexBlocks] = extractLatex(html)</span>
+<span class="cstat-no" title="statement not covered" ></span>    if (!latexBlocks) [html, latexBlocks] = extractLatex(html)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // return early so we </span>don't do unnecessary work for sites without latex
-<span class="cstat-no" title="statement not covered" >    if (</span>!latexBlocks.length) return html
+<span class="cstat-no" title="statement not covered" >    // return early so</span> we don't do unnecessary work for sites without latex
+<span class="cstat-no" title="statement not covered" >    if (!latexBlocks.length) return html</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    const compiled: string[] = []
-<span class="cstat-no" title="statement not covered" >    for (const latex of latexBlocks) {</span>
+<span class="cstat-no" title="statement not covered" >    const compiled: string[] </span>= []
+<span class="cstat-no" title="statement not covered" >    for (const latex </span>of latexBlocks) {
 <span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            compiled.push(formatMathJax(latex))</span>
-<span class="cstat-no" title="statement not covered" >        } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >            compiled.push(formatMathJax</span>(latex))
+<span class="cstat-no" title="statement not covered" >        } catc</span>h (err) {
 <span class="cstat-no" title="statement not covered" >            compiled.push(</span>
-<span class="cstat-no" title="statement not covered" >                `${la</span>tex} (Could not format equation due to MathJax error)`
+<span class="cstat-no" title="statement not covered" ></span>                `${latex} (Could not format equation due to MathJax error)`
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let i </span>= -1
-<span class="cstat-no" title="statement not covered" >    return html.replac</span>e(/\[latex\]/g, () =&gt; {
+<span class="cstat-no" title="statement not covered" >    let i = -1</span>
+<span class="cstat-no" title="statement not covered" >    return html.replace(/\[latex\]/g, () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        i += 1</span>
-<span class="cstat-no" title="statement not covered" >        re</span>turn compiled[i]
+<span class="cstat-no" title="statement not covered" >        return compiled[i]</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    post: FullPost,</span></span>
-<span class="cstat-no" title="statement not covered" >    html</span>: string,
-<span class="cstat-no" title="statement not covered" ></span>    formattingOptions: FormattingOptions,
+<span class="cstat-no" title="statement not covered" >    html: string,</span>
+<span class="cstat-no" title="statement not covered" >    formattingOptions</span>: FormattingOptions,
 <span class="cstat-no" title="statement not covered" >    grapherExports?: GrapherExports</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;FormattedPo</span>st&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" >): Promise&lt;FormattedPost&gt; =</span>&gt; {
 <span class="cstat-no" title="statement not covered" >    // Strip comments</span>
-<span class="cstat-no" title="statement not covered" >    html = html.replace(/&lt;!--[^&gt;]+--&gt;/g, "")</span>
+<span class="cstat-no" title="statement not covered" >    html = html.replace(/&lt;!--[^&gt;]+--&gt;</span>/g, "")
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Need to skirt around wordpress formatti</span>ng to get proper latex rendering
+<span class="cstat-no" title="statement not covered" >    // N</span>eed to skirt around wordpress formatting to get proper latex rendering
 <span class="cstat-no" title="statement not covered" >    let latexBlocks</span>
-<span class="cstat-no" title="statement not covered" >    ;[html, latexBlocks] = extractLatex(html)</span>
+<span class="cstat-no" title="statement not covered" >    ;[html, latex</span>Blocks] = extractLatex(html)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const reference</span>s: any[] = []
-<span class="cstat-no" title="statement not covered" >    html</span> = html.replace(/\[cite\]([\s\S]*?)\[\/cite\]/gm, () =&gt; {
+<span class="cstat-no" title="statement not covered" >    const references: any[] = []</span>
+<span class="cstat-no" title="statement not covered" >    html = html.replace(/\[cite\]([\s\S]*?)</span>\[\/cite\]/gm, () =&gt; {
 <span class="cstat-no" title="statement not covered" >        references.push({}) // Todo</span>
 <span class="cstat-no" title="statement not covered" >        return ``</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    html = await formatLatex(html, latexBlo</span>cks)
+<span class="cstat-no" title="statement not covered" >    html = await formatLatex(html, latexBlocks)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Footnotes</span>
-<span class="cstat-no" title="statement not covered" >    const footnotes: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >    html = html.replace(/{ref}([\s\S]*?){\/ref}/gm, (_, footnote) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (formattingOptions.footnotes) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            footnotes.push(footnote)
-<span class="cstat-no" title="statement not covered" >            con</span>st i = footnotes.length
-<span class="cstat-no" title="statement not covered" >            const href </span>= `#note-${i}`
+<span class="cstat-no" title="statement not covered" >    // Footnote</span>s
+<span class="cstat-no" title="statement not covered" >    const footnotes: st</span>ring[] = []
+<span class="cstat-no" title="statement not covered" >    html =</span> html.replace(/{ref}([\s\S]*?){\/ref}/gm, (_, footnote) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>        if (formattingOptions.footnotes) {
+<span class="cstat-no" title="statement not covered" >            footnotes.push(footnote)</span>
+<span class="cstat-no" title="statement not covered" >            const i = footnotes.le</span>ngth
+<span class="cstat-no" title="statement not covered" >            const href = `#note-${i}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>            return ReactDOMServer.renderToStaticMarkup(
+<span class="cstat-no" title="statement not covered" >            return ReactDOMServer.renderToStaticMar</span>kup(
 <span class="cstat-no" title="statement not covered" >                &lt;a id={`ref-${i}`} className="ref" href={href}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;Footnote inde</span>x={i} /&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;Footnote index={i} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/a&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
@@ -1671,127 +1724,146 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const dataValuesConfigurationsMap = await extractDa</span>taValuesConfiguration(
-<span class="cstat-no" title="statement not covered" >        html</span>
+<span class="cstat-no" title="statement not covered" >    const dataValuesConfigurationsMap = await extractDataValuesConfiguration(</span>
+<span class="cstat-no" title="statement not covered" >        ht</span>ml
 <span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >    const dataValu</span>es = new Map&lt;string, DataValueProps&gt;()
+<span class="cstat-no" title="statement not covered" >    const dataValue</span>s = new Map&lt;string, DataValueProps&gt;()
 <span class="cstat-no" title="statement not covered" >    for (const [</span>
-<span class="cstat-no" title="statement not covered" >        dataValueConfigu</span>rationString,
-<span class="cstat-no" title="statement not covered" >        data</span>ValueConfiguration,
-<span class="cstat-no" title="statement not covered" >    ] </span>of dataValuesConfigurationsMap) {
-<span class="cstat-no" title="statement not covered" >        const { value, year, unit, entityName } =</span>
-<span class="cstat-no" title="statement not covered" >            (await getDataValue(dataValueConfiguration.queryArgs)) || {}</span>
-<span class="cstat-no" title="statement not covered" >        const template = data</span>ValueConfiguration.template
+<span class="cstat-no" title="statement not covered" >        dataValueConfi</span>gurationString,
+<span class="cstat-no" title="statement not covered" >        dataValueC</span>onfiguration,
+<span class="cstat-no" title="statement not covered" >    ] of dataValue</span>sConfigurationsMap) {
+<span class="cstat-no" title="statement not covered" >        const { queryArg</span>s, template } = dataValueConfiguration
+<span class="cstat-no" title="statement not covered" >        cons</span>t { variableId, chartId } = queryArgs
+<span class="cstat-no" title="statement not covered" ></span>        const { value, year, unit, entityName } =
+<span class="cstat-no" title="statement not covered" >            (await getDataValue(queryArgs)) || {}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (!value || !year || !entityName)</span>
-<span class="cstat-no" title="statement not covered" ></span>            throw new JsonError(
+<span class="cstat-no" title="statement not covered" >        if (!value || !year |</span>| !entityName)
+<span class="cstat-no" title="statement not covered" >            throw new JsonError(</span>
 <span class="cstat-no" title="statement not covered" >                `Missing data value for query ${dataValueConfigurationString}`</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >        if (!template)</span>
 <span class="cstat-no" title="statement not covered" >            throw new JsonError(</span>
-<span class="cstat-no" title="statement not covered" >                `Missing template for query ${dataValueConfigurationString}`</span>
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >                `Missing template for query ${dataValueConfig</span>urationString}`
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        dataValues.set(dataValueConfiguration</span>String, {
+<span class="cstat-no" title="statement not covered" ></span>        let formattedValue
+<span class="cstat-no" title="statement not covered" >        if (variableId &amp;&amp; chartId) {</span>
+<span class="cstat-no" title="statement not covered" >            const legacyVariableDisplayConfig</span> = await getLegacyVariableDisplayConfig(
+<span class="cstat-no" title="statement not covered" >                variableId</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            const l</span>egacyChartDimension = await getLegacyChartDimensionConfigForVariable(
+<span class="cstat-no" title="statement not covered" >                variableId,</span>
+<span class="cstat-no" title="statement not covered" >                chartId</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >            formattedValue = forma</span>tDataValue(
+<span class="cstat-no" title="statement not covered" >                value,</span>
+<span class="cstat-no" title="statement not covered" >                variableId,</span>
+<span class="cstat-no" title="statement not covered" >                legacyVariableDisplayConfig,</span>
+<span class="cstat-no" title="statement not covered" >                legacyChartDimen</span>sion
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        dataValues.</span>set(dataValueConfigurationString, {
 <span class="cstat-no" title="statement not covered" >            value,</span>
+<span class="cstat-no" title="statement not covered" >            formattedV</span>alue,
 <span class="cstat-no" title="statement not covered" >            template,</span>
 <span class="cstat-no" title="statement not covered" >            year,</span>
 <span class="cstat-no" title="statement not covered" >            unit,</span>
 <span class="cstat-no" title="statement not covered" >            entityName,</span>
-<span class="cstat-no" title="statement not covered" ></span>        })
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    html = html.replace(dataValueRegex, (_, dataValueConfigurationString) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    html = html.replace(dataValueRegex, (_, dataValueConf</span>igurationString) =&gt; {
 <span class="cstat-no" title="statement not covered" >        const dataValueProps: DataValueProps | undefined = dataValues.get(</span>
-<span class="cstat-no" title="statement not covered" >            dataValueConfigurati</span>onString
+<span class="cstat-no" title="statement not covered" >            dataValueConfigurationString</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        if (!dataVal</span>ueProps)
-<span class="cstat-no" title="statement not covered" >            throw new Js</span>onError(
-<span class="cstat-no" title="statement not covered" >                `Mi</span>ssing data value for query ${dataValueConfigurationString}`
+<span class="cstat-no" title="statement not covered" >        if (!data</span>ValueProps)
+<span class="cstat-no" title="statement not covered" ></span>            throw new JsonError(
+<span class="cstat-no" title="statement not covered" >                `Missing data value for query ${dataValueConfi</span>gurationString}`
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        return ReactDO</span>MServer.renderToString(
-<span class="cstat-no" title="statement not covered" >            &lt;AnnotatingDataValue dataValueProps={dataValueProps} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        return ReactDOMServer.renderToS</span>tring(
+<span class="cstat-no" title="statement not covered" ></span>            &lt;AnnotatingDataValue dataValueProps={dataValueProps} /&gt;
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Needs to be happen af</span>ter DataValue replacements, as the DataToken regex
-<span class="cstat-no" title="statement not covered" >    // would otherwise capture DataValue tags</span>
-<span class="cstat-no" title="statement not covered" >    const dataTokenReg</span>ex = /{{\s*([a-zA-Z]+)\s*(.+?)\s*}}/g
+<span class="cstat-no" title="statement not covered" >    // Needs to be happen after Data</span>Value replacements, as the DataToken regex
+<span class="cstat-no" title="statement not covered" >    // wou</span>ld otherwise capture DataValue tags
+<span class="cstat-no" title="statement not covered" >    co</span>nst dataTokenRegex = /{{\s*([a-zA-Z]+)\s*(.+?)\s*}}/g
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    html = html.replace(</span>
 <span class="cstat-no" title="statement not covered" >        dataTokenRegex,</span>
-<span class="cstat-no" title="statement not covered" >        (_, token, data</span>TokenConfigurationString) =&gt; {
-<span class="cstat-no" title="statement not covered" >            retur</span>n ReactDOMServer.renderToString(
-<span class="cstat-no" title="statement not covered" ></span>                &lt;DataToken
-<span class="cstat-no" title="statement not covered" >                    token={token}</span>
-<span class="cstat-no" title="statement not covered" >                    {...parseKeyValue</span>Args(dataTokenConfigurationString)}
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >        (_, token, da</span>taTokenConfigurationString) =&gt; {
+<span class="cstat-no" title="statement not covered" >            return ReactDOMServer.renderToS</span>tring(
+<span class="cstat-no" title="statement not covered" >                &lt;DataTok</span>en
+<span class="cstat-no" title="statement not covered" >                    token={to</span>ken}
+<span class="cstat-no" title="statement not covered" >                    {...</span>parseKeyValueArgs(dataTokenConfigurationString)}
+<span class="cstat-no" title="statement not covered" ></span>                /&gt;
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Insert [table id=foo] tablepr</span>ess tables
-<span class="cstat-no" title="statement not covered" >    const </span>tables = await getTables()
+<span class="cstat-no" title="statement not covered" >    // Insert [table id=foo] tablepress tab</span>les
+<span class="cstat-no" title="statement not covered" >    const tables = await getTab</span>les()
 <span class="cstat-no" title="statement not covered" >    ht</span>ml = html.replace(/\[table\s+id=(\d+)\s*\/\]/g, (match, tableId) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const table = tables.get(tableId)</span>
+<span class="cstat-no" title="statement not covered" >        const table = tables.ge</span>t(tableId)
 <span class="cstat-no" title="statement not covered" >        if (table)</span>
-<span class="cstat-no" title="statement not covered" >            return ReactDOMServer</span>.renderToStaticMarkup(
-<span class="cstat-no" title="statement not covered" >                &lt;Tabl</span>epress data={table.data} /&gt;
+<span class="cstat-no" title="statement not covered" >            return ReactDOMServer.renderToStaticMarkup(</span>
+<span class="cstat-no" title="statement not covered" >                &lt;Tablepress da</span>ta={table.data} /&gt;
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        return "UNKNOWN </span>TABLE"
+<span class="cstat-no" title="statement not covered" >        return "UNKNOWN TABLE"</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    //</span> No need for wordpress urls
-<span class="cstat-no" title="statement not covered" >    html = html.replace(new </span>RegExp("/app/uploads", "g"), "/uploads")
+<span class="cstat-no" title="statement not covered" >    // No need f</span>or wordpress urls
+<span class="cstat-no" title="statement not covered" >    html = html.replace(new RegExp("/app/uploads", "g"),</span> "/uploads")
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Give "Add country" text (and variations) the appearance o</span>f "+ Add Country" chart control
+<span class="cstat-no" title="statement not covered" >    // Give "Add country" text (a</span>nd variations) the appearance of "+ Add Country" chart control
 <span class="cstat-no" title="statement not covered" >    html = html.replace(</span>
-<span class="cstat-no" title="statement not covered" >        /(\+ )?[a|A]dd [c|C]ountry/g,</span>
-<span class="cstat-no" title="statement not covered" >        `&lt;span class="add-count</span>ry"&gt;
-<span class="cstat-no" title="statement not covered" ></span>            &lt;span class="icon"&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;svg width="16"</span> height="16"&gt;&lt;path d="M3,8 h10 m-5,-5 v10"&gt;&lt;/path&gt;&lt;/svg&gt;
+<span class="cstat-no" title="statement not covered" ></span>        /(\+ )?[a|A]dd [c|C]ountry/g,
+<span class="cstat-no" title="statement not covered" >        `&lt;span class="add-country"&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;span class="icon"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;svg width="16" height="16"&gt;&lt;path d=</span>"M3,8 h10 m-5,-5 v10"&gt;&lt;/path&gt;&lt;/svg&gt;
 <span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            Add country</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/span&gt;`</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    co</span>nst cheerioEl = cheerio.load(html)
+<span class="cstat-no" title="statement not covered" >    const cheerioEl = cheerio.load(html)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Related c</span>harts
-<span class="cstat-no" title="statement not covered" >    // Mimicking SSR output of additional information bl</span>ock from PHP
+<span class="cstat-no" title="statement not covered" >    // Related charts</span>
+<span class="cstat-no" title="statement not covered" >    // Mimicking SSR output of additional informati</span>on block from PHP
 <span class="cstat-no" title="statement not covered" >    if (</span>
 <span class="cstat-no" title="statement not covered" >        !countryProfileSpecs.some</span>(
-<span class="cstat-no" title="statement not covered" >            (spec) =&gt; post</span>.slug === spec.landingPageSlug
-<span class="cstat-no" title="statement not covered" ></span>        ) &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            (spec) =&gt; post.slug === spec.landingPageSlug</span>
+<span class="cstat-no" title="statement not covered" >        ) &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >        post.relatedCharts &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >        post.relatedCharts.length !== 0</span>
 <span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >        const allCharts = `</span>
-<span class="cstat-no" title="statement not covered" >        &lt;block type="addit</span>ional-information"&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;block type="additional</span>-information"&gt;
 <span class="cstat-no" title="statement not covered" >            &lt;content&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h3&gt;All</span> our charts on ${post.title}&lt;/h3&gt;
-<span class="cstat-no" title="statement not covered" >                ${ReactDOMServer.renderToStaticMarkup(</span>
+<span class="cstat-no" title="statement not covered" >                &lt;h3&gt;All our </span>charts on ${post.title}&lt;/h3&gt;
+<span class="cstat-no" title="statement not covered" >                ${ReactDOMServer.renderToStaticMa</span>rkup(
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;RelatedCharts </span>charts={post.relatedCharts} /&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;RelatedCharts charts={post.related</span>Charts} /&gt;
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/content&gt;</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/block&gt;</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        const $summary = cheerioEl(".wp-block-owid-sum</span>mary")
+<span class="cstat-no" title="statement not covered" >        const $summary = cheerioEl(".wp-block-owid-summary")</span>
 <span class="cstat-no" title="statement not covered" >        if ($summary.length !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            $summary.after(allCharts)</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            cheerioEl("body &gt; h2:first-of-type, body &gt; h3:first-of-type")</span>
+<span class="cstat-no" title="statement not covered" >            cheeri</span>oEl("body &gt; h2:first-of-type, body &gt; h3:first-of-type")
 <span class="cstat-no" title="statement not covered" >                .first()</span>
-<span class="cstat-no" title="statement not covered" >                .before(a</span>llCharts)
+<span class="cstat-no" title="statement not covered" >                .before(allCharts)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // SSR rendering of Gutenberg blocks, before hydration </span>on client
+<span class="cstat-no" title="statement not covered" >    // SSR rendering of Gutenberg blocks, before h</span>ydration on client
 <span class="cstat-no" title="statement not covered" >    renderBlocks(cheerioEl)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Extract blog info content</span>
+<span class="cstat-no" title="statement not covered" >    // Extract blo</span>g info content
 <span class="cstat-no" title="statement not covered" >    let info = null</span>
 <span class="cstat-no" title="statement not covered" >    const $info = cheerioEl(".blog-info")</span>
 <span class="cstat-no" title="statement not covered" >    if ($info.length) {</span>
@@ -1799,15 +1871,15 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >        $info.remove()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Extract last updated</span>
-<span class="cstat-no" title="statement not covered" >    let lastUpdated</span>
-<span class="cstat-no" title="statement not covered" >    const $lastUpdated = cheerioEl(".wp-block-last-updated p")</span>
+<span class="cstat-no" title="statement not covered" >    // Ext</span>ract last updated
+<span class="cstat-no" title="statement not covered" >    le</span>t lastUpdated
+<span class="cstat-no" title="statement not covered" >    const $lastUpdated = cheerioEl(".wp-block-last-upd</span>ated p")
 <span class="cstat-no" title="statement not covered" >    if ($lastUpdated.length) {</span>
-<span class="cstat-no" title="statement not covered" >        lastUpdated = $lastUpdated.html()</span>
+<span class="cstat-no" title="statement not covered" >        lastUpdated</span> = $lastUpdated.html()
 <span class="cstat-no" title="statement not covered" >        $lastUpdated.remove()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Extract pag</span>e supertitle
+<span class="cstat-no" title="statement not covered" >    // Extract page supertitle</span>
 <span class="cstat-no" title="statement not covered" >    let supertitle</span>
 <span class="cstat-no" title="statement not covered" >    const $supertitle = cheerioEl(".wp-block-owid-supertitle")</span>
 <span class="cstat-no" title="statement not covered" >    if ($supertitle.length) {</span>
@@ -1815,220 +1887,220 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >        $supertitle.remove()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Ext</span>ract page byline
+<span class="cstat-no" title="statement not covered" >    // Extract page by</span>line
 <span class="cstat-no" title="statement not covered" >    le</span>t byline
-<span class="cstat-no" title="statement not covered" >    const $byline = cheerioEl(".wp-block-owid-byline")</span>
+<span class="cstat-no" title="statement not covered" >    const $byline = cheerioEl</span>(".wp-block-owid-byline")
 <span class="cstat-no" title="statement not covered" >    if ($byline.length) {</span>
-<span class="cstat-no" title="statement not covered" >        byline = $b</span>yline.html()
+<span class="cstat-no" title="statement not covered" >        byline = $byline.html()</span>
 <span class="cstat-no" title="statement not covered" >        $byline.remove()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Replace URLs pointing to Explorer redir</span>ect URLs with the destination URLs
-<span class="cstat-no" title="statement not covered" >    replaceIframesWithExplorerRedirectsInWordPressPost(cheerioEl)</span>
+<span class="cstat-no" title="statement not covered" >    // Replace URLs pointing to Explorer redirect URLs with the de</span>stination URLs
+<span class="cstat-no" title="statement not covered" >    replaceIframesWithExplorerRedirectsInW</span>ordPressPost(cheerioEl)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Replace grapher iframes with static pre</span>views
-<span class="cstat-no" title="statement not covered" >    const GRAPHER_PREVIEW_CLASS = "grapherPreview"</span>
+<span class="cstat-no" title="statement not covered" >    // Rep</span>lace grapher iframes with static previews
+<span class="cstat-no" title="statement not covered" >    co</span>nst GRAPHER_PREVIEW_CLASS = "grapherPreview"
 <span class="cstat-no" title="statement not covered" >    if (grapherExports) {</span>
-<span class="cstat-no" title="statement not covered" >        const grapherIframes = cheerio</span>El("iframe")
+<span class="cstat-no" title="statement not covered" >        const grapherIframes = cheerioEl("iframe</span>")
 <span class="cstat-no" title="statement not covered" >            .toArray()</span>
-<span class="cstat-no" title="statement not covered" >            .filter((e</span>l) =&gt; (el.attribs["src"] || "").match(/\/grapher\//))
-<span class="cstat-no" title="statement not covered" ></span>        for (const el of grapherIframes) {
-<span class="cstat-no" title="statement not covered" >            const $el = cheer</span>ioEl(el)
+<span class="cstat-no" title="statement not covered" >            .filter((el) =&gt; (el.attribs[</span>"src"] || "").match(/\/grapher\//))
+<span class="cstat-no" title="statement not covered" >        for (const el of </span>grapherIframes) {
+<span class="cstat-no" title="statement not covered" ></span>            const $el = cheerioEl(el)
 <span class="cstat-no" title="statement not covered" >            const src = el.attribs["src"].trim()</span>
-<span class="cstat-no" title="statement not covered" >            const chart = graph</span>erExports.get(src)
+<span class="cstat-no" title="statement not covered" >            const chart = grapherExports.get(src)</span>
 <span class="cstat-no" title="statement not covered" >            if (chart) {</span>
 <span class="cstat-no" title="statement not covered" >                const output = `</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;figure data-grapher-src="${src}" class="${GRAPHER_PREVIEW_CLASS}"&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;a href="${src}" target="_blank"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div&gt;&lt;img src="${c</span>hart.svgUrl}" width="${chart.width}" height="${chart.height}" loading="lazy" data-no-lightbox /&gt;&lt;/div&gt;
-<span class="cstat-no" title="statement not covered" >                        &lt;div class="interactionN</span>otice"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            &lt;span class="icon"&gt;${INTERACTIVE_ICON_SVG}&lt;/span&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            &lt;span class="label"&gt;Click to open interactive version&lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;figure data</span>-grapher-src="${src}" class="${GRAPHER_PREVIEW_CLASS}"&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;a href="</span>${src}" target="_blank"&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;div&gt;&lt;img src="${chart.svgUrl}" width="${chart.width}" height="${chart.height}" loading="lazy" data-no-lightbox /&gt;&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;div class="interactionNotice"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            &lt;span class="icon"&gt;${INTERACTI</span>VE_ICON_SVG}&lt;/span&gt;
+<span class="cstat-no" title="statement not covered" >                            &lt;span class="labe</span>l"&gt;Click to open interactive version&lt;/span&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/a&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;/figure&gt;`</span>
-<span class="cstat-no" title="statement not covered" >                if (el.parent.tagName ==</span>= "p") {
-<span class="cstat-no" title="statement not covered" >                    // We</span> are about to replace &lt;iframe&gt; with &lt;figure&gt;. However, there cannot be &lt;figure&gt; within &lt;p&gt;,
+<span class="cstat-no" title="statement not covered" ></span>                &lt;/figure&gt;`
+<span class="cstat-no" title="statement not covered" ></span>                if (el.parent.tagName === "p") {
+<span class="cstat-no" title="statement not covered" >                    // W</span>e are about to replace &lt;iframe&gt; with &lt;figure&gt;. However, there cannot be &lt;figure&gt; within &lt;p&gt;,
 <span class="cstat-no" title="statement not covered" ></span>                    // so we are lifting the &lt;figure&gt; out.
-<span class="cstat-no" title="statement not covered" >                    // Where does this markup  come from? His</span>torically, wpautop wrapped &lt;iframe&gt; in &lt;p&gt;. Some non-Gutengerg
-<span class="cstat-no" title="statement not covered" >                    // posts will still show that, until</span> they are converted. As a reminder, wpautop is not being used
-<span class="cstat-no" title="statement not covered" >                    // on the overall pos</span>t content anymore, neither on the Wordpress side nor on the grapher side (through
-<span class="cstat-no" title="statement not covered" >                    // the wpautop npm package), but its effects are s</span>till "present" after the result of wpautop were committed
-<span class="cstat-no" title="statement not covered" >                    // to th</span>e DB during a one-time refactoring session.
-<span class="cstat-no" title="statement not covered" >                    // &lt;p&gt;&lt;if</span>rame&gt;&lt;/iframe&gt;&lt;/p&gt;  --&gt;  &lt;p&gt;&lt;/p&gt;&lt;figure&gt;&lt;/figure&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    const $p = $el.parent()
+<span class="cstat-no" title="statement not covered" >                    // Where does this markup  come from? Historically, wpaut</span>op wrapped &lt;iframe&gt; in &lt;p&gt;. Some non-Gutengerg
+<span class="cstat-no" title="statement not covered" >                    // posts wi</span>ll still show that, until they are converted. As a reminder, wpautop is not being used
+<span class="cstat-no" title="statement not covered" >                    // on the overall post content anymore, neither on the Wordpr</span>ess side nor on the grapher side (through
+<span class="cstat-no" title="statement not covered" >                    // the wpautop npm package), but its effects are </span>still "present" after the result of wpautop were committed
+<span class="cstat-no" title="statement not covered" >                    // to the DB during a one-time refactoring session.</span>
+<span class="cstat-no" title="statement not covered" >                    // &lt;p&gt;&lt;iframe&gt;&lt;/iframe&gt;&lt;/p&gt;  --&gt;  &lt;p&gt;&lt;/p&gt;&lt;figure&gt;&lt;/figure&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    const $p = $el.parent()</span>
 <span class="cstat-no" title="statement not covered" >                    $p.after(output)</span>
 <span class="cstat-no" title="statement not covered" >                    $el.remove()</span>
-<span class="cstat-no" title="statement not covered" >                } else if (el.parent.tagName </span>=== "figure") {
-<span class="cstat-no" title="statement not covered" >                    // Support for &lt;iframe&gt; wrapped in &lt;figu</span>re&gt;
-<span class="cstat-no" title="statement not covered" >                    // &lt;figure&gt; automatically added by G</span>utenberg on copy / paste &lt;iframe&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    // Lifting up &lt;iframe&gt; out of &lt;figure&gt;, before it becomes a &lt;figure&gt; itself.
-<span class="cstat-no" title="statement not covered" ></span>                    // &lt;figure&gt;&lt;iframe&gt;&lt;/iframe&gt;&lt;/figure&gt;  --&gt;  &lt;figure&gt;&lt;/figure&gt;
-<span class="cstat-no" title="statement not covered" >                    cons</span>t $figure = $el.parent()
-<span class="cstat-no" title="statement not covered" ></span>                    $figure.after(output)
+<span class="cstat-no" title="statement not covered" >                } else if (el.parent.tagName === "figure") {</span>
+<span class="cstat-no" title="statement not covered" >                    // Support for &lt;iframe&gt; w</span>rapped in &lt;figure&gt;
+<span class="cstat-no" title="statement not covered" >                    // &lt;figure&gt; automat</span>ically added by Gutenberg on copy / paste &lt;iframe&gt;
+<span class="cstat-no" title="statement not covered" >                    // Lifting up &lt;iframe&gt; o</span>ut of &lt;figure&gt;, before it becomes a &lt;figure&gt; itself.
+<span class="cstat-no" title="statement not covered" >                    // &lt;figure&gt;&lt;ifr</span>ame&gt;&lt;/iframe&gt;&lt;/figure&gt;  --&gt;  &lt;figure&gt;&lt;/figure&gt;
+<span class="cstat-no" title="statement not covered" >                    const $figure = $el.p</span>arent()
+<span class="cstat-no" title="statement not covered" >                    $figure.after(output)</span>
 <span class="cstat-no" title="statement not covered" >                    $figure.remove()</span>
 <span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" >                    // No lifting up otherwise, just replacing &lt;iframe&gt; with &lt;fig</span>ure&gt;
-<span class="cstat-no" title="statement not covered" >                    // &lt;iframe&gt;&lt;/iframe&gt;  --&gt;  &lt;figure&gt;&lt;/figure&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    $el.after(output)</span>
+<span class="cstat-no" title="statement not covered" >                    // No lifting up oth</span>erwise, just replacing &lt;iframe&gt; with &lt;figure&gt;
+<span class="cstat-no" title="statement not covered" >                    // &lt;iframe&gt;&lt;/ifra</span>me&gt;  --&gt;  &lt;figure&gt;&lt;/figure&gt;
+<span class="cstat-no" title="statement not covered" ></span>                    $el.after(output)
 <span class="cstat-no" title="statement not covered" >                    $el.remove()</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" ></span>                }
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Replace explorer iframes with if</span>rameless embed
-<span class="cstat-no" title="statement not covered" >    const explorerIframes = cheerioEl("ifram</span>e")
+<span class="cstat-no" title="statement not covered" >    // Replace explorer iframes with ifra</span>meless embed
+<span class="cstat-no" title="statement not covered" >    const explorerIframes = cheerioEl("iframe</span>")
 <span class="cstat-no" title="statement not covered" >        .toArray()</span>
-<span class="cstat-no" title="statement not covered" >        .filter((el) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >            (el.attribs["src"] || "").includes(`/${EXPLORERS_ROUTE_FOLDER</span>}/`)
+<span class="cstat-no" title="statement not covered" >        .f</span>ilter((el) =&gt;
+<span class="cstat-no" title="statement not covered" >            (el.attribs["src"</span>] || "").includes(`/${EXPLORERS_ROUTE_FOLDER}/`)
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >    for (const el of explorerIframes)</span> {
-<span class="cstat-no" title="statement not covered" >        const $el = cheerioEl(el)</span>
-<span class="cstat-no" title="statement not covered" >        const src = el.attribs["src"]</span>.trim()
-<span class="cstat-no" title="statement not covered" >        // set a</span> default style if none exists on the existing iframe
-<span class="cstat-no" title="statement not covered" >        const style = el.attribs["style"] || "width: 100%; </span>height: 600px;"
+<span class="cstat-no" title="statement not covered" >    for (const el of explorerIframes) {</span>
+<span class="cstat-no" title="statement not covered" >        co</span>nst $el = cheerioEl(el)
+<span class="cstat-no" title="statement not covered" >        const src = el.attribs["src"].trim()</span>
+<span class="cstat-no" title="statement not covered" >        // set a default style if none</span> exists on the existing iframe
+<span class="cstat-no" title="statement not covered" >        const style = el.attribs["style"] ||</span> "width: 100%; height: 600px;"
 <span class="cstat-no" title="statement not covered" >        co</span>nst cssClass = el.attribs["class"]
-<span class="cstat-no" title="statement not covered" >        const $</span>figure = cheerioEl(
-<span class="cstat-no" title="statement not covered" >            ReactDOMServer.renderToStaticMarkup(</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;figure data-explorer-src={src} className={cssClass}&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;LoadingIndicator /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>        const $figure = cheerioEl(
+<span class="cstat-no" title="statement not covered" >            ReactDOMServer.renderToStati</span>cMarkup(
+<span class="cstat-no" title="statement not covered" >                &lt;figure data</span>-explorer-src={src} className={cssClass}&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;LoadingIn</span>dicator /&gt;
 <span class="cstat-no" title="statement not covered" >                &lt;/figure&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        $f</span>igure.attr("style", style)
+<span class="cstat-no" title="statement not covered" >        $figure.attr("style", style)</span>
 <span class="cstat-no" title="statement not covered" >        $el.after($figure)</span>
 <span class="cstat-no" title="statement not covered" >        $el.remove()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Any remaining iframes</span>
-<span class="cstat-no" title="statement not covered" >    for (const iframe of cheerioEl("if</span>rame").toArray()) {
-<span class="cstat-no" title="statement not covered" >        // Ensure https embeds</span>
-<span class="cstat-no" title="statement not covered" >        if</span> (HTTPS_ONLY &amp;&amp; iframe.attribs["src"]) {
-<span class="cstat-no" title="statement not covered" ></span>            iframe.attribs["src"] = iframe.attribs["src"].replace(
+<span class="cstat-no" title="statement not covered" >    // Any</span> remaining iframes
+<span class="cstat-no" title="statement not covered" >    for (const iframe of cheerioEl</span>("iframe").toArray()) {
+<span class="cstat-no" title="statement not covered" >        // Ensure https embed</span>s
+<span class="cstat-no" title="statement not covered" >        if (HTTPS_ONLY &amp;&amp; iframe.attr</span>ibs["src"]) {
+<span class="cstat-no" title="statement not covered" >            iframe.attribs["src"] = iframe.attribs["src"].replace(</span>
 <span class="cstat-no" title="statement not covered" >                "http://",</span>
 <span class="cstat-no" title="statement not covered" >                "https://"</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        // Lazy load unless "loading" attribute al</span>ready specified
-<span class="cstat-no" title="statement not covered" >        if (!iframe.attribs["loading"]) </span>{
-<span class="cstat-no" title="statement not covered" >            iframe.attribs["loading"] = "lazy</span>"
+<span class="cstat-no" title="statement not covered" >        // Lazy load</span> unless "loading" attribute already specified
+<span class="cstat-no" title="statement not covered" >        if (!i</span>frame.attribs["loading"]) {
+<span class="cstat-no" title="statement not covered" >            iframe.attribs["loading"] = "lazy"</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Remove any empty elements</span>
-<span class="cstat-no" title="statement not covered" >    for (c</span>onst p of cheerioEl("p").toArray()) {
-<span class="cstat-no" title="statement not covered" >        const $p = cheerioEl(p)</span>
-<span class="cstat-no" title="statement not covered" >        if ($p.contents().len</span>gth === 0) $p.remove()
+<span class="cstat-no" title="statement not covered" >    for (const p of cheerioEl("p").toArray())</span> {
+<span class="cstat-no" title="statement not covered" >        const $p = chee</span>rioEl(p)
+<span class="cstat-no" title="statement not covered" >        if ($p.contents().length === 0) $p.remove(</span>)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Wrap tables so we can do ove</span>rflow-x: scroll if needed
-<span class="cstat-no" title="statement not covered" >    for (const table of cheerioEl("tabl</span>e").toArray()) {
+<span class="cstat-no" title="statement not covered" >    // Wrap tables so we can do overflow-x: scroll if needed</span>
+<span class="cstat-no" title="statement not covered" >    for (const table of c</span>heerioEl("table").toArray()) {
 <span class="cstat-no" title="statement not covered" >        const $table = cheerioEl(table)</span>
 <span class="cstat-no" title="statement not covered" >        const $div = cheerioEl("&lt;div clas</span>s='tableContainer'&gt;&lt;/div&gt;")
-<span class="cstat-no" title="statement not covered" >        $table.after</span>($div)
-<span class="cstat-no" title="statement not covered" >        $div.a</span>ppend($table)
+<span class="cstat-no" title="statement not covered" >        $table.after($div)</span>
+<span class="cstat-no" title="statement not covered" >        $div.append($table)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Make sticky-right layout the defau</span>lt for columns
-<span class="cstat-no" title="statement not covered" >    cheerioEl(".wp-block-columns").each((_,</span> columns) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const $columns = cheerioEl(c</span>olumns)
-<span class="cstat-no" title="statement not covered" >        if (columns.attribs.class === "wp-blo</span>ck-columns") {
-<span class="cstat-no" title="statement not covered" >            $columns.ad</span>dClass("is-style-sticky-right")
+<span class="cstat-no" title="statement not covered" >    // Make sticky-right layout the default </span>for columns
+<span class="cstat-no" title="statement not covered" >    cheerioEl(".wp-block</span>-columns").each((_, columns) =&gt; {
+<span class="cstat-no" title="statement not covered" >        const $col</span>umns = cheerioEl(columns)
+<span class="cstat-no" title="statement not covered" >        if (co</span>lumns.attribs.class === "wp-block-columns") {
+<span class="cstat-no" title="statement not covered" ></span>            $columns.addClass("is-style-sticky-right")
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Image processing</span>
 <span class="cstat-no" title="statement not covered" >    // Assumptions:</span>
-<span class="cstat-no" title="statement not covered" >    // - original images are not uploaded with a suffix "-[number]x[number]"</span>
+<span class="cstat-no" title="statement not covered" >    // - original images are not uploaded with a suffix "-</span>[number]x[number]"
 <span class="cstat-no" title="statement not covered" >    //   (without the quotes).</span>
-<span class="cstat-no" title="statement not covered" >    // - variants are being generated b</span>y wordpress when the original is uploaded
-<span class="cstat-no" title="statement not covered" >    // - images are never legitimate direct</span> descendants of &lt;a&gt; tags.
-<span class="cstat-no" title="statement not covered" >    //   &lt;a&gt;&lt;img /&gt;&lt;/a&gt; is considered deprecated (was used t</span>o create direct links to
-<span class="cstat-no" title="statement not covered" >    //   the full resolution variant</span>) and wrapping &lt;a&gt; will be removed to prevent
-<span class="cstat-no" title="statement not covered" >    //   conflicts with lightboxes. Chosen o</span>ver preventDefault() in front-end code
-<span class="cstat-no" title="statement not covered" >    //   to avoid clicks</span> before javascript executes.
-<span class="cstat-no" title="statement not covered" >    for (const el </span>of cheerioEl("img").toArray()) {
-<span class="cstat-no" title="statement not covered" >        // Rec</span>reate source image path by removing automatically added image
-<span class="cstat-no" title="statement not covered" >        //</span> dimensions (e.g. remove 800x600).
-<span class="cstat-no" title="statement not covered" >        const src = el.attribs["src</span>"]
-<span class="cstat-no" title="statement not covered" >        const parsedPath = path.parse(src)</span>
+<span class="cstat-no" title="statement not covered" >    // - v</span>ariants are being generated by wordpress when the original is uploaded
+<span class="cstat-no" title="statement not covered" >    // -</span> images are never legitimate direct descendants of &lt;a&gt; tags.
+<span class="cstat-no" title="statement not covered" >    //   &lt;a&gt;&lt;img /&gt;&lt;/a&gt; is considered deprecated (was</span> used to create direct links to
+<span class="cstat-no" title="statement not covered" >    //   the full resolution variant) and wrapping &lt;a&gt; will be removed to prevent</span>
+<span class="cstat-no" title="statement not covered" >    //   conflicts with lightboxes. Chosen over pr</span>eventDefault() in front-end code
+<span class="cstat-no" title="statement not covered" >    //   to avoid</span> clicks before javascript executes.
+<span class="cstat-no" title="statement not covered" >    for (const el of cheerioEl(</span>"img").toArray()) {
+<span class="cstat-no" title="statement not covered" >        // Recreate source image path by removin</span>g automatically added image
+<span class="cstat-no" title="statement not covered" >        // dimensions (e.g. remove 800x600).</span>
+<span class="cstat-no" title="statement not covered" >        con</span>st src = el.attribs["src"]
+<span class="cstat-no" title="statement not covered" ></span>        const parsedPath = path.parse(src)
 <span class="cstat-no" title="statement not covered" >        let originalFilename = ""</span>
 <span class="cstat-no" title="statement not covered" >        if (parsedPath.ext !== ".svg") {</span>
-<span class="cstat-no" title="statement not covered" >            originalFilename = parsedPath.name.replace(/-\d+x\d+$/, "")</span>
-<span class="cstat-no" title="statement not covered" >            const originalSrc = path.format({</span>
-<span class="cstat-no" title="statement not covered" >                dir: parsedPath.dir,</span>
+<span class="cstat-no" title="statement not covered" >            originalFilename = parsedPath.name.re</span>place(/-\d+x\d+$/, "")
+<span class="cstat-no" title="statement not covered" >            const o</span>riginalSrc = path.format({
+<span class="cstat-no" title="statement not covered" >                dir: </span>parsedPath.dir,
 <span class="cstat-no" title="statement not covered" ></span>                name: originalFilename,
-<span class="cstat-no" title="statement not covered" ></span>                ext: parsedPath.ext,
+<span class="cstat-no" title="statement not covered" >                ext: parsedPath.ext,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >            el.attribs["data-high-res-src"] = originalSrc</span>
-<span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            origi</span>nalFilename = parsedPath.name
+<span class="cstat-no" title="statement not covered" >            el.attribs["data-</span>high-res-src"] = originalSrc
+<span class="cstat-no" title="statement not covered" ></span>        } else {
+<span class="cstat-no" title="statement not covered" >            originalFilename = parsedPath.name</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Remove wrapping &lt;a&gt; tag, conflictin</span>g with lightbox (cf. assumptions above)
-<span class="cstat-no" title="statement not covered" >        if </span>(el.parent.tagName === "a") {
-<span class="cstat-no" title="statement not covered" ></span>            const $a = cheerioEl(el.parent)
-<span class="cstat-no" title="statement not covered" >            $a.replaceWith(cheerioEl(el))</span>
+<span class="cstat-no" title="statement not covered" >        // Remove wrapping &lt;a&gt; tag, confl</span>icting with lightbox (cf. assumptions above)
+<span class="cstat-no" title="statement not covered" >        if (el.parent.tagName === "a") {</span>
+<span class="cstat-no" title="statement not covered" >            const $a = cheerioEl(el.parent)</span>
+<span class="cstat-no" title="statement not covered" >            $a.replaceWith(cheerioEl</span>(el))
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Add alt </span>attribute
-<span class="cstat-no" title="statement not covered" >        if (!el.attri</span>bs["alt"]) {
-<span class="cstat-no" title="statement not covered" ></span>            el.attribs["alt"] = lodash.capitalize(
-<span class="cstat-no" title="statement not covered" >                originalFilename.replace(/[-_]/g, </span>" ")
+<span class="cstat-no" title="statement not covered" >        // Add alt attribute</span>
+<span class="cstat-no" title="statement not covered" >        if (!el.attribs["alt"]) {</span>
+<span class="cstat-no" title="statement not covered" >            el.attribs["a</span>lt"] = lodash.capitalize(
+<span class="cstat-no" title="statement not covered" >                originalFilen</span>ame.replace(/[-_]/g, " ")
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Lazy load all images, unless they already have a "lo</span>ading" attribute.
+<span class="cstat-no" title="statement not covered" >        // Lazy load all</span> images, unless they already have a "loading" attribute.
 <span class="cstat-no" title="statement not covered" >        if (!el.attribs["loading"]) {</span>
 <span class="cstat-no" title="statement not covered" >            el.attribs["loading"] = "lazy"</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Table of contents and deep li</span>nks
-<span class="cstat-no" title="statement not covered" >    const tocHeadings: TocHeading[] = []</span>
-<span class="cstat-no" title="statement not covered" >    const existingSlugs: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >    let parentHeading: TocHeading | nul</span>l = null
+<span class="cstat-no" title="statement not covered" >    // Table of contents and deep links</span>
+<span class="cstat-no" title="statement not covered" >    const tocHeadings: TocHeading</span>[] = []
+<span class="cstat-no" title="statement not covered" >    const exis</span>tingSlugs: string[] = []
+<span class="cstat-no" title="statement not covered" >    let parentHeading: TocHeading | null </span>= null
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    cheerioEl("h1, h2, h3</span>, h4").each((_, el) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const $heading = chee</span>rioEl(el)
+<span class="cstat-no" title="statement not covered" >    cheerioEl("h1, h2, h3, h4").each((_, el) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const $heading = cheerioEl(el)</span>
 <span class="cstat-no" title="statement not covered" >        const headingText = $heading.text()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        let slug = urlSlug(headingTe</span>xt)
+<span class="cstat-no" title="statement not covered" >        let slug = urlSlug(headingText)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Avoid If the slug already ex</span>ists, try prepend the parent
-<span class="cstat-no" title="statement not covered" >        if (existingSlugs.indexOf(slug) !== -1 &amp;&amp; parentHeading) {</span>
-<span class="cstat-no" title="statement not covered" >            slug = `${parentHeading.</span>slug}-${slug}`
+<span class="cstat-no" title="statement not covered" >        // Avoid If the slug already e</span>xists, try prepend the parent
+<span class="cstat-no" title="statement not covered" >        if (ex</span>istingSlugs.indexOf(slug) !== -1 &amp;&amp; parentHeading) {
+<span class="cstat-no" title="statement not covered" >            slug = `${parentHeading.slug}</span>-${slug}`
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        existingSlugs.push(slug)</span>
+<span class="cstat-no" title="statement not covered" >        existingSl</span>ugs.push(slug)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Tab</span>le of contents
-<span class="cstat-no" title="statement not covered" >        if (formattingOptions.toc) {</span>
-<span class="cstat-no" title="statement not covered" >            if ($heading.is("#footnotes") &amp;&amp; footnot</span>es.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >        // Table of contents</span>
+<span class="cstat-no" title="statement not covered" >        if (fo</span>rmattingOptions.toc) {
+<span class="cstat-no" title="statement not covered" >            if ($he</span>ading.is("#footnotes") &amp;&amp; footnotes.length &gt; 0) {
 <span class="cstat-no" title="statement not covered" >                tocHeadings.push({</span>
 <span class="cstat-no" title="statement not covered" >                    text: headingText,</span>
 <span class="cstat-no" title="statement not covered" >                    slug: "footnotes",</span>
 <span class="cstat-no" title="statement not covered" >                    isSubheading: false,</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >            } else</span> if (!$heading.is("h1") &amp;&amp; !$heading.is("h4")) {
-<span class="cstat-no" title="statement not covered" >                if ($heading.is("h2"))</span> {
-<span class="cstat-no" title="statement not covered" ></span>                    const tocHeading = {
-<span class="cstat-no" title="statement not covered" >                        text: headingText</span>,
-<span class="cstat-no" title="statement not covered" >                        slug: slug,</span>
-<span class="cstat-no" title="statement not covered" >                        isSubheading: false,</span>
-<span class="cstat-no" title="statement not covered" ></span>                    }
-<span class="cstat-no" title="statement not covered" >                    tocHeadings.push(tocHea</span>ding)
-<span class="cstat-no" title="statement not covered" >                    parentHeading = tocHeading</span>
-<span class="cstat-no" title="statement not covered" ></span>                } else if (
-<span class="cstat-no" title="statement not covered" ></span>                    $heading.closest(`.${PROMINENT_LINK_CLASSNAME}`).length ===
+<span class="cstat-no" title="statement not covered" >            } else if (!$heading.is("h1") &amp;&amp; !$heading.is("h4")) {</span>
+<span class="cstat-no" title="statement not covered" >                if ($heading.is("h2")) {</span>
+<span class="cstat-no" title="statement not covered" >                    const tocHeading = {</span>
+<span class="cstat-no" title="statement not covered" >                        text: headingText,</span>
+<span class="cstat-no" title="statement not covered" >                        sl</span>ug: slug,
+<span class="cstat-no" title="statement not covered" >                        isSubhe</span>ading: false,
+<span class="cstat-no" title="statement not covered" >                    }</span>
+<span class="cstat-no" title="statement not covered" >                    tocHea</span>dings.push(tocHeading)
+<span class="cstat-no" title="statement not covered" >                    pa</span>rentHeading = tocHeading
+<span class="cstat-no" title="statement not covered" >                } else if (</span>
+<span class="cstat-no" title="statement not covered" >                    $heading.closest(`.${PROMINENT_LINK_CLAS</span>SNAME}`).length ===
 <span class="cstat-no" title="statement not covered" >                        0 &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    $heading.closest(".wp-block-owid-additi</span>onal-information")
-<span class="cstat-no" title="statement not covered" >                        .length === 0</span>
-<span class="cstat-no" title="statement not covered" >                ) {</span>
+<span class="cstat-no" title="statement not covered" >                    $heading.closest(".wp-block-owid-additional-informat</span>ion")
+<span class="cstat-no" title="statement not covered" ></span>                        .length === 0
+<span class="cstat-no" title="statement not covered" >                ) </span>{
 <span class="cstat-no" title="statement not covered" >                    tocHeadings.push({</span>
 <span class="cstat-no" title="statement not covered" >                        text: headingText,</span>
-<span class="cstat-no" title="statement not covered" >                        html: $heading.html() || unde</span>fined,
+<span class="cstat-no" title="statement not covered" >                        html: $heading.html(</span>) || undefined,
 <span class="cstat-no" title="statement not covered" >                        slug: slug,</span>
 <span class="cstat-no" title="statement not covered" >                        isSubheading: true,</span>
 <span class="cstat-no" title="statement not covered" >                    })</span>
@@ -2036,81 +2108,81 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        $heading.attr("id",</span> slug)
-<span class="cstat-no" title="statement not covered" >        // Add deep link for headings not contained in &lt;a&gt; t</span>ags already
+<span class="cstat-no" title="statement not covered" >        $heading.attr("id", slug)</span>
+<span class="cstat-no" title="statement not covered" >        // Add deep link for headings no</span>t contained in &lt;a&gt; tags already
 <span class="cstat-no" title="statement not covered" >        // (e.g. within a prominent link block)</span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            !$heading.</span>closest(`.${PROMINENT_LINK_CLASSNAME}`).length &amp;&amp; // already wrapped in &lt;a&gt;
-<span class="cstat-no" title="statement not covered" >            !$head</span>ing.closest(".wp-block-owid-additional-information").length &amp;&amp; // prioritize clean SSR of AdditionalInformation
-<span class="cstat-no" title="statement not covered" >            !$heading.closest(".wp-block-help").len</span>gth
+<span class="cstat-no" title="statement not covered" >            !$heading.closest(`.${PROMINENT_LINK_CLASSNAME}`).length &amp;&amp; // already wrapped in &lt;a&gt;</span>
+<span class="cstat-no" title="statement not covered" >            !$heading.closest(".wp-block-owid-</span>additional-information").length &amp;&amp; // prioritize clean SSR of AdditionalInformation
+<span class="cstat-no" title="statement not covered" >            !$head</span>ing.closest(".wp-block-help").length
 <span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >            $heading.prepend(</span>
-<span class="cstat-no" title="statement not covered" >                `&lt;a class="${DEEP_LINK_CLASS}" href="#${slug}"&gt;</span>&lt;/a&gt;`
+<span class="cstat-no" title="statement not covered" >                `&lt;a class="${DEEP_LINK_CLASS}" </span>href="#${slug}"&gt;&lt;/a&gt;`
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    interface Columns {</span>
-<span class="cstat-no" title="statement not covered" >        wrapper: Cheerio</span>
+<span class="cstat-no" title="statement not covered" >        wr</span>apper: Cheerio
 <span class="cstat-no" title="statement not covered" >        first: Cheerio</span>
-<span class="cstat-no" title="statement not covered" >        last: Cheerio</span>
+<span class="cstat-no" title="statement not covered" ></span>        last: Cheerio
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const getColumns = (style: string = "sticky-right"): Columns =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const emptyColumns = `&lt;div class="wp-b</span>lock-columns is-style-${style}"&gt;&lt;div class="wp-block-column"&gt;&lt;/div&gt;&lt;div class="wp-block-column"&gt;&lt;/div&gt;&lt;/div&gt;`
-<span class="cstat-no" title="statement not covered" >        const $col</span>umns = cheerioEl(emptyColumns)
+<span class="cstat-no" title="statement not covered" >    const getColumns = (style: string = "sticky-right"): Columns =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >        const</span> emptyColumns = `&lt;div class="wp-block-columns is-style-${style}"&gt;&lt;div class="wp-block-column"&gt;&lt;/div&gt;&lt;div class="wp-block-column"&gt;&lt;/div&gt;&lt;/div&gt;`
+<span class="cstat-no" title="statement not covered" >        const $column</span>s = cheerioEl(emptyColumns)
 <span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >            wrapper: $columns,</span>
-<span class="cstat-no" title="statement not covered" >            first: $columns.children().first(),</span>
-<span class="cstat-no" title="statement not covered" >            last: </span>$columns.children().last(),
+<span class="cstat-no" title="statement not covered" >            wrapper: $col</span>umns,
+<span class="cstat-no" title="statement not covered" >            first: $colum</span>ns.children().first(),
+<span class="cstat-no" title="statement not covered" >            last: $columns.</span>children().last(),
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const isColumnsEmpty = (columns: Columns) </span>=&gt; {
-<span class="cstat-no" title="statement not covered" >        re</span>turn columns.first.children().length === 0 &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            columns.last.children().le</span>ngth === 0
-<span class="cstat-no" title="statement not covered" ></span>            ? true
+<span class="cstat-no" title="statement not covered" >    const isColumnsEmpty = (columns: Colu</span>mns) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return columns.first.child</span>ren().length === 0 &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            columns.last.childr</span>en().length === 0
+<span class="cstat-no" title="statement not covered" >            ? true</span>
 <span class="cstat-no" title="statement not covered" >            : false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const flu</span>shColumns = (columns: Columns, $section: Cheerio): Columns =&gt; {
-<span class="cstat-no" title="statement not covered" >        $section.appe</span>nd(columns.wrapper)
-<span class="cstat-no" title="statement not covered" >        return getColumns</span>()
+<span class="cstat-no" title="statement not covered" >    const flushColumns = (column</span>s: Columns, $section: Cheerio): Columns =&gt; {
+<span class="cstat-no" title="statement not covered" >        $section.append(columns.wrapper)</span>
+<span class="cstat-no" title="statement not covered" >        return getColumns()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Wrap content demarca</span>ted by headings into section blocks
-<span class="cstat-no" title="statement not covered" >    // and automatically divide c</span>ontent into columns
-<span class="cstat-no" title="statement not covered" >    const sectionStarts = [cheer</span>ioEl("body").children().get(0)].concat(
-<span class="cstat-no" title="statement not covered" >        cheerioEl("body &gt;</span> h2").toArray()
+<span class="cstat-no" title="statement not covered" >    // </span>Wrap content demarcated by headings into section blocks
+<span class="cstat-no" title="statement not covered" ></span>    // and automatically divide content into columns
+<span class="cstat-no" title="statement not covered" >    const sectionStarts = [cheerioEl("body").childr</span>en().get(0)].concat(
+<span class="cstat-no" title="statement not covered" >        cheerioEl("body &gt; h2").toArray()</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >    for (const start of sectionSta</span>rts) {
+<span class="cstat-no" title="statement not covered" >    for (const start of sectionStarts) {</span>
 <span class="cstat-no" title="statement not covered" >        const $start = cheerioE</span>l(start)
-<span class="cstat-no" title="statement not covered" >        const $section =</span> cheerioEl("&lt;section&gt;")
-<span class="cstat-no" title="statement not covered" >        let columns </span>= getColumns()
-<span class="cstat-no" title="statement not covered" >        let sideBySideColumns = getColumns("side-by-side")</span>
-<span class="cstat-no" title="statement not covered" >        const $tempWrapper = c</span>heerioEl("&lt;div&gt;")
-<span class="cstat-no" title="statement not covered" >        const $contents = $tempW</span>rapper
-<span class="cstat-no" title="statement not covered" >            .append($start.clone(), $start.nextUntil(cheerioEl("</span>h2")))
+<span class="cstat-no" title="statement not covered" >        const $section = cheerioEl("&lt;section&gt;")</span>
+<span class="cstat-no" title="statement not covered" >        let columns = getColumns()</span>
+<span class="cstat-no" title="statement not covered" >        let sideBySideColumns = getC</span>olumns("side-by-side")
+<span class="cstat-no" title="statement not covered" >        const $tempWrapper = cheeri</span>oEl("&lt;div&gt;")
+<span class="cstat-no" title="statement not covered" >        const $contents =</span> $tempWrapper
+<span class="cstat-no" title="statement not covered" >            .append($start.</span>clone(), $start.nextUntil(cheerioEl("h2")))
 <span class="cstat-no" title="statement not covered" >            .contents()</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (post.glossary) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            formatGlossaryTerms(
-<span class="cstat-no" title="statement not covered" ></span>                cheerioEl,
-<span class="cstat-no" title="statement not covered" >                $contents,</span>
-<span class="cstat-no" title="statement not covered" >                getMutableGlossary(glossary)</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        $contents.each((i, el) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const $el = cheerioEl(el)</span>
-<span class="cstat-no" title="statement not covered" >            // Leave h2 at the secti</span>on level, do not move into columns
-<span class="cstat-no" title="statement not covered" >            if (el.name === "h2") {</span>
-<span class="cstat-no" title="statement not covered" >                $section.</span>append(
-<span class="cstat-no" title="statement not covered" >                    ReactDO</span>MServer.renderToStaticMarkup(
-<span class="cstat-no" title="statement not covered" >                        &lt;SectionHeading</span>
-<span class="cstat-no" title="statement not covered" ></span>                            title={$el.text()}
-<span class="cstat-no" title="statement not covered" >                            tocHe</span>adings={tocHeadings}
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
+<span class="cstat-no" title="statement not covered" >            formatGlossaryTerms(</span>
+                cheerioEl,
+                $contents,
+                getMutableGlossary(glossary)
+            )
+        }
+&nbsp;
+        $contents.each((i, el) =&gt; {
+            const $el = cheerioEl(el)
+            // Leave h2 at the section level, do not move into columns
+            if (el.name === "h2") {
+                $section.append(
+                    ReactDOMServer.renderToStaticMarkup(
+                        &lt;SectionHeading
+                            title={$el.text()}
+                            tocHeadings={tocHeadings}
+                        &gt;
                             &lt;div
                                 dangerouslySetInnerHTML={{
                                     __html: cheerioEl.html($el),
@@ -2257,7 +2329,7 @@ export const formatPost = async (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 28 2021 11:59:20 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 29 2021 05:35:58 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

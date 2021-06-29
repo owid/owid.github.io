@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.68% </span>
+                <span class="strong">81.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>468/573</span>
+                <span class='fraction'>469/573</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">82.05% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>65/78</span>
+                <span class='fraction'>64/78</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.76% </span>
+                <span class="strong">78.13% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>25/33</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.68% </span>
+                <span class="strong">81.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>468/573</span>
+                <span class='fraction'>469/573</span>
             </div>
         
             
@@ -883,7 +883,9 @@
 <a name='L824'></a><a href='#L824'>824</a>
 <a name='L825'></a><a href='#L825'>825</a>
 <a name='L826'></a><a href='#L826'>826</a>
-<a name='L827'></a><a href='#L827'>827</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L827'></a><a href='#L827'>827</a>
+<a name='L828'></a><a href='#L828'>828</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1137,7 +1139,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1243,7 +1245,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1455,7 +1457,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1715,7 +1717,7 @@ import { observer } from "mobx-react"
 import classnames from "classnames"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons/faInfoCircle"
-import { SortOrder, ColumnSlug, Time } from "../../coreTable/CoreTableConstants"
+import { SortOrder, Time } from "../../coreTable/CoreTableConstants"
 import { EntityName, OwidTableSlugs } from "../../coreTable/OwidTableConstants"
 import { TickFormattingOptions } from "../../clientUtils/formatValue"
 import {
@@ -1738,6 +1740,7 @@ import { CoreColumn } from "../../coreTable/CoreTableColumns"
 import { Bounds, DEFAULT_BOUNDS } from "../../clientUtils/Bounds"
 import { makeSelectionArray } from "../chart/ChartUtils"
 import { SelectionArray } from "../selection/SelectionArray"
+import { ColumnSlug } from "../../clientUtils/owidTypes"
 &nbsp;
 interface DataTableState {
     sort: DataTableSortState
@@ -1768,7 +1771,7 @@ const columnNameByType: Record&lt;ColumnKey, string&gt; = {
 }
 &nbsp;
 const inverseSortOrder = (<span class="fstat-no" title="function not covered" >order: SortOrder): SortOrder =&gt;</span>
-<span class="cstat-no" title="statement not covered" >    order === SortOrder.asc ? SortOrder.desc : SortOrder.a</span>sc
+<span class="cstat-no" title="statement not covered" >    order === SortOr</span>der.asc ? SortOrder.desc : SortOrder.asc
 &nbsp;
 export interface DataTableManager {
     table: OwidTable
@@ -1802,14 +1805,14 @@ export class DataTable extends React.Component&lt;{
         // If not sorted by entity, then make sure the index of the chosen column exists
         dimIndex = Math.min(dimIndex, this.table.numColumns - 1)
         if (dimIndex !== ENTITY_DIM_INDEX) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>            const availableColumns = this.columnsWithValues[</span>
-<span class="cstat-no" title="statement not covered" >                dimI</span>ndex
-<span class="cstat-no" title="statement not covered" >            ].columns.map((sub) =&gt; sub.key)</span>
-<span class="cstat-no" title="statement not covered" ></span>            if (
-<span class="cstat-no" title="statement not covered" >                columnK</span>ey === undefined ||
-<span class="cstat-no" title="statement not covered" >                !availableColumns.incl</span>udes(columnKey)
-<span class="cstat-no" title="statement not covered" ></span>            )
-<span class="cstat-no" title="statement not covered" >                columnKey = </span>availableColumns[0]
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const av</span>ailableColumns = this.columnsWithValues[</span>
+<span class="cstat-no" title="statement not covered" >                dimIndex</span>
+<span class="cstat-no" title="statement not covered" ></span>            ].columns.map((sub) =&gt; sub.key)
+<span class="cstat-no" title="statement not covered" >            if (</span>
+<span class="cstat-no" title="statement not covered" >                columnKey === undefine</span>d ||
+<span class="cstat-no" title="statement not covered" ></span>                !availableColumns.includes(columnKey)
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >                columnKey = availableColumns[0]</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         return {
@@ -1843,26 +1846,26 @@ export class DataTable extends React.Component&lt;{
 <span class="branch-0 cbranch-no" title="branch not covered" >            return (row): string =&gt; row.entityName</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return (row): string | number =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const dv = row.dimensionValues[dimIndex</span>] as DimensionValue
+<span class="cstat-no" title="statement not covered" >            const dv = row.dimensionValues[dimIndex] </span>as DimensionValue
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            let value: number | string | unde</span>fined
-<span class="cstat-no" title="statement not covered" ></span>            if (dv) {
-<span class="cstat-no" title="statement not covered" >                if (isSin</span>gleValue(dv)) value = dv.single?.value
+<span class="cstat-no" title="statement not covered" ></span>            let value: number | string | undefined
+<span class="cstat-no" title="statement not covered" >            if (dv) {</span>
+<span class="cstat-no" title="statement not covered" >                if (isSingleValue(dv)) val</span>ue = dv.single?.value
 <span class="cstat-no" title="statement not covered" >                else if (</span>
-<span class="cstat-no" title="statement not covered" >                    isRangeValue(dv) &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    columnKey !== undefined &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    columnKey</span> in RangeValueKey
+<span class="cstat-no" title="statement not covered" ></span>                    isRangeValue(dv) &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    columnKey</span> !== undefined &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    columnKey in RangeValu</span>eKey
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                    value = dv[columnKey as RangeValueKey]?.val</span>ue
+<span class="cstat-no" title="statement not covered" >                    value = dv[columnKey as RangeValue</span>Key]?.value
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // We always want undefined values to be last</span>
+<span class="cstat-no" title="statement not covered" >            // We always want undefined val</span>ues to be last
 <span class="cstat-no" title="statement not covered" >            if (</span>
-<span class="cstat-no" title="statement not covered" >                value === undefined |</span>|
+<span class="cstat-no" title="statement not covered" >                value === undefined ||</span>
 <span class="cstat-no" title="statement not covered" >                (typeof value === "number" &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >                    (!isFinite(value) || isNaN(value)))</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >                return order</span> === SortOrder.asc ? Infinity : -Infinity
+<span class="cstat-no" title="statement not covered" >                return order === SortOrd</span>er.asc ? Infinity : -Infinity
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            return value</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -1875,20 +1878,20 @@ export class DataTable extends React.Component&lt;{
     }
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >updateSort(</span>
-<span class="cstat-no" title="statement not covered" >        dimIndex: DimensionIndex,</span>
-<span class="cstat-no" title="statement not covered" >        columnK</span>ey?: ColumnKey
-<span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        cons</span>t { sort } = this.tableState
-<span class="cstat-no" title="statement not covered" ></span>        const order =
-<span class="cstat-no" title="statement not covered" >            sort.dimIndex === di</span>mIndex &amp;&amp; sort.columnKey === columnKey
-<span class="cstat-no" title="statement not covered" >                ? inverseSortOrder(sort.or</span>der)
+<span class="cstat-no" title="statement not covered" >        dimInde</span>x: DimensionIndex,
+<span class="cstat-no" title="statement not covered" >        columnKey?: ColumnKey</span>
+<span class="cstat-no" title="statement not covered" >    ): void </span>{
+<span class="cstat-no" title="statement not covered" ></span>        const { sort } = this.tableState
+<span class="cstat-no" title="statement not covered" >        const order =</span>
+<span class="cstat-no" title="statement not covered" >            sort.dimIndex === dimIndex &amp;&amp; </span>sort.columnKey === columnKey
+<span class="cstat-no" title="statement not covered" >                ? inverseSortOrder(sort.order)</span>
 <span class="cstat-no" title="statement not covered" >                : dimIndex === ENTITY_DIM_INDEX</span>
 <span class="cstat-no" title="statement not covered" >                ? SortOrder.asc</span>
 <span class="cstat-no" title="statement not covered" >                : SortOrder.desc</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        this.storedState.sort.dimIndex = dimIndex</span>
-<span class="cstat-no" title="statement not covered" >        this.storedState.sort.columnKey = columnKey</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>storedState.sort.order = order
+<span class="cstat-no" title="statement not covered" >        this.</span>storedState.sort.columnKey = columnKey
+<span class="cstat-no" title="statement not covered" ></span>        this.storedState.sort.order = order
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private get entityHeader(): JSX.Element {
@@ -1899,7 +1902,7 @@ export class DataTable extends React.Component&lt;{
                 sortable={true}
                 sortedCol={sort.dimIndex === ENTITY_DIM_INDEX}
                 sortOrder={sort.order}
-                onClick={<span class="fstat-no" title="function not covered" >(): void =&gt; this.u</span>pdateSort(ENTITY_DIM_INDEX)}
+                onClick={(): void =&gt; this.updateSort(ENTITY_DIM_INDEX)}
                 rowSpan={this.hasSubheaders ? 2 : 1}
                 headerText={capitalize(this.entityType)}
                 colType="entity"
@@ -1932,10 +1935,10 @@ export class DataTable extends React.Component&lt;{
                 sortOrder: sort.order,
                 onClick: <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                    if (dim.sortable) {</span>
-<span class="cstat-no" title="statement not covered" >                        this.updateSort(dimIndex, SingleValueKey.sing</span>le)
+<span class="cstat-no" title="statement not covered" >                        this.updateSort(dimIndex, SingleVal</span>ueKey.single)
 <span class="cstat-no" title="statement not covered" >                    }</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
-                rowSpan: <span class="branch-0 cbranch-no" title="branch not covered" >this.hasSubheaders &amp;&amp; dim.columns.length &lt; 2 ? 2 : 1</span>,
+                rowSpan: this.hasSubheaders &amp;&amp; dim.columns.length &lt; 2 ? 2 : 1,
                 colSpan: dim.columns.length,
                 headerText: dimensionHeaderText,
                 colType: "dimension" as const,
@@ -1959,11 +1962,11 @@ export class DataTable extends React.Component&lt;{
                         sortable={column.sortable}
                         sortedCol={
                             sort.dimIndex === dimIndex &amp;&amp;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                            sort.columnKey === column.key
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                            sort.columnKey === column.key</span></span>
                         }
                         sortOrder={sort.order}
                         onClick={(): void =&gt;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >                            this.u</span></span>pdateSort(dimIndex, column.key)
+<span class="fstat-no" title="function not covered" >                            this.u</span>pdateSort(dimIndex, column.key)
                         }
                         headerText={headerText}
                         colType="subdimension"
@@ -2057,8 +2060,8 @@ export class DataTable extends React.Component&lt;{
                             key,
                             column,
                             dv,
-                            sort.dimIndex === dimIndex &amp;&amp;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                                sort.columnKey === column.key,
+<span class="branch-0 cbranch-no" title="branch not covered" >                            sort.dimIndex === dimIndex &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                                sort.columnKey === column.key</span>,
                             dimension.coreTableColumn
                         )
                     })
@@ -2074,7 +2077,7 @@ export class DataTable extends React.Component&lt;{
     }
 &nbsp;
     @computed get bounds<span class="fstat-no" title="function not covered" >(): Bounds {</span>
-<span class="cstat-no" title="statement not covered" >        return this.props.bounds ?? DEFAULT_BO</span>UNDS
+<span class="cstat-no" title="statement not covered" >        return this.props.bounds ?? D</span>EFAULT_BOUNDS
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render(): JSX.Element {
@@ -2095,7 +2098,7 @@ export class DataTable extends React.Component&lt;{
     }
 &nbsp;
     @computed private get loadedWithData(): boolean {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.columns</span>ToShow.length &gt; 0</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.columnsToShow.length &gt; 0</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private readonly AUTO_SELECTION_THRESHOLD_PERCENTAGE = 0.5
@@ -2104,52 +2107,52 @@ export class DataTable extends React.Component&lt;{
      * If the user or the editor hasn't specified a start, auto-select a start time
      *  where AUTO_SELECTION_THRESHOLD_PERCENTAGE of the entities have values.
      */
-    @computed get autoSelectedStartTime(): number | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        let autoSelectedStartTime: number | u</span>ndefined = undefined</span>
+    @computed get autoSelectedStartTime<span class="fstat-no" title="function not covered" >(): number | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        let autoSelectedSta</span>rtTime: number | undefined = undefined
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            // this.grapher.userHas</span>SetTimeline ||
-<span class="cstat-no" title="statement not covered" >            //this</span>.initialTimelineStartTimeSpecified ||
-<span class="cstat-no" title="statement not covered" >            !this.loade</span>dWithData
+<span class="cstat-no" title="statement not covered" >            // thi</span>s.grapher.userHasSetTimeline ||
+<span class="cstat-no" title="statement not covered" >            //this.init</span>ialTimelineStartTimeSpecified ||
+<span class="cstat-no" title="statement not covered" >            !this.loadedWithData</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >            return undefined</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const numEntitiesInTable = this.entityNames.len</span>gth
+<span class="cstat-no" title="statement not covered" >        const numEntiti</span>esInTable = this.entityNames.length
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        this.columnsToShow.forEach((column</span>): boolean =&gt; {
-<span class="cstat-no" title="statement not covered" >            const numberOfEntitiesWithDataSortedByTime = sortBy(</span>
-<span class="cstat-no" title="statement not covered" >                Object.entries(coun</span>tBy(column.uniqTimesAsc)),
-<span class="cstat-no" title="statement not covered" >                (v</span>alue) =&gt; parseInt(value[0])
+<span class="cstat-no" title="statement not covered" >        this.columnsToShow.forEach((column): boolean =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const numberOfEntitiesW</span>ithDataSortedByTime = sortBy(
+<span class="cstat-no" title="statement not covered" >                Ob</span>ject.entries(countBy(column.uniqTimesAsc)),
+<span class="cstat-no" title="statement not covered" ></span>                (value) =&gt; parseInt(value[0])
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const firstTi</span>meWithSufficientData = numberOfEntitiesWithDataSortedByTime.find(
+<span class="cstat-no" title="statement not covered" >            const firstTimeWith</span>SufficientData = numberOfEntitiesWithDataSortedByTime.find(
 <span class="cstat-no" title="statement not covered" >                (time) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                    const numE</span>ntitiesWithData = time[1]
+<span class="cstat-no" title="statement not covered" ></span>                    const numEntitiesWithData = time[1]
 <span class="cstat-no" title="statement not covered" ></span>                    const percentEntitiesWithData =
 <span class="cstat-no" title="statement not covered" ></span>                        numEntitiesWithData / numEntitiesInTable
-<span class="cstat-no" title="statement not covered" ></span>                    return (
-<span class="cstat-no" title="statement not covered" >                        percen</span>tEntitiesWithData &gt;=
-<span class="cstat-no" title="statement not covered" >                        this.AUTO_SELECTION_THRES</span>HOLD_PERCENTAGE
+<span class="cstat-no" title="statement not covered" >                    return (</span>
+<span class="cstat-no" title="statement not covered" >                        percentEntitiesWithData &gt;</span>=
+<span class="cstat-no" title="statement not covered" >                        this.AUTO_SELECTION_THRESHOL</span>D_PERCENTAGE
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            )?.[0]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (firstTimeWithSufficientData) {</span>
-<span class="cstat-no" title="statement not covered" >                autoSelectedStartTime = parseInt(firstTimeWithSufficientData)</span>
+<span class="cstat-no" title="statement not covered" >                autoSelectedStartTim</span>e = parseInt(firstTimeWithSufficientData)
 <span class="cstat-no" title="statement not covered" >                return false</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            return true</span>
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >            r</span>eturn true
+<span class="cstat-no" title="statement not covered" ></span>        })
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return autoSele</span>ctedStartTime
+<span class="cstat-no" title="statement not covered" >        return autoSelectedStartTime</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get columnsToShow(): CoreColumn[] {
-        const slugs = <span class="branch-0 cbranch-no" title="branch not covered" >th</span>is.manager.dataTableSlugs ?? []
+        const slugs = <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.dataTableSlugs ?? [</span>]
         if (slugs.length)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return slugs</span>
-<span class="cstat-no" title="statement not covered" >                .map((slug: </span>string) =&gt; {
-<span class="cstat-no" title="statement not covered" >                    const col = this.table.get(slug)</span>
+<span class="cstat-no" title="statement not covered" >                .map((slug: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>                    const col = this.table.get(slug)
 <span class="cstat-no" title="statement not covered" ></span>                    if (!col) console.log(`Warning: column '${slug}' not found`)
 <span class="cstat-no" title="statement not covered" ></span>                    return col
 <span class="cstat-no" title="statement not covered" ></span>                })
@@ -2160,7 +2163,7 @@ export class DataTable extends React.Component&lt;{
             (column) =&gt;
                 !skips.has(column.slug) &amp;&amp;
                 //  dim.property !== "color" &amp;&amp;
-                (column.display?.includeInTable ?? true)
+                (<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >col</span></span>umn.display?.includeInTable ?? true)
         )
     }
 &nbsp;
@@ -2243,7 +2246,7 @@ export class DataTable extends React.Component&lt;{
             const deltaColumns: DimensionColumn[] = []
             if (isRange) {
                 const tableDisplay = {} as any
-                if (!<span class="branch-0 cbranch-no" title="branch not covered" >tableDisplay?.h</span>ideAbsoluteChange)
+                if (!<span class="branch-0 cbranch-no" title="branch not covered" >tabl</span>eDisplay?.hideAbsoluteChange)
                     deltaColumns.push({ key: RangeValueKey.delta })
                 if (!<span class="branch-0 cbranch-no" title="branch not covered" >tableDisplay?.h</span>ideRelativeChange)
                     deltaColumns.push({ key: RangeValueKey.deltaRatio })
@@ -2272,14 +2275,14 @@ export class DataTable extends React.Component&lt;{
                             ...start,
                             displayValue: this.formatValue(
                                 sourceColumn,
-                                start?.value
+<span class="branch-0 cbranch-no" title="branch not covered" >                                start?.v</span>alue
                             ),
                         },
                         end: {
                             ...end,
                             displayValue: this.formatValue(
                                 sourceColumn,
-<span class="branch-0 cbranch-no" title="branch not covered" >                                end?.v</span>alue
+                                end?.value
                             ),
                         },
                         delta: undefined,
@@ -2542,7 +2545,7 @@ function isDeltaColumn(columnKey?: ColumnKey): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 28 2021 11:59:20 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 29 2021 05:35:58 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

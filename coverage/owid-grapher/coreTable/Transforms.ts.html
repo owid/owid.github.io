@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.39% </span>
+                <span class="strong">52.99% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>134/251</span>
+                <span class='fraction'>133/251</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.31% </span>
+                <span class="strong">91.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>24/26</span>
+                <span class='fraction'>22/24</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.39% </span>
+                <span class="strong">52.99% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>134/251</span>
+                <span class='fraction'>133/251</span>
             </div>
         
             
@@ -401,15 +401,7 @@
 <a name='L342'></a><a href='#L342'>342</a>
 <a name='L343'></a><a href='#L343'>343</a>
 <a name='L344'></a><a href='#L344'>344</a>
-<a name='L345'></a><a href='#L345'>345</a>
-<a name='L346'></a><a href='#L346'>346</a>
-<a name='L347'></a><a href='#L347'>347</a>
-<a name='L348'></a><a href='#L348'>348</a>
-<a name='L349'></a><a href='#L349'>349</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L345'></a><a href='#L345'>345</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -478,7 +470,7 @@
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
-<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -495,7 +487,7 @@
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">39x</span>
-<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">38x</span>
 <span class="cline-any cline-yes">38x</span>
@@ -656,10 +648,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -754,12 +746,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { flatten } from "../clientUtils/Util"
-import {
-    ColumnSlug,
-    CoreColumnStore,
-    Time,
-    CoreValueType,
-} from "./CoreTableConstants"
+import { CoreColumnStore, Time, CoreValueType } from "./CoreTableConstants"
 import { CoreColumnDef } from "./CoreColumnDef"
 import {
     ErrorValue,
@@ -769,6 +756,7 @@ import {
     ValueTooLow,
     DivideByZeroError,
 } from "./ErrorValues"
+import { ColumnSlug } from "../clientUtils/owidTypes"
 &nbsp;
 // In Grapher we return just the years for which we have values for. This puts MissingValuePlaceholder
 // in the spots where we are missing values (added to make computing rolling windows easier).
@@ -859,64 +847,64 @@ export function computeRollingAverage(
 // Assumptions: data is sorted by entity, then time
 // todo: move tests over from CE
 const timeSinceEntityExceededThreshold = (
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    columnStore: CoreCo</span>lumnStore,</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    columnStore: Co</span>reColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    timeSlug: ColumnSlug,</span>
 <span class="cstat-no" title="statement not covered" >    entitySlug: ColumnSlug,</span>
 <span class="cstat-no" title="statement not covered" >    columnSlug: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    thresholdAsString: string</span>
+<span class="cstat-no" title="statement not covered" >    thresholdAsString: </span>string
 <span class="cstat-no" title="statement not covered" >): (number | ValueTooLow)[] =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const threshold = parseFloat(thresholdAsString)</span>
-<span class="cstat-no" title="statement not covered" >    const groupValues = columnStore</span>[entitySlug] as string[]
-<span class="cstat-no" title="statement not covered" >    const columnValues = columnStore[</span>columnSlug] as number[]
-<span class="cstat-no" title="statement not covered" >    const timeValues = columnStore[timeSlug] as number[]</span>
+<span class="cstat-no" title="statement not covered" >    const threshold = parseFloat(thresholdAsString</span>)
+<span class="cstat-no" title="statement not covered" >    const groupValues = columnStore[entitySlug</span>] as string[]
+<span class="cstat-no" title="statement not covered" >    const columnValues = columnStore[column</span>Slug] as number[]
+<span class="cstat-no" title="statement not covered" >    const timeValues = columnStore[timeSlug]</span> as number[]
 <span class="cstat-no" title="statement not covered" >    let currentGroup: string</span>
-<span class="cstat-no" title="statement not covered" >    let groupExceededThresholdA</span>tTime: number
-<span class="cstat-no" title="statement not covered" >    return columnValues.map((value, inde</span>x) =&gt; {
-<span class="cstat-no" title="statement not covered" >        co</span>nst group = groupValues[index]
-<span class="cstat-no" title="statement not covered" >        const currentTime = timeVal</span>ues[index]
-<span class="cstat-no" title="statement not covered" >        if (group !== currentGrou</span>p) {
-<span class="cstat-no" title="statement not covered" ></span>            if (!isNotErrorValue(value)) return value
-<span class="cstat-no" title="statement not covered" >            if (value &lt; threshold) </span>return ErrorValueTypes.ValueTooLow
+<span class="cstat-no" title="statement not covered" >    let groupExceededThresholdAtTim</span>e: number
+<span class="cstat-no" title="statement not covered" >    return columnValues.map((value, i</span>ndex) =&gt; {
+<span class="cstat-no" title="statement not covered" >        const group = groupValues[index]</span>
+<span class="cstat-no" title="statement not covered" >        const currentTime = time</span>Values[index]
+<span class="cstat-no" title="statement not covered" >        if (group !== currentGr</span>oup) {
+<span class="cstat-no" title="statement not covered" >            if (!isNotErrorValue(value))</span> return value
+<span class="cstat-no" title="statement not covered" ></span>            if (value &lt; threshold) return ErrorValueTypes.ValueTooLow
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            currentGroup = group</span>
-<span class="cstat-no" title="statement not covered" >            groupExceededThresholdAtTime = currentTime</span>
+<span class="cstat-no" title="statement not covered" ></span>            groupExceededThresholdAtTime = currentTime
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return currentTime - groupExceededThresholdAtTime</span>
+<span class="cstat-no" title="statement not covered" ></span>        return currentTime - groupExceededThresholdAtTime
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // Assumptions: data is sorted by entity, then time
 // todo: move tests over from CE
 const rollingAverage = <span class="fstat-no" title="function not covered" >(</span>
-<span class="cstat-no" title="statement not covered" >    columnStore: CoreColumnStore</span>,
+<span class="cstat-no" title="statement not covered" >    columnStore: CoreColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    timeSlug: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    enti</span>tySlug: ColumnSlug,
-<span class="cstat-no" title="statement not covered" ></span>    columnSlug: ColumnSlug,
+<span class="cstat-no" title="statement not covered" >    entitySlug: ColumnSlug,</span>
+<span class="cstat-no" title="statement not covered" >    columnSlug: ColumnSlug,</span>
 <span class="cstat-no" title="statement not covered" >    windowSize: number</span>
 <span class="cstat-no" title="statement not covered" >): (number | ErrorValue)[] =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const entityNames = columnStore[entitySlu</span>g] as string[]
-<span class="cstat-no" title="statement not covered" >    const columnValues = columnStore[columnSlug]</span> as number[]
-<span class="cstat-no" title="statement not covered" >    const timeValues = columnStore[timeSlug] as </span>number[]
+<span class="cstat-no" title="statement not covered" >    cons</span>t entityNames = columnStore[entitySlug] as string[]
+<span class="cstat-no" title="statement not covered" ></span>    const columnValues = columnStore[columnSlug] as number[]
+<span class="cstat-no" title="statement not covered" >    const timeValues = columnStore[timeSlug] as number[]</span>
 <span class="cstat-no" title="statement not covered" >    const len = entityNames.length</span>
 <span class="cstat-no" title="statement not covered" >    if (!len) return []</span>
-<span class="cstat-no" title="statement not covered" >    let currentEntity = en</span>tityNames[0]
+<span class="cstat-no" title="statement not covered" >    let currentEntity = entityNames[0]</span>
 <span class="cstat-no" title="statement not covered" >    let currentValues: number[] = []</span>
-<span class="cstat-no" title="statement not covered" >    let currentTimes: Time[] </span>= []
+<span class="cstat-no" title="statement not covered" >    let currentTimes: Time[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    cons</span>t groups: (number | ErrorValue)[][] = []
-<span class="cstat-no" title="statement not covered" ></span>    for (let rowIndex = 0; rowIndex &lt;= len; rowIndex++) {
-<span class="cstat-no" title="statement not covered" >        const entity</span>Name = entityNames[rowIndex]
-<span class="cstat-no" title="statement not covered" >        const value = columnV</span>alues[rowIndex]
-<span class="cstat-no" title="statement not covered" >        const time = timeValues[r</span>owIndex]
-<span class="cstat-no" title="statement not covered" >        if (currentEntity !== entityNam</span>e) {
-<span class="cstat-no" title="statement not covered" >            const averages = computeRollingAverage(</span>
-<span class="cstat-no" title="statement not covered" >                insertMissingValuePlaceholders(currentValues, current</span>Times),
+<span class="cstat-no" title="statement not covered" >    const groups: (number </span>| ErrorValue)[][] = []
+<span class="cstat-no" title="statement not covered" >    for (let rowIndex = 0; rowIndex &lt;= len; rowIndex++</span>) {
+<span class="cstat-no" title="statement not covered" >        const entityName = en</span>tityNames[rowIndex]
+<span class="cstat-no" title="statement not covered" >        const value = columnValue</span>s[rowIndex]
+<span class="cstat-no" title="statement not covered" ></span>        const time = timeValues[rowIndex]
+<span class="cstat-no" title="statement not covered" ></span>        if (currentEntity !== entityName) {
+<span class="cstat-no" title="statement not covered" >            const av</span>erages = computeRollingAverage(
+<span class="cstat-no" title="statement not covered" >                insertMissing</span>ValuePlaceholders(currentValues, currentTimes),
 <span class="cstat-no" title="statement not covered" >                windowSize</span>
 <span class="cstat-no" title="statement not covered" >            ).filter(</span>
-<span class="cstat-no" title="statement not covered" >                (value) =&gt; !(value === ErrorV</span>alueTypes.MissingValuePlaceholder)
-<span class="cstat-no" title="statement not covered" >            ) // filter the placeholders back o</span>ut
+<span class="cstat-no" title="statement not covered" >                (value) =&gt; !(value === ErrorValueTypes.</span>MissingValuePlaceholder)
+<span class="cstat-no" title="statement not covered" >            ) // filter the placeholders back out</span>
 <span class="cstat-no" title="statement not covered" >            groups.push(averages)</span>
-<span class="cstat-no" title="statement not covered" >            if (value === undefined) break // We iterate to &lt;= so that we </span>push the last row
+<span class="cstat-no" title="statement not covered" >            if (value === undefined) break // We iterate to &lt;= </span>so that we push the last row
 <span class="cstat-no" title="statement not covered" >            currentValues = []</span>
 <span class="cstat-no" title="statement not covered" >            currentTimes = []</span>
 <span class="cstat-no" title="statement not covered" >            currentEntity = entityName</span>
@@ -930,17 +918,17 @@ const rollingAverage = <span class="fstat-no" title="function not covered" >(</s
 const divideBy = <span class="fstat-no" title="function not covered" >(</span>
 <span class="cstat-no" title="statement not covered" >    columnStore: CoreColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    numeratorSlug: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    denominatorSlug: ColumnSlug</span>
+<span class="cstat-no" title="statement not covered" >    de</span>nominatorSlug: ColumnSlug
 <span class="cstat-no" title="statement not covered" >): (number | DivideByZeroError)[] =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const numeratorValues = columnStore[numeratorSlug] as number[]</span>
-<span class="cstat-no" title="statement not covered" >    const denominatorValues = columnStore[denominatorSlug] a</span>s number[]
+<span class="cstat-no" title="statement not covered" >    const denominatorValues = columnStore[denominatorSlug] as n</span>umber[]
 <span class="cstat-no" title="statement not covered" >    return denominatorValues.map((denominator, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (denominator === 0) return ErrorValueTypes.DivideByZeroError</span>
-<span class="cstat-no" title="statement not covered" ></span>        const numerator = numeratorValues[index]
+<span class="cstat-no" title="statement not covered" >        if (denominator === 0) return ErrorValueTypes</span>.DivideByZeroError
+<span class="cstat-no" title="statement not covered" >        const numerator = numeratorValues[index]</span>
 <span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(numerator)) return numerator</span>
-<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(deno</span>minator)) return denominator
+<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(denominator)) return denominator</span>
 <span class="cstat-no" title="statement not covered" >        return numerator / denominator</span>
-<span class="cstat-no" title="statement not covered" >    })</span>
+<span class="cstat-no" title="statement not covered" ></span>    })
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 const multiplyBy = (
@@ -949,21 +937,21 @@ const multiplyBy = (
     factor: number
 ) =&gt;
     columnStore[columnSlug].map((value) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" >        isNotErrorValue(value) ? (value as number) * factor : va</span>lue
+<span class="branch-0 cbranch-no" title="branch not covered" >        isNotErrorValue</span>(value) ? (value as number) * factor : value
     )
 &nbsp;
 const subtract = <span class="fstat-no" title="function not covered" >(</span>
 <span class="cstat-no" title="statement not covered" >    columnStore: CoreColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    columnSlugA: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    column</span>SlugB: ColumnSlug
+<span class="cstat-no" title="statement not covered" >    columnSlugB: ColumnSlug</span>
 <span class="cstat-no" title="statement not covered" >) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const values = columnStore[col</span>umnSlugA] as number[]
-<span class="cstat-no" title="statement not covered" >    const subValues = columnStore[columnSlugB] as numbe</span>r[]
-<span class="cstat-no" title="statement not covered" >    return subValues.map((</span>subValue, index) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const value = values[inde</span>x]
-<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(value)) return value</span>
-<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(subValue)) r</span>eturn subValue
-<span class="cstat-no" title="statement not covered" >        return value - subValue</span>
+<span class="cstat-no" title="statement not covered" >    const values = columnStore[colum</span>nSlugA] as number[]
+<span class="cstat-no" title="statement not covered" >    const subValues = columnStore[columnSlugB] as number[]</span>
+<span class="cstat-no" title="statement not covered" >    return</span> subValues.map((subValue, index) =&gt; {
+<span class="cstat-no" title="statement not covered" >        const value = values[index]</span>
+<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(value</span>)) return value
+<span class="cstat-no" title="statement not covered" >        if (!isNotErrorValue(subValue)) return subValue</span>
+<span class="cstat-no" title="statement not covered" >        return value - sub</span>Value
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -978,33 +966,33 @@ enum WhereOperators {
 // Todo: add tests/expand capabilities/remove?
 // Currently this just supports `columnSlug where someColumnSlug (isNot|is) this or that or this`
 const where = <span class="fstat-no" title="function not covered" >(</span>
-<span class="cstat-no" title="statement not covered" ></span>    columnStore: CoreColumnStore,
+<span class="cstat-no" title="statement not covered" >    columnStore: CoreColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    columnSlug: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    conditionSlug: ColumnSlug,</span>
-<span class="cstat-no" title="statement not covered" >    ...condition: string[]</span>
-<span class="cstat-no" title="statement not covered" >): CoreValueType[] =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    conditionSlug: Colum</span>nSlug,
+<span class="cstat-no" title="statement not covered" >    ...condition: </span>string[]
+<span class="cstat-no" title="statement not covered" >): </span>CoreValueType[] =&gt; {
 <span class="cstat-no" title="statement not covered" >    const values = columnStore[columnSlug]</span>
-<span class="cstat-no" title="statement not covered" >    const conditionValues = co</span>lumnStore[conditionSlug]
-<span class="cstat-no" title="statement not covered" >    const operator = condition.shift()</span>
-<span class="cstat-no" title="statement not covered" >    let passes = (va</span>lue: any) =&gt; true
-<span class="cstat-no" title="statement not covered" >    if (op</span>erator === WhereOperators.isNot || operator === WhereOperators.is) {
-<span class="cstat-no" title="statement not covered" >        const result = operator === "isNot" ? false : true</span>
+<span class="cstat-no" title="statement not covered" >    const conditionValues = columnStore[condition</span>Slug]
+<span class="cstat-no" title="statement not covered" >    const operator = conditi</span>on.shift()
+<span class="cstat-no" title="statement not covered" >    let passes = (value: any) =&gt; true</span>
+<span class="cstat-no" title="statement not covered" >    if (operator === WhereOperators.isNot || operator === WhereOperators.is) {</span>
+<span class="cstat-no" title="statement not covered" >        const result = operato</span>r === "isNot" ? false : true
 <span class="cstat-no" title="statement not covered" >        const list = condition.join(" ").split(" or ")</span>
-<span class="cstat-no" title="statement not covered" >        const </span>set = new Set(list)
-<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt; (set.has(value) ? result : !res</span>ult)
-<span class="cstat-no" title="statement not covered" >    } else</span> if (operator === WhereOperators.isGreaterThan)
-<span class="cstat-no" title="statement not covered" >        passes = (valu</span>e: any) =&gt; value &gt; parseFloat(condition.join(""))
-<span class="cstat-no" title="statement not covered" >    else if (operator === WhereOperators.isGreaterThanOrEqual)</span>
-<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt; value &gt;= pars</span>eFloat(condition.join(""))
-<span class="cstat-no" title="statement not covered" >    else if (operator === WhereOp</span>erators.isLessThan)
-<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt;</span> value &lt; parseFloat(condition.join(""))
-<span class="cstat-no" title="statement not covered" >    else i</span>f (operator === WhereOperators.isLessThanOrEqual)
-<span class="cstat-no" title="statement not covered" ></span>        passes = (value: any) =&gt; value &lt;= parseFloat(condition.join(""))
+<span class="cstat-no" title="statement not covered" >        const set = </span>new Set(list)
+<span class="cstat-no" title="statement not covered" >        pa</span>sses = (value: any) =&gt; (set.has(value) ? result : !result)
+<span class="cstat-no" title="statement not covered" >    } else if (operator === WhereOperators.isGreaterThan)</span>
+<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt; value &gt; parseFloat(con</span>dition.join(""))
+<span class="cstat-no" title="statement not covered" >    else if (o</span>perator === WhereOperators.isGreaterThanOrEqual)
+<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt; value &gt;= parseFloat(condition.j</span>oin(""))
+<span class="cstat-no" title="statement not covered" >    else i</span>f (operator === WhereOperators.isLessThan)
+<span class="cstat-no" title="statement not covered" >        passes = (valu</span>e: any) =&gt; value &lt; parseFloat(condition.join(""))
+<span class="cstat-no" title="statement not covered" >    else if (operator === WhereOperators.isLessThanOrEqual)</span>
+<span class="cstat-no" title="statement not covered" >        passes = (value: any) =&gt; value &lt;= pars</span>eFloat(condition.join(""))
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    return values.map((value, index) =&gt;
-<span class="cstat-no" title="statement not covered" >        passes(conditionValues[index]) ? va</span>lue : ErrorValueTypes.FilteredValue
+<span class="cstat-no" title="statement not covered" >    return values.map((value, in</span>dex) =&gt;
+<span class="cstat-no" title="statement not covered" >        pa</span>sses(conditionValues[index]) ? value : ErrorValueTypes.FilteredValue
 <span class="cstat-no" title="statement not covered" >    )</span>
-}
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // Assumptions: data is sorted by entity, then time, and time is a continous integer with a row for each time step.
 // todo: move tests over from CE
@@ -1108,7 +1096,7 @@ export const applyTransforms = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 28 2021 11:59:20 GMT+0000 (Coordinated Universal Time)
+                at Tue Jun 29 2021 05:35:58 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
