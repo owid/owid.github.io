@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.17% </span>
+                <span class="strong">60.97% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>189/304</span>
+                <span class='fraction'>189/310</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.17% </span>
+                <span class="strong">60.97% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>189/304</span>
+                <span class='fraction'>189/310</span>
             </div>
         
             
@@ -417,7 +417,13 @@
 <a name='L358'></a><a href='#L358'>358</a>
 <a name='L359'></a><a href='#L359'>359</a>
 <a name='L360'></a><a href='#L360'>360</a>
-<a name='L361'></a><a href='#L361'>361</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L361'></a><a href='#L361'>361</a>
+<a name='L362'></a><a href='#L362'>362</a>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -469,12 +475,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -487,17 +487,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -531,7 +522,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -822,17 +834,20 @@ export class TimelineComponent extends React.Component&lt;{
     private slider?: Element | HTMLElement | null
     private playButton?: Element | HTMLElement | null
 &nbsp;
-    private <span class="fstat-no" title="function not covered" >getInputTimeFromMouse(event: MouseEvent): number {</span>
-<span class="cstat-no" title="statement not covered" >        const { minTime, maxT</span>ime } = this.controller
-<span class="cstat-no" title="statement not covered" >        const mouseX = getRelativeMouse</span>(this.slider, event).x
+    private <span class="fstat-no" title="function not covered" >getInputTimeFromMouse(</span>
+<span class="cstat-no" title="statement not covered" >        event: MouseEvent | T</span>ouchEvent
+<span class="cstat-no" title="statement not covered" >    ): number | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        const { minTime, maxTime } = this.contro</span>ller
+<span class="cstat-no" title="statement not covered" >        if (!this.slider) return</span>
+<span class="cstat-no" title="statement not covered" >        const mouseX = getRelativeMouse(this.s</span>lider, event).x
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const fracWidth = mouseX / this.sliderBounds.wid</span>th
-<span class="cstat-no" title="statement not covered" >        return minTime + fracWidth * (maxTime </span>- minTime)
+<span class="cstat-no" title="statement not covered" >        const fracWidth = mouseX / this.sliderBounds.w</span>idth
+<span class="cstat-no" title="statement not covered" >        return minTime + fracWidth * (maxTim</span>e - minTime)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onDrag(inputTime: number): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (!this.manager.isPlaying) this</span>.manager.userHasSetTimeline = true
-<span class="cstat-no" title="statement not covered" >        this.dragTarget = this.controller.</span>dragHandleToTime(
+<span class="cstat-no" title="statement not covered" ></span>        if (!this.manager.isPlaying) this.manager.userHasSetTimeline = true
+<span class="cstat-no" title="statement not covered" >        this.dragTarget</span> = this.controller.dragHandleToTime(
 <span class="cstat-no" title="statement not covered" >            this.dragTarget!,</span>
 <span class="cstat-no" title="statement not covered" ></span>            inputTime
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -841,53 +856,55 @@ export class TimelineComponent extends React.Component&lt;{
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >showTooltips(): void {</span>
 <span class="cstat-no" title="statement not covered" ></span>        this.hideStartTooltip.cancel()
-<span class="cstat-no" title="statement not covered" >        this.hideEndToo</span>ltip.cancel()
-<span class="cstat-no" title="statement not covered" >        this.startTooltipVisible = true</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.endTooltipVisible = true
+<span class="cstat-no" title="statement not covered" >        this.hideEndToolt</span>ip.cancel()
+<span class="cstat-no" title="statement not covered" >        this.startTooltipVi</span>sible = true
+<span class="cstat-no" title="statement not covered" >        this.endTooltipVisible = true</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (this.dragTarget</span> === "start") this.lastUpdatedTooltip = "startMarker"
-<span class="cstat-no" title="statement not covered" >        if (this.dragTarget === "end") this.lastUpdatedTooltip = "endMarker"</span>
-<span class="cstat-no" title="statement not covered" >        if (this.manager.startHandleTimeBound &gt; thi</span>s.manager.endHandleTimeBound)
-<span class="cstat-no" title="statement not covered" ></span>            this.lastUpdatedTooltip =
-<span class="cstat-no" title="statement not covered" >                this.lastUpdatedToo</span>ltip === "startMarker"
+<span class="cstat-no" title="statement not covered" ></span>        if (this.dragTarget === "start") this.lastUpdatedTooltip = "startMarker"
+<span class="cstat-no" title="statement not covered" >        if (this.dragTarget === "en</span>d") this.lastUpdatedTooltip = "endMarker"
+<span class="cstat-no" title="statement not covered" >        if (this.manager.startHandleTimeBound &gt; this.m</span>anager.endHandleTimeBound)
+<span class="cstat-no" title="statement not covered" >            this.lastUpdat</span>edTooltip =
+<span class="cstat-no" title="statement not covered" >                this</span>.lastUpdatedTooltip === "startMarker"
 <span class="cstat-no" title="statement not covered" >                    ? "endMarker"</span>
 <span class="cstat-no" title="statement not covered" >                    : "startMarker"</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private getDragTarget(
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        inputTime: numbe</span>r,</span>
+    private <span class="fstat-no" title="function not covered" >getDragTarget(</span>
+<span class="cstat-no" title="statement not covered" >        inputTime: number,</span>
 <span class="cstat-no" title="statement not covered" >        isStartMarker: boolean,</span>
 <span class="cstat-no" title="statement not covered" >        isEndMarker: boolean</span>
-<span class="cstat-no" title="statement not covered" >    ): "both" | "start" | "end" {</span>
-<span class="cstat-no" title="statement not covered" >        const { startHandleTi</span>meBound, endHandleTimeBound } = this.manager
+<span class="cstat-no" title="statement not covered" >    ): "both" | "start" | "en</span>d" {
+<span class="cstat-no" title="statement not covered" ></span>        const { startHandleTimeBound, endHandleTimeBound } = this.manager
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            startHandleTimeBound === end</span>HandleTimeBound &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            (isStartMarker || isEndMar</span>ker)
+<span class="cstat-no" title="statement not covered" >            startHandleTimeBound === e</span>ndHandleTimeBound &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            (isStartMarker || isEndMarker</span>)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >            return "both"</span>
-<span class="cstat-no" title="statement not covered" >        else if (isStartMarker || inputTi</span>me &lt;= startHandleTimeBound)
+<span class="cstat-no" title="statement not covered" >        else if (isStartMarker || inputTime &lt;= startH</span>andleTimeBound)
 <span class="cstat-no" title="statement not covered" >            return "start"</span>
-<span class="cstat-no" title="statement not covered" >        else if (isEndMarker || inputTi</span>me &gt;= endHandleTimeBound) return "end"
+<span class="cstat-no" title="statement not covered" >        else if (isEndMarker || inputTime &gt;= endHan</span>dleTimeBound) return "end"
 <span class="cstat-no" title="statement not covered" >        return "both"</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onMouseDown(event: any): void {</span>
-<span class="cstat-no" title="statement not covered" >        const logic = this.control</span>ler
-<span class="cstat-no" title="statement not covered" >        const targetEl = select(event</span>.target)
+<span class="cstat-no" title="statement not covered" >        const logic = this.controller</span>
+<span class="cstat-no" title="statement not covered" ></span>        const targetEl = select(event.target)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const inputTime = this.getInputTimeFromMouse(event)</span>
 <span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (!inputTime) return</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        this.dragTarget = this.getDragTarget(</span>
 <span class="cstat-no" title="statement not covered" >            inputTime,</span>
-<span class="cstat-no" title="statement not covered" >            targetEl.classe</span>d("startMarker"),
-<span class="cstat-no" title="statement not covered" >            targetEl.classed("endMarker")</span>
+<span class="cstat-no" title="statement not covered" >            targetEl.classed("startMarker"),</span>
+<span class="cstat-no" title="statement not covered" >            targetEl.class</span>ed("endMarker")
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (this.dragTarge</span>t === "both") logic.setDragOffsets(inputTime)
+<span class="cstat-no" title="statement not covered" >        if (this.dragTarg</span>et === "both") logic.setDragOffsets(inputTime)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        this.onDrag(inputTime)
-<span class="cstat-no" title="statement not covered" >        event.preventDefa</span>ult()
+<span class="cstat-no" title="statement not covered" >        this.onDrag(inputTime)</span>
+<span class="cstat-no" title="statement not covered" >        event.preventDefault()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private queuedDrag?: boolean
@@ -896,15 +913,16 @@ export class TimelineComponent extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        if (!dragTarget) return</span>
 <span class="cstat-no" title="statement not covered" >        if (this.queuedDrag) ret</span>urn
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        this.queuedDrag = true
-<span class="cstat-no" title="statement not covered" >        this.onDrag(this.</span>getInputTimeFromMouse(event as any))
-<span class="cstat-no" title="statement not covered" >        this.queuedDrag = false</span>
+<span class="cstat-no" title="statement not covered" >        this.queuedDrag =</span> true
+<span class="cstat-no" title="statement not covered" >        const inputTime = this.getInp</span>utTimeFromMouse(event)
+<span class="cstat-no" title="statement not covered" >        if (inputTime) th</span>is.onDrag(inputTime)
+<span class="cstat-no" title="statement not covered" >        this.queuedD</span>rag = false
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onMouseUp(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.dragTar</span>get = undefined
+<span class="cstat-no" title="statement not covered" >        this.dragTarget = undefined</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (this.manager.isPlaying) return</span>
+<span class="cstat-no" title="statement not covered" >        if (this.manager.isPlaying) </span>return
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>        if (isMobile()) {
 <span class="cstat-no" title="statement not covered" >            if (th</span>is.startTooltipVisible) this.hideStartTooltip()
@@ -1144,7 +1162,7 @@ const TimelineHandle = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jul 02 2021 10:04:03 GMT+0000 (Coordinated Universal Time)
+                at Sat Jul 03 2021 14:07:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

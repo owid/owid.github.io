@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.85% </span>
+                <span class="strong">94.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>254/265</span>
+                <span class='fraction'>256/270</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.8% </span>
+                <span class="strong">91.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>44/49</span>
+                <span class='fraction'>44/48</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.85% </span>
+                <span class="strong">94.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>254/265</span>
+                <span class='fraction'>256/270</span>
             </div>
         
             
@@ -335,7 +335,10 @@
 <a name='L276'></a><a href='#L276'>276</a>
 <a name='L277'></a><a href='#L277'>277</a>
 <a name='L278'></a><a href='#L278'>278</a>
-<a name='L279'></a><a href='#L279'>279</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -513,6 +516,9 @@
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -600,8 +606,8 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -790,12 +796,15 @@ export class Footer extends React.Component&lt;{
     base: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
     @observable.ref tooltipTarget?: { x: number; y: number }
 &nbsp;
-    @action.bound private onMouseMove(e: MouseEvent): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const cc = this.base.current!.qu</span>erySelector(".cclogo")</span>
-<span class="cstat-no" title="statement not covered" >        if (cc &amp;&amp; cc.matches(":hover")) {</span>
-<span class="cstat-no" title="statement not covered" >            const div = this.base.current as HTML</span>DivElement
-<span class="cstat-no" title="statement not covered" >            const mouse = getRelativeMouse(div.closes</span>t(".GrapherComponent"), e)
-<span class="cstat-no" title="statement not covered" >            this.</span>tooltipTarget = { x: mouse.x, y: mouse.y }
+    @action.bound private <span class="fstat-no" title="function not covered" >onMouseMove(e: MouseEvent): void {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const cc = this.base.current!.querySelector(".cclogo")
+<span class="cstat-no" title="statement not covered" >        if (cc &amp;&amp; cc.matches(</span>":hover")) {
+<span class="cstat-no" title="statement not covered" >            const div = this.base.current as HTMLDivElement</span>
+<span class="cstat-no" title="statement not covered" ></span>            const grapher = div.closest(".GrapherComponent")
+<span class="cstat-no" title="statement not covered" >            if </span>(grapher) {
+<span class="cstat-no" title="statement not covered" >                const mouse = getRelativ</span>eMouse(grapher, e)
+<span class="cstat-no" title="statement not covered" >                this.tooltipTarget = { x: mouse.x, y: mouse.y }</span>
+<span class="cstat-no" title="statement not covered" >            } else console.error("Grapher was fal</span>sy")
 <span class="cstat-no" title="statement not covered" >        } else this.tooltipTarget = undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -863,7 +872,7 @@ export class Footer extends React.Component&lt;{
                 {this.note &amp;&amp; (
                     &lt;p style={this.note.htmlStyle}&gt;{this.note.renderHTML()}&lt;/p&gt;
                 )}
-                {<span class="branch-0 cbranch-no" title="branch not covered" >!this.isCompact &amp;&amp; li</span>cense}
+                {!this.isCompact &amp;&amp; license}
                 {tooltipTarget &amp;&amp; (
 <span class="branch-0 cbranch-no" title="branch not covered" >                    &lt;T</span>ooltip
                         tooltipManager={this.manager}
@@ -898,7 +907,7 @@ export class Footer extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jul 02 2021 10:04:03 GMT+0000 (Coordinated Universal Time)
+                at Sat Jul 03 2021 14:07:52 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
