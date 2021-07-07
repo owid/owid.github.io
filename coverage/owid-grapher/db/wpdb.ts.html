@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.32% </span>
+                <span class="strong">23.12% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>125/536</span>
+                <span class='fraction'>126/545</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.32% </span>
+                <span class="strong">23.12% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>125/536</span>
+                <span class='fraction'>126/545</span>
             </div>
         
             
@@ -1263,15 +1263,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1826,122 +1826,122 @@ export const getFeaturedImages = async (): Promise&lt;Map&lt;number, string&gt;&
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // page =&gt; pages, post =&gt; posts
-const getEndpointSlugFromType = (<span class="fstat-no" title="function not covered" >type: string): </span>string =&gt; `${type}s`
+const getEndpointSlugFromType = (type: string): string =&gt; `${type}s`
 &nbsp;
 // Limit not supported with multiple post types:
 // When passing multiple post types, the limit is applied to the resulting array
 // of sequentially sorted posts (all blog posts, then all pages, ...), so there
 // will be a predominance of a certain post type.
 export const getPosts = <span class="fstat-no" title="function not covered" >async (</span>
-<span class="cstat-no" title="statement not covered" >    postTypes: string[] = [</span>WP_PostType.Post, WP_PostType.Page],
-<span class="cstat-no" title="statement not covered" >    limi</span>t?: number
-<span class="cstat-no" title="statement not covered" >): P</span>romise&lt;any[]&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" >    postTypes: string[] </span>= [WP_PostType.Post, WP_PostType.Page],
+<span class="cstat-no" title="statement not covered" >    limit?: number</span>
+<span class="cstat-no" title="statement not covered" >): Promise&lt;any[]&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (!isWordpressAPIEnabled) return []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const perPage = 50</span>
 <span class="cstat-no" title="statement not covered" >    let posts: any[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    for (const p</span>ostType of postTypes) {
-<span class="cstat-no" title="statement not covered" >        const endpoint = `${WP_API_ENDPOINT}/${get</span>EndpointSlugFromType(
-<span class="cstat-no" title="statement not covered" >            postType</span>
-<span class="cstat-no" title="statement not covered" >        )}`</span>
+<span class="cstat-no" title="statement not covered" >    for (const postType of postTypes) {</span>
+<span class="cstat-no" title="statement not covered" >        const endpoint = `$</span>{WP_API_ENDPOINT}/${getEndpointSlugFromType(
+<span class="cstat-no" title="statement not covered" ></span>            postType
+<span class="cstat-no" title="statement not covered" ></span>        )}`
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Get nu</span>mber of items to retrieve
-<span class="cstat-no" title="statement not covered" >        const headers = </span>await apiQuery(endpoint, {
-<span class="cstat-no" title="statement not covered" >            searchParams: [["pe</span>r_page", 1]],
-<span class="cstat-no" title="statement not covered" >            returnResponseHea</span>dersOnly: true,
+<span class="cstat-no" title="statement not covered" >        // Get number of items to retrieve</span>
+<span class="cstat-no" title="statement not covered" >        const headers = await apiQuery(endpoint, {</span>
+<span class="cstat-no" title="statement not covered" >            searchParams: [["per_page", 1]],</span>
+<span class="cstat-no" title="statement not covered" >            returnResponseHeadersOnl</span>y: true,
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        co</span>nst maxAvailable = headers.get("X-WP-TotalPages")
-<span class="cstat-no" title="statement not covered" >        const count = limit </span>&amp;&amp; limit &lt; maxAvailable ? limit : maxAvailable
+<span class="cstat-no" title="statement not covered" >        const maxAvailable = headers.get("X-WP-Tot</span>alPages")
+<span class="cstat-no" title="statement not covered" >        const count = limit &amp;&amp; limit &lt; maxAvailable ? limit : maxAvailable</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for (let page = 1; page &lt;= Math.ceil(coun</span>t / perPage); page++) {
-<span class="cstat-no" title="statement not covered" >            const postsCurrentPage = await apiQuery(endpoint, {</span>
-<span class="cstat-no" title="statement not covered" >                sear</span>chParams: [
-<span class="cstat-no" title="statement not covered" >                    ["per_page", perPage</span>],
-<span class="cstat-no" title="statement not covered" >                    ["page</span>", page],
-<span class="cstat-no" title="statement not covered" >                ],</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >            posts.push(...postsCurrentPage)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" >        for (let page = 1; page &lt;= Math.ceil(count /</span> perPage); page++) {
+<span class="cstat-no" title="statement not covered" >            const</span> postsCurrentPage = await apiQuery(endpoint, {
+<span class="cstat-no" title="statement not covered" >                searchPa</span>rams: [
+<span class="cstat-no" title="statement not covered" >                    ["per_page"</span>, perPage],
+<span class="cstat-no" title="statement not covered" >                    ["page", </span>page],
+<span class="cstat-no" title="statement not covered" ></span>                ],
+<span class="cstat-no" title="statement not covered" ></span>            })
+<span class="cstat-no" title="statement not covered" >            posts.push(...po</span>stsCurrentPage)
+<span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // </span>Published pages excluded from public views
+<span class="cstat-no" title="statement not covered" >    // Published pag</span>es excluded from public views
 <span class="cstat-no" title="statement not covered" >    const excludedSlugs = [BLOG_SLUG]</span>
 <span class="cstat-no" title="statement not covered" >    posts = posts.filter(</span>
-<span class="cstat-no" title="statement not covered" ></span>        (post) =&gt;
-<span class="cstat-no" title="statement not covered" >            !excludedSlugs.includes(post.sl</span>ug) &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            !post.slug.endsWith("-country-profile")</span>
+<span class="cstat-no" title="statement not covered" >        (post) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            !excludedSlugs.incl</span>udes(post.slug) &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            !post.slug.endsWith("-country-profil</span>e")
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return limit ? posts</span>.slice(0, limit) : posts
+<span class="cstat-no" title="statement not covered" >    retu</span>rn limit ? posts.slice(0, limit) : posts
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPostType = async (search: number | string): Promise&lt;string&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const paramName = typeof search === "number" ? "id" : "slu</span>g"</span>
-<span class="cstat-no" title="statement not covered" >    return apiQuery(`${OWID_API_ENDPOINT}/type`, {</span>
-<span class="cstat-no" title="statement not covered" >        searchParams: [[paramName, search]</span>],
+export const getPostType = async (<span class="fstat-no" title="function not covered" >search: number | string): Promise&lt;string&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>    const paramName = typeof search === "number" ? "id" : "slug"
+<span class="cstat-no" title="statement not covered" >    return apiQuery(`${OWID_API_ENDPOINT}/t</span>ype`, {
+<span class="cstat-no" title="statement not covered" >        searchParams: [[paramName, search]],</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPostBySlug = async (<span class="fstat-no" title="function not covered" >slug: string): Promise&lt;FullPost&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!isWordpressAPIEnabled) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new JsonError(`Need wordpress API</span> to match slug ${slug}`, 404)
+export const getPostBySlug = async (slug: string): Promise&lt;FullPost&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    if (!isWordpressAPIEnabl</span>ed) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new JsonError(</span>`Need wordpress API to match slug ${slug}`, 404)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" ></span>        const type = await getPostType(slug)
-<span class="cstat-no" title="statement not covered" ></span>        const postArr = await apiQuery(
-<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${g</span>etEndpointSlugFromType(type)}`,
+<span class="cstat-no" title="statement not covered" >        const type = await getPostType(slug)</span>
+<span class="cstat-no" title="statement not covered" >        const postArr = await apiQuery(</span>
+<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${getEndpointSlugFromType(type)}`</span>,
 <span class="cstat-no" title="statement not covered" >            {</span>
 <span class="cstat-no" title="statement not covered" >                searchParams: [["slug", slug]],</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" ></span>        return getFullPost(postArr[0])
-<span class="cstat-no" title="statement not covered" >    } catch (err) </span>{
-<span class="cstat-no" title="statement not covered" >        throw new JsonError(`No page found by slug ${slug}`, 404)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >        return getFullPos</span>t(postArr[0])
+<span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" ></span>        throw new JsonError(`No page found by slug ${slug}`, 404)
+<span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // the /revisions endpoint does not send back all the metadata required for
 // the proper rendering of the post (e.g. authors), hence the double request.
 export const getLatestPostRevision = async (<span class="fstat-no" title="function not covered" >id: number): Promise&lt;any&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const type = await getPostType(id)</span>
-<span class="cstat-no" title="statement not covered" >    const endpointSlug = getEndpointSlugFromType(type)</span>
+<span class="cstat-no" title="statement not covered" >    c</span>onst type = await getPostType(id)
+<span class="cstat-no" title="statement not covered" >    const endpoint</span>Slug = getEndpointSlugFromType(type)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const postApi = await apiQuery(`$</span>{WP_API_ENDPOINT}/${endpointSlug}/${id}`)
+<span class="cstat-no" title="statement not covered" >    const postApi = aw</span>ait apiQuery(`${WP_API_ENDPOINT}/${endpointSlug}/${id}`)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const revision = (</span>
-<span class="cstat-no" title="statement not covered" ></span>        await apiQuery(
-<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT</span>}/${endpointSlug}/${id}/revisions?per_page=1`
+<span class="cstat-no" title="statement not covered" >        await apiQuery(</span>
+<span class="cstat-no" title="statement not covered" ></span>            `${WP_API_ENDPOINT}/${endpointSlug}/${id}/revisions?per_page=1`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    )[0]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" >        // Since WP does</span> not store metadata for revisions, some elements of a
-<span class="cstat-no" title="statement not covered" >        // p</span>reviewed page will not reflect the latest edits:
-<span class="cstat-no" title="statement not covered" ></span>        // - published date (will show the correct one - that is the one in the
-<span class="cstat-no" title="statement not covered" >        //   sidebar - fo</span>r unpublished posts though. For published posts, the
-<span class="cstat-no" title="statement not covered" ></span>        //   current published date is displayed, regardless of what is shown
-<span class="cstat-no" title="statement not covered" >        //   and could have bee</span>n modified in the sidebar.)
-<span class="cstat-no" title="statement not covered" >        // - glossary highl</span>ights
-<span class="cstat-no" title="statement not covered" >        // - aut</span>hors
-<span class="cstat-no" title="statement not covered" >        // ...</span>
+<span class="cstat-no" title="statement not covered" >    // S</span>ince WP does not store metadata for revisions, some elements of a
+<span class="cstat-no" title="statement not covered" >    // previewed page will not reflec</span>t the latest edits:
+<span class="cstat-no" title="statement not covered" >    // - published date (will </span>show the correct one - that is the one in the
+<span class="cstat-no" title="statement not covered" >    //   sidebar - for unpublished posts though. For </span>published posts, the
+<span class="cstat-no" title="statement not covered" >    //</span>   current published date is displayed, regardless of what is shown
+<span class="cstat-no" title="statement not covered" >    //   and could have been m</span>odified in the sidebar.)
+<span class="cstat-no" title="statement not covered" >    // - glossary highlights</span>
+<span class="cstat-no" title="statement not covered" >    // - authors</span>
+<span class="cstat-no" title="statement not covered" >    // ...</span>
+<span class="cstat-no" title="statement not covered" >    return getFullPost({</span>
 <span class="cstat-no" title="statement not covered" >        ...postApi,</span>
-<span class="cstat-no" title="statement not covered" >        content: revision.content,</span>
-<span class="cstat-no" title="statement not covered" >        title: revision.title,</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >        cont</span>ent: revision.content,
+<span class="cstat-no" title="statement not covered" ></span>        title: revision.title,
+<span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const getRelatedCharts = async (
-    postId: number
-): Promise&lt;RelatedChart[]&gt; =&gt;
-    db.queryMysql(`
-        SELECT DISTINCT
-            charts.config-&gt;&gt;"$.slug" AS slug,
-            charts.config-&gt;&gt;"$.title" AS title,
-            charts.config-&gt;&gt;"$.variantName" AS variantName
-        FROM charts
-        INNER JOIN chart_tags ON charts.id=chart_tags.chartId
+<span class="fstat-no" title="function not covered" >    postId: number</span>
+<span class="cstat-no" title="statement not covered" >): Promise&lt;RelatedChart[]&gt; =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    db.queryMysql(`</span>
+<span class="cstat-no" title="statement not covered" >        SELECT DISTINCT</span>
+<span class="cstat-no" title="statement not covered" >            charts.config-&gt;&gt;"$.slug" AS slug,</span>
+<span class="cstat-no" title="statement not covered" >            charts.config-&gt;&gt;"$</span>.title" AS title,
+<span class="cstat-no" title="statement not covered" ></span>            charts.config-&gt;&gt;"$.variantName" AS variantName
+<span class="cstat-no" title="statement not covered" >        FROM charts</span>
+<span class="cstat-no" title="statement not covered" >        INNER JOIN chart_tags ON </span>charts.id=chart_tags.chartId
         INNER JOIN post_tags ON chart_tags.tagId=post_tags.tag_id
         WHERE post_tags.post_id=${postId}
         AND charts.config-&gt;&gt;"$.isPublished" = "true"
@@ -2074,7 +2074,7 @@ export const flushCache = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 07 2021 11:47:29 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 07 2021 12:30:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
