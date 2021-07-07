@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.05% </span>
+                <span class="strong">23.32% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>124/538</span>
+                <span class='fraction'>125/536</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.05% </span>
+                <span class="strong">23.32% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>124/538</span>
+                <span class='fraction'>125/536</span>
             </div>
         
             
@@ -727,11 +727,7 @@
 <a name='L668'></a><a href='#L668'>668</a>
 <a name='L669'></a><a href='#L669'>669</a>
 <a name='L670'></a><a href='#L670'>670</a>
-<a name='L671'></a><a href='#L671'>671</a>
-<a name='L672'></a><a href='#L672'>672</a>
-<a name='L673'></a><a href='#L673'>673</a>
-<a name='L674'></a><a href='#L674'>674</a>
-<a name='L675'></a><a href='#L675'>675</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L671'></a><a href='#L671'>671</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -775,7 +771,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1121,8 +1116,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1135,7 +1128,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1269,8 +1261,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1429,7 +1421,6 @@ import { registerExitHandler } from "./cleanup"
 import {
     RelatedChart,
     CategoryWithEntries,
-    PageType,
     EntryNode,
     FullPost,
     WP_PostType,
@@ -1450,34 +1441,34 @@ class WPDB {
     private conn?: DatabaseConnection
 &nbsp;
     private <span class="fstat-no" title="function not covered" >knex(</span>
-<span class="cstat-no" title="statement not covered" >        tableName?: string | Knex.Raw | Knex.Qu</span>eryBuilder | undefined
-<span class="cstat-no" title="statement not covered" >    ): Knex.QueryB</span>uilder&lt;
-<span class="cstat-no" title="statement not covered" >        Record&lt;string, unknown&gt;,</span>
+<span class="cstat-no" title="statement not covered" >        tableName?: string | Knex.Raw | Knex.Query</span>Builder | undefined
+<span class="cstat-no" title="statement not covered" >    ): Knex.QueryBuilder&lt;</span>
+<span class="cstat-no" title="statement not covered" >        Record&lt;str</span>ing, unknown&gt;,
 <span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            _</span>base: any
-<span class="cstat-no" title="statement not covered" >            _hasSelect</span>ion: false
-<span class="cstat-no" title="statement not covered" >            _keys: never</span>
-<span class="cstat-no" title="statement not covered" >            _aliases: Record&lt;string, unknown</span>&gt;
+<span class="cstat-no" title="statement not covered" >            _base: any</span>
+<span class="cstat-no" title="statement not covered" >            _</span>hasSelection: false
+<span class="cstat-no" title="statement not covered" >            _keys: nev</span>er
+<span class="cstat-no" title="statement not covered" >            _aliases: Record&lt;</span>string, unknown&gt;
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            _single: false</span>
-<span class="cstat-no" title="statement not covered" >            _intersectProps: Record&lt;string, unknown&gt;</span>
+<span class="cstat-no" title="statement not covered" >            _intersectProps: R</span>ecord&lt;string, unknown&gt;
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            _unionProps: never</span>
 <span class="cstat-no" title="statement not covered" >        }[]</span>
 <span class="cstat-no" title="statement not covered" >    &gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (!knexIn</span>stance) {
-<span class="cstat-no" title="statement not covered" >            knex</span>Instance = Knex({
-<span class="cstat-no" title="statement not covered" >                client: "mysql",</span>
-<span class="cstat-no" title="statement not covered" ></span>                connection: {
-<span class="cstat-no" title="statement not covered" >                    host: WORDPRESS_DB_H</span>OST,
-<span class="cstat-no" title="statement not covered" ></span>                    port: WORDPRESS_DB_PORT,
+<span class="cstat-no" title="statement not covered" >        if (!knexInstance) {</span>
+<span class="cstat-no" title="statement not covered" >            knexIns</span>tance = Knex({
+<span class="cstat-no" title="statement not covered" ></span>                client: "mysql",
+<span class="cstat-no" title="statement not covered" >                connection: {</span>
+<span class="cstat-no" title="statement not covered" ></span>                    host: WORDPRESS_DB_HOST,
+<span class="cstat-no" title="statement not covered" >                    port: WORDPRESS_DB_P</span>ORT,
 <span class="cstat-no" title="statement not covered" ></span>                    user: WORDPRESS_DB_USER,
-<span class="cstat-no" title="statement not covered" >                    password: WORDPRESS_DB_PASS,</span>
-<span class="cstat-no" title="statement not covered" >                    database: </span>WORDPRESS_DB_NAME,
+<span class="cstat-no" title="statement not covered" ></span>                    password: WORDPRESS_DB_PASS,
+<span class="cstat-no" title="statement not covered" >                    database: WORDPRESS_DB_NAME,</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
-<span class="cstat-no" title="statement not covered" ></span>            })
+<span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            regi</span>sterExitHandler(async () =&gt; this.destroyKnex())
+<span class="cstat-no" title="statement not covered" ></span>            registerExitHandler(async () =&gt; this.destroyKnex())
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return knexInstance(tableName)</span>
@@ -1488,35 +1479,35 @@ class WPDB {
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >connect(): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        this.conn = new Databas</span>eConnection({
-<span class="cstat-no" title="statement not covered" >            host: WORDPRESS_DB_HOST,</span>
-<span class="cstat-no" title="statement not covered" >            port:</span> WORDPRESS_DB_PORT,
-<span class="cstat-no" title="statement not covered" ></span>            user: WORDPRESS_DB_USER,
+<span class="cstat-no" title="statement not covered" >        this.conn = new DatabaseConnection({</span>
+<span class="cstat-no" title="statement not covered" >            host: WORDPRESS_DB_</span>HOST,
+<span class="cstat-no" title="statement not covered" >            port: WORDPRESS_DB_PORT,</span>
+<span class="cstat-no" title="statement not covered" >            user:</span> WORDPRESS_DB_USER,
 <span class="cstat-no" title="statement not covered" ></span>            password: WORDPRESS_DB_PASS,
 <span class="cstat-no" title="statement not covered" ></span>            database: WORDPRESS_DB_NAME,
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        await this.conn.con</span>nect()
+<span class="cstat-no" title="statement not covered" >        await this.conn.connect()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        registerExitHandler(asyn</span>c () =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>            if (this.conn) this.conn.end()
-<span class="cstat-no" title="statement not covered" ></span>        })
+<span class="cstat-no" title="statement not covered" >        registerExitHandler(async</span> () =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (this.conn) this.</span>conn.end()
+<span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     async <span class="fstat-no" title="function not covered" >end(): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.conn) this.conn.end()</span>
+<span class="cstat-no" title="statement not covered" >        if (this.conn) this.</span>conn.end()
 <span class="cstat-no" title="statement not covered" >        this.destroyKnex()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async <span class="fstat-no" title="function not covered" >query(queryStr: string, params?: any[]): Promise&lt;any[]&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (!this.conn) await this.connect()</span>
+    async query(queryStr: string, params?: any[]): Promise&lt;any[]&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (!this.conn) awai</span>t this.connect()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return this.conn!.query(queryS</span>tr, params)
+<span class="cstat-no" title="statement not covered" >        return this.conn!.qu</span>ery(queryStr, params)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async get(queryStr: string, params?: any[]): Promise&lt;any&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        if (!this.conn) await this.connect()</span>
+    async <span class="fstat-no" title="function not covered" >get(queryStr: string, params?: any[]): Promise&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>        if (!this.conn) await this.connect()
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return this.conn!.get(queryStr, params)</span>
+<span class="cstat-no" title="statement not covered" >        return this.conn!.get(qu</span>eryStr, params)
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
@@ -1535,25 +1526,25 @@ export const ENTRIES_CATEGORY_ID = 44
  * every query. So it is the caller's responsibility to throw (if necessary) on
  * "faux 404".
  */
-const graphqlQuery = <span class="fstat-no" title="function not covered" >async (</span>
-<span class="cstat-no" title="statement not covered" >    query: string,</span>
-<span class="cstat-no" title="statement not covered" >    variables: any = {}</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;a</span>ny&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" >    cons</span>t response = await fetch(WP_GRAPHQL_ENDPOINT, {
-<span class="cstat-no" title="statement not covered" >        method: "POST",</span>
-<span class="cstat-no" title="statement not covered" ></span>        headers: {
-<span class="cstat-no" title="statement not covered" >            "Content-Type": </span>"application/json",
-<span class="cstat-no" title="statement not covered" ></span>            Accept: "application/json",
-<span class="cstat-no" title="statement not covered" >            Authorization: `Basic ${Base64.encode(</span>
-<span class="cstat-no" title="statement not covered" ></span>                WORDPRESS_API_USER + ":" + WORDPRESS_API_PASS
-<span class="cstat-no" title="statement not covered" >            )}`,</span>
+const graphqlQuery = async (
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    query: string,</span></span>
+<span class="cstat-no" title="statement not covered" >    variables: any </span>= {}
+<span class="cstat-no" title="statement not covered" >): Promise&lt;any&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const re</span>sponse = await fetch(WP_GRAPHQL_ENDPOINT, {
+<span class="cstat-no" title="statement not covered" ></span>        method: "POST",
+<span class="cstat-no" title="statement not covered" >        headers: {</span>
+<span class="cstat-no" title="statement not covered" ></span>            "Content-Type": "application/json",
+<span class="cstat-no" title="statement not covered" >            Accept: "applica</span>tion/json",
+<span class="cstat-no" title="statement not covered" ></span>            Authorization: `Basic ${Base64.encode(
+<span class="cstat-no" title="statement not covered" >                WORDPRESS_API_USER + ":" + WORDPRESS_API_PASS</span>
+<span class="cstat-no" title="statement not covered" ></span>            )}`,
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >        body: JSON.stringify({</span>
 <span class="cstat-no" title="statement not covered" >            query,</span>
 <span class="cstat-no" title="statement not covered" >            variables,</span>
 <span class="cstat-no" title="statement not covered" >        }),</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" >    return response.json()</span>
+<span class="cstat-no" title="statement not covered" >    re</span>turn response.json()
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 /* Wordpress REST API query
@@ -1564,31 +1555,31 @@ const apiQuery = <span class="fstat-no" title="function not covered" >async (</s
 <span class="cstat-no" title="statement not covered" >    endpoint: string,</span>
 <span class="cstat-no" title="statement not covered" >    params?: {</span>
 <span class="cstat-no" title="statement not covered" >        returnResponseHeade</span>rsOnly?: boolean
-<span class="cstat-no" title="statement not covered" ></span>        searchParams?: Array&lt;[string, string | number]&gt;
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >        searchParams?: Arra</span>y&lt;[string, string | number]&gt;
+<span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" >): Promise&lt;any&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const url = new URL(endpoint)</span>
+<span class="cstat-no" title="statement not covered" >    const url = new UR</span>L(endpoint)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (params &amp;&amp; params.searchPa</span>rams) {
-<span class="cstat-no" title="statement not covered" >        params.searchParams.forEach((param) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            url.searchParams.append(param[0], String(param[1]))</span>
+<span class="cstat-no" title="statement not covered" >    if (params &amp;&amp; params.s</span>earchParams) {
+<span class="cstat-no" title="statement not covered" >        params.searchParams.forEa</span>ch((param) =&gt; {
+<span class="cstat-no" title="statement not covered" >            url.searchParams.append(param[0], String(pa</span>ram[1]))
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    const response = await fetch(url.</span>toString(), {
-<span class="cstat-no" title="statement not covered" ></span>        headers: {
-<span class="cstat-no" title="statement not covered" >            Authorization: `Basic </span>${Base64.encode(
-<span class="cstat-no" title="statement not covered" >                WORDPRESS_API_USER +</span> ":" + WORDPRESS_API_PASS
+<span class="cstat-no" title="statement not covered" >    const response = await fetch(url.t</span>oString(), {
+<span class="cstat-no" title="statement not covered" >        headers: {</span>
+<span class="cstat-no" title="statement not covered" ></span>            Authorization: `Basic ${Base64.encode(
+<span class="cstat-no" title="statement not covered" >                WORDPRESS_API_USER</span> + ":" + WORDPRESS_API_PASS
 <span class="cstat-no" title="statement not covered" >            )}`,</span>
-<span class="cstat-no" title="statement not covered" >            Accept: "app</span>lication/json",
+<span class="cstat-no" title="statement not covered" >            Accept: "application/json",</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (!response.ok)</span>
-<span class="cstat-no" title="statement not covered" ></span>        throw new JsonError(
-<span class="cstat-no" title="statement not covered" >            `HTTP Error Response: $</span>{response.status} ${response.statusText}`
+<span class="cstat-no" title="statement not covered" >    if (!r</span>esponse.ok)
+<span class="cstat-no" title="statement not covered" >        throw new JsonError(</span>
+<span class="cstat-no" title="statement not covered" ></span>            `HTTP Error Response: ${response.status} ${response.statusText}`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return params &amp;&amp; params.returnRespo</span>nseHeadersOnly
+<span class="cstat-no" title="statement not covered" ></span>    return params &amp;&amp; params.returnResponseHeadersOnly
 <span class="cstat-no" title="statement not covered" >        ? response.headers</span>
 <span class="cstat-no" title="statement not covered" >        : response.json()</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -1596,66 +1587,66 @@ const apiQuery = <span class="fstat-no" title="function not covered" >async (</s
 // Retrieve a map of post ids to authors
 let cachedAuthorship: Map&lt;number, string[]&gt; | undefined
 export const getAuthorship = <span class="fstat-no" title="function not covered" >async (): Promise&lt;Map&lt;number, string[]&gt;&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (cachedAuthorship) return </span>cachedAuthorship
+<span class="cstat-no" title="statement not covered" >    if (cachedAuthorship) return ca</span>chedAuthorship
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const authorRows = await singleton.q</span>uery(`
-<span class="cstat-no" title="statement not covered" >        SELECT object_id</span>, terms.description FROM wp_term_relationships AS rels
-<span class="cstat-no" title="statement not covered" >        LEFT JOIN wp_term_taxonomy AS </span>terms ON terms.term_taxonomy_id=rels.term_taxonomy_id
-<span class="cstat-no" title="statement not covered" ></span>        WHERE terms.taxonomy='author'
-<span class="cstat-no" title="statement not covered" >        ORDER BY rels.term_ord</span>er ASC
+<span class="cstat-no" title="statement not covered" >    const authorRows = await singleton.query(`</span>
+<span class="cstat-no" title="statement not covered" >        SELECT object_id, terms.descript</span>ion FROM wp_term_relationships AS rels
+<span class="cstat-no" title="statement not covered" >        LEFT JOIN wp_ter</span>m_taxonomy AS terms ON terms.term_taxonomy_id=rels.term_taxonomy_id
+<span class="cstat-no" title="statement not covered" >        WHERE terms.taxonomy='author'</span>
+<span class="cstat-no" title="statement not covered" ></span>        ORDER BY rels.term_order ASC
 <span class="cstat-no" title="statement not covered" >    `)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const authorship = </span>new Map&lt;number, string[]&gt;()
-<span class="cstat-no" title="statement not covered" >    for (const row of authorRows) {</span>
-<span class="cstat-no" title="statement not covered" >        le</span>t authors = authorship.get(row.object_id)
-<span class="cstat-no" title="statement not covered" >        if (!authors) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            authors = []
-<span class="cstat-no" title="statement not covered" >            authorship.se</span>t(row.object_id, authors)
-<span class="cstat-no" title="statement not covered" ></span>        }
-<span class="cstat-no" title="statement not covered" >        authors.push(row.description.split(</span>" ").slice(0, 2).join(" "))
+<span class="cstat-no" title="statement not covered" >    const authorship </span>= new Map&lt;number, string[]&gt;()
+<span class="cstat-no" title="statement not covered" >    for (const row of a</span>uthorRows) {
+<span class="cstat-no" title="statement not covered" >        let authors = authorship.get(row.obj</span>ect_id)
+<span class="cstat-no" title="statement not covered" >        if</span> (!authors) {
+<span class="cstat-no" title="statement not covered" >            authors = []</span>
+<span class="cstat-no" title="statement not covered" ></span>            authorship.set(row.object_id, authors)
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>        authors.push(row.description.split(" ").slice(0, 2).join(" "))
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    cachedAuthorship</span> = authorship
-<span class="cstat-no" title="statement not covered" >    return authorship</span>
+<span class="cstat-no" title="statement not covered" >    cachedAuthorship = authorship</span>
+<span class="cstat-no" title="statement not covered" >    return authorshi</span>p
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const getTagsByPostId = async (): Promise&lt;Map&lt;number, string[]&gt;&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const tagsByPostId = n</span>ew Map&lt;number, string[]&gt;()</span>
-<span class="cstat-no" title="statement not covered" >    const rows</span> = await singleton.query(`
-<span class="cstat-no" title="statement not covered" >        SELECT p.id,</span> t.name
-<span class="cstat-no" title="statement not covered" >        FROM wp_posts p</span>
-<span class="cstat-no" title="statement not covered" >        JOIN wp_term_r</span>elationships tr
-<span class="cstat-no" title="statement not covered" >            on (p.id=</span>tr.object_id)
-<span class="cstat-no" title="statement not covered" >        JOIN wp_term_tax</span>onomy tt
-<span class="cstat-no" title="statement not covered" >            on</span> (tt.term_taxonomy_id=tr.term_taxonomy_id
-<span class="cstat-no" title="statement not covered" ></span>            and tt.taxonomy='post_tag')
-<span class="cstat-no" title="statement not covered" ></span>        JOIN wp_terms t
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const tagsByPostId = new</span> Map&lt;number, string[]&gt;()</span>
+<span class="cstat-no" title="statement not covered" >    const rows = await sin</span>gleton.query(`
+<span class="cstat-no" title="statement not covered" >        SELECT</span> p.id, t.name
+<span class="cstat-no" title="statement not covered" >        FROM wp_post</span>s p
+<span class="cstat-no" title="statement not covered" >        JOIN wp_term_relationsh</span>ips tr
+<span class="cstat-no" title="statement not covered" >            on (p.id=t</span>r.object_id)
+<span class="cstat-no" title="statement not covered" >        JOIN wp_term_</span>taxonomy tt
+<span class="cstat-no" title="statement not covered" >            on (tt.term_</span>taxonomy_id=tr.term_taxonomy_id
+<span class="cstat-no" title="statement not covered" >            an</span>d tt.taxonomy='post_tag')
+<span class="cstat-no" title="statement not covered" >        JO</span>IN wp_terms t
 <span class="cstat-no" title="statement not covered" ></span>            on (tt.term_id=t.term_id)
 <span class="cstat-no" title="statement not covered" >    `)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    for (const row of rows) {</span>
-<span class="cstat-no" title="statement not covered" >        let cats = tagsByPostId.</span>get(row.id)
+<span class="cstat-no" title="statement not covered" >        let cats = tagsByPostId.get(row.id)</span>
 <span class="cstat-no" title="statement not covered" >        if (!cats) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            cats = []
+<span class="cstat-no" title="statement not covered" >            cats = []</span>
 <span class="cstat-no" title="statement not covered" ></span>            tagsByPostId.set(row.id, cats)
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" ></span>        cats.push(row.name)
-<span class="cstat-no" title="statement not covered" ></span>    }
+<span class="cstat-no" title="statement not covered" >        cats.push(row.</span>name)
+<span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return tagsByPostId</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const getDocumentsInfo = <span class="fstat-no" title="function not covered" >async (</span>
-<span class="cstat-no" title="statement not covered" >    type:</span> WP_PostType,
-<span class="cstat-no" title="statement not covered" ></span>    cursor: string = "",
-<span class="cstat-no" title="statement not covered" >    where: string = ""</span>
+<span class="cstat-no" title="statement not covered" >    type: WP_PostType,</span>
+<span class="cstat-no" title="statement not covered" >    curso</span>r: string = "",
+<span class="cstat-no" title="statement not covered" ></span>    where: string = ""
 <span class="cstat-no" title="statement not covered" >): Promise&lt;DocumentNode[]&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const typePlural = `${type}s`</span>
-<span class="cstat-no" title="statement not covered" >    cons</span>t query = `
-<span class="cstat-no" title="statement not covered" ></span>    query($cursor: String){
-<span class="cstat-no" title="statement not covered" >        ${typePlural}(first:50, after: $cursor, where:{${where</span>}}) {
+<span class="cstat-no" title="statement not covered" >    const query = `</span>
+<span class="cstat-no" title="statement not covered" >    quer</span>y($cursor: String){
+<span class="cstat-no" title="statement not covered" ></span>        ${typePlural}(first:50, after: $cursor, where:{${where}}) {
 <span class="cstat-no" title="statement not covered" >            pageInfo {</span>
-<span class="cstat-no" title="statement not covered" >                hasNextPage</span>
+<span class="cstat-no" title="statement not covered" >                hasNextP</span>age
 <span class="cstat-no" title="statement not covered" >                endCursor</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            nodes {</span>
@@ -1668,11 +1659,11 @@ export const getDocumentsInfo = <span class="fstat-no" title="function not cover
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >    `</span>
 <span class="cstat-no" title="statement not covered" >    const documents = await graphqlQuery(query, { cursor })</span>
-<span class="cstat-no" title="statement not covered" >    const pageInfo</span> = documents?.data[typePlural].pageInfo
-<span class="cstat-no" title="statement not covered" >    const nodes =</span> documents?.data[typePlural].nodes
-<span class="cstat-no" title="statement not covered" >    if (pageInfo.hasNextPage) {</span>
-<span class="cstat-no" title="statement not covered" >        return nodes.c</span>oncat(
-<span class="cstat-no" title="statement not covered" >            await getDocumentsInfo(type</span>, pageInfo.endCursor, where)
+<span class="cstat-no" title="statement not covered" >    const pageInfo = documents?.data[typePlural].pageInfo</span>
+<span class="cstat-no" title="statement not covered" >    const nodes = </span>documents?.data[typePlural].nodes
+<span class="cstat-no" title="statement not covered" >    if (pageInfo.</span>hasNextPage) {
+<span class="cstat-no" title="statement not covered" >        return nodes.concat(</span>
+<span class="cstat-no" title="statement not covered" >            await getD</span>ocumentsInfo(type, pageInfo.endCursor, where)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    } else {</span>
 <span class="cstat-no" title="statement not covered" >        return nodes</span>
@@ -1682,12 +1673,12 @@ export const getDocumentsInfo = <span class="fstat-no" title="function not cover
 const getEntryNode = ({
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    slug,</span></span>
 <span class="cstat-no" title="statement not covered" >    title,</span>
-<span class="cstat-no" title="statement not covered" >    exce</span>rpt,
-<span class="cstat-no" title="statement not covered" ></span>    kpi,
-<span class="cstat-no" title="statement not covered" >}: EntryNode): {</span>
-<span class="cstat-no" title="statement not covered" >    slug: str</span>ing
+<span class="cstat-no" title="statement not covered" >    excerp</span>t,
+<span class="cstat-no" title="statement not covered" >    kpi,</span>
+<span class="cstat-no" title="statement not covered" >}</span>: EntryNode): {
+<span class="cstat-no" title="statement not covered" >    slug: string</span>
 <span class="cstat-no" title="statement not covered" >    title: st</span>ring
-<span class="cstat-no" title="statement not covered" >    excerpt: string</span>
+<span class="cstat-no" title="statement not covered" >    excerpt: </span>string
 <span class="cstat-no" title="statement not covered" >    kpi: string</span>
 <span class="cstat-no" title="statement not covered" >} =&gt; ({</span>
     slug,
@@ -1697,9 +1688,9 @@ const getEntryNode = ({
 })
 &nbsp;
 const isEntryInSubcategories = (entry: EntryNode, subcategories: any): any =&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    return subcategories.some((subcategory: any) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    retur</span>n subcategories.some((subcategory: any) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        return subcategory.pages.nodes.some(</span>
-<span class="cstat-no" title="statement not covered" >            (node: EntryNode) =&gt; entry.slug</span> === node.slug
+<span class="cstat-no" title="statement not covered" >            (node: EntryNode) =&gt; entry.slug === node.slug</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -1708,28 +1699,28 @@ const isEntryInSubcategories = (entry: EntryNode, subcategories: any): any =&gt;
 let cachedEntries: CategoryWithEntries[] = []
 export const getEntriesByCategory = <span class="fstat-no" title="function not covered" >async (): Promise&lt;</span>
 <span class="cstat-no" title="statement not covered" >    CategoryWithEntries[]</span>
-<span class="cstat-no" title="statement not covered" >&gt;</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!isWordpressAPIEnabled) return []</span>
+<span class="cstat-no" title="statement not covered" >&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>    if (!isWordpressAPIEnabled) return []
 <span class="cstat-no" title="statement not covered" >    if (cachedEntries.length) return cachedEntries</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const first = 100</span>
 <span class="cstat-no" title="statement not covered" >    // The filtering of cached entries below makes the $first argument</span>
 <span class="cstat-no" title="statement not covered" >    // less accurate, as it does not represent the exact number of entries</span>
 <span class="cstat-no" title="statement not covered" >    // returned per subcategories but rather their maximum number of entries.</span>
-<span class="cstat-no" title="statement not covered" >    const orderby = "TERM_OR</span>DER"
+<span class="cstat-no" title="statement not covered" >    const orderby = "TERM_ORDER"</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const query = `</span>
-<span class="cstat-no" title="statement not covered" >    query getEntriesByCategory($first:</span> Int, $orderby: TermObjectsConnectionOrderbyEnum!) {
-<span class="cstat-no" title="statement not covered" >        categories(first: $first, where: {termTaxonomId: ${ENTRIES_CATEGORY</span>_ID}, orderby: $orderby}) {
+<span class="cstat-no" title="statement not covered" >    query getEntriesByCategory($first: Int, $ord</span>erby: TermObjectsConnectionOrderbyEnum!) {
+<span class="cstat-no" title="statement not covered" >        categories(first: $first, wher</span>e: {termTaxonomId: ${ENTRIES_CATEGORY_ID}, orderby: $orderby}) {
 <span class="cstat-no" title="statement not covered" >          nodes {</span>
 <span class="cstat-no" title="statement not covered" >            name</span>
-<span class="cstat-no" title="statement not covered" >            childr</span>en(first: $first, where: {orderby: $orderby}) {
-<span class="cstat-no" title="statement not covered" >              nodes {</span>
-<span class="cstat-no" title="statement not covered" ></span>                ...categoryWithEntries
+<span class="cstat-no" title="statement not covered" >            children(first: $first, where: {ord</span>erby: $orderby}) {
+<span class="cstat-no" title="statement not covered" >              node</span>s {
+<span class="cstat-no" title="statement not covered" >                ...categoryWithEntries</span>
 <span class="cstat-no" title="statement not covered" ></span>                children(first: $first, where: {orderby: $orderby}) {
-<span class="cstat-no" title="statement not covered" >                  nodes {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    ...categoryWithEntries
-<span class="cstat-no" title="statement not covered" >                  }</span>
+<span class="cstat-no" title="statement not covered" ></span>                  nodes {
+<span class="cstat-no" title="statement not covered" >                    ...cat</span>egoryWithEntries
+<span class="cstat-no" title="statement not covered" ></span>                  }
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >              }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -1737,210 +1728,207 @@ export const getEntriesByCategory = <span class="fstat-no" title="function not c
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      fr</span>agment categoryWithEntries on Category {
-<span class="cstat-no" title="statement not covered" >        name</span>
-<span class="cstat-no" title="statement not covered" >        slug</span>
-<span class="cstat-no" title="statement not covered" ></span>        pages(first: $first, where: {orderby: {field: MENU_ORDER, order: ASC}}) {
+<span class="cstat-no" title="statement not covered" >      fragment ca</span>tegoryWithEntries on Category {
+<span class="cstat-no" title="statement not covered" ></span>        name
+<span class="cstat-no" title="statement not covered" ></span>        slug
+<span class="cstat-no" title="statement not covered" >        pages(first: $first, where: {or</span>derby: {field: MENU_ORDER, order: ASC}}) {
 <span class="cstat-no" title="statement not covered" >          nodes {</span>
-<span class="cstat-no" title="statement not covered" >            slug</span>
-<span class="cstat-no" title="statement not covered" >            ti</span>tle
+<span class="cstat-no" title="statement not covered" >            sl</span>ug
+<span class="cstat-no" title="statement not covered" >            title</span>
 <span class="cstat-no" title="statement not covered" >            excerpt</span>
-<span class="cstat-no" title="statement not covered" >            kpi</span>
+<span class="cstat-no" title="statement not covered" ></span>            kpi
 <span class="cstat-no" title="statement not covered" ></span>          }
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >      `</span>
-<span class="cstat-no" title="statement not covered" >    const categories = await graphqlQuery(query, { first, orderby })</span>
+<span class="cstat-no" title="statement not covered" >    const categories = await g</span>raphqlQuery(query, { first, orderby })
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    cachedEntries = categories.data.c</span>ategories.nodes[0].children.nodes.map(
-<span class="cstat-no" title="statement not covered" >        ({ name, slug, pages, children }: CategoryNode) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >            name: decodeHTML(name),</span>
+<span class="cstat-no" title="statement not covered" >    cachedEntries = categories.data.categories.nodes[0].children.nodes.map(</span>
+<span class="cstat-no" title="statement not covered" >        ({ name, slug, pages, children</span> }: CategoryNode) =&gt; ({
+<span class="cstat-no" title="statement not covered" >            name: decodeHTML(n</span>ame),
 <span class="cstat-no" title="statement not covered" >            slug,</span>
-<span class="cstat-no" title="statement not covered" >            entries: pages.nodes</span>
-<span class="cstat-no" title="statement not covered" ></span>                .filter(
-<span class="cstat-no" title="statement not covered" >                    (node: EntryNode) =&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        /* </span>As entries are sometimes listed at all levels of the category hierarchy
-<span class="cstat-no" title="statement not covered" ></span>                        (e.g. "Entries" &gt; "Demographic Change" &gt; "Life and Death" for "Child and
-<span class="cstat-no" title="statement not covered" >                        Infant Mortality"), it </span>is necessary to filter out duplicates, by giving precedent to
-<span class="cstat-no" title="statement not covered" >                        the deep</span>est level. In other words, if an entry is present in category 1 and category
-<span class="cstat-no" title="statement not covered" >                        1.1, it will only show in cate</span>gory 1.1.
+<span class="cstat-no" title="statement not covered" ></span>            entries: pages.nodes
+<span class="cstat-no" title="statement not covered" >                .filter(</span>
+<span class="cstat-no" title="statement not covered" >                    (node: </span>EntryNode) =&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        /* As entries are sometimes listed at all levels of the category hierarchy
+<span class="cstat-no" title="statement not covered" >                        (e.g. "Entries" &gt; "Demo</span>graphic Change" &gt; "Life and Death" for "Child and
+<span class="cstat-no" title="statement not covered" >                        Infant M</span>ortality"), it is necessary to filter out duplicates, by giving precedent to
+<span class="cstat-no" title="statement not covered" >                        the deepest level. In other wo</span>rds, if an entry is present in category 1 and category
+<span class="cstat-no" title="statement not covered" >                        1.1, it will only show in</span> category 1.1.
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                        N.B. Pre wp-graphql 0.6.0, entries would be returned at a</span>ll levels of the category
-<span class="cstat-no" title="statement not covered" >                        hierarchy, no matter what categories were effectively se</span>lected. 0.6.0 fixes that
-<span class="cstat-no" title="statement not covered" >                        (cf. https://github.com/wp</span>-graphql/wp-graphql/issues/1100). Even though this behaviour
-<span class="cstat-no" title="statement not covered" >                        has been fixed, we still have potential duplicates, from the multiple hierarchical</span>
-<span class="cstat-no" title="statement not covered" >                        selection as not</span>ed above. The only difference is the nature of the duplicate, which can
+<span class="cstat-no" title="statement not covered" >                        N.B. Pre wp-graphql 0.6.0, entries would be returned at </span>all levels of the category
+<span class="cstat-no" title="statement not covered" >                        hierarchy, no matter what </span>categories were effectively selected. 0.6.0 fixes that
+<span class="cstat-no" title="statement not covered" >                        (cf. https://github.com/wp-graphql/wp-graphql/issues/1100). Even though this behaviour</span>
+<span class="cstat-no" title="statement not covered" >                        has been fixed, </span>we still have potential duplicates, from the multiple hierarchical
+<span class="cstat-no" title="statement not covered" ></span>                        selection as noted above. The only difference is the nature of the duplicate, which can
 <span class="cstat-no" title="statement not covered" ></span>                        now be considered more intentional as it is coming from the data / CMS.
 <span class="cstat-no" title="statement not covered" ></span>                        Ultimately, this discrepency in the data should be addressed to make the system
-<span class="cstat-no" title="statement not covered" ></span>                        less permissive. */
-<span class="cstat-no" title="statement not covered" >                        !isEntryInSubcat</span>egories(node, children.nodes)
+<span class="cstat-no" title="statement not covered" >                        less permissive.</span> */
+<span class="cstat-no" title="statement not covered" >                        !isEntryInSubcategories(node, children.nodes)</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                .map((node: EntryNode) =&gt; g</span>etEntryNode(node)),
+<span class="cstat-no" title="statement not covered" >                .map((node: EntryNode) =&gt; getEntryN</span>ode(node)),
 <span class="cstat-no" title="statement not covered" >            subcategories: children.nodes</span>
 <span class="cstat-no" title="statement not covered" >                .filter(</span>
-<span class="cstat-no" title="statement not covered" >                    (subcategory: CategoryNod</span>e) =&gt;
-<span class="cstat-no" title="statement not covered" ></span>                        subcategory.pages.nodes.length !== 0
+<span class="cstat-no" title="statement not covered" ></span>                    (subcategory: CategoryNode) =&gt;
+<span class="cstat-no" title="statement not covered" >                        subcategory.pages.nodes.length !== 0</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >                .map(({ name, slug, pages }: CategoryNode) =&gt; ({</span>
 <span class="cstat-no" title="statement not covered" >                    name: decodeHTML(name),</span>
 <span class="cstat-no" title="statement not covered" >                    slug,</span>
-<span class="cstat-no" title="statement not covered" >                    entries: pag</span>es.nodes.map((node: EntryNode) =&gt;
-<span class="cstat-no" title="statement not covered" >                        getEntryNode(node)</span>
-<span class="cstat-no" title="statement not covered" >                    ),</span>
-<span class="cstat-no" title="statement not covered" >                }))</span>,
+<span class="cstat-no" title="statement not covered" >                    entries: pages.nodes.ma</span>p((node: EntryNode) =&gt;
+<span class="cstat-no" title="statement not covered" >                        getEntryNode</span>(node)
+<span class="cstat-no" title="statement not covered" ></span>                    ),
+<span class="cstat-no" title="statement not covered" ></span>                })),
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    re</span>turn cachedEntries
+<span class="cstat-no" title="statement not covered" >    return cachedEntries</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPageType = async (<span class="fstat-no" title="function not covered" >post: FullPost): Promise&lt;PageType&gt; =&gt; {</span>
+export const isPostCitable = async (<span class="fstat-no" title="function not covered" >post: FullPost): Promise&lt;boolean&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const entries = await getEntriesByCategory()</span>
-<span class="cstat-no" title="statement not covered" >    const isEntry = entries.some((category) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return (
-<span class="cstat-no" title="statement not covered" >            category.entries.</span>some((entry) =&gt; entry.slug === post.slug) ||
-<span class="cstat-no" title="statement not covered" >            category.subcategories.some((subcategory: CategoryWithEntries) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>    return entries.some((category) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            category.entries.some((entry) =&gt; entry.slug === post.slug) ||</span>
+<span class="cstat-no" title="statement not covered" >            category.subcategories.some((subcategory: CategoryWith</span>Entries) =&gt; {
 <span class="cstat-no" title="statement not covered" >                return subcategory.entries.some(</span>
-<span class="cstat-no" title="statement not covered" >                    (subCategoryEntry) =&gt; subCatego</span>ryEntry.slug === post.slug
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >                    (subCategoryEntry) =&gt; sub</span>CategoryEntry.slug === post.slug
+<span class="cstat-no" title="statement not covered" ></span>                )
 <span class="cstat-no" title="statement not covered" ></span>            })
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // TODO Add subEntry detection</span>
-<span class="cstat-no" title="statement not covered" >    return isEntry ? PageType.Entry : PageType.Standard</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPermalinks = <span class="fstat-no" title="function not covered" >async (): Promise&lt;{</span>
-<span class="cstat-no" title="statement not covered" >    // Strip trailing slashes, and convert __ into / to allow custom subdirs like /about/media-c</span>overage
-<span class="cstat-no" title="statement not covered" >    get: (ID: number, postName: string) =&gt; s</span>tring
+export const getPermalinks = async (): Promise&lt;{
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    // Str</span>ip trailing slashes, and convert __ into / to allow custom subdirs like /about/media-coverage</span>
+<span class="cstat-no" title="statement not covered" >    get: (ID: number, postName: string) =&gt; string</span>
 <span class="cstat-no" title="statement not covered" >}&gt; =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >    // Strip trailing slash</span>es, and convert __ into / to allow custom subdirs like /about/media-coverage
-<span class="cstat-no" title="statement not covered" >    ge</span>t: (ID: number, postName: string): string =&gt;
-<span class="cstat-no" title="statement not covered" >        postName.r</span>eplace(/\/+$/g, "").replace(/--/g, "/").replace(/__/g, "/"),
+<span class="cstat-no" title="statement not covered" >    // Strip trailing slashes, and convert _</span>_ into / to allow custom subdirs like /about/media-coverage
+<span class="cstat-no" title="statement not covered" >    get: (ID</span>: number, postName: string): string =&gt;
+<span class="cstat-no" title="statement not covered" >        postName.replace(/\/+$/g, "").replace(/-</span>-/g, "/").replace(/__/g, "/"),
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 let cachedFeaturedImages: Map&lt;number, string&gt; | undefined
-export const getFeaturedImages = <span class="fstat-no" title="function not covered" >async (): Promise&lt;Map&lt;number, string&gt;&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (cachedFeaturedImages) return cachedFeaturedImages</span>
+export const getFeaturedImages = async (): Promise&lt;Map&lt;number, string&gt;&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>    if (cachedFeaturedImages) return cachedFeaturedImages</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const rows = await singleton.query(</span>
-<span class="cstat-no" title="statement not covered" >        `SELECT wp_postmeta.post_id, wp_posts.gu</span>id FROM wp_postmeta INNER JOIN wp_posts ON wp_posts.ID=wp_postmeta.meta_value WHERE wp_postmeta.meta_key='_thumbnail_id'`
+<span class="cstat-no" title="statement not covered" >        `SELECT wp_postmeta.post_id, wp_posts.guid FROM wp_postmeta INNER JOIN</span> wp_posts ON wp_posts.ID=wp_postmeta.meta_value WHERE wp_postmeta.meta_key='_thumbnail_id'`
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const featuredImages = new Map&lt;number, string&gt;()</span>
 <span class="cstat-no" title="statement not covered" >    for (const row of rows) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        featuredImages.set(row.post_id, row.guid)
+<span class="cstat-no" title="statement not covered" >        featuredImages.set(row.post_id, row.guid)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    cachedFeaturedImages = </span>featuredImages
-<span class="cstat-no" title="statement not covered" >    return featuredImage</span>s
+<span class="cstat-no" title="statement not covered" >    cachedFeaturedImages = featuredImages</span>
+<span class="cstat-no" title="statement not covered" >    return featuredImages</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // page =&gt; pages, post =&gt; posts
-const getEndpointSlugFromType = (type: string): string =&gt; `${type}s`
+const getEndpointSlugFromType = (<span class="fstat-no" title="function not covered" >type: string): </span>string =&gt; `${type}s`
 &nbsp;
 // Limit not supported with multiple post types:
 // When passing multiple post types, the limit is applied to the resulting array
 // of sequentially sorted posts (all blog posts, then all pages, ...), so there
 // will be a predominance of a certain post type.
-export const getPosts = async (
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>    postTypes: string[] = [WP_PostType.Post, WP_PostType.Page],</span>
-<span class="cstat-no" title="statement not covered" >    limit?: number</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;any[]&gt; =&gt; {</span>
+export const getPosts = <span class="fstat-no" title="function not covered" >async (</span>
+<span class="cstat-no" title="statement not covered" >    postTypes: string[] = [</span>WP_PostType.Post, WP_PostType.Page],
+<span class="cstat-no" title="statement not covered" >    limi</span>t?: number
+<span class="cstat-no" title="statement not covered" >): P</span>romise&lt;any[]&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!isWordpressAPIEnabled) return []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const perPage = 50</span>
-<span class="cstat-no" title="statement not covered" >    let posts: a</span>ny[] = []
+<span class="cstat-no" title="statement not covered" >    let posts: any[] = []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    for (const postType of postTypes) {</span>
-<span class="cstat-no" title="statement not covered" >        const endpoint = `${WP_API_ENDPOINT}/${getEndpointSlugFromType(</span>
+<span class="cstat-no" title="statement not covered" >    for (const p</span>ostType of postTypes) {
+<span class="cstat-no" title="statement not covered" >        const endpoint = `${WP_API_ENDPOINT}/${get</span>EndpointSlugFromType(
 <span class="cstat-no" title="statement not covered" >            postType</span>
 <span class="cstat-no" title="statement not covered" >        )}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Get number of items </span>to retrieve
-<span class="cstat-no" title="statement not covered" >        const headers = await</span> apiQuery(endpoint, {
-<span class="cstat-no" title="statement not covered" ></span>            searchParams: [["per_page", 1]],
-<span class="cstat-no" title="statement not covered" ></span>            returnResponseHeadersOnly: true,
+<span class="cstat-no" title="statement not covered" >        // Get nu</span>mber of items to retrieve
+<span class="cstat-no" title="statement not covered" >        const headers = </span>await apiQuery(endpoint, {
+<span class="cstat-no" title="statement not covered" >            searchParams: [["pe</span>r_page", 1]],
+<span class="cstat-no" title="statement not covered" >            returnResponseHea</span>dersOnly: true,
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" ></span>        const maxAvailable = headers.get("X-WP-TotalPages")
-<span class="cstat-no" title="statement not covered" >        const count = limit &amp;&amp; limit &lt; maxAvailab</span>le ? limit : maxAvailable
+<span class="cstat-no" title="statement not covered" >        co</span>nst maxAvailable = headers.get("X-WP-TotalPages")
+<span class="cstat-no" title="statement not covered" >        const count = limit </span>&amp;&amp; limit &lt; maxAvailable ? limit : maxAvailable
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for (let pag</span>e = 1; page &lt;= Math.ceil(count / perPage); page++) {
-<span class="cstat-no" title="statement not covered" >            const postsCurrentPage = awa</span>it apiQuery(endpoint, {
-<span class="cstat-no" title="statement not covered" >                searchPara</span>ms: [
-<span class="cstat-no" title="statement not covered" ></span>                    ["per_page", perPage],
-<span class="cstat-no" title="statement not covered" >                    ["page", pa</span>ge],
+<span class="cstat-no" title="statement not covered" >        for (let page = 1; page &lt;= Math.ceil(coun</span>t / perPage); page++) {
+<span class="cstat-no" title="statement not covered" >            const postsCurrentPage = await apiQuery(endpoint, {</span>
+<span class="cstat-no" title="statement not covered" >                sear</span>chParams: [
+<span class="cstat-no" title="statement not covered" >                    ["per_page", perPage</span>],
+<span class="cstat-no" title="statement not covered" >                    ["page</span>", page],
 <span class="cstat-no" title="statement not covered" >                ],</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" ></span>            posts.push(...postsCurrentPage)
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >            posts.push(...postsCurrentPage)</span>
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Published pages excluded from public views</span>
-<span class="cstat-no" title="statement not covered" ></span>    const excludedSlugs = [BLOG_SLUG]
+<span class="cstat-no" title="statement not covered" >    // </span>Published pages excluded from public views
+<span class="cstat-no" title="statement not covered" >    const excludedSlugs = [BLOG_SLUG]</span>
 <span class="cstat-no" title="statement not covered" >    posts = posts.filter(</span>
-<span class="cstat-no" title="statement not covered" >        (post) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            !excludedSlugs.includes(post.slug) &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            !p</span>ost.slug.endsWith("-country-profile")
+<span class="cstat-no" title="statement not covered" ></span>        (post) =&gt;
+<span class="cstat-no" title="statement not covered" >            !excludedSlugs.includes(post.sl</span>ug) &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            !post.slug.endsWith("-country-profile")</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return limit ? posts.sli</span>ce(0, limit) : posts
+<span class="cstat-no" title="statement not covered" >    return limit ? posts</span>.slice(0, limit) : posts
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPostType = async (<span class="fstat-no" title="function not covered" >search: number | string): Promise&lt;string&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const paramName = typeof search === "n</span>umber" ? "id" : "slug"
+export const getPostType = async (search: number | string): Promise&lt;string&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const paramName = typeof search === "number" ? "id" : "slu</span>g"</span>
 <span class="cstat-no" title="statement not covered" >    return apiQuery(`${OWID_API_ENDPOINT}/type`, {</span>
-<span class="cstat-no" title="statement not covered" >        searchParams: [[paramName, search]],</span>
+<span class="cstat-no" title="statement not covered" >        searchParams: [[paramName, search]</span>],
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getPostBySlug = async (<span class="fstat-no" title="function not covered" >slug: string): Promise&lt;any[]&gt; =&gt; {</span>
+export const getPostBySlug = async (<span class="fstat-no" title="function not covered" >slug: string): Promise&lt;FullPost&gt; =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    if (!isWordpressAPIEnabled) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new JsonErr</span>or(`Need wordpress API to match slug ${slug}`, 404)
+<span class="cstat-no" title="statement not covered" >        throw new JsonError(`Need wordpress API</span> to match slug ${slug}`, 404)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    try {
-<span class="cstat-no" title="statement not covered" >        const type = await getPostT</span>ype(slug)
-<span class="cstat-no" title="statement not covered" >        const postArr = await apiQuery(</span>
-<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${getEndpointSlugFromTyp</span>e(type)}`,
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const type = await getPostType(slug)
+<span class="cstat-no" title="statement not covered" ></span>        const postArr = await apiQuery(
+<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${g</span>etEndpointSlugFromType(type)}`,
 <span class="cstat-no" title="statement not covered" >            {</span>
 <span class="cstat-no" title="statement not covered" >                searchParams: [["slug", slug]],</span>
-<span class="cstat-no" title="statement not covered" ></span>            }
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        return postArr[0]</span>
-<span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new JsonError(`</span>No page found by slug ${slug}`, 404)
+<span class="cstat-no" title="statement not covered" ></span>        return getFullPost(postArr[0])
+<span class="cstat-no" title="statement not covered" >    } catch (err) </span>{
+<span class="cstat-no" title="statement not covered" >        throw new JsonError(`No page found by slug ${slug}`, 404)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // the /revisions endpoint does not send back all the metadata required for
 // the proper rendering of the post (e.g. authors), hence the double request.
 export const getLatestPostRevision = async (<span class="fstat-no" title="function not covered" >id: number): Promise&lt;any&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    cons</span>t type = await getPostType(id)
-<span class="cstat-no" title="statement not covered" >    const endpointSlug = getEndpointS</span>lugFromType(type)
+<span class="cstat-no" title="statement not covered" >    const type = await getPostType(id)</span>
+<span class="cstat-no" title="statement not covered" >    const endpointSlug = getEndpointSlugFromType(type)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const postApi = await apiQuery(`${WP_API_ENDPOINT</span>}/${endpointSlug}/${id}`)
+<span class="cstat-no" title="statement not covered" >    const postApi = await apiQuery(`$</span>{WP_API_ENDPOINT}/${endpointSlug}/${id}`)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const revision = (</span>
-<span class="cstat-no" title="statement not covered" >        await apiQuery(</span>
-<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${endpointSlug}/${id}/revisions?per_page=1`</span>
+<span class="cstat-no" title="statement not covered" ></span>        await apiQuery(
+<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT</span>}/${endpointSlug}/${id}/revisions?per_page=1`
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    )[0]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return {</span>
-<span class="cstat-no" title="statement not covered" ></span>        // Since WP does not store metadata for revisions, some elements of a
-<span class="cstat-no" title="statement not covered" >        // previewed page</span> will not reflect the latest edits:
+<span class="cstat-no" title="statement not covered" >        // Since WP does</span> not store metadata for revisions, some elements of a
+<span class="cstat-no" title="statement not covered" >        // p</span>reviewed page will not reflect the latest edits:
 <span class="cstat-no" title="statement not covered" ></span>        // - published date (will show the correct one - that is the one in the
-<span class="cstat-no" title="statement not covered" >        //   sidebar - for unpu</span>blished posts though. For published posts, the
-<span class="cstat-no" title="statement not covered" >        //   current publis</span>hed date is displayed, regardless of what is shown
-<span class="cstat-no" title="statement not covered" >        //   and</span> could have been modified in the sidebar.)
-<span class="cstat-no" title="statement not covered" >        // - glossary highlights</span>
-<span class="cstat-no" title="statement not covered" >        // - authors</span>
+<span class="cstat-no" title="statement not covered" >        //   sidebar - fo</span>r unpublished posts though. For published posts, the
+<span class="cstat-no" title="statement not covered" ></span>        //   current published date is displayed, regardless of what is shown
+<span class="cstat-no" title="statement not covered" >        //   and could have bee</span>n modified in the sidebar.)
+<span class="cstat-no" title="statement not covered" >        // - glossary highl</span>ights
+<span class="cstat-no" title="statement not covered" >        // - aut</span>hors
 <span class="cstat-no" title="statement not covered" >        // ...</span>
 <span class="cstat-no" title="statement not covered" >        ...postApi,</span>
-<span class="cstat-no" title="statement not covered" >        content: revision.cont</span>ent,
-<span class="cstat-no" title="statement not covered" ></span>        title: revision.title,
+<span class="cstat-no" title="statement not covered" >        content: revision.content,</span>
+<span class="cstat-no" title="statement not covered" >        title: revision.title,</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
@@ -2086,7 +2074,7 @@ export const flushCache = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jul 06 2021 12:09:37 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 07 2021 06:13:55 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

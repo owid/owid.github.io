@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.92% </span>
+                <span class="strong">16.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/195</span>
+                <span class='fraction'>32/190</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.92% </span>
+                <span class="strong">16.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/195</span>
+                <span class='fraction'>32/190</span>
             </div>
         
             
@@ -497,13 +497,7 @@
 <a name='L438'></a><a href='#L438'>438</a>
 <a name='L439'></a><a href='#L439'>439</a>
 <a name='L440'></a><a href='#L440'>440</a>
-<a name='L441'></a><a href='#L441'>441</a>
-<a name='L442'></a><a href='#L442'>442</a>
-<a name='L443'></a><a href='#L443'>443</a>
-<a name='L444'></a><a href='#L444'>444</a>
-<a name='L445'></a><a href='#L445'>445</a>
-<a name='L446'></a><a href='#L446'>446</a>
-<a name='L447'></a><a href='#L447'>447</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L441'></a><a href='#L441'>441</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -535,7 +529,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -694,11 +687,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -965,7 +953,6 @@ import { TableOfContents } from "../site/TableOfContents"
 import {
     FormattedPost,
     FormattingOptions,
-    PageType,
     TocHeading,
 } from "../clientUtils/owidTypes"
 import { Breadcrumb } from "./Breadcrumb/Breadcrumb"
@@ -976,23 +963,21 @@ export interface PageOverrides {
     citationSlug?: string
     citationCanonicalUrl?: string
     citationAuthors?: string[]
-    publicationDate?: Date
+    citationPublicationDate?: Date
     canonicalUrl?: string
     excerpt?: string
 }
 &nbsp;
 export const LongFormPage = (<span class="fstat-no" title="function not covered" >props: {</span>
-<span class="cstat-no" title="statement not covered" >    pageType: PageType</span>
+<span class="cstat-no" title="statement not covered" >    withCitation: boolean</span>
 <span class="cstat-no" title="statement not covered" >    post: FormattedPost</span>
 <span class="cstat-no" title="statement not covered" >    overrides?: PageOverrides</span>
 <span class="cstat-no" title="statement not covered" >    formattingOptions: FormattingOptions</span>
 <span class="cstat-no" title="statement not covered" >    baseUrl: string</span>
 <span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { pageType, post, overrides, formattingOptions, baseUrl } = props</span>
+<span class="cstat-no" title="statement not covered" >    const { withCitation, post, overrides, formattingOptions, baseUrl } = props</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const isPost = post.type === "post"</span>
-<span class="cstat-no" title="statement not covered" >    const isEntry = pageType === PageType.Entry</span>
-<span class="cstat-no" title="statement not covered" >    const isSubEntry = pageType === PageType.SubEntry</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const pageTitle = overrides?.pageTitle ?? post.title</span>
 <span class="cstat-no" title="statement not covered" >    const pageTitleSEO = `${pageTitle}${</span>
@@ -1002,38 +987,38 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >    const canonicalUrl = overrides?.canonicalUrl ?? `${baseUrl}/${post.slug}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const citationTitle = overrides?.citationTitle ?? pageTitle</span>
-<span class="cstat-no" title="statement not covered" >    const citationSlug = ove</span>rrides?.citationSlug ?? post.slug
-<span class="cstat-no" title="statement not covered" >    const citationCanonicalUrl = overrides?.citationCanonical</span>Url ?? canonicalUrl
-<span class="cstat-no" title="statement not covered" >    const citationPublishedYear = (</span>
-<span class="cstat-no" title="statement not covered" >        overrides?.publicationDate ?? post.date</span>
-<span class="cstat-no" title="statement not covered" >    ).getFullYear()</span>
-<span class="cstat-no" title="statement not covered" >    const citationAuthors = overrides</span>?.citationAuthors ?? post.authors
-<span class="cstat-no" title="statement not covered" >    const citationAuthorsFormatted = formatAuthors(</span>
-<span class="cstat-no" title="statement not covered" >        ci</span>tationAuthors,
-<span class="cstat-no" title="statement not covered" >        isEntry || isSubEntry</span>
+<span class="cstat-no" title="statement not covered" >    const citationSlug = overrides?.citationSlug ?? post.slug</span>
+<span class="cstat-no" title="statement not covered" >    const citationCanonicalU</span>rl = overrides?.citationCanonicalUrl ?? canonicalUrl
+<span class="cstat-no" title="statement not covered" >    const citationPublicationDate =</span>
+<span class="cstat-no" title="statement not covered" >        overrides?.citationPublicationDate ?? p</span>ost.date
+<span class="cstat-no" title="statement not covered" >    const citationPublishedYear = citationPublicationDate.getFullYear(</span>)
+<span class="cstat-no" title="statement not covered" >    const citationAuthors =</span> overrides?.citationAuthors ?? post.authors
+<span class="cstat-no" title="statement not covered" >    const citationAuthorsFormatted = </span>formatAuthors(
+<span class="cstat-no" title="statement not covered" >        citationAuthors,</span>
+<span class="cstat-no" title="statement not covered" >        wi</span>thCitation
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let hasSidebar = false</span>
-<span class="cstat-no" title="statement not covered" >    const endNotes = { text: "Endnote</span>s", slug: "endnotes" }
-<span class="cstat-no" title="statement not covered" >    const tocHead</span>ings: TocHeading[] = [...post.tocHeadings]
-<span class="cstat-no" title="statement not covered" >    if (tocHeadings.some((tocHeadi</span>ng) =&gt; !tocHeading.isSubheading)) {
+<span class="cstat-no" title="statement not covered" >    const endNotes = { text: "End</span>notes", slug: "endnotes" }
+<span class="cstat-no" title="statement not covered" >    const tocHeadings: TocHeading[] =</span> [...post.tocHeadings]
+<span class="cstat-no" title="statement not covered" >    if (tocHeadin</span>gs.some((tocHeading) =&gt; !tocHeading.isSubheading)) {
 <span class="cstat-no" title="statement not covered" >        hasSidebar = true</span>
-<span class="cstat-no" title="statement not covered" >        if (post.footnotes.length) {</span>
-<span class="cstat-no" title="statement not covered" >            tocH</span>eadings.push({
+<span class="cstat-no" title="statement not covered" >        if (post.footnotes.length)</span> {
+<span class="cstat-no" title="statement not covered" >            tocHeadings.push({</span>
 <span class="cstat-no" title="statement not covered" ></span>                ...endNotes,
 <span class="cstat-no" title="statement not covered" ></span>                isSubheading: false,
-<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" ></span>            })
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (isEntry || isSubEntry) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            tocHeadings.push(
-<span class="cstat-no" title="statement not covered" >                {</span>
+<span class="cstat-no" title="statement not covered" >        if (withCitation) {</span>
+<span class="cstat-no" title="statement not covered" >            tocHeadings.push(</span>
+<span class="cstat-no" title="statement not covered" ></span>                {
 <span class="cstat-no" title="statement not covered" >                    text: "Licence",</span>
-<span class="cstat-no" title="statement not covered" >                    slug: "licen</span>ce",
-<span class="cstat-no" title="statement not covered" >                    isSubheading: f</span>alse,
+<span class="cstat-no" title="statement not covered" >                    slug: "licence",</span>
+<span class="cstat-no" title="statement not covered" >                    isSubheading</span>: false,
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    text: "Citation",
-<span class="cstat-no" title="statement not covered" >                    slug: "citation",</span>
+<span class="cstat-no" title="statement not covered" >                    text: "Citation",</span>
+<span class="cstat-no" title="statement not covered" ></span>                    slug: "citation",
 <span class="cstat-no" title="statement not covered" >                    isSubheading: false,</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
@@ -1062,11 +1047,11 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >                imageUrl={post.imageUrl}</span>
 <span class="cstat-no" title="statement not covered" >                baseUrl={baseUrl}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                {(isEntry || isSubEntry) &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                {withCitation &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;CitationMeta</span>
 <span class="cstat-no" title="statement not covered" >                        title={citationTitle}</span>
 <span class="cstat-no" title="statement not covered" >                        authors={citationAuthors}</span>
-<span class="cstat-no" title="statement not covered" >                        date={post.date}</span>
+<span class="cstat-no" title="statement not covered" >                        date={citationPublicationDate}</span>
 <span class="cstat-no" title="statement not covered" >                        canonicalUrl={citationCanonicalUrl}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
@@ -1087,36 +1072,36 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >                                            {post.supertitle}</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;h1 className="entry-ti</span>tle"&gt;{pageTitle}&lt;/h1&gt;
+<span class="cstat-no" title="statement not covered" >                                    &lt;h1 className="entry-title"&gt;{pageTitle}&lt;/h1&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    {post.subtitle &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;div className="subtitle"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {post.subtitle}</span>
+<span class="cstat-no" title="statement not covered" >                                            {post.subtitl</span>e}
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
 <span class="cstat-no" title="statement not covered" >                                    {formattingOptions.subnavId &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;Breadcrumb</span>
 <span class="cstat-no" title="statement not covered" >                                            subnavId={</span>
-<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subnavId</span>
+<span class="cstat-no" title="statement not covered" >                                                formattin</span>gOptions.subnavId
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                            subnavCurrent</span>Id={
-<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subnavCurrentId</span>
+<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subna</span>vCurrentId
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                {!formattingOptions.hideAuthors &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className="authors-byline"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;div className="autho</span>rs-byline"&gt;
 <span class="cstat-no" title="statement not covered" >                                        {post.byline ? (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                                dangerous</span>lySetInnerHTML={{
-<span class="cstat-no" title="statement not covered" >                                                    __html: post.byline,</span>
+<span class="cstat-no" title="statement not covered" >                                                dangerouslySet</span>InnerHTML={{
+<span class="cstat-no" title="statement not covered" >                                                    __html: post.by</span>line,
 <span class="cstat-no" title="statement not covered" >                                                }}</span>
 <span class="cstat-no" title="statement not covered" >                                            &gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        ) : (</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;a href="/tea</span>m"&gt;
 <span class="cstat-no" title="statement not covered" >                                                {`by ${formatAuthors(</span>
-<span class="cstat-no" title="statement not covered" >                                                    post.</span>authors,
-<span class="cstat-no" title="statement not covered" >                                                    isEntry || isSubEntry</span>
+<span class="cstat-no" title="statement not covered" >                                                    post.authors,</span>
+<span class="cstat-no" title="statement not covered" >                                                    withCitation</span>
 <span class="cstat-no" title="statement not covered" >                                                )}`}</span>
 <span class="cstat-no" title="statement not covered" >                                            &lt;/a&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        )}</span>
@@ -1125,32 +1110,31 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >                                {isPost &amp;&amp; &lt;time&gt;{formatDate(post.date)}&lt;/time&gt;}</span>
 <span class="cstat-no" title="statement not covered" >                                {post.info &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                        className="blog-info"</span>
+<span class="cstat-no" title="statement not covered" ></span>                                        className="blog-info"
 <span class="cstat-no" title="statement not covered" >                                        dangerouslySetInnerHTML={{</span>
-<span class="cstat-no" title="statement not covered" ></span>                                            __html: post.info,
+<span class="cstat-no" title="statement not covered" >                                            __html: post.info,</span>
 <span class="cstat-no" title="statement not covered" >                                        }}</span>
 <span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                )}</span>
+<span class="cstat-no" title="statement not covered" ></span>                                )}
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>                                {(isPost ||
-<span class="cstat-no" title="statement not covered" >                                    isEntry ||</span>
-<span class="cstat-no" title="statement not covered" >                                    isSubEntry </span>||
-<span class="cstat-no" title="statement not covered" ></span>                                    post.lastUpdated) &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                                    &lt;div classNam</span>e="tools"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                                        {post.lastUpdated &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                                            &lt;div className="last-updated"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {(isPost ||</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    withCitation ||
+<span class="cstat-no" title="statement not covered" >                                    post.lastUpda</span>ted) &amp;&amp; (
+<span class="cstat-no" title="statement not covered" ></span>                                    &lt;div className="tools"&gt;
+<span class="cstat-no" title="statement not covered" >                                        {post.lastUpdated &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" ></span>                                            &lt;div className="last-updated"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                                                &lt;FontAwesomeIcon
 <span class="cstat-no" title="statement not covered" ></span>                                                    icon={faSync}
 <span class="cstat-no" title="statement not covered" ></span>                                                /&gt;
 <span class="cstat-no" title="statement not covered" ></span>                                                &lt;span
-<span class="cstat-no" title="statement not covered" ></span>                                                    dangerouslySetInnerHTML={{
+                                                    dangerouslySetInnerHTML={{
                                                         __html:
                                                             post.lastUpdated,
                                                     }}
                                                 /&gt;
                                             &lt;/div&gt;
                                         )}
-                                        {(isPost || isEntry || isSubEntry) &amp;&amp; (
+                                        {(isPost || withCitation) &amp;&amp; (
                                             &lt;a href="#licence"&gt;
                                                 &lt;FontAwesomeIcon
                                                     icon={faCreativeCommons}
@@ -1158,7 +1142,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                                 Reuse our work freely
                                             &lt;/a&gt;
                                         )}
-                                        {(isEntry || isSubEntry) &amp;&amp; (
+                                        {withCitation &amp;&amp; (
                                             &lt;a href="#citation"&gt;
                                                 &lt;FontAwesomeIcon
                                                     icon={faBook}
@@ -1227,9 +1211,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                                         &lt;/ol&gt;
                                                     &lt;/React.Fragment&gt;
                                                 ) : undefined}
-                                                {(isPost ||
-                                                    isEntry ||
-                                                    isSubEntry) &amp;&amp; (
+                                                {(isPost || withCitation) &amp;&amp; (
                                                     &lt;&gt;
                                                         &lt;h3 id="licence"&gt;
                                                             Reuse our work
@@ -1290,7 +1272,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                                         &lt;/p&gt;
                                                     &lt;/&gt;
                                                 )}
-                                                {(isEntry || isSubEntry) &amp;&amp; (
+                                                {withCitation &amp;&amp; (
                                                     &lt;&gt;
                                                         &lt;h3 id="citation"&gt;
                                                             Citation
@@ -1402,7 +1384,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jul 06 2021 12:09:37 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 07 2021 06:13:55 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
