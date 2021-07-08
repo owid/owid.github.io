@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.07% </span>
+                <span class="strong">16.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/205</span>
+                <span class='fraction'>35/207</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.07% </span>
+                <span class="strong">16.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/205</span>
+                <span class='fraction'>35/207</span>
             </div>
         
             
@@ -317,7 +317,9 @@
 <a name='L258'></a><a href='#L258'>258</a>
 <a name='L259'></a><a href='#L259'>259</a>
 <a name='L260'></a><a href='#L260'>260</a>
-<a name='L261'></a><a href='#L261'>261</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -511,6 +513,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -758,32 +762,32 @@ export namespace Variable {
 <span class="cstat-no" title="statement not covered" >    for (const datum of data) {</span>
 <span class="cstat-no" title="statement not covered" >        if (datum.entity !== row[0] || datum</span>.year !== row[1]) {
 <span class="cstat-no" title="statement not covered" ></span>            // New row
-<span class="cstat-no" title="statement not covered" >            i</span>f (row.length) {
-<span class="cstat-no" title="statement not covered" >                stream.write(arrTo</span>CsvRow(row))
+<span class="cstat-no" title="statement not covered" >            if</span> (row.length) {
+<span class="cstat-no" title="statement not covered" ></span>                stream.write(arrToCsvRow(row))
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            row = [datum</span>.entity, datum.year]
-<span class="cstat-no" title="statement not covered" >            for (const variable of v</span>ariables) {
-<span class="cstat-no" title="statement not covered" ></span>                row.push("")
-<span class="cstat-no" title="statement not covered" ></span>            }
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        row[variableColumnIndex[datum.variableId]] = datum.value</span>
+<span class="cstat-no" title="statement not covered" >            row = [datum.entity, d</span>atum.year]
+<span class="cstat-no" title="statement not covered" >            for (const variable </span>of variables) {
+<span class="cstat-no" title="statement not covered" >                row.push</span>("")
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" ></span>        row[variableColumnIndex[datum.variableId]] = datum.value
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getDataValue = <span class="fstat-no" title="function not covered" >async ({</span>
-<span class="cstat-no" title="statement not covered" >    variableId,</span>
-<span class="cstat-no" title="statement not covered" ></span>    entityId,
+export const getDataValue = async ({
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    variableId,</span></span>
+<span class="cstat-no" title="statement not covered" >    entityId,</span>
 <span class="cstat-no" title="statement not covered" >    year,</span>
-<span class="cstat-no" title="statement not covered" >}: DataValueQueryArgs): Promise&lt;DataValueResult | undefined&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >}: D</span>ataValueQueryArgs): Promise&lt;DataValueResult | undefined&gt; =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!variableId || !entityId) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const queryS</span>tart = `
-<span class="cstat-no" title="statement not covered" >        SELECT value, year, variable</span>s.unit as unit, entities.name as entityName FROM data_values
-<span class="cstat-no" title="statement not covered" ></span>        JOIN entities on entities.id = data_values.entityId
-<span class="cstat-no" title="statement not covered" >        JOIN variables on variables.id = data_values.variableId</span>
-<span class="cstat-no" title="statement not covered" >        WHERE entities.id = ?</span>
-        AND variables.id= ?`
-&nbsp;
+<span class="cstat-no" title="statement not covered" >    const queryStart = `</span>
+<span class="cstat-no" title="statement not covered" >        SELECT value, </span>year, variables.unit as unit, entities.name as entityName FROM data_values
+<span class="cstat-no" title="statement not covered" >        JOIN ent</span>ities on entities.id = data_values.entityId
+<span class="cstat-no" title="statement not covered" >        JOIN variables on variables.</span>id = data_values.variableId
+<span class="cstat-no" title="statement not covered" ></span>        WHERE entities.id = ?
+<span class="cstat-no" title="statement not covered" >        AND variables.id= ?`</span>
+<span class="cstat-no" title="statement not covered" ></span>
     const queryStartVariables = [entityId, variableId]
 &nbsp;
     let row
@@ -802,6 +806,8 @@ export const getDataValue = <span class="fstat-no" title="function not covered" 
             queryStartVariables
         )
     }
+&nbsp;
+    if (!row) return
 &nbsp;
     return {
         value: Number(row.value),
@@ -844,7 +850,7 @@ export const getLegacyVariableDisplayConfig = async (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jul 08 2021 12:19:59 GMT+0000 (Coordinated Universal Time)
+                at Thu Jul 08 2021 14:49:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
