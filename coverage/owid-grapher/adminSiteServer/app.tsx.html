@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.37% </span>
+                <span class="strong">77.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>150/189</span>
+                <span class='fraction'>149/192</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.29% </span>
+                <span class="strong">69.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/14</span>
+                <span class='fraction'>9/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.37% </span>
+                <span class="strong">77.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>150/189</span>
+                <span class='fraction'>149/192</span>
             </div>
         
             
@@ -273,7 +273,14 @@
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
 <a name='L216'></a><a href='#L216'>216</a>
-<a name='L217'></a><a href='#L217'>217</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -443,6 +450,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -458,10 +472,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -491,7 +505,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
 import simpleGit from "simple-git"
-import express from "express"
+import express, { NextFunction } from "express"
 require("express-async-errors") // todo: why the require?
 import cookieParser from "cookie-parser"
 import "reflect-metadata"
@@ -549,7 +563,7 @@ export class OwidAdminApp {
 &nbsp;
     server?: http.Server
     async stopListening() {
-        if (!this.server) return
+        if (!this.server) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
 &nbsp;
         this.server.close()
     }
@@ -584,11 +598,11 @@ export class OwidAdminApp {
         app.get("/admin/*", async (req, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >            res.send(</span>
 <span class="cstat-no" title="statement not covered" >                renderToHtmlPage(</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;IndexPage</span>
-<span class="cstat-no" title="statement not covered" >                        username={res.locals.user.fullName}</span>
-<span class="cstat-no" title="statement not covered" ></span>                        isSuperuser={res.locals.user.isSuperuser}
-<span class="cstat-no" title="statement not covered" ></span>                        gitCmsBranchName={this.gitCmsBranchName}
-<span class="cstat-no" title="statement not covered" ></span>                    /&gt;
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;IndexPage
+<span class="cstat-no" title="statement not covered" >                        username</span>={res.locals.user.fullName}
+<span class="cstat-no" title="statement not covered" >                        isSuperuser={res.locals</span>.user.isSuperuser}
+<span class="cstat-no" title="statement not covered" >                        gitCmsBranchName={this</span>.gitCmsBranchName}
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
@@ -618,7 +632,7 @@ export class OwidAdminApp {
         this.server.timeout = 5 * 60 * 1000 // Increase server timeout for long-running uploads
 &nbsp;
         if (!this.options.quiet)
-<span class="branch-0 cbranch-no" title="branch not covered" >            console.</span>log(
+            console.log(
                 `owid-admin server started on http://${adminServerHost}:${adminServerPort}`
             )
     }
@@ -638,23 +652,30 @@ export class OwidAdminApp {
         })
     }
 &nbsp;
-    errorHandler = <span class="fstat-no" title="function not covered" >async (err: any, req: any, res: express.Response) =&gt; {</span>
+    errorHandler = <span class="fstat-no" title="function not covered" >async (</span>
+<span class="cstat-no" title="statement not covered" >        err: any,</span>
+<span class="cstat-no" title="statement not covered" >        req: express.Request,</span>
+<span class="cstat-no" title="statement not covered" >        res: express.Response,</span>
+<span class="cstat-no" title="statement not covered" >        // keep `next` because Express only passes errors to handlers with 4 parameters.</span>
+<span class="cstat-no" title="statement not covered" >        // eslint</span>-disable-next-line @typescript-eslint/no-unused-vars
+<span class="cstat-no" title="statement not covered" >        next: NextFunction</span>
+<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!res.headersSent) {</span>
-<span class="cstat-no" title="statement not covered" >            res.s</span>tatus(err.status || 500)
+<span class="cstat-no" title="statement not covered" >            res.status(err.status || 500)</span>
 <span class="cstat-no" title="statement not covered" >            res.send({</span>
-<span class="cstat-no" title="statement not covered" >                error: {</span>
+<span class="cstat-no" title="statement not covered" >                error</span>: {
 <span class="cstat-no" title="statement not covered" >                    message: err.stack || err,</span>
-<span class="cstat-no" title="statement not covered" >                    status: err.status || 50</span>0,
+<span class="cstat-no" title="statement not covered" >                    status: err.stat</span>us || 500,
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            res.write(</span>
 <span class="cstat-no" title="statement not covered" >                JSON.stringify({</span>
 <span class="cstat-no" title="statement not covered" >                    error: {</span>
-<span class="cstat-no" title="statement not covered" >                        message: err.sta</span>ck || err,
-<span class="cstat-no" title="statement not covered" >                        status: err.status ||</span> 500,
-<span class="cstat-no" title="statement not covered" >                    },</span>
-<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" >                        message: err.</span>stack || err,
+<span class="cstat-no" title="statement not covered" >                        status: err.status || 500,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    },
+<span class="cstat-no" title="statement not covered" ></span>                })
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >            res.end()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -667,17 +688,17 @@ export class OwidAdminApp {
             // grapher database is in fact required, but we will not fail now in case it
             // comes online later
             if (!this.options.quiet) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                console.error(error)</span>
-<span class="cstat-no" title="statement not covered" ></span>                console.warn(
-<span class="cstat-no" title="statement not covered" ></span>                    "Could not connect to grapher database. Continuing without DB..."
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                cons</span>ole.error(error)</span>
+<span class="cstat-no" title="statement not covered" >                console</span>.warn(
+<span class="cstat-no" title="statement not covered" >                    "Could not connect to grapher database. Continuing wit</span>hout DB..."
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
         }
 &nbsp;
-        if (wpdb.isWordpressDBEnabled) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            try {</span>
-<span class="cstat-no" title="statement not covered" >                await wpdb.singleton.connect()</span>
-<span class="cstat-no" title="statement not covered" >            } catch (error) {</span>
+        if (wpdb.isWordpressDBEnabled) {
+            try {
+                await wpdb.singleton.connect()
+            } catch (error) {
                 if (!this.options.quiet) {
                     console.error(error)
                     console.warn(
@@ -712,7 +733,7 @@ if (!module.parent)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 28 2021 12:55:41 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 28 2021 20:08:00 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
