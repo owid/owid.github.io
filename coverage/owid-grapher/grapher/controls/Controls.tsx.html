@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.72% </span>
+                <span class="strong">57.62% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>209/328</span>
+                <span class='fraction'>189/328</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.78% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/9</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25.93% </span>
+                <span class="strong">14.81% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/27</span>
+                <span class='fraction'>4/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.72% </span>
+                <span class="strong">57.62% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>209/328</span>
+                <span class='fraction'>189/328</span>
             </div>
         
             
@@ -720,30 +720,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1168,31 +1168,31 @@ export class FilterSmallCountriesToggle extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >            : this.filterOption</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get manager(): SmallCountriesFilterManager {
-        return this.props.manager
-    }
+    @computed private get manager<span class="fstat-no" title="function not covered" >(): SmallCountriesFilterManager {</span>
+<span class="cstat-no" title="statement not covered" >        return this.props.manager</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get filterOption(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.populationFilterOption ?? </span>1e6
-    }
+    @computed private get filterOption<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        return this.manager.populationFilterOption ?? </span>1e6
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    render(): JSX.Element {
-        const label = `Hide countries &lt; ${formatValue(
-            this.filterOption,
-            {}
-        )} people`
-        return (
-            &lt;label className="clickable"&gt;
-                &lt;input
-                    type="checkbox"
-                    checked={!!this.manager.minPopulationFilter}
-                    onChange={this.onChange}
-                    data-track-note="chart-filter-small-countries"
-                /&gt;{" "}
-                &amp;nbsp;{label}
-            &lt;/label&gt;
-        )
-    }
+<span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span>
+<span class="cstat-no" title="statement not covered" >        const label = `Hide countries &lt; ${formatVal</span>ue(
+<span class="cstat-no" title="statement not covered" >            this.filterOption,</span>
+<span class="cstat-no" title="statement not covered" >            {}</span>
+<span class="cstat-no" title="statement not covered" >        )} </span>people`
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;label className="clickable"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;input</span>
+<span class="cstat-no" title="statement not covered" ></span>                    type="checkbox"
+<span class="cstat-no" title="statement not covered" ></span>                    checked={!!this.manager.minPopulationFilter}
+<span class="cstat-no" title="statement not covered" ></span>                    onChange={this.onChange}
+<span class="cstat-no" title="statement not covered" >                    data-track-note="chart-filter-small-countries"</span>
+<span class="cstat-no" title="statement not covered" ></span>                /&gt;{" "}
+<span class="cstat-no" title="statement not covered" >                &amp;nbsp;{la</span>bel}
+<span class="cstat-no" title="statement not covered" >            &lt;/label&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;
 export interface FacetStrategyDropdownManager {
@@ -1411,7 +1411,7 @@ export class FooterControls extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 28 2021 08:15:43 GMT+0000 (Coordinated Universal Time)
+                at Wed Jul 28 2021 11:04:57 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
