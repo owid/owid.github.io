@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.11% </span>
+                <span class="strong">25.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>82/314</span>
+                <span class='fraction'>82/318</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.11% </span>
+                <span class="strong">25.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>82/314</span>
+                <span class='fraction'>82/318</span>
             </div>
         
             
@@ -371,7 +371,11 @@
 <a name='L312'></a><a href='#L312'>312</a>
 <a name='L313'></a><a href='#L313'>313</a>
 <a name='L314'></a><a href='#L314'>314</a>
-<a name='L315'></a><a href='#L315'>315</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a>
+<a name='L319'></a><a href='#L319'>319</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -454,6 +458,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -779,17 +787,21 @@ export class Deployer {
 <span class="cstat-no" title="statement not covered" >        // Making sure </span>we have the latest changes from the upstream
 <span class="cstat-no" title="statement not covered" >        // Also, will fail if working copy is not clean</span>
 <span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >            await simpleGit.pull("origin", undefined, { "--rebase": "tru</span>e" })
-<span class="cstat-no" title="statement not covered" >        } catch </span>(err) {
-<span class="cstat-no" title="statement not covered" ></span>            this.printAndExit(JSON.stringify(err))
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >            const gitStatus = await simpleGit.status()</span>
+<span class="cstat-no" title="statement not covered" >            // g</span>itStatus.isClean() checks for staged, unstaged, and untracked files
+<span class="cstat-no" title="statement not covered" ></span>            if (!gitStatus.isClean()) throw "Git working directory is not clean"
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const response = await prompts.prompt({</span>
+<span class="cstat-no" title="statement not covered" >            await simpleGit.</span>pull("origin", undefined, { "--rebase": "true" })
+<span class="cstat-no" title="statement not covered" >        } catch (err) {</span>
+<span class="cstat-no" title="statement not covered" >            this.printAndExit(JSON.strin</span>gify(err))
+<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const response = await prompt</span>s.prompt({
 <span class="cstat-no" title="statement not covered" >            type: "confirm",</span>
 <span class="cstat-no" title="statement not covered" >            name: "confirmed",</span>
-<span class="cstat-no" title="statement not covered" >            message: "Are you sure you want to depl</span>oy to live?",
+<span class="cstat-no" title="statement not covered" >            message: "Are you sure you want to deploy to liv</span>e?",
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        if (!response?.confirmed) this.printAndExit("Cancelled")</span>
+<span class="cstat-no" title="statement not covered" >        if (!response?.confirmed) this.printAndExit("Cancell</span>ed")
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private _simpleGit?: SimpleGit
@@ -949,7 +961,7 @@ export class Deployer {
     private async <span class="fstat-no" title="function not covered" >copyLocalRepoToServerTmpDirectory() {</span>
 <span class="cstat-no" title="statement not covered" >        const { owidGrapherRootDir } = this.options</span>
 <span class="cstat-no" title="statement not covered" >        const { rsyncTargetDir } = this.pathsOnTarget</span>
-<span class="cstat-no" title="statement not covered" >        const RSYNC = `rsync -havz --no-perms --progress --</span>delete --delete-excluded --exclude-from=${owidGrapherRootDir}/.rsync-ignore`
+<span class="cstat-no" title="statement not covered" >        const RSYNC = `rsync -havz --no-perms --progress --</span>delete --delete-excluded --prune-empty-dirs --exclude-from=${owidGrapherRootDir}/.rsync-ignore`
 <span class="cstat-no" title="statement not covered" >        await execWrapper(</span>
 <span class="cstat-no" title="statement not covered" >            `${RSYNC} ${owidGrapherRootDir}/ ${this.sshHost}:${rsyncTargetDir}`</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
@@ -1006,7 +1018,7 @@ export class Deployer {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 02 2021 16:55:06 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 13:37:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
