@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.06% </span>
+                <span class="strong">93.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>456/490</span>
+                <span class='fraction'>458/492</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.12% </span>
+                <span class="strong">73.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>63/85</span>
+                <span class='fraction'>62/84</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.06% </span>
+                <span class="strong">93.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>456/490</span>
+                <span class='fraction'>458/492</span>
             </div>
         
             
@@ -608,7 +608,9 @@
 <a name='L549'></a><a href='#L549'>549</a>
 <a name='L550'></a><a href='#L550'>550</a>
 <a name='L551'></a><a href='#L551'>551</a>
-<a name='L552'></a><a href='#L552'>552</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -853,6 +855,8 @@
 <span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">229x</span>
+<span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">229x</span>
 <span class="cline-any cline-yes">229x</span>
@@ -1266,7 +1270,7 @@ export class DiscreteBarChart
     }
 &nbsp;
     @computed private get isLogScale(): boolean {
-        return this.yAxis.scaleType === ScaleType.log
+        return this.yAxisConfig.scaleType === ScaleType.log
     }
 &nbsp;
     @computed private get bounds(): Bounds {
@@ -1362,13 +1366,13 @@ export class DiscreteBarChart
         ]
     }
 &nbsp;
-    @computed private get yAxis(): AxisConfig {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manage</span>r.yAxis || new AxisConfig()
+    @computed private get yAxisConfig(): AxisConfig {
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.mana</span>ger.yAxis || new AxisConfig()
     }
 &nbsp;
-    @computed private get axis(): HorizontalAxis {
+    @computed get yAxis(): HorizontalAxis {
         // NB: We use the user's YAxis options here to make the XAxis
-        const axis = this.yAxis.toHorizontalAxis()
+        const axis = this.yAxisConfig.toHorizontalAxis()
         axis.updateDomainPreservingUserSettings(this.xDomainDefault)
 &nbsp;
         axis.formatColumn = this.yColumns[0] // todo: does this work for columns as series?
@@ -1380,7 +1384,7 @@ export class DiscreteBarChart
     @computed private get innerBounds(): Bounds {
         return this.bounds
             .padLeft(this.legendWidth + this.leftValueLabelWidth)
-            .padBottom(this.axis.height)
+            .padBottom(this.yAxis.height)
             .padRight(this.rightValueLabelWidth)
     }
 &nbsp;
@@ -1402,13 +1406,15 @@ export class DiscreteBarChart
     }
 &nbsp;
     @computed private get barPlacements(): { x: number; width: number }[] {
-        const { series, axis } = this
+        const { series, yAxis } = this
         return series.map((d) =&gt; {
             const isNegative = d.value &lt; 0
-            const barX = isNegative<span class="branch-0 cbranch-no" title="branch not covered" > ? axis.</span>place(d.value) : axis.place(this.x0)
+            const barX = isNegative<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+                ? yAxis.place(d.value)
+                : yAxis.place(this.x0)
             const barWidth = isNegative<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                ? axis.place(this.x0) - barX</span>
-                : axis.place(d.value) - barX
+<span class="cstat-no" title="statement not covered" >                ? yAxis.place(this.x0) - barX</span>
+                : yAxis.place(d.value) - barX
 &nbsp;
             return { x: barX, width: barWidth }
         })
@@ -1454,7 +1460,7 @@ export class DiscreteBarChart
         const {
             series,
             bounds,
-            axis,
+            yAxis,
             innerBounds,
             barHeight,
             barSpacing,
@@ -1474,22 +1480,22 @@ export class DiscreteBarChart
                 /&gt;
                 &lt;HorizontalAxisComponent
                     bounds={bounds}
-                    axis={axis}
+                    axis={yAxis}
                     axisPosition={innerBounds.bottom}
                 /&gt;
                 &lt;HorizontalAxisGridLines
-                    horizontalAxis={axis}
+                    horizontalAxis={yAxis}
                     bounds={innerBounds}
                 /&gt;
                 {series.map((series) =&gt; {
                     // Todo: add a "placedSeries" getter to get the transformed series, then just loop over the placedSeries and render a bar for each
                     const isNegative = series.value &lt; 0
                     const barX = isNegative<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-                        ? axis.place(series.value)
-                        : axis.place(this.x0)
+                        ? yAxis.place(series.value)
+                        : yAxis.place(this.x0)
                     const barWidth = isNegative
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? axis.place(this.x</span></span>0) - barX
-                        : axis.place(series.value) - barX
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? yAxis.place(this.</span></span>x0) - barX
+                        : yAxis.place(series.value) - barX
                     const valueLabel = this.formatValue(series)
                     const labelX = isNegative
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                        ? barX -</span>
@@ -1534,7 +1540,7 @@ export class DiscreteBarChart
                                 x={0}
                                 y={0}
                                 transform={`translate(${
-                                    axis.place(series.value) +
+                                    yAxis.place(series.value) +
                                     (isNegative<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>                                        ? -labelToBarPadding
                                         : labelToBarPadding)
@@ -1717,7 +1723,7 @@ export class DiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 03 2021 13:37:35 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 15:27:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

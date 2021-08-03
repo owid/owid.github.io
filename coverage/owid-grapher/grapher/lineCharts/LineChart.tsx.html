@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.6% </span>
+                <span class="strong">69.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>451/648</span>
+                <span class='fraction'>454/653</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.16% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>48/76</span>
+                <span class='fraction'>52/78</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.85% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>38/47</span>
+                <span class='fraction'>39/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.6% </span>
+                <span class="strong">69.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>451/648</span>
+                <span class='fraction'>454/653</span>
             </div>
         
             
@@ -848,7 +848,10 @@
 <a name='L789'></a><a href='#L789'>789</a>
 <a name='L790'></a><a href='#L790'>790</a>
 <a name='L791'></a><a href='#L791'>791</a>
-<a name='L792'></a><a href='#L792'>792</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L792'></a><a href='#L792'>792</a>
+<a name='L793'></a><a href='#L793'>793</a>
+<a name='L794'></a><a href='#L794'>794</a>
+<a name='L795'></a><a href='#L795'>795</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1007,7 +1010,7 @@
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
-<span class="cline-any cline-yes">1949x</span>
+<span class="cline-any cline-yes">1967x</span>
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">106x</span>
 <span class="cline-any cline-yes">106x</span>
@@ -1454,7 +1457,7 @@
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">37x</span>
@@ -1484,7 +1487,7 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -1494,10 +1497,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2151,11 +2157,11 @@ export class LineChart
     }
 &nbsp;
     @computed get fontSize(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseFo</span>ntSize ?? BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseFontSize ?? B</span>ASE_FONT_SIZE
     }
 &nbsp;
     @computed get legendX(): number {
-        return this.bounds.right - (<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.legendDimensions?.w</span>idth || 0)</span>
+        return this.bounds.right - (this.legendDimensions?.width || 0)
     }
 &nbsp;
     @computed private get legendDimensions(): LineLegend | undefined {
@@ -2166,8 +2172,8 @@ export class LineChart
 &nbsp;
     render(): JSX.Element {
         if (this.failMessage)
-            return (
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                &lt;NoDataModal
+<span class="branch-0 cbranch-no" title="branch not covered" >            return (</span>
+<span class="cstat-no" title="statement not covered" >                &lt;NoDataModal</span>
                     manager={this.manager}
                     bounds={this.props.bounds}
                     message={this.failMessage}
@@ -2209,25 +2215,25 @@ export class LineChart
                     /&gt;
                 &lt;/g&gt;
                 {<span class="branch-0 cbranch-no" title="branch not covered" >hoverX !== undefined &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;g className="hoverIndicator"&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;g className="hoverIndicator"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                        {this.series.map((series) =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>                            const value = series.points.find(
-<span class="cstat-no" title="statement not covered" >                                (point) =&gt; point.x ==</span>= hoverX
+<span class="cstat-no" title="statement not covered" >                            const value = series.poi</span>nts.find(
+<span class="cstat-no" title="statement not covered" ></span>                                (point) =&gt; point.x === hoverX
 <span class="cstat-no" title="statement not covered" ></span>                            )
-<span class="cstat-no" title="statement not covered" ></span>                            if (!value || this.seriesIsBlurred(series))
-<span class="cstat-no" title="statement not covered" >                                return null</span>
+<span class="cstat-no" title="statement not covered" >                            if (!value || this.series</span>IsBlurred(series))
+<span class="cstat-no" title="statement not covered" ></span>                                return null
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>                            return (
-<span class="cstat-no" title="statement not covered" >                                &lt;circle</span>
+<span class="cstat-no" title="statement not covered" >                            return (</span>
+<span class="cstat-no" title="statement not covered" ></span>                                &lt;circle
 <span class="cstat-no" title="statement not covered" ></span>                                    key={getSeriesKey(series)}
-<span class="cstat-no" title="statement not covered" ></span>                                    cx={horizontalAxis.place(value.x)}
-<span class="cstat-no" title="statement not covered" >                                    cy={vert</span>icalAxis.place(value.y)}
+<span class="cstat-no" title="statement not covered" >                                    cx={horizo</span>ntalAxis.place(value.x)}
+<span class="cstat-no" title="statement not covered" ></span>                                    cy={verticalAxis.place(value.y)}
 <span class="cstat-no" title="statement not covered" ></span>                                    r={4}
-<span class="cstat-no" title="statement not covered" ></span>                                    fill={series.color}
-<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                    fill={se</span>ries.color}
+<span class="cstat-no" title="statement not covered" ></span>                                /&gt;
 <span class="cstat-no" title="statement not covered" ></span>                            )
-<span class="cstat-no" title="statement not covered" ></span>                        })}
-<span class="cstat-no" title="statement not covered" >                        &lt;line</span>
+<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;line
                             x1={horizontalAxis.place(hoverX)}
                             y1={verticalAxis.range[0]}
                             x2={horizontalAxis.place(hoverX)}
@@ -2245,7 +2251,7 @@ export class LineChart
     @computed get failMessage(): string {
         const message = getDefaultFailMessage(this.manager)
         if (message) return message
-        if (!this.series.length) <span class="branch-0 cbranch-no" title="branch not covered" >return "</span>No matching data"
+        if (!this.series.length) return "No matching data"
         return ""
     }
 &nbsp;
@@ -2266,16 +2272,16 @@ export class LineChart
         PrimitiveType,
         Set&lt;PrimitiveType&gt;
     &gt; {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.inputTable</span>
-<span class="cstat-no" title="statement not covered" >            .</span>getAnnotationColumnForColumn(this.yColumnSlugs[0])
+        return this.inputTable
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            .getAnno</span></span>tationColumnForColumn(this.yColumnSlugs[0])
             ?.getUniqueValuesGroupedBy(this.inputTable.entityNameSlug)
     }
 &nbsp;
     getAnnotationsForSeries(seriesName: SeriesName): string | undefined {
         const annotationsMap = this.annotationsMap
         const annos = annotationsMap?.get(seriesName)
-        return annos
-<span class="branch-0 cbranch-no" title="branch not covered" >            ? Array.</span>from(annos.values())
+        return annos<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            ?</span> Array.from(annos.values())
                   .filter((anno) =&gt; anno)
                   .join(" &amp; ")
             : undefined
@@ -2285,13 +2291,13 @@ export class LineChart
         return (
 <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span></span>
 <span class="cstat-no" title="statement not covered" ></span>                ? ColorSchemes[this.manager.baseColorScheme]
-                : null) ?? ColorSchemes["owid-distinct"]
+<span class="cstat-no" title="statement not covered" >                : nu</span>ll) ?? ColorSchemes["owid-distinct"]
         )
     }
 &nbsp;
     @computed get seriesStrategy(): SeriesStrategy {
         const hasNormalAndProjectedSeries =
-            this.yColumns.some((col) =&gt; col.isProjection) &amp;&amp;
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.yColumns.some((col) =</span>&gt; col.isProjection) &amp;&amp;
             this.yColumns.some((col) =&gt; !col.isProjection)
         return autoDetectSeriesStrategy(
             this.manager,
@@ -2373,23 +2379,6 @@ export class LineChart
         })
     }
 &nbsp;
-    // todo: Refactor
-    @computed private get dualAxis(): DualAxis {
-        return new DualAxis({
-            bounds: this.bounds.padRight(
-                this.legendDimensions
-                    ? this.legendDimensions.width
-                    : this.defaultRightPadding
-            ),
-            verticalAxis: this.verticalAxisPart,
-            horizontalAxis: this.horizontalAxisPart,
-        })
-    }
-&nbsp;
-    @computed get verticalAxis(): VerticalAxis {
-        return this.dualAxis.verticalAxis
-    }
-&nbsp;
     @computed private get horizontalAxisPart(): HorizontalAxis {
         const { manager } = this
         const axisConfig =
@@ -2429,6 +2418,26 @@ export class LineChart
         axis.formatColumn = this.formatColumn
         return axis
     }
+&nbsp;
+    @computed private get dualAxis(): DualAxis {
+        return new DualAxis({
+            bounds: this.bounds.padRight(
+                this.legendDimensions
+                    ? this.legendDimensions.width
+                    : this.defaultRightPadding
+            ),
+            verticalAxis: this.verticalAxisPart,
+            horizontalAxis: this.horizontalAxisPart,
+        })
+    }
+&nbsp;
+    @computed get yAxis(): VerticalAxis {
+        return this.dualAxis.verticalAxis
+    }
+&nbsp;
+    @computed get xAxis(): HorizontalAxis {
+        return this.dualAxis.horizontalAxis
+    }
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -2437,7 +2446,7 @@ export class LineChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 03 2021 13:37:35 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 15:27:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
