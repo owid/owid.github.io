@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.93% </span>
+                <span class="strong">85.78% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>727/846</span>
+                <span class='fraction'>724/844</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.52% </span>
+                <span class="strong">75.68% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>108/143</span>
+                <span class='fraction'>112/148</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.93% </span>
+                <span class="strong">85.78% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>727/846</span>
+                <span class='fraction'>724/844</span>
             </div>
         
             
@@ -1032,11 +1032,7 @@
 <a name='L973'></a><a href='#L973'>973</a>
 <a name='L974'></a><a href='#L974'>974</a>
 <a name='L975'></a><a href='#L975'>975</a>
-<a name='L976'></a><a href='#L976'>976</a>
-<a name='L977'></a><a href='#L977'>977</a>
-<a name='L978'></a><a href='#L978'>978</a>
-<a name='L979'></a><a href='#L979'>979</a>
-<a name='L980'></a><a href='#L980'>980</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L976'></a><a href='#L976'>976</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1344,8 +1340,8 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1632,7 +1628,7 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
@@ -1706,10 +1702,6 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1733,9 +1725,9 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1882,8 +1874,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2397,13 +2389,13 @@ export class ScatterPlotChart
 &nbsp;
     @computed get displayStartTime(): string {
         return this.transformedTable.timeColumnFormatFunction(
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.tra</span>nsformedTable.minTime ?? 1900
+            this.transformedTable.minTime ?? 1900
         )
     }
 &nbsp;
     @computed get displayEndTime(): string {
         return this.transformedTable.timeColumnFormatFunction(
-            this.transformedTable.maxTime ?? 2000
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.transformedTable.maxTime ?? 2000</span>
         )
     }
 &nbsp;
@@ -2418,15 +2410,15 @@ export class ScatterPlotChart
     }
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onScatterMouseOver(series: ScatterSeries): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoveredSeries = series.seriesName</span>
+<span class="cstat-no" title="statement not covered" >        this.hoveredSeries = series.seriesNa</span>me
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onScatterMouseLeave(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoveredSeries = undefined</span>
+    @action.bound private onScatterMouseLeave(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hoveredSeries = undefined</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private onScatterClick(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (this.hoveredSeries) this.onSe</span>lectEntity(this.hoveredSeries)</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >onScatterClick(): void {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.ho</span>veredSeries) this.onSelectEntity(this.hoveredSeries)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get tooltipSeries(): ScatterSeries | undefined {
@@ -2475,8 +2467,8 @@ export class ScatterPlotChart
         })
     }
 &nbsp;
-    @computed get yAxis<span class="fstat-no" title="function not covered" >(): VerticalAxis {</span>
-<span class="cstat-no" title="statement not covered" >        return this.dualAxis.verticalAxis</span>
+    @computed get yAxis(): VerticalAxis {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.dualAxis.vert</span>icalAxis</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get xAxis<span class="fstat-no" title="function not covered" >(): HorizontalAxis {</span>
@@ -2489,9 +2481,9 @@ export class ScatterPlotChart
         return this.manager.comparisonLines
     }
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onToggleEndpoints(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.manager.compareEndPointsOnly =</span>
-<span class="cstat-no" title="statement not covered" ></span>            !this.compareEndPointsOnly || undefined
+    @action.bound private onToggleEndpoints(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.manager.co</span>mpareEndPointsOnly =</span>
+<span class="cstat-no" title="statement not covered" >            !this.compareEndPointsOnly || u</span>ndefined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Colors currently on the chart and not greyed out
@@ -2657,7 +2649,7 @@ export class ScatterPlotChart
 &nbsp;
     @computed get colorScaleConfig(): ColorScaleConfigDefaults | undefined {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            ColorScaleConfig.fromDSL(this.colorColumn.d</span>ef) ??
+<span class="branch-0 cbranch-no" title="branch not covered" >            ColorSca</span>leConfig.fromDSL(this.colorColumn.def) ??
             this.manager.colorScale
         )
     }
@@ -2673,15 +2665,11 @@ export class ScatterPlotChart
     }
 &nbsp;
     @computed private get yAxisConfig(): AxisConfig {
-        return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager</span>.yAxis ?? new AxisConfig(this.manager.yAxisConfig, this)
-        )
+        return new AxisConfig(this.manager.yAxisConfig, this)
     }
 &nbsp;
     @computed private get xAxisConfig(): AxisConfig {
-        return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.man</span>ager.xAxis ?? new AxisConfig(this.manager.xAxisConfig, this)
-        )
+        return new AxisConfig(this.manager.xAxisConfig, this)
     }
 &nbsp;
     @computed private get yColumnSlug(): string {
@@ -2694,7 +2682,7 @@ export class ScatterPlotChart
 &nbsp;
     @computed private get xColumnSlug(): string {
         const { xColumnSlug } = this.manager
-        return xColumnSlug ?? this.manager.table.numericColumnSlugs[1]
+        return <span class="branch-0 cbranch-no" title="branch not covered" >xColu</span>mnSlug ?? this.manager.table.numericColumnSlugs[1]
     }
 &nbsp;
     @computed private get xColumn(): CoreColumn {
@@ -2714,18 +2702,18 @@ export class ScatterPlotChart
 &nbsp;
         if (this.yColumn.isMissing) return "Missing X axis variable"
 &nbsp;
-        if (isEmpty(this.allEntityNamesWithXAndY)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            i</span>f (
-<span class="cstat-no" title="statement not covered" >                this</span>.manager.isRelativeMode &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                this.manager.hasTimeline &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" ></span>                this.manager.startTime === this.manager.endTime
+        if (isEmpty(this.allEntityNamesWithXAndY)) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            if (</span></span>
+<span class="cstat-no" title="statement not covered" >                this.manager.isRelativeMode &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" ></span>                this.manager.hasTimeline &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                this</span>.manager.startTime === this.manager.endTime
 <span class="cstat-no" title="statement not covered" >            ) {</span>
-<span class="cstat-no" title="statement not covered" >                return "Please select a start and end poi</span>nt on the timeline below"
+<span class="cstat-no" title="statement not covered" ></span>                return "Please select a start and end point on the timeline below"
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            return "</span>No entities with data for both X and Y"
+<span class="cstat-no" title="statement not covered" >            return "No entities with data for both X and </span>Y"
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
-        if (isEmpty(this.series)) return "No matching data"
+        if (isEmpty(this.series)) <span class="branch-0 cbranch-no" title="branch not covered" >return "</span>No matching data"
 &nbsp;
         return ""
     }
@@ -2755,11 +2743,11 @@ export class ScatterPlotChart
         filterBackgroundEntities = this.hideBackgroundEntities
     ): Set&lt;SeriesName&gt; {
         const seriesNames = filterBackgroundEntities
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? this.s</span></span>electionArray.selectedEntityNames
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? this.selectionArray.selectedEntityNames</span></span>
             : this.allEntityNamesWithXAndY
 &nbsp;
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.man</span>ager.matchingEntitiesOnly &amp;&amp; !this.colorColumn.isMissing)
-<span class="branch-0 cbranch-no" title="branch not covered" >            return n</span>ew Set(
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.matchingEntitiesOnly &amp;&amp; !thi</span>s.colorColumn.isMissing)
+            return new Set(
                 intersection(seriesNames, this.colorColumn.uniqEntityNames)
             )
 &nbsp;
@@ -2781,18 +2769,18 @@ export class ScatterPlotChart
             return domainExtent(
                 this.pointsForAxisDomains.map((point) =&gt; point[property]),
                 scaleType,
-                this.manager.zoomToSelection &amp;&amp; this.selectedPoints.length
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                    ? 1.1
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this</span>.manager.zoomToSelection &amp;&amp; this.selectedPoints.length</span>
+<span class="cstat-no" title="statement not covered" >                    ? 1.1</span>
                     : 1
             )
         }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (t</span>his.manager.isRelativeMode)
-<span class="cstat-no" title="statement not covered" >            return r</span>elativeMinAndMax(this.allPoints, property)
+<span class="cstat-no" title="statement not covered" >        if (this.man</span>ager.isRelativeMode)
+<span class="cstat-no" title="statement not covered" >            return relativeMinAndMax(this.allPoints, </span>property)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n domainExtent(
-<span class="cstat-no" title="statement not covered" >            this.all</span>Points.map((v) =&gt; v[property]),
-<span class="cstat-no" title="statement not covered" >            scaleType</span>
+<span class="cstat-no" title="statement not covered" >        return domai</span>nExtent(
+<span class="cstat-no" title="statement not covered" >            this.allPoints.map((v) =&gt; v[property]</span>),
+<span class="cstat-no" title="statement not covered" >            s</span>caleType
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2800,10 +2788,10 @@ export class ScatterPlotChart
         return this.domainDefault("x")
     }
 &nbsp;
-    @computed private get selectedPoints(): SeriesPoint[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const seriesNamesSet = this.getSeriesNamesTo</span>Show(true)</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.allPoints.filter(
-<span class="cstat-no" title="statement not covered" >            (point) </span>=&gt; point.entityName &amp;&amp; seriesNamesSet.has(point.entityName)
+    @computed private get selectedPoints<span class="fstat-no" title="function not covered" >(): SeriesPoint[] {</span>
+<span class="cstat-no" title="statement not covered" >        const</span> seriesNamesSet = this.getSeriesNamesToShow(true)
+<span class="cstat-no" title="statement not covered" >        return this.</span>allPoints.filter(
+<span class="cstat-no" title="statement not covered" >            (point) =&gt; point.entityName &amp;&amp; seriesNam</span>esSet.has(point.entityName)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2814,7 +2802,7 @@ export class ScatterPlotChart
         )
 <span class="branch-0 cbranch-no" title="branch not covered" >            return this.allPoints</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.selectedPoints.length ? this.selectedPoints : this.allPoints
+<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span></span>selectedPoints.length ? this.selectedPoints : this.allPoints
     }
 &nbsp;
     @computed private get sizeDomain(): [number, number] {
@@ -2826,9 +2814,9 @@ export class ScatterPlotChart
     }
 &nbsp;
     @computed private get yScaleType(): ScaleType {
-        return this.manager.isRelativeMode
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? ScaleT</span></span>ype.linear
-            : <span class="branch-0 cbranch-no" title="branch not covered" >this.yAxisConfig.scaleType || ScaleType.linear</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.isRelativeMode</span>
+<span class="cstat-no" title="statement not covered" >            ? ScaleType.linear</span>
+            : this.yAxisConfig.scaleType || ScaleType.linear
     }
 &nbsp;
     @computed private get yDomainDefault(): [number, number] {
@@ -2846,10 +2834,10 @@ export class ScatterPlotChart
 &nbsp;
         if (manager.isRelativeMode) {
             axis.domain = yDomainDefault // Overwrite user's min/max
-            if (label &amp;&amp; label.length &gt; 1) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>                axis.label = `Average annual change in ${lowerCaseFirstLetterUnlessAbbreviation(
-<span class="cstat-no" title="statement not covered" ></span>                    label
-<span class="cstat-no" title="statement not covered" >                )}`</span>
+            if (label &amp;&amp; label.length &gt; 1) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                axis</span>.label = `Average annual change in ${lowerCaseFirstLetterUnlessAbbreviation(</span>
+<span class="cstat-no" title="statement not covered" >                    label</span>
+<span class="cstat-no" title="statement not covered" ></span>                )}`
 <span class="cstat-no" title="statement not covered" >            }</span>
         } else {
             axis.updateDomainPreservingUserSettings(yDomainDefault)
@@ -2861,8 +2849,8 @@ export class ScatterPlotChart
 &nbsp;
     @computed private get xScaleType(): ScaleType {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.isRelativeMode</span>
-            ? ScaleType.linear
-            : this.xAxisConfig.scaleType ?? ScaleType.linear
+<span class="cstat-no" title="statement not covered" >            ? ScaleType.linear</span>
+            : <span class="branch-0 cbranch-no" title="branch not covered" >this.xAxisConfig.scaleType ?? S</span>caleType.linear
     }
 &nbsp;
     @computed private get xAxisLabelBase(): string {
@@ -3001,7 +2989,7 @@ export class ScatterPlotChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 03 2021 15:27:07 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 15:54:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

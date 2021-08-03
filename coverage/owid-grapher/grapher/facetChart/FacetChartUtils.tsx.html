@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.57% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/35</span>
+                <span class='fraction'>24/28</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.57% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/35</span>
+                <span class='fraction'>24/28</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -83,77 +83,56 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { BASE_FONT_SIZE } from "../core/GrapherConstants"
 &nbsp;
 // not sure if we want to do something more sophisticated
 export const getFontSize = (
     count: number,
     baseFontSize = BASE_FONT_SIZE,
-    min = 8
+    minSize = 8
 ): number =&gt; {
-    if (count === 2) return baseFontSize
-    if (count &lt; 5) <span class="branch-0 cbranch-no" title="branch not covered" >return baseFontSize - 2</span>
-<span class="cstat-no" title="statement not covered" >    if (count &lt; 10) </span>return baseFontSize - 4
-<span class="cstat-no" title="statement not covered" >    if (count &lt; 17) return baseFo</span>ntSize - 6
-<span class="cstat-no" title="statement not covered" >    if (count &lt; 36) </span>return baseFontSize - 8
-<span class="cstat-no" title="statement not covered" >    return min</span>
+    if (count &lt;= 2) return Math.max(minSize, baseFontSize * (16 / 16))
+    if (count &lt;= 4) <span class="branch-0 cbranch-no" title="branch not covered" >return M</span>ath.max(minSize, baseFontSize * (14.5 / 16))
+    if (count &lt;= 9) return Math.max(minSize, baseFontSize * (13 / 16))
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    if (count &lt;= 16) return Math.max(minSize, baseFontSize *</span> (12 / 16))</span>
+<span class="cstat-no" title="statement not covered" >    if (count &lt;= 25) </span>return Math.max(minSize, baseFontSize * (11 / 16))
+<span class="cstat-no" title="statement not covered" >    return minSize</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const getChartPadding = (
-    count: number
+    count: number,
+    baseFontSize: number
 ): { rowPadding: number; columnPadding: number; outerPadding: number } =&gt; {
-    if (count &gt; 9) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >            rowPa</span>dding: 20,
-<span class="cstat-no" title="statement not covered" >            columnPadding: 2</span>0,
-<span class="cstat-no" title="statement not covered" >            outerPadding: 20,</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
     return {
-        rowPadding: 40,
-        columnPadding: 40,
-        outerPadding: 20,
+        rowPadding: Math.round(baseFontSize * 3.5),
+        columnPadding: Math.round(baseFontSize),
+        outerPadding: 0,
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -163,7 +142,7 @@ export const getChartPadding = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 03 2021 15:27:07 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 15:54:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.71% </span>
+                <span class="strong">55.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/56</span>
+                <span class='fraction'>33/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">53.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>8/15</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.71% </span>
+                <span class="strong">55.93% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/56</span>
+                <span class='fraction'>33/59</span>
             </div>
         
             
@@ -138,7 +138,13 @@
 <a name='L79'></a><a href='#L79'>79</a>
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -152,25 +158,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
-<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -193,7 +198,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">104x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,7 +241,6 @@ export interface TickFormattingOptions {
     numberPrefixes?: boolean
     shortNumberPrefixes?: boolean
     showPlus?: boolean
-    isFirstOrLastTick?: boolean
 }
 &nbsp;
 // todo: Should this be numberSuffixes instead of Prefixes?
@@ -240,11 +251,11 @@ export function formatValue(
 ): string {
     const noTrailingZeroes = <span class="branch-0 cbranch-no" title="branch not covered" >opti</span>ons.noTrailingZeroes ?? true
     const numberPrefixes =
-<span class="branch-0 cbranch-no" title="branch not covered" >        (options.numberPrefixes || options.shortNumberPrefixes) ?? t</span>rue
+<span class="branch-0 cbranch-no" title="branch not covered" >        (options.numberPrefixes || </span>options.shortNumberPrefixes) ?? true
 &nbsp;
-    const shortNumberPrefixes = <span class="branch-0 cbranch-no" title="branch not covered" >options.shortNumberPrefixes ?? f</span>alse
+    const shortNumberPrefixes = <span class="branch-0 cbranch-no" title="branch not covered" >op</span>tions.shortNumberPrefixes ?? false
     const showPlus = options.showPlus ?? false
-    const numDecimalPlaces = <span class="branch-0 cbranch-no" title="branch not covered" >options.numDecimalPlaces ?? 2</span>
+    const numDecimalPlaces = <span class="branch-0 cbranch-no" title="branch not covered" >optio</span>ns.numDecimalPlaces ?? 2
     const unit = options.unit ?? ""
     const isNoSpaceUnit = options.noSpaceUnit ?? unit[0] === "%"
 &nbsp;
@@ -252,28 +263,35 @@ export function formatValue(
 &nbsp;
     const absValue = Math.abs(value)
     if (!isNoSpaceUnit &amp;&amp; numberPrefixes &amp;&amp; absValue &gt;= 1e6) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        if (!isFinite(absValue)) output = "In</span>finity"</span>
-<span class="cstat-no" title="statement not covered" >        el</span>se if (absValue &gt;= 1e12)
-<span class="cstat-no" title="statement not covered" >            o</span>utput = formatValue(value / 1e12, {
-<span class="cstat-no" title="statement not covered" >                ...options,</span>
-<span class="cstat-no" title="statement not covered" >                unit: shortNumbe</span>rPrefixes ? "T" : "trillion",
-<span class="cstat-no" title="statement not covered" >                noSpaceUnit: shortNumberP</span>refixes,
-<span class="cstat-no" title="statement not covered" >                numDecimalPlaces: 2,</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        else if (absValue &gt;= 1e</span>9)
-<span class="cstat-no" title="statement not covered" >            output = formatValue(value / 1e9, {</span>
-<span class="cstat-no" title="statement not covered" >                ...options,</span>
-<span class="cstat-no" title="statement not covered" ></span>                unit: shortNumberPrefixes ? "B" : "billion",
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        if (!isFinite(absValue)) output = "Infinity"</span></span>
+<span class="cstat-no" title="statement not covered" >        else if (absValue &gt;</span>= 1e12)
+<span class="cstat-no" title="statement not covered" >            output = formatValue(value / 1e12,</span> {
+<span class="cstat-no" title="statement not covered" >                .</span>..options,
+<span class="cstat-no" title="statement not covered" >                unit: shortNumberPrefixes ? "</span>T" : "trillion",
 <span class="cstat-no" title="statement not covered" ></span>                noSpaceUnit: shortNumberPrefixes,
-<span class="cstat-no" title="statement not covered" >                numDecimalPlaces: 2,</span>
-<span class="cstat-no" title="statement not covered" >            })</span>
-<span class="cstat-no" title="statement not covered" >        else if (absValue &gt;=</span> 1e6)
-<span class="cstat-no" title="statement not covered" >            output = formatValue</span>(value / 1e6, {
-<span class="cstat-no" title="statement not covered" >                ...options,</span>
-<span class="cstat-no" title="statement not covered" >                unit: shortNumberPrefi</span>xes ? "M" : "million",
-<span class="cstat-no" title="statement not covered" >                noS</span>paceUnit: shortNumberPrefixes,
 <span class="cstat-no" title="statement not covered" ></span>                numDecimalPlaces: 2,
 <span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        else if (absValue &gt;= 1e9</span>)
+<span class="cstat-no" title="statement not covered" >            output = formatValue(value / </span>1e9, {
+<span class="cstat-no" title="statement not covered" >                ...options,</span>
+<span class="cstat-no" title="statement not covered" >                uni</span>t: shortNumberPrefixes ? "B" : "billion",
+<span class="cstat-no" title="statement not covered" >                noSpaceUnit: sh</span>ortNumberPrefixes,
+<span class="cstat-no" title="statement not covered" >                numDecimalPlaces: 2,</span>
+<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" >        el</span>se if (absValue &gt;= 1e6)
+<span class="cstat-no" title="statement not covered" ></span>            output = formatValue(value / 1e6, {
+<span class="cstat-no" title="statement not covered" >                ...options,</span>
+<span class="cstat-no" title="statement not covered" >                unit: shortNumbe</span>rPrefixes ? "M" : "million",
+<span class="cstat-no" title="statement not covered" >                noSpaceUnit:</span> shortNumberPrefixes,
+<span class="cstat-no" title="statement not covered" >                numDecimalPlaces</span>: 2,
+<span class="cstat-no" title="statement not covered" >            })</span>
+    } else if (<span class="branch-0 cbranch-no" title="branch not covered" >!isNoSpaceUnit &amp;&amp; short</span>NumberPrefixes &amp;&amp; absValue &gt;= 1e3) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        output = fo</span>rmatValue(value / 1e3, {</span>
+<span class="cstat-no" title="statement not covered" ></span>            ...options,
+<span class="cstat-no" title="statement not covered" >            unit: "k",</span>
+<span class="cstat-no" title="statement not covered" >            noSpaceUnit: true,</span>
+            numDecimalPlaces: 2,
+        })
     } else {
         const targetDigits = Math.pow(10, -numDecimalPlaces)
 &nbsp;
@@ -307,7 +325,7 @@ export function formatValue(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 03 2021 15:27:07 GMT+0000 (Coordinated Universal Time)
+                at Tue Aug 03 2021 15:54:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
