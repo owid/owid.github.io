@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.93% </span>
+                <span class="strong">52.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>199/376</span>
+                <span class='fraction'>198/377</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.93% </span>
+                <span class="strong">52.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>199/376</span>
+                <span class='fraction'>198/377</span>
             </div>
         
             
@@ -566,7 +566,9 @@
 <a name='L507'></a><a href='#L507'>507</a>
 <a name='L508'></a><a href='#L508'>508</a>
 <a name='L509'></a><a href='#L509'>509</a>
-<a name='L510'></a><a href='#L510'>510</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -713,6 +715,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -941,7 +945,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1221,20 +1225,22 @@ export class FacetYDomainToggle extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" ></span>            : FacetAxisDomain.shared
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get isYDomainShared(): boolean {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return </span>this.props.manager.yAxis!.facetDomain === FacetAxisDomain.shared</span>
+    @computed get isYDomainShared<span class="fstat-no" title="function not covered" >(): boolean {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const facetDomain =
+<span class="cstat-no" title="statement not covered" >            thi</span>s.props.manager.yAxis!.facetDomain || FacetAxisDomain.shared
+<span class="cstat-no" title="statement not covered" >        return facetDomain === FacetAxisDomain.shared</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" ></span>        return (
 <span class="cstat-no" title="statement not covered" ></span>            &lt;label className="clickable"&gt;
 <span class="cstat-no" title="statement not covered" ></span>                &lt;input
-<span class="cstat-no" title="statement not covered" ></span>                    type="checkbox"
-<span class="cstat-no" title="statement not covered" >                    chec</span>ked={this.isYDomainShared}
-<span class="cstat-no" title="statement not covered" >                    onChange={this.onToggle}</span>
+<span class="cstat-no" title="statement not covered" >                    type</span>="checkbox"
+<span class="cstat-no" title="statement not covered" >                    checked={this.isYDomainShared}</span>
+<span class="cstat-no" title="statement not covered" ></span>                    onChange={this.onToggle}
 <span class="cstat-no" title="statement not covered" ></span>                    data-track-note="chart-facet-ydomain-toggle"
-<span class="cstat-no" title="statement not covered" >                /&gt;{"</span> "}
-<span class="cstat-no" title="statement not covered" >                &amp;nbsp;Uniform y-axis</span>
+<span class="cstat-no" title="statement not covered" >                /&gt;{" "}</span>
+<span class="cstat-no" title="statement not covered" >                &amp;nbsp;Uniform y-ax</span>is
 <span class="cstat-no" title="statement not covered" >            &lt;/label&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -1248,11 +1254,11 @@ export interface ZoomToggleManager {
 export class ZoomToggle extends React.Component&lt;{
     manager: ZoomToggleManager
 }&gt; {
-    @action.bound <span class="fstat-no" title="function not covered" >onToggle(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.prop</span>s.manager.zoomToSelection = this.props.manager.zoomToSelection
-<span class="cstat-no" title="statement not covered" >            ? undefin</span>ed
+    @action.bound onToggle(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.props.ma</span>nager.zoomToSelection = this.props.manager.zoomToSelection</span>
+<span class="cstat-no" title="statement not covered" ></span>            ? undefined
 <span class="cstat-no" title="statement not covered" ></span>            : true
-<span class="cstat-no" title="statement not covered" ></span>    }
+<span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render(): JSX.Element {
         const label = "Zoom to selection"
@@ -1281,8 +1287,8 @@ export class FilterSmallCountriesToggle extends React.Component&lt;{
 }&gt; {
     @action.bound private onChange(): void {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        this.manager.minPopulationFilter = this.manager.minPopulationFilter</span>
-<span class="cstat-no" title="statement not covered" ></span>            ? undefined
-<span class="cstat-no" title="statement not covered" >            :</span> this.filterOption
+<span class="cstat-no" title="statement not covered" >            ?</span> undefined
+<span class="cstat-no" title="statement not covered" >            : this.filte</span>rOption
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get manager(): SmallCountriesFilterManager {
@@ -1290,7 +1296,7 @@ export class FilterSmallCountriesToggle extends React.Component&lt;{
     }
 &nbsp;
     @computed private get filterOption(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.populationFilterOption ?? 1e6</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.populationFilt</span>erOption ?? 1e6
     }
 &nbsp;
     render(): JSX.Element {
@@ -1328,17 +1334,17 @@ export class FacetStrategyDropdown extends React.Component&lt;{
 <span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;Tippy</span>
-<span class="cstat-no" title="statement not covered" >                content={this.content}</span>
-<span class="cstat-no" title="statement not covered" ></span>                interactive={true}
-<span class="cstat-no" title="statement not covered" >                trigger={"click"}</span>
-<span class="cstat-no" title="statement not covered" >                plac</span>ement={"bottom-start"}
+<span class="cstat-no" title="statement not covered" ></span>                content={this.content}
+<span class="cstat-no" title="statement not covered" >                interactive={true}</span>
+<span class="cstat-no" title="statement not covered" >                trig</span>ger={"click"}
+<span class="cstat-no" title="statement not covered" >                placement={"bottom-start"}</span>
 <span class="cstat-no" title="statement not covered" >                arrow={false}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className="Facet</span>StrategyDropdown"
-<span class="cstat-no" title="statement not covered" >                    style={{ width: this.dropDownWidth }}</span>
+<span class="cstat-no" title="statement not covered" >                    className="FacetStrategyDropdown"</span>
+<span class="cstat-no" title="statement not covered" >                    style={{ width: t</span>his.dropDownWidth }}
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {this.facetStrategyLabels[this.fac</span>etStrategy]}
+<span class="cstat-no" title="statement not covered" >                    {this.facetStrategyLabels[this.facetStrategy]}</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;FontAwesomeIcon icon={faChevronDown} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
@@ -1348,82 +1354,82 @@ export class FacetStrategyDropdown extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get facetStrategyLabels<span class="fstat-no" title="function not covered" >(): { [key in FacetStrategy]: string } {</span>
-<span class="cstat-no" title="statement not covered" >        // arbitrary entity names can be too </span>long for our current design; as a trade-off,
-<span class="cstat-no" title="statement not covered" >        // we accept them only if they are not too long, oth</span>erwise we just use "item"
-<span class="cstat-no" title="statement not covered" >        const entityType = this.props.manager.entityType ?? "count</span>ry"
-<span class="cstat-no" title="statement not covered" >        const entityLabel</span> =
+<span class="cstat-no" title="statement not covered" >        // arbitrary entity names can be too long for our cu</span>rrent design; as a trade-off,
+<span class="cstat-no" title="statement not covered" >        // we accept them only if they are not too long, otherwise</span> we just use "item"
+<span class="cstat-no" title="statement not covered" >        const entityType </span>= this.props.manager.entityType ?? "country"
+<span class="cstat-no" title="statement not covered" >        const entityLabel =</span>
 <span class="cstat-no" title="statement not covered" >            entityType.length &gt; "country".length ? "item" : entityType</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retu</span>rn {
-<span class="cstat-no" title="statement not covered" >            [FacetStrategy.none]: "All together",</span>
-<span class="cstat-no" title="statement not covered" ></span>            [FacetStrategy.entity]: `Split by ${entityLabel}`,
-<span class="cstat-no" title="statement not covered" >            [FacetStrategy</span>.column]: "Split by metric",
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+<span class="cstat-no" title="statement not covered" ></span>            [FacetStrategy.none]: "All together",
+<span class="cstat-no" title="statement not covered" >            [FacetStrategy</span>.entity]: `Split by ${entityLabel}`,
+<span class="cstat-no" title="statement not covered" >            [FacetStrategy.metric]: "Split by metric",</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" ></span>    }
 &nbsp;
     @computed get strategies(): FacetStrategy[] {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return (</span></span>
-<span class="cstat-no" title="statement not covered" >            this.props.manager.availableFacetStrategies || [</span>
-<span class="cstat-no" title="statement not covered" ></span>                FacetStrategy.none,
-<span class="cstat-no" title="statement not covered" >                Face</span>tStrategy.entity,
-<span class="cstat-no" title="statement not covered" >                FacetStrategy.column,</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.props.manager.availableFacetStrategies || [
+<span class="cstat-no" title="statement not covered" >                Face</span>tStrategy.none,
+<span class="cstat-no" title="statement not covered" >                FacetStrategy.entity,</span>
+<span class="cstat-no" title="statement not covered" ></span>                FacetStrategy.metric,
 <span class="cstat-no" title="statement not covered" >            ]</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get dropDownWidth(): string {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const maxWidth = Math.max(</span></span>
-<span class="cstat-no" title="statement not covered" >            .</span>..this.strategies.map(
-<span class="cstat-no" title="statement not covered" >                (s) </span>=&gt;
-<span class="cstat-no" title="statement not covered" >                    Bounds.forText(this.facetStrategyLabels[</span>s], {
-<span class="cstat-no" title="statement not covered" >                        fontSize: 12,</span>
-<span class="cstat-no" title="statement not covered" >                    }).wid</span>th
+    @computed get dropDownWidth<span class="fstat-no" title="function not covered" >(): string {</span>
+<span class="cstat-no" title="statement not covered" >        const</span> maxWidth = Math.max(
+<span class="cstat-no" title="statement not covered" >            ...this.</span>strategies.map(
+<span class="cstat-no" title="statement not covered" >                (s) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    Bounds.forText(th</span>is.facetStrategyLabels[s], {
+<span class="cstat-no" title="statement not covered" >                        fo</span>ntSize: 12,
+<span class="cstat-no" title="statement not covered" >                    }).widt</span>h
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        return `${maxWidth + 45}px` // leave room for the chevron</span>
+<span class="cstat-no" title="statement not covered" >        return `${ma</span>xWidth + 45}px` // leave room for the chevron
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // A hovering visual display giving options to be selected from
-    @computed get content(): JSX.Element {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const parts = this.strategies.map((value: FacetStrategy) =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" ></span>            const label = this.facetStrategyLabels[value]
-<span class="cstat-no" title="statement not covered" >            const children</span> =
-<span class="cstat-no" title="statement not covered" >                value === FacetStrategy.none ? (</span>
-<span class="cstat-no" title="statement not covered" ></span>                    // a single solid block
-<span class="cstat-no" title="statement not covered" >                    &lt;div</span> className="FacetStrategyPreview-none-child"&gt;&lt;/div&gt;
+    @computed get content<span class="fstat-no" title="function not covered" >(): JSX.Element {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const parts = this.strategies.map((value: FacetStrategy) =&gt; {
+<span class="cstat-no" title="statement not covered" >            const label = </span>this.facetStrategyLabels[value]
+<span class="cstat-no" title="statement not covered" >            const children =</span>
+<span class="cstat-no" title="statement not covered" ></span>                value === FacetStrategy.none ? (
+<span class="cstat-no" title="statement not covered" >                    // a</span> single solid block
+<span class="cstat-no" title="statement not covered" >                    &lt;div className</span>="FacetStrategyPreview-none-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                ) : (</span>
 <span class="cstat-no" title="statement not covered" >                    // a 3x2 grid of squares</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyP</span>review-split-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyPreview-split-child"&gt;&lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyPreview</span>-split-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="Face</span>tStrategyPreview-split-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="F</span>acetStrategyPreview-split-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyPreview-split-c</span>hild"&gt;&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyPreview-s</span>plit-child"&gt;&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >                    &lt;/&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            return (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className={classnames({</span>
-<span class="cstat-no" title="statement not covered" >                        FacetStrategyOpt</span>ion: true,
+<span class="cstat-no" title="statement not covered" >                    className={classname</span>s({
+<span class="cstat-no" title="statement not covered" >                        FacetStrategyOption: true,</span>
 <span class="cstat-no" title="statement not covered" >                        selected: value === this.facetStrategy,</span>
 <span class="cstat-no" title="statement not covered" >                    })}</span>
-<span class="cstat-no" title="statement not covered" >                    key={value.toString()}</span>
+<span class="cstat-no" title="statement not covered" >                    key={value.toString</span>()}
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;a</span>
 <span class="cstat-no" title="statement not covered" >                        onClick={(): void =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >                            this.props.manager.facetStrategy = value</span>
 <span class="cstat-no" title="statement not covered" >                        }}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;div className="FacetStrategyLabel"&gt;{label}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;div className="FacetStrategyLabel"&gt;{label}&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;div className={`FacetStrategyPreview-parent`}&gt;
 <span class="cstat-no" title="statement not covered" ></span>                            {children}
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/a&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;div className="FacetStrategyFloat"&gt;{parts}&lt;/div&gt;</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;div className=</span>"FacetStrategyFloat"&gt;{parts}&lt;/div&gt;
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get facetStrategy<span class="fstat-no" title="function not covered" >(): FacetStrategy {</span>
@@ -1591,7 +1597,7 @@ export class FooterControls extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 05 2021 16:15:21 GMT+0000 (Coordinated Universal Time)
+                at Thu Aug 05 2021 16:27:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

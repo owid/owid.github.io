@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.65% </span>
+                <span class="strong">98.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>365/370</span>
+                <span class='fraction'>367/372</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.65% </span>
+                <span class="strong">98.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>365/370</span>
+                <span class='fraction'>367/372</span>
             </div>
         
             
@@ -519,7 +519,10 @@
 <a name='L460'></a><a href='#L460'>460</a>
 <a name='L461'></a><a href='#L461'>461</a>
 <a name='L462'></a><a href='#L462'>462</a>
-<a name='L463'></a><a href='#L463'>463</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -625,9 +628,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -638,6 +641,9 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -816,7 +822,7 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -888,7 +894,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1100,7 +1106,10 @@ export class FacetChart
     }
 &nbsp;
     @computed private get uniformYAxis(): boolean {
-        return this.yAxisConfig.facetDomain === FacetAxisDomain.shared
+        // default to shared
+        const facetDomain =
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.yAxisConfig.facetDomain || FacetAxisDomain.shared</span>
+        return facetDomain === FacetAxisDomain.shared
     }
 &nbsp;
     @computed private get uniformXAxis(): boolean {
@@ -1174,9 +1183,9 @@ export class FacetChart
         return series.map((series, index) =&gt; {
             const { bounds, edges } = gridBoundsArr[index]
             const chartTypeName =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                series.chartTypeName ??</span></span>
-<span class="cstat-no" title="statement not covered" >                th</span>is.props.chartTypeName ??
-<span class="cstat-no" title="statement not covered" ></span>                ChartTypeName.LineChart
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                se</span>ries.chartTypeName ??</span>
+<span class="cstat-no" title="statement not covered" ></span>                this.props.chartTypeName ??
+<span class="cstat-no" title="statement not covered" >                ChartTypeName.LineChart</span>
 &nbsp;
             // TODO figure out how to do legends better
             const hideLegend = !edges.has(Position.right)
@@ -1224,8 +1233,8 @@ export class FacetChart
         const chartInstances = this.intermediatePlacedSeries.map(
             ({ bounds, manager, chartTypeName }) =&gt; {
                 const ChartClass =
-                    ChartComponentClassMap.get(chartTypeName) ??
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    DefaultChartClass</span></span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                    ChartComponentClassMap.get(chartTypeName) ??</span>
+<span class="cstat-no" title="statement not covered" >                    DefaultChartClass</span>
                 return new ChartClass({ bounds, manager })
             }
         )
@@ -1262,7 +1271,7 @@ export class FacetChart
             if (uniform) {
                 // If the axes are uniform, we want to find the full domain extent across all facets
                 const domains = excludeUndefined(
-                    chartInstances.map(axisAccessor).map((axis) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >axis?.d</span>omain)
+                    chartInstances.map(axisAccessor).map((axis) =&gt; axis?.domain)
                 )
                 config.min = min(domains.map((d) =&gt; d[0]))
                 config.max = max(domains.map((d) =&gt; d[1]))
@@ -1401,7 +1410,7 @@ export class FacetChart
     }
 &nbsp;
     @computed get series(): FacetSeries[] {
-        return this.facetStrategy === FacetStrategy.column
+        return this.facetStrategy === FacetStrategy.metric
             ? this.columnFacets
             : this.entityFacets
     }
@@ -1450,7 +1459,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 05 2021 16:15:21 GMT+0000 (Coordinated Universal Time)
+                at Thu Aug 05 2021 16:27:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
