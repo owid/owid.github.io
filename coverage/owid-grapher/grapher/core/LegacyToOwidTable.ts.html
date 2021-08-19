@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.51% </span>
+                <span class="strong">82.14% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>184/223</span>
+                <span class='fraction'>184/224</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">51.28% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/38</span>
+                <span class='fraction'>20/39</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.51% </span>
+                <span class="strong">82.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>184/223</span>
+                <span class='fraction'>184/224</span>
             </div>
         
             
@@ -379,7 +379,8 @@
 <a name='L320'></a><a href='#L320'>320</a>
 <a name='L321'></a><a href='#L321'>321</a>
 <a name='L322'></a><a href='#L322'>322</a>
-<a name='L323'></a><a href='#L323'>323</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L323'></a><a href='#L323'>323</a>
+<a name='L324'></a><a href='#L324'>324</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -549,6 +550,7 @@
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-yes">46x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -823,11 +825,11 @@ export const legacyToOwidTableAndDimensions = (
         const entityCodes = entityIds.map((id) =&gt; entityMetaById[id].code)
 &nbsp;
         // If there is a conversionFactor, apply it.
-        let values = <span class="branch-0 cbranch-no" title="branch not covered" >variable.values || []</span>
-        const conversionFactor = <span class="branch-0 cbranch-no" title="branch not covered" >valueCol</span>umnDef.display?.conversionFactor
+        let values = variable.values || []
+        const conversionFactor = <span class="branch-0 cbranch-no" title="branch not covered" >valueColumnDef.displ</span>ay?.conversionFactor
         if (conversionFactor !== undefined) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            values = values.map((value) =&gt;</span></span>
-<span class="branch-0 cbranch-no" title="branch not covered" >                isNumber(value</span>) ? value * conversionFactor : value
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            values = values.map((value)</span> =&gt;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >                isNumber(value) ? value * conversionFactor : value</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
@@ -839,17 +841,17 @@ export const legacyToOwidTableAndDimensions = (
             [valueColumnDef.slug]: values,
         }
 &nbsp;
-        if (annotationColumnDef) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            columnStore[</span></span>
+        if (annotationColumnDef) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" ></span>            columnStore[
 <span class="cstat-no" title="statement not covered" >                annotationColumnDef.slug</span>
-<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; anno</span>tationMap!.get(entityName))
+<span class="cstat-no" title="statement not covered" >            ] = entityNames.map((entityName) =&gt; annotationMap!.get(entityName))</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         if (colorColumnSlug) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >            columnStore[colorColumnSlug] = entityIds.map(</span>
 <span class="cstat-no" title="statement not covered" >                (entityId) =&gt;</span>
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    grapherConfig.selectedEntityColors?.[</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                        entityMetaById[entityId].name
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    grapherConfig.selectedEn</span>tityColors?.[</span>
+<span class="cstat-no" title="statement not covered" >                        entityMetaById[entityId].name</span>
 <span class="cstat-no" title="statement not covered" ></span>                    ] ?? entityColorMap.get(entityId)
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -868,9 +870,10 @@ export const legacyToOwidTableAndDimensions = (
         // entities columns only, excluding any time columns.
         // We do this by dropping the column. We interpolate before which adds an originalTime
         // column which can be used to recover the time.
-        const targetTime = dimension?.targetYear
+        const targetTime = <span class="branch-0 cbranch-no" title="branch not covered" >dimension?.t</span>argetYear
         if (
-<span class="branch-0 cbranch-no" title="branch not covered" >            grapherConfig.type === ChartTypeName.ScatterPlot &amp;&amp;</span>
+<span class="branch-0 cbranch-no" title="branch not covered" >            (grapherConfig.type === ChartTypeName.ScatterPlot ||</span>
+<span class="cstat-no" title="statement not covered" >                grapherConfig.type === ChartTypeName.Ma</span>rimekko) &amp;&amp;
             isNumber(targetTime)
         ) {
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>            variableTable = variableTable</span>
@@ -1030,7 +1033,7 @@ const annotationsToMap = (annotations: string): Map&lt;string, string&gt; =&gt; 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 19 2021 11:26:48 GMT+0000 (Coordinated Universal Time)
+                at Thu Aug 19 2021 12:59:45 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

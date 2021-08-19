@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.69% </span>
+                <span class="strong">99.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>151/153</span>
+                <span class='fraction'>157/158</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">62.5% </span>
+                <span class="strong">63.64% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/24</span>
+                <span class='fraction'>14/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.69% </span>
+                <span class="strong">99.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>151/153</span>
+                <span class='fraction'>157/158</span>
             </div>
         
             
@@ -172,7 +172,10 @@
 <a name='L113'></a><a href='#L113'>113</a>
 <a name='L114'></a><a href='#L114'>114</a>
 <a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -191,6 +194,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">556x</span>
 <span class="cline-any cline-yes">556x</span>
 <span class="cline-any cline-yes">556x</span>
 <span class="cline-any cline-yes">556x</span>
@@ -247,6 +252,7 @@
 <span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">65x</span>
+<span class="cline-any cline-yes">65x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -256,7 +262,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -301,12 +307,14 @@ import {
 } from "../persistable/Persistable"
 import { AxisConfigInterface } from "./AxisConfigInterface"
 import { ScaleSelectorManager } from "../controls/ScaleSelector"
+import { Position } from "../../clientUtils/owidTypes"
 &nbsp;
 export interface FontSizeManager {
     fontSize: number
 }
 &nbsp;
 class AxisConfigDefaults implements AxisConfigInterface {
+    @observable.ref orient?: Position = undefined
     @observable.ref min?: number = undefined
     @observable.ref max?: number = undefined
     @observable.ref canChangeScaleType?: boolean = undefined
@@ -343,6 +351,7 @@ export class AxisConfig
 &nbsp;
     toObject(): AxisConfigInterface {
         const obj = trimObject({
+            orient: this.orient,
             min: this.min,
             max: this.max,
             canChangeScaleType: this.canChangeScaleType,
@@ -354,7 +363,7 @@ export class AxisConfig
             maxTicks: this.maxTicks,
             compactLabels: this.compactLabels,
             scaleType: this.scaleType,
-            label: this.label ? this.label : undefined,
+            label: <span class="branch-0 cbranch-no" title="branch not covered" >this.label ? this.label : u</span>ndefined,
             facetDomain: this.facetDomain,
         })
 &nbsp;
@@ -364,20 +373,20 @@ export class AxisConfig
     }
 &nbsp;
     @computed get fontSize(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.fontSizeMa</span></span>nager?.fontSize || BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.fontSiz</span></span>eManager?.fontSize || BASE_FONT_SIZE
     }
 &nbsp;
     // A log scale domain cannot have values &lt;= 0, so we double check here
     @computed private get constrainedMin(): number {
         if (this.scaleType === ScaleType.log &amp;&amp; (this.min ?? 0) &lt;= 0)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return Infinity</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.min ?? </span></span></span>Infinity
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.min ?? I</span>nfini</span>ty
     }
 &nbsp;
     // If the author has specified a min/max AND to remove points outside the domain, this should return true
     shouldRemovePoint(value: number): boolean {
         if (!this.removePointsOutsideDomain) return false
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.min !== unde</span>fined &amp;&amp; value &lt; this.min) return true
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.min !== undefined &amp;&amp;</span> value &lt; this.min) return true
         if (this.max !== undefined &amp;&amp; value &gt; this.max) return true
         return false
     }
@@ -385,7 +394,7 @@ export class AxisConfig
     @computed private get constrainedMax(): number {
         if (this.scaleType === ScaleType.log &amp;&amp; (this.max || 0) &lt;= 0)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return -Infinity</span>
-<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.</span></span></span>max ?? -Infinity
+<span class="cstat-no" title="statement not covered" >        retu</span>rn this.max ?? -Infinity
     }
 &nbsp;
     @computed get domain(): [number, number] {
@@ -409,7 +418,7 @@ export class AxisConfig
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 19 2021 11:26:48 GMT+0000 (Coordinated Universal Time)
+                at Thu Aug 19 2021 12:59:45 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
