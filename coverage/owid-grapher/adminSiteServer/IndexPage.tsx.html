@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.64% </span>
+                <span class="strong">13.04% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/47</span>
+                <span class='fraction'>6/46</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">10.64% </span>
+                <span class="strong">13.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/47</span>
+                <span class='fraction'>6/46</span>
             </div>
         
             
@@ -113,11 +113,20 @@
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -158,8 +167,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,25 +186,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
+import { flatten } from "../clientUtils/Util"
 import { ENV, GITHUB_USERNAME } from "../settings/serverSettings"
-import { webpackUrl } from "../site/webpackUtils"
+import { webpackUrls } from "../site/webpackUtils"
 &nbsp;
 export const IndexPage = (<span class="fstat-no" title="function not covered" >props: {</span>
-<span class="cstat-no" title="statement not covered" >    username: string</span>
-<span class="cstat-no" title="statement not covered" >    isSuperuser: b</span>oolean
-<span class="cstat-no" title="statement not covered" >    g</span>itCmsBranchName: string
+<span class="cstat-no" title="statement not covered" >    username: stri</span>ng
+<span class="cstat-no" title="statement not covered" >    i</span>sSuperuser: boolean
+<span class="cstat-no" title="statement not covered" >    gitCmsBranchName: string</span>
 <span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const script = `</span>
 <span class="cstat-no" title="statement not covered" >        window.isEdito</span>r = true
-<span class="cstat-no" title="statement not covered" >        window.admin =</span> new Admin({ username: "${
-<span class="cstat-no" title="statement not covered" ></span>            props.username
-<span class="cstat-no" title="statement not covered" >        }", isSuperuser: ${props.isSuperuser.toString()}, settings:</span> ${JSON.stringify(
-<span class="cstat-no" title="statement not covered" >        { ENV, GITHUB_USERNAME }</span>
+<span class="cstat-no" title="statement not covered" ></span>        window.admin = new Admin({ username: "${
+<span class="cstat-no" title="statement not covered" >            props.username</span>
+<span class="cstat-no" title="statement not covered" >        }", isSuperuser: ${props.isSuperuse</span>r.toString()}, settings: ${JSON.stringify(
+<span class="cstat-no" title="statement not covered" >        { ENV, GITHUB</span>_USERNAME }
 <span class="cstat-no" title="statement not covered" >    )}})</span>
-<span class="cstat-no" title="statement not covered" >        admin.start(document.querySelector("#app"), '${props.gitCmsBranchName}')</span>
+<span class="cstat-no" title="statement not covered" >        admin.start(document.querySel</span>ector("#app"), '${props.gitCmsBranchName}')
 <span class="cstat-no" title="statement not covered" >`</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    return (
+<span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;html lang="en"&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;head&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;title&gt;owid-admin&lt;/title&gt;</span>
@@ -197,25 +214,32 @@ export const IndexPage = (<span class="fstat-no" title="function not covered" >p
 <span class="cstat-no" title="statement not covered" >                    href="https</span>://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i|Playfair+Display:400,700&amp;display=swap"
 <span class="cstat-no" title="statement not covered" >                    r</span>el="stylesheet"
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;link</span>
-<span class="cstat-no" title="statement not covered" >                    href={webpackUrl("commons.css", "/admin")}</span>
-<span class="cstat-no" title="statement not covered" ></span>                    rel="stylesheet"
-<span class="cstat-no" title="statement not covered" >                    type="text/css"</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;link</span>
-<span class="cstat-no" title="statement not covered" >                    href={webpackUrl("admin.css", "/admin")}</span>
-<span class="cstat-no" title="statement not covered" >                    rel="stylesheet"</span>
-<span class="cstat-no" title="statement not covered" >                    type="text/css"</span>
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                {flatten(</span>
+<span class="cstat-no" title="statement not covered" >                    ["commons.css", "admin.css"].map((assetName) =&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                        webpackUrls(assetName, "/admin")
+<span class="cstat-no" title="statement not covered" >                    )</span>
+<span class="cstat-no" title="statement not covered" >                ).map((href) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >                    &lt;link</span>
+<span class="cstat-no" title="statement not covered" >                        key={href}</span>
+<span class="cstat-no" title="statement not covered" >                        href={href}</span>
+<span class="cstat-no" title="statement not covered" >                        rel="stylesheet"</span>
+<span class="cstat-no" title="statement not covered" >                        type="text/css"</span>
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                ))}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/head&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;body&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div id="app"&gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;script src={webpackUrl("commons.js", "/admin")}&gt;&lt;/script&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;script src={webpackUrl("admin.js", "/admin")}&gt;&lt;/script&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;script</span>
-<span class="cstat-no" title="statement not covered" ></span>                    type="text/javascript"
-<span class="cstat-no" title="statement not covered" >                    dangerously</span>SetInnerHTML={{ __html: script }}
-<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;div id="app"&gt;&lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >                {flatten(</span>
+<span class="cstat-no" title="statement not covered" >                    ["commons.js", "ad</span>min.js"].map((assetName) =&gt;
+                        webpackUrls(assetName, "/admin")
+                    )
+                ).map((href) =&gt; (
+                    &lt;script key={href} src={href} /&gt;
+                ))}
+                &lt;script
+                    type="text/javascript"
+                    dangerouslySetInnerHTML={{ __html: script }}
+                /&gt;
                 {/* This lets the public frontend know to show edit links and such */}
                 &lt;iframe
                     src="https://ourworldindata.org/identifyadmin"
@@ -232,7 +256,7 @@ export const IndexPage = (<span class="fstat-no" title="function not covered" >p
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 16 2021 18:12:37 GMT+0000 (Coordinated Universal Time)
+                at Thu Aug 19 2021 11:26:48 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
