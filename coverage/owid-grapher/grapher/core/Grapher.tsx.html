@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.39% </span>
+                <span class="strong">81.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2121/2606</span>
+                <span class='fraction'>2125/2607</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.77% </span>
+                <span class="strong">73.81% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>329/440</span>
+                <span class='fraction'>327/443</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.57% </span>
+                <span class="strong">70.48% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>160/230</span>
+                <span class='fraction'>160/227</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.39% </span>
+                <span class="strong">81.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2121/2606</span>
+                <span class='fraction'>2125/2607</span>
             </div>
         
             
@@ -2604,7 +2604,8 @@
 <a name='L2545'></a><a href='#L2545'>2545</a>
 <a name='L2546'></a><a href='#L2546'>2546</a>
 <a name='L2547'></a><a href='#L2547'>2547</a>
-<a name='L2548'></a><a href='#L2548'>2548</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L2548'></a><a href='#L2548'>2548</a>
+<a name='L2549'></a><a href='#L2549'>2549</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3278,8 +3279,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4322,7 +4323,7 @@
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
@@ -4333,7 +4334,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">26x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4351,7 +4352,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">222x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -4386,7 +4387,7 @@
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -4851,6 +4852,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -6775,7 +6777,7 @@ export class Grapher
         if (isExportingtoSvgOrPng) return false
 &nbsp;
         // todo: can remove this if we drop old adminSite editor
-        if (isEditor) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>rue
+        if (isEditor) <span class="branch-0 cbranch-no" title="branch not covered" >retur</span>n true
 &nbsp;
         // If the available space is very small, we use all of the space given to us
         if (
@@ -6788,10 +6790,10 @@ export class Grapher
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // If we have a big screen to be in, we can define our own aspect ratio and sit in the center
-    @computed private get scaleToFitIdeal(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return Math.min(</span></span>
-<span class="cstat-no" title="statement not covered" >            (this.bounds.width * 0.95) / this.width</span>ForDeviceOrientation,
-<span class="cstat-no" title="statement not covered" >            (thi</span>s.bounds.height * 0.95) / this.heightForDeviceOrientation
+    @computed private get scaleToFitIdeal<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return Math.min(
+<span class="cstat-no" title="statement not covered" >            (this.bounds.width * 0.95) / this.widthForDeviceOrientation,</span>
+<span class="cstat-no" title="statement not covered" >            (this.bounds.height * 0.95) / this.heig</span>htForDeviceOrientation
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -6799,19 +6801,19 @@ export class Grapher
     // Todo: add explanation around why isExporting removes 5 px
     @computed private get renderWidth(): number {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.useIdealBounds</span>
-<span class="cstat-no" title="statement not covered" >            ? this.widthForDeviceOrientation * this.sca</span>leToFitIdeal
-            : this.bounds.width - (this.isExportingtoSvgOrPng ? 0 : 5)
+<span class="cstat-no" title="statement not covered" >            ? this.widthForDeviceOrientation * this</span>.scaleToFitIdeal
+            : this.bounds.width - (<span class="branch-0 cbranch-no" title="branch not covered" >this.isExportingtoSv</span>gOrPng ? 0 : 5)
     }
     @computed private get renderHeight(): number {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.useIdealBounds</span>
-<span class="cstat-no" title="statement not covered" >            ? this.heightF</span>orDeviceOrientation * this.scaleToFitIdeal
-            : this.bounds.height - (<span class="branch-0 cbranch-no" title="branch not covered" >this.isExportingtoSvgOrPng ? 0 : 5</span>)
+<span class="cstat-no" title="statement not covered" >            ? this.heightForDevic</span>eOrientation * this.scaleToFitIdeal
+            : this.bounds.height - (this.isExportingtoSvgOrPng ? 0 : 5)
     }
 &nbsp;
     @computed get tabBounds(): Bounds {
         const bounds = new Bounds(0, 0, this.renderWidth, this.renderHeight)
-        return this.isExportingtoSvgOrPng
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? bounds</span></span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.isExportingtoSvgOrPng</span>
+<span class="cstat-no" title="statement not covered" ></span>            ? bounds
             : bounds.padBottom(this.footerControlsHeight)
     }
 &nbsp;
@@ -6820,14 +6822,14 @@ export class Grapher
     base: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
 &nbsp;
     @computed get containerElement(): HTMLDivElement | undefined {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>base.current || undefined
+        return this.base.current || undefined
     }
 &nbsp;
     @observable private hasBeenVisible = false
     @observable private uncaughtError?: Error
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >setError(err: Error): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.uncaughtError = err
+<span class="cstat-no" title="statement not covered" >        this.uncaughtError = err</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound clearErrors(): void {
@@ -6836,11 +6838,11 @@ export class Grapher
 &nbsp;
     // todo: clean up this popup stuff
 <span class="fstat-no" title="function not covered" >    addPopup(vnode: JSX.Element): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.popups = this.popups.conc</span>at([vnode])
+<span class="cstat-no" title="statement not covered" ></span>        this.popups = this.popups.concat([vnode])
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    removePopup(vnodeType: JSX.Element): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.popups = this.popups.filter((d) =&gt; !(d.type === vnodeType))
+<span class="cstat-no" title="statement not covered" >        this.popups = this.popups.filter((d) =&gt; !(d.ty</span>pe === vnodeType))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get isOnTableTab(): boolean {
@@ -6848,19 +6850,19 @@ export class Grapher
     }
 &nbsp;
     private renderPrimaryTab(): JSX.Element | undefined {
-        if (this.isChartOrMapTab) <span class="branch-0 cbranch-no" title="branch not covered" >return &lt;CaptionedChart manager={this} /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>
+        if (this.isChartOrMapTab) return &lt;CaptionedChart manager={this} /&gt;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
 <span class="cstat-no" title="statement not covered" >        const { tabBounds } = this</span>
-<span class="cstat-no" title="statement not covered" >        if (this.isOnTableTab</span>)
-<span class="cstat-no" title="statement not covered" ></span>            // todo: should this "Div" and styling just be in DataTable class?
-<span class="cstat-no" title="statement not covered" >            return (</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isOnTableTab)</span>
+<span class="cstat-no" title="statement not covered" >            // todo: should t</span>his "Div" and styling just be in DataTable class?
+<span class="cstat-no" title="statement not covered" ></span>            return (
 <span class="cstat-no" title="statement not covered" >                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                    className="tableTab"</span>
+<span class="cstat-no" title="statement not covered" >                    className=</span>"tableTab"
 <span class="cstat-no" title="statement not covered" >                    style={{ ...tabBounds.toCSS(), position: "absolute" }}</span>
-<span class="cstat-no" title="statement not covered" ></span>                &gt;
+<span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;DataTable bounds={tabBounds} manager={this} /&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" ></span>                &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -6869,18 +6871,18 @@ export class Grapher
         const bounds = this.tabBounds
         if (this.overlayTab === GrapherTabOption.sources)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;SourcesTab key="sourcesTab" bounds={bounds} manager={this} /&gt;
+                &lt;SourcesTab key="sourcesTab" bounds={bounds} manager={this} /&gt;
             )
         if (this.overlayTab === GrapherTabOption.download)
-            return (
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                &lt;Downloa</span></span>dTab key="downloadTab" bounds={bounds} manager={this} /&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >            return (</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;DownloadTab key="downloadTab" bounds={bounds} manager={this} /&gt;
             )
         return undefined
     }
 &nbsp;
     private get commandPalette(): JSX.Element | null {
         return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.enableKeyboardShortcuts ? (</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;CommandPalette commands={this.keyboardShortcuts} display="none" /&gt;
+            &lt;CommandPalette commands={this.keyboardShortcuts} display="none" /&gt;
         ) : null
     }
 &nbsp;
@@ -6889,11 +6891,11 @@ export class Grapher
     }
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >toggleTabCommand(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.currentTab = next(this.availableT</span>abs, this.currentTab)
+<span class="cstat-no" title="statement not covered" >        this.currentTab = next(this.availableTabs, this.currentTab)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >togglePlayingCommand(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.timelineContr</span>oller.togglePlay()
+<span class="cstat-no" title="statement not covered" >        this.timelineController.t</span>ogglePlay()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     selection =
@@ -6911,7 +6913,7 @@ export class Grapher
         const temporaryFacetTestCommands = range(0, 10).map((num) =&gt; {
             return {
                 combo: `${num}`,
-                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; this.r</span>andomSelection(num),
+                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; </span>this.randomSelection(num),
             }
         })
         const shortcuts = [
@@ -6924,31 +6926,31 @@ export class Grapher
             },
             {
                 combo: "?",
-                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; Comma</span>ndPalette.togglePalette(),
+                fn: (): void =&gt; CommandPalette.togglePalette(),
                 title: `Toggle Help`,
                 category: "Navigation",
             },
             {
                 combo: "a",
-                fn: (): void | SelectionArray =&gt;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >                    this.selection.has</span>Selection</span>
-<span class="cstat-no" title="statement not covered" >                        ? this.selection.clearS</span>election()
-<span class="cstat-no" title="statement not covered" >                        : </span>this.selection.selectAll(),
+                fn: <span class="fstat-no" title="function not covered" >(): void | SelectionArray =&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                    this.selection.hasSelection
+<span class="cstat-no" title="statement not covered" >                        ? this.selecti</span>on.clearSelection()
+                        : this.selection.selectAll(),
                 title: <span class="branch-0 cbranch-no" title="branch not covered" >this.selection.hasSelection</span>
-<span class="cstat-no" title="statement not covered" >                    ? `Se</span>lect None`
-<span class="cstat-no" title="statement not covered" >                    : `Select All`,</span>
+<span class="cstat-no" title="statement not covered" >                    ? `Select None`</span>
+<span class="cstat-no" title="statement not covered" >                    : `Se</span>lect All`,
                 category: "Selection",
             },
             {
                 combo: "f",
-                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; this.t</span>oggleFilterAllCommand(),
+                fn: (): void =&gt; this.toggleFilterAllCommand(),
                 title: "Hide unselected",
                 category: "Selection",
             },
             {
                 combo: "p",
-                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; this.t</span>ogglePlayingCommand(),
-                title: this.isPlaying ? `Pause` : `Play`,
+                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; this.</span>togglePlayingCommand(),
+                title: <span class="branch-0 cbranch-no" title="branch not covered" >this.isPlaying ? `Pause` : `</span>Play`,
                 category: "Timeline",
             },
             {
@@ -6965,17 +6967,17 @@ export class Grapher
             },
             {
                 combo: "esc",
-                fn: (): void =&gt; this.clearErrors(),
+                fn: <span class="fstat-no" title="function not covered" >(): void =&gt; this.</span>clearErrors(),
             },
             {
                 combo: "z",
-                fn: <span class="fstat-no" title="function not covered" >(): vo</span>id =&gt; this.toggleTimelineCommand(),
+                fn: (): void =&gt; this.toggleTimelineCommand(),
                 title: "Latest/Earliest/All period",
                 category: "Timeline",
             },
             {
                 combo: "shift+o",
-                fn: <span class="fstat-no" title="function not covered" >(): vo</span>id =&gt; this.clearQueryParams(),
+                fn: (): void =&gt; this.clearQueryParams(),
                 title: "Reset to original",
                 category: "Navigation",
             },
@@ -6985,13 +6987,13 @@ export class Grapher
             const slideShow = this.slideShow
             shortcuts.push({
                 combo: "right",
-                fn: <span class="fstat-no" title="function not covered" >() =&gt; slideShow.</span>playNext(),
+                fn: <span class="fstat-no" title="function not covered" >() =&gt; </span>slideShow.playNext(),
                 title: "Next chart",
                 category: "Browse",
             })
             shortcuts.push({
                 combo: "left",
-                fn: <span class="fstat-no" title="function not covered" >() =&gt; slideShow.</span>playPrevious(),
+                fn: <span class="fstat-no" title="function not covered" >() =&gt; </span>slideShow.playPrevious(),
                 title: "Previous chart",
                 category: "Browse",
             })
@@ -7003,47 +7005,47 @@ export class Grapher
     @observable slideShow?: SlideShowController&lt;any&gt;
 &nbsp;
     @action.bound private toggleTimelineCommand(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        // Todo: add tests for this</span></span>
-<span class="cstat-no" title="statement not covered" >        this.</span>setTimeFromTimeQueryParam(
-<span class="cstat-no" title="statement not covered" >            next(["latest"</span>, "earliest", ".."], this.timeParam!)
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        // Todo: add tests</span> for this</span>
+<span class="cstat-no" title="statement not covered" >        this.setTimeFromTimeQueryParam(</span>
+<span class="cstat-no" title="statement not covered" >            n</span>ext(["latest", "earliest", ".."], this.timeParam!)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >toggleFilterAllCommand(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>minPopulationFilter =
-<span class="cstat-no" title="statement not covered" >            this.minPopula</span>tionFilter === 2e9 ? undefined : 2e9
+    @action.bound private toggleFilterAllCommand(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.minPopulationFilter =</span></span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.minPopulationFilter === 2e9 ? undefined : 2e9
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private toggleYScaleTypeCommand(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.yAxis.scaleType = next(</span></span>
-<span class="cstat-no" title="statement not covered" >            [</span>ScaleType.linear, ScaleType.log],
-<span class="cstat-no" title="statement not covered" >            this.yAxis.sca</span>leType
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.yAxis.scaleTy</span>pe = next(</span>
+<span class="cstat-no" title="statement not covered" >            [ScaleType.linear, ScaleType.lo</span>g],
+<span class="cstat-no" title="statement not covered" >            t</span>his.yAxis.scaleType
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >toggleFacetStrategy(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>facetStrategy = next(
-<span class="cstat-no" title="statement not covered" >            this.available</span>FacetStrategies,
-<span class="cstat-no" title="statement not covered" >            this.facetStrategy</span>
+    @action.bound private toggleFacetStrategy(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.facetStrategy = next(</span></span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.availableFacetStrategies,
+<span class="cstat-no" title="statement not covered" >            this.facetStra</span>tegy
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private toggleFacetControlVisibility(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hideFacetCont</span>rol = !this.hideFacetControl</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >toggleFacetControlVisibility(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>hideFacetControl = !this.hideFacetControl
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get showFacetYDomainToggle(): boolean {
         // don't offer to make the y range relative if the range is discrete
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.facetStrategy !== FacetStrategy.none &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            !this.isStackedDiscreteBar</span>
+            this.facetStrategy !== FacetStrategy.none &amp;&amp;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            !this.isStacke</span></span>dDiscreteBar
         )
     }
 &nbsp;
     @computed get _sortConfig(): Readonly&lt;SortConfig&gt; {
         return {
-            sortBy: <span class="branch-0 cbranch-no" title="branch not covered" >this.sortBy ?? S</span>ortBy.total,
-            sortOrder: this.sortOrder ?? SortOrder.desc,
+            sortBy: <span class="branch-0 cbranch-no" title="branch not covered" >this.s</span>ortBy ?? SortBy.total,
+            sortOrder: <span class="branch-0 cbranch-no" title="branch not covered" >this.sortOrder ?? S</span>ortOrder.desc,
             sortColumnSlug: this.sortColumnSlug,
         }
     }
@@ -7055,12 +7057,12 @@ export class Grapher
         // we sort by entity name instead.
         // Marimekko charts are special and there we don't do this forcing of sort order
         if (
-            !this.isMarimekko &amp;&amp;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.isRelativ</span>eMode &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            sortConfig.sortBy === SortBy.tot</span>al
+<span class="branch-0 cbranch-no" title="branch not covered" >            !this.isMarimekko &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.isRelativeMode &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            sortConfig.sor</span>tBy === SortBy.total
         ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            sortConfig.sor</span>tBy = SortBy.entityName
-<span class="cstat-no" title="statement not covered" >            sortConfig.sortOrder = SortOrder.a</span>sc
+<span class="cstat-no" title="statement not covered" >            s</span>ortConfig.sortBy = SortBy.entityName
+<span class="cstat-no" title="statement not covered" >            sortConfig.sor</span>tOrder = SortOrder.asc
 <span class="cstat-no" title="statement not covered" >        }</span>
         return sortConfig
     }
@@ -7094,15 +7096,15 @@ export class Grapher
         const strategies: FacetStrategy[] = [FacetStrategy.none]
 &nbsp;
         const numNonProjectedColumns = this.yColumns.filter(
-            (c) =&gt; !c.display?.isProjection
+            (c) =&gt; !<span class="branch-0 cbranch-no" title="branch not covered" >c.display?.i</span>sProjection
         ).length
         if (
             // multiple metrics (excluding projections)
-<span class="branch-0 cbranch-no" title="branch not covered" >            numNonProjectedColumns &gt; 1 &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            // more than one data point per m</span>etric
-<span class="cstat-no" title="statement not covered" >            t</span>his.transformedTable.numRows &gt; 1
+            numNonProjectedColumns &gt; 1 &amp;&amp;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            // more than o</span>ne data point per metric</span>
+<span class="cstat-no" title="statement not covered" >            this.transformedTable.numRows &gt; 1</span>
         ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            strategies.push(FacetStrategy</span>.metric)
+<span class="cstat-no" title="statement not covered" >            strategies</span>.push(FacetStrategy.metric)
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         if (
@@ -7111,7 +7113,7 @@ export class Grapher
             // more than one data point per entity
             this.transformedTable.numRows &gt; this.selection.numSelectedEntities
         ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            strategies.push(FacetStrategy.e</span>ntity)
+<span class="cstat-no" title="statement not covered" >            strategies</span>.push(FacetStrategy.entity)
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         return strategies
@@ -7122,114 +7124,114 @@ export class Grapher
     // the actual facet setting used by a chart, potentially overriding selectedFacetStrategy
     @computed get facetStrategy(): FacetStrategy {
         if (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.selectedFacetStrategy &amp;&amp;</span>
-            this.availableFacetStrategies.includes(this.selectedFacetStrategy)
+            this.selectedFacetStrategy &amp;&amp;
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.a</span>vailableFacetStrategies.includes(this.selectedFacetStrategy)
         )
-<span class="branch-0 cbranch-no" title="branch not covered" >            return t</span>his.selectedFacetStrategy
+            return this.selectedFacetStrategy
 &nbsp;
 <span class="branch-0 cbranch-no" title="branch not covered" >        if (this.disableAutoFaceting) return FacetStrategy.none</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Auto facet on SingleEntity charts with m</span>ultiple selected entities
+<span class="cstat-no" title="statement not covered" >        // Auto facet </span>on SingleEntity charts with multiple selected entities
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            this.addCo</span>untryMode === EntitySelectionMode.SingleEntity &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            this.selection.numSelectedEntities &gt; 1</span>
-        )
-<span class="branch-0 cbranch-no" title="branch not covered" >            return FacetStrategy.entity</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Au</span>to facet when multiple slugs and multiple entities selected. todo: not sure if this is correct.
-<span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.addCountryMode === EntitySel</span>ectionMode.MultipleEntities &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            t</span>his.hasMultipleYColumns &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            t</span>his.addCountryMode === EntitySelectionMode.SingleEntity &amp;&amp;
 <span class="cstat-no" title="statement not covered" >            this.selec</span>tion.numSelectedEntities &gt; 1
         )
-            return FacetStrategy.metric
+            return FacetStrategy.entity
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >        return FacetStrategy.none</span>
+<span class="cstat-no" title="statement not covered" >        // Auto facet when multiple slugs and multi</span>ple entities selected. todo: not sure if this is correct.
+<span class="cstat-no" title="statement not covered" >        if (</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.addCountr</span>yMode === EntitySelectionMode.MultipleEntities &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            this.hasMultipleYColumns &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.selection.numSelectedEntities &gt; 1
+        )
+<span class="branch-0 cbranch-no" title="branch not covered" >            return FacetStrategy.metric</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return FacetSt</span>rategy.none
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    set facetStrategy<span class="fstat-no" title="function not covered" >(facet: FacetStrategy) {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>selectedFacetStrategy = facet
+    set facetStrategy(facet: FacetStrategy) {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.selectedFacetStrategy = face</span>t</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            t</span>his.isStackedDiscreteBar &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            this.selec</span>tedFacetStrategy !== FacetStrategy.none
+<span class="cstat-no" title="statement not covered" >            this.isStackedDiscreteBar &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.selectedFacetStrategy !== FacetStrategy.none
 <span class="cstat-no" title="statement not covered" >        ) {</span>
-<span class="cstat-no" title="statement not covered" >            /</span>/ actually trying to exclude relative mode with just one metric
-<span class="cstat-no" title="statement not covered" >            this.stack</span>Mode = StackMode.absolute
+<span class="cstat-no" title="statement not covered" >            // actually trying to exclude relativ</span>e mode with just one metric
+<span class="cstat-no" title="statement not covered" >            t</span>his.stackMode = StackMode.absolute
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >randomSelection(num: number): void {</span>
-<span class="cstat-no" title="statement not covered" >        // Co</span>ntinent, Population, GDP PC, GDP, PopDens, UN, Language, etc.
-<span class="cstat-no" title="statement not covered" >        this.clearErrors()</span>
-<span class="cstat-no" title="statement not covered" >        const currentSelection = this.selection.selectedE</span>ntityNames.length
-<span class="cstat-no" title="statement not covered" >        const</span> newNum = num ? num : currentSelection ? currentSelection * 2 : 10
-<span class="cstat-no" title="statement not covered" >        this.selecti</span>on.setSelectedEntities(
-<span class="cstat-no" title="statement not covered" >            sampleFrom(this.selection.available</span>EntityNames, newNum, Date.now())
+<span class="cstat-no" title="statement not covered" >        // Continent, Population, GDP PC, GDP</span>, PopDens, UN, Language, etc.
+<span class="cstat-no" title="statement not covered" >        this.</span>clearErrors()
+<span class="cstat-no" title="statement not covered" >        const currentSelec</span>tion = this.selection.selectedEntityNames.length
+<span class="cstat-no" title="statement not covered" >        const newNum = num ? num : currentSelection ? cur</span>rentSelection * 2 : 10
+<span class="cstat-no" title="statement not covered" >        this.</span>selection.setSelectedEntities(
+<span class="cstat-no" title="statement not covered" >            sampleFr</span>om(this.selection.availableEntityNames, newNum, Date.now())
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private renderError(): JSX.Element {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return (</span></span>
+    private <span class="fstat-no" title="function not covered" >renderError(): JSX.Element {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n (
 <span class="cstat-no" title="statement not covered" >            &lt;div</span>
-<span class="cstat-no" title="statement not covered" ></span>                title={this.uncaughtError?.message}
-<span class="cstat-no" title="statement not covered" >                style={{</span>
-<span class="cstat-no" title="statement not covered" >                    width: "100%",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    height: "100%",
-<span class="cstat-no" title="statement not covered" >                    posi</span>tion: "relative",
-<span class="cstat-no" title="statement not covered" >                    display: "flex",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    flexDirection: "column",
-<span class="cstat-no" title="statement not covered" >                    just</span>ifyContent: "center",
-<span class="cstat-no" title="statement not covered" >                    textAlign: "center",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    lineHeight: 1.5,
-<span class="cstat-no" title="statement not covered" >                    padd</span>ing: "3rem",
+<span class="cstat-no" title="statement not covered" >                title={this.uncaughtError?.message}</span>
+<span class="cstat-no" title="statement not covered" ></span>                style={{
+<span class="cstat-no" title="statement not covered" >                    widt</span>h: "100%",
+<span class="cstat-no" title="statement not covered" >                    height: "100%",</span>
+<span class="cstat-no" title="statement not covered" ></span>                    position: "relative",
+<span class="cstat-no" title="statement not covered" >                    disp</span>lay: "flex",
+<span class="cstat-no" title="statement not covered" >                    flexDirection: "column",</span>
+<span class="cstat-no" title="statement not covered" ></span>                    justifyContent: "center",
+<span class="cstat-no" title="statement not covered" >                    text</span>Align: "center",
+<span class="cstat-no" title="statement not covered" >                    lineHeight: 1.5,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    padding: "3rem",
 <span class="cstat-no" title="statement not covered" >                }}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p s</span>tyle={{ color: "#cc0000", fontWeight: 700 }}&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;FontAwesomeIcon icon={faExc</span>lamationTriangle} /&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    {ThereWasAProblemLoadingThisChart}
-<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;p&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    We have been notified of this error, please check back later
-<span class="cstat-no" title="statement not covered" ></span>                    whether it's been fixed. If the error persists, get in touch
-<span class="cstat-no" title="statement not covered" >                    with us at{" "}</span>
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;a
-<span class="cstat-no" title="statement not covered" ></span>                        href={`mailto:info@ourworldindata.org?subject=Broken chart on page ${window.location.href}`}
-<span class="cstat-no" title="statement not covered" >                    &gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                        info@ourworldindata.org
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;/a&gt;
-<span class="cstat-no" title="statement not covered" >                    .</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;p style={{ color: "#cc0000", fontWeight: 700 }}&gt;
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;FontAwesomeIcon icon={faExclamationTriangle} /&gt;
+<span class="cstat-no" title="statement not covered" >                    {ThereWasAProblemLoadingThis</span>Chart}
 <span class="cstat-no" title="statement not covered" ></span>                &lt;/p&gt;
-<span class="cstat-no" title="statement not covered" >                {thi</span>s.uncaughtError &amp;&amp; this.uncaughtError.message &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                    &lt;pre style={{ fontSize: "11px" }}&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                        Error: {this.uncaughtError.message}
+<span class="cstat-no" title="statement not covered" >                &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                    We have been notified o</span>f this error, please check back later
+<span class="cstat-no" title="statement not covered" ></span>                    whether it's been fixed. If the error persists, get in touch
+<span class="cstat-no" title="statement not covered" ></span>                    with us at{" "}
+<span class="cstat-no" title="statement not covered" >                    &lt;a</span>
+<span class="cstat-no" title="statement not covered" ></span>                        href={`mailto:info@ourworldindata.org?subject=Broken chart on page ${window.location.href}`}
+<span class="cstat-no" title="statement not covered" ></span>                    &gt;
+<span class="cstat-no" title="statement not covered" >                        info@ourworldindata.</span>org
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;/a&gt;
+<span class="cstat-no" title="statement not covered" ></span>                    .
+<span class="cstat-no" title="statement not covered" >                &lt;/p&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                {this.uncaughtError &amp;&amp; this.uncaughtError.message &amp;&amp; (
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;pre style={{ fontSize: "11px" }}&gt;
+<span class="cstat-no" title="statement not covered" >                        Error: {this.uncaughtError.message}</span>
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;/pre&gt;
 <span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" >            &lt;</span>/div&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound
 <span class="fstat-no" title="function not covered" >    resetAnnotation(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>renderAnnotation(undefined)
+<span class="cstat-no" title="statement not covered" >        this.renderAnnotation(undefined)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound
 <span class="fstat-no" title="function not covered" >    renderAnnotation(annotation: Annotation | undefined): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.setAuthoredVersion(this.props)</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>reset()
-<span class="cstat-no" title="statement not covered" >        this.updateF</span>romObject({ ...this.props })
-<span class="cstat-no" title="statement not covered" >        this.populateFromQueryParams(</span>
-<span class="cstat-no" title="statement not covered" >            l</span>egacyToCurrentGrapherQueryParams(this.props.queryStr ?? "")
+<span class="cstat-no" title="statement not covered" >        this.setAuth</span>oredVersion(this.props)
+<span class="cstat-no" title="statement not covered" >        this.reset()</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>updateFromObject({ ...this.props })
+<span class="cstat-no" title="statement not covered" >        this.populat</span>eFromQueryParams(
+<span class="cstat-no" title="statement not covered" >            legacyToCurrentGrapherQueryParams(this.props.queryStr </span>?? "")
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.annotation = annotation</span>
+<span class="cstat-no" title="statement not covered" >        this.annotat</span>ion = annotation
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render(): JSX.Element | undefined {
         const { isExportingtoSvgOrPng, isPortrait } = this
         // TODO how to handle errors in exports?
         // TODO tidy this up
-        if (isExportingtoSvgOrPng) return this.renderPrimaryTab() // todo: remove this? should have a simple toStaticSVG for importing.
+        if (isExportingtoSvgOrPng) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his.renderPrimaryTab() // todo: remove this? should have a simple toStaticSVG for importing.
 &nbsp;
         const { renderWidth, renderHeight } = this
 &nbsp;
@@ -7241,14 +7243,14 @@ export class Grapher
 &nbsp;
         const classes = classNames(
             "GrapherComponent",
-            isExportingtoSvgOrPng &amp;&amp; "isExportingToSvgOrPng",
+            isExportingtoSvgOrPng<span class="branch-0 cbranch-no" title="branch not covered" > &amp;&amp; "is</span>ExportingToSvgOrPng",
             isPortrait &amp;&amp; "GrapherPortraitClass"
         )
 &nbsp;
         return (
             &lt;div ref={this.base} className={classes} style={style}&gt;
                 {this.commandPalette}
-                {<span class="branch-0 cbranch-no" title="branch not covered" >this.unca</span>ughtError ? this.renderError() : this.renderReady()}
+                {this.uncaughtError ? this.renderError() : this.renderReady()}
             &lt;/div&gt;
         )
     }
@@ -7265,8 +7267,8 @@ export class Grapher
                     height={this.renderHeight}
                     tooltipProvider={this}
                 /&gt;
-                {this.isSelectingData &amp;&amp; (
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                    &lt;EntitySelectorModal
+                {<span class="branch-0 cbranch-no" title="branch not covered" >this.isSelectingData &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;EntitySelectorModal
                         canChangeEntity={this.canChangeEntity}
                         selectionArray={this.selection}
                         key="entitySelector"
@@ -7286,26 +7288,26 @@ export class Grapher
 &nbsp;
     @action.bound private setBaseFontSize(): void {
         const { renderWidth } = this
-        if (renderWidth &lt;= 400) this.baseFontSize = 14
-        else <span class="branch-0 cbranch-no" title="branch not covered" >if (renderWidth &lt; 1080) this.baseFontSize = 16</span>
-<span class="cstat-no" title="statement not covered" >        else if (renderWidth &gt;= 1080) th</span>is.baseFontSize = 18
+        if (renderWidth &lt;= 400) <span class="branch-0 cbranch-no" title="branch not covered" >this.b</span>aseFontSize = 14
+        else if (renderWidth &lt; 1080) this.baseFontSize = 16
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        else if (ren</span></span>derWidth &gt;= 1080) this.baseFontSize = 18
     }
 &nbsp;
     // Binds chart properties to global window title and URL. This should only
     // ever be invoked from top-level JavaScript.
-    private <span class="fstat-no" title="function not covered" >bindToWindow(): void {</span>
-<span class="cstat-no" title="statement not covered" >        // There is a surprisingly consid</span>erable performance overhead to updating the url
-<span class="cstat-no" title="statement not covered" >        // wh</span>ile animating, so we debounce to allow e.g. smoother timelines
-<span class="cstat-no" title="statement not covered" >        const pushPa</span>rams = (): void =&gt;
-<span class="cstat-no" title="statement not covered" >            setWindowQueryStr(queryParamsToStr(thi</span>s.changedParams))
-<span class="cstat-no" title="statement not covered" >        const</span> debouncedPushParams = debounce(pushParams, 100)
+    private bindToWindow(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        // There is </span>a surprisingly considerable performance overhead to updating the url</span>
+<span class="cstat-no" title="statement not covered" >        // while animating, so we debounc</span>e to allow e.g. smoother timelines
+<span class="cstat-no" title="statement not covered" >        const</span> pushParams = (): void =&gt;
+<span class="cstat-no" title="statement not covered" >            setWindo</span>wQueryStr(queryParamsToStr(this.changedParams))
+<span class="cstat-no" title="statement not covered" >        const debouncedPushParams = debounce(pushP</span>arams, 100)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        reaction(</span>
-<span class="cstat-no" title="statement not covered" >            (</span>) =&gt; this.changedParams,
-<span class="cstat-no" title="statement not covered" >            () =&gt; (t</span>his.debounceMode ? debouncedPushParams() : pushParams())
+<span class="cstat-no" title="statement not covered" >            () =&gt; this.changedParams,</span>
+<span class="cstat-no" title="statement not covered" >            (</span>) =&gt; (this.debounceMode ? debouncedPushParams() : pushParams())
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        autorun(() =</span>&gt; (document.title = this.currentTitle))
+<span class="cstat-no" title="statement not covered" >        autor</span>un(() =&gt; (document.title = this.currentTitle))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     componentDidMount(): void {
@@ -7313,38 +7315,38 @@ export class Grapher
         this.setBaseFontSize()
         this.checkVisibility()
         exposeInstanceOnWindow(this, "grapher")
-        if (this.props.bindUrlToWindow) this.bindToWindow()
+        if (this.props.bindUrlToWindow) <span class="branch-0 cbranch-no" title="branch not covered" >th</span>is.bindToWindow()
         if (this.props.enableKeyboardShortcuts) this.bindKeyboardShortcuts()
     }
 &nbsp;
     private _shortcutsBound = false
     private bindKeyboardShortcuts(): void {
-        if (this._shortcutsBound) return
+        if (this._shortcutsBound) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
         this.keyboardShortcuts.forEach((shortcut) =&gt; {
             Mousetrap.bind(shortcut.combo, () =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>                shortcut.fn()
-<span class="cstat-no" title="statement not covered" >                this.analyt</span>ics.logKeyboardShortcut(
-<span class="cstat-no" title="statement not covered" >                    shortcut.title || "",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    shortcut.combo
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                return false</span>
-<span class="cstat-no" title="statement not covered" >            }</span>)
+<span class="cstat-no" title="statement not covered" >                shortcut.fn()</span>
+<span class="cstat-no" title="statement not covered" ></span>                this.analytics.logKeyboardShortcut(
+<span class="cstat-no" title="statement not covered" >                    shortcu</span>t.title || "",
+<span class="cstat-no" title="statement not covered" >                    shortcut.combo</span>
+<span class="cstat-no" title="statement not covered" ></span>                )
+<span class="cstat-no" title="statement not covered" >                retu</span>rn false
+<span class="cstat-no" title="statement not covered" >            })</span>
         })
         this._shortcutsBound = true
     }
 &nbsp;
     private <span class="fstat-no" title="function not covered" >unbindKeyboardShortcuts(): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (!</span>this._shortcutsBound) return
-<span class="cstat-no" title="statement not covered" >        this.keyboar</span>dShortcuts.forEach((shortcut) =&gt; {
-<span class="cstat-no" title="statement not covered" >            Mousetrap.unbind(shortcut.combo)</span>
+<span class="cstat-no" title="statement not covered" >        if (!this._shortcutsBound) return</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>keyboardShortcuts.forEach((shortcut) =&gt; {
+<span class="cstat-no" title="statement not covered" >            Mousetra</span>p.unbind(shortcut.combo)
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        this._sho</span>rtcutsBound = false
+<span class="cstat-no" title="statement not covered" >        this.</span>_shortcutsBound = false
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.unbindKeyboardShortcuts()</span>
-<span class="cstat-no" title="statement not covered" >        windo</span>w.removeEventListener("scroll", this.checkVisibility)
-<span class="cstat-no" title="statement not covered" >        this.dispose()</span>
+<span class="cstat-no" title="statement not covered" >        this.unbindK</span>eyboardShortcuts()
+<span class="cstat-no" title="statement not covered" >        window.removeEventListener("scrol</span>l", this.checkVisibility)
+<span class="cstat-no" title="statement not covered" >        this.</span>dispose()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     componentDidUpdate(): void {
@@ -7353,16 +7355,16 @@ export class Grapher
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    componentDidCatch(error: Error, info: any): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.setErro</span>r(error)
-<span class="cstat-no" title="statement not covered" >        this.analytics.logGrapherViewError(</span>error, info)
+<span class="cstat-no" title="statement not covered" >        this.</span>setError(error)
+<span class="cstat-no" title="statement not covered" >        this.analyti</span>cs.logGrapherViewError(error, info)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable isShareMenuActive = false
 &nbsp;
     @computed get hasRelatedQuestion(): boolean {
-        if (!this.relatedQuestions.length) <span class="branch-0 cbranch-no" title="branch not covered" >return false</span>
-<span class="cstat-no" title="statement not covered" >        const</span> question = this.relatedQuestions[0]
-<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" >!!que</span></span>stion &amp;&amp; !!question.text &amp;&amp; !!question.url
+        if (!this.relatedQuestions.length) return false
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        const question = this.relatedQuestions[0]</span></span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n !!question &amp;&amp; !!question.text &amp;&amp; !!question.url
     }
 &nbsp;
     @computed private get footerControlsLines(): number {
@@ -7373,7 +7375,7 @@ export class Grapher
         const footerRowHeight = 32 // todo: cleanup. needs to keep in sync with grapher.scss' $footerRowHeight
         return (
             this.footerControlsLines * footerRowHeight +
-            (this.hasRelatedQuestion ? 20 : 0)
+            (<span class="branch-0 cbranch-no" title="branch not covered" >this.hasRelatedQuestion ? 20 : 0</span>)
         )
     }
 &nbsp;
@@ -7401,6 +7403,7 @@ export class Grapher
         const grapher = new Grapher()
         this.title = grapher.title
         this.subtitle = grapher.subtitle
+        this.note = grapher.note
         this.type = grapher.type
         this.ySlugs = grapher.ySlugs
         this.xSlug = grapher.xSlug
@@ -7705,7 +7708,7 @@ export const getErrorMessageRelatedQuestionUrl = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Aug 30 2021 14:45:47 GMT+0000 (Coordinated Universal Time)
+                at Mon Aug 30 2021 14:48:35 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
