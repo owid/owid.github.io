@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.89% </span>
+                <span class="strong">13.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>174/1253</span>
+                <span class='fraction'>176/1261</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.89% </span>
+                <span class="strong">13.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>174/1253</span>
+                <span class='fraction'>176/1261</span>
             </div>
         
             
@@ -1902,7 +1902,18 @@
 <a name='L1843'></a><a href='#L1843'>1843</a>
 <a name='L1844'></a><a href='#L1844'>1844</a>
 <a name='L1845'></a><a href='#L1845'>1845</a>
-<a name='L1846'></a><a href='#L1846'>1846</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1846'></a><a href='#L1846'>1846</a>
+<a name='L1847'></a><a href='#L1847'>1847</a>
+<a name='L1848'></a><a href='#L1848'>1848</a>
+<a name='L1849'></a><a href='#L1849'>1849</a>
+<a name='L1850'></a><a href='#L1850'>1850</a>
+<a name='L1851'></a><a href='#L1851'>1851</a>
+<a name='L1852'></a><a href='#L1852'>1852</a>
+<a name='L1853'></a><a href='#L1853'>1853</a>
+<a name='L1854'></a><a href='#L1854'>1854</a>
+<a name='L1855'></a><a href='#L1855'>1855</a>
+<a name='L1856'></a><a href='#L1856'>1856</a>
+<a name='L1857'></a><a href='#L1857'>1857</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2853,6 +2864,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2870,6 +2891,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3144,9 +3166,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -3155,6 +3174,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3749,7 +3771,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint @typescript-eslint/no-unused-vars: [ "warn", { argsIgnorePattern: "^(res|req)$" } ] */
 &nbsp;
-import * as lodash from "lodash"
+import _, * as lodash from "lodash"
 import { getConnection } from "typeorm"
 import * as bodyParser from "body-parser"
 import * as db from "../db/db"
@@ -4414,61 +4436,61 @@ apiRouter.get(
 apiRouter.get(
     "/suggested-chart-revisions/:suggestedChartRevisionId",
     async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const suggested</span>ChartRevisionId = expectInt(
-<span class="cstat-no" title="statement not covered" >            req.params</span>.suggestedChartRevisionId
+<span class="cstat-no" title="statement not covered" >        const suggestedChartRevisionId = expectInt(</span>
+<span class="cstat-no" title="statement not covered" >            req.params.suggestedChartRevisionId</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        const suggestedChartRevision = await db.mysqlFirst(
+<span class="cstat-no" title="statement not covered" >        const suggestedChartRevision = await db.mysqlFirst(</span>
 <span class="cstat-no" title="statement not covered" >            `</span>
-<span class="cstat-no" title="statement not covered" >            SELECT scr.id, scr.chartId, scr.updatedAt, scr.createdAt,</span>
-<span class="cstat-no" title="statement not covered" >                scr.suggestedReason, scr.</span>decisionReason, scr.status,
-<span class="cstat-no" title="statement not covered" >                scr.suggestedConfig, scr.origi</span>nalConfig,
-<span class="cstat-no" title="statement not covered" >                crea</span>tedByUser.id as createdById,
-<span class="cstat-no" title="statement not covered" >                updatedByUser.id as updatedById,</span>
+<span class="cstat-no" title="statement not covered" >            SELECT scr.id, scr.chartId, scr.</span>updatedAt, scr.createdAt,
+<span class="cstat-no" title="statement not covered" >                scr.suggestedReason, scr.decisionR</span>eason, scr.status,
+<span class="cstat-no" title="statement not covered" >                scr.sug</span>gestedConfig, scr.originalConfig,
+<span class="cstat-no" title="statement not covered" >                create</span>dByUser.id as createdById,
+<span class="cstat-no" title="statement not covered" >                updat</span>edByUser.id as updatedById,
 <span class="cstat-no" title="statement not covered" >                createdByUser.fullName as createdByFullName,</span>
-<span class="cstat-no" title="statement not covered" >                updatedByUser.fullName as updatedByFullName</span>,
-<span class="cstat-no" title="statement not covered" >                c.config as exis</span>tingConfig, c.updatedAt as chartUpdatedAt,
-<span class="cstat-no" title="statement not covered" >                c.createdAt</span> as chartCreatedAt
-<span class="cstat-no" title="statement not covered" >            FROM sugge</span>sted_chart_revisions as scr
-<span class="cstat-no" title="statement not covered" >            LEFT JOIN charts c on c.id = scr.chartId</span>
-<span class="cstat-no" title="statement not covered" >            LEFT JOIN users cr</span>eatedByUser on createdByUser.id = scr.createdBy
-<span class="cstat-no" title="statement not covered" >            L</span>EFT JOIN users updatedByUser on updatedByUser.id = scr.updatedBy
+<span class="cstat-no" title="statement not covered" ></span>                updatedByUser.fullName as updatedByFullName,
+<span class="cstat-no" title="statement not covered" >                c.config as existingConfig, c.updated</span>At as chartUpdatedAt,
+<span class="cstat-no" title="statement not covered" >                c.createdAt as chartCreatedAt</span>
+<span class="cstat-no" title="statement not covered" >            FROM suggested_chart_revision</span>s as scr
+<span class="cstat-no" title="statement not covered" >            LEFT JOIN charts c on c.id = scr.c</span>hartId
+<span class="cstat-no" title="statement not covered" >            LEFT JOI</span>N users createdByUser on createdByUser.id = scr.createdBy
+<span class="cstat-no" title="statement not covered" >            LEFT JOIN users updatedByUser on updatedByUser.id = scr.updatedBy</span>
 <span class="cstat-no" title="statement not covered" >            WHERE scr.id = ?</span>
 <span class="cstat-no" title="statement not covered" >        `,</span>
-<span class="cstat-no" title="statement not covered" ></span>            [suggestedChartRevisionId]
+<span class="cstat-no" title="statement not covered" >            [suggestedChartRevis</span>ionId]
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (!suggestedChartRevision) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new JsonError(</span>
-<span class="cstat-no" title="statement not covered" >                `No sug</span>gested chart revision by id '${suggestedChartRevisionId}'`,
+<span class="cstat-no" title="statement not covered" >            throw new JsonErro</span>r(
+<span class="cstat-no" title="statement not covered" ></span>                `No suggested chart revision by id '${suggestedChartRevisionId}'`,
 <span class="cstat-no" title="statement not covered" >                404</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        suggestedChartRevision.suggestedConfig = JSON.parse(
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevi</span>sion.suggestedConfig
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.suggestedConfig = JSON.parse(</span>
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.sugge</span>stedConfig
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        suggestedChartR</span>evision.originalConfig = JSON.parse(
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevi</span>sion.originalConfig
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.existingCon</span>fig = JSON.parse(
+<span class="cstat-no" title="statement not covered" >            suggeste</span>dChartRevision.existingConfig
 <span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.originalConfig = JSON.parse(</span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.originalConfig</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        suggestedCh</span>artRevision.existingConfig = JSON.parse(
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.existingConfig</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canApprove = SuggestedChartRevision.checkCanApprove(</span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevision</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        suggestedChartRe</span>vision.canReject = SuggestedChartRevision.checkCanReject(
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision</span>.canApprove = SuggestedChartRevision.checkCanApprove(
 <span class="cstat-no" title="statement not covered" ></span>            suggestedChartRevision
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        s</span>uggestedChartRevision.canFlag = SuggestedChartRevision.checkCanFlag(
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevi</span>sion
-<span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canPending = SuggestedChartRevision.checkCanPending(</span>
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canReject = SuggestedChartRevision.chec</span>kCanReject(
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevision</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canFlag = SuggestedChartRevision.checkCanFlag(</span>
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevision</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canPending = SuggestedChartRevision.checkCanPendin</span>g(
 <span class="cstat-no" title="statement not covered" >            suggestedChartRevision</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevision: suggestedChartRevisi</span>on,
+<span class="cstat-no" title="statement not covered" ></span>            suggestedChartRevision: suggestedChartRevision,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 )
@@ -4476,58 +4498,58 @@ apiRouter.get(
 apiRouter.post(
     "/suggested-chart-revisions/:suggestedChartRevisionId/update",
     async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const suggestedChartRevisionId</span> = expectInt(
-<span class="cstat-no" title="statement not covered" >            req.params.suggestedChartRevisionId</span>
+<span class="cstat-no" title="statement not covered" >        const suggestedChartRevisionId = expectInt(</span>
+<span class="cstat-no" title="statement not covered" >            req.params.suggestedChart</span>RevisionId
 <span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" >        const { status, decisionReason } = req.body</span> as {
-<span class="cstat-no" title="statement not covered" >            status: </span>string
+<span class="cstat-no" title="statement not covered" >        const { status, decisionReason </span>} = req.body as {
+<span class="cstat-no" title="statement not covered" >            status: string</span>
 <span class="cstat-no" title="statement not covered" >            decisionReason: string</span>
 <span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await db.transaction(async (t) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const suggestedChartRevision =</span> await db.mysqlFirst(
-<span class="cstat-no" title="statement not covered" >                `SELECT id, chartId, suggestedConfig, originalConfig, status FROM suggested_chart_revisions WHERE id=?`,</span>
-<span class="cstat-no" title="statement not covered" >                [suggestedC</span>hartRevisionId]
+<span class="cstat-no" title="statement not covered" >        await db.transaction(async (t)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            const suggestedChartRevision = await db.mysqlFirst(</span>
+<span class="cstat-no" title="statement not covered" ></span>                `SELECT id, chartId, suggestedConfig, originalConfig, status FROM suggested_chart_revisions WHERE id=?`,
+<span class="cstat-no" title="statement not covered" >                [suggestedChartRevisionId]</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            if (!suggestedChartRevision) {</span>
-<span class="cstat-no" title="statement not covered" >                throw n</span>ew JsonError(
-<span class="cstat-no" title="statement not covered" >                    `</span>No suggested chart revision found for id '${suggestedChartRevisionId}'`,
-<span class="cstat-no" title="statement not covered" ></span>                    404
+<span class="cstat-no" title="statement not covered" >            if (!suggestedChartRevi</span>sion) {
+<span class="cstat-no" title="statement not covered" ></span>                throw new JsonError(
+<span class="cstat-no" title="statement not covered" >                    `No suggested chart revision found for id '${suggestedChartRevisionId}'`,</span>
+<span class="cstat-no" title="statement not covered" >                    404</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.</span>suggestedConfig = JSON.parse(
-<span class="cstat-no" title="statement not covered" >                suggestedChartRevision.sugge</span>stedConfig
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.suggestedConfig =</span> JSON.parse(
+<span class="cstat-no" title="statement not covered" >                suggestedChartRevision.suggestedConfig</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRe</span>vision.originalConfig = JSON.parse(
-<span class="cstat-no" title="statement not covered" >                suggestedChart</span>Revision.originalConfig
+<span class="cstat-no" title="statement not covered" >            suggested</span>ChartRevision.originalConfig = JSON.parse(
+<span class="cstat-no" title="statement not covered" >                su</span>ggestedChartRevision.originalConfig
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            suggestedChartRevisio</span>n.existingConfig = await expectChartById(
-<span class="cstat-no" title="statement not covered" >                suggestedChartRevision.char</span>tId
-<span class="cstat-no" title="statement not covered" ></span>            )
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const canApprove = SuggestedChartRevision.checkCanApprove(</span>
-<span class="cstat-no" title="statement not covered" >                suggestedChartRevision</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            const canReject = SuggestedChar</span>tRevision.checkCanReject(
-<span class="cstat-no" title="statement not covered" >                suggestedC</span>hartRevision
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            const canFlag </span>= SuggestedChartRevision.checkCanFlag(
-<span class="cstat-no" title="statement not covered" >                sugge</span>stedChartRevision
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            const canPending = Suggeste</span>dChartRevision.checkCanPending(
-<span class="cstat-no" title="statement not covered" >                suggestedChartRevision</span>
+<span class="cstat-no" title="statement not covered" >            suggestedChartRevision.existingConfig = await expectChartById(</span>
+<span class="cstat-no" title="statement not covered" >                s</span>uggestedChartRevision.chartId
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const ca</span>nUpdate =
-<span class="cstat-no" title="statement not covered" >                (status === "approved" &amp;&amp; canApprove) ||</span>
-<span class="cstat-no" title="statement not covered" >                (status === "rejected" &amp;&amp; canReject)</span> ||
+<span class="cstat-no" title="statement not covered" >            const canApprove = SuggestedChartRevision.</span>checkCanApprove(
+<span class="cstat-no" title="statement not covered" >                suggestedCha</span>rtRevision
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            const can</span>Reject = SuggestedChartRevision.checkCanReject(
+<span class="cstat-no" title="statement not covered" >                suggestedChartRev</span>ision
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>            const canFlag = SuggestedChartRevision.checkCanFlag(
+<span class="cstat-no" title="statement not covered" >                suggestedChartRevis</span>ion
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            const canPending = SuggestedChartRevision.checkCanPending(</span>
+<span class="cstat-no" title="statement not covered" >                suggestedChartRevision</span>
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >            const canUpdate =</span>
+<span class="cstat-no" title="statement not covered" >                (status ==</span>= "approved" &amp;&amp; canApprove) ||
+<span class="cstat-no" title="statement not covered" >                (stat</span>us === "rejected" &amp;&amp; canReject) ||
 <span class="cstat-no" title="statement not covered" >                (status === "pending" &amp;&amp; canPending) ||</span>
-<span class="cstat-no" title="statement not covered" >                (status === "flagged" &amp;&amp; canFlag)</span>
+<span class="cstat-no" title="statement not covered" >                (status === "flagged" &amp;</span>&amp; canFlag)
 <span class="cstat-no" title="statement not covered" >            if (!canUpdate) {</span>
-<span class="cstat-no" title="statement not covered" >                throw new J</span>sonError(
-<span class="cstat-no" title="statement not covered" >                    `</span>Suggest chart revision ${suggestedChartRevisionId} cannot be ` +
-<span class="cstat-no" title="statement not covered" >                        `upda</span>ted with status="${status}".`,
+<span class="cstat-no" title="statement not covered" >                throw new JsonError(</span>
+<span class="cstat-no" title="statement not covered" >                    `Suggest chart revision ${</span>suggestedChartRevisionId} cannot be ` +
+<span class="cstat-no" title="statement not covered" ></span>                        `updated with status="${status}".`,
 <span class="cstat-no" title="statement not covered" >                    404</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -4535,74 +4557,74 @@ apiRouter.post(
 <span class="cstat-no" title="statement not covered" >            await t.execute(</span>
 <span class="cstat-no" title="statement not covered" >                `</span>
 <span class="cstat-no" title="statement not covered" >                UPDAT</span>E suggested_chart_revisions
-<span class="cstat-no" title="statement not covered" >                SET statu</span>s=?, decisionReason=?, updatedAt=?, updatedBy=?
+<span class="cstat-no" title="statement not covered" >                SET status=?,</span> decisionReason=?, updatedAt=?, updatedBy=?
 <span class="cstat-no" title="statement not covered" >                WHERE id = ?</span>
 <span class="cstat-no" title="statement not covered" >                `,</span>
 <span class="cstat-no" title="statement not covered" >                [</span>
-<span class="cstat-no" title="statement not covered" >                    status,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    status,
 <span class="cstat-no" title="statement not covered" >                    decisionReason,</span>
-<span class="cstat-no" title="statement not covered" ></span>                    new Date(),
-<span class="cstat-no" title="statement not covered" >                    res.locals.user.id,</span>
-<span class="cstat-no" title="statement not covered" >                    suggestedChar</span>tRevisionId,
-<span class="cstat-no" title="statement not covered" ></span>                ]
+<span class="cstat-no" title="statement not covered" >                    new Date(),</span>
+<span class="cstat-no" title="statement not covered" >                    r</span>es.locals.user.id,
+<span class="cstat-no" title="statement not covered" >                    sugge</span>stedChartRevisionId,
+<span class="cstat-no" title="statement not covered" >                ]</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            // note: the calls to saveGrapher() below will never ove</span>rwrite a config
-<span class="cstat-no" title="statement not covered" >            // that has been changed since the suggestedConfig was creat</span>ed, because
-<span class="cstat-no" title="statement not covered" >            // if </span>the config has been changed since the suggestedConfig was created
-<span class="cstat-no" title="statement not covered" >            // then canUpdate will be false (so an error would have been raised</span>
+<span class="cstat-no" title="statement not covered" >            // note: th</span>e calls to saveGrapher() below will never overwrite a config
+<span class="cstat-no" title="statement not covered" >            // that has been changed since</span> the suggestedConfig was created, because
+<span class="cstat-no" title="statement not covered" >            // if the config has been </span>changed since the suggestedConfig was created
+<span class="cstat-no" title="statement not covered" ></span>            // then canUpdate will be false (so an error would have been raised
 <span class="cstat-no" title="statement not covered" >            // above).</span>
-<span class="cstat-no" title="statement not covered" >            if (status === "approved" &amp;&amp; canA</span>pprove) {
-<span class="cstat-no" title="statement not covered" >                await saveGrapher(</span>
-<span class="cstat-no" title="statement not covered" >                    t,</span>
-<span class="cstat-no" title="statement not covered" >                    res.locals.user,</span>
-<span class="cstat-no" title="statement not covered" >                    suggestedChart</span>Revision.suggestedConfig,
-<span class="cstat-no" title="statement not covered" >                    sugg</span>estedChartRevision.existingConfig
-<span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            } else if (</span>
-<span class="cstat-no" title="statement not covered" ></span>                status === "rejected" &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                canReject &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                suggestedChartRevision.status === "approved"</span>
-<span class="cstat-no" title="statement not covered" >            ) {</span>
+<span class="cstat-no" title="statement not covered" >            if (status === "appro</span>ved" &amp;&amp; canApprove) {
 <span class="cstat-no" title="statement not covered" ></span>                await saveGrapher(
 <span class="cstat-no" title="statement not covered" >                    t,</span>
 <span class="cstat-no" title="statement not covered" >                    res.locals.user,</span>
-<span class="cstat-no" title="statement not covered" >                    suggestedChartRevision</span>.originalConfig,
-<span class="cstat-no" title="statement not covered" >                    suggestedChartRevision.existingConfig</span>
+<span class="cstat-no" title="statement not covered" >                    suggestedChartRevision.suggestedConfig,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    suggestedChartRevision.existingConfig
+<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" >            } else if (</span>
+<span class="cstat-no" title="statement not covered" >                status === "rejected" &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                canReject &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                suggestedChar</span>tRevision.status === "approved"
+<span class="cstat-no" title="statement not covered" >            ) {</span>
+<span class="cstat-no" title="statement not covered" >                await saveGrapher(</span>
+<span class="cstat-no" title="statement not covered" >                    t,</span>
+<span class="cstat-no" title="statement not covered" >                    res.locals.u</span>ser,
+<span class="cstat-no" title="statement not covered" >                    sug</span>gestedChartRevision.originalConfig,
+<span class="cstat-no" title="statement not covered" ></span>                    suggestedChartRevision.existingConfig
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retu</span>rn { success: true }
+<span class="cstat-no" title="statement not covered" >        return { success: tr</span>ue }
 <span class="cstat-no" title="statement not covered" >    }</span>
 )
 &nbsp;
 apiRouter.get("/users.json", async (req: Request, res: Response) =&gt; ({
-<span class="cstat-no" title="statement not covered" >    users: await User.find({</span>
+<span class="cstat-no" title="statement not covered" >    users: await User.fin</span>d({
 <span class="cstat-no" title="statement not covered" >        select: [</span>
 <span class="cstat-no" title="statement not covered" >            "id",</span>
 <span class="cstat-no" title="statement not covered" ></span>            "email",
 <span class="cstat-no" title="statement not covered" ></span>            "fullName",
-<span class="cstat-no" title="statement not covered" >            "isAct</span>ive",
-<span class="cstat-no" title="statement not covered" >            "isSuperuser",</span>
-<span class="cstat-no" title="statement not covered" >            "created</span>At",
-<span class="cstat-no" title="statement not covered" ></span>            "updatedAt",
+<span class="cstat-no" title="statement not covered" >            "isActive",</span>
+<span class="cstat-no" title="statement not covered" ></span>            "isSuperuser",
+<span class="cstat-no" title="statement not covered" >            "createdAt",</span>
+<span class="cstat-no" title="statement not covered" >            "updatedAt",</span>
 <span class="cstat-no" title="statement not covered" >            "lastLogin",</span>
-<span class="cstat-no" title="statement not covered" ></span>            "lastSeen",
+<span class="cstat-no" title="statement not covered" >            "lastSeen",</span>
 <span class="cstat-no" title="statement not covered" >        ],</span>
-<span class="cstat-no" title="statement not covered" >        order: { lastSeen: "DESC" },</span>
+<span class="cstat-no" title="statement not covered" ></span>        order: { lastSeen: "DESC" },
 <span class="cstat-no" title="statement not covered" >    }),</span>
 <span class="cstat-no" title="statement not covered" >}))</span>
 &nbsp;
 apiRouter.get("/users/:userId.json", async (req: Request, res: Response) =&gt; ({
-<span class="cstat-no" title="statement not covered" >    user: await User.findOne(req.params.userId, {</span>
-<span class="cstat-no" title="statement not covered" >        select: [</span>
+<span class="cstat-no" title="statement not covered" >    user: await User.findOne(r</span>eq.params.userId, {
+<span class="cstat-no" title="statement not covered" ></span>        select: [
 <span class="cstat-no" title="statement not covered" >            "id",</span>
 <span class="cstat-no" title="statement not covered" >            "email",</span>
-<span class="cstat-no" title="statement not covered" ></span>            "fullName",
+<span class="cstat-no" title="statement not covered" >            "fullName",</span>
 <span class="cstat-no" title="statement not covered" >            "isActive",</span>
 <span class="cstat-no" title="statement not covered" ></span>            "isSuperuser",
 <span class="cstat-no" title="statement not covered" >            "createdAt",</span>
-<span class="cstat-no" title="statement not covered" ></span>            "updatedAt",
+<span class="cstat-no" title="statement not covered" >            "updatedAt",</span>
 <span class="cstat-no" title="statement not covered" >            "lastLogin",</span>
 <span class="cstat-no" title="statement not covered" >            "lastSeen",</span>
 <span class="cstat-no" title="statement not covered" >        ],</span>
@@ -4610,61 +4632,61 @@ apiRouter.get("/users/:userId.json", async (req: Request, res: Response) =&gt; (
 <span class="cstat-no" title="statement not covered" >}))</span>
 &nbsp;
 apiRouter.delete("/users/:userId", async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!res.locals.user.isSuperuser)</span>
+<span class="cstat-no" title="statement not covered" >    i</span>f (!res.locals.user.isSuperuser)
 <span class="cstat-no" title="statement not covered" >        throw new JsonError("Permission denied", 403)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const us</span>erId = expectInt(req.params.userId)
-<span class="cstat-no" title="statement not covered" >    await db.transaction(async (t) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        await t.execute</span>(`DELETE FROM users WHERE id=?`, [userId])
+<span class="cstat-no" title="statement not covered" >    const userId = expectInt(req.params.userId)</span>
+<span class="cstat-no" title="statement not covered" >    await db.trans</span>action(async (t) =&gt; {
+<span class="cstat-no" title="statement not covered" >        await t.execute(`DELETE FROM users WHERE id=?`, [userId])</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { success: t</span>rue }
+<span class="cstat-no" title="statement not covered" >    return { success: true }</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.put("/users/:userId", async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!r</span>es.locals.user.isSuperuser)
-<span class="cstat-no" title="statement not covered" >        throw new JsonError("Permission denied", 403)</span>
+<span class="cstat-no" title="statement not covered" >    if (!res.locals.user.isSuperuser)</span>
+<span class="cstat-no" title="statement not covered" >        throw new JsonE</span>rror("Permission denied", 403)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const user = await User.findOne(req.params.u</span>serId)
-<span class="cstat-no" title="statement not covered" >    if (!use</span>r) throw new JsonError("No such user", 404)
+<span class="cstat-no" title="statement not covered" >    const user = await User.findOne(req.params.userId)</span>
+<span class="cstat-no" title="statement not covered" >    if (!user) throw ne</span>w JsonError("No such user", 404)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    user.fullName </span>= req.body.fullName
-<span class="cstat-no" title="statement not covered" >    user.isActive = req.body.isActive</span>
-<span class="cstat-no" title="statement not covered" >    await user.save(</span>)
+<span class="cstat-no" title="statement not covered" >    user.fullName = req.body.fullName</span>
+<span class="cstat-no" title="statement not covered" >    user.</span>isActive = req.body.isActive
+<span class="cstat-no" title="statement not covered" >    await </span>user.save()
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return { success: true }</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.post("/users/invite", async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!res.locals.user.isSuperuser)</span>
-<span class="cstat-no" title="statement not covered" >        throw new </span>JsonError("Permission denied", 403)
+<span class="cstat-no" title="statement not covered" >    if (!res.local</span>s.user.isSuperuser)
+<span class="cstat-no" title="statement not covered" >        throw new JsonError("Permission denied", 403)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { email } = req.body</span>
+<span class="cstat-no" title="statement not covered" >    co</span>nst { email } = req.body
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await getConnection().tran</span>saction(async (manager) =&gt; {
-<span class="cstat-no" title="statement not covered" >        // Remove any prev</span>ious invites for this email address to avoid duplicate accounts
+<span class="cstat-no" title="statement not covered" >    a</span>wait getConnection().transaction(async (manager) =&gt; {
+<span class="cstat-no" title="statement not covered" >        // Remove any previous invites for this email address to avoid duplicate accounts</span>
 <span class="cstat-no" title="statement not covered" >        const repo = manager.getRepository(UserInvitation)</span>
 <span class="cstat-no" title="statement not covered" >        await repo</span>
-<span class="cstat-no" title="statement not covered" >            .createQueryBuilder()</span>
-<span class="cstat-no" title="statement not covered" >            .where(`email = :email`, {</span> email })
+<span class="cstat-no" title="statement not covered" >            .creat</span>eQueryBuilder()
+<span class="cstat-no" title="statement not covered" >            .where(`email = :email`, { email })</span>
 <span class="cstat-no" title="statement not covered" >            .delete()</span>
 <span class="cstat-no" title="statement not covered" >            .execute()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const invite = new Us</span>erInvitation()
-<span class="cstat-no" title="statement not covered" >        invit</span>e.email = email
-<span class="cstat-no" title="statement not covered" ></span>        invite.code = UserInvitation.makeInviteCode()
-<span class="cstat-no" title="statement not covered" >        invite.validTill = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)</span>
-<span class="cstat-no" title="statement not covered" >        invite.createdAt = new</span> Date()
-<span class="cstat-no" title="statement not covered" ></span>        invite.updatedAt = new Date()
+<span class="cstat-no" title="statement not covered" >        const invite = new</span> UserInvitation()
+<span class="cstat-no" title="statement not covered" >        invite.email = email</span>
+<span class="cstat-no" title="statement not covered" >        invite.code = User</span>Invitation.makeInviteCode()
+<span class="cstat-no" title="statement not covered" >        invite.validTill = new Date(Date.now() + 7 * 24 *</span> 60 * 60 * 1000)
+<span class="cstat-no" title="statement not covered" >        invite.createdAt = new Date()</span>
+<span class="cstat-no" title="statement not covered" >        invite.updatedAt = new Date()</span>
 <span class="cstat-no" title="statement not covered" >        await repo.save(invite)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const </span>inviteLink = absoluteUrl(`/admin/register?code=${invite.code}`)
+<span class="cstat-no" title="statement not covered" >        const inviteLink = ab</span>soluteUrl(`/admin/register?code=${invite.code}`)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await sendMail({</span>
+<span class="cstat-no" title="statement not covered" ></span>        await sendMail({
 <span class="cstat-no" title="statement not covered" >            from: "no-reply@ourworldindata.org",</span>
 <span class="cstat-no" title="statement not covered" >            to: email,</span>
 <span class="cstat-no" title="statement not covered" ></span>            subject: "Invitation to join owid-admin",
-<span class="cstat-no" title="statement not covered" ></span>            text: `Hi, please follow this link to register on owid-admin: ${inviteLink}`,
+<span class="cstat-no" title="statement not covered" >            text: `Hi, please follow this link to regist</span>er on owid-admin: ${inviteLink}`,
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -4672,29 +4694,40 @@ apiRouter.post("/users/invite", async (req: Request, res: Response) =&gt; {
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.get("/variables.json", async (req) =&gt; {
-<span class="cstat-no" title="statement not covered" >    const limit = req.query.limit !== undefined ? parseInt(req.query.limit) : 50</span>
+<span class="cstat-no" title="statement not covered" >    c</span>onst limit = req.query.limit !== undefined ? parseInt(req.query.limit) : 50
 <span class="cstat-no" title="statement not covered" >    const searchStr = req.query.search</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const query =</span> `
-<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name, d.id AS </span>datasetId, d.name AS datasetName, d.isPrivate AS isPrivate, d.dataEditedAt AS uploadedAt, u.fullName AS uploadedBy
+<span class="cstat-no" title="statement not covered" >    const query = `</span>
+<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name, d.id AS datasetId, d.name AS datasetName, d.isPrivate AS isPrivate, d.dataEditedAt AS </span>uploadedAt, u.fullName AS uploadedBy
 <span class="cstat-no" title="statement not covered" >        FROM variables AS v</span>
 <span class="cstat-no" title="statement not covered" >        JOIN datasets d ON d.id=v.datasetId</span>
-<span class="cstat-no" title="statement not covered" >        JOIN users u ON </span>u.id=d.dataEditedByUserId
+<span class="cstat-no" title="statement not covered" >        JOIN users u ON u.id=d.dataEdi</span>tedByUserId
 <span class="cstat-no" title="statement not covered" >        ${searchStr ? "WHERE v.name LIKE ?" : ""}</span>
 <span class="cstat-no" title="statement not covered" >        ORDER BY d.dataEditedAt DESC</span>
 <span class="cstat-no" title="statement not covered" >        LIMIT ?</span>
 <span class="cstat-no" title="statement not covered" >    `</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const rows = await db.que</span>ryMysql(
+<span class="cstat-no" title="statement not covered" >    const rows = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        query,</span>
-<span class="cstat-no" title="statement not covered" >        searchStr ? [`%${search</span>Str}%`, limit] : [limit]
+<span class="cstat-no" title="statement not covered" >        searchStr ? [`%$</span>{searchStr}%`, limit] : [limit]
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const numTotalRows = (</span>
-<span class="cstat-no" title="statement not covered" >        aw</span>ait db.queryMysql(`SELECT COUNT(*) as count FROM variables`)
+<span class="cstat-no" title="statement not covered" >        await db.queryMysql(`SELECT C</span>OUNT(*) as count FROM variables`)
 <span class="cstat-no" title="statement not covered" >    )[0].count</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { variables: rows, numTotalRows: numTotalRows }</span>
+<span class="cstat-no" title="statement not covered" >    return { variables: rows, numTotalRow</span>s: numTotalRows }
+<span class="cstat-no" title="statement not covered" >})</span>
+&nbsp;
+apiRouter.get("/variables.usages.json", async (req) =&gt; {
+<span class="cstat-no" title="statement not covered" >    const query = `SELECT variableI</span>d, COUNT(DISTINCT chartId) AS usageCount
+<span class="cstat-no" title="statement not covered" >FROM chart</span>_dimensions
+<span class="cstat-no" title="statement not covered" >GROUP BY variab</span>leId
+<span class="cstat-no" title="statement not covered" >ORDER BY usageCount DESC`</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const rows = await db.queryMysql(query)</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return rows</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 interface VariableSingleMeta {
@@ -4715,89 +4748,89 @@ interface VariableSingleMeta {
 apiRouter.get(
     "/variables/:variableId.json",
     async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const variableId = expectInt(req.params.varia</span>bleId)
+<span class="cstat-no" title="statement not covered" >        const variableId = expectInt(req</span>.params.variableId)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const variable = await db.mysqlFirs</span>t(
+<span class="cstat-no" title="statement not covered" >        const vari</span>able = await db.mysqlFirst(
 <span class="cstat-no" title="statement not covered" >            `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name, </span>v.unit, v.shortUnit, v.description, v.sourceId, u.fullName AS uploadedBy,
-<span class="cstat-no" title="statement not covered" >               v.d</span>isplay, d.id AS datasetId, d.name AS datasetName, d.namespace AS datasetNamespace
+<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name, v.unit, v.</span>shortUnit, v.description, v.sourceId, u.fullName AS uploadedBy,
+<span class="cstat-no" title="statement not covered" >               v.display, d.id AS datasetId, d.nam</span>e AS datasetName, d.namespace AS datasetNamespace
 <span class="cstat-no" title="statement not covered" >        FROM variables v</span>
-<span class="cstat-no" title="statement not covered" >        JOIN datasets d ON d.id=v.datas</span>etId
-<span class="cstat-no" title="statement not covered" >        JOIN users u ON u.id=d.dataEditedByUserId</span>
+<span class="cstat-no" title="statement not covered" >        JOIN datasets d ON d.id=v.datasetId</span>
+<span class="cstat-no" title="statement not covered" ></span>        JOIN users u ON u.id=d.dataEditedByUserId
 <span class="cstat-no" title="statement not covered" >        WHERE v.id = ?</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
-<span class="cstat-no" title="statement not covered" ></span>            [variableId]
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" >            [</span>variableId]
+<span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (!</span>variable) {
-<span class="cstat-no" title="statement not covered" ></span>            throw new JsonError(`No variable by id '${variableId}'`, 404)
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >        if (!variable) {</span>
+<span class="cstat-no" title="statement not covered" >            throw new JsonError(`No variable by id '${variab</span>leId}'`, 404)
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        variable.display = JSON.parse(variable.display)</span>
+<span class="cstat-no" title="statement not covered" >        variable.display = JSO</span>N.parse(variable.display)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        variable.source = await db.mysqlFirst(</span>
 <span class="cstat-no" title="statement not covered" >            `SELECT id, name F</span>ROM sources AS s WHERE id = ?`,
-<span class="cstat-no" title="statement not covered" ></span>            variable.sourceId
+<span class="cstat-no" title="statement not covered" >            variable.sourceI</span>d
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const charts = await</span> db.queryMysql(
+<span class="cstat-no" title="statement not covered" ></span>        const charts = await db.queryMysql(
 <span class="cstat-no" title="statement not covered" >            `</span>
 <span class="cstat-no" title="statement not covered" >        SELECT ${OldChart.listFields}</span>
-<span class="cstat-no" title="statement not covered" ></span>        FROM charts
-<span class="cstat-no" title="statement not covered" >        JOIN users lastEditedByUser ON lastEditedByUser.id = charts.lastEditedByUserId</span>
-<span class="cstat-no" title="statement not covered" >        LEFT JOIN users publishedByUser</span> ON publishedByUser.id = charts.publishedByUserId
-<span class="cstat-no" title="statement not covered" >        JOIN chart_dimensions cd ON cd.chartId = charts</span>.id
-<span class="cstat-no" title="statement not covered" >        WHERE cd.variableId = ?</span>
-<span class="cstat-no" title="statement not covered" >        GROUP BY charts.id</span>
+<span class="cstat-no" title="statement not covered" >        FROM charts</span>
+<span class="cstat-no" title="statement not covered" >        JOIN users lastEditedByUser ON lastEditedByUser.</span>id = charts.lastEditedByUserId
+<span class="cstat-no" title="statement not covered" >        LEFT JOIN users publishedByUser ON publishedByUser.id = charts.publishedByUserId</span>
+<span class="cstat-no" title="statement not covered" >        JOIN chart_dimension</span>s cd ON cd.chartId = charts.id
+<span class="cstat-no" title="statement not covered" ></span>        WHERE cd.variableId = ?
+<span class="cstat-no" title="statement not covered" >        GROUP</span> BY charts.id
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" ></span>            [variableId]
-<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        await Chart.assignTagsForCharts(charts)
+<span class="cstat-no" title="statement not covered" >        await Chart.assignTagsForCharts(charts)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        variable.charts = charts</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return {</span>
-<span class="cstat-no" title="statement not covered" >            variable: variable as VariableSingleMeta,</span>
-<span class="cstat-no" title="statement not covered" >        }</span> /*, vardata: await getVariableData([variableId]) }*/
+<span class="cstat-no" title="statement not covered" ></span>            variable: variable as VariableSingleMeta,
+<span class="cstat-no" title="statement not covered" >        } /*, vardata: await getVariableData([variableId]) }*/</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 )
 &nbsp;
 apiRouter.put("/variables/:variableId", async (req: Request) =&gt; {
-<span class="cstat-no" title="statement not covered" >    const variableId = expect</span>Int(req.params.variableId)
-<span class="cstat-no" title="statement not covered" >    const variable = (req.body as { variable: VariableSingleMeta }).variable</span>
+<span class="cstat-no" title="statement not covered" >    const variableId = expectInt(req.params.variableId)</span>
+<span class="cstat-no" title="statement not covered" >    const variable = (req.body as { variable: Vari</span>ableSingleMeta }).variable
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    await db.execute(</span>
-<span class="cstat-no" title="statement not covered" >        `UPDATE variables SET name=?, description=</span>?, updatedAt=?, display=? WHERE id = ?`,
-<span class="cstat-no" title="statement not covered" ></span>        [
-<span class="cstat-no" title="statement not covered" >            variable.name,</span>
+<span class="cstat-no" title="statement not covered" >        `UPDATE variables SET name=?, description=?, u</span>pdatedAt=?, display=? WHERE id = ?`,
+<span class="cstat-no" title="statement not covered" >        [</span>
+<span class="cstat-no" title="statement not covered" >            variabl</span>e.name,
 <span class="cstat-no" title="statement not covered" >            variable.description,</span>
 <span class="cstat-no" title="statement not covered" >            new Date(),</span>
-<span class="cstat-no" title="statement not covered" >            JSON.st</span>ringify(variable.display),
+<span class="cstat-no" title="statement not covered" >            JSON.stringify(variable.display),</span>
 <span class="cstat-no" title="statement not covered" >            variableId,</span>
-<span class="cstat-no" title="statement not covered" >        ]</span>
+<span class="cstat-no" title="statement not covered" ></span>        ]
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    r</span>eturn { success: true }
+<span class="cstat-no" title="statement not covered" >    return { success: true }</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.delete("/variables/:variableId", async (req: Request) =&gt; {
-<span class="cstat-no" title="statement not covered" >    const variableId = expectInt(req.params.variabl</span>eId)
+<span class="cstat-no" title="statement not covered" >    const variableId = expectInt(req.params.variableId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const variable = await db.my</span>sqlFirst(
-<span class="cstat-no" title="statement not covered" >        `SELECT datasets.namespace FROM variables JOIN data</span>sets ON variables.datasetId=datasets.id WHERE variables.id=?`,
-<span class="cstat-no" title="statement not covered" >        [variableId]</span>
+<span class="cstat-no" title="statement not covered" >    co</span>nst variable = await db.mysqlFirst(
+<span class="cstat-no" title="statement not covered" >        `SELECT datasets.namespace FROM variables JOIN datasets ON varia</span>bles.datasetId=datasets.id WHERE variables.id=?`,
+<span class="cstat-no" title="statement not covered" ></span>        [variableId]
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    i</span>f (!variable) throw new JsonError(`No variable by id ${variableId}`, 404)
-<span class="cstat-no" title="statement not covered" >    else if (variable.namespace !== "owid")</span>
-<span class="cstat-no" title="statement not covered" >        throw new JsonError(`Cannot delete bul</span>k import variable`, 400)
+<span class="cstat-no" title="statement not covered" >    if (!variab</span>le) throw new JsonError(`No variable by id ${variableId}`, 404)
+<span class="cstat-no" title="statement not covered" >    else if (variable.</span>namespace !== "owid")
+<span class="cstat-no" title="statement not covered" >        throw new JsonError(`Ca</span>nnot delete bulk import variable`, 400)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await db.transacti</span>on(async (t) =&gt; {
-<span class="cstat-no" title="statement not covered" >        await t.execute(`DELETE</span> FROM data_values WHERE variableId=?`, [
+<span class="cstat-no" title="statement not covered" >    await db.transaction(async (t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        await t.execute(`DELETE FROM data_</span>values WHERE variableId=?`, [
 <span class="cstat-no" title="statement not covered" >            variableId,</span>
 <span class="cstat-no" title="statement not covered" >        ])</span>
-<span class="cstat-no" title="statement not covered" >        await t.execute(`DELETE FROM varia</span>bles WHERE id=?`, [variableId])
+<span class="cstat-no" title="statement not covered" >        await t.execute(`DELETE FROM</span> variables WHERE id=?`, [variableId])
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return { success: true }</span>
@@ -4805,181 +4838,181 @@ apiRouter.delete("/variables/:variableId", async (req: Request) =&gt; {
 &nbsp;
 apiRouter.get("/datasets.json", async (req) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const datasets = await db.queryMysql(`</span>
-<span class="cstat-no" title="statement not covered" >        SELECT d.id, d.namespace, d.name, d.description, d.</span>dataEditedAt, du.fullName AS dataEditedByUserName, d.metadataEditedAt, mu.fullName AS metadataEditedByUserName, d.isPrivate
+<span class="cstat-no" title="statement not covered" >        SELECT d.</span>id, d.namespace, d.name, d.description, d.dataEditedAt, du.fullName AS dataEditedByUserName, d.metadataEditedAt, mu.fullName AS metadataEditedByUserName, d.isPrivate
 <span class="cstat-no" title="statement not covered" >        FROM datasets d</span>
-<span class="cstat-no" title="statement not covered" >        JOIN users du ON du.id=d.dataEditedByUserId</span>
-<span class="cstat-no" title="statement not covered" >        JOIN user</span>s mu ON mu.id=d.metadataEditedByUserId
-<span class="cstat-no" title="statement not covered" >        ORDER BY d.dataE</span>ditedAt DESC
+<span class="cstat-no" title="statement not covered" >        JOIN users du ON du.id</span>=d.dataEditedByUserId
+<span class="cstat-no" title="statement not covered" >        JOIN users mu ON mu.id=d.metad</span>ataEditedByUserId
+<span class="cstat-no" title="statement not covered" >        ORDER BY d.dataEditedAt DESC</span>
 <span class="cstat-no" title="statement not covered" >    `)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const tags = await db.queryMysql(`</span>
-<span class="cstat-no" title="statement not covered" >        SELECT dt.datasetId,</span> t.id, t.name FROM dataset_tags dt
-<span class="cstat-no" title="statement not covered" >        JOIN tags t ON dt.tagId </span>= t.id
+<span class="cstat-no" title="statement not covered" >    const tags = await db.queryMys</span>ql(`
+<span class="cstat-no" title="statement not covered" >        SELECT dt.datase</span>tId, t.id, t.name FROM dataset_tags dt
+<span class="cstat-no" title="statement not covered" >        JOIN tags t ON dt.tagId = t.id</span>
 <span class="cstat-no" title="statement not covered" >    `)</span>
-<span class="cstat-no" title="statement not covered" >    const tagsByDatasetI</span>d = lodash.groupBy(tags, (t) =&gt; t.datasetId)
-<span class="cstat-no" title="statement not covered" >    for (const dataset of datasets) {</span>
-<span class="cstat-no" title="statement not covered" >        dataset.tags = (tagsByDatasetId[dataset.id] || []).map(</span>(t) =&gt;
+<span class="cstat-no" title="statement not covered" >    const t</span>agsByDatasetId = lodash.groupBy(tags, (t) =&gt; t.datasetId)
+<span class="cstat-no" title="statement not covered" >    for </span>(const dataset of datasets) {
+<span class="cstat-no" title="statement not covered" >        dataset.tags =</span> (tagsByDatasetId[dataset.id] || []).map((t) =&gt;
 <span class="cstat-no" title="statement not covered" ></span>            lodash.omit(t, "datasetId")
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    /</span>*LEFT JOIN variables AS v ON v.datasetId=d.id
+<span class="cstat-no" title="statement not covered" >    /*LEFT JOIN variables AS v ON v.datasetId=d.id</span>
 <span class="cstat-no" title="statement not covered" >    GROUP BY d.id*/</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return { datasets: datasets }</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.get("/datasets/:datasetId.json", async (req: Request) =&gt; {
-<span class="cstat-no" title="statement not covered" >    const datasetId = expectInt(req.params.datasetId)</span>
+<span class="cstat-no" title="statement not covered" >    const datasetId = expectInt</span>(req.params.datasetId)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const dataset = await db.mysqlFirs</span>t(
+<span class="cstat-no" title="statement not covered" >    const dataset =</span> await db.mysqlFirst(
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT d.id, </span>d.namespace, d.name, d.description, d.updatedAt, d.isPrivate, d.dataEditedAt, d.dataEditedByUserId, du.fullName AS dataEditedByUserName, d.metadataEditedAt, d.metadataEditedByUserId, mu.fullName AS metadataEditedByUserName, d.isPrivate
-<span class="cstat-no" title="statement not covered" >        FROM datase</span>ts AS d
-<span class="cstat-no" title="statement not covered" >        JOIN users du ON du.id=d.dataEditedByUs</span>erId
-<span class="cstat-no" title="statement not covered" ></span>        JOIN users mu ON mu.id=d.metadataEditedByUserId
+<span class="cstat-no" title="statement not covered" ></span>        SELECT d.id, d.namespace, d.name, d.description, d.updatedAt, d.isPrivate, d.dataEditedAt, d.dataEditedByUserId, du.fullName AS dataEditedByUserName, d.metadataEditedAt, d.metadataEditedByUserId, mu.fullName AS metadataEditedByUserName, d.isPrivate
+<span class="cstat-no" title="statement not covered" >        FROM datasets AS d</span>
+<span class="cstat-no" title="statement not covered" >        JOIN users du ON du.id=d.dataEditedByUserId</span>
+<span class="cstat-no" title="statement not covered" >        JOIN users mu ON mu.id=d.metadataEditedByUserId</span>
 <span class="cstat-no" title="statement not covered" >        WHERE d.id = ?</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (!dataset) throw new JsonError(`No d</span>ataset by id '${datasetId}'`, 404)
+<span class="cstat-no" title="statement not covered" >    if (!dataset) throw new JsonError(`No dataset by id '${datasetId</span>}'`, 404)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const zipFile = await db.mysqlFirst(</span>
-<span class="cstat-no" title="statement not covered" >        `SELECT filename FROM dataset_files WHERE datasetId=?`,</span>
+<span class="cstat-no" title="statement not covered" >        `SELECT filename FR</span>OM dataset_files WHERE datasetId=?`,
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >    if (zipFile) dataset.zi</span>pFile = zipFile
+<span class="cstat-no" title="statement not covered" >    if (zipFile) d</span>ataset.zipFile = zipFile
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const variables =</span> await db.queryMysql(
+<span class="cstat-no" title="statement not covered" >    const variables = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name, v.description, v.display</span>
+<span class="cstat-no" title="statement not covered" >        SELECT v.id, v.name,</span> v.description, v.display
 <span class="cstat-no" title="statement not covered" >        FROM variables AS v</span>
-<span class="cstat-no" title="statement not covered" >        WHERE v.datasetId = </span>?
+<span class="cstat-no" title="statement not covered" >        WHERE v.datas</span>etId = ?
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    for (const v of vari</span>ables) {
-<span class="cstat-no" title="statement not covered" ></span>        v.display = JSON.parse(v.display)
+<span class="cstat-no" title="statement not covered" >    for (const v of variables) {</span>
+<span class="cstat-no" title="statement not covered" >        v.display = JSON.parse(v.display)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    dataset.variables = variables</span>
+<span class="cstat-no" title="statement not covered" >    dataset.variables =</span> variables
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Currently for backwards c</span>ompatibility datasets can still have multiple sources
-<span class="cstat-no" title="statement not covered" >    // but the UI prese</span>nts only a single item of source metadata, we use the first source
-<span class="cstat-no" title="statement not covered" >    const sources = await </span>db.queryMysql(
+<span class="cstat-no" title="statement not covered" >    // Currently for backwards compatibil</span>ity datasets can still have multiple sources
+<span class="cstat-no" title="statement not covered" >    // but the UI presents only a si</span>ngle item of source metadata, we use the first source
+<span class="cstat-no" title="statement not covered" >    const sources = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT s.id, s.name, s.descr</span>iption
+<span class="cstat-no" title="statement not covered" >        SELECT </span>s.id, s.name, s.description
 <span class="cstat-no" title="statement not covered" >        FROM sources AS s</span>
-<span class="cstat-no" title="statement not covered" >        WH</span>ERE s.datasetId = ?
-<span class="cstat-no" title="statement not covered" >        ORDER B</span>Y s.id ASC
+<span class="cstat-no" title="statement not covered" >        WHERE s.datasetId </span>= ?
+<span class="cstat-no" title="statement not covered" >        ORDER BY s.id ASC</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    dataset.source =</span> JSON.parse(sources[0].description)
-<span class="cstat-no" title="statement not covered" >    dataset.source.id</span> = sources[0].id
+<span class="cstat-no" title="statement not covered" >    dataset.source = </span>JSON.parse(sources[0].description)
+<span class="cstat-no" title="statement not covered" >    dataset.source.id = </span>sources[0].id
 <span class="cstat-no" title="statement not covered" >    dataset.source.na</span>me = sources[0].name
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const charts = await</span> db.queryMysql(
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT ${OldChar</span>t.listFields}
+<span class="cstat-no" title="statement not covered" >        SELECT </span>${OldChart.listFields}
 <span class="cstat-no" title="statement not covered" >        FROM charts</span>
-<span class="cstat-no" title="statement not covered" >        JOIN chart_dim</span>ensions AS cd ON cd.chartId = charts.id
-<span class="cstat-no" title="statement not covered" >        JOIN va</span>riables AS v ON cd.variableId = v.id
-<span class="cstat-no" title="statement not covered" >        JOIN users lastEditedByUser ON lastEditedByUser.id = charts.lastEditedByUserId</span>
-<span class="cstat-no" title="statement not covered" >        LEFT JOIN users publishedByUser ON publi</span>shedByUser.id = charts.publishedByUserId
-<span class="cstat-no" title="statement not covered" >        WH</span>ERE v.datasetId = ?
-<span class="cstat-no" title="statement not covered" >        GROUP BY charts.id</span>
+<span class="cstat-no" title="statement not covered" >        JOIN chart_dimensions AS cd ON cd.chartI</span>d = charts.id
+<span class="cstat-no" title="statement not covered" >        JO</span>IN variables AS v ON cd.variableId = v.id
+<span class="cstat-no" title="statement not covered" >        JOIN users lastEditedByUser ON lastEd</span>itedByUser.id = charts.lastEditedByUserId
+<span class="cstat-no" title="statement not covered" >        LEFT JOIN users publishedByUser ON publishedByUser.id </span>= charts.publishedByUserId
+<span class="cstat-no" title="statement not covered" >        WHERE v.datase</span>tId = ?
+<span class="cstat-no" title="statement not covered" >        GROUP BY charts.i</span>d
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    dataset.charts = charts</span>
+<span class="cstat-no" title="statement not covered" >    datase</span>t.charts = charts
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await Chart.assignTagsForCharts(cha</span>rts)
+<span class="cstat-no" title="statement not covered" >    await Chart.assignTagsForCharts(c</span>harts)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const tags = await db</span>.queryMysql(
+<span class="cstat-no" title="statement not covered" >    const tags = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT t.id, t.name</span>
+<span class="cstat-no" title="statement not covered" >        SE</span>LECT t.id, t.name
 <span class="cstat-no" title="statement not covered" >        FROM tags t</span>
-<span class="cstat-no" title="statement not covered" >        JOIN dataset_tags dt ON dt.tagId = t.i</span>d
-<span class="cstat-no" title="statement not covered" >        WH</span>ERE dt.datasetId = ?
+<span class="cstat-no" title="statement not covered" >        JOIN dataset_tags dt ON dt.tagId = t.id</span>
+<span class="cstat-no" title="statement not covered" >        WHERE dt.datasetId = ?</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >    dataset.tag</span>s = tags
+<span class="cstat-no" title="statement not covered" >    dataset.tags </span>= tags
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const availab</span>leTags = await db.queryMysql(`
-<span class="cstat-no" title="statement not covered" >        SELECT t.</span>id, t.name, p.name AS parentName
-<span class="cstat-no" title="statement not covered" >        FROM tag</span>s AS t
-<span class="cstat-no" title="statement not covered" >        JOIN</span> tags AS p ON t.parentId=p.id
-<span class="cstat-no" title="statement not covered" >        WHERE p.isBulkImport IS FALSE</span>
+<span class="cstat-no" title="statement not covered" >    const av</span>ailableTags = await db.queryMysql(`
+<span class="cstat-no" title="statement not covered" >        SELECT t.id, t.name, p.name AS parentName</span>
+<span class="cstat-no" title="statement not covered" >        FROM tags AS t</span>
+<span class="cstat-no" title="statement not covered" >        JOIN tags AS p ON t.parentId=p.id</span>
+<span class="cstat-no" title="statement not covered" >        WHERE p.isBulkImport IS FAL</span>SE
 <span class="cstat-no" title="statement not covered" >    `)</span>
-<span class="cstat-no" title="statement not covered" >    dataset.availableTags = availableTags</span>
+<span class="cstat-no" title="statement not covered" >    dataset.availableTags = availableTag</span>s
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { dataset: dataset }</span>
+<span class="cstat-no" title="statement not covered" >    return</span> { dataset: dataset }
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.put("/datasets/:datasetId", async (req: Request, res: Response) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const datasetId = expectInt(req.params.datasetId)</span>
-<span class="cstat-no" title="statement not covered" >    const dataset = await Dataset.findOne({ id: datasetId })</span>
+<span class="cstat-no" title="statement not covered" >    const dataset = await Dataset.findOne(</span>{ id: datasetId })
 <span class="cstat-no" title="statement not covered" >    if (!dataset) throw new JsonError(`No dataset by id ${datasetId}`, 404)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    await db.transaction(async (t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    await db.tra</span>nsaction(async (t) =&gt; {
 <span class="cstat-no" title="statement not covered" >        const newDataset = (req.body as { dataset: any }).dataset</span>
 <span class="cstat-no" title="statement not covered" >        await t.execute(</span>
 <span class="cstat-no" title="statement not covered" >            `UPD</span>ATE datasets SET name=?, description=?, isPrivate=?, metadataEditedAt=?, metadataEditedByUserId=? WHERE id=?`,
-<span class="cstat-no" title="statement not covered" >            [</span>
+<span class="cstat-no" title="statement not covered" ></span>            [
 <span class="cstat-no" title="statement not covered" >                newDataset.name,</span>
-<span class="cstat-no" title="statement not covered" ></span>                newDataset.description || "",
-<span class="cstat-no" title="statement not covered" ></span>                newDataset.isPrivate,
+<span class="cstat-no" title="statement not covered" >                newDataset.description || ""</span>,
+<span class="cstat-no" title="statement not covered" >                newDataset.i</span>sPrivate,
 <span class="cstat-no" title="statement not covered" >                new Date(),</span>
 <span class="cstat-no" title="statement not covered" >                res.locals.user.id,</span>
 <span class="cstat-no" title="statement not covered" >                datasetId,</span>
 <span class="cstat-no" title="statement not covered" >            ]</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const tagRows = newDataset.tags.ma</span>p((tag: any) =&gt; [tag.id, datasetId])
-<span class="cstat-no" title="statement not covered" >        await t.exec</span>ute(`DELETE FROM dataset_tags WHERE datasetId=?`, [
+<span class="cstat-no" title="statement not covered" >        const </span>tagRows = newDataset.tags.map((tag: any) =&gt; [tag.id, datasetId])
+<span class="cstat-no" title="statement not covered" >        await t.exe</span>cute(`DELETE FROM dataset_tags WHERE datasetId=?`, [
 <span class="cstat-no" title="statement not covered" >            datasetId,</span>
 <span class="cstat-no" title="statement not covered" >        ])</span>
-<span class="cstat-no" title="statement not covered" >        if (tagRows</span>.length)
+<span class="cstat-no" title="statement not covered" >        if (tagRows.length)</span>
 <span class="cstat-no" title="statement not covered" >            await t.execute(</span>
-<span class="cstat-no" title="statement not covered" >                `INSERT INTO datase</span>t_tags (tagId, datasetId) VALUES ?`,
+<span class="cstat-no" title="statement not covered" >                `INSERT I</span>NTO dataset_tags (tagId, datasetId) VALUES ?`,
 <span class="cstat-no" title="statement not covered" >                [tagRows]</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const source = ne</span>wDataset.source
-<span class="cstat-no" title="statement not covered" >        const descriptio</span>n = lodash.omit(source, ["name", "id"])
-<span class="cstat-no" title="statement not covered" >        await t.execute(</span>`UPDATE sources SET name=?, description=? WHERE id=?`, [
+<span class="cstat-no" title="statement not covered" >        const source = n</span>ewDataset.source
+<span class="cstat-no" title="statement not covered" >        const description </span>= lodash.omit(source, ["name", "id"])
+<span class="cstat-no" title="statement not covered" >        await t.exe</span>cute(`UPDATE sources SET name=?, description=? WHERE id=?`, [
 <span class="cstat-no" title="statement not covered" >            source.name,</span>
-<span class="cstat-no" title="statement not covered" >            JSON.stringify</span>(description),
-<span class="cstat-no" title="statement not covered" >            source.</span>id,
+<span class="cstat-no" title="statement not covered" >            JSON.stringify(description),</span>
+<span class="cstat-no" title="statement not covered" >            source.id,</span>
 <span class="cstat-no" title="statement not covered" >        ])</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Note: not currently in transaction</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >        await syncDatasetToGitRepo</span>(datasetId, {
-<span class="cstat-no" title="statement not covered" >            oldDatasetName: dataset.name,</span>
-<span class="cstat-no" title="statement not covered" >            commitName: res.locals.user.fullName,</span>
-<span class="cstat-no" title="statement not covered" >            commitEmail: res.locals.</span>user.email,
+<span class="cstat-no" title="statement not covered" >        await syncDatasetToGitRepo(d</span>atasetId, {
+<span class="cstat-no" title="statement not covered" >            oldDatasetName: dataset.n</span>ame,
+<span class="cstat-no" title="statement not covered" >            commitName: res.loc</span>als.user.fullName,
+<span class="cstat-no" title="statement not covered" >            commitEmail: res.local</span>s.user.email,
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    } catch (err) {</span>
-<span class="cstat-no" title="statement not covered" >        log.logErrorAndMaybeSendTo</span>Slack(err)
-<span class="cstat-no" title="statement not covered" >        // Continue</span>
+<span class="cstat-no" title="statement not covered" >        log.logErrorAndM</span>aybeSendToSlack(err)
+<span class="cstat-no" title="statement not covered" >        // Continu</span>e
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return { succe</span>ss: true }
+<span class="cstat-no" title="statement not covered" >    return { success: true }</span>
 <span class="cstat-no" title="statement not covered" >})</span>
 &nbsp;
 apiRouter.post(
     "/datasets/:datasetId/setTags",
     async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const datasetId = </span>expectInt(req.params.datasetId)
+<span class="cstat-no" title="statement not covered" >        const datasetId = expectInt(req.params.datasetId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        await Dataset.setTags(datasetId, req.body.tagIds)</span>
+<span class="cstat-no" title="statement not covered" ></span>        await Dataset.setTags(datasetId, req.body.tagIds)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return { success: true }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -4989,17 +5022,17 @@ apiRouter.router.put(
     "/datasets/:datasetId/uploadZip",
     bodyParser.raw({ type: "application/zip", limit: "50mb" }),
     async (req: Request, res: Response) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const datasetId = expectInt(</span>req.params.datasetId)
+<span class="cstat-no" title="statement not covered" >        const datasetId = expec</span>tInt(req.params.datasetId)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        await db.transaction(async (t) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            await t.execute(`DE</span>LETE FROM dataset_files WHERE datasetId=?`, [
-<span class="cstat-no" title="statement not covered" ></span>                datasetId,
-<span class="cstat-no" title="statement not covered" >            ])</span>
-<span class="cstat-no" title="statement not covered" >            aw</span>ait t.execute(
-<span class="cstat-no" title="statement not covered" >                `INSERT INTO dataset_files (datasetId, filename, file) VALUES (?,</span> ?, ?)`,
-<span class="cstat-no" title="statement not covered" ></span>                [datasetId, "additional-material.zip", req.body]
-<span class="cstat-no" title="statement not covered" ></span>            )
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >            aw</span>ait t.execute(`DELETE FROM dataset_files WHERE datasetId=?`, [
+<span class="cstat-no" title="statement not covered" >                datasetId,</span>
+<span class="cstat-no" title="statement not covered" ></span>            ])
+<span class="cstat-no" title="statement not covered" ></span>            await t.execute(
+<span class="cstat-no" title="statement not covered" >                `INSERT INTO dataset_f</span>iles (datasetId, filename, file) VALUES (?, ?, ?)`,
+                [datasetId, "additional-material.zip", req.body]
+            )
+        })
 &nbsp;
         res.send({ success: true })
     }
@@ -5599,7 +5632,7 @@ export { apiRouter }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 31 2021 14:14:52 GMT+0000 (Coordinated Universal Time)
+                at Wed Sep 01 2021 06:57:16 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
