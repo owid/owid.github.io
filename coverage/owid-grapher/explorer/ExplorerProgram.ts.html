@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.41% </span>
+                <span class="strong">55.06% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>174/314</span>
+                <span class='fraction'>174/316</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">90.48% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>16/18</span>
+                <span class='fraction'>19/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.41% </span>
+                <span class="strong">55.06% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>174/314</span>
+                <span class='fraction'>174/316</span>
             </div>
         
             
@@ -818,8 +818,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1013,7 +1013,7 @@ export class ExplorerProgram extends GridProgram {
         super(slug, tsv, lastCommit, ExplorerRootDef)
         this.decisionMatrix = new DecisionMatrix(
             this.decisionMatrixCode ?? "",
-<span class="branch-0 cbranch-no" title="branch not covered" >            lastCommit?.ha</span>sh
+            lastCommit?.hash
         )
     }
 &nbsp;
@@ -1024,15 +1024,15 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get clone<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return ExplorerProgram.fromJson(this.toJson())
+<span class="cstat-no" title="statement not covered" >        return ExplorerProgram.fromJson(this.toJson())</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get isNewFile<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.slug === DefaultNewExplorerSlug
+<span class="cstat-no" title="statement not covered" >        return this.slug === DefaultNewExplorerSlug</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get filename() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.sl</span>ug + EXPLORER_FILE_SUFFIX</span>
+    get filename<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return this.slug + EXPLORER_FILE_SUFFIX
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     initDecisionMatrix(choiceParams: ExplorerChoiceParams) {
@@ -1040,8 +1040,8 @@ export class ExplorerProgram extends GridProgram {
         return this
     }
 &nbsp;
-    get fullPath() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return makeFul</span>lPath(this.slug)</span>
+    get fullPath<span class="fstat-no" title="function not covered" >() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return makeFullPath(this.slug)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get currentlySelectedGrapherRow() {
@@ -1051,19 +1051,19 @@ export class ExplorerProgram extends GridProgram {
             : row + this.decisionMatrix.selectedRowIndex + 2
     }
 &nbsp;
-    static fromMatrix(slug: string, matrix: CoreMatrix) {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const str = matrix</span></span>
-<span class="cstat-no" title="statement not covered" >            .map((row) =&gt; row.join(GRID_CELL_DELIMITER))</span>
-<span class="cstat-no" title="statement not covered" ></span>            .join(GRID_NODE_DELIMITER)
-<span class="cstat-no" title="statement not covered" >        return new Explo</span>rerProgram(slug, str)
+    static <span class="fstat-no" title="function not covered" >fromMatrix(slug: string, matrix: CoreMatrix) {</span>
+<span class="cstat-no" title="statement not covered" ></span>        const str = matrix
+<span class="cstat-no" title="statement not covered" >            .map((row) =&gt; row</span>.join(GRID_CELL_DELIMITER))
+<span class="cstat-no" title="statement not covered" >            .join(GRID_NODE_DELIMITER)</span>
+<span class="cstat-no" title="statement not covered" ></span>        return new ExplorerProgram(slug, str)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get explorerTitle() {
         return this.getLineValue(ExplorerGrammar.explorerTitle.keyword)
     }
 &nbsp;
-    get title<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.title.keyword)</span>
+    get title() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.ge</span>tLineValue(ExplorerGrammar.title.keyword)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get subNavId(): SubNavId | undefined {
@@ -1071,7 +1071,7 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get googleSheet<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        return this.getLineValue(ExplorerGrammar.googleSheet.keyword)
+<span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGra</span>mmar.googleSheet.keyword)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get hideAlertBanner() {
@@ -1098,20 +1098,20 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get selection() {
-        return this.getLine(ExplorerGrammar.selection.keyword)
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.getLine(ExplorerGrammar.selection.keyword)</span>
             ?.split(this.cellDelimiter)
             .slice(1)
     }
 &nbsp;
     get pickerColumnSlugs<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        const slugs = this.getLineValu</span>e(
-<span class="cstat-no" title="statement not covered" >            ExplorerGrammar.pickerColumnSlugs.keyword</span>
+<span class="cstat-no" title="statement not covered" >        const slugs = this.getLineValue(</span>
+<span class="cstat-no" title="statement not covered" >            ExplorerGrammar.pickerColu</span>mnSlugs.keyword
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        return slugs ? slugs.split(" ") : unde</span>fined
+<span class="cstat-no" title="statement not covered" >        return slugs ? slugs.split</span>(" ") : undefined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get hideControls<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.getLineValue(ExplorerGrammar.hideControls.keyword)</span>
+    get hideControls() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.getLineValue(ExplorerGrammar.hideControls.key</span>word)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get downloadDataLink() {
@@ -1120,15 +1120,15 @@ export class ExplorerProgram extends GridProgram {
 &nbsp;
     get isPublished<span class="fstat-no" title="function not covered" >() {</span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            this.getLineValue(ExplorerGrammar.isPublished.keyword) ===</span>
+<span class="cstat-no" title="statement not covered" >            this.g</span>etLineValue(ExplorerGrammar.isPublished.keyword) ===
 <span class="cstat-no" title="statement not covered" >            GridBoolean.true</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    setPublished(value: boolean) {</span>
-<span class="cstat-no" title="statement not covered" >        return thi</span>s.clone.setLineValue(
-<span class="cstat-no" title="statement not covered" >            ExplorerGrammar.isPublished.keyword,</span>
-<span class="cstat-no" title="statement not covered" >            value </span>? GridBoolean.true : GridBoolean.false
+<span class="cstat-no" title="statement not covered" >        return this.clone.setLineValue(</span>
+<span class="cstat-no" title="statement not covered" >            Explor</span>erGrammar.isPublished.keyword,
+<span class="cstat-no" title="statement not covered" >            value ? GridBoolean.true : GridBoolean.false</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1148,125 +1148,125 @@ export class ExplorerProgram extends GridProgram {
     }
 &nbsp;
     get grapherCount<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this.decisionMatri</span>x.numRows || 1
+<span class="cstat-no" title="statement not covered" >        return this.decisionMatrix.n</span>umRows || 1
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get tableCount<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return this</span>.lines.filter((line) =&gt;
-<span class="cstat-no" title="statement not covered" >            lin</span>e.startsWith(ExplorerGrammar.table.keyword)
-<span class="cstat-no" title="statement not covered" >        ).length</span>
+<span class="cstat-no" title="statement not covered" >        return this.lines.filter((line) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >            line.st</span>artsWith(ExplorerGrammar.table.keyword)
+<span class="cstat-no" title="statement not covered" >        ).lengt</span>h
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get inlineTableCount<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return thi</span>s.lines
-<span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; line.startsWith(ExplorerGramma</span>r.table.keyword))
+    get inlineTableCount() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.lines</span></span>
+<span class="cstat-no" title="statement not covered" >            .filte</span>r((line) =&gt; line.startsWith(ExplorerGrammar.table.keyword))
 <span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" ></span>                const data = this.getTableDef(line.split(this.cellDelimiter)[1])
-<span class="cstat-no" title="statement not covered" >                    ?.inlineData</span>
-<span class="cstat-no" title="statement not covered" >                return data ? data.</span>trim() : false
+<span class="cstat-no" title="statement not covered" >                const data = this.getTableDef(line.split(this</span>.cellDelimiter)[1])
+<span class="cstat-no" title="statement not covered" ></span>                    ?.inlineData
+<span class="cstat-no" title="statement not covered" >                return data ? data.trim() : false</span>
 <span class="cstat-no" title="statement not covered" >            }).length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get tableSlugs(): (TableSlug | undefined)[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.lines</span></span>
-<span class="cstat-no" title="statement not covered" >            .filter((line)</span> =&gt; line.startsWith(ExplorerGrammar.table.keyword))
-<span class="cstat-no" title="statement not covered" ></span>            .map((line) =&gt; line.split(this.cellDelimiter)[2])
+    get tableSlugs<span class="fstat-no" title="function not covered" >(): (TableSlug | undefined)[] {</span>
+<span class="cstat-no" title="statement not covered" >        return th</span>is.lines
+<span class="cstat-no" title="statement not covered" >            .filter((line) =&gt; line.startsWith(ExplorerGrammar.table.keyword))</span>
+<span class="cstat-no" title="statement not covered" >            .map((line) =&gt;</span> line.split(this.cellDelimiter)[2])
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get columnDefsByTableSlug<span class="fstat-no" title="function not covered" >(): Map&lt;TableSlug | undefined, CoreColumnDef[]&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const result = new Map&lt;TableSlug | undefine</span>d, CoreColumnDef[]&gt;()
+    get columnDefsByTableSlug(): Map&lt;TableSlug | undefined, CoreColumnDef[]&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const result = new Map&lt;TableSlug | undefined, CoreColumnDef[]&gt;()</span></span>
 <span class="cstat-no" title="statement not covered" >        this.tableSlugs.forEach((tableSlug) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const tableDef = this.getTab</span>leDef(tableSlug)
-<span class="cstat-no" title="statement not covered" ></span>            if (tableDef &amp;&amp; tableDef.columnDefinitions) {
-<span class="cstat-no" title="statement not covered" >                result.set(tableSlug, tableDef.columnDefinitions)</span>
+<span class="cstat-no" title="statement not covered" >            const tableDef = this.getTableDef(tableSlug</span>)
+<span class="cstat-no" title="statement not covered" >            if (tableDef &amp;&amp; tableDef.col</span>umnDefinitions) {
+<span class="cstat-no" title="statement not covered" ></span>                result.set(tableSlug, tableDef.columnDefinitions)
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        re</span>turn result
+<span class="cstat-no" title="statement not covered" >        return result</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async <span class="fstat-no" title="function not covered" >replaceTableWithInlineDataAndAutofilledColumnDefsCommand(</span>
-<span class="cstat-no" title="statement not covered" >        tableSlug?: string</span>
+    async replaceTableWithInlineDataAndAutofilledColumnDefsCommand(
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        tableSlug?: string</span></span>
 <span class="cstat-no" title="statement not covered" >    ) {</span>
-<span class="cstat-no" title="statement not covered" >        const clone = this.cl</span>one
+<span class="cstat-no" title="statement not covered" >        const clone = this.clone</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const </span>colDefRow = clone.getRowMatchingWords(
-<span class="cstat-no" title="statement not covered" >            ExplorerGrammar.columns.key</span>word,
+<span class="cstat-no" title="statement not covered" >        const colDefRow = clone.getRowMatchingWords(</span>
+<span class="cstat-no" title="statement not covered" >            Ex</span>plorerGrammar.columns.keyword,
 <span class="cstat-no" title="statement not covered" >            tableSlug</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        if (colDefRow &gt; -1) {</span>
-<span class="cstat-no" title="statement not covered" >            clone.deleteBlock(colDef</span>Row)
-<span class="cstat-no" title="statement not covered" >            cl</span>one.deleteLine(colDefRow)
+<span class="cstat-no" title="statement not covered" >            clone.deleteBlock(colDefRow)</span>
+<span class="cstat-no" title="statement not covered" >            clone.deleteLine(colDefR</span>ow)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const table = await clone.constructTable(tableSlug)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const tableD</span>efRow = clone.getRowMatchingWords(
-<span class="cstat-no" title="statement not covered" >            Ex</span>plorerGrammar.table.keyword,
-<span class="cstat-no" title="statement not covered" >            undefined,</span>
-<span class="cstat-no" title="statement not covered" ></span>            tableSlug
-<span class="cstat-no" title="statement not covered" ></span>        )
-<span class="cstat-no" title="statement not covered" >        if (tableDefRow &gt; -1)</span> {
-<span class="cstat-no" title="statement not covered" >            clone.deleteBlock(tableDefRow)</span>
-<span class="cstat-no" title="statement not covered" >            clone.deleteLine(tab</span>leDefRow)
+<span class="cstat-no" title="statement not covered" >        const tableDefRow = clone.getRowMatchingWords(</span>
+<span class="cstat-no" title="statement not covered" >            Explorer</span>Grammar.table.keyword,
+<span class="cstat-no" title="statement not covered" >            un</span>defined,
+<span class="cstat-no" title="statement not covered" >            tableSlug</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
+<span class="cstat-no" title="statement not covered" ></span>        if (tableDefRow &gt; -1) {
+<span class="cstat-no" title="statement not covered" >            clone.deleteBlock</span>(tableDefRow)
+<span class="cstat-no" title="statement not covered" >            clone.deleteLine(tableDefRow)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const newCols = table</span>!.autodetectedColumnDefs
-<span class="cstat-no" title="statement not covered" >        const missing = </span>newCols
+<span class="cstat-no" title="statement not covered" >        const newCols = table!.autodetectedColumnDefs</span>
+<span class="cstat-no" title="statement not covered" >        const missing = newCo</span>ls
+<span class="cstat-no" title="statement not covered" >            .appendColum</span>ns([
+<span class="cstat-no" title="statement not covered" >                {</span>
+<span class="cstat-no" title="statement not covered" >                    slug: ColumnGrammar.notes.</span>keyword,
+<span class="cstat-no" title="statement not covered" >                    values: newCols.indices.map(() =&gt; `Unrevi</span>ewed`),
+<span class="cstat-no" title="statement not covered" >                },</span>
+<span class="cstat-no" title="statement not covered" ></span>            ])
+<span class="cstat-no" title="statement not covered" >            .select([</span>
+<span class="cstat-no" title="statement not covered" >                ColumnGrammar.slug.keyword,</span>
+<span class="cstat-no" title="statement not covered" >                ,</span>
+<span class="cstat-no" title="statement not covered" >                ColumnGra</span>mmar.name.keyword,
+<span class="cstat-no" title="statement not covered" >                ,</span>
+<span class="cstat-no" title="statement not covered" >                C</span>olumnGrammar.type.keyword,
+<span class="cstat-no" title="statement not covered" >                ColumnGrammar.n</span>otes.keyword,
+<span class="cstat-no" title="statement not covered" >            ] as string[</span>])
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>        clone.appendBlock(ExplorerGrammar.table.keyword, table!.toTsv())
+<span class="cstat-no" title="statement not covered" ></span>        clone.appendBlock(ExplorerGrammar.columns.keyword, missing.toTsv())
+<span class="cstat-no" title="statement not covered" >        return clone</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+&nbsp;
+    async <span class="fstat-no" title="function not covered" >autofillMissingColumnDefinitionsForTableCommand(tableSlug?: string) {</span>
+<span class="cstat-no" title="statement not covered" >        const clone = this.clone</span>
+<span class="cstat-no" title="statement not covered" ></span>        const remoteTable = await clone.constructTable(tableSlug)
+<span class="cstat-no" title="statement not covered" >        const existingTableDef = this.getTableDef(tableSlug)</span>
+<span class="cstat-no" title="statement not covered" >        const table =</span>
+<span class="cstat-no" title="statement not covered" >            remoteTabl</span>e ||
+<span class="cstat-no" title="statement not covered" >            (existingTableDef</span>
+<span class="cstat-no" title="statement not covered" >                ? new CoreTable(</span>
+<span class="cstat-no" title="statement not covered" >                      existingTa</span>bleDef.inlineData,
+<span class="cstat-no" title="statement not covered" >                      existingTab</span>leDef.columnDefinitions
+<span class="cstat-no" title="statement not covered" >                  )</span>
+<span class="cstat-no" title="statement not covered" ></span>                : undefined)
+<span class="cstat-no" title="statement not covered" >        const newCols = table!.autodetectedColumnDefs</span>
+<span class="cstat-no" title="statement not covered" >        const missing = newCols</span>
 <span class="cstat-no" title="statement not covered" >            .appendColumns([</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
 <span class="cstat-no" title="statement not covered" >                    slug: ColumnGrammar.notes.keyword,</span>
-<span class="cstat-no" title="statement not covered" >                    values: newCols.indices.map(() =&gt; `Unreviewed`),</span>
-<span class="cstat-no" title="statement not covered" ></span>                },
+<span class="cstat-no" title="statement not covered" ></span>                    values: newCols.indices.map(() =&gt; `Unreviewed`),
+<span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            ])</span>
 <span class="cstat-no" title="statement not covered" >            .select([</span>
 <span class="cstat-no" title="statement not covered" >                ColumnGrammar.slug.keyword,</span>
 <span class="cstat-no" title="statement not covered" >                ,</span>
-<span class="cstat-no" title="statement not covered" >                C</span>olumnGrammar.name.keyword,
-<span class="cstat-no" title="statement not covered" >                ,</span>
-<span class="cstat-no" title="statement not covered" >                ColumnGrammar.t</span>ype.keyword,
-<span class="cstat-no" title="statement not covered" >                ColumnGr</span>ammar.notes.keyword,
-<span class="cstat-no" title="statement not covered" ></span>            ] as string[])
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        clone.appendBlock(ExplorerGrammar.table.keyword, table!.toTsv())
-<span class="cstat-no" title="statement not covered" >        clone.appendBlock(ExplorerGrammar.c</span>olumns.keyword, missing.toTsv())
-<span class="cstat-no" title="statement not covered" ></span>        return clone
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    async autofillMissingColumnDefinitionsForTableCommand(tableSlug?: string) {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const clone = this.clone</span></span>
-<span class="cstat-no" title="statement not covered" >        const remoteTable = await clone</span>.constructTable(tableSlug)
-<span class="cstat-no" title="statement not covered" >        const existing</span>TableDef = this.getTableDef(tableSlug)
-<span class="cstat-no" title="statement not covered" >        const table =</span>
-<span class="cstat-no" title="statement not covered" >            remoteTable ||</span>
-<span class="cstat-no" title="statement not covered" >            (existingTableDef</span>
-<span class="cstat-no" title="statement not covered" >                ? new CoreTable(</span>
-<span class="cstat-no" title="statement not covered" >                      e</span>xistingTableDef.inlineData,
-<span class="cstat-no" title="statement not covered" ></span>                      existingTableDef.columnDefinitions
-<span class="cstat-no" title="statement not covered" >                  )</span>
-<span class="cstat-no" title="statement not covered" >                : undefined)</span>
-<span class="cstat-no" title="statement not covered" >        const newCols = table!.autodetectedColumnD</span>efs
-<span class="cstat-no" title="statement not covered" >        const missing = newCols</span>
-<span class="cstat-no" title="statement not covered" >            .appendColumns([</span>
-<span class="cstat-no" title="statement not covered" >                {</span>
-<span class="cstat-no" title="statement not covered" >                    slug: ColumnGrammar.notes.k</span>eyword,
-<span class="cstat-no" title="statement not covered" >                    values: newCol</span>s.indices.map(() =&gt; `Unreviewed`),
-<span class="cstat-no" title="statement not covered" >                },</span>
-<span class="cstat-no" title="statement not covered" >            ])</span>
-<span class="cstat-no" title="statement not covered" >            .select([</span>
-<span class="cstat-no" title="statement not covered" >                ColumnGra</span>mmar.slug.keyword,
-<span class="cstat-no" title="statement not covered" >                ,</span>
-<span class="cstat-no" title="statement not covered" >                ColumnGrammar.name.keyword,</span>
+<span class="cstat-no" title="statement not covered" >                ColumnGra</span>mmar.name.keyword,
 <span class="cstat-no" title="statement not covered" >                ,</span>
 <span class="cstat-no" title="statement not covered" >                ColumnGrammar.type.keyword,</span>
-<span class="cstat-no" title="statement not covered" >                ColumnGrammar.notes.keywo</span>rd,
-<span class="cstat-no" title="statement not covered" ></span>            ] as string[])
+<span class="cstat-no" title="statement not covered" >                ColumnGrammar.notes.keyw</span>ord,
+<span class="cstat-no" title="statement not covered" >            ] as string[])</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const colDefsRo</span>w = this.getRowMatchingWords(
+<span class="cstat-no" title="statement not covered" >        co</span>nst colDefsRow = this.getRowMatchingWords(
 <span class="cstat-no" title="statement not covered" ></span>            ExplorerGrammar.columns.keyword,
 <span class="cstat-no" title="statement not covered" >            tableSlug</span>
-<span class="cstat-no" title="statement not covered" >        )</span>
-&nbsp;
-        if (colDefsRow !== -1)
+<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        if (colDefsRow !== -1)</span>
             clone.updateBlock(
                 colDefsRow,
                 new CoreTable(clone.getBlock(colDefsRow))
@@ -1405,7 +1405,7 @@ export const trimAndParseObject = (config: any, grammar: Grammar) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 07 2021 09:15:52 GMT+0000 (Coordinated Universal Time)
+                at Tue Sep 07 2021 15:32:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

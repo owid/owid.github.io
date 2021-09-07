@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.43% </span>
+                <span class="strong">73.52% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>210/286</span>
+                <span class='fraction'>211/287</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">73.43% </span>
+                <span class="strong">73.52% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>210/286</span>
+                <span class='fraction'>211/287</span>
             </div>
         
             
@@ -412,7 +412,9 @@
 <a name='L353'></a><a href='#L353'>353</a>
 <a name='L354'></a><a href='#L354'>354</a>
 <a name='L355'></a><a href='#L355'>355</a>
-<a name='L356'></a><a href='#L356'>356</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L356'></a><a href='#L356'>356</a>
+<a name='L357'></a><a href='#L357'>357</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -777,27 +779,28 @@ import { observable, action, toJS, computed } from "mobx"
 import classnames from "classnames"
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons/faPaperPlane"
 import { BAKED_BASE_URL } from "../settings/clientSettings"
+import { stringifyUnkownError } from "../clientUtils/Util"
 &nbsp;
 const sendFeedback = (<span class="fstat-no" title="function not covered" >feedback: Feedback) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >    new Promise((resolve, reject) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const json = toJS(feedback)</span>
+<span class="cstat-no" title="statement not covered" ></span>        const json = toJS(feedback)
 <span class="cstat-no" title="statement not covered" ></span>        const req = new XMLHttpRequest()
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        json.environment = `Current URL: ${window.location.href}\nUser Ag</span>ent: ${navigator.userAgent}\nViewport: ${window.innerWidth}x${window.innerHeight}`
+<span class="cstat-no" title="statement not covered" >        json.environment = `Current URL: ${window.location.href</span>}\nUser Agent: ${navigator.userAgent}\nViewport: ${window.innerWidth}x${window.innerHeight}`
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        req.addEventListener("readystatechange", () =&gt; {
+<span class="cstat-no" title="statement not covered" >        req.addEventListener("readystatechange", () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (req.readyState === 4) {</span>
 <span class="cstat-no" title="statement not covered" >                if (req.status !== 200)</span>
-<span class="cstat-no" title="statement not covered" >                    reject(`${req.status} ${req.sta</span>tusText}`)
+<span class="cstat-no" title="statement not covered" >                    reject(`${req.status} ${req.statusText}</span>`)
 <span class="cstat-no" title="statement not covered" >                else resolve(undefined)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        req.open(</span>
 <span class="cstat-no" title="statement not covered" >            "POST",</span>
-<span class="cstat-no" title="statement not covered" >            `https://owid-feedback.netlify.app/.netlify/funct</span>ions/hello`
+<span class="cstat-no" title="statement not covered" >            `https://owid-feedback.netlify.app/.netlify/functions/hello`</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        req.setRequestHeader("Content-Type", "application/json;c</span>harset=UTF-8")
+<span class="cstat-no" title="statement not covered" >        req.setRequestHeader("Content-Type", "a</span>pplication/json;charset=UTF-8")
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        req.send(JSON.stringify(json))</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
@@ -904,7 +907,7 @@ export class FeedbackForm extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >            this.fe</span>edback.clear()
 <span class="cstat-no" title="statement not covered" >            this.done = true</span>
 <span class="cstat-no" title="statement not covered" ></span>        } catch (err) {
-<span class="cstat-no" title="statement not covered" >            this</span>.error = err
+<span class="cstat-no" title="statement not covered" >            this</span>.error = stringifyUnkownError(err)
 <span class="cstat-no" title="statement not covered" >        } finally {</span>
 <span class="cstat-no" title="statement not covered" >            this.loading = false</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -1129,7 +1132,7 @@ export function runFeedbackPage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 07 2021 09:15:52 GMT+0000 (Coordinated Universal Time)
+                at Tue Sep 07 2021 15:32:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

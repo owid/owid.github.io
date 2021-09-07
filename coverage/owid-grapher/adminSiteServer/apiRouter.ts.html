@@ -3935,7 +3935,7 @@ const saveGrapher = async (
 <span class="cstat-no" title="statement not covered" >    //</span> Slugs need some special logic to ensure public urls remain consistent whenever possible
 <span class="cstat-no" title="statement not covered" >    async function isSlugUsedInRedirect() {</span>
 <span class="cstat-no" title="statement not covered" >        const rows = await transa</span>ctionContext.query(
-<span class="cstat-no" title="statement not covered" >            `SELECT * FROM chart_slug_redirects WHERE c</span>hart_id != ? AND slug = ?`,
+<span class="cstat-no" title="statement not covered" >            `SELECT * FROM chart_slug_redirects WHERE chart_</span>id != ? AND slug = ?`,
 <span class="cstat-no" title="statement not covered" >            [existingConfig ? existingConfig.id : undefined, newConfig.slug]</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        return rows.length &gt; 0</span>
@@ -4403,7 +4403,7 @@ apiRouter.get(
 <span class="cstat-no" title="statement not covered" >        suggestedChartRevisions.map(</span>
 <span class="cstat-no" title="statement not covered" >            (suggestedChartRevisi</span>on: SuggestedChartRevision) =&gt; {
 <span class="cstat-no" title="statement not covered" >                suggestedChartRevision.suggestedConfig = JSON.parse(</span>
-<span class="cstat-no" title="statement not covered" >                    suggestedCha</span>rtRevision.suggestedConfig
+<span class="cstat-no" title="statement not covered" >                    suggestedChartRev</span>ision.suggestedConfig
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >                suggest</span>edChartRevision.existingConfig = JSON.parse(
 <span class="cstat-no" title="statement not covered" >                    suggestedChartRevision.existingCon</span>fig
@@ -4479,7 +4479,7 @@ apiRouter.get(
 <span class="cstat-no" title="statement not covered" >        suggestedChartRevision</span>.canApprove = SuggestedChartRevision.checkCanApprove(
 <span class="cstat-no" title="statement not covered" ></span>            suggestedChartRevision
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canReject = SuggestedChartRevision.chec</span>kCanReject(
+<span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canReject = SuggestedChartRevision.checkCanR</span>eject(
 <span class="cstat-no" title="statement not covered" >            suggestedChartRevision</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        suggestedChartRevision.canFlag = SuggestedChartRevision.checkCanFlag(</span>
@@ -4763,7 +4763,7 @@ apiRouter.get(
 <span class="cstat-no" title="statement not covered" ></span>        )
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (!variable) {</span>
-<span class="cstat-no" title="statement not covered" >            throw new JsonError(`No variable by id '${variab</span>leId}'`, 404)
+<span class="cstat-no" title="statement not covered" >            throw new JsonError(`No variable by id '${variableId}</span>'`, 404)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        variable.display = JSO</span>N.parse(variable.display)
@@ -4801,7 +4801,7 @@ apiRouter.put("/variables/:variableId", async (req: Request) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const variable = (req.body as { variable: Vari</span>ableSingleMeta }).variable
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    await db.execute(</span>
-<span class="cstat-no" title="statement not covered" >        `UPDATE variables SET name=?, description=?, u</span>pdatedAt=?, display=? WHERE id = ?`,
+<span class="cstat-no" title="statement not covered" >        `UPDATE variables SET name=?, description=?, update</span>dAt=?, display=? WHERE id = ?`,
 <span class="cstat-no" title="statement not covered" >        [</span>
 <span class="cstat-no" title="statement not covered" >            variabl</span>e.name,
 <span class="cstat-no" title="statement not covered" >            variable.description,</span>
@@ -4818,7 +4818,7 @@ apiRouter.delete("/variables/:variableId", async (req: Request) =&gt; {
 <span class="cstat-no" title="statement not covered" >    const variableId = expectInt(req.params.variableId)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    co</span>nst variable = await db.mysqlFirst(
-<span class="cstat-no" title="statement not covered" >        `SELECT datasets.namespace FROM variables JOIN datasets ON varia</span>bles.datasetId=datasets.id WHERE variables.id=?`,
+<span class="cstat-no" title="statement not covered" >        `SELECT datasets.namespace FROM variables JOIN datasets ON variables.</span>datasetId=datasets.id WHERE variables.id=?`,
 <span class="cstat-no" title="statement not covered" ></span>        [variableId]
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -4875,7 +4875,7 @@ apiRouter.get("/datasets/:datasetId.json", async (req: Request) =&gt; {
 <span class="cstat-no" title="statement not covered" >        [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if (!dataset) throw new JsonError(`No dataset by id '${datasetId</span>}'`, 404)
+<span class="cstat-no" title="statement not covered" >    if (!dataset) throw new JsonError(`No dataset by id '${datasetId}'`, </span>404)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const zipFile = await db.mysqlFirst(</span>
 <span class="cstat-no" title="statement not covered" >        `SELECT filename FR</span>OM dataset_files WHERE datasetId=?`,
@@ -5632,7 +5632,7 @@ export { apiRouter }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 07 2021 09:15:52 GMT+0000 (Coordinated Universal Time)
+                at Tue Sep 07 2021 15:32:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
