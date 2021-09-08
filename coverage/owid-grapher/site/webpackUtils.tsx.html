@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.5% </span>
+                <span class="strong">46.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>38/80</span>
+                <span class='fraction'>38/81</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.5% </span>
+                <span class="strong">46.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>38/80</span>
+                <span class='fraction'>38/81</span>
             </div>
         
             
@@ -121,7 +121,8 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -132,11 +133,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -149,12 +150,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -229,23 +231,24 @@ export const bakeEmbedSnippet = (
 <span class="cstat-no" title="statement not covered" >let loadedScripts = 0;</span>
 <span class="cstat-no" title="statement not covered" >const checkRe</span>ady = () =&gt; {
 <span class="cstat-no" title="statement not covered" >    loadedScripts++</span>
-<span class="cstat-no" title="statement not covered" >    if</span> (loadedScripts === 3)
+<span class="cstat-no" title="statement not covered" >    if</span> (loadedScripts === 4)
 <span class="cstat-no" title="statement not covered" >        window.MultiEmbedderSingleton.embedAll()</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >const coreScripts = [</span>
 <span class="cstat-no" title="statement not covered" >    'https://polyfill.io/v3/polyfill.min.js?</span>features=es6,fetch,URL,IntersectionObserver,IntersectionObserverEntry',
 <span class="cstat-no" title="statement not covered" >    '${webpackUrl("comm</span>ons.js", baseUrl)}',
-<span class="cstat-no" title="statement not covered" >    '${webpackUrl("owid.</span>js", baseUrl)}'
+<span class="cstat-no" title="statement not covered" >    '${webpackUrl("vendo</span>rs.js", baseUrl)}',
+<span class="cstat-no" title="statement not covered" >    '${webpackUrl("owid.js", baseUrl)}'</span>
 <span class="cstat-no" title="statement not covered" >]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >c</span>oreScripts.forEach(url =&gt; {
-<span class="cstat-no" title="statement not covered" >    const script = docu</span>ment.createElement('script')
-<span class="cstat-no" title="statement not covered" >    script.type = 'text/jav</span>ascript'
-<span class="cstat-no" title="statement not covered" >    script.onload = </span>checkReady
+<span class="cstat-no" title="statement not covered" >coreScripts.forEach(url</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    const script = document</span>.createElement('script')
+<span class="cstat-no" title="statement not covered" >    script.type = 't</span>ext/javascript'
+<span class="cstat-no" title="statement not covered" >    script.onload = checkRead</span>y
 <span class="cstat-no" title="statement not covered" >    script.src = url</span>
-<span class="cstat-no" title="statement not covered" >    document.head.appendChild(script)</span>
-<span class="cstat-no" title="statement not covered" >})</span>
+<span class="cstat-no" title="statement not covered" ></span>    document.head.appendChild(script)
+<span class="cstat-no" title="statement not covered" >}</span>)
 <span class="cstat-no" title="statement not covered" >}</span>
 <span class="cstat-no" title="statement not covered" >embedSnippet()</span>
 <span class="cstat-no" title="statement not covered" >`</span>
@@ -256,7 +259,7 @@ export const bakeEmbedSnippet = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 07 2021 15:32:03 GMT+0000 (Coordinated Universal Time)
+                at Wed Sep 08 2021 14:30:29 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
