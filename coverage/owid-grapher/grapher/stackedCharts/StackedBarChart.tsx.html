@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.93% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>348/405</span>
+                <span class='fraction'>350/407</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.48% </span>
+                <span class="strong">88.37% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>38/42</span>
+                <span class='fraction'>38/43</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.93% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>348/405</span>
+                <span class='fraction'>350/407</span>
             </div>
         
             
@@ -548,7 +548,12 @@
 <a name='L489'></a><a href='#L489'>489</a>
 <a name='L490'></a><a href='#L490'>490</a>
 <a name='L491'></a><a href='#L491'>491</a>
-<a name='L492'></a><a href='#L492'>492</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -742,6 +747,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1039,6 +1045,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
 import { computed, action, observable } from "mobx"
 import { observer } from "mobx-react"
@@ -1054,6 +1062,7 @@ import { Text } from "../text/Text"
 import {
     VerticalColorLegend,
     VerticalColorLegendManager,
+    LegendItem,
 } from "../verticalColorLegend/VerticalColorLegend"
 import { Tooltip } from "../tooltip/Tooltip"
 import { BASE_FONT_SIZE } from "../core/GrapherConstants"
@@ -1102,17 +1111,17 @@ class StackedBarSegment extends React.Component&lt;StackedBarSegmentProps&gt; {
     }
 &nbsp;
     @computed get trueOpacity(): number {
-        return this.mouseOver ? 1 : this.props.opacity
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.mous</span>eOver ? 1 : this.props.opacity
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseOver(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.mouseOver = true
-<span class="cstat-no" title="statement not covered" >        this.pr</span>ops.onBarMouseOver(this.props.bar, this.props.series)
+    @action.bound onBarMouseOver(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.mo</span>useOver = true</span>
+<span class="cstat-no" title="statement not covered" >        this.props.onBarMouseOver(this.props.bar, this.pr</span>ops.series)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onBarMouseLeave(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.mouseOver = false
-<span class="cstat-no" title="statement not covered" ></span>        this.props.onBarMouseLeave()
+    @action.bound onBarMouseLeave(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        this.mouseOver = false</span>
+<span class="cstat-no" title="statement not covered" >        this.</span>props.onBarMouseLeave()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render(): JSX.Element {
@@ -1173,7 +1182,7 @@ export class StackedBarChart
     }
 &nbsp;
     @computed get barFontSize<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return 0.75 * this.baseFontSize</span>
+<span class="cstat-no" title="statement not covered" >        return 0.75 * this.baseF</span>ontSize
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed protected get paddingForLegend(): number {
@@ -1186,7 +1195,7 @@ export class StackedBarChart
 &nbsp;
         const hoverKeys =
 <span class="branch-0 cbranch-no" title="branch not covered" >            hoverColor === undefined</span>
-<span class="cstat-no" title="statement not covered" >                ? []</span>
+<span class="cstat-no" title="statement not covered" ></span>                ? []
 <span class="cstat-no" title="statement not covered" ></span>                : uniq(
                       this.series
                           .filter((g) =&gt; g.color === hoverColor)
@@ -1204,14 +1213,14 @@ export class StackedBarChart
             // No hover means they're all active by default
 <span class="branch-0 cbranch-no" title="branch not covered" >            return uniq(this.series.map((g) =&gt; g.color))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return uniq(</span>
+<span class="cstat-no" title="statement not covered" ></span>        return uniq(
 <span class="cstat-no" title="statement not covered" >            this.series</span>
-<span class="cstat-no" title="statement not covered" ></span>                .filter((g) =&gt; activeKeys.indexOf(g.seriesName) !== -1)
-<span class="cstat-no" title="statement not covered" >                .map</span>((g) =&gt; g.color)
+<span class="cstat-no" title="statement not covered" >                .filter((g) =&gt; activeKeys.indexOf(g.seriesName) !== -1)</span>
+<span class="cstat-no" title="statement not covered" ></span>                .map((g) =&gt; g.color)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get legendItems() {
+    @computed get legendItems(): LegendItem[] {
         return this.series
             .map((series) =&gt; {
                 return {
@@ -1233,6 +1242,7 @@ export class StackedBarChart
         return 100
     }
     @computed get sidebarWidth(): number {
+        if (this.manager.hideLegend) return 0
         const { sidebarMinWidth, sidebarMaxWidth, legendDimensions } = this
         return Math.max(
             Math.min(legendDimensions.width, sidebarMaxWidth),
@@ -1502,7 +1512,9 @@ export class StackedBarChart
                     })}
                 &lt;/g&gt;
 &nbsp;
-                &lt;VerticalColorLegend manager={this} /&gt;
+                {!this.manager.hideLegend &amp;&amp; (
+                    &lt;VerticalColorLegend manager={this} /&gt;
+                )}
                 {tooltip}
             &lt;/g&gt;
         )
@@ -1537,7 +1549,7 @@ export class StackedBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 14 2021 09:58:11 GMT+0000 (Coordinated Universal Time)
+                at Tue Sep 14 2021 13:22:08 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

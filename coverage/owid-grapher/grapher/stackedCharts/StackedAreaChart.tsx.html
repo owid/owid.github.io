@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.82% </span>
+                <span class="strong">70.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>236/338</span>
+                <span class='fraction'>240/342</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.17% </span>
+                <span class="strong">73.08% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/24</span>
+                <span class='fraction'>19/26</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.82% </span>
+                <span class="strong">70.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>236/338</span>
+                <span class='fraction'>240/342</span>
             </div>
         
             
@@ -521,7 +521,12 @@
 <a name='L462'></a><a href='#L462'>462</a>
 <a name='L463'></a><a href='#L463'>463</a>
 <a name='L464'></a><a href='#L464'>464</a>
-<a name='L465'></a><a href='#L465'>465</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -619,7 +624,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3283x</span>
+<span class="cline-any cline-yes">3295x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -649,7 +654,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3283x</span>
+<span class="cline-any cline-yes">3295x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -803,6 +808,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -994,12 +1002,13 @@ import {
     getRelativeMouse,
     makeSafeForCSS,
     minBy,
+    excludeUndefined,
 } from "../../clientUtils/Util"
 import { computed, action, observable } from "mobx"
 import { SeriesName } from "../core/GrapherConstants"
 import { observer } from "mobx-react"
 import { DualAxisComponent } from "../axis/AxisViews"
-import { DualAxis, VerticalAxis } from "../axis/Axis"
+import { DualAxis } from "../axis/Axis"
 import {
     LineLabelSeries,
     LineLegend,
@@ -1033,31 +1042,31 @@ class Areas extends React.Component&lt;AreasProps&gt; {
     @observable hoverIndex?: number
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onCursorMove(</span>
-<span class="cstat-no" title="statement not covered" >        ev: React.MouseEvent&lt;SVGG</span>Element&gt; | React.TouchEvent&lt;SVGElement&gt;
+<span class="cstat-no" title="statement not covered" >        ev: React.MouseEvent&lt;SVGGElement&gt; | React.TouchEvent&lt;SVGElement&gt;</span>
 <span class="cstat-no" title="statement not covered" >    ): void {</span>
 <span class="cstat-no" title="statement not covered" >        const { dualAxis, seriesArr } = this.props</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        if (this.base.current) {</span>
-<span class="cstat-no" title="statement not covered" >            const mouse = getRelativeMouse(this.base.current, ev.nativeEvent)</span>
+<span class="cstat-no" title="statement not covered" >            const mouse = getRelativeMouse(th</span>is.base.current, ev.nativeEvent)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (du</span>alAxis.innerBounds.contains(mouse)) {
-<span class="cstat-no" title="statement not covered" >                const c</span>losestPoint = minBy(seriesArr[0].points, (d) =&gt;
-<span class="cstat-no" title="statement not covered" >                    Math.abs(</span>
+<span class="cstat-no" title="statement not covered" >            if (dualAxi</span>s.innerBounds.contains(mouse)) {
+<span class="cstat-no" title="statement not covered" >                const closestPoint = minBy(series</span>Arr[0].points, (d) =&gt;
+<span class="cstat-no" title="statement not covered" ></span>                    Math.abs(
 <span class="cstat-no" title="statement not covered" ></span>                        dualAxis.horizontalAxis.place(d.position) - mouse.x
 <span class="cstat-no" title="statement not covered" ></span>                    )
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >                if (closestPoint) {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    const index = seriesArr[0].points.indexOf(closestPoint)
-<span class="cstat-no" title="statement not covered" >                    this.hoverIndex = index</span>
+<span class="cstat-no" title="statement not covered" ></span>                if (closestPoint) {
+<span class="cstat-no" title="statement not covered" >                    const index = seriesArr[0].po</span>ints.indexOf(closestPoint)
+<span class="cstat-no" title="statement not covered" ></span>                    this.hoverIndex = index
 <span class="cstat-no" title="statement not covered" ></span>                } else {
-<span class="cstat-no" title="statement not covered" ></span>                    this.hoverIndex = undefined
+<span class="cstat-no" title="statement not covered" >                    th</span>is.hoverIndex = undefined
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            } else {</span>
-<span class="cstat-no" title="statement not covered" >                this.hoverIndex = undefined</span>
-<span class="cstat-no" title="statement not covered" ></span>            }
+<span class="cstat-no" title="statement not covered" ></span>                this.hoverIndex = undefined
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            this.props.onHover(this.hoverIndex)</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onCursorLeave(): void {</span>
@@ -1097,7 +1106,7 @@ class Areas extends React.Component&lt;AreasProps&gt; {
                     key={series.seriesName + "-area"}
                     strokeLinecap="round"
                     d={pointsToPath(points)}
-                    fill={this.seriesIsBlur(series) ? BLUR_COLOR : series.color}
+                    fill={<span class="branch-0 cbranch-no" title="branch not covered" >this.seriesIsBlur(series) ? BLUR_COLOR : s</span>eries.color}
                     fillOpacity={0.7}
                     clipPath={this.props.clipPath}
                 /&gt;
@@ -1165,23 +1174,23 @@ class Areas extends React.Component&lt;AreasProps&gt; {
                 /&gt;
                 {this.areas}
                 {this.borders}
-                {<span class="branch-0 cbranch-no" title="branch not covered" >hoverIndex !== undefined &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;g className="hoverIndicator"&gt;
-<span class="cstat-no" title="statement not covered" >                        {seri</span>esArr.map((series) =&gt; {
-<span class="cstat-no" title="statement not covered" >                            const point = s</span>eries.points[hoverIndex]
-<span class="cstat-no" title="statement not covered" >                            return this.seriesIsBlur(series) ||</span>
-<span class="cstat-no" title="statement not covered" ></span>                                point.fake ? null : (
-<span class="cstat-no" title="statement not covered" >                                &lt;cir</span>cle
-<span class="cstat-no" title="statement not covered" >                                    key={se</span>ries.seriesName}
+                {hoverIndex !== undefined &amp;&amp; (
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    &lt;g classN</span>ame="hoverIndicator"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        {seriesArr.map((ser</span>ies) =&gt; {
+<span class="cstat-no" title="statement not covered" >                            const point = series.points[hoverIn</span>dex]
+<span class="cstat-no" title="statement not covered" ></span>                            return this.seriesIsBlur(series) ||
+<span class="cstat-no" title="statement not covered" >                                poin</span>t.fake ? null : (
+<span class="cstat-no" title="statement not covered" >                                &lt;circle</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    key={series.seriesName}
 <span class="cstat-no" title="statement not covered" ></span>                                    cx={horizontalAxis.place(point.position)}
-<span class="cstat-no" title="statement not covered" ></span>                                    cy={verticalAxis.place(
-<span class="cstat-no" title="statement not covered" >                                        po</span>int.value + point.valueOffset
+<span class="cstat-no" title="statement not covered" >                                    cy={ve</span>rticalAxis.place(
+<span class="cstat-no" title="statement not covered" ></span>                                        point.value + point.valueOffset
 <span class="cstat-no" title="statement not covered" ></span>                                    )}
 <span class="cstat-no" title="statement not covered" ></span>                                    r={2}
-<span class="cstat-no" title="statement not covered" >                                    fill={series.color}</span>
-<span class="cstat-no" title="statement not covered" ></span>                                /&gt;
-<span class="cstat-no" title="statement not covered" ></span>                            )
-<span class="cstat-no" title="statement not covered" >                        })}</span>
+<span class="cstat-no" title="statement not covered" >                                    fill={seri</span>es.color}
+<span class="cstat-no" title="statement not covered" >                                /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                            )</span>
+<span class="cstat-no" title="statement not covered" ></span>                        })}
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;line
                             x1={horizontalAxis.place(
                                 seriesArr[0].points[hoverIndex].position
@@ -1212,7 +1221,7 @@ export class StackedAreaChart
         let prevY = 0
         return this.series.map((series) =&gt; {
             const lastValue = last(series.points)
-            if (!lastValue) return 0
+            if (!lastValue) <span class="branch-0 cbranch-no" title="branch not covered" >return 0</span>
 &nbsp;
             const y = lastValue.value + lastValue.valueOffset
             const middleY = prevY + (y - prevY) / 2
@@ -1243,31 +1252,34 @@ export class StackedAreaChart
     }
 &nbsp;
     @observable hoveredPointIndex?: number
-    @action.bound onHover(hoverIndex: number | undefined): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hoveredPointIndex</span> = hoverIndex</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onHover(hoverIndex: number | undefined): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoveredPointIndex = hoverIndex</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable hoverSeriesName?: SeriesName
     @action.bound <span class="fstat-no" title="function not covered" >onLegendClick(): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.manager.startSelectingWhenLineClicked)</span>
-<span class="cstat-no" title="statement not covered" >            this.manager.isSel</span>ectingData = true
+<span class="cstat-no" title="statement not covered" >            this.manager.isSelectingData = true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed protected get paddingForLegend(): number {
         const { legendDimensions } = this
-        return legendDimensions ? legendDimensions.width : 20
+        return legendDimensions<span class="branch-0 cbranch-no" title="branch not covered" > ? legendDimensions.width : 20</span>
     }
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(seriesName: SeriesName): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoverSeri</span>esName = seriesName
+<span class="cstat-no" title="statement not covered" ></span>        this.hoverSeriesName = seriesName
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.hoverSeriesName = undefined</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.hoverSeriesName = undefined
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get focusedSeriesNames(): string[] {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.hoverSeriesName ? [t</span>his.hoverSeriesName] : []
+        return excludeUndefined([
+            this.manager.externalLegendFocusBin?.value,
+            this.hoverSeriesName,
+        ])
     }
 &nbsp;
     @computed get isFocusMode(): boolean {
@@ -1456,7 +1468,7 @@ export class StackedAreaChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Sep 14 2021 09:58:11 GMT+0000 (Coordinated Universal Time)
+                at Tue Sep 14 2021 13:22:08 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
