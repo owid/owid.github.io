@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.57% </span>
+                <span class="strong">98.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>484/491</span>
+                <span class='fraction'>492/499</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">89.23% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>55/61</span>
+                <span class='fraction'>58/65</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.94% </span>
+                <span class="strong">94.12% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>31/33</span>
+                <span class='fraction'>32/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">98.57% </span>
+                <span class="strong">98.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>484/491</span>
+                <span class='fraction'>492/499</span>
             </div>
         
             
@@ -635,7 +635,20 @@
 <a name='L576'></a><a href='#L576'>576</a>
 <a name='L577'></a><a href='#L577'>577</a>
 <a name='L578'></a><a href='#L578'>578</a>
-<a name='L579'></a><a href='#L579'>579</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L579'></a><a href='#L579'>579</a>
+<a name='L580'></a><a href='#L580'>580</a>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -992,7 +1005,7 @@
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -1126,6 +1139,17 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1220,6 +1244,7 @@ import { action, computed, observable } from "mobx"
 import {
     BASE_FONT_SIZE,
     ChartTypeName,
+    EntitySelectionMode,
     FacetAxisDomain,
     FacetStrategy,
     SeriesColorMap,
@@ -1295,8 +1320,8 @@ const shouldHideFacetAxis = (
 ): boolean =&gt; {
     if (axis) {
         return axis.orient in sharedAxesSizes &amp;&amp; !edges.has(axis.orient)
-    }
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return false</span></span>
+    }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return false</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 interface AxisInfo {
@@ -1338,7 +1363,7 @@ export class FacetChart
     }
 &nbsp;
     @computed private get chartTypeName(): ChartTypeName {
-        return this.props.chartTypeName ?? ChartTypeName.LineChart
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.chartTypeName ?? ChartTypeName.LineChart</span>
     }
 &nbsp;
     @computed get failMessage<span class="fstat-no" title="function not covered" >(): string {</span>
@@ -1346,7 +1371,7 @@ export class FacetChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get bounds(): Bounds {
-        return this.props.bounds ?? DEFAULT_BOUNDS
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.bounds ?? D</span>EFAULT_BOUNDS
     }
 &nbsp;
     @computed private get facetsContainerBounds(): Bounds {
@@ -1357,7 +1382,7 @@ export class FacetChart
     }
 &nbsp;
     @computed get fontSize(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseFont</span>Size ?? BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>.baseFontSize ?? BASE_FONT_SIZE
     }
 &nbsp;
     @computed private get facetFontSize(): number {
@@ -1547,14 +1572,14 @@ export class FacetChart
             // max size is the width (if vertical axis) or height (if horizontal axis)
             const axisWithMaxSize = maxBy(
                 intermediateChartInstances.map(axisAccessor),
-                (axis) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >ax</span>is?.size
+                (axis) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >axis?.</span>size
             )
             if (uniform) {
                 // If the axes are uniform, we want to find the full domain extent across all facets
                 const domains = excludeUndefined(
                     intermediateChartInstances
                         .map(axisAccessor)
-                        .map((axis) =&gt; <span class="branch-0 cbranch-no" title="branch not covered" >axis?.d</span>omain)
+                        .map((axis) =&gt; axis?.domain)
                 )
                 config.min = min(domains.map((d) =&gt; d[0]))
                 config.max = max(domains.map((d) =&gt; d[1]))
@@ -1736,7 +1761,18 @@ export class FacetChart
                         index,
                     })
             )
-            if (bins.length &gt; 1) return bins
+            if (
+                bins.length &gt; 1 ||
+                // If the facetStrategy is metric, then the legend (probably?) shows entity items.
+                // If the user happens to select only a single entity, we don't want to collapse the
+                // legend, because it's (probably?) the only information about what is selected.
+                // This is fragile and ideally we shouldn't be making assumptions about what type of
+                // items are shown on the legend, but it works for now...
+                // -@danielgavrilov, 2021-09-28
+                (this.facetStrategy === FacetStrategy.metric &amp;&amp;
+                    this.props.manager.canSelectMultipleEntities)
+            )
+                return bins
         }
         return []
     }
@@ -1798,7 +1834,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Sep 30 2021 12:41:50 GMT+0000 (Coordinated Universal Time)
+                at Thu Sep 30 2021 12:42:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
