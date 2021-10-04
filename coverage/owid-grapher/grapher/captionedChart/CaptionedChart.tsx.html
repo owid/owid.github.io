@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.06% </span>
+                <span class="strong">92.76% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>268/288</span>
+                <span class='fraction'>269/290</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>38/50</span>
+                <span class='fraction'>39/51</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.06% </span>
+                <span class="strong">92.76% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>268/288</span>
+                <span class='fraction'>269/290</span>
             </div>
         
             
@@ -464,7 +464,16 @@
 <a name='L405'></a><a href='#L405'>405</a>
 <a name='L406'></a><a href='#L406'>406</a>
 <a name='L407'></a><a href='#L407'>407</a>
-<a name='L408'></a><a href='#L408'>408</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a>
+<a name='L414'></a><a href='#L414'>414</a>
+<a name='L415'></a><a href='#L415'>415</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -747,11 +756,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -906,6 +920,7 @@ import {
     FacetYDomainToggleManager,
     FacetStrategyDropdown,
     FacetStrategyDropdownManager,
+    NoDataAreaToggle,
 } from "../controls/Controls"
 import { ScaleSelector } from "../controls/ScaleSelector"
 import { AddEntityButton } from "../controls/AddEntityButton"
@@ -944,6 +959,7 @@ export interface CaptionedChartManager
     showXScaleToggle?: boolean
     showZoomToggle?: boolean
     showAbsRelToggle?: boolean
+    showNoDataAreaToggle?: boolean
     showFacetYDomainToggle?: boolean
     showHighlightToggle?: boolean
     showChangeEntityButton?: boolean
@@ -973,7 +989,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
     }
 &nbsp;
     @computed private get maxWidth(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.pr</span>ops.maxWidth ?? this.bounds.width - OUTSIDE_PADDING * 2
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.maxWidth ?? t</span>his.bounds.width - OUTSIDE_PADDING * 2
     }
 &nbsp;
     @computed protected get header(): Header {
@@ -1015,7 +1031,7 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         const topPadding = this.isMapTab
             ? 0
             : <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.type === ChartTypeName.Marimekko</span>
-<span class="cstat-no" title="statement not covered" >            ? PADDING_BELOW_HEADER / 2</span>
+<span class="cstat-no" title="statement not covered" >            ? PADDING</span>_BELOW_HEADER / 2
             : PADDING_BELOW_HEADER
         return new Bounds(0, 0, this.bounds.width, this.chartHeight)
             .padWidth(OUTSIDE_PADDING)
@@ -1149,16 +1165,21 @@ export class CaptionedChart extends React.Component&lt;CaptionedChartProps&gt; {
         if (manager.showAbsRelToggle)
             controls.push(&lt;AbsRelToggle key="AbsRelToggle" manager={manager} /&gt;)
 &nbsp;
+        if (manager.showNoDataAreaToggle)
+<span class="branch-0 cbranch-no" title="branch not covered" >            controls.push(</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;NoDataAreaToggle key="NoDataAreaToggle" manager={manager} /&gt;
+            )
+&nbsp;
         if (manager.showFacetYDomainToggle)
 <span class="branch-0 cbranch-no" title="branch not covered" >            controls.push(</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;FacetYDomainToggle
+<span class="cstat-no" title="statement not covered" >                &lt;FacetYDom</span>ainToggle
                     key="FacetYDomainToggle"
                     manager={manager}
                 /&gt;
             )
 &nbsp;
         if (manager.showHighlightToggle)
-<span class="branch-0 cbranch-no" title="branch not covered" >            controls.push(</span>
+            controls.push(
                 &lt;HighlightToggle key="highlight-toggle" manager={manager} /&gt;
             )
 &nbsp;
@@ -1285,7 +1306,7 @@ export class StaticCaptionedChart extends CaptionedChart {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Sep 30 2021 13:16:01 GMT+0000 (Coordinated Universal Time)
+                at Mon Oct 04 2021 11:00:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

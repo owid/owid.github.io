@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.34% </span>
+                <span class="strong">87.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>545/624</span>
+                <span class='fraction'>550/629</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.13% </span>
+                <span class="strong">87.27% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>88/101</span>
+                <span class='fraction'>96/110</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.34% </span>
+                <span class="strong">87.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>545/624</span>
+                <span class='fraction'>550/629</span>
             </div>
         
             
@@ -1037,7 +1037,14 @@
 <a name='L978'></a><a href='#L978'>978</a>
 <a name='L979'></a><a href='#L979'>979</a>
 <a name='L980'></a><a href='#L980'>980</a>
-<a name='L981'></a><a href='#L981'>981</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L981'></a><a href='#L981'>981</a>
+<a name='L982'></a><a href='#L982'>982</a>
+<a name='L983'></a><a href='#L983'>983</a>
+<a name='L984'></a><a href='#L984'>984</a>
+<a name='L985'></a><a href='#L985'>985</a>
+<a name='L986'></a><a href='#L986'>986</a>
+<a name='L987'></a><a href='#L987'>987</a>
+<a name='L988'></a><a href='#L988'>988</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1305,6 +1312,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">881x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1367,7 +1381,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1659,8 +1673,8 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2201,16 +2215,16 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
 &nbsp;
     // Does a stable sort by time. You can refer to this table for fast time filtering.
     @imemo private get sortedByTime(): this {
-        if (this.timeColumn.isMissing) <span class="branch-0 cbranch-no" title="branch not covered" >return </span>this
+        if (this.timeColumn.isMissing) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his
         return this.sortBy([this.timeColumn.slug])
     }
 &nbsp;
     filterByTimeRange(start: TimeBound, end: TimeBound): this {
         // We may want to do this time adjustment in Grapher instead of here.
-        const adjustedStart = <span class="branch-0 cbranch-no" title="branch not covered" >start === </span>Infinity ? this.maxTime! : start
+        const adjustedStart = <span class="branch-0 cbranch-no" title="branch not covered" >start =</span>== Infinity ? this.maxTime! : start
         const adjustedEnd = <span class="branch-0 cbranch-no" title="branch not covered" >end === -Infinity ? this.minTime! : e</span>nd
         // todo: we should set a time column onload so we don't have to worry about it again.
-        const timeColumnSlug = <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.timeColumn?.s</span>lug || OwidTableSlugs.time</span>
+        const timeColumnSlug = <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.timeColumn?.s</span>lug || OwidTableSlugs</span>.time
         // Sorting by time, because incidentally some parts of the code depended on this method
         // returning sorted rows.
         return this.sortedByTime.columnFilter(
@@ -2226,7 +2240,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
         const entityNameToIndices = this.rowIndicesByEntityName
         const matchingIndices = new Set&lt;number&gt;()
         this.availableEntityNames.forEach((entityName) =&gt; {
-            const indices = <span class="branch-0 cbranch-no" title="branch not covered" >entityNameToIndices.g</span>et(entityName) || []
+            const indices = <span class="branch-0 cbranch-no" title="branch not covered" >entityNameToIndices.get(entityName) || []</span>
             const allTimes = indices.map(
                 (index) =&gt; timeValues[index]
             ) as number[]
@@ -2283,6 +2297,13 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
     private sumsByTime(columnSlug: ColumnSlug): Map&lt;number, number&gt; {
         const timeValues = this.timeColumn.values
         const values = this.get(columnSlug).values as number[]
+        if (timeValues.length !== values.length)
+            // Throwing here may seem drastic but this will lead to an error in any case if the lengths are different
+            // (can happen when dropping rows with errors is done incorrectly).
+            // When it happens then throwing here is an easier to diagnose error
+<span class="branch-0 cbranch-no" title="branch not covered" >            throw E</span>rror(
+                `Tried to run sumsByTime when timeValues (${timeValues.length}) and values (${values.length}) had different length`
+            )
         const map = new Map&lt;number, number&gt;()
         timeValues.forEach((time, index) =&gt;
             map.set(time, (map.get(time) ?? 0) + values[index])
@@ -2293,7 +2314,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
     // todo: this needs tests (and/or drop in favor of someone else's package)
     // Shows how much each entity contributed to the given column for each time period
     toPercentageFromEachEntityForEachTime(columnSlug: ColumnSlug) {
-        if (!this.has(columnSlug)) return this
+        if (!this.has(columnSlug)) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his
         const timeColumn = this.timeColumn!
         const col = this.get(columnSlug)
         const timeTotals = this.sumsByTime(columnSlug)
@@ -2305,7 +2326,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
             ...this.columnStore,
             [columnSlug]: this.columnStore[columnSlug].map((val, index) =&gt; {
                 const timeTotal = timeTotals.get(timeValues[index])
-                if (timeTotal === 0) return ErrorValueTypes.DivideByZeroError
+                if (timeTotal === 0) <span class="branch-0 cbranch-no" title="branch not covered" >return E</span>rrorValueTypes.DivideByZeroError
                 return (100 * (val as number)) / timeTotal!
             }),
         }
@@ -2322,7 +2343,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
     // Otherwise we'd have NaN.
     toPercentageFromEachColumnForEachEntityAndTime(columnSlugs: ColumnSlug[]) {
         columnSlugs = columnSlugs.filter((slug) =&gt; this.has(slug))
-        if (!columnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>his
+        if (!columnSlugs.length) return this
 &nbsp;
         const newDefs = this.defs.map((def) =&gt; {
             if (columnSlugs.includes(def.slug))
@@ -2347,7 +2368,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
             columnStorePatch[slug] = columnStore[slug].map((value, i) =&gt; {
                 const total = totals[i]
                 if (!isNumber(value) || !isNumber(total)) return value
-                if (total === 0) <span class="branch-0 cbranch-no" title="branch not covered" >return E</span>rrorValueTypes.DivideByZeroError
+                if (total === 0) return ErrorValueTypes.DivideByZeroError
                 return (100 * Math.abs(value)) / total
             })
         })
@@ -2372,70 +2393,70 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
 <span class="fstat-no" title="function not covered" >    toTotalGrowthForEachColumnComparedToStartTime(</span>
 <span class="cstat-no" title="statement not covered" >        startTimeBound: TimeBound,</span>
 <span class="cstat-no" title="statement not covered" >        columnSlugs: ColumnSlug[]</span>
-<span class="cstat-no" title="statement not covered" >    ): this {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.timeColumn.isMissing) return this</span>
-<span class="cstat-no" title="statement not covered" ></span>        const timeColumnSlug = this.timeColumn.slug
-<span class="cstat-no" title="statement not covered" >        const newDefs = this.def</span>s.map((def) =&gt; {
-<span class="cstat-no" title="statement not covered" >            if (columnSlugs.inclu</span>des(def.slug))
-<span class="cstat-no" title="statement not covered" >                return toPerce</span>ntageColumnDef(
+<span class="cstat-no" title="statement not covered" >    ):</span> this {
+<span class="cstat-no" title="statement not covered" >        if (this.timeColumn.isMi</span>ssing) return this
+<span class="cstat-no" title="statement not covered" >        const timeColumnSlug = th</span>is.timeColumn.slug
+<span class="cstat-no" title="statement not covered" >        const newDefs = this.d</span>efs.map((def) =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (columnSlugs.includes(d</span>ef.slug))
+<span class="cstat-no" title="statement not covered" >                return toPercentageColumnDef(</span>
 <span class="cstat-no" title="statement not covered" >                    def,</span>
-<span class="cstat-no" title="statement not covered" >                    ColumnTypeNames.PercentChangeOverTime</span>
+<span class="cstat-no" title="statement not covered" ></span>                    ColumnTypeNames.PercentChangeOverTime
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" ></span>            return def
+<span class="cstat-no" title="statement not covered" >            return def</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >        const newRows = flatten(</span>
 <span class="cstat-no" title="statement not covered" >            Object.values(</span>
 <span class="cstat-no" title="statement not covered" >                groupBy(</span>
-<span class="cstat-no" title="statement not covered" >                    this.sortedByTime.rows,</span>
-<span class="cstat-no" title="statement not covered" >                    (row) =&gt; row[this.</span>entityNameSlug]
+<span class="cstat-no" title="statement not covered" >                    this.sort</span>edByTime.rows,
+<span class="cstat-no" title="statement not covered" >                    (row) =&gt; row[this.entityNameS</span>lug]
 <span class="cstat-no" title="statement not covered" >                )</span>
-<span class="cstat-no" title="statement not covered" >            ).map((rowsForSingleEntity) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                columnSlugs.forEach((</span>valueSlug) =&gt; {
-<span class="cstat-no" title="statement not covered" >                    let compariso</span>nValue: number
-<span class="cstat-no" title="statement not covered" >                    rowsForSingleEntity = rowsFor</span>SingleEntity.map(
-<span class="cstat-no" title="statement not covered" >                        (row: Readonly&lt;OwidRow&gt;)</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >                            const newRow = {</span>
+<span class="cstat-no" title="statement not covered" >            ).map((rowsForSingleE</span>ntity) =&gt; {
+<span class="cstat-no" title="statement not covered" >                columnSlugs.forEach((valueSlug) =</span>&gt; {
+<span class="cstat-no" title="statement not covered" >                    let comparisonValue: number</span>
+<span class="cstat-no" title="statement not covered" >                    rowsForSingleEntity = rowsForSingleEntity.map(</span>
+<span class="cstat-no" title="statement not covered" ></span>                        (row: Readonly&lt;OwidRow&gt;) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>                            const newRow = {
 <span class="cstat-no" title="statement not covered" ></span>                                ...row,
-<span class="cstat-no" title="statement not covered" ></span>                            }
+<span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            c</span>onst value = row[valueSlug]
+<span class="cstat-no" title="statement not covered" ></span>                            const value = row[valueSlug]
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>                            if (row[timeColumnSlug] &lt; startTimeBound) {
+<span class="cstat-no" title="statement not covered" >                            if (row[timeColumnSlug] &lt; startTimeBound) </span>{
 <span class="cstat-no" title="statement not covered" >                                newRow[valueSlug] =</span>
-<span class="cstat-no" title="statement not covered" >                                    ErrorValueTypes.MissingValuePlaceh</span>older
+<span class="cstat-no" title="statement not covered" ></span>                                    ErrorValueTypes.MissingValuePlaceholder
 <span class="cstat-no" title="statement not covered" >                            } else if (!isNumber(value)) {</span>
-<span class="cstat-no" title="statement not covered" ></span>                                newRow[valueSlug] =
-<span class="cstat-no" title="statement not covered" >                                    ErrorValueTypes.NaNButShouldBeNu</span>mber
-<span class="cstat-no" title="statement not covered" >                            } else </span>if (comparisonValue !== undefined) {
-<span class="cstat-no" title="statement not covered" ></span>                                // Note: comparisonValue can be negative!
-<span class="cstat-no" title="statement not covered" >                                // +value / -</span>comparisonValue = negative growth, which is incorrect.
-<span class="cstat-no" title="statement not covered" >                                newRow</span>[valueSlug] =
-<span class="cstat-no" title="statement not covered" >                                    (100 * (value - comparisonValue)) /</span>
+<span class="cstat-no" title="statement not covered" >                                new</span>Row[valueSlug] =
+<span class="cstat-no" title="statement not covered" ></span>                                    ErrorValueTypes.NaNButShouldBeNumber
+<span class="cstat-no" title="statement not covered" >                            } else if (compar</span>isonValue !== undefined) {
+<span class="cstat-no" title="statement not covered" >                                // Not</span>e: comparisonValue can be negative!
+<span class="cstat-no" title="statement not covered" >                                // +value / -comparisonValue = negative growth, which is incorrect.</span>
+<span class="cstat-no" title="statement not covered" >                                newRow[valueSlug] =</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    (100 * (value - comparisonValue)) /
 <span class="cstat-no" title="statement not covered" >                                    Math.abs(comparisonValue)</span>
-<span class="cstat-no" title="statement not covered" >                            } </span>else if (value === 0) {
+<span class="cstat-no" title="statement not covered" >                            } else if (value === 0) {</span>
 <span class="cstat-no" title="statement not covered" >                                newRow[valueSlug] =</span>
 <span class="cstat-no" title="statement not covered" >                                    ErrorValueTypes.MissingValuePlac</span>eholder
 <span class="cstat-no" title="statement not covered" >                            } else {</span>
-<span class="cstat-no" title="statement not covered" >                                comparisonValue = value</span>
-<span class="cstat-no" title="statement not covered" >                                newRow[valueSlug] = 0</span>
-<span class="cstat-no" title="statement not covered" ></span>                            }
+<span class="cstat-no" title="statement not covered" ></span>                                comparisonValue = value
+<span class="cstat-no" title="statement not covered" ></span>                                newRow[valueSlug] = 0
+<span class="cstat-no" title="statement not covered" >                            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                            return newRow</span>
+<span class="cstat-no" title="statement not covered" >                            return newRo</span>w
 <span class="cstat-no" title="statement not covered" >                        }</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                })</span>
-<span class="cstat-no" title="statement not covered" >                return rowsForSingleEntity</span>
+<span class="cstat-no" title="statement not covered" ></span>                return rowsForSingleEntity
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return this.transform(</span>
+<span class="cstat-no" title="statement not covered" >        re</span>turn this.transform(
 <span class="cstat-no" title="statement not covered" >            newRows,</span>
-<span class="cstat-no" title="statement not covered" ></span>            newDefs,
-<span class="cstat-no" title="statement not covered" >            `Transformed columns from absolut</span>e values to % of time ${startTimeBound} for columns ${columnSlugs.join(
+<span class="cstat-no" title="statement not covered" >            newDefs,</span>
+<span class="cstat-no" title="statement not covered" >            `Transformed columns from absolute values to % of time ${startTimeBound} for columns </span>${columnSlugs.join(
 <span class="cstat-no" title="statement not covered" >                ","</span>
-<span class="cstat-no" title="statement not covered" >            )} `,</span>
+<span class="cstat-no" title="statement not covered" ></span>            )} `,
 <span class="cstat-no" title="statement not covered" >            TransformType.UpdateColumnDefs</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     keepMinTimeAndMaxTimeForEachEntityOnly(): this {
@@ -2481,7 +2502,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
                 (index) =&gt; timeValues[index]
             )
             const maxIndex = maxBy(indices, (index) =&gt; timeValues[index])
-            if (minIndex === undefined || maxIndex === undefined) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
+            if (minIndex === undefined || maxIndex === undefined) return
 &nbsp;
             const allValuePairsHaveDistinctTime = columns.every((col) =&gt; {
                 const originalTimes = this.columnStore[
@@ -2605,7 +2626,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
         const index = descending.find(
             (index) =&gt; !(values[index] instanceof ErrorValue)
         )
-        return index !== undefined ? values[index] : undefined
+        return <span class="branch-0 cbranch-no" title="branch not covered" >index !== undefined ? value</span>s[index] : undefined
     }
 &nbsp;
     entitiesWith(columnSlugs: ColumnSlug[]): Set&lt;EntityName&gt; {
@@ -3004,7 +3025,7 @@ export const BlankOwidTable = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Sep 30 2021 13:16:01 GMT+0000 (Coordinated Universal Time)
+                at Mon Oct 04 2021 11:00:07 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
