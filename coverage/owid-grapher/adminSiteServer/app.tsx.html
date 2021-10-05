@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.23% </span>
+                <span class="strong">64.29% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/13</span>
+                <span class='fraction'>9/14</span>
             </div>
         
             
@@ -279,9 +279,7 @@
 <a name='L220'></a><a href='#L220'>220</a>
 <a name='L221'></a><a href='#L221'>221</a>
 <a name='L222'></a><a href='#L222'>222</a>
-<a name='L223'></a><a href='#L223'>223</a>
-<a name='L224'></a><a href='#L224'>224</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L223'></a><a href='#L223'>223</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -472,7 +470,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -519,7 +517,6 @@ import {
 } from "../settings/serverSettings"
 import * as db from "../db/db"
 import * as wpdb from "../db/wpdb"
-import { log } from "../baker/slackLog"
 import { IndexPage } from "./IndexPage"
 import { authCloudflareSSOMiddleware, authMiddleware } from "./authentication"
 import { apiRouter } from "./apiRouter"
@@ -597,11 +594,11 @@ export class OwidAdminApp {
         // Default route: single page admin app
         app.get("/admin/*", async (req, res) =&gt; {
 <span class="cstat-no" title="statement not covered" >            res.send(</span>
-<span class="cstat-no" title="statement not covered" >                renderToHtmlPage(</span>
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;IndexPage
-<span class="cstat-no" title="statement not covered" >                        username</span>={res.locals.user.fullName}
-<span class="cstat-no" title="statement not covered" >                        isSuperuser={res.locals</span>.user.isSuperuser}
-<span class="cstat-no" title="statement not covered" >                        gitCmsBranchName={this</span>.gitCmsBranchName}
+<span class="cstat-no" title="statement not covered" >                render</span>ToHtmlPage(
+<span class="cstat-no" title="statement not covered" >                    &lt;IndexPage</span>
+<span class="cstat-no" title="statement not covered" ></span>                        username={res.locals.user.fullName}
+<span class="cstat-no" title="statement not covered" >                        isSuperu</span>ser={res.locals.user.isSuperuser}
+<span class="cstat-no" title="statement not covered" >                        gitCmsBranchName={this.</span>gitCmsBranchName}
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
@@ -611,7 +608,7 @@ export class OwidAdminApp {
         // The middleware passes all errors onto the next error-handling middleware
         if (this.options.slackErrorsWebHookUrl)
 <span class="branch-0 cbranch-no" title="branch not covered" >            app.use(</span>
-<span class="cstat-no" title="statement not covered" ></span>                expressErrorSlack({
+<span class="cstat-no" title="statement not covered" >                expressErrorSlack({</span>
                     webhookUri: this.options.slackErrorsWebHookUrl,
                 })
             )
@@ -632,7 +629,7 @@ export class OwidAdminApp {
         this.server.timeout = 5 * 60 * 1000 // Increase server timeout for long-running uploads
 &nbsp;
         if (!this.options.quiet)
-            console.log(
+<span class="branch-0 cbranch-no" title="branch not covered" >            console.</span>log(
                 `owid-admin server started on http://${adminServerHost}:${adminServerPort}`
             )
     }
@@ -657,26 +654,26 @@ export class OwidAdminApp {
 <span class="cstat-no" title="statement not covered" >        req: express.Request,</span>
 <span class="cstat-no" title="statement not covered" >        res: express.Response,</span>
 <span class="cstat-no" title="statement not covered" >        // keep `next` because Express only passes errors to handlers with 4 parameters.</span>
-<span class="cstat-no" title="statement not covered" >        // eslint</span>-disable-next-line @typescript-eslint/no-unused-vars
-<span class="cstat-no" title="statement not covered" >        next: NextFunction</span>
+<span class="cstat-no" title="statement not covered" >        // eslint-disable-next-line @typescript-eslint/no-unused-vars</span>
+<span class="cstat-no" title="statement not covered" >        next: Nex</span>tFunction
 <span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (!res.headersSent) {</span>
 <span class="cstat-no" title="statement not covered" >            res.status(err.status || 500)</span>
 <span class="cstat-no" title="statement not covered" >            res.send({</span>
-<span class="cstat-no" title="statement not covered" >                error</span>: {
-<span class="cstat-no" title="statement not covered" >                    message: err.stack || err,</span>
-<span class="cstat-no" title="statement not covered" >                    status: err.stat</span>us || 500,
+<span class="cstat-no" title="statement not covered" >                error: {</span>
+<span class="cstat-no" title="statement not covered" >                    m</span>essage: err.stack || err,
+<span class="cstat-no" title="statement not covered" >                    status: err.status || 500,</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            res.write(</span>
 <span class="cstat-no" title="statement not covered" >                JSON.stringify({</span>
 <span class="cstat-no" title="statement not covered" >                    error: {</span>
-<span class="cstat-no" title="statement not covered" >                        message: err.</span>stack || err,
-<span class="cstat-no" title="statement not covered" >                        status: err.status || 500,</span>
-<span class="cstat-no" title="statement not covered" ></span>                    },
+<span class="cstat-no" title="statement not covered" >                        message: err.stack || err,</span>
+<span class="cstat-no" title="statement not covered" >                        status: err.s</span>tatus || 500,
+<span class="cstat-no" title="statement not covered" >                    },</span>
 <span class="cstat-no" title="statement not covered" ></span>                })
-<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >            res.end()</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -688,9 +685,9 @@ export class OwidAdminApp {
             // grapher database is in fact required, but we will not fail now in case it
             // comes online later
             if (!this.options.quiet) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                cons</span>ole.error(error)</span>
-<span class="cstat-no" title="statement not covered" >                console</span>.warn(
-<span class="cstat-no" title="statement not covered" >                    "Could not connect to grapher database. Continuing wit</span>hout DB..."
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                console.error(error)</span></span>
+<span class="cstat-no" title="statement not covered" >                cons</span>ole.warn(
+<span class="cstat-no" title="statement not covered" >                    "Co</span>uld not connect to grapher database. Continuing without DB..."
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
         }
@@ -733,7 +730,7 @@ if (!module.parent)
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Oct 04 2021 19:11:34 GMT+0000 (Coordinated Universal Time)
+                at Tue Oct 05 2021 09:49:51 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
