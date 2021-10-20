@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.27% </span>
+                <span class="strong">87.96% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>96/110</span>
+                <span class='fraction'>95/108</span>
             </div>
         
             
@@ -1042,9 +1042,7 @@
 <a name='L983'></a><a href='#L983'>983</a>
 <a name='L984'></a><a href='#L984'>984</a>
 <a name='L985'></a><a href='#L985'>985</a>
-<a name='L986'></a><a href='#L986'>986</a>
-<a name='L987'></a><a href='#L987'>987</a>
-<a name='L988'></a><a href='#L988'>988</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L986'></a><a href='#L986'>986</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1319,7 +1317,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">885x</span>
+<span class="cline-any cline-yes">886x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1338,10 +1336,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">885x</span>
-<span class="cline-any cline-yes">885x</span>
-<span class="cline-any cline-yes">885x</span>
-<span class="cline-any cline-yes">885x</span>
+<span class="cline-any cline-yes">886x</span>
+<span class="cline-any cline-yes">886x</span>
+<span class="cline-any cline-yes">886x</span>
+<span class="cline-any cline-yes">886x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1522,7 +1520,6 @@
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">42x</span>
-<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-yes">25x</span>
@@ -1531,7 +1528,6 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -1673,8 +1669,8 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2505,9 +2501,8 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
             if (minIndex === undefined || maxIndex === undefined) return
 &nbsp;
             const allValuePairsHaveDistinctTime = columns.every((col) =&gt; {
-                const originalTimes = this.columnStore[
-                    col.originalTimeColumnSlug
-                ]
+                const originalTimes =
+                    this.columnStore[col.originalTimeColumnSlug]
                 return originalTimes[minIndex] !== originalTimes[maxIndex]
             })
             if (allValuePairsHaveDistinctTime)
@@ -2527,9 +2522,8 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
 <span class="branch-0 cbranch-no" title="branch not covered" >            return t</span>his
 &nbsp;
         const columns = columnSlugs.map((slug) =&gt; this.get(slug))
-        const entityNameToIndices = this.getAverageAnnualChangeIndicesByEntity(
-            columnSlugs
-        )
+        const entityNameToIndices =
+            this.getAverageAnnualChangeIndicesByEntity(columnSlugs)
 &nbsp;
         // Overwrite table rows
         const rows: OwidRow[] = []
@@ -2626,7 +2620,7 @@ export class OwidTable extends CoreTable&lt;OwidRow, OwidColumnDef&gt; {
         const index = descending.find(
             (index) =&gt; !(values[index] instanceof ErrorValue)
         )
-        return <span class="branch-0 cbranch-no" title="branch not covered" >index !== undefined ? value</span>s[index] : undefined
+        return index !== undefined ? values[index] : undefined
     }
 &nbsp;
     entitiesWith(columnSlugs: ColumnSlug[]): Set&lt;EntityName&gt; {
@@ -3025,7 +3019,7 @@ export const BlankOwidTable = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

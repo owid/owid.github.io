@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.69% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>318/640</span>
+                <span class='fraction'>319/640</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.42% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>41/48</span>
+                <span class='fraction'>42/49</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.69% </span>
+                <span class="strong">49.84% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>318/640</span>
+                <span class='fraction'>319/640</span>
             </div>
         
             
@@ -921,11 +921,7 @@
 <a name='L862'></a><a href='#L862'>862</a>
 <a name='L863'></a><a href='#L863'>863</a>
 <a name='L864'></a><a href='#L864'>864</a>
-<a name='L865'></a><a href='#L865'>865</a>
-<a name='L866'></a><a href='#L866'>866</a>
-<a name='L867'></a><a href='#L867'>867</a>
-<a name='L868'></a><a href='#L868'>868</a>
-<a name='L869'></a><a href='#L869'>869</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L865'></a><a href='#L865'>865</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1025,6 +1021,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -1481,7 +1478,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1549,10 +1545,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1565,10 +1557,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1898,11 +1890,12 @@ export class StackedDiscreteBarChart
         bounds?: Bounds
         manager: StackedDiscreteBarChartManager
     }&gt;
-    implements ChartInterface, HorizontalColorLegendManager {
+    implements ChartInterface, HorizontalColorLegendManager
+{
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
 &nbsp;
     transformTable(table: OwidTable): OwidTable {
-        if (!this.yColumnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >retu</span>rn table
+        if (!this.yColumnSlugs.length) return table
 &nbsp;
         table = table.filterByEntityNames(
             this.selectionArray.selectedEntityNames
@@ -1938,7 +1931,7 @@ export class StackedDiscreteBarChart
 &nbsp;
     @computed get transformedTable(): OwidTable {
         return (
-            this.manager.transformedTable ??
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager</span>.transformedTable ??
             this.transformTable(this.inputTable)
         )
     }
@@ -1948,11 +1941,11 @@ export class StackedDiscreteBarChart
     }
 &nbsp;
     @computed private get bounds(): Bounds {
-        return (<span class="branch-0 cbranch-no" title="branch not covered" >this.prop</span>s.bounds ?? DEFAULT_BOUNDS).padRight(10)
+        return (<span class="branch-0 cbranch-no" title="branch not covered" >this.</span>props.bounds ?? DEFAULT_BOUNDS).padRight(10)
     }
 &nbsp;
     @computed private get baseFontSize(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>.baseFontSize ?? BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseFontSi</span>ze ?? BASE_FONT_SIZE
     }
 &nbsp;
     @computed private get showLegend(): boolean {
@@ -1961,91 +1954,91 @@ export class StackedDiscreteBarChart
 &nbsp;
     @computed private get labelStyle() {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return {</span></span>
-<span class="cstat-no" title="statement not covered" >            fontSize: 0.75 * this.baseFontSize,</span>
-<span class="cstat-no" title="statement not covered" ></span>            fontWeight: 700,
+<span class="cstat-no" title="statement not covered" ></span>            fontSize: 0.75 * this.baseFontSize,
+<span class="cstat-no" title="statement not covered" >            fontWe</span>ight: 700,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get totalValueLabelStyle() {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return {</span></span>
 <span class="cstat-no" title="statement not covered" >            fill: "#555",</span>
-<span class="cstat-no" title="statement not covered" >            fontSize: 0.75 * this.baseFontSize,</span>
+<span class="cstat-no" title="statement not covered" >            fontSize: 0.75 *</span> this.baseFontSize,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Account for the width of the legend
-    @computed private get labelWidth(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const labels = this.items.map((item) =&gt; ite</span>m.label)</span>
-<span class="cstat-no" title="statement not covered" >        const longestLabel = maxBy(labels</span>, (d) =&gt; d.length)
-<span class="cstat-no" title="statement not covered" >        return Bounds.forText(longestLabel, this.la</span>belStyle).width
+    @computed private get labelWidth<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        const labels = this.items.map((it</span>em) =&gt; item.label)
+<span class="cstat-no" title="statement not covered" >        const longestLabel = maxBy(labels, (d) =&gt; d</span>.length)
+<span class="cstat-no" title="statement not covered" >        return Boun</span>ds.forText(longestLabel, this.labelStyle).width
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get showTotalValueLabel(): boolean {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return !this.manager.isRela</span>tiveMode &amp;&amp; !this.manager.hideTotalValueLabel</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return !this.m</span>anager.isRelativeMode &amp;&amp; !this.manager.hideTotalValueLabel</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // The amount of space we need to allocate for total value labels on the right
-    @computed private get totalValueLabelWidth(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (!this.showTotalValueLabel) return 0</span></span>
+    @computed private get totalValueLabelWidth<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.show</span>TotalValueLabel) return 0
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        const labels = this.items.map((d) =&gt;
-<span class="cstat-no" title="statement not covered" >            this.formatV</span>alueForLabel(d.totalValue)
+<span class="cstat-no" title="statement not covered" >        const labels = t</span>his.items.map((d) =&gt;
+<span class="cstat-no" title="statement not covered" >            this</span>.formatValueForLabel(d.totalValue)
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        const longestLab</span>el = maxBy(labels, (l) =&gt; l.length)
-<span class="cstat-no" title="statement not covered" >        return Bounds.forText(longestLabel</span>, this.totalValueLabelStyle).width
+<span class="cstat-no" title="statement not covered" >        const longestLabel = maxBy(labels,</span> (l) =&gt; l.length)
+<span class="cstat-no" title="statement not covered" >        return Bounds.forText(longestLabel, this</span>.totalValueLabelStyle).width
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get x0(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return 0</span></span>
+    @computed private get x0<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        return 0</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get allPoints(): StackedPoint&lt;EntityName&gt;[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return flatten(this.series.map((series) =&gt; series.points))</span></span>
+    @computed private get allPoints<span class="fstat-no" title="function not covered" >(): StackedPoint&lt;EntityName&gt;[] {</span>
+<span class="cstat-no" title="statement not covered" >        return flat</span>ten(this.series.map((series) =&gt; series.points))
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Now we can work out the main x axis scale
-    @computed private get xDomainDefault<span class="fstat-no" title="function not covered" >(): [number, number] {</span>
-<span class="cstat-no" title="statement not covered" >        const maxValues = this.allPoints.</span>map(
-<span class="cstat-no" title="statement not covered" >            (point) =&gt; point</span>.value + point.valueOffset
+    @computed private get xDomainDefault(): [number, number] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const maxValues = th</span>is.allPoints.map(</span>
+<span class="cstat-no" title="statement not covered" >            (point) =&gt; point.value + point.valueOffset</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        return [</span>
-<span class="cstat-no" title="statement not covered" >            Math.min(this.x0, min(</span>maxValues) as number),
-<span class="cstat-no" title="statement not covered" >            Math.max(this.x0, max(maxValues) as number),</span>
+<span class="cstat-no" title="statement not covered" >            Math.min(this.x0, min(maxValues) as number),</span>
+<span class="cstat-no" title="statement not covered" >            Math.ma</span>x(this.x0, max(maxValues) as number),
 <span class="cstat-no" title="statement not covered" >        ]</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get xRange<span class="fstat-no" title="function not covered" >(): [number, number] {</span>
 <span class="cstat-no" title="statement not covered" >        return [</span>
-<span class="cstat-no" title="statement not covered" >            this.bounds.left + this</span>.labelWidth,
-<span class="cstat-no" title="statement not covered" >            this.bounds.righ</span>t - this.totalValueLabelWidth,
-<span class="cstat-no" title="statement not covered" ></span>        ]
+<span class="cstat-no" title="statement not covered" >            this.bounds.left</span> + this.labelWidth,
+<span class="cstat-no" title="statement not covered" ></span>            this.bounds.right - this.totalValueLabelWidth,
+<span class="cstat-no" title="statement not covered" >        ]</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get yAxisConfig<span class="fstat-no" title="function not covered" >(): AxisConfig {</span>
-<span class="cstat-no" title="statement not covered" >        return new AxisConfig(this.manager.yAxisConfig, this)</span>
+<span class="cstat-no" title="statement not covered" ></span>        return new AxisConfig(this.manager.yAxisConfig, this)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get yAxis<span class="fstat-no" title="function not covered" >(): HorizontalAxis {</span>
-<span class="cstat-no" title="statement not covered" ></span>        // NB: We use the user's YAxis options here to make the XAxis
-<span class="cstat-no" title="statement not covered" >        const axis = th</span>is.yAxisConfig.toHorizontalAxis()
-<span class="cstat-no" title="statement not covered" >        axis.updateDomainPreservingUserSettings(this.xDomainDefault)</span>
+    @computed get yAxis(): HorizontalAxis {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        // NB: We use t</span>he user's YAxis options here to make the XAxis</span>
+<span class="cstat-no" title="statement not covered" >        const axis = this.yAxisConfig.toHorizontalAxis()</span>
+<span class="cstat-no" title="statement not covered" ></span>        axis.updateDomainPreservingUserSettings(this.xDomainDefault)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        axis.formatC</span>olumn = this.yColumns[0] // todo: does this work for columns as series?
-<span class="cstat-no" title="statement not covered" >        axis.range = this.xRa</span>nge
-<span class="cstat-no" title="statement not covered" >        axis.label = ""</span>
-<span class="cstat-no" title="statement not covered" ></span>        return axis
+<span class="cstat-no" title="statement not covered" >        axis.formatColumn = t</span>his.yColumns[0] // todo: does this work for columns as series?
+<span class="cstat-no" title="statement not covered" >        axis.range = this.xRange</span>
+<span class="cstat-no" title="statement not covered" ></span>        axis.label = ""
+<span class="cstat-no" title="statement not covered" >        return axis</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get innerBounds(): Bounds {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.bounds</span></span>
-<span class="cstat-no" title="statement not covered" >            .padLeft(this.labelW</span>idth)
-<span class="cstat-no" title="statement not covered" ></span>            .padBottom(this.yAxis.height)
+<span class="cstat-no" title="statement not covered" ></span>            .padLeft(this.labelWidth)
+<span class="cstat-no" title="statement not covered" >            .padBottom(t</span>his.yAxis.height)
 <span class="cstat-no" title="statement not covered" >            .padTop(</span>
-<span class="cstat-no" title="statement not covered" >                this.showLegend &amp;&amp;</span> this.legend.height &gt; 0
-<span class="cstat-no" title="statement not covered" ></span>                    ? this.legend.height + this.legendPaddingTop
+<span class="cstat-no" title="statement not covered" ></span>                this.showLegend &amp;&amp; this.legend.height &gt; 0
+<span class="cstat-no" title="statement not covered" >                    ? th</span>is.legend.height + this.legendPaddingTop
 <span class="cstat-no" title="statement not covered" >                    : 0</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>            .padRight(this.totalValueLabelWidth)
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >            .padRight</span>(this.totalValueLabelWidth)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get selectionArray(): SelectionArray {
@@ -2062,7 +2055,7 @@ export class StackedDiscreteBarChart
                         const point = series.points.find(
                             (point) =&gt; point.position === entityName
                         )
-                        if (!point) return undefined
+                        if (!point) <span class="branch-0 cbranch-no" title="branch not covered" >return u</span>ndefined
                         totalValue += point.value
                         return {
                             point,
@@ -2093,14 +2086,14 @@ export class StackedDiscreteBarChart
             case SortBy.column:
                 const sortColumnSlug = this.sortConfig.sortColumnSlug
                 sortByFunc = (item: Item): number =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    item.bars.find((b) =&gt; b.columnSl</span>ug === sortColumnSlug)</span>
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    item.bars.find((b) =&gt; b.c</span>olumnSlug === sortColumnSlug)</span>
                         ?.point.value ?? 0
                 break
             default:
             case SortBy.total:
                 sortByFunc = (item: Item): number =&gt; {
-                    const lastPoint = <span class="branch-0 cbranch-no" title="branch not covered" >last(it</span>em.bars)?.point
-                    if (!lastPoint) <span class="branch-0 cbranch-no" title="branch not covered" >return 0</span>
+                    const lastPoint = <span class="branch-0 cbranch-no" title="branch not covered" >last(item.bars)?.p</span>oint
+                    if (!lastPoint) return 0
                     return lastPoint.valueOffset + lastPoint.value
                 }
         }
@@ -2112,7 +2105,7 @@ export class StackedDiscreteBarChart
     }
 &nbsp;
     @computed private get placedItems<span class="fstat-no" title="function not covered" >(): PlacedItem[] {</span>
-<span class="cstat-no" title="statement not covered" >        const { innerBounds, barHeight, barSpacing } = thi</span>s
+<span class="cstat-no" title="statement not covered" >        const { innerBounds, barHeight, barSpacing } = this</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const topYOffset = innerBounds.top + barHeight / 2</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2122,8 +2115,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        }))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed private get barHeight<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return (0.8 *</span> this.innerBounds.height) / this.items.length
+    @computed private get barHeight(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        return (0.8 * this.innerBounds.height) / this.items.length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get barSpacing<span class="fstat-no" title="function not covered" >(): number {</span>
@@ -2192,12 +2185,12 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @bind private <span class="fstat-no" title="function not covered" >formatValueForLabel(value: number): string {</span>
-<span class="cstat-no" title="statement not covered" >        // Compute how many decimal places we should sh</span>ow.
-<span class="cstat-no" title="statement not covered" >        // Basically, this makes us show 2 signific</span>ant digits, or no decimal places if the number
+<span class="cstat-no" title="statement not covered" >        // Compute how many decimal places we shoul</span>d show.
+<span class="cstat-no" title="statement not covered" >        // Basically, this makes us show 2 signifi</span>cant digits, or no decimal places if the number
 <span class="cstat-no" title="statement not covered" >        // is big enough already.</span>
 <span class="cstat-no" title="statement not covered" >        const magnitude = numberMagnitude(value)</span>
-<span class="cstat-no" title="statement not covered" >        return this.formatColumn.formatValueShort(va</span>lue, {
-<span class="cstat-no" title="statement not covered" >            numDecimalPlaces: Math.max(0, -magnitude +</span> 2),
+<span class="cstat-no" title="statement not covered" >        return this.formatColumn.formatValueShort(valu</span>e, {
+<span class="cstat-no" title="statement not covered" >            numDecimalPlaces: Math.max(0, -magni</span>tude + 2),
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2207,27 +2200,27 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >                &lt;NoDataModal</span>
 <span class="cstat-no" title="statement not covered" >                    manager={this.manager}</span>
 <span class="cstat-no" title="statement not covered" >                    bounds={this.bounds}</span>
-<span class="cstat-no" title="statement not covered" >                    message={this.failMess</span>age}
+<span class="cstat-no" title="statement not covered" >                    message={this.fail</span>Message}
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { bounds, yAxis, innerBounds } = this</span>
+<span class="cstat-no" title="statement not covered" >        const { bounds, yAxis, innerBou</span>nds } = this
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const chartContext: StackedBarChartContext = {</span>
+<span class="cstat-no" title="statement not covered" >        const chartContext: StackedBarCh</span>artContext = {
 <span class="cstat-no" title="statement not covered" >            yAxis,</span>
-<span class="cstat-no" title="statement not covered" >            targetTime: this.manager.e</span>ndTime,
-<span class="cstat-no" title="statement not covered" >            timeColumn: t</span>his.inputTable.timeColumn,
+<span class="cstat-no" title="statement not covered" >            targetTime: t</span>his.manager.endTime,
+<span class="cstat-no" title="statement not covered" >            timeColumn: this.inputTable.timeColumn,</span>
 <span class="cstat-no" title="statement not covered" >            formatColumn: this.formatColumn,</span>
-<span class="cstat-no" title="statement not covered" >            formatValueForLabel: this.formatValueForLabel</span>,
+<span class="cstat-no" title="statement not covered" >            formatValueForLabel: this.formatValueFo</span>rLabel,
 <span class="cstat-no" title="statement not covered" >            barHeight: this.barHeight,</span>
-<span class="cstat-no" title="statement not covered" >            focusSeriesName: this.focusSeriesNa</span>me,
+<span class="cstat-no" title="statement not covered" >            focusSeriesName: this.focus</span>SeriesName,
 <span class="cstat-no" title="statement not covered" >            x0: this.x0,</span>
 <span class="cstat-no" title="statement not covered" >            baseFontSize: this.baseFontSize,</span>
-<span class="cstat-no" title="statement not covered" >            isInteractive: !this.manager.isExpor</span>tingtoSvgOrPng,
+<span class="cstat-no" title="statement not covered" >            isInteractive: !this.manager.isExporti</span>ngtoSvgOrPng,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const handlePositionUpdate = (d: PlacedIt</span>em) =&gt; ({
-<span class="cstat-no" title="statement not covered" >            translateY: [</span>d.yPosition],
+<span class="cstat-no" title="statement not covered" >        const handlePosit</span>ionUpdate = (d: PlacedItem) =&gt; ({
+<span class="cstat-no" title="statement not covered" >            translateY: [d.yPosition],</span>
 <span class="cstat-no" title="statement not covered" >            timing: { duration: 350, ease: easeQuadOut },</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -2236,48 +2229,47 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >                &lt;rect</span>
 <span class="cstat-no" title="statement not covered" >                    x={bounds.left}</span>
 <span class="cstat-no" title="statement not covered" >                    y={bounds.top}</span>
-<span class="cstat-no" title="statement not covered" >                    width={bounds.widt</span>h}
+<span class="cstat-no" title="statement not covered" >                    width={bounds.width}</span>
 <span class="cstat-no" title="statement not covered" >                    height={bounds.height}</span>
 <span class="cstat-no" title="statement not covered" >                    opacity={0}</span>
-<span class="cstat-no" title="statement not covered" >                    fill="rgba(255,25</span>5,255,0)"
+<span class="cstat-no" title="statement not covered" >                    fill="rgba(255,255,255,0)"</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;HorizontalAxisComponent</span>
-<span class="cstat-no" title="statement not covered" ></span>                    bounds={bounds}
-<span class="cstat-no" title="statement not covered" >                    axis</span>={yAxis}
-<span class="cstat-no" title="statement not covered" >                    preferredAxisPosition</span>={innerBounds.bottom}
+<span class="cstat-no" title="statement not covered" ></span>                &lt;HorizontalAxisComponent
+<span class="cstat-no" title="statement not covered" >                    boun</span>ds={bounds}
+<span class="cstat-no" title="statement not covered" >                    axis={yAxis}</span>
+<span class="cstat-no" title="statement not covered" >                    p</span>referredAxisPosition={innerBounds.bottom}
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;HorizontalAxisGridLines</span>
-<span class="cstat-no" title="statement not covered" >                    horizontalAxis={yAxis}</span>
-<span class="cstat-no" title="statement not covered" >                    bounds={innerBounds</span>}
+<span class="cstat-no" title="statement not covered" >                    horizontalAxis={yAx</span>is}
+<span class="cstat-no" title="statement not covered" >                    bounds={innerBounds}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                {this.showLegend &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;HorizontalCategoricalColorLegend manager={this} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )}</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;NodeGroup
-<span class="cstat-no" title="statement not covered" >                    data=</span>{this.placedItems}
-<span class="cstat-no" title="statement not covered" ></span>                    keyAccessor={(d: PlacedItem) =&gt; d.label}
-<span class="cstat-no" title="statement not covered" >                    start={handlePositionUpdate}</span>
-<span class="cstat-no" title="statement not covered" ></span>                    update={handlePositionUpdate}
+<span class="cstat-no" title="statement not covered" ></span>                    &lt;HorizontalCategoricalColorLegend manager={this} /&gt;
+<span class="cstat-no" title="statement not covered" ></span>                )}
+<span class="cstat-no" title="statement not covered" >                &lt;NodeGrou</span>p
+<span class="cstat-no" title="statement not covered" ></span>                    data={this.placedItems}
+<span class="cstat-no" title="statement not covered" >                    keyAccessor={(d: PlacedItem) =&gt; d.label}</span>
+<span class="cstat-no" title="statement not covered" ></span>                    start={handlePositionUpdate}
+<span class="cstat-no" title="statement not covered" >                    u</span>pdate={handlePositionUpdate}
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {(nodes) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" ></span>                    {(nodes) =&gt; (
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;g&gt;
 <span class="cstat-no" title="statement not covered" ></span>                            {nodes.map(
-<span class="cstat-no" title="statement not covered" ></span>                                ({
+<span class="cstat-no" title="statement not covered" >                                ({</span>
 <span class="cstat-no" title="statement not covered" >                                    data,</span>
 <span class="cstat-no" title="statement not covered" >                                    state,</span>
-<span class="cstat-no" title="statement not covered" >                                }: {</span>
+<span class="cstat-no" title="statement not covered" ></span>                                }: {
 <span class="cstat-no" title="statement not covered" ></span>                                    data: PlacedItem
 <span class="cstat-no" title="statement not covered" ></span>                                    state: { translateY: number }
 <span class="cstat-no" title="statement not covered" ></span>                                }) =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>                                    const { label, bars, totalValue } = data
 <span class="cstat-no" title="statement not covered" ></span>                                    const tooltipProps = {
-<span class="cstat-no" title="statement not covered" ></span>                                        ...chartContext,
-<span class="cstat-no" title="statement not covered" >                                        item:</span> data,
+<span class="cstat-no" title="statement not covered" >                                        ...ch</span>artContext,
+<span class="cstat-no" title="statement not covered" ></span>                                        item: data,
 <span class="cstat-no" title="statement not covered" >                                    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                    const totalLabel </span>= this.formatValueForLabel(
-<span class="cstat-no" title="statement not covered" ></span>                                        totalValue
-<span class="cstat-no" title="statement not covered" >                                    )</span>
+<span class="cstat-no" title="statement not covered" ></span>                                    const totalLabel =
+<span class="cstat-no" title="statement not covered" >                                        this.f</span>ormatValueForLabel(totalValue)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>                                    return (
 <span class="cstat-no" title="statement not covered" ></span>                                        &lt;g
@@ -2357,86 +2349,82 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        tooltipProps</span>: TooltipProps
 <span class="cstat-no" title="statement not covered" >    }): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        const</span> { bar, chartContext, tooltipProps } = props
-<span class="cstat-no" title="statement not covered" >        const {</span>
-<span class="cstat-no" title="statement not covered" >            yAxis,</span>
-<span class="cstat-no" title="statement not covered" >            f</span>ormatValueForLabel,
-<span class="cstat-no" title="statement not covered" >            focusSer</span>iesName,
-<span class="cstat-no" title="statement not covered" >            barHeight,</span>
-<span class="cstat-no" title="statement not covered" >        } = c</span>hartContext
+<span class="cstat-no" title="statement not covered" >        const { yAxi</span>s, formatValueForLabel, focusSeriesName, barHeight } =
+<span class="cstat-no" title="statement not covered" >            chartContext</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const isFaint =</span>
-<span class="cstat-no" title="statement not covered" >            f</span>ocusSeriesName !== undefined &amp;&amp; focusSeriesName !== bar.seriesName
-<span class="cstat-no" title="statement not covered" >        const barX =</span> yAxis.place(chartContext.x0 + bar.point.valueOffset)
-<span class="cstat-no" title="statement not covered" >        const barWidth =</span>
-<span class="cstat-no" title="statement not covered" >            y</span>Axis.place(bar.point.value) - yAxis.place(chartContext.x0)
+<span class="cstat-no" title="statement not covered" >        const isFain</span>t =
+<span class="cstat-no" title="statement not covered" >            focusSeriesName !== undefined &amp;&amp; focusSeriesName</span> !== bar.seriesName
+<span class="cstat-no" title="statement not covered" >        const</span> barX = yAxis.place(chartContext.x0 + bar.point.valueOffset)
+<span class="cstat-no" title="statement not covered" >        const barWid</span>th =
+<span class="cstat-no" title="statement not covered" >            yAxis.place(bar.point.value) - yAxis.place(cha</span>rtContext.x0)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const barLabel = formatValueForLabel(bar.point.value)</span>
-<span class="cstat-no" title="statement not covered" >        const</span> labelFontSize = 0.7 * chartContext.baseFontSize
-<span class="cstat-no" title="statement not covered" >        const labelB</span>ounds = Bounds.forText(barLabel, {
-<span class="cstat-no" title="statement not covered" >            fontSize: labelFontSize,</span>
+<span class="cstat-no" title="statement not covered" >        const barLab</span>el = formatValueForLabel(bar.point.value)
+<span class="cstat-no" title="statement not covered" >        const labelFontSize = 0.7 * chartContext.baseFontSi</span>ze
+<span class="cstat-no" title="statement not covered" >        const</span> labelBounds = Bounds.forText(barLabel, {
+<span class="cstat-no" title="statement not covered" >            fontSize</span>: labelFontSize,
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        // Check tha</span>t we have enough space to show the bar label
-<span class="cstat-no" title="statement not covered" >        const showLabelInsideBar =</span>
-<span class="cstat-no" title="statement not covered" >            l</span>abelBounds.width &lt; 0.85 * barWidth &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            labelBou</span>nds.height &lt; 0.85 * barHeight
-<span class="cstat-no" title="statement not covered" >        const labelColor = isDarkColor(bar.color) ? "#fff" :</span> "#000"
+<span class="cstat-no" title="statement not covered" >        // Ch</span>eck that we have enough space to show the bar label
+<span class="cstat-no" title="statement not covered" >        const showLa</span>belInsideBar =
+<span class="cstat-no" title="statement not covered" >            labelBounds.width &lt; 0.85 * barWidth &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            l</span>abelBounds.height &lt; 0.85 * barHeight
+<span class="cstat-no" title="statement not covered" >        const labelC</span>olor = isDarkColor(bar.color) ? "#fff" : "#000"
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;TippyIfInteractive</span>
-<span class="cstat-no" title="statement not covered" ></span>                lazy
-<span class="cstat-no" title="statement not covered" >                isIn</span>teractive={chartContext.isInteractive}
-<span class="cstat-no" title="statement not covered" >                key={bar.seriesName}</span>
-<span class="cstat-no" title="statement not covered" ></span>                hideOnClick={false}
-<span class="cstat-no" title="statement not covered" >                cont</span>ent={&lt;StackedDiscreteBarChart.Tooltip {...tooltipProps} /&gt;}
+<span class="cstat-no" title="statement not covered" >        retur</span>n (
+<span class="cstat-no" title="statement not covered" >            &lt;TippyIf</span>Interactive
+<span class="cstat-no" title="statement not covered" >                lazy</span>
+<span class="cstat-no" title="statement not covered" ></span>                isInteractive={chartContext.isInteractive}
+<span class="cstat-no" title="statement not covered" >                key=</span>{bar.seriesName}
+<span class="cstat-no" title="statement not covered" >                hideOnClick={false}</span>
+<span class="cstat-no" title="statement not covered" ></span>                content={&lt;StackedDiscreteBarChart.Tooltip {...tooltipProps} /&gt;}
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;g&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;g&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    &lt;rect
-<span class="cstat-no" title="statement not covered" >                        x={0}</span>
-<span class="cstat-no" title="statement not covered" ></span>                        y={0}
+<span class="cstat-no" title="statement not covered" ></span>                        x={0}
+<span class="cstat-no" title="statement not covered" >                        y={0}</span>
 <span class="cstat-no" title="statement not covered" ></span>                        transform={`translate(${barX}, ${-barHeight / 2})`}
-<span class="cstat-no" title="statement not covered" >                        width={barWidth}</span>
-<span class="cstat-no" title="statement not covered" ></span>                        height={barHeight}
+<span class="cstat-no" title="statement not covered" ></span>                        width={barWidth}
+<span class="cstat-no" title="statement not covered" >                        height={barHeight}</span>
 <span class="cstat-no" title="statement not covered" ></span>                        fill={bar.color}
-<span class="cstat-no" title="statement not covered" >                        opacity={isFaint ? 0.1 : 0.85}</span>
-<span class="cstat-no" title="statement not covered" ></span>                        style={{
+<span class="cstat-no" title="statement not covered" ></span>                        opacity={isFaint ? 0.1 : 0.85}
+<span class="cstat-no" title="statement not covered" >                        style={{</span>
 <span class="cstat-no" title="statement not covered" ></span>                            transition: "height 200ms ease",
-<span class="cstat-no" title="statement not covered" >                        }}</span>
-<span class="cstat-no" title="statement not covered" ></span>                    /&gt;
+<span class="cstat-no" title="statement not covered" ></span>                        }}
+<span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    {showLabelInsideBar &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                        &lt;text</span>
-<span class="cstat-no" title="statement not covered" ></span>                            x={barX + barWidth / 2}
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;text
+<span class="cstat-no" title="statement not covered" >                            x={barX + barWidth / 2}</span>
 <span class="cstat-no" title="statement not covered" ></span>                            y={0}
-<span class="cstat-no" title="statement not covered" >                            width={barWidth}</span>
-<span class="cstat-no" title="statement not covered" ></span>                            height={barHeight}
+<span class="cstat-no" title="statement not covered" ></span>                            width={barWidth}
+<span class="cstat-no" title="statement not covered" >                            height={barHeight}</span>
 <span class="cstat-no" title="statement not covered" ></span>                            fill={labelColor}
-<span class="cstat-no" title="statement not covered" >                            opacity={isFaint ? 0 : 1}</span>
-<span class="cstat-no" title="statement not covered" ></span>                            fontSize={labelFontSize}
+<span class="cstat-no" title="statement not covered" ></span>                            opacity={isFaint ? 0 : 1}
+<span class="cstat-no" title="statement not covered" >                            fontSize={labelFontSize}</span>
 <span class="cstat-no" title="statement not covered" ></span>                            textAnchor="middle"
-<span class="cstat-no" title="statement not covered" >                            dominantBaseline="middle"</span>
-<span class="cstat-no" title="statement not covered" ></span>                        &gt;
+<span class="cstat-no" title="statement not covered" ></span>                            dominantBaseline="middle"
+<span class="cstat-no" title="statement not covered" >                        &gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                            {barLabel}
-<span class="cstat-no" title="statement not covered" >                        &lt;/text&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    )}
-<span class="cstat-no" title="statement not covered" >                &lt;/g&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/TippyIfInteractive&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                        &lt;/text&gt;
+<span class="cstat-no" title="statement not covered" >                    )}</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;/g&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;/TippyI</span>fInteractive&gt;
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private static Tooltip(props: TooltipProps): JSX.Element {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        let hasTimeN</span>otice = false</span>
-<span class="cstat-no" title="statement not covered" >        const { highlightedSeriesName, item } = props</span>
-<span class="cstat-no" title="statement not covered" >        const</span> showTotal = !item.bars.some((bar) =&gt; bar.point.fake) // If some data is missing, don't calculate a total
+    private static <span class="fstat-no" title="function not covered" >Tooltip(props: TooltipProps): JSX.Element {</span>
+<span class="cstat-no" title="statement not covered" >        let h</span>asTimeNotice = false
+<span class="cstat-no" title="statement not covered" >        const { high</span>lightedSeriesName, item } = props
+<span class="cstat-no" title="statement not covered" >        const showTotal = !item.bars.some((bar) =&gt; bar.point</span>.fake) // If some data is missing, don't calculate a total
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const timeNoticeStyle = {</span>
+<span class="cstat-no" title="statement not covered" >        const timeNo</span>ticeStyle = {
 <span class="cstat-no" title="statement not covered" >            fontWeight: "normal",</span>
-<span class="cstat-no" title="statement not covered" >            color: "#70707</span>0",
-<span class="cstat-no" title="statement not covered" >            fontSize: "0.8em"</span>,
+<span class="cstat-no" title="statement not covered" >            c</span>olor: "#707070",
+<span class="cstat-no" title="statement not covered" >            fontSize</span>: "0.8em",
 <span class="cstat-no" title="statement not covered" >            whiteSpace: "nowrap",</span>
 <span class="cstat-no" title="statement not covered" >            paddingLeft: "8px",</span>
-        } as React.CSSProperties
-&nbsp;
-        return (
-            &lt;table
+<span class="cstat-no" title="statement not covered" >        } as React.CSSProp</span>erties
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;table</span>
                 style={{
                     lineHeight: "1em",
                     whiteSpace: "normal",
@@ -2668,7 +2656,7 @@ export class StackedDiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.48% </span>
+                <span class="strong">68.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>107/154</span>
+                <span class='fraction'>106/154</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.48% </span>
+                <span class="strong">68.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>107/154</span>
+                <span class='fraction'>106/154</span>
             </div>
         
             
@@ -236,8 +236,7 @@
 <a name='L177'></a><a href='#L177'>177</a>
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
-<a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L180'></a><a href='#L180'>180</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -320,7 +319,6 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -391,7 +389,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -491,9 +489,8 @@ export const extractDataValuesConfiguration = async (
     const dataValueMatches = html.matchAll(dataValueRegex)
     for (const match of dataValueMatches) {
         const dataValueConfigurationString = match[1]
-        const [queryArgsString, template] = dataValueConfigurationString.split(
-            dataValueSeparator
-        )
+        const [queryArgsString, template] =
+            dataValueConfigurationString.split(dataValueSeparator)
         const queryArgs = parseDataValueArgs(queryArgsString)
 &nbsp;
         dataValuesConfigurations.set(dataValueConfigurationString, {
@@ -531,7 +528,7 @@ export const parseKeyValueArgs = (text: string): KeyValueProps =&gt; {
             ]
             let parsedValue
             if (value === "" || value === "true") parsedValue = true
-            else if (value === "false") <span class="branch-0 cbranch-no" title="branch not covered" >parsedV</span>alue = false
+            else if (value === "false") parsedValue = false
             else parsedValue = value
             options[name] = parsedValue
         })
@@ -540,38 +537,38 @@ export const parseKeyValueArgs = (text: string): KeyValueProps =&gt; {
 &nbsp;
 export const formatDataValue = (
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    value: number,</span></span>
-<span class="cstat-no" title="statement not covered" >    variableId: LegacyVariableId,</span>
-<span class="cstat-no" title="statement not covered" >    legacyVariableDisplayConfig: </span>LegacyVariableDisplayConfigInterface = {},
-<span class="cstat-no" title="statement not covered" >    legacyChart</span>Dimension: LegacyChartDimensionInterface | undefined
+<span class="cstat-no" title="statement not covered" >    variableId: LegacyVariableId</span>,
+<span class="cstat-no" title="statement not covered" >    legacyVariableDisplayConfig: LegacyVariableDisplay</span>ConfigInterface = {},
+<span class="cstat-no" title="statement not covered" >    legacyChartDimension: LegacyC</span>hartDimensionInterface | undefined
 <span class="cstat-no" title="statement not covered" >) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if </span>(!legacyChartDimension) return
-<span class="cstat-no" title="statement not covered" >    const legacyVariableConfig: Le</span>gacyVariablesAndEntityKey = {
+<span class="cstat-no" title="statement not covered" >    if (!le</span>gacyChartDimension) return
+<span class="cstat-no" title="statement not covered" >    con</span>st legacyVariableConfig: LegacyVariablesAndEntityKey = {
 <span class="cstat-no" title="statement not covered" >        entityKey: {},</span>
 <span class="cstat-no" title="statement not covered" >        variables: {</span>
-<span class="cstat-no" title="statement not covered" ></span>            [variableId]: {
+<span class="cstat-no" title="statement not covered" >            [variableId]: {</span>
 <span class="cstat-no" title="statement not covered" ></span>                id: variableId,
-<span class="cstat-no" title="statement not covered" >                display: legacyVariableDisplayConfig,</span>
+<span class="cstat-no" title="statement not covered" ></span>                display: legacyVariableDisplayConfig,
 <span class="cstat-no" title="statement not covered" >                values: [value],</span>
 <span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        },</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const legacyGrapherConfig = {</span>
+<span class="cstat-no" title="statement not covered" ></span>    const legacyGrapherConfig = {
 <span class="cstat-no" title="statement not covered" >        dimensions: [</span>
 <span class="cstat-no" title="statement not covered" >            {</span>
-<span class="cstat-no" title="statement not covered" >                ...legacyChartDimension,</span>
+<span class="cstat-no" title="statement not covered" >                ...legacyChartDim</span>ension,
 <span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        ],</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const { table, dimensions } = legacyToOwidTableAndDimen</span>sions(
+<span class="cstat-no" title="statement not covered" >    const { table, dimensions } = legacyToOwidTableAndDimensions(</span>
 <span class="cstat-no" title="statement not covered" >        legacyVariableConfig,</span>
-<span class="cstat-no" title="statement not covered" ></span>        legacyGrapherConfig
+<span class="cstat-no" title="statement not covered" >        legacyGrapherConfig</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const formattedValueWithUnit = table</span>
+<span class="cstat-no" title="statement not covered" ></span>    const formattedValueWithUnit = table
 <span class="cstat-no" title="statement not covered" >        .get(dimensions[0].slug)</span>
-        .formatValueLong(table.rows[0][variableId])
+<span class="cstat-no" title="statement not covered" >        .formatValueLong(table.rows[0][</span>variableId])
 &nbsp;
     return formattedValueWithUnit
 }
@@ -604,7 +601,7 @@ export const formatCountryProfile = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

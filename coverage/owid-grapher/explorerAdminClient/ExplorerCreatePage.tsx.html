@@ -526,7 +526,8 @@
 <a name='L467'></a><a href='#L467'>467</a>
 <a name='L468'></a><a href='#L468'>468</a>
 <a name='L469'></a><a href='#L469'>469</a>
-<a name='L470'></a><a href='#L470'>470</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -934,6 +935,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1284,125 +1286,126 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    @action.bound private <span class="fstat-no" title="function not covered" >updateProgramFromHot() {</span></span>
-<span class="cstat-no" title="statement not covered" >        const newVersion = this.hotTableComponent.current?.hotInstance.get</span>Data() as CoreMatrix
-<span class="cstat-no" title="statement not covered" >        if (!newVersion) return</span>
+<span class="cstat-no" title="statement not covered" >        const newVersion =</span>
+<span class="cstat-no" title="statement not covered" >            this.hotTableComponent.current?.hotInsta</span>nce.getData() as CoreMatrix
+<span class="cstat-no" title="statement not covered" >        if (!newVersi</span>on) return
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const newProgram = ExplorerProgram.fromMatri</span>x(
-<span class="cstat-no" title="statement not covered" >            th</span>is.program.slug,
+<span class="cstat-no" title="statement not covered" >        const </span>newProgram = ExplorerProgram.fromMatrix(
+<span class="cstat-no" title="statement not covered" >            this.program.slug,</span>
 <span class="cstat-no" title="statement not covered" >            newVersion</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        if (this.program.toString() === newProgram.toString()</span>) return
+<span class="cstat-no" title="statement not covered" >        if (this.program.toString() === newProgram.toString()) return</span>
 <span class="cstat-no" title="statement not covered" >        this.props.onChange(newProgram.toString())</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    private get hotSettings<span class="fstat-no" title="function not covered" >() {</span></span>
-<span class="cstat-no" title="statement not covered" >        const { program, programOnDisk } = this</span>
-<span class="cstat-no" title="statement not covered" >        const </span>data = program.asArrays
+<span class="cstat-no" title="statement not covered" >        const </span>{ program, programOnDisk } = this
+<span class="cstat-no" title="statement not covered" >        const data = program.asArra</span>ys
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        con</span>st { currentlySelectedGrapherRow } = program
+<span class="cstat-no" title="statement not covered" >        const { currentlySelec</span>tedGrapherRow } = program
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const cells = function (row: number, column: number)</span> {
+<span class="cstat-no" title="statement not covered" >        const cells = function (row: number, column: number) {</span>
 <span class="cstat-no" title="statement not covered" >            const {</span>
 <span class="cstat-no" title="statement not covered" >                comment,</span>
 <span class="cstat-no" title="statement not covered" >                cssClasses,</span>
 <span class="cstat-no" title="statement not covered" >                optionKeywords,</span>
 <span class="cstat-no" title="statement not covered" >                placeholder,</span>
-<span class="cstat-no" title="statement not covered" >                contents,</span>
-<span class="cstat-no" title="statement not covered" >            } = pro</span>gram.getCell({ row, column })
+<span class="cstat-no" title="statement not covered" >                con</span>tents,
+<span class="cstat-no" title="statement not covered" >            } = program.getCel</span>l({ row, column })
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const cellConten</span>tsOnDisk = programOnDisk.getCellContents({
+<span class="cstat-no" title="statement not covered" >            const cellConte</span>ntsOnDisk = programOnDisk.getCellContents({
 <span class="cstat-no" title="statement not covered" >                row,</span>
 <span class="cstat-no" title="statement not covered" >                column,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const cellProperties: Partial&lt;Handsontable.CellProperties&gt; = {}</span>
+<span class="cstat-no" title="statement not covered" >            const cellProperties: Partial&lt;Handso</span>ntable.CellProperties&gt; = {}
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const allClasses = cssC</span>lasses?.slice() ?? []
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (cellContentsOnDisk !== contents)</span> {
+<span class="cstat-no" title="statement not covered" >            if (cellContentsOnDisk !</span>== contents) {
 <span class="cstat-no" title="statement not covered" >                if (contents === "" </span>&amp;&amp; cellContentsOnDisk === undefined)
-<span class="cstat-no" title="statement not covered" >                    allClasses.push(</span>"cellCreated")
-<span class="cstat-no" title="statement not covered" >                else if (isEmpty(contents)) allC</span>lasses.push("cellDeleted")
+<span class="cstat-no" title="statement not covered" >                    allClasses.push("cellCreated</span>")
+<span class="cstat-no" title="statement not covered" >                else if (isEmp</span>ty(contents)) allClasses.push("cellDeleted")
 <span class="cstat-no" title="statement not covered" >                else if (isEmp</span>ty(cellContentsOnDisk))
-<span class="cstat-no" title="statement not covered" >                    allClasses</span>.push("cellCreated")
-<span class="cstat-no" title="statement not covered" >                else allClasses.push("cellChange</span>d")
+<span class="cstat-no" title="statement not covered" >                    allClasses.push("cellCreated</span>")
+<span class="cstat-no" title="statement not covered" >                else allClasse</span>s.push("cellChanged")
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (cur</span>rentlySelectedGrapherRow === row &amp;&amp; column)
-<span class="cstat-no" title="statement not covered" ></span>                allClasses.push(`currentlySelectedGrapherRow`)
+<span class="cstat-no" title="statement not covered" >            if </span>(currentlySelectedGrapherRow === row &amp;&amp; column)
+<span class="cstat-no" title="statement not covered" >                al</span>lClasses.push(`currentlySelectedGrapherRow`)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            cellProperties.c</span>lassName = allClasses.join(" ")
-<span class="cstat-no" title="statement not covered" >            cellProperties.comment = c</span>omment ? { value: comment } : undefined
-<span class="cstat-no" title="statement not covered" >            cellProperties.placeh</span>older = placeholder
+<span class="cstat-no" title="statement not covered" >            cellProperties.className =</span> allClasses.join(" ")
+<span class="cstat-no" title="statement not covered" >            cellProperties.commen</span>t = comment ? { value: comment } : undefined
+<span class="cstat-no" title="statement not covered" >            cellProperties.placeholder =</span> placeholder
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (optionKeyword</span>s &amp;&amp; optionKeywords.length) {
-<span class="cstat-no" title="statement not covered" >                cellPrope</span>rties.type = "autocomplete"
+<span class="cstat-no" title="statement not covered" >            if (optionKey</span>words &amp;&amp; optionKeywords.length) {
+<span class="cstat-no" title="statement not covered" >                cellProperties</span>.type = "autocomplete"
 <span class="cstat-no" title="statement not covered" >                cellProperties</span>.source = optionKeywords
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return cellProper</span>ties
+<span class="cstat-no" title="statement not covered" >            return cellProp</span>erties
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        con</span>st hotSettings: Handsontable.GridSettings = {
-<span class="cstat-no" title="statement not covered" >            afterChange: () </span>=&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" ></span>            afterRemoveRow: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            aft</span>erRemoveCol: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            allowInsertColumn: false,</span>
+<span class="cstat-no" title="statement not covered" >        const hotSettings: H</span>andsontable.GridSettings = {
+<span class="cstat-no" title="statement not covered" ></span>            afterChange: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            aft</span>erRemoveRow: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            afterRemoveCol: () =&gt; this.updateProgramFromHot(),</span>
+<span class="cstat-no" title="statement not covered" ></span>            allowInsertColumn: false,
 <span class="cstat-no" title="statement not covered" ></span>            allowInsertRow: true,
-<span class="cstat-no" title="statement not covered" ></span>            autoRowSize: false,
-<span class="cstat-no" title="statement not covered" >            a</span>utoColumnSize: false,
+<span class="cstat-no" title="statement not covered" >            a</span>utoRowSize: false,
+<span class="cstat-no" title="statement not covered" >            autoColu</span>mnSize: false,
 <span class="cstat-no" title="statement not covered" >            cells,</span>
-<span class="cstat-no" title="statement not covered" >            colHeaders: true,</span>
-<span class="cstat-no" title="statement not covered" >            c</span>omments: true,
-<span class="cstat-no" title="statement not covered" >            contextM</span>enu: {
-<span class="cstat-no" title="statement not covered" >                items: {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    AutofillColDefCommand: new AutofillColDefCommand(
-<span class="cstat-no" title="statement not covered" ></span>                        program,
-<span class="cstat-no" title="statement not covered" >                        (newProgram: string) =&gt; this.pr</span>ops.onChange(newProgram)
-<span class="cstat-no" title="statement not covered" >                    ).toHotCommand(),</span>
-<span class="cstat-no" title="statement not covered" ></span>                    InlineDataCommand: new InlineDataCommand(
+<span class="cstat-no" title="statement not covered" >            c</span>olHeaders: true,
+<span class="cstat-no" title="statement not covered" >            comments</span>: true,
+<span class="cstat-no" title="statement not covered" >            contextMenu: {</span>
+<span class="cstat-no" title="statement not covered" ></span>                items: {
+<span class="cstat-no" title="statement not covered" >                    Auto</span>fillColDefCommand: new AutofillColDefCommand(
 <span class="cstat-no" title="statement not covered" >                        program,</span>
-<span class="cstat-no" title="statement not covered" ></span>                        (newProgram: string) =&gt; this.props.onChange(newProgram)
+<span class="cstat-no" title="statement not covered" >                        (newProgram: string) =&gt; this.props.</span>onChange(newProgram)
 <span class="cstat-no" title="statement not covered" ></span>                    ).toHotCommand(),
-<span class="cstat-no" title="statement not covered" >                    SelectAllHitsCommand: new SelectAllHitsCo</span>mmand(
-<span class="cstat-no" title="statement not covered" ></span>                        program
+<span class="cstat-no" title="statement not covered" >                    InlineDataCommand: new InlineDataCommand(</span>
+<span class="cstat-no" title="statement not covered" ></span>                        program,
+<span class="cstat-no" title="statement not covered" ></span>                        (newProgram: string) =&gt; this.props.onChange(newProgram)
+<span class="cstat-no" title="statement not covered" >                    ).toHotCommand(),</span>
+<span class="cstat-no" title="statement not covered" ></span>                    SelectAllHitsCommand: new SelectAllHitsCommand(
+<span class="cstat-no" title="statement not covered" >                        progr</span>am
 <span class="cstat-no" title="statement not covered" >                    ).toHotCo</span>mmand(),
-<span class="cstat-no" title="statement not covered" >                    sp0: { na</span>me: "---------" },
-<span class="cstat-no" title="statement not covered" >                    row_above: {},</span>
-<span class="cstat-no" title="statement not covered" ></span>                    row_below: {},
-<span class="cstat-no" title="statement not covered" >                    sp1: { na</span>me: "---------" },
-<span class="cstat-no" title="statement not covered" >                    remove_row: {},</span>
-<span class="cstat-no" title="statement not covered" >                    rem</span>ove_col: {},
-<span class="cstat-no" title="statement not covered" ></span>                    sp2: { name: "---------" },
-<span class="cstat-no" title="statement not covered" >                    undo: </span>{},
+<span class="cstat-no" title="statement not covered" >                    sp0: { name: "---------" },</span>
+<span class="cstat-no" title="statement not covered" ></span>                    row_above: {},
+<span class="cstat-no" title="statement not covered" >                    row_below</span>: {},
+<span class="cstat-no" title="statement not covered" >                    sp1: { name: "---------" },</span>
+<span class="cstat-no" title="statement not covered" >                    rem</span>ove_row: {},
+<span class="cstat-no" title="statement not covered" ></span>                    remove_col: {},
+<span class="cstat-no" title="statement not covered" >                    sp2: {</span> name: "---------" },
+<span class="cstat-no" title="statement not covered" >                    undo: {},</span>
 <span class="cstat-no" title="statement not covered" >                    redo: {},</span>
-<span class="cstat-no" title="statement not covered" >                    sp3: { name: "-------</span>--" },
-<span class="cstat-no" title="statement not covered" ></span>                    copy: {},
+<span class="cstat-no" title="statement not covered" ></span>                    sp3: { name: "---------" },
+<span class="cstat-no" title="statement not covered" >                    copy: {},</span>
 <span class="cstat-no" title="statement not covered" >                    cut: {},</span>
 <span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >            data,</span>
-<span class="cstat-no" title="statement not covered" >            height: "100%",</span>
-<span class="cstat-no" title="statement not covered" >            manu</span>alColumnResize: true,
-<span class="cstat-no" title="statement not covered" >            manualRowMove: true,</span>
+<span class="cstat-no" title="statement not covered" >            heig</span>ht: "100%",
+<span class="cstat-no" title="statement not covered" >            manualColumnResize: true,</span>
+<span class="cstat-no" title="statement not covered" ></span>            manualRowMove: true,
 <span class="cstat-no" title="statement not covered" ></span>            minCols: program.width + 3,
-<span class="cstat-no" title="statement not covered" ></span>            minSpareCols: 2,
-<span class="cstat-no" title="statement not covered" >            min</span>Rows: 40,
+<span class="cstat-no" title="statement not covered" >            min</span>SpareCols: 2,
+<span class="cstat-no" title="statement not covered" >            minRows: 40,</span>
 <span class="cstat-no" title="statement not covered" >            minSpareRows: 20,</span>
 <span class="cstat-no" title="statement not covered" >            rowHeaders: true,</span>
-<span class="cstat-no" title="statement not covered" >            search: true,</span>
+<span class="cstat-no" title="statement not covered" ></span>            search: true,
 <span class="cstat-no" title="statement not covered" ></span>            stretchH: "all",
-<span class="cstat-no" title="statement not covered" ></span>            width: "100%",
-<span class="cstat-no" title="statement not covered" >            w</span>ordWrap: false,
+<span class="cstat-no" title="statement not covered" >            w</span>idth: "100%",
+<span class="cstat-no" title="statement not covered" >            wordWrap: fa</span>lse,
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n hotSettings
+<span class="cstat-no" title="statement not covered" >        return hotSettings</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() </span>{</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() {</span></span>
 <span class="cstat-no" title="statement not covered" >        return (</span>
 <span class="cstat-no" title="statement not covered" >            &lt;HotTable</span>
-<span class="cstat-no" title="statement not covered" >                settings={this.hotSettings}</span>
+                settings={this.hotSettings}
                 ref={this.hotTableComponent as any}
                 licenseKey={"non-commercial-and-evaluation"}
             /&gt;
@@ -1471,7 +1474,7 @@ class TemplatesComponent extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

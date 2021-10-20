@@ -30,16 +30,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">76.19% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>16/20</span>
+                <span class='fraction'>16/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">32% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/25</span>
+                <span class='fraction'>8/24</span>
             </div>
         
             
@@ -419,11 +419,7 @@
 <a name='L360'></a><a href='#L360'>360</a>
 <a name='L361'></a><a href='#L361'>361</a>
 <a name='L362'></a><a href='#L362'>362</a>
-<a name='L363'></a><a href='#L363'>363</a>
-<a name='L364'></a><a href='#L364'>364</a>
-<a name='L365'></a><a href='#L365'>365</a>
-<a name='L366'></a><a href='#L366'>366</a>
-<a name='L367'></a><a href='#L367'>367</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L363'></a><a href='#L363'>363</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -706,10 +702,6 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -718,7 +710,6 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
@@ -733,10 +724,11 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1053,12 +1045,8 @@ export class TimelineComponent extends React.Component&lt;{
 &nbsp;
     render(): JSX.Element {
         const { manager, controller } = this
-        const {
-            startTimeProgress,
-            endTimeProgress,
-            minTime,
-            maxTime,
-        } = controller
+        const { startTimeProgress, endTimeProgress, minTime, maxTime } =
+            controller
         const { startHandleTimeBound, endHandleTimeBound } = manager
 &nbsp;
         const formattedStartTime = this.formatTime(
@@ -1077,12 +1065,12 @@ export class TimelineComponent extends React.Component&lt;{
             &gt;
                 {!this.manager.disablePlay &amp;&amp; (
                     &lt;div
-                        onMouseDown={(<span class="fstat-no" title="function not covered" >e) =&gt; e.</span>stopPropagation()}
+                        onMouseDown={(e) =&gt; e.stopPropagation()}
                         onClick={this.togglePlay}
                         className="play"
                     &gt;
-                        {manager.isPlaying ? (
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                            &lt;FontAwesomeIcon icon={faPause} /&gt;
+                        {<span class="branch-0 cbranch-no" title="branch not covered" >manager.isPlaying ? (</span>
+<span class="cstat-no" title="statement not covered" ></span>                            &lt;FontAwesomeIcon icon={faPause} /&gt;
                         ) : (
                             &lt;FontAwesomeIcon icon={faPlay} /&gt;
                         )}
@@ -1099,7 +1087,7 @@ export class TimelineComponent extends React.Component&lt;{
                         tooltipContent={formattedStartTime}
                         tooltipVisible={this.startTooltipVisible}
                         tooltipZIndex={
-                            this.lastUpdatedTooltip === "startMarker" ? 2 : 1
+<span class="branch-0 cbranch-no" title="branch not covered" >                            this.lastUpdatedTooltip === "startMarker" ? 2 : 1</span>
                         }
                     /&gt;
                     &lt;div
@@ -1162,7 +1150,7 @@ const TimelineHandle = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

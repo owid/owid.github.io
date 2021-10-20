@@ -318,8 +318,7 @@
 <a name='L259'></a><a href='#L259'>259</a>
 <a name='L260'></a><a href='#L260'>260</a>
 <a name='L261'></a><a href='#L261'>261</a>
-<a name='L262'></a><a href='#L262'>262</a>
-<a name='L263'></a><a href='#L263'>263</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L262'></a><a href='#L262'>262</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -510,7 +509,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -526,7 +524,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -695,100 +693,99 @@ export namespace Variable {
 <span class="cstat-no" title="statement not covered" >    variableIds: number</span>[],
 <span class="cstat-no" title="statement not covered" >    stream: Writable</span>
 <span class="cstat-no" title="statement not covered" >): Promise&lt;void</span>&gt; {
-<span class="cstat-no" title="statement not covered" >    const variableQuery: Promise&lt;</span>
-<span class="cstat-no" title="statement not covered" >        { id: number; name: string }[</span>]
-<span class="cstat-no" title="statement not covered" >    &gt; = db.queryMysql(</span>
-<span class="cstat-no" title="statement not covered" >        `</span>
-<span class="cstat-no" title="statement not covered" >        SELEC</span>T id, name
-<span class="cstat-no" title="statement not covered" >        FROM variables</span>
+<span class="cstat-no" title="statement not covered" >    const variableQuery: Promise&lt;{ id: number; nam</span>e: string }[]&gt; =
+<span class="cstat-no" title="statement not covered" >        db.queryMysql(</span>
+<span class="cstat-no" title="statement not covered" >            `</span>
+<span class="cstat-no" title="statement not covered" >        SELECT id, name</span>
+<span class="cstat-no" title="statement not covered" >        FROM </span>variables
 <span class="cstat-no" title="statement not covered" >        WHERE id IN (?)</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
-<span class="cstat-no" title="statement not covered" >        [varia</span>bleIds]
-<span class="cstat-no" title="statement not covered" >    )</span>
+<span class="cstat-no" title="statement not covered" >            [variableIds]</span>
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const dataQuery: Promise&lt;</span>
+<span class="cstat-no" title="statement not covered" >    const dataQue</span>ry: Promise&lt;
 <span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            variableId:</span> number
-<span class="cstat-no" title="statement not covered" >            entity: string</span>
+<span class="cstat-no" title="statement not covered" >            variableId: number</span>
+<span class="cstat-no" title="statement not covered" >            entity: str</span>ing
 <span class="cstat-no" title="statement not covered" >            year: number</span>
 <span class="cstat-no" title="statement not covered" >            value: string</span>
 <span class="cstat-no" title="statement not covered" >        }[]</span>
 <span class="cstat-no" title="statement not covered" >    &gt; = db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >        `</span>
 <span class="cstat-no" title="statement not covered" >        SELECT</span>
-<span class="cstat-no" title="statement not covered" ></span>            data_values.variableId AS variableId,
-<span class="cstat-no" title="statement not covered" >            entities.name AS entity,</span>
+<span class="cstat-no" title="statement not covered" >            data_values.variableId AS variableId,</span>
+<span class="cstat-no" title="statement not covered" ></span>            entities.name AS entity,
 <span class="cstat-no" title="statement not covered" >            data_values.year AS year,</span>
 <span class="cstat-no" title="statement not covered" >            data_values.value AS value</span>
 <span class="cstat-no" title="statement not covered" >        FROM</span>
 <span class="cstat-no" title="statement not covered" >            data_values</span>
-<span class="cstat-no" title="statement not covered" >            JOIN entities ON entities.id = data_values.entityId</span>
-<span class="cstat-no" title="statement not covered" ></span>            JOIN variables ON variables.id = data_values.variableId
-<span class="cstat-no" title="statement not covered" >        WHERE</span>
-<span class="cstat-no" title="statement not covered" >            data_value</span>s.variableId IN (?)
+<span class="cstat-no" title="statement not covered" >            JOIN entities ON entities.id = d</span>ata_values.entityId
+<span class="cstat-no" title="statement not covered" >            JOIN variables ON variables.id = data_values.variableId</span>
+<span class="cstat-no" title="statement not covered" >        WH</span>ERE
+<span class="cstat-no" title="statement not covered" >            data_values.variableId IN </span>(?)
 <span class="cstat-no" title="statement not covered" >        ORDER BY</span>
-<span class="cstat-no" title="statement not covered" >            data_values.entityId ASC,</span>
-<span class="cstat-no" title="statement not covered" >            data_values.yea</span>r ASC
+<span class="cstat-no" title="statement not covered" >            data_values.entityId ASC</span>,
+<span class="cstat-no" title="statement not covered" >            data_values.year ASC</span>
 <span class="cstat-no" title="statement not covered" >    `,</span>
 <span class="cstat-no" title="statement not covered" >        [variableIds]</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    let variables = await variableQuery</span>
-<span class="cstat-no" title="statement not covered" >    const variablesById = lodash.k</span>eyBy(variables, "id")
+<span class="cstat-no" title="statement not covered" >    const variablesById = lodash.keyBy(variables, "i</span>d")
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Throw a</span>n error if not all variables exist
-<span class="cstat-no" title="statement not covered" >    if (variables.length !== variableIds.length) {</span>
-<span class="cstat-no" title="statement not covered" >        co</span>nst fetchedVariableIds = variables.map((v) =&gt; v.id)
-<span class="cstat-no" title="statement not covered" ></span>        const missingVariables = lodash.difference(
+<span class="cstat-no" title="statement not covered" >    // Throw an er</span>ror if not all variables exist
+<span class="cstat-no" title="statement not covered" >    if (variab</span>les.length !== variableIds.length) {
+<span class="cstat-no" title="statement not covered" >        const fetchedVariableIds = variables.map((v) =&gt; v.id)</span>
+<span class="cstat-no" title="statement not covered" >        co</span>nst missingVariables = lodash.difference(
 <span class="cstat-no" title="statement not covered" ></span>            variableIds,
-<span class="cstat-no" title="statement not covered" >            fetchedVariableIds</span>
+<span class="cstat-no" title="statement not covered" ></span>            fetchedVariableIds
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        throw Error(`Variable IDs </span>do not exist: ${missingVariables.join(", ")}`)
+<span class="cstat-no" title="statement not covered" >        throw Error(`Variable IDs do not exist: ${missingVariables.join(", ")}`)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    variables = variableIds.map((variableId) =&gt; variablesById[variableId])</span>
+<span class="cstat-no" title="statement not covered" >    variables = variableI</span>ds.map((variableId) =&gt; variablesById[variableId])
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const columns = ["Entity", "Year"].concat(variables.map((v) </span>=&gt; v.name))
-<span class="cstat-no" title="statement not covered" >    stream.write(arrToCsvRow(c</span>olumns))
+<span class="cstat-no" title="statement not covered" >    const columns = ["Entity", "Year"].concat(variables.map(</span>(v) =&gt; v.name))
+<span class="cstat-no" title="statement not covered" >    stream.write(arrToCsvRow(columns))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const variableColumnIndex: { [id: number]: number } </span>= {}
-<span class="cstat-no" title="statement not covered" >    for (cons</span>t variable of variables) {
-<span class="cstat-no" title="statement not covered" >        variable</span>ColumnIndex[variable.id] = columns.indexOf(variable.name)
+<span class="cstat-no" title="statement not covered" >    const variableColumnIndex:</span> { [id: number]: number } = {}
+<span class="cstat-no" title="statement not covered" >    for (const variable of variables) {</span>
+<span class="cstat-no" title="statement not covered" >        varia</span>bleColumnIndex[variable.id] = columns.indexOf(variable.name)
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    co</span>nst data = await dataQuery
+<span class="cstat-no" title="statement not covered" >    const data = await dataQuery</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let row: any[] = []</span>
+<span class="cstat-no" title="statement not covered" >    let row</span>: any[] = []
 <span class="cstat-no" title="statement not covered" >    for (const datum of data) {</span>
-<span class="cstat-no" title="statement not covered" >        if (datum.entity !== row[0] || datum</span>.year !== row[1]) {
-<span class="cstat-no" title="statement not covered" ></span>            // New row
-<span class="cstat-no" title="statement not covered" >            if</span> (row.length) {
+<span class="cstat-no" title="statement not covered" >        if (datum.entity !== row[0] || datu</span>m.year !== row[1]) {
+<span class="cstat-no" title="statement not covered" >            // New row</span>
+<span class="cstat-no" title="statement not covered" ></span>            if (row.length) {
 <span class="cstat-no" title="statement not covered" ></span>                stream.write(arrToCsvRow(row))
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" >            row = [datum.entity, d</span>atum.year]
-<span class="cstat-no" title="statement not covered" >            for (const variable </span>of variables) {
-<span class="cstat-no" title="statement not covered" >                row.push</span>("")
+<span class="cstat-no" title="statement not covered" >            r</span>ow = [datum.entity, datum.year]
+<span class="cstat-no" title="statement not covered" >            for (const variable of</span> variables) {
+<span class="cstat-no" title="statement not covered" >                row.push("")</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
-<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>        row[variableColumnIndex[datum.variableId]] = datum.value
-<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>    }
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const getDataValue = async ({
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    variableId,</span></span>
+export const getDataValue = <span class="fstat-no" title="function not covered" >async ({</span>
+<span class="cstat-no" title="statement not covered" >    variableId,</span>
 <span class="cstat-no" title="statement not covered" >    entityId,</span>
 <span class="cstat-no" title="statement not covered" >    year,</span>
-<span class="cstat-no" title="statement not covered" >}: D</span>ataValueQueryArgs): Promise&lt;DataValueResult | undefined&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (!variableId || !entityId) return</span>
+<span class="cstat-no" title="statement not covered" >}: DataValueQueryArgs): Promise&lt;DataValueResult | undefined&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>    if (!variableId || !entityId) return
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const queryStart = `</span>
-<span class="cstat-no" title="statement not covered" >        SELECT value, </span>year, variables.unit as unit, entities.name as entityName FROM data_values
-<span class="cstat-no" title="statement not covered" >        JOIN ent</span>ities on entities.id = data_values.entityId
-<span class="cstat-no" title="statement not covered" >        JOIN variables on variables.</span>id = data_values.variableId
-<span class="cstat-no" title="statement not covered" ></span>        WHERE entities.id = ?
-<span class="cstat-no" title="statement not covered" >        AND variables.id= ?`</span>
+<span class="cstat-no" title="statement not covered" >        SELECT value, year, variables.unit as unit, entities.name as entityName FROM data_value</span>s
+<span class="cstat-no" title="statement not covered" >        JOIN entities </span>on entities.id = data_values.entityId
+<span class="cstat-no" title="statement not covered" >        JOIN var</span>iables on variables.id = data_values.variableId
+<span class="cstat-no" title="statement not covered" >        WHERE entities.id = ?</span>
+<span class="cstat-no" title="statement not covered" ></span>        AND variables.id= ?`
 <span class="cstat-no" title="statement not covered" ></span>
-    const queryStartVariables = [entityId, variableId]
+<span class="cstat-no" title="statement not covered" >    const queryStartVariables = [enti</span>tyId, variableId]
 &nbsp;
     let row
 &nbsp;
@@ -850,7 +847,7 @@ export const getLegacyVariableDisplayConfig = async (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.98% </span>
+                <span class="strong">82.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>473/577</span>
+                <span class='fraction'>474/577</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.18% </span>
+                <span class="strong">83.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>68/78</span>
+                <span class='fraction'>66/79</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.98% </span>
+                <span class="strong">82.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>473/577</span>
+                <span class='fraction'>474/577</span>
             </div>
         
             
@@ -884,13 +884,7 @@
 <a name='L825'></a><a href='#L825'>825</a>
 <a name='L826'></a><a href='#L826'>826</a>
 <a name='L827'></a><a href='#L827'>827</a>
-<a name='L828'></a><a href='#L828'>828</a>
-<a name='L829'></a><a href='#L829'>829</a>
-<a name='L830'></a><a href='#L830'>830</a>
-<a name='L831'></a><a href='#L831'>831</a>
-<a name='L832'></a><a href='#L832'>832</a>
-<a name='L833'></a><a href='#L833'>833</a>
-<a name='L834'></a><a href='#L834'>834</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L828'></a><a href='#L828'>828</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1330,7 +1324,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1381,7 +1374,7 @@
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">15x</span>
@@ -1467,12 +1460,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2143,8 +2131,8 @@ export class DataTable extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                (value) =</span>&gt; parseInt(value[0])
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            con</span>st firstTimeWithSufficientData = numberOfEntitiesWithDataSortedByTime.find(
-<span class="cstat-no" title="statement not covered" ></span>                (time) =&gt; {
+<span class="cstat-no" title="statement not covered" >            con</span>st firstTimeWithSufficientData =
+<span class="cstat-no" title="statement not covered" ></span>                numberOfEntitiesWithDataSortedByTime.find((time) =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>                    const numEntitiesWithData = time[1]
 <span class="cstat-no" title="statement not covered" >                    const perc</span>entEntitiesWithData =
 <span class="cstat-no" title="statement not covered" >                        numEntitiesWithData / num</span>EntitiesInTable
@@ -2152,28 +2140,27 @@ export class DataTable extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >                        percentEntitiesWithData &gt;=</span>
 <span class="cstat-no" title="statement not covered" >                        this.AUTO_SELECTION_THRESHOLD_PERCENTAG</span>E
 <span class="cstat-no" title="statement not covered" >                    )</span>
-<span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >            )?.[0]</span>
+<span class="cstat-no" title="statement not covered" >                })?.[0]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (firstTimeWithSufficie</span>ntData) {
-<span class="cstat-no" title="statement not covered" >                autoSelectedStartTime = parse</span>Int(firstTimeWithSufficientData)
-<span class="cstat-no" title="statement not covered" ></span>                return false
-<span class="cstat-no" title="statement not covered" ></span>            }
-<span class="cstat-no" title="statement not covered" >            return true</span>
+<span class="cstat-no" title="statement not covered" >            if (firstTimeWithSuffici</span>entData) {
+<span class="cstat-no" title="statement not covered" >                autoSelectedStartTime</span> = parseInt(firstTimeWithSufficientData)
+<span class="cstat-no" title="statement not covered" >                return false</span>
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" ></span>            return true
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        return autoSelectedStartTime
+<span class="cstat-no" title="statement not covered" >        return autoSelectedStartTime</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get columnsToShow(): CoreColumn[] {
-        const slugs = <span class="branch-0 cbranch-no" title="branch not covered" >this.m</span>anager.dataTableSlugs ?? []
+        const slugs = this.manager.dataTableSlugs ?? []
         if (slugs.length)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return slugs</span>
 <span class="cstat-no" title="statement not covered" ></span>                .map((slug: string) =&gt; {
 <span class="cstat-no" title="statement not covered" ></span>                    const col = this.table.get(slug)
 <span class="cstat-no" title="statement not covered" ></span>                    if (!col) console.log(`Warning: column '${slug}' not found`)
 <span class="cstat-no" title="statement not covered" ></span>                    return col
-<span class="cstat-no" title="statement not covered" >                })</span>
+<span class="cstat-no" title="statement not covered" ></span>                })
                 .filter((col) =&gt; col)
 &nbsp;
         const skips = new Set(Object.keys(OwidTableSlugs))
@@ -2181,7 +2168,7 @@ export class DataTable extends React.Component&lt;{
             (column) =&gt;
                 !skips.has(column.slug) &amp;&amp;
                 //  dim.property !== "color" &amp;&amp;
-                (column.display?.includeInTable ?? true)
+                (<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >column.display?.i</span>ncludeInTa</span>ble ?? true)
         )
     }
 &nbsp;
@@ -2232,7 +2219,7 @@ export class DataTable extends React.Component&lt;{
     // todo: this function should be refactored. It's about 5x-10x too long. I'm currently getting an undefined value but it's very hard to figure out where.
     @computed get columnsWithValues(): Dimension[] {
         return this.columnsToShow.map((sourceColumn) =&gt; {
-            const targetTimes = this.targetTimes ?? [sourceColumn.maxTime]
+            const targetTimes = <span class="branch-0 cbranch-no" title="branch not covered" >this.targetTi</span>mes ?? [sourceColumn.maxTime]
 &nbsp;
             const targetTimeMode =
                 targetTimes.length &lt; 2
@@ -2266,7 +2253,7 @@ export class DataTable extends React.Component&lt;{
                 const tableDisplay = {} as any
                 if (!<span class="branch-0 cbranch-no" title="branch not covered" >tableDisplay?.h</span>ideAbsoluteChange)
                     deltaColumns.push({ key: RangeValueKey.delta })
-                if (!<span class="branch-0 cbranch-no" title="branch not covered" >tableDisp</span>lay?.hideRelativeChange)
+                if (!tableDisplay?.hideRelativeChange)
                     deltaColumns.push({ key: RangeValueKey.deltaRatio })
             }
 &nbsp;
@@ -2293,14 +2280,14 @@ export class DataTable extends React.Component&lt;{
                             ...start,
                             displayValue: this.formatValue(
                                 sourceColumn,
-                                start?.value
+<span class="branch-0 cbranch-no" title="branch not covered" >                                start?.v</span>alue
                             ),
                         },
                         end: {
                             ...end,
                             displayValue: this.formatValue(
                                 sourceColumn,
-                                end?.value
+<span class="branch-0 cbranch-no" title="branch not covered" >                                end?.v</span>alue
                             ),
                         },
                         delta: undefined,
@@ -2419,13 +2406,8 @@ function ColumnHeader(props: {
     subdimensionType?: ColumnKey
     lastSubdimension?: boolean
 }): JSX.Element {
-    const {
-        sortable,
-        sortedCol,
-        colType,
-        subdimensionType,
-        lastSubdimension,
-    } = props
+    const { sortable, sortedCol, colType, subdimensionType, lastSubdimension } =
+        props
     return (
         &lt;th
             className={classnames(colType, {
@@ -2563,7 +2545,7 @@ function isDeltaColumn(columnKey?: ColumnKey): boolean {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

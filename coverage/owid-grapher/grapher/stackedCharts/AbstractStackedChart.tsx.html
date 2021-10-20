@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.98% </span>
+                <span class="strong">94.27% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>328/349</span>
+                <span class='fraction'>329/349</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.98% </span>
+                <span class="strong">94.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>328/349</span>
+                <span class='fraction'>329/349</span>
             </div>
         
             
@@ -394,7 +394,8 @@
 <a name='L335'></a><a href='#L335'>335</a>
 <a name='L336'></a><a href='#L336'>336</a>
 <a name='L337'></a><a href='#L337'>337</a>
-<a name='L338'></a><a href='#L338'>338</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L338'></a><a href='#L338'>338</a>
+<a name='L339'></a><a href='#L339'>339</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -439,6 +440,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -512,7 +514,7 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -664,7 +666,7 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -689,7 +691,7 @@
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -719,7 +721,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -778,7 +780,8 @@ export interface AbstactStackedChartProps {
 @observer
 export class AbstactStackedChart&lt;PositionType extends StackedPointPositionType&gt;
     extends React.Component&lt;AbstactStackedChartProps&gt;
-    implements ChartInterface, FontSizeManager {
+    implements ChartInterface, FontSizeManager
+{
     transformTable(table: OwidTable): OwidTable {
         table = table.filterByEntityNames(
             this.selectionArray.selectedEntityNames
@@ -800,14 +803,14 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         // of the time range and were not extrapolated
         table = table.dropRowsWithErrorValuesForAnyColumn(this.yColumnSlugs)
 &nbsp;
-        if (this.manager.isRelativeMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>            table = this.isEntitySeries
-<span class="cstat-no" title="statement not covered" >                ? table.toPer</span>centageFromEachEntityForEachTime(
+        if (this.manager.isRelativeMode) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            table = this.isEn</span>titySeries</span>
+<span class="cstat-no" title="statement not covered" >                ? </span>table.toPercentageFromEachEntityForEachTime(
 <span class="cstat-no" title="statement not covered" ></span>                      this.yColumnSlugs[0]
-<span class="cstat-no" title="statement not covered" ></span>                  )
-<span class="cstat-no" title="statement not covered" >                : tabl</span>e.toPercentageFromEachColumnForEachEntityAndTime(
-<span class="cstat-no" title="statement not covered" >                      this.yColumnS</span>lugs
-<span class="cstat-no" title="statement not covered" ></span>                  )
+<span class="cstat-no" title="statement not covered" >                  )</span>
+<span class="cstat-no" title="statement not covered" >                : table.toPercentag</span>eFromEachColumnForEachEntityAndTime(
+<span class="cstat-no" title="statement not covered" ></span>                      this.yColumnSlugs
+<span class="cstat-no" title="statement not covered" >                  )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         return table
     }
@@ -818,7 +821,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
 &nbsp;
     @computed get transformedTable(): OwidTable {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.transformedTable </span>??
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.transf</span>ormedTable ??
             this.transformTable(this.inputTable)
         )
     }
@@ -827,11 +830,11 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return this.props.manager
     }
     @computed get bounds(): Bounds {
-        return this.props.bounds ?? DEFAULT_BOUNDS
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.bou</span>nds ?? DEFAULT_BOUNDS
     }
 &nbsp;
     @computed get fontSize(): number {
-        return this.manager.baseFontSize ?? BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>.baseFontSize ?? BASE_FONT_SIZE
     }
 &nbsp;
     protected get paddingForLegend(): number {
@@ -848,8 +851,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
 &nbsp;
     @computed protected get yColumnSlugs(): string[] {
         return (
-            this.manager.yColumnSlugsInSelectionOrder ??
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            autoDetectYC</span></span>olumnSlugs(this.manager)
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.yColumnSlugsInSelectionOrder ??</span>
+            autoDetectYColumnSlugs(this.manager)
         )
     }
 &nbsp;
@@ -878,7 +881,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.animSelecti</span>on) this.animSelection.interrupt()
+<span class="cstat-no" title="statement not covered" >        if (this.animSelectio</span>n) this.animSelection.interrupt()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get seriesStrategy(): SeriesStrategy {
@@ -904,7 +907,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
     }
 &nbsp;
     @computed get xAxis<span class="fstat-no" title="function not covered" >(): HorizontalAxis {</span>
-<span class="cstat-no" title="statement not covered" >        return this.dualAxis.horizon</span>talAxis
+<span class="cstat-no" title="statement not covered" ></span>        return this.dualAxis.horizontalAxis
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get xAxisConfig(): AxisConfig {
@@ -936,7 +939,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         const axis = this.yAxisConfig.toVerticalAxis()
         // Use user settings for axis, unless relative mode
         if (this.manager.isRelativeMode) axis.domain = [0, 100]
-        else axis.updateDomainPreservingUserSettings([0, max(yValues) ?? 100]) // Stacked area chart must have its own y domain)
+        else axis.updateDomainPreservingUserSettings([0, <span class="branch-0 cbranch-no" title="branch not covered" >max(yVa</span>lues) ?? 100]) // Stacked area chart must have its own y domain)
         axis.formatColumn = this.yColumns[0]
         return axis
     }
@@ -960,7 +963,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
                 return {
                     isProjection,
                     seriesName,
-                    rows: owidRowsByEntityName.get(seriesName) || [],
+                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >ow</span>idRowsByEntityName.get(seriesName) || [],
                 }
             })
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
@@ -978,22 +981,22 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
 &nbsp;
     @computed get failMessage(): string {
         const { yColumnSlugs } = this
-        if (!yColumnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >retur</span>n "Missing variable"
+        if (!yColumnSlugs.length) return "Missing variable"
         if (!this.series.length) return "No matching data"
-        if (!this.allStackedPoints.length) <span class="branch-0 cbranch-no" title="branch not covered" >return "</span>No matching points"
+        if (!this.allStackedPoints.length) return "No matching points"
         return ""
     }
 &nbsp;
     @computed private get colorScheme(): ScaleOrdinal&lt;string, string&gt; {
         const scheme =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span></span>
-<span class="cstat-no" title="statement not covered" ></span>                ? ColorSchemes[this.manager.baseColorScheme]
-<span class="cstat-no" title="statement not covered" >                : n</span>ull) ?? ColorSchemes.stackedAreaDefault
+            (this.manager.baseColorScheme
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                ? C</span></span>olorSchemes[this.manager.baseColorScheme]</span></span>
+<span class="cstat-no" title="statement not covered" ></span>                : null) ?? ColorSchemes.stackedAreaDefault
         const seriesCount = this.isEntitySeries
             ? this.selectionArray.numSelectedEntities
             : this.yColumns.length
         const baseColors = scheme.getColors(seriesCount)
-        if (this.manager.invertColorScheme) <span class="branch-0 cbranch-no" title="branch not covered" >baseColors.</span>reverse()
+        if (this.manager.invertColorScheme) baseColors.reverse()
         return scaleOrdinal(baseColors)
     }
 &nbsp;
@@ -1002,7 +1005,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         const color = this.isEntitySeries
             ? table.getColorForEntityName(seriesName)
             : table.getColorForColumnByDisplayName(seriesName)
-        return <span class="branch-0 cbranch-no" title="branch not covered" >color ?? this.colorScheme(seriesName</span>) ?? "#ddd"
+        return color ?? this.colorScheme(seriesName) ?? "#ddd"
     }
 &nbsp;
     @computed protected get selectionArray(): SelectionArray {
@@ -1013,8 +1016,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return this.seriesStrategy === SeriesStrategy.entity
     }
 &nbsp;
-    @computed get seriesColors(): string[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.series.map((series) =&gt; series.color)</span></span>
+    @computed get seriesColors<span class="fstat-no" title="function not covered" >(): string[] {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.series.map((series) =&gt; series.color)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     /** Whether we want to display series with only zeroes. Defaults to true but e.g. StackedArea charts want to set this to false */
@@ -1047,8 +1050,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             })
     }
 &nbsp;
-    @computed get series<span class="fstat-no" title="function not covered" >(): readonly StackedSeries&lt;PositionType&gt;[] {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.unstackedSeries
+    @computed get series(): readonly StackedSeries&lt;PositionType&gt;[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>unstackedSeries</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get externalLegendBins(): CategoricalBin[] {
@@ -1075,7 +1078,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.24% </span>
+                <span class="strong">54.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>717/1322</span>
+                <span class='fraction'>720/1322</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.73% </span>
+                <span class="strong">68.7% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>87/123</span>
+                <span class='fraction'>90/131</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.24% </span>
+                <span class="strong">54.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>717/1322</span>
+                <span class='fraction'>720/1322</span>
             </div>
         
             
@@ -1796,7 +1796,9 @@
 <a name='L1737'></a><a href='#L1737'>1737</a>
 <a name='L1738'></a><a href='#L1738'>1738</a>
 <a name='L1739'></a><a href='#L1739'>1739</a>
-<a name='L1740'></a><a href='#L1740'>1740</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L1740'></a><a href='#L1740'>1740</a>
+<a name='L1741'></a><a href='#L1741'>1741</a>
+<a name='L1742'></a><a href='#L1742'>1742</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -2109,6 +2111,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
@@ -2286,21 +2289,22 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-yes">34x</span>
@@ -2318,7 +2322,7 @@
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">22x</span>
 <span class="cline-any cline-yes">34x</span>
@@ -3116,8 +3120,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3853,7 +3857,8 @@ export class MarimekkoChart
         bounds?: Bounds
         manager: MarimekkoChartManager
     }&gt;
-    implements ChartInterface, HorizontalColorLegendManager, ColorScaleManager {
+    implements ChartInterface, HorizontalColorLegendManager, ColorScaleManager
+{
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
 &nbsp;
     defaultBaseColorScheme = ColorSchemeName.continents
@@ -3867,29 +3872,29 @@ export class MarimekkoChart
         const { yColumnSlugs, manager, colorColumnSlug, xColumnSlug } = this
 &nbsp;
         if (excludedEntities || includedEntities) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const excludedEntityIdsSet = </span>new Set(excludedEntities)</span>
-<span class="cstat-no" title="statement not covered" >            const includedEntityIdsSet = new Set(includedEntitie</span>s)
-<span class="cstat-no" title="statement not covered" >            const excludeEntitiesFilter = (<span class="fstat-no" title="function not covered" >entityId: any): boolean =&gt;</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                !excludedEntityIdsSet.has(entityId as number)
-<span class="cstat-no" title="statement not covered" >            const include</span>dEntitiesFilter = (entityId: any): boolean =&gt;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>                includedEntityIdsSet.size &gt; 0</span>
-<span class="cstat-no" title="statement not covered" >                    ? includedEntityIdsSet.has(entityId as number)</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const excludedEntityIdsSet = new Set(excludedEntitie</span>s)</span>
+<span class="cstat-no" title="statement not covered" >            const includedEntityIdsSet = new Set(includedEntities)</span>
+<span class="cstat-no" title="statement not covered" ></span>            const excludeEntitiesFilter = (entityId: any): boolean =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >                !excluded</span></span>EntityIdsSet.has(entityId as number)
+<span class="cstat-no" title="statement not covered" >            cons</span>t includedEntitiesFilter = (entityId: any): boolean =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >                includedEntityIdsSet.size &gt; 0</span></span>
+<span class="cstat-no" title="statement not covered" ></span>                    ? includedEntityIdsSet.has(entityId as number)
 <span class="cstat-no" title="statement not covered" ></span>                    : true
-<span class="cstat-no" title="statement not covered" >            con</span>st filterFn = (entityId: any): boolean =&gt;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >                ex</span>cludeEntitiesFilter(entityId) &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            const </span>filterFn = (entityId: any): boolean =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>                excludeEntitiesFilter(entityId) &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" ></span>                includedEntitiesFilter(entityId)
-<span class="cstat-no" title="statement not covered" >            con</span>st excludedList = excludedEntities
-<span class="cstat-no" title="statement not covered" >                ? </span>excludedEntities.join(", ")
-<span class="cstat-no" title="statement not covered" ></span>                : ""
-<span class="cstat-no" title="statement not covered" >            const incl</span>udedList = includedEntities
-<span class="cstat-no" title="statement not covered" >                ? includedEntities.join(", ")</span>
-<span class="cstat-no" title="statement not covered" ></span>                : ""
-<span class="cstat-no" title="statement not covered" >            table = table.c</span>olumnFilter(
-<span class="cstat-no" title="statement not covered" >                OwidTableSlugs.entityId,</span>
-<span class="cstat-no" title="statement not covered" >                f</span>ilterFn,
+<span class="cstat-no" title="statement not covered" >            const </span>excludedList = excludedEntities
+<span class="cstat-no" title="statement not covered" ></span>                ? excludedEntities.join(", ")
+<span class="cstat-no" title="statement not covered" >                : ""</span>
+<span class="cstat-no" title="statement not covered" >            const includedList = includedEntities</span>
+<span class="cstat-no" title="statement not covered" ></span>                ? includedEntities.join(", ")
+<span class="cstat-no" title="statement not covered" >                : ""</span>
+<span class="cstat-no" title="statement not covered" >            table = table.columnFilter(</span>
+<span class="cstat-no" title="statement not covered" >                O</span>widTableSlugs.entityId,
+<span class="cstat-no" title="statement not covered" >                filterFn,</span>
 <span class="cstat-no" title="statement not covered" >                `Excluded entity ids specified by author: $</span>{excludedList} - Included entity ids specified by author: ${includedList}`
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" ></span>        }
 &nbsp;
         // TODO: remove this filter once we don't have mixed type columns in datasets
         table = table.replaceNonNumericCellsWithErrorValues(yColumnSlugs)
@@ -3901,26 +3906,26 @@ export class MarimekkoChart
         table = table.interpolateColumnWithTolerance(xColumnSlug)
 &nbsp;
         if (colorColumnSlug) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const tolera</span>nce =</span>
-<span class="cstat-no" title="statement not covered" >                table.get(colorColumnSlug)?.display?.tolerance ?? Infinity</span>
-<span class="cstat-no" title="statement not covered" ></span>            table = table.interpolateColumnWithTolerance(
-<span class="cstat-no" title="statement not covered" >                colorColumnSl</span>ug,
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const tolerance =</span></span>
+<span class="cstat-no" title="statement not covered" ></span>                table.get(colorColumnSlug)?.display?.tolerance ?? Infinity
+<span class="cstat-no" title="statement not covered" >            table = table.int</span>erpolateColumnWithTolerance(
+<span class="cstat-no" title="statement not covered" >                colorColumnSlug,</span>
 <span class="cstat-no" title="statement not covered" >                tolerance</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            if (manager.matchingEntitiesOnly) {</span>
-<span class="cstat-no" title="statement not covered" >                table = table.dropRowsWithErro</span>rValuesForColumn(colorColumnSlug)
+<span class="cstat-no" title="statement not covered" >            if (manager.matchingEntitiesOnly) </span>{
+<span class="cstat-no" title="statement not covered" >                table = table.dropRowsWithErrorValuesForColumn(colorColumnSlug)</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
         if (!manager.showNoDataArea)
-            table = table.dropRowsWithErrorValuesForAllColumns(yColumnSlugs)
+<span class="branch-0 cbranch-no" title="branch not covered" >            table </span>= table.dropRowsWithErrorValuesForAllColumns(yColumnSlugs)
 &nbsp;
         table = table.dropRowsWithErrorValuesForColumn(xColumnSlug)
-        if (manager.isRelativeMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>            // TODO: this should not be necessary but we sometimes get NoMatchingValuesAfterJoin if both relative and showNoDataArea are set
-<span class="cstat-no" title="statement not covered" >            table = table.d</span>ropRowsWithErrorValuesForColumn(
-<span class="cstat-no" title="statement not covered" ></span>                table.timeColumn.slug
+        if (manager.isRelativeMode) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            // TODO: this s</span>hould not be necessary but we sometimes get NoMatchingValuesAfterJoin if both relative and showNoDataArea are set</span>
+<span class="cstat-no" title="statement not covered" >            tabl</span>e = table.dropRowsWithErrorValuesForColumn(
+<span class="cstat-no" title="statement not covered" >                table.timeColumn.slug</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            table = table.toPercentageFromEachEntityFo</span>rEachTime(xColumnSlug)
+<span class="cstat-no" title="statement not covered" >            table = table.toPercentageFromEachEntityForEachTime(xCo</span>lumnSlug)
 <span class="cstat-no" title="statement not covered" >        }</span>
 &nbsp;
         return table
@@ -3950,7 +3955,7 @@ export class MarimekkoChart
                         seriesName: col.displayName,
                         columnSlug: col.slug,
                         color:
-<span class="branch-0 cbranch-no" title="branch not covered" >                            col.def.color ??</span>
+                            col.def.color ??
                             colorScheme.getColors(yColumns.length)[i],
                         points: col.owidRows.map((row) =&gt; ({
                             time: row.time,
@@ -4004,7 +4009,7 @@ export class MarimekkoChart
     @computed protected get yColumnSlugs(): string[] {
         return (
 <span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.yColumnSlugsInSelectionOrder ??</span>
-<span class="cstat-no" title="statement not covered" >            autoDetec</span>tYColumnSlugs(this.manager)
+<span class="cstat-no" title="statement not covered" >            aut</span>oDetectYColumnSlugs(this.manager)
         )
     }
 &nbsp;
@@ -4013,15 +4018,16 @@ export class MarimekkoChart
     }
 &nbsp;
     @computed protected get xColumn(): CoreColumn {
-        const columnSlugs = this.xColumnSlug ? [this.xColumnSlug] : []
-        if (!columnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >cons</span>ole.warn("No x column slug!")
+        const columnSlugs = <span class="branch-0 cbranch-no" title="branch not covered" >this.xCol</span>umnSlug ? [this.xColumnSlug] : []
+        if (!columnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >console.</span>warn("No x column slug!")
         return this.transformedTable.getColumns(columnSlugs)[0]
     }
 &nbsp;
     @computed private get latestTime(): number | undefined {
-        const times = <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.tableAfterAuthorTimelineAndActi</span>veChartTransformAndPopulationFilter?.getTimesUniqSortedAscForColumns(
-            this.yColumnSlugs
-        )
+        const times =
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.tableAf</span>terAuthorTimelineAndActiveChartTransformAndPopulationFilter?.getTimesUniqSortedAscForColumns(
+                this.yColumnSlugs
+            )
 &nbsp;
         return times ? last(times) : undefined
     }
@@ -4029,23 +4035,23 @@ export class MarimekkoChart
         | OwidTable
         | undefined {
 <span class="branch-0 cbranch-no" title="branch not covered" >        if (this.latestTime)</span>
-<span class="cstat-no" title="statement not covered" >            return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.tableAfterAuthorTimelineAndActiveChartTransformAndPopulationFilter?.f</span>ilterByTargetTimes(</span>
+<span class="cstat-no" title="statement not covered" >            return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.ta</span></span>bleAfterAuthorTimelineAndActiveChartTransformAndPopulationFilter?.filterByTargetTimes(
 <span class="cstat-no" title="statement not covered" >                [this.latestTime],</span>
 <span class="cstat-no" title="statement not covered" >                0</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        else return</span> undefined
+<span class="cstat-no" title="statement not covered" ></span>            )
+        else return undefined
     }
     @computed protected get xColumnAtLastTimePoint(): CoreColumn | undefined {
-        const columnSlug = <span class="branch-0 cbranch-no" title="branch not covered" >this.xColumnSlug ? [this.xColumnSlug] : []</span>
+        const columnSlug = <span class="branch-0 cbranch-no" title="branch not covered" >this.xCo</span>lumnSlug ? [this.xColumnSlug] : []
 <span class="branch-0 cbranch-no" title="branch not covered" >        if (this.tableAtLatestTimelineTimepoint)</span>
-<span class="cstat-no" title="statement not covered" >            return this.tableAtLate</span>stTimelineTimepoint.getColumns(columnSlug)[0]
-        else return undefined
+<span class="cstat-no" title="statement not covered" >            return this.tableAtLatestTimelineTimepoint.getCo</span>lumns(columnSlug)[0]
+<span class="cstat-no" title="statement not covered" ></span>        else return undefined
     }
 &nbsp;
     @computed protected get yColumnsAtLastTimePoint(): CoreColumn[] {
         const columnSlugs = this.yColumnSlugs
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.tableAtLa</span></span>testTimelineTimepoint?.getColumns(columnSlugs) ?? []
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.tableAtLatestTimelineTimepoint?.g</span>etColumns(columnSlugs) ?? []</span>
         )
     }
 &nbsp;
@@ -4056,8 +4062,8 @@ export class MarimekkoChart
     @computed private get colorScheme(): ColorScheme {
         return (
 <span class="branch-0 cbranch-no" title="branch not covered" >            (<span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseColorScheme</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                ? ColorSchemes[this.manager.baseColorScheme]
-<span class="cstat-no" title="statement not covered" >                : un</span>defined) ?? ColorSchemes["owid-distinct"]
+<span class="cstat-no" title="statement not covered" >                ? ColorScheme</span>s[this.manager.baseColorScheme]
+                : undefined) ?? ColorSchemes["owid-distinct"]
         )
     }
 &nbsp;
@@ -4072,19 +4078,19 @@ export class MarimekkoChart
     colorScale = new ColorScale(this)
     @computed get colorScaleConfig(): ColorScaleConfigDefaults | undefined {
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return (</span></span>
-<span class="cstat-no" title="statement not covered" ></span>            ColorScaleConfig.fromDSL(this.colorColumn.def) ??
-<span class="cstat-no" title="statement not covered" >            this.manager</span>.colorScale
+<span class="cstat-no" title="statement not covered" >            ColorScaleConfig.fromDSL(this.colorCo</span>lumn.def) ??
+<span class="cstat-no" title="statement not covered" ></span>            this.manager.colorScale
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get colorScaleColumn(): CoreColumn {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        // We need to use inputTable in order to get consistent coloring for a variable across</span>
-<span class="cstat-no" title="statement not covered" >        // charts, e.g. each conti</span>nent being assigned to the same color.
-<span class="cstat-no" title="statement not covered" >        // inputTable is unfiltered, so it contains every valu</span>e that exists in the variable.
-<span class="cstat-no" title="statement not covered" >        return this.inputTabl</span>e.get(this.colorColumnSlug)
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        // We need to use inputTable in order to get consisten</span>t coloring for a variable across</span>
+<span class="cstat-no" title="statement not covered" >        // charts, e.g. each </span>continent being assigned to the same color.
+<span class="cstat-no" title="statement not covered" >        // inputTable is unfiltered, so it contains e</span>very value that exists in the variable.
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.inputTable.get(this.colorColumnSlug)
 <span class="cstat-no" title="statement not covered" >    }</span>
     @computed private get sortConfig(): SortConfig {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.sortConfig ?? {}</span>
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>.sortConfig ?? {}
     }
 &nbsp;
     @computed private get manager(): MarimekkoChartManager {
@@ -4092,7 +4098,7 @@ export class MarimekkoChart
     }
 &nbsp;
     @computed private get bounds(): Bounds {
-        return (this.props.bounds ?? DEFAULT_BOUNDS).padRight(10)
+        return (<span class="branch-0 cbranch-no" title="branch not covered" >this.props.bounds ?? DEFAU</span>LT_BOUNDS).padRight(10)
     }
 &nbsp;
     @computed private get innerBounds(): Bounds {
@@ -4117,7 +4123,7 @@ export class MarimekkoChart
     }
 &nbsp;
     @computed private get baseFontSize(): number {
-        return this.manager.baseFontSize ?? BASE_FONT_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.baseFontSize ?? BASE_</span>FONT_SIZE
     }
 &nbsp;
     @computed private get x0(): number {
@@ -4169,7 +4175,7 @@ export class MarimekkoChart
         axis.formatColumn = this.yColumns[0]
         const fallbackLabel =
 <span class="branch-0 cbranch-no" title="branch not covered" >            this.yColumns.length &gt; 0 ? this.yColumns[0].displayName : ""</span>
-        axis.label = <span class="branch-0 cbranch-no" title="branch not covered" >this.isNarrow ? "" : c</span>onfig.label || fallbackLabel
+        axis.label = <span class="branch-0 cbranch-no" title="branch not covered" >this.isNarrow ? "" </span>: config.label || fallbackLabel
 &nbsp;
         return axis
     }
@@ -4178,7 +4184,7 @@ export class MarimekkoChart
         return this.bounds.width &lt; 650 // innerBounds would lead to dependency cycle
     }
     @computed private get xAxisLabelBase(): string {
-        const xDimName = this.xColumn?.displayName
+        const xDimName = <span class="branch-0 cbranch-no" title="branch not covered" >this.xColumn?.d</span>isplayName
         if (this.manager.xOverrideTime !== undefined)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return `</span>${xDimName} in ${this.manager.xOverrideTime}`
         return xDimName
@@ -4188,17 +4194,17 @@ export class MarimekkoChart
         const { manager, xAxisLabelBase, xDomainDefault, xColumn } = this
         const config = this.xAxisConfig
         let axis = config.toHorizontalAxis()
-        if (manager.isRelativeMode) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            // MobX and classes  interact in an annoying way here so we hav</span>e to construct a new object via</span>
-<span class="cstat-no" title="statement not covered" >            // an object copy of the AxisConfig cla</span>ss instance to be able to set a property without
-<span class="cstat-no" title="statement not covered" >            // making MobX unhappy about a mutation originati</span>ng from a computed property
+        if (manager.isRelativeMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            // MobX and classes  interact in an annoying way </span>here so we have to construct a new object via
+<span class="cstat-no" title="statement not covered" >            // an object copy of the AxisConfig class instance t</span>o be able to set a property without
+<span class="cstat-no" title="statement not covered" >            // making MobX unhappy about a mutation originatin</span>g from a computed property
 <span class="cstat-no" title="statement not covered" >            axis = new HorizontalAxis(</span>
 <span class="cstat-no" title="statement not covered" >                new AxisConfig(</span>
-<span class="cstat-no" title="statement not covered" >                    { ...config.toObject(), maxTicks: 10 },</span>
-<span class="cstat-no" title="statement not covered" >                    config.fontSizeManager</span>
+<span class="cstat-no" title="statement not covered" >                    { ...config.</span>toObject(), maxTicks: 10 },
+<span class="cstat-no" title="statement not covered" >                    config.f</span>ontSizeManager
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            axis.domai</span>n = [0, 100]
+<span class="cstat-no" title="statement not covered" >            axis.domain = [0,</span> 100]
         } else axis.updateDomainPreservingUserSettings(xDomainDefault)
 &nbsp;
         axis.formatColumn = xColumn
@@ -4241,12 +4247,12 @@ export class MarimekkoChart
         for (const name of entityNames) {
             const colorDomainValue = colorRowsByEntity?.get(name)?.[0]
 &nbsp;
-            if (colorDomainValue) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                const color = colorScale.getColor(colorDomainValue.value)</span></span>
+            if (colorDomainValue) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                const color = colorScale.getColor(colorDomainV</span>alue.value)
 <span class="cstat-no" title="statement not covered" >                if (color)</span>
-<span class="cstat-no" title="statement not covered" >                    domainColorMap.set(name, {</span>
+<span class="cstat-no" title="statement not covered" >                    domainColorMap.</span>set(name, {
 <span class="cstat-no" title="statement not covered" >                        color,</span>
-<span class="cstat-no" title="statement not covered" >                        colorDomain</span>Value: colorDomainValue.value,
+<span class="cstat-no" title="statement not covered" ></span>                        colorDomainValue: colorDomainValue.value,
 <span class="cstat-no" title="statement not covered" >                    })</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
         }
@@ -4300,10 +4306,10 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >                sortByFunc = (item: Item): string =&gt; item.entityName</span>
 <span class="cstat-no" title="statement not covered" >                break</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            case SortBy.column:</span>
-<span class="cstat-no" title="statement not covered" >                const sortColumnSlug = sortConfig.sortC</span>olumnSlug
+<span class="cstat-no" title="statement not covered" ></span>                const sortColumnSlug = sortConfig.sortColumnSlug
 <span class="cstat-no" title="statement not covered" >                sortByFunc = (item: Item): number =&gt;</span>
-                    item.bars.find((b) =&gt; b.seriesName === sortColumnSlug)
-<span class="branch-0 cbranch-no" title="branch not covered" >                        ?.yPoint.value ?? 0</span>
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    item.bars.find((b) =&gt; b.series</span>Name === sortColumnSlug)</span>
+                        ?.yPoint.value ?? 0
 <span class="cstat-no" title="statement not covered" >                break</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >            default:</span>
             case SortBy.total:
@@ -4314,7 +4320,7 @@ export class MarimekkoChart
                 }
         }
         const sortedItems = sortBy(items, sortByFunc)
-        const sortOrder = <span class="branch-0 cbranch-no" title="branch not covered" >sortConfig.</span>sortOrder ?? SortOrder.desc
+        const sortOrder = <span class="branch-0 cbranch-no" title="branch not covered" >sortConfig.sortOrder ?? SortOrder.desc</span>
         if (sortOrder === SortOrder.desc) sortedItems.reverse()
 &nbsp;
         const [itemsWithValues, itemsWithoutValues] = partition(
@@ -4339,8 +4345,8 @@ export class MarimekkoChart
         return placedItems
     }
 &nbsp;
-    @computed get placedItemsMap<span class="fstat-no" title="function not covered" >(): Map&lt;string, PlacedItem&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return new Map(this.placedItems</span>.map((item) =&gt; [item.entityName, item]))
+    @computed get placedItemsMap(): Map&lt;string, PlacedItem&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return new Map(this.placedItems.map</span>((item) =&gt; [item.entityName, item]))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // legend props
@@ -4391,8 +4397,8 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >        this.focusSeriesName = bin.value</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.focusSeriesName = undefined</span>
+    @action.bound onLegendMouseLeave(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.focusSeriesName = undefi</span>ned</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get legend(): HorizontalCategoricalColorLegend {
@@ -4407,29 +4413,29 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >        this.hoveredEntityName = entityName</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onEntityMouseLeave(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.h</span>overedEntityName = undefined
+    @action.bound private onEntityMouseLeave(): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hoveredEntityName = unde</span>fined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onEntityClick(entityName: string): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.onSelectEntity(entityName)</span>
+    @action.bound private onEntityClick(entityName: string): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.onSelectEn</span>tity(entityName)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onSelectEntity(entityName: string): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.c</span>anAddCountry) this.selectionArray.toggleSelection(entityName)
+    @action.bound private onSelectEntity(entityName: string): void {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if</span> (this.canAddCountry) this.selectionArray.toggleSelection(entityName)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-    @computed private get canAddCountry(): boolean {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const { addCountryMode } = this.manager</span></span>
-<span class="cstat-no" title="statement not covered" >        return (addCountryMode &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            addCountryMode !== EntitySelectionMode.Di</span>sabled) as boolean
+    @computed private get canAddCountry<span class="fstat-no" title="function not covered" >(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >        const { addCountryMode } = this.manager</span>
+<span class="cstat-no" title="statement not covered" >        return (ad</span>dCountryMode &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            addCountryMode !== </span>EntitySelectionMode.Disabled) as boolean
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    render(): JSX.Element {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.failMessage)</span>
 <span class="cstat-no" title="statement not covered" >            return (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;NoDataModal</span>
-<span class="cstat-no" title="statement not covered" >                    manager={</span>this.manager}
-<span class="cstat-no" title="statement not covered" >                    bounds={th</span>is.bounds}
+<span class="cstat-no" title="statement not covered" >                    manager={this.manager}</span>
+<span class="cstat-no" title="statement not covered" >                    bounds={this.bounds}</span>
 <span class="cstat-no" title="statement not covered" >                    message={this.failMessage}</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
@@ -4440,84 +4446,84 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >            &lt;g ref={this.base} className="MarimekkoChart"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;rect</span>
 <span class="cstat-no" title="statement not covered" >                    x={bounds.left}</span>
-<span class="cstat-no" title="statement not covered" >                    y={bounds.top}</span>
-<span class="cstat-no" title="statement not covered" >                    width={bounds.width}</span>
-<span class="cstat-no" title="statement not covered" >                    height={boun</span>ds.height}
-<span class="cstat-no" title="statement not covered" ></span>                    opacity={0}
-<span class="cstat-no" title="statement not covered" ></span>                    fill="rgba(255,255,255,0)"
+<span class="cstat-no" title="statement not covered" >                    y={bounds.to</span>p}
+<span class="cstat-no" title="statement not covered" ></span>                    width={bounds.width}
+<span class="cstat-no" title="statement not covered" ></span>                    height={bounds.height}
+<span class="cstat-no" title="statement not covered" >                    opacity={0}</span>
+<span class="cstat-no" title="statement not covered" >                    fill="rgba(255,255,255,0)"</span>
 <span class="cstat-no" title="statement not covered" >                /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;DualAxisComponent dualAxis={dualAxis} showTickMark</span>s={true} /&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;Horizont</span>alCategoricalColorLegend manager={this} /&gt;
-<span class="cstat-no" title="statement not covered" >                {this.rend</span>erBars()}
+<span class="cstat-no" title="statement not covered" >                &lt;DualAxisC</span>omponent dualAxis={dualAxis} showTickMarks={true} /&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;HorizontalCategoricalColorLegend manager={this}</span> /&gt;
+<span class="cstat-no" title="statement not covered" >                {this.renderBars()}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/g&gt;</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private <span class="fstat-no" title="function not covered" >renderBars(): JSX.Element[] {</span>
-<span class="cstat-no" title="statement not covered" >        co</span>nst normalElements: JSX.Element[] = []
-<span class="cstat-no" title="statement not covered" >        const highlightedEl</span>ements: JSX.Element[] = [] // highlighted elements have a thicker stroke and should be drawn last to overlap others
-<span class="cstat-no" title="statement not covered" >        cons</span>t {
-<span class="cstat-no" title="statement not covered" ></span>            dualAxis,
+<span class="cstat-no" title="statement not covered" >        cons</span>t normalElements: JSX.Element[] = []
+<span class="cstat-no" title="statement not covered" ></span>        const highlightedElements: JSX.Element[] = [] // highlighted elements have a thicker stroke and should be drawn last to overlap others
+<span class="cstat-no" title="statement not covered" >        const {</span>
+<span class="cstat-no" title="statement not covered" >            dualAxis,</span>
 <span class="cstat-no" title="statement not covered" >            x0,</span>
 <span class="cstat-no" title="statement not covered" >            y0,</span>
 <span class="cstat-no" title="statement not covered" >            focusSeriesName,</span>
 <span class="cstat-no" title="statement not covered" >            placedLabels,</span>
 <span class="cstat-no" title="statement not covered" >            labelLines,</span>
 <span class="cstat-no" title="statement not covered" >            placedItems,</span>
-<span class="cstat-no" title="statement not covered" >            hoveredEntityName,</span>
+<span class="cstat-no" title="statement not covered" ></span>            hoveredEntityName,
 <span class="cstat-no" title="statement not covered" >        } = this</span>
-<span class="cstat-no" title="statement not covered" ></span>        const selectionSet = this.selectionArray.selectedSet
-<span class="cstat-no" title="statement not covered" >        const targetTime = this.manager</span>.endTime
-<span class="cstat-no" title="statement not covered" >        const timeColumn = this.inputTable.timeColumn</span>
-<span class="cstat-no" title="statement not covered" >        const yAxisColumn = this.formatColumn</span>
-<span class="cstat-no" title="statement not covered" >        const xAxisColumn</span> = this.xColumn
-<span class="cstat-no" title="statement not covered" ></span>        const labelYOffset = 0
-<span class="cstat-no" title="statement not covered" >        const hasSelection = selectionSe</span>t.size &gt; 0
-<span class="cstat-no" title="statement not covered" >        let noDataAreaElement = undefined</span>
-<span class="cstat-no" title="statement not covered" >        let noDataLabel = undefined</span>
-<span class="cstat-no" title="statement not covered" ></span>        let patterns: JSX.Element[] = []
-<span class="cstat-no" title="statement not covered" >        const noDataHeight = Bo</span>unds.forText("no data").height + 10 //  dualAxis.verticalAxis.rangeSize
+<span class="cstat-no" title="statement not covered" >        const selectionSet = this.selectionArray.selectedSet</span>
+<span class="cstat-no" title="statement not covered" >        const targetTime = this.manager.endTim</span>e
+<span class="cstat-no" title="statement not covered" >        const timeColumn </span>= this.inputTable.timeColumn
+<span class="cstat-no" title="statement not covered" ></span>        const yAxisColumn = this.formatColumn
+<span class="cstat-no" title="statement not covered" >        const xAxisColumn = this.xColumn</span>
+<span class="cstat-no" title="statement not covered" >        const labelYOffset = 0</span>
+<span class="cstat-no" title="statement not covered" >        const hasSelection = selectio</span>nSet.size &gt; 0
+<span class="cstat-no" title="statement not covered" ></span>        let noDataAreaElement = undefined
+<span class="cstat-no" title="statement not covered" >        let noDataLabel = undef</span>ined
+<span class="cstat-no" title="statement not covered" >        let patterns: JSX.Element[] = []</span>
+<span class="cstat-no" title="statement not covered" >        const noDataHeight = Bounds.forText("no data").height + 10 //  dualAx</span>is.verticalAxis.rangeSize
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const firstNanValue = placedItems.findIndex((item) =&gt; !item.bars.leng</span>th)
-<span class="cstat-no" title="statement not covered" >        const anyNonNanAfterFirstNan =</span>
+<span class="cstat-no" title="statement not covered" >        const firstNanValue = placedItems.findIndex((item) =&gt; !item.bar</span>s.length)
+<span class="cstat-no" title="statement not covered" >        const anyNonNanAfter</span>FirstNan =
 <span class="cstat-no" title="statement not covered" >            firstNanValue &gt;= 0</span>
-<span class="cstat-no" title="statement not covered" >                ? placedItem</span>s
+<span class="cstat-no" title="statement not covered" >                ? placedItems</span>
 <span class="cstat-no" title="statement not covered" >                      .slice(firstNanValue)</span>
-<span class="cstat-no" title="statement not covered" >                      .some((item) =&gt; item.bars.length !== 0)</span>
+<span class="cstat-no" title="statement not covered" ></span>                      .some((item) =&gt; item.bars.length !== 0)
 <span class="cstat-no" title="statement not covered" >                : false</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (anyNonNanAfterFirs</span>tNan)
+<span class="cstat-no" title="statement not covered" >        if (anyNonNanAfterFirstNan)</span>
 <span class="cstat-no" title="statement not covered" >            console.error("Found Non-NAN values after NAN value!")</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (firstNanValue !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >        if (firstNanValue !=</span>= -1) {
 <span class="cstat-no" title="statement not covered" >            const firstNanValueItem = placedItems[firstNanValue]</span>
-<span class="cstat-no" title="statement not covered" >            const lastItem =</span> last(placedItems)!
+<span class="cstat-no" title="statement not covered" >            const lastItem = last(placedItems)!</span>
 <span class="cstat-no" title="statement not covered" >            const noDataRangeStartX =</span>
-<span class="cstat-no" title="statement not covered" >                firstNanValueItem.xPosition + dualAxis.horizontalAxis.place(</span>x0)
-<span class="cstat-no" title="statement not covered" >            const noDataRangeEndX =</span>
-<span class="cstat-no" title="statement not covered" ></span>                lastItem?.xPosition +
-<span class="cstat-no" title="statement not covered" >                dua</span>lAxis.horizontalAxis.place(lastItem.xPoint.value)
-<span class="cstat-no" title="statement not covered" >            const yStart = dualAxis.verticalAxis.place(y0)</span>
+<span class="cstat-no" title="statement not covered" ></span>                firstNanValueItem.xPosition + dualAxis.horizontalAxis.place(x0)
+<span class="cstat-no" title="statement not covered" >            const n</span>oDataRangeEndX =
+<span class="cstat-no" title="statement not covered" >                lastItem?.xPosition +</span>
+<span class="cstat-no" title="statement not covered" >                dualAxis.horizontalAxis.place(lastItem.xPoint.v</span>alue)
+<span class="cstat-no" title="statement not covered" >            const yStart</span> = dualAxis.verticalAxis.place(y0)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const noData</span>LabelX =
-<span class="cstat-no" title="statement not covered" >                noDataRangeStartX + (noDataRangeEnd</span>X - noDataRangeStartX) / 2
+<span class="cstat-no" title="statement not covered" >            const noDataLabelX =</span>
+<span class="cstat-no" title="statement not covered" >                noDataRangeStartX + (noDataRangeE</span>ndX - noDataRangeStartX) / 2
 <span class="cstat-no" title="statement not covered" >            const boundsForNoData = Bounds.forText("no data")</span>
-<span class="cstat-no" title="statement not covered" >            const noDataLabelY = yStart - boundsF</span>orNoData.width
+<span class="cstat-no" title="statement not covered" >            const noD</span>ataLabelY = yStart - boundsForNoData.width
 <span class="cstat-no" title="statement not covered" >            noDataLabel = (</span>
 <span class="cstat-no" title="statement not covered" >                &lt;text</span>
-<span class="cstat-no" title="statement not covered" >                    key={`n</span>oDataArea-label`}
-<span class="cstat-no" title="statement not covered" >                    x={0}</span>
+<span class="cstat-no" title="statement not covered" ></span>                    key={`noDataArea-label`}
+<span class="cstat-no" title="statement not covered" ></span>                    x={0}
 <span class="cstat-no" title="statement not covered" ></span>                    transform={`rotate(-90, ${noDataLabelX}, ${noDataLabelY})
-<span class="cstat-no" title="statement not covered" ></span>                    translate(${noDataLabelX}, ${noDataLabelY})`}
+<span class="cstat-no" title="statement not covered" >                    translat</span>e(${noDataLabelX}, ${noDataLabelY})`}
 <span class="cstat-no" title="statement not covered" ></span>                    y={0}
-<span class="cstat-no" title="statement not covered" >                    width={n</span>oDataRangeEndX - noDataRangeStartX}
-<span class="cstat-no" title="statement not covered" ></span>                    height={noDataHeight}
+<span class="cstat-no" title="statement not covered" >                    width={noDataRangeEndX - noDataRangeStartX}</span>
+<span class="cstat-no" title="statement not covered" >                    height={noDataHeight}</span>
 <span class="cstat-no" title="statement not covered" >                    fontWeight={700}</span>
 <span class="cstat-no" title="statement not covered" >                    fill="#666"</span>
 <span class="cstat-no" title="statement not covered" >                    opacity={1}</span>
 <span class="cstat-no" title="statement not covered" >                    fontSize="0.8em"</span>
 <span class="cstat-no" title="statement not covered" >                    textAnchor="middle"</span>
-<span class="cstat-no" title="statement not covered" >                    dominantBaseline="middle"</span>
+<span class="cstat-no" title="statement not covered" >                    dominantBaseline="middle</span>"
 <span class="cstat-no" title="statement not covered" >                    style={{ pointerEvents: "none" }}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
 <span class="cstat-no" title="statement not covered" >                    no data</span>
@@ -4529,12 +4535,12 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >                    key="noDataArea"</span>
 <span class="cstat-no" title="statement not covered" >                    x={noDataRangeStartX}</span>
 <span class="cstat-no" title="statement not covered" >                    y={yStart - noDataHeight}</span>
-<span class="cstat-no" title="statement not covered" >                    //transform={`translate(${barX}, ${barY - barHeight})`}</span>
-<span class="cstat-no" title="statement not covered" >                    width={noDataRangeEndX - noDataRange</span>StartX}
-<span class="cstat-no" title="statement not covered" >                    height={noDataH</span>eight}
-<span class="cstat-no" title="statement not covered" >                    fill={"url(#diagon</span>alHatch)"}
-<span class="cstat-no" title="statement not covered" >                    // stroke={strokeCol</span>or}
-<span class="cstat-no" title="statement not covered" ></span>                    // strokeWidth={strokeWidth}
+<span class="cstat-no" title="statement not covered" >                    //transform={`t</span>ranslate(${barX}, ${barY - barHeight})`}
+<span class="cstat-no" title="statement not covered" >                    width={noDataRange</span>EndX - noDataRangeStartX}
+<span class="cstat-no" title="statement not covered" >                    height={noDataHeight</span>}
+<span class="cstat-no" title="statement not covered" ></span>                    fill={"url(#diagonalHatch)"}
+<span class="cstat-no" title="statement not covered" >                    // stroke={strokeColor}</span>
+<span class="cstat-no" title="statement not covered" >                    // s</span>trokeWidth={strokeWidth}
 <span class="cstat-no" title="statement not covered" >                    opacity={0.5}</span>
 <span class="cstat-no" title="statement not covered" >                &gt;&lt;/rect&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
@@ -4546,17 +4552,17 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >                    patternUnits="userSpaceOnUse"</span>
 <span class="cstat-no" title="statement not covered" >                    width="4"</span>
 <span class="cstat-no" title="statement not covered" >                    height="4"</span>
-<span class="cstat-no" title="statement not covered" >                    patternTransform="rotate(-45 2 2)"</span>
+<span class="cstat-no" title="statement not covered" >                    patternTransform="rotate</span>(-45 2 2)"
 <span class="cstat-no" title="statement not covered" >                &gt;</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;path d="M -1,2 l 6,0" s</span>troke="#ccc" strokeWidth="1" /&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;path d="M -1,2 l 6,0" stroke="#c</span>cc" strokeWidth="1" /&gt;
 <span class="cstat-no" title="statement not covered" >                &lt;/pattern&gt;,</span>
 <span class="cstat-no" title="statement not covered" >            ]</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        for (const item of placedItems) {</span>
-<span class="cstat-no" title="statement not covered" >            const { entityName, bars, xPo</span>int, entityColor } = item
-<span class="cstat-no" title="statement not covered" >            const currentX = dualAxis.hori</span>zontalAxis.place(x0) + item.xPosition
-<span class="cstat-no" title="statement not covered" >            const tooltipProps = {</span>
+<span class="cstat-no" title="statement not covered" >            const { entityName, bars, xPoint, en</span>tityColor } = item
+<span class="cstat-no" title="statement not covered" >            const currentX = dualAxis.horizont</span>alAxis.place(x0) + item.xPosition
+<span class="cstat-no" title="statement not covered" >            const tooltipProp</span>s = {
 <span class="cstat-no" title="statement not covered" >                item,</span>
 <span class="cstat-no" title="statement not covered" >                targetTime,</span>
 <span class="cstat-no" title="statement not covered" >                timeColumn,</span>
@@ -4565,14 +4571,14 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const barWidth =</span>
-<span class="cstat-no" title="statement not covered" >                dualAxis.horizontalAxis.place(xPoint</span>.value) -
-<span class="cstat-no" title="statement not covered" >                dualAxis.horizontalAxis.place(x0)</span>
+<span class="cstat-no" title="statement not covered" >                dualAxis.horizontalAxis.place(xPoint.value) -</span>
+<span class="cstat-no" title="statement not covered" >                dualAxis.horizontalAxis.</span>place(x0)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const isSelected = selection</span>Set.has(entityName)
-<span class="cstat-no" title="statement not covered" >            const isHovered = entityName === hoveredEntityName</span>
+<span class="cstat-no" title="statement not covered" >            const isSelected = selectionSet.has(entityNam</span>e)
+<span class="cstat-no" title="statement not covered" >            const isHovered = ent</span>ityName === hoveredEntityName
 <span class="cstat-no" title="statement not covered" >            const isFaint =</span>
-<span class="cstat-no" title="statement not covered" >                (focusSeriesName </span>!== undefined &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    entityColor?.colorDomainValue !== focusSeriesName) ||</span>
+<span class="cstat-no" title="statement not covered" >                (focusSeriesName !== undefined &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >                    entityColor?.colorDomainValue </span>!== focusSeriesName) ||
 <span class="cstat-no" title="statement not covered" >                (hasSelection &amp;&amp; !isSelected)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const barsProps = {</span>
@@ -4583,28 +4589,28 @@ export class MarimekkoChart
 <span class="cstat-no" title="statement not covered" >                isFaint,</span>
 <span class="cstat-no" title="statement not covered" >                isHovered,</span>
 <span class="cstat-no" title="statement not covered" >                isSelected,</span>
-<span class="cstat-no" title="statement not covered" >                barWidth,</span>
+<span class="cstat-no" title="statement not covered" >                barW</span>idth,
 <span class="cstat-no" title="statement not covered" >                tooltipProps,</span>
-<span class="cstat-no" title="statement not covered" >                curr</span>entX,
-<span class="cstat-no" title="statement not covered" >                onEntityClick: this.onEntityClic</span>k,
-<span class="cstat-no" title="statement not covered" >                onEntityMouseLeave: this.onEntityMous</span>eLeave,
-<span class="cstat-no" title="statement not covered" >                onEntityMouseOver: this.onEntityMouseOver,</span>
+<span class="cstat-no" title="statement not covered" >                currentX,</span>
+<span class="cstat-no" title="statement not covered" >                onEntityClick: this.onEntityClick,</span>
+<span class="cstat-no" title="statement not covered" >                onEntityMouseLeave: this.onEntityMouseLea</span>ve,
+<span class="cstat-no" title="statement not covered" >                onEntityMouseOver: this.onEntity</span>MouseOver,
 <span class="cstat-no" title="statement not covered" >                labelYOffset,</span>
 <span class="cstat-no" title="statement not covered" >                y0,</span>
 <span class="cstat-no" title="statement not covered" >                noDataHeight,</span>
 <span class="cstat-no" title="statement not covered" >                dualAxis,</span>
-<span class="cstat-no" title="statement not covered" >                isExportingToSvgOrPng: this.manager.isExportingtoSvgOrPng,</span>
+<span class="cstat-no" title="statement not covered" >                isExportingToSvgOrPng: this.manager.is</span>ExportingtoSvgOrPng,
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >            const result = (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;MarimekkoBarsForOneEntity key={en</span>tityName} {...barsProps} /&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;MarimekkoBarsForOneEntity key={entity</span>Name} {...barsProps} /&gt;
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            if (isSelected || isHovered) highlightedEl</span>ements.push(result)
+<span class="cstat-no" title="statement not covered" >            if (isSelected || isH</span>overed) highlightedElements.push(result)
 <span class="cstat-no" title="statement not covered" >            else normalElements.push(result)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return ([] as JSX.Element[]).concat(</span>
+<span class="cstat-no" title="statement not covered" >        return ([] as JSX.Element[]).conca</span>t(
 <span class="cstat-no" title="statement not covered" >            patterns,</span>
-<span class="cstat-no" title="statement not covered" >            noDataAreaElement ? [noDataAre</span>aElement] : [],
+<span class="cstat-no" title="statement not covered" >            noDataAreaElement ? [noDataAreaElement] : [],</span>
 <span class="cstat-no" title="statement not covered" >            normalElements,</span>
 <span class="cstat-no" title="statement not covered" >            placedLabels,</span>
 <span class="cstat-no" title="statement not covered" >            labelLines,</span>
@@ -4685,8 +4691,8 @@ export class MarimekkoChart
             ])
         )
 &nbsp;
-        const labelCandidates: LabelCandidate[] = xColumnAtLastTimePoint.owidRows.map(
-            (row) =&gt;
+        const labelCandidates: LabelCandidate[] =
+            xColumnAtLastTimePoint.owidRows.map((row) =&gt;
                 MarimekkoChart.labelCandidateFromItem(
                     {
                         entityName: row.entityName,
@@ -4696,7 +4702,7 @@ export class MarimekkoChart
                     baseFontSize,
                     selectedItemsSet.has(row.entityName)
                 )
-        )
+            )
 &nbsp;
         labelCandidates.sort((a, b) =&gt; {
             const yRowsForA = a.item.ySortValue
@@ -4704,12 +4710,12 @@ export class MarimekkoChart
 &nbsp;
             if (yRowsForA !== undefined &amp;&amp; yRowsForB !== undefined)
                 return yRowsForB - yRowsForA
-            else if (<span class="branch-0 cbranch-no" title="branch not covered" >yRowsForA === undefined &amp;</span>&amp; yRowsForB !== undefined)
-                return -1
-            else <span class="branch-0 cbranch-no" title="branch not covered" >if (yRowsForA !== undefined &amp;&amp; yRowsForB === undefined)</span>
-<span class="cstat-no" title="statement not covered" >                return 1</span>
-<span class="cstat-no" title="statement not covered" >            /</span>/ (yRowsForA === undefined &amp;&amp; yRowsForB === undefined)
-<span class="cstat-no" title="statement not covered" >            else ret</span>urn 0
+            else if (yRowsForA === undefined &amp;&amp; yRowsForB !== undefined)
+<span class="branch-0 cbranch-no" title="branch not covered" >                return -</span>1
+            else if (yRowsForA !== undefined &amp;&amp; yRowsForB === undefined)
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                retu</span>rn 1</span>
+<span class="cstat-no" title="statement not covered" >            // (yRowsForA === undefined &amp;&amp; yRowsForB</span> === undefined)
+<span class="cstat-no" title="statement not covered" >            e</span>lse return 0
         })
 &nbsp;
         const averageCharacterCount =
@@ -4745,9 +4751,9 @@ export class MarimekkoChart
         )
         const picks = chunks.flatMap((chunk) =&gt; {
             const picked = chunk.filter((candidate) =&gt; candidate.isPicked)
-<span class="branch-0 cbranch-no" title="branch not covered" >            if (picked.length &gt; 0) return picked</span>
-<span class="cstat-no" title="statement not covered" >            else {</span>
-<span class="cstat-no" title="statement not covered" ></span>                return maxBy(chunk, (candidate) =&gt; candidate.item.xValue)
+            if (picked.length &gt; 0) return picked
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            else {</span></span>
+<span class="cstat-no" title="statement not covered" >                return maxBy(chunk, (candidate) </span>=&gt; candidate.item.xValue)
 <span class="cstat-no" title="statement not covered" >            }</span>
         })
         for (const max of picks) {
@@ -4758,105 +4764,105 @@ export class MarimekkoChart
         return picked
     }
 &nbsp;
-    @computed private get labelsWithPlacementInfo<span class="fstat-no" title="function not covered" >(): LabelWithPlacement[] {</span>
-<span class="cstat-no" title="statement not covered" >        const</span> {
-<span class="cstat-no" title="statement not covered" >            dualAxis</span>,
+    @computed private get labelsWithPlacementInfo(): LabelWithPlacement[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const {</span></span>
+<span class="cstat-no" title="statement not covered" >            d</span>ualAxis,
 <span class="cstat-no" title="statement not covered" >            x0,</span>
-<span class="cstat-no" title="statement not covered" >            p</span>lacedItemsMap,
-<span class="cstat-no" title="statement not covered" >            labels,</span>
-<span class="cstat-no" title="statement not covered" >            unrotatedLongestLabelWidth,</span>
-<span class="cstat-no" title="statement not covered" >            u</span>nrotatedHighestLabelHeight,
-<span class="cstat-no" title="statement not covered" >            labelAng</span>leInDegrees,
+<span class="cstat-no" title="statement not covered" >            placedItemsMap,</span>
+<span class="cstat-no" title="statement not covered" >            l</span>abels,
+<span class="cstat-no" title="statement not covered" >            unrotate</span>dLongestLabelWidth,
+<span class="cstat-no" title="statement not covered" >            unrotatedHighestLabelHeight,</span>
+<span class="cstat-no" title="statement not covered" >            l</span>abelAngleInDegrees,
 <span class="cstat-no" title="statement not covered" >        } = this</span>
-<span class="cstat-no" title="statement not covered" >        const</span> labelsYPosition = dualAxis.verticalAxis.place(0)
+<span class="cstat-no" title="statement not covered" >        const labelsYPosition = dualAxis.verticalAxis.</span>place(0)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const labelsWithPlacements: LabelWithPlacement</span>[] = labels
-<span class="cstat-no" title="statement not covered" >            .</span>map(({ candidate, labelElement }) =&gt; {
-<span class="cstat-no" title="statement not covered" >                cons</span>t item = placedItemsMap.get(candidate.item.entityName)
-<span class="cstat-no" title="statement not covered" >                const xPoint = item?.xPoint.value ?? 0</span>
-<span class="cstat-no" title="statement not covered" ></span>                const barWidth =
+<span class="cstat-no" title="statement not covered" >        const labels</span>WithPlacements: LabelWithPlacement[] = labels
+<span class="cstat-no" title="statement not covered" >            .map(({ candidate, labelElement }) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>                const item = placedItemsMap.get(candidate.item.entityName)
+<span class="cstat-no" title="statement not covered" >                cons</span>t xPoint = item?.xPoint.value ?? 0
+<span class="cstat-no" title="statement not covered" >                const barWidth =</span>
 <span class="cstat-no" title="statement not covered" ></span>                    dualAxis.horizontalAxis.place(xPoint) -
-<span class="cstat-no" title="statement not covered" >                    dualAxis.horizontalAxis.pla</span>ce(x0)
+<span class="cstat-no" title="statement not covered" ></span>                    dualAxis.horizontalAxis.place(x0)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                cons</span>t labelId = candidate.item.entityName
-<span class="cstat-no" title="statement not covered" >                if (!item) {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    console.error(
+<span class="cstat-no" title="statement not covered" ></span>                const labelId = candidate.item.entityName
+<span class="cstat-no" title="statement not covered" >                if (</span>!item) {
+<span class="cstat-no" title="statement not covered" >                    console.error(</span>
 <span class="cstat-no" title="statement not covered" ></span>                        "Could not find item",
-<span class="cstat-no" title="statement not covered" >                        candidate.item.entityName</span>
-<span class="cstat-no" title="statement not covered" ></span>                    )
+<span class="cstat-no" title="statement not covered" ></span>                        candidate.item.entityName
+<span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" ></span>                    return null
-<span class="cstat-no" title="statement not covered" >                } else {</span>
-<span class="cstat-no" title="statement not covered" ></span>                    const currentX =
+<span class="cstat-no" title="statement not covered" >                } el</span>se {
+<span class="cstat-no" title="statement not covered" >                    const currentX =</span>
 <span class="cstat-no" title="statement not covered" ></span>                        dualAxis.horizontalAxis.place(x0) + item.xPosition
-<span class="cstat-no" title="statement not covered" >                    const labelWithPlacement = {</span>
-<span class="cstat-no" title="statement not covered" ></span>                        label: (
+<span class="cstat-no" title="statement not covered" ></span>                    const labelWithPlacement = {
+<span class="cstat-no" title="statement not covered" >                        label: (</span>
 <span class="cstat-no" title="statement not covered" ></span>                            &lt;g
-<span class="cstat-no" title="statement not covered" >                                transform={`tran</span>slate(${0}, ${labelsYPosition})`}
-<span class="cstat-no" title="statement not covered" ></span>                            &gt;
+<span class="cstat-no" title="statement not covered" ></span>                                transform={`translate(${0}, ${labelsYPosition})`}
+<span class="cstat-no" title="statement not covered" >                            &gt;</span>
 <span class="cstat-no" title="statement not covered" ></span>                                {labelElement}
-<span class="cstat-no" title="statement not covered" >                            &lt;/g&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                        ),
+<span class="cstat-no" title="statement not covered" ></span>                            &lt;/g&gt;
+<span class="cstat-no" title="statement not covered" >                        ),</span>
 <span class="cstat-no" title="statement not covered" ></span>                        preferredPlacement: currentX + barWidth / 2,
-<span class="cstat-no" title="statement not covered" >                        correctedPlacement: currentX + ba</span>rWidth / 2,
-<span class="cstat-no" title="statement not covered" ></span>                        labelKey: labelId,
-<span class="cstat-no" title="statement not covered" >                    }</span>
-<span class="cstat-no" title="statement not covered" >                    return labelWithPlacement</span>
-<span class="cstat-no" title="statement not covered" ></span>                }
-<span class="cstat-no" title="statement not covered" >            })</span>
+<span class="cstat-no" title="statement not covered" ></span>                        correctedPlacement: currentX + barWidth / 2,
+<span class="cstat-no" title="statement not covered" >                        labelKey: labelId,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    }
+<span class="cstat-no" title="statement not covered" ></span>                    return labelWithPlacement
+<span class="cstat-no" title="statement not covered" >                }</span>
+<span class="cstat-no" title="statement not covered" >            }</span>)
 <span class="cstat-no" title="statement not covered" >            .filter(</span>
-<span class="cstat-no" title="statement not covered" ></span>                (item: LabelWithPlacement | null): item is LabelWithPlacement =&gt;
+<span class="cstat-no" title="statement not covered" >                (item: LabelWithPlacement | null): i</span>tem is LabelWithPlacement =&gt;
 <span class="cstat-no" title="statement not covered" ></span>                    item !== null
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // This collisio</span>n detection code is optimized for the particular
-<span class="cstat-no" title="statement not covered" >        // case of distributing items in 1D, knowing that</span> we picked a low
-<span class="cstat-no" title="statement not covered" >        // en</span>ough number of labels that we will be able to fit all labels.
-<span class="cstat-no" title="statement not covered" >        // The algorithm</span> iterates the list twice, i.e. works in linear time
-<span class="cstat-no" title="statement not covered" >        // with the number of labels to show</span>
-<span class="cstat-no" title="statement not covered" >        // Th</span>e logic in pseudo code:
-<span class="cstat-no" title="statement not covered" >        // for current, </span>next in iterate-left-to-right-pairs:
-<span class="cstat-no" title="statement not covered" >        //   if next.x &lt; current.x + label-width:</span>
-<span class="cstat-no" title="statement not covered" >        //   </span>   next.x = current.x + label-width
-<span class="cstat-no" title="statement not covered" >        // last.x = Math</span>.min(last.x, max-x)
-<span class="cstat-no" title="statement not covered" >        // for current, prev in iterate-right-to-left-</span>pairs:
-<span class="cstat-no" title="statement not covered" >        //   </span>if prev.x &gt; current.x - label-width:
-<span class="cstat-no" title="statement not covered" >        //      prev</span>.x = current.x - label-width
+<span class="cstat-no" title="statement not covered" >        // Th</span>is collision detection code is optimized for the particular
+<span class="cstat-no" title="statement not covered" >        // case of distr</span>ibuting items in 1D, knowing that we picked a low
+<span class="cstat-no" title="statement not covered" >        // enough number of labels that we will be able to</span> fit all labels.
+<span class="cstat-no" title="statement not covered" >        // Th</span>e algorithm iterates the list twice, i.e. works in linear time
+<span class="cstat-no" title="statement not covered" >        // with the numb</span>er of labels to show
+<span class="cstat-no" title="statement not covered" >        // The logic in pseudo code:</span>
+<span class="cstat-no" title="statement not covered" >        // fo</span>r current, next in iterate-left-to-right-pairs:
+<span class="cstat-no" title="statement not covered" >        //   if next.x &lt;</span> current.x + label-width:
+<span class="cstat-no" title="statement not covered" >        //      next.x = current.x + label-width</span>
+<span class="cstat-no" title="statement not covered" >        // la</span>st.x = Math.min(last.x, max-x)
+<span class="cstat-no" title="statement not covered" >        // for curre</span>nt, prev in iterate-right-to-left-pairs:
+<span class="cstat-no" title="statement not covered" >        //   if prev.x &gt; current.x - label-width:</span>
+<span class="cstat-no" title="statement not covered" >        //   </span>   prev.x = current.x - label-width
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Th</span>e label width is uniform for now and starts with
-<span class="cstat-no" title="statement not covered" >        // the heigh</span>t of a label when printed in normal horizontal layout
-<span class="cstat-no" title="statement not covered" >        // Since labels are rotated we need to make a bit mor</span>e space so that they
-<span class="cstat-no" title="statement not covered" >        // st</span>ack correctly. Consider:
-<span class="cstat-no" title="statement not covered" >        //     ╱---╱</span> ╱---╱
-<span class="cstat-no" title="statement not covered" >        //    ╱   ╱ ╱   ╱</span>
-<span class="cstat-no" title="statement not covered" >        //   </span>╱   ╱ ╱   ╱
-<span class="cstat-no" title="statement not covered" >        //  ╱---╱ ╱-</span>--╱
-<span class="cstat-no" title="statement not covered" >        // If we would just use exactly the label </span>width then the flatter the angle
-<span class="cstat-no" title="statement not covered" >        // th</span>e more they would actually overlap so we need a correction factor. It turns
-<span class="cstat-no" title="statement not covered" >        // out than </span>tan(angle) is the correction factor we want, although for horizontal
-<span class="cstat-no" title="statement not covered" >        // labels we don't want to use +infinity :) </span>so we Math.min it with the longest label width
-<span class="cstat-no" title="statement not covered" >        if (l</span>abelsWithPlacements.length === 0) return []
+<span class="cstat-no" title="statement not covered" >        // The label width is uniform for now and starts with</span>
+<span class="cstat-no" title="statement not covered" >        // th</span>e height of a label when printed in normal horizontal layout
+<span class="cstat-no" title="statement not covered" >        // Since lab</span>els are rotated we need to make a bit more space so that they
+<span class="cstat-no" title="statement not covered" >        // stack correctly. Consider:</span>
+<span class="cstat-no" title="statement not covered" >        //   </span>  ╱---╱ ╱---╱
+<span class="cstat-no" title="statement not covered" >        //    ╱   ╱ </span>╱   ╱
+<span class="cstat-no" title="statement not covered" >        //   ╱   ╱ ╱   ╱</span>
+<span class="cstat-no" title="statement not covered" >        //  ╱</span>---╱ ╱---╱
+<span class="cstat-no" title="statement not covered" >        // If we wou</span>ld just use exactly the label width then the flatter the angle
+<span class="cstat-no" title="statement not covered" >        // the more they would actually overlap so w</span>e need a correction factor. It turns
+<span class="cstat-no" title="statement not covered" >        // ou</span>t than tan(angle) is the correction factor we want, although for horizontal
+<span class="cstat-no" title="statement not covered" >        // labels we</span> don't want to use +infinity :) so we Math.min it with the longest label width
+<span class="cstat-no" title="statement not covered" >        if (labelsWithPlacements.length === 0) return []</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        labelsWithPlacements.sort(</span>
-<span class="cstat-no" title="statement not covered" >            (</span>a, b) =&gt; a.preferredPlacement - b.preferredPlacement
+<span class="cstat-no" title="statement not covered" >        labelsWithPl</span>acements.sort(
+<span class="cstat-no" title="statement not covered" >            (a, b) =&gt; a.preferredPlacement - b.preferredPlacement</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const</span> labelWidth = unrotatedHighestLabelHeight
-<span class="cstat-no" title="statement not covered" >        const correc</span>tionFactor =
+<span class="cstat-no" title="statement not covered" >        const labelWidth = unrotatedHighestLabelHeight</span>
+<span class="cstat-no" title="statement not covered" >        const</span> correctionFactor =
 <span class="cstat-no" title="statement not covered" >            1 +</span>
-<span class="cstat-no" title="statement not covered" >            M</span>ath.min(
-<span class="cstat-no" title="statement not covered" >                unro</span>tatedLongestLabelWidth / labelWidth,
-<span class="cstat-no" title="statement not covered" >                Math.abs(Math.tan(labelAngleInDegrees))</span>
+<span class="cstat-no" title="statement not covered" >            Math.min(</span>
+<span class="cstat-no" title="statement not covered" ></span>                unrotatedLongestLabelWidth / labelWidth,
+<span class="cstat-no" title="statement not covered" >                Math</span>.abs(Math.tan(labelAngleInDegrees))
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >        const correc</span>tedLabelWidth = labelWidth * correctionFactor
+<span class="cstat-no" title="statement not covered" >        const</span> correctedLabelWidth = labelWidth * correctionFactor
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        for (</span>let i = 0; i &lt; labelsWithPlacements.length - 1; i++) {
-<span class="cstat-no" title="statement not covered" >            const cu</span>rrent = labelsWithPlacements[i]
-<span class="cstat-no" title="statement not covered" >            const next = labelsWithPlacements[i + 1</span>]
-<span class="cstat-no" title="statement not covered" >            const minNextX = current.correctedPla</span>cement + correctedLabelWidth
-<span class="cstat-no" title="statement not covered" >            if (next.corre</span>ctedPlacement &lt; minNextX)
-<span class="cstat-no" title="statement not covered" >                next</span>.correctedPlacement = minNextX
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        labelsWithPlacements[</span>
+<span class="cstat-no" title="statement not covered" >        for (let i = 0; i &lt; labelsWithPlacements.le</span>ngth - 1; i++) {
+<span class="cstat-no" title="statement not covered" >            const current = labelsWithPlacements[</span>i]
+<span class="cstat-no" title="statement not covered" >            const next = l</span>abelsWithPlacements[i + 1]
+<span class="cstat-no" title="statement not covered" >            const mi</span>nNextX = current.correctedPlacement + correctedLabelWidth
+<span class="cstat-no" title="statement not covered" >            if (next.correctedPlacement &lt;</span> minNextX)
+<span class="cstat-no" title="statement not covered" >                next.correctedPlacement = m</span>inNextX
+        }
+        labelsWithPlacements[
             labelsWithPlacements.length - 1
         ].correctedPlacement = Math.min(
             labelsWithPlacements[labelsWithPlacements.length - 1]
@@ -5281,7 +5287,7 @@ export class MarimekkoChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76% </span>
+                <span class="strong">72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>19/25</span>
+                <span class='fraction'>18/25</span>
             </div>
         
             
@@ -239,7 +239,8 @@
 <a name='L180'></a><a href='#L180'>180</a>
 <a name='L181'></a><a href='#L181'>181</a>
 <a name='L182'></a><a href='#L182'>182</a>
-<a name='L183'></a><a href='#L183'>183</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -254,6 +255,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -270,7 +272,7 @@
 <span class="cline-any cline-yes">615x</span>
 <span class="cline-any cline-yes">615x</span>
 <span class="cline-any cline-yes">615x</span>
-<span class="cline-any cline-yes">615x</span>
+<span class="cline-any cline-yes">165x</span>
 <span class="cline-any cline-yes">165x</span>
 <span class="cline-any cline-yes">165x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -343,7 +345,7 @@
 <span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">33x</span>
-<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">123x</span>
 <span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">33x</span>
@@ -376,7 +378,7 @@
 <span class="cline-any cline-yes">41x</span>
 <span class="cline-any cline-yes">33x</span>
 <span class="cline-any cline-yes">33x</span>
-<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -437,7 +439,8 @@ interface ListChild {
 /** A UI component inspired by the "Priority+ Navbar" or "Progressively Collapsing Navbar"*/
 @observer
 export class CollapsibleList extends React.Component {
-    private outerContainerRef: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
+    private outerContainerRef: React.RefObject&lt;HTMLDivElement&gt; =
+        React.createRef()
     private moreButtonRef: React.RefObject&lt;HTMLLIElement&gt; = React.createRef()
     private outerContainerWidth: number = 0
     private moreButtonWidth: number = 0
@@ -452,18 +455,18 @@ export class CollapsibleList extends React.Component {
                     index: i,
                     child,
                 }
-            }) ?? []
+            }<span class="branch-0 cbranch-no" title="branch not covered" >) ?? []</span>
         )
     }
 &nbsp;
     private updateOuterContainerWidth(): void {
         this.outerContainerWidth =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.outerC</span></span>ontainerRef.current?.clientWidth ?? 0
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            thi</span></span>s.outerContainerRef.current?.clientWidth ?? 0
     }
 &nbsp;
     private calculateItemWidths(): void {
         this.itemsWidths = []
-<span class="branch-0 cbranch-no" title="branch not covered" >        this.outerCo</span>ntainerRef.current
+<span class="branch-0 cbranch-no" title="branch not covered" >        this.outerContainerRef.curr</span>ent
             ?.querySelectorAll(".list-item.visible, .list-item.hidden")
             .forEach((item): number =&gt; this.itemsWidths.push(item.clientWidth))
     }
@@ -477,7 +480,7 @@ export class CollapsibleList extends React.Component {
         this.numItemsVisible =
 <span class="branch-0 cbranch-no" title="branch not covered" >            numItemsVisibleWithoutMoreButton &gt;= this.children.length</span>
 <span class="cstat-no" title="statement not covered" >                ? numItemsVisibleWithoutMoreButton</span>
-<span class="cstat-no" title="statement not covered" >                : numItemsVisible(</span>
+<span class="cstat-no" title="statement not covered" ></span>                : numItemsVisible(
                       this.itemsWidths,
                       this.outerContainerWidth,
                       this.moreButtonWidth
@@ -493,7 +496,7 @@ export class CollapsibleList extends React.Component {
     }
 &nbsp;
     @action private onResize = throttle((): void =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>        this.updateItemVisibility()
+<span class="cstat-no" title="statement not covered" >        this.updateItemVis</span>ibility()
     }, 100)
 &nbsp;
     @action private updateItemVisibility(): void {
@@ -610,7 +613,7 @@ export function numItemsVisible(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

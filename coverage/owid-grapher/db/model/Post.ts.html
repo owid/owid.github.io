@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.62% </span>
+                <span class="strong">50.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>30/63</span>
+                <span class='fraction'>32/63</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">47.62% </span>
+                <span class="strong">50.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>30/63</span>
+                <span class='fraction'>32/63</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,9 +105,7 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -121,8 +119,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -179,33 +175,31 @@ export namespace Post {
 <span class="cstat-no" title="statement not covered" ></span>            JOIN tags t ON t.id=pt.tag_id
 <span class="cstat-no" title="statement not covered" >        `)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const tagsByPostId: Map&lt;</span>
-<span class="cstat-no" title="statement not covered" >            number,</span>
-<span class="cstat-no" title="statement not covered" >            { id: number; name: string }[]</span>
-<span class="cstat-no" title="statement not covered" >        &gt; = new Map()</span>
+<span class="cstat-no" title="statement not covered" >        const tagsByPostId: Map&lt;number, { id: number; name: strin</span>g }[]&gt; =
+<span class="cstat-no" title="statement not covered" >            new Map()</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        for (const pt of postTags) {
-<span class="cstat-no" title="statement not covered" ></span>            const tags = tagsByPostId.get(pt.postId) || []
-<span class="cstat-no" title="statement not covered" >            tags.push({ id: pt.tagId, name: pt.tagName })</span>
-<span class="cstat-no" title="statement not covered" >            tagsByPostI</span>d.set(pt.postId, tags)
+<span class="cstat-no" title="statement not covered" >        for (const pt of postTags) {</span>
+<span class="cstat-no" title="statement not covered" >            const tags = tagsByPostId.get(pt.postId) || []</span>
+<span class="cstat-no" title="statement not covered" ></span>            tags.push({ id: pt.tagId, name: pt.tagName })
+<span class="cstat-no" title="statement not covered" ></span>            tagsByPostId.set(pt.postId, tags)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return tags</span>ByPostId
+<span class="cstat-no" title="statement not covered" >        return tagsByPostId</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    export const setTags = <span class="fstat-no" title="function not covered" >async (postId: number, tagIds: number[]) =&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>        await db.transaction(async (t) =&gt; {
-<span class="cstat-no" title="statement not covered" >            const tagRows = tagIds.map((tagId) =&gt; [tagId, postId])</span>
-<span class="cstat-no" title="statement not covered" >            await t.execute(`DELETE FROM post_t</span>ags WHERE post_id=?`, [postId])
+    export const setTags = async (postId: number, tagIds: number[]) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        await db.transaction(async</span> (t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const tagRows = tagIds.map((tagId) =</span>&gt; [tagId, postId])
+<span class="cstat-no" title="statement not covered" ></span>            await t.execute(`DELETE FROM post_tags WHERE post_id=?`, [postId])
 <span class="cstat-no" title="statement not covered" >            if (tagRows.length)</span>
 <span class="cstat-no" title="statement not covered" >                await t.execute(</span>
-<span class="cstat-no" title="statement not covered" >                    `INSERT INTO post_tags</span> (tag_id, post_id) VALUES ?`,
-<span class="cstat-no" title="statement not covered" ></span>                    [tagRows]
+<span class="cstat-no" title="statement not covered" >                    `INSERT INTO post_tags (tag_id, post_id) VALUES ?`,</span>
+<span class="cstat-no" title="statement not covered" >                    [tagRows]</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 &nbsp;
     export const bySlug = async (<span class="fstat-no" title="function not covered" >slug: string): Promise&lt;PostRow | undefined&gt; =&gt;</span>
-<span class="cstat-no" title="statement not covered" >        (await db.knexTable("posts").where({ sl</span>ug: slug }))[0]
+<span class="cstat-no" title="statement not covered" >        (await db.knexTable("posts").where({ slug: slug }))[</span>0]
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -214,7 +208,7 @@ export namespace Post {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

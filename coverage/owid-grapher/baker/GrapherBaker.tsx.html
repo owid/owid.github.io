@@ -245,8 +245,7 @@
 <a name='L186'></a><a href='#L186'>186</a>
 <a name='L187'></a><a href='#L187'>187</a>
 <a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L189'></a><a href='#L189'>189</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -410,7 +409,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -586,44 +584,43 @@ const deleteOldGraphers = <span class="fstat-no" title="function not covered" >a
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export const bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers = async (
-<span class="fstat-no" title="function not covered" >    bakedSiteDir: string</span>
-<span class="cstat-no" title="statement not covered" >) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const rows: { id: </span>number; config: any }[] = await db.queryMysql(
-<span class="cstat-no" title="statement not covered" >        `S</span>ELECT id, config FROM charts WHERE JSON_EXTRACT(config, "$.isPublished")=true ORDER BY JSON_EXTRACT(config, "$.slug") ASC`
-<span class="cstat-no" title="statement not covered" >    )</span>
+export const bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers =
+    async (<span class="fstat-no" title="function not covered" >bakedSiteDir: string) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const rows: { id: number; config: any }[] = await db.</span>queryMysql(
+<span class="cstat-no" title="statement not covered" >            `SELECT id</span>, config FROM charts WHERE JSON_EXTRACT(config, "$.isPublished")=true ORDER BY JSON_EXTRACT(config, "$.slug") ASC`
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    co</span>nst newSlugs = []
-<span class="cstat-no" title="statement not covered" >    await fs.mkdirp(bakedSiteDir + "/grapher")</span>
-<span class="cstat-no" title="statement not covered" >    const progressBar = new ProgressBar(</span>
-<span class="cstat-no" title="statement not covered" ></span>        "BakeGrapherPageVarPngAndSVGIfChanged [:bar] :current/:total :elapseds :rate/s :etas :name\n",
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >            width: 20,</span>
-            total: rows.length + 1,
-        }
-    )
-    for (const row of rows) {
-        const grapher: GrapherInterface = JSON.parse(row.config)
-        grapher.id = row.id
-        newSlugs.push(grapher.slug)
-&nbsp;
-        // Avoid baking paths that have an Explorer redirect.
-        // Redirects take precedence.
-        if (isPathRedirectedToExplorer(`/grapher/${grapher.slug}`)) {
-            progressBar.tick({ name: `✅ ${grapher.slug}` })
-            continue
-        }
-&nbsp;
-        await bakeGrapherPageAndVariablesPngAndSVGIfChanged(
-            bakedSiteDir,
-            grapher
+<span class="cstat-no" title="statement not covered" >        const newSlugs = []</span>
+<span class="cstat-no" title="statement not covered" ></span>        await fs.mkdirp(bakedSiteDir + "/grapher")
+<span class="cstat-no" title="statement not covered" >        const progressBar = new ProgressBar(</span>
+<span class="cstat-no" title="statement not covered" >            "BakeGrapherPageVarPngAndSVGIfChanged [:bar] :</span>current/:total :elapseds :rate/s :etas :name\n",
+<span class="cstat-no" title="statement not covered" ></span>            {
+<span class="cstat-no" title="statement not covered" >                width: 20,</span>
+<span class="cstat-no" title="statement not covered" >                total: rows.length + 1,</span>
+            }
         )
-        progressBar.tick({ name: `✅ ${grapher.slug}` })
-    }
+        for (const row of rows) {
+            const grapher: GrapherInterface = JSON.parse(row.config)
+            grapher.id = row.id
+            newSlugs.push(grapher.slug)
 &nbsp;
-    await deleteOldGraphers(bakedSiteDir, newSlugs.filter(isPresent))
-    progressBar.tick({ name: `✅ Deleted old graphers` })
-}
+            // Avoid baking paths that have an Explorer redirect.
+            // Redirects take precedence.
+            if (isPathRedirectedToExplorer(`/grapher/${grapher.slug}`)) {
+                progressBar.tick({ name: `✅ ${grapher.slug}` })
+                continue
+            }
+&nbsp;
+            await bakeGrapherPageAndVariablesPngAndSVGIfChanged(
+                bakedSiteDir,
+                grapher
+            )
+            progressBar.tick({ name: `✅ ${grapher.slug}` })
+        }
+&nbsp;
+        await deleteOldGraphers(bakedSiteDir, newSlugs.filter(isPresent))
+        progressBar.tick({ name: `✅ Deleted old graphers` })
+    }
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -631,7 +628,7 @@ export const bakeAllChangedGrapherPagesVariablesPngSvgAndDeleteRemovedGraphers =
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -205,7 +205,12 @@
 <a name='L146'></a><a href='#L146'>146</a>
 <a name='L147'></a><a href='#L147'>147</a>
 <a name='L148'></a><a href='#L148'>148</a>
-<a name='L149'></a><a href='#L149'>149</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -298,6 +303,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -397,53 +407,57 @@ export const EntitiesAsSeries = (): JSX.Element =&gt; (
     &lt;/svg&gt;
 )
 &nbsp;
-export const EntitiesAsSeriesWithMissingRowsAndInterpolation = (): JSX.Element =&gt; (
-    &lt;svg width={600} height={600}&gt;
-        &lt;StackedAreaChart
-            manager={{
-                ...entitiesChart,
-                table: table.dropRandomRows(30, seed),
-            }}
-        /&gt;
-    &lt;/svg&gt;
-)
+export const EntitiesAsSeriesWithMissingRowsAndInterpolation =
+    (): JSX.Element =&gt; (
+        &lt;svg width={600} height={600}&gt;
+            &lt;StackedAreaChart
+                manager={{
+                    ...entitiesChart,
+                    table: table.dropRandomRows(30, seed),
+                }}
+            /&gt;
+        &lt;/svg&gt;
+    )
 &nbsp;
-export const EntitiesAsSeriesWithMissingRowsNoInterpolation = (): JSX.Element =&gt; (
-    &lt;svg width={600} height={600}&gt;
-        &lt;StackedAreaChart
-            disableLinearInterpolation={true}
-            manager={{
-                ...entitiesChart,
-                table: table.dropRandomRows(30, seed),
-            }}
-        /&gt;
-    &lt;/svg&gt;
-)
+export const EntitiesAsSeriesWithMissingRowsNoInterpolation =
+    (): JSX.Element =&gt; (
+        &lt;svg width={600} height={600}&gt;
+            &lt;StackedAreaChart
+                disableLinearInterpolation={true}
+                manager={{
+                    ...entitiesChart,
+                    table: table.dropRandomRows(30, seed),
+                }}
+            /&gt;
+        &lt;/svg&gt;
+    )
 &nbsp;
-export const EntitiesAsSeriesWithMissingRowsAndInterpolationRelative = (): JSX.Element =&gt; (
-    &lt;svg width={600} height={600}&gt;
-        &lt;StackedAreaChart
-            manager={{
-                ...entitiesChart,
-                table: table.dropRandomRows(30, seed),
-                isRelativeMode: true,
-            }}
-        /&gt;
-    &lt;/svg&gt;
-)
+export const EntitiesAsSeriesWithMissingRowsAndInterpolationRelative =
+    (): JSX.Element =&gt; (
+        &lt;svg width={600} height={600}&gt;
+            &lt;StackedAreaChart
+                manager={{
+                    ...entitiesChart,
+                    table: table.dropRandomRows(30, seed),
+                    isRelativeMode: true,
+                }}
+            /&gt;
+        &lt;/svg&gt;
+    )
 &nbsp;
-export const EntitiesAsSeriesWithMissingRowsNoInterpolationRelative = (): JSX.Element =&gt; (
-    &lt;svg width={600} height={600}&gt;
-        &lt;StackedAreaChart
-            disableLinearInterpolation={true}
-            manager={{
-                ...entitiesChart,
-                table: table.dropRandomRows(30, seed),
-                isRelativeMode: true,
-            }}
-        /&gt;
-    &lt;/svg&gt;
-)
+export const EntitiesAsSeriesWithMissingRowsNoInterpolationRelative =
+    (): JSX.Element =&gt; (
+        &lt;svg width={600} height={600}&gt;
+            &lt;StackedAreaChart
+                disableLinearInterpolation={true}
+                manager={{
+                    ...entitiesChart,
+                    table: table.dropRandomRows(30, seed),
+                    isRelativeMode: true,
+                }}
+            /&gt;
+        &lt;/svg&gt;
+    )
 &nbsp;
 const colTable = SynthesizeFruitTable()
 const columnsChart: ChartManager = {
@@ -479,28 +493,29 @@ export const ColumnsAsSeriesWithMissingCells = (): JSX.Element =&gt; {
     )
 }
 &nbsp;
-export const ColumnsAsSeriesWithMissingRowsAndInterpolationRelative = (): JSX.Element =&gt; {
-    let table = SynthesizeFruitTable().dropRandomRows(30, seed)
-    const firstCol = table.columnsAsArray[0]
-    const junkFoodColumn = {
-        ...firstCol.def,
-        slug: "junkFood",
-        name: "JunkFood",
-        values: firstCol.values.slice().reverse(),
+export const ColumnsAsSeriesWithMissingRowsAndInterpolationRelative =
+    (): JSX.Element =&gt; {
+        let table = SynthesizeFruitTable().dropRandomRows(30, seed)
+        const firstCol = table.columnsAsArray[0]
+        const junkFoodColumn = {
+            ...firstCol.def,
+            slug: "junkFood",
+            name: "JunkFood",
+            values: firstCol.values.slice().reverse(),
+        }
+        table = table.appendColumns([junkFoodColumn])
+        return (
+            &lt;svg width={600} height={600}&gt;
+                &lt;StackedAreaChart
+                    manager={{
+                        selection: table.sampleEntityName(1),
+                        table,
+                        isRelativeMode: true,
+                    }}
+                /&gt;
+            &lt;/svg&gt;
+        )
     }
-    table = table.appendColumns([junkFoodColumn])
-    return (
-        &lt;svg width={600} height={600}&gt;
-            &lt;StackedAreaChart
-                manager={{
-                    selection: table.sampleEntityName(1),
-                    table,
-                    isRelativeMode: true,
-                }}
-            /&gt;
-        &lt;/svg&gt;
-    )
-}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -508,7 +523,7 @@ export const ColumnsAsSeriesWithMissingRowsAndInterpolationRelative = (): JSX.El
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

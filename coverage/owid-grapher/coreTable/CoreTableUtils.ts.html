@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">89.6% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>449/498</span>
+                <span class='fraction'>448/500</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.39% </span>
+                <span class="strong">83.17% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>82/102</span>
+                <span class='fraction'>84/101</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.16% </span>
+                <span class="strong">89.6% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>449/498</span>
+                <span class='fraction'>448/500</span>
             </div>
         
             
@@ -757,7 +757,8 @@
 <a name='L698'></a><a href='#L698'>698</a>
 <a name='L699'></a><a href='#L699'>699</a>
 <a name='L700'></a><a href='#L700'>700</a>
-<a name='L701'></a><a href='#L701'>701</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L701'></a><a href='#L701'>701</a>
+<a name='L702'></a><a href='#L702'>702</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1002,8 +1003,8 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1061,7 +1062,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">24x</span>
@@ -1117,14 +1118,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">433x</span>
 <span class="cline-any cline-yes">433x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">92x</span>
 <span class="cline-any cline-yes">92x</span>
 <span class="cline-any cline-yes">92x</span>
@@ -1181,7 +1183,7 @@
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">45x</span>
 <span class="cline-any cline-yes">90x</span>
-<span class="cline-any cline-yes">90x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">90x</span>
 <span class="cline-any cline-yes">45x</span>
@@ -1255,7 +1257,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1703,23 +1705,23 @@ export function linearInterpolation(
         let value
         if (
 <span class="branch-0 cbranch-no" title="branch not covered" >            isNotErrorValueOrEmptyCell(prevValue) &amp;&amp;</span>
-            isNotErrorValueOrEmptyCell(nextValue)
+<span class="cstat-no" title="statement not covered" >            isNotErrorValueOrEm</span>ptyCell(nextValue)
         ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            const distLeft = index </span>- prevNonBlankIndex
-<span class="cstat-no" title="statement not covered" >            const distRight = nextNonBlankIndex - ind</span>ex
+<span class="cstat-no" title="statement not covered" >            const distLeft = index - prevNonBlankIndex</span>
+<span class="cstat-no" title="statement not covered" >            const distRight = nextNonBl</span>ankIndex - index
 <span class="cstat-no" title="statement not covered" >            value =</span>
-<span class="cstat-no" title="statement not covered" >                (prevValue * distRight + nextValue * distLeft) /</span>
+<span class="cstat-no" title="statement not covered" >                (prevValue * distRight + nextValue * </span>distLeft) /
 <span class="cstat-no" title="statement not covered" >                (distLeft + distRight)</span>
         } else if (
 <span class="branch-0 cbranch-no" title="branch not covered" >            isNotErrorValueOrEmptyCell(prevValue) &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            context.extrapolateAt</span>End
+<span class="cstat-no" title="statement not covered" >            context.extrapolateAtEnd</span>
         )
-<span class="branch-0 cbranch-no" title="branch not covered" >            valu</span>e = prevValue
+<span class="branch-0 cbranch-no" title="branch not covered" >            value </span>= prevValue
         else if (
             isNotErrorValueOrEmptyCell(nextValue) &amp;&amp;
             context.extrapolateAtStart
         )
-<span class="branch-0 cbranch-no" title="branch not covered" >            value </span>= nextValue
+            value = nextValue
         else value = ErrorValueTypes.NoValueForInterpolation
 &nbsp;
         prevNonBlankIndex = index
@@ -1735,7 +1737,7 @@ export function toleranceInterpolation(
     start: number = 0,
     end: number = valuesSortedByTimeAsc.length
 ): void {
-    if (!valuesSortedByTimeAsc.length) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
+    if (!valuesSortedByTimeAsc.length) return
 &nbsp;
     let prevNonBlankIndex: number | undefined = undefined
     let nextNonBlankIndex: number | undefined = undefined
@@ -1816,12 +1818,13 @@ export function interpolateRowValuesWithTolerance&lt;
 }
 &nbsp;
 // A dumb function for making a function that makes a key for a row given certain columns.
-export const makeKeyFn = (
-    columnStore: CoreColumnStore,
-    columnSlugs: ColumnSlug[]
-) =&gt; (rowIndex: number): string =&gt;
-    // toString() handles `undefined` and `null` values, which can be in the table.
-    columnSlugs.map((slug) =&gt; toString(columnStore[slug][rowIndex])).join(" ")
+export const makeKeyFn =
+    (columnStore: CoreColumnStore, columnSlugs: ColumnSlug[]) =&gt;
+    (rowIndex: number): string =&gt;
+        // toString() handles `undefined` and `null` values, which can be in the table.
+        columnSlugs
+            .map((slug) =&gt; toString(columnStore[slug][rowIndex]))
+            .join(" ")
 &nbsp;
 // Memoization for immutable getters. Run the function once for this instance and cache the result.
 export const imemo = &lt;Type&gt;(
@@ -1846,14 +1849,14 @@ export const imemo = &lt;Type&gt;(
 }
 &nbsp;
 export const appendRowsToColumnStore = (
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    columnStore: CoreColumnS</span>tore,</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    co</span>lumnStore: CoreColumnStore,</span>
 <span class="cstat-no" title="statement not covered" >    rows: CoreRow[]</span>
-<span class="cstat-no" title="statement not covered" >): Cor</span>eColumnStore =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>    const slugs = Object.keys(columnStore)
-<span class="cstat-no" title="statement not covered" >    const newColumnStor</span>e = columnStore
-<span class="cstat-no" title="statement not covered" >    slugs.forEach((slug) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        newColumnStore[slug] = columnStore[slug].co</span>ncat(
-<span class="cstat-no" title="statement not covered" >            rows.map((row) =&gt;</span> row[slug])
+<span class="cstat-no" title="statement not covered" >): CoreColumnStore =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    co</span>nst slugs = Object.keys(columnStore)
+<span class="cstat-no" title="statement not covered" ></span>    const newColumnStore = columnStore
+<span class="cstat-no" title="statement not covered" >    slugs.forEach((slug</span>) =&gt; {
+<span class="cstat-no" title="statement not covered" >        newColumnStore[slug] = column</span>Store[slug].concat(
+<span class="cstat-no" title="statement not covered" >            rows.map((row) =&gt; row[slug])</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >    return newColumnStore</span>
@@ -1862,26 +1865,26 @@ export const appendRowsToColumnStore = (
 const getColumnStoreLength = (store: CoreColumnStore): number =&gt; {
     for (const slug in store) {
         return store[slug].length
-    }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    return 0</span>
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    return 0</span></span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const concatColumnStores = (
     stores: CoreColumnStore[],
     slugsToKeep?: ColumnSlug[]
 ): CoreColumnStore =&gt; {
-    if (!stores.length) <span class="branch-0 cbranch-no" title="branch not covered" >re</span>turn {}
+    if (!stores.length) <span class="branch-0 cbranch-no" title="branch not covered" >return {</span>}
 &nbsp;
     const lengths = stores.map(getColumnStoreLength)
-    const slugs = <span class="branch-0 cbranch-no" title="branch not covered" >slugsToKeep ?? Object.</span>keys(first(stores)!)
+    const slugs = slugsToKeep ?? Object.keys(first(stores)!)
 &nbsp;
     const newColumnStore: CoreColumnStore = {}
     slugs.forEach((slug) =&gt; {
         newColumnStore[slug] = flatten(
             stores.map(
                 (store, i) =&gt;
-                    store[slug] ??
-<span class="branch-0 cbranch-no" title="branch not covered" >                    new A</span>rray(lengths[i]).fill(
+<span class="branch-0 cbranch-no" title="branch not covered" >                    store[slug] ??</span>
+<span class="cstat-no" title="statement not covered" ></span>                    new Array(lengths[i]).fill(
                         ErrorValueTypes.MissingValuePlaceholder
                     )
             )
@@ -1901,25 +1904,25 @@ export const rowsToColumnStore = (rows: CoreRow[]): CoreColumnStore =&gt; {
 }
 &nbsp;
 const guessColumnDefsFromRows = (
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    rows: CoreRow[],</span></span>
-<span class="cstat-no" title="statement not covered" ></span>    definedSlugs: Map&lt;ColumnSlug, any&gt;
-<span class="cstat-no" title="statement not covered" >): CoreColumnDef[] =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    ro</span>ws: CoreRow[],</span>
+<span class="cstat-no" title="statement not covered" >    definedSlugs: Map&lt;ColumnSlug, any&gt;</span>
+<span class="cstat-no" title="statement not covered" >): </span>CoreColumnDef[] =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (!rows[0]) return []</span>
 <span class="cstat-no" title="statement not covered" >    return Object.keys(rows[0])</span>
-<span class="cstat-no" title="statement not covered" ></span>        .filter((slug) =&gt; !definedSlugs.has(slug))
-<span class="cstat-no" title="statement not covered" >        .map((slug) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const firstRowWithValue = rows.find(</span>
+<span class="cstat-no" title="statement not covered" >        .filter((slug) =&gt; !definedSlugs.has(slug))</span>
+<span class="cstat-no" title="statement not covered" ></span>        .map((slug) =&gt; {
+<span class="cstat-no" title="statement not covered" >            const firstRowWithValue = rows.fi</span>nd(
 <span class="cstat-no" title="statement not covered" >                (row) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    row[slug] !== undefined &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    row[slug] !== null &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    row[slug] !== null &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" ></span>                    row[slug] !== ""
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" >            const firstValue = firstRowWithValue</span>
-<span class="cstat-no" title="statement not covered" >                ? firstRo</span>wWithValue[slug]
-<span class="cstat-no" title="statement not covered" >                : undefined</span>
+<span class="cstat-no" title="statement not covered" >            const firstValue = fi</span>rstRowWithValue
+<span class="cstat-no" title="statement not covered" >                ? firstRowWithValue[slug]</span>
+<span class="cstat-no" title="statement not covered" >                : undefin</span>ed
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>            return guessColumnDefFromSlugAndRow(slug, firstValue)
-<span class="cstat-no" title="statement not covered" >        })</span>
+<span class="cstat-no" title="statement not covered" >            return guessColumnDefFromSlugAndRow(slug, firstValue)</span>
+<span class="cstat-no" title="statement not covered" ></span>        })
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const autodetectColumnDefs = (
@@ -1939,7 +1942,7 @@ export const autodetectColumnDefs = (
                 )
             })
     }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    ret</span>urn guessColumnDefsFromRows(rowsOrColumnStore, definedSlugs)
+<span class="cstat-no" title="statement not covered" >    return guessCo</span>lumnDefsFromRows(rowsOrColumnStore, definedSlugs)
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 // Convenience method when you are replacing columns
@@ -1953,9 +1956,9 @@ export const replaceDef = &lt;ColumnDef extends CoreColumnDef&gt;(
     })
 &nbsp;
 export const reverseColumnStore = (
-<span class="fstat-no" title="function not covered" >    columnStore: CoreColumnStore</span>
-<span class="cstat-no" title="statement not covered" >): CoreColumnStore =&gt; {</span>
-    const newStore: CoreColumnStore = {}
+    columnStore: CoreColumnStore
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >): CoreColumnStore =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    const newStore: CoreColumnStore = {}</span>
     Object.keys(columnStore).forEach((slug) =&gt; {
         newStore[slug] = columnStore[slug].slice().reverse()
     })
@@ -2164,7 +2167,7 @@ export const emptyColumnsInFirstRowInDelimited = (str: string): string[] =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 13 2021 10:39:58 GMT+0000 (Coordinated Universal Time)
+                at Wed Oct 20 2021 10:26:26 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
