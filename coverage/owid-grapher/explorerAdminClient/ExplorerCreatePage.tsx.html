@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.42% </span>
+                <span class="strong">42.4% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>169/408</span>
+                <span class='fraction'>173/408</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.15% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/13</span>
+                <span class='fraction'>6/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.08% </span>
+                <span class="strong">24% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/26</span>
+                <span class='fraction'>6/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.42% </span>
+                <span class="strong">42.4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>169/408</span>
+                <span class='fraction'>173/408</span>
             </div>
         
             
@@ -527,7 +527,11 @@
 <a name='L468'></a><a href='#L468'>468</a>
 <a name='L469'></a><a href='#L469'>469</a>
 <a name='L470'></a><a href='#L470'>470</a>
-<a name='L471'></a><a href='#L471'>471</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -577,6 +581,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -800,10 +808,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -935,6 +939,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1010,7 +1018,11 @@ import { GitCmsClient } from "../gitCms/GitCmsClient"
 import { Prompt } from "react-router-dom"
 import Handsontable from "handsontable"
 import { CoreMatrix } from "../coreTable/CoreTableConstants"
-import { exposeInstanceOnWindow, slugify } from "../clientUtils/Util"
+import {
+    exposeInstanceOnWindow,
+    slugify,
+    toRectangularMatrix,
+} from "../clientUtils/Util"
 import { LoadingIndicator } from "../grapher/loadingIndicator/LoadingIndicator"
 import {
     DefaultNewExplorerSlug,
@@ -1039,19 +1051,19 @@ export class ExplorerCreatePage extends React.Component&lt;{
     doNotFetch?: boolean // for testing
 }&gt; {
     @computed private get manager() {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.manager ?? {</span>}
+        return this.props.manager ?? {}
     }
 &nbsp;
     @action.bound private loadingModalOff() {
         this.manager.loadingIndicatorSetting = "off"
     }
 &nbsp;
-    @action.bound private loadingModalOn() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.manager.loadingIndicatorSetting = "loadin</span>g"</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >loadingModalOn() {</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.manager.loadingIndicatorSetting = "loading"
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >resetLoadingModal() {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.manager.loadingIndicatorSetting = "default"
+    @action.bound private resetLoadingModal() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.manager.loadi</span>ngIndicatorSetting = "default"</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action componentDidMount() {
@@ -1060,59 +1072,59 @@ export class ExplorerCreatePage extends React.Component&lt;{
 &nbsp;
         if (this.props.doNotFetch) return
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >        this.fetchExplorerProgramOnLoad()</span>
+<span class="cstat-no" title="statement not covered" >        this.fetchExplorerPr</span>ogramOnLoad()
 <span class="cstat-no" title="statement not covered" >        this.startPollingLocalStorageForPreviewChanges()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >startPollingLocalStorageForPreviewChanges() {</span>
-<span class="cstat-no" title="statement not covered" >        setInterval(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            const savedQueryParamsJSON = localStorage.getI</span>tem(
-<span class="cstat-no" title="statement not covered" >                `${UNSAVED_EXPLORER_PREVIEW_QUERYPARAMS}${this.program.slug}`</span>
-<span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>            if (typeof savedQueryParamsJSON === "string")
-<span class="cstat-no" title="statement not covered" >                this.program.</span>decisionMatrix.setValuesFromChoiceParams(
-<span class="cstat-no" title="statement not covered" >                    JSON.parse(sav</span>edQueryParamsJSON) as ExplorerChoiceParams
-<span class="cstat-no" title="statement not covered" ></span>                )
+    @action.bound private startPollingLocalStorageForPreviewChanges() {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        setInterval(() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const savedQueryP</span>aramsJSON = localStorage.getItem(
+<span class="cstat-no" title="statement not covered" >                `${UNSAVED_EXPLORE</span>R_PREVIEW_QUERYPARAMS}${this.program.slug}`
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" >            if (typeof savedQueryPa</span>ramsJSON === "string")
+<span class="cstat-no" title="statement not covered" >                this</span>.program.decisionMatrix.setValuesFromChoiceParams(
+<span class="cstat-no" title="statement not covered" >                    JSON.parse(savedQueryParamsJSON) as Explor</span>erChoiceParams
+<span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >        }, 1000)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable isReady = false
 &nbsp;
     @action <span class="fstat-no" title="function not covered" >componentWillUnmount() {</span>
-<span class="cstat-no" title="statement not covered" >        this.res</span>etLoadingModal()
+<span class="cstat-no" title="statement not covered" >        this.resetLoadingModal()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private gitCmsClient = new GitCmsClient(GIT_CMS_BASE_ROUTE)
 &nbsp;
     @action.bound private async <span class="fstat-no" title="function not covered" >fetchExplorerProgramOnLoad() {</span>
-<span class="cstat-no" title="statement not covered" >        cons</span>t { slug } = this.props
+<span class="cstat-no" title="statement not covered" >        const { slug } = this.</span>props
 <span class="cstat-no" title="statement not covered" ></span>        const response = await this.gitCmsClient.readRemoteFile({
-<span class="cstat-no" title="statement not covered" >            filepath: m</span>akeFullPath(slug),
+<span class="cstat-no" title="statement not covered" >            filepath: </span>makeFullPath(slug),
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        this.programOnDisk = n</span>ew ExplorerProgram("", response.content ?? "")
-<span class="cstat-no" title="statement not covered" ></span>        this.setProgram(this.draftIfAny ?? this.programOnDisk.toString())
-<span class="cstat-no" title="statement not covered" >        this.isReady =</span> true
-<span class="cstat-no" title="statement not covered" >        if (this.isModified)</span>
-<span class="cstat-no" title="statement not covered" ></span>            alert(
-<span class="cstat-no" title="statement not covered" >                `Your b</span>rowser has a changed draft of '${slug}'. If you want to clear your local changes, click the "Clear Changes" button in the top right.`
-<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" ></span>        this.programOnDisk = new ExplorerProgram("", response.content ?? "")
+<span class="cstat-no" title="statement not covered" >        this.setProgram</span>(this.draftIfAny ?? this.programOnDisk.toString())
+<span class="cstat-no" title="statement not covered" >        this.isReady = true</span>
+<span class="cstat-no" title="statement not covered" ></span>        if (this.isModified)
+<span class="cstat-no" title="statement not covered" >            alert(</span>
+<span class="cstat-no" title="statement not covered" >                `Your browser has a changed draft of '${slug}'. If you want to clear your local c</span>hanges, click the "Clear Changes" button in the top right.`
+<span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >setProgram(code: string) {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.program = new ExplorerProgram(this.program.slug, code)
+<span class="cstat-no" title="statement not covered" >        this.program = new ExplorerPro</span>gram(this.program.slug, code)
 <span class="cstat-no" title="statement not covered" >        this.saveDraft(code)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private <span class="fstat-no" title="function not covered" >saveDraft(code: string) {</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.setItem(UNSAVED_EXPLORER_DRAFT + </span>this.program.slug, code)
+<span class="cstat-no" title="statement not covered" >        localSto</span>rage.setItem(UNSAVED_EXPLORER_DRAFT + this.program.slug, code)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get draftIfAny<span class="fstat-no" title="function not covered" >() {</span>
-<span class="cstat-no" title="statement not covered" >        return l</span>ocalStorage.getItem(UNSAVED_EXPLORER_DRAFT + this.program.slug)
+<span class="cstat-no" title="statement not covered" >        return localStorage.get</span>Item(UNSAVED_EXPLORER_DRAFT + this.program.slug)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     private <span class="fstat-no" title="function not covered" >clearDraft() {</span>
-<span class="cstat-no" title="statement not covered" >        localStorage.removeItem</span>(UNSAVED_EXPLORER_DRAFT + this.program.slug)
+<span class="cstat-no" title="statement not covered" >        localStorage.removeItem(UNSAVED_EXPLORER_DRAFT + this.</span>program.slug)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable.ref private programOnDisk = new ExplorerProgram("", "")
@@ -1120,57 +1132,57 @@ export class ExplorerCreatePage extends React.Component&lt;{
     @observable.ref private program = new ExplorerProgram(this.props.slug, "")
 &nbsp;
     @action.bound private async _save(slug: string, commitMessage: string) {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.loadingModalOn()</span></span>
-<span class="cstat-no" title="statement not covered" >        this.program.slug</span> = slug
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.l</span>oadingModalOn()</span>
+<span class="cstat-no" title="statement not covered" >        this.program.slug = slug</span>
 <span class="cstat-no" title="statement not covered" >        await this.gitCmsClient.writeRemoteFile({</span>
 <span class="cstat-no" title="statement not covered" >            filepath: th</span>is.program.fullPath,
 <span class="cstat-no" title="statement not covered" >            co</span>ntent: this.program.toString(),
 <span class="cstat-no" title="statement not covered" >            commitMessage,</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >        this.loadingModa</span>lOff()
-<span class="cstat-no" title="statement not covered" >        this.p</span>rogramOnDisk = new ExplorerProgram("", this.program.toString())
-<span class="cstat-no" title="statement not covered" >        this.setProgram(this.programOnDisk.toString())</span>
+<span class="cstat-no" title="statement not covered" >        this</span>.loadingModalOff()
+<span class="cstat-no" title="statement not covered" ></span>        this.programOnDisk = new ExplorerProgram("", this.program.toString())
+<span class="cstat-no" title="statement not covered" >        this.setProgr</span>am(this.programOnDisk.toString())
 <span class="cstat-no" title="statement not covered" >        this.clearDraft()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private async saveAs() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const userSlug = prompt(</span></span>
-<span class="cstat-no" title="statement not covered" >            `Create </span>a slug (URL friendly name) for this explorer. Your new file will be pushed to the '${this.props.gitCmsBranchName}' branch on GitHub.`,
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        const userSlug = prompt(</span>
+<span class="cstat-no" title="statement not covered" >            `</span>Create a slug (URL friendly name) for this explorer. Your new file will be pushed to the '${this.props.gitCmsBranchName}' branch on GitHub.`,
 <span class="cstat-no" title="statement not covered" >            this.program.slug</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" ></span>        if (!userSlug) return
-<span class="cstat-no" title="statement not covered" >        const</span> slug = slugify(userSlug)
+<span class="cstat-no" title="statement not covered" >        if (!userSlug) return</span>
+<span class="cstat-no" title="statement not covered" >        const slug = slu</span>gify(userSlug)
 <span class="cstat-no" title="statement not covered" >        if (!slug) {</span>
-<span class="cstat-no" title="statement not covered" >            alert(`'${slug}' is not a valid slug`)</span>
-<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" ></span>            alert(`'${slug}' is not a valid slug`)
+<span class="cstat-no" title="statement not covered" ></span>            return
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (new Set(RESERVED_NAMES).has(slug.toLowerCase())) {</span>
 <span class="cstat-no" title="statement not covered" ></span>            alert(
 <span class="cstat-no" title="statement not covered" ></span>                `Cannot save '${userSlug}' because that is one of the reserved names: ${RESERVED_NAMES.join(
-<span class="cstat-no" title="statement not covered" >                    ", </span>"
+<span class="cstat-no" title="statement not covered" >                    ", "</span>
 <span class="cstat-no" title="statement not covered" >                )}`</span>
-<span class="cstat-no" title="statement not covered" ></span>            )
-<span class="cstat-no" title="statement not covered" >            ret</span>urn
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        await this._save(sl</span>ug, `Saving ${this.program.slug} as ${slug}`)
-<span class="cstat-no" title="statement not covered" >        window.location.href = slu</span>g
+<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >            return</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
+<span class="cstat-no" title="statement not covered" >        await t</span>his._save(slug, `Saving ${this.program.slug} as ${slug}`)
+<span class="cstat-no" title="statement not covered" >        window.location.hre</span>f = slug
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound private clearChanges() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        if (!confirm("Are y</span>ou sure you want to clear your local changes?"))</span>
+    @action.bound private <span class="fstat-no" title="function not covered" >clearChanges() {</span>
+<span class="cstat-no" title="statement not covered" >        if (!confirm("Are you sure you want to clear your local changes?"))</span>
 <span class="cstat-no" title="statement not covered" >            return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        this.setProgram(this.programOnDisk.to</span>String())
+<span class="cstat-no" title="statement not covered" >        this.setProgram(this.programOnDisk.toString())</span>
 <span class="cstat-no" title="statement not covered" >        this.clearDraft()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private async <span class="fstat-no" title="function not covered" >save() {</span>
 <span class="cstat-no" title="statement not covered" >        const commitMessage = prompt(</span>
-<span class="cstat-no" title="statement not covered" >            `Enter a message describing this change. Your change will be pushed to the '${this.props.gitCmsBranchName}' on GitHub.`,</span>
+<span class="cstat-no" title="statement not covered" >            `Enter a message describing this change. Your change will be pushed to</span> the '${this.props.gitCmsBranchName}' on GitHub.`,
 <span class="cstat-no" title="statement not covered" >            `Updated ${this.program.slug}`</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >        if (!commitMessage) return</span>
-<span class="cstat-no" title="statement not covered" >        await this._save(this.program.slug, commitMessage)</span>
+<span class="cstat-no" title="statement not covered" >        await this._save(this.pr</span>ogram.slug, commitMessage)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get isModified() {
@@ -1180,23 +1192,23 @@ export class ExplorerCreatePage extends React.Component&lt;{
     @observable gitCmsBranchName = this.props.gitCmsBranchName
 &nbsp;
     @action.bound private <span class="fstat-no" title="function not covered" >onSave() {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.program.isNewFile) this.saveAs()</span>
-<span class="cstat-no" title="statement not covered" >        else if (this.isModified) this.save()</span>
+<span class="cstat-no" title="statement not covered" ></span>        if (this.program.isNewFile) this.saveAs()
+<span class="cstat-no" title="statement not covered" ></span>        else if (this.isModified) this.save()
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render() {
         if (!this.isReady) return &lt;LoadingIndicator /&gt;
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >        const { prog</span>ram, isModified } = this
-<span class="cstat-no" title="statement not covered" >        const { isNewFile, slug } = program</span>
-<span class="cstat-no" title="statement not covered" >        const</span> previewLink = `/admin/${EXPLORERS_PREVIEW_ROUTE}/${slug}`
+<span class="cstat-no" title="statement not covered" >        const { program, isModified } = this</span>
+<span class="cstat-no" title="statement not covered" >        const</span> { isNewFile, slug } = program
+<span class="cstat-no" title="statement not covered" >        const previewLin</span>k = `/admin/${EXPLORERS_PREVIEW_ROUTE}/${slug}`
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const buttons = []</span>
+<span class="cstat-no" title="statement not covered" >        const</span> buttons = []
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        buttons.push(</span>
-<span class="cstat-no" title="statement not covered" >            &lt;button</span>
-<span class="cstat-no" title="statement not covered" ></span>                key="save"
-<span class="cstat-no" title="statement not covered" >                disabled</span>={!isModified &amp;&amp; !isNewFile}
+<span class="cstat-no" title="statement not covered" >            &lt;</span>button
+<span class="cstat-no" title="statement not covered" >                ke</span>y="save"
+<span class="cstat-no" title="statement not covered" >                disabled={!isModified &amp;&amp; !isNewFile}</span>
                 className={classNames("btn", "btn-primary")}
                 onClick={this.onSave}
                 title="Saves file to disk, commits and pushes to GitHub"
@@ -1211,8 +1223,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
                 disabled={isNewFile}
                 title={
                     isNewFile
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                        ? "You need to save this file first."</span>
-<span class="cstat-no" title="statement not covered" >                        : "Saves file to disk, commits and pushes to G</span>itHub"
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? "You need to save this file </span></span>first."</span>
+<span class="cstat-no" title="statement not covered" ></span>                        : "Saves file to disk, commits and pushes to GitHub"
                 }
                 className={classNames("btn", "btn-secondary")}
                 onClick={this.saveAs}
@@ -1233,8 +1245,8 @@ export class ExplorerCreatePage extends React.Component&lt;{
             &lt;/button&gt;
         )
 &nbsp;
-        const modifiedMessage = isModified<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >            ?</span> "Are you sure you want to leave? You have unsaved changes."
+        const modifiedMessage = isModified
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? "Are you</span></span> sure you want to leave? You have unsaved changes."</span>
             : "" // todo: provide an explanation of how many cells are modified.
 &nbsp;
         return (
@@ -1270,15 +1282,15 @@ export class ExplorerCreatePage extends React.Component&lt;{
     }
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >class HotEditor extends React.Component</span>&lt;{</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >class HotEditor extends React.Component&lt;{</span></span>
 <span class="cstat-no" title="statement not covered" >    onChange: (code: string) =&gt; void</span>
-<span class="cstat-no" title="statement not covered" >    program: ExplorerProgram</span>
-<span class="cstat-no" title="statement not covered" >    programOnDisk: E</span>xplorerProgram
+<span class="cstat-no" title="statement not covered" >    program: Explorer</span>Program
+<span class="cstat-no" title="statement not covered" >    programOnDisk: Explo</span>rerProgram
 <span class="cstat-no" title="statement not covered" >}&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    private hotTableComponent = React.createRef&lt;HotTable&gt;()</span>
+<span class="cstat-no" title="statement not covered" >    private hotTableComponent = React.c</span>reateRef&lt;HotTable&gt;()
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    @computed private ge</span>t program() {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return t</span>his.props.program</span>
+<span class="cstat-no" title="statement not covered" >    @computed private get program<span class="fstat-no" title="function not covered" >() {</span></span>
+<span class="cstat-no" title="statement not covered" >        return this.props.program</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    @computed private get programOnDisk<span class="fstat-no" title="function not covered" >() {</span></span>
@@ -1286,125 +1298,125 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    @action.bound private <span class="fstat-no" title="function not covered" >updateProgramFromHot() {</span></span>
-<span class="cstat-no" title="statement not covered" >        const newVersion =</span>
-<span class="cstat-no" title="statement not covered" >            this.hotTableComponent.current?.hotInsta</span>nce.getData() as CoreMatrix
-<span class="cstat-no" title="statement not covered" >        if (!newVersi</span>on) return
+<span class="cstat-no" title="statement not covered" >        const </span>newVersion =
+<span class="cstat-no" title="statement not covered" >            this.hotTableComponent.current?.hotInstance?.getDat</span>a() as CoreMatrix
+<span class="cstat-no" title="statement not covered" >        if (!newVersion) return</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const </span>newProgram = ExplorerProgram.fromMatrix(
+<span class="cstat-no" title="statement not covered" >        const newProgram = ExplorerProgram.fromMatrix(</span>
 <span class="cstat-no" title="statement not covered" >            this.program.slug,</span>
 <span class="cstat-no" title="statement not covered" >            newVersion</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        if (this.program.toString() === newProgram.toString()) return</span>
-<span class="cstat-no" title="statement not covered" >        this.props.onChange(newProgram.toString())</span>
+<span class="cstat-no" title="statement not covered" >        if (this.program.toString() === newProgram.toStr</span>ing()) return
+<span class="cstat-no" title="statement not covered" >        this.p</span>rops.onChange(newProgram.toString())
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    private get hotSettings<span class="fstat-no" title="function not covered" >() {</span></span>
-<span class="cstat-no" title="statement not covered" >        const </span>{ program, programOnDisk } = this
-<span class="cstat-no" title="statement not covered" >        const data = program.asArra</span>ys
+<span class="cstat-no" title="statement not covered" >    private get hotSettings<span class="fstat-no" title="function not covered" >() </span>{</span>
+<span class="cstat-no" title="statement not covered" >        const { program, programOnDisk } = this</span>
+<span class="cstat-no" title="statement not covered" >        const data = program.asArrays</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { currentlySelec</span>tedGrapherRow } = program
+<span class="cstat-no" title="statement not covered" >        const { currentlySelectedGraph</span>erRow } = program
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const cells = function (row: number, column: number) {</span>
+<span class="cstat-no" title="statement not covered" >        const cells = function (</span>row: number, column: number) {
 <span class="cstat-no" title="statement not covered" >            const {</span>
-<span class="cstat-no" title="statement not covered" >                comment,</span>
+<span class="cstat-no" title="statement not covered" >                com</span>ment,
 <span class="cstat-no" title="statement not covered" >                cssClasses,</span>
-<span class="cstat-no" title="statement not covered" >                optionKeywords,</span>
-<span class="cstat-no" title="statement not covered" >                placeholder,</span>
-<span class="cstat-no" title="statement not covered" >                con</span>tents,
-<span class="cstat-no" title="statement not covered" >            } = program.getCel</span>l({ row, column })
+<span class="cstat-no" title="statement not covered" >                optionKeywor</span>ds,
+<span class="cstat-no" title="statement not covered" >                placeholder</span>,
+<span class="cstat-no" title="statement not covered" >                contents,</span>
+<span class="cstat-no" title="statement not covered" >            } = program.getCell({ row, column })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const cellConte</span>ntsOnDisk = programOnDisk.getCellContents({
+<span class="cstat-no" title="statement not covered" >            const cellContentsOnDisk = programOnDisk.getCellContents({</span>
 <span class="cstat-no" title="statement not covered" >                row,</span>
 <span class="cstat-no" title="statement not covered" >                column,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const cellProperties: Partial&lt;Handso</span>ntable.CellProperties&gt; = {}
+<span class="cstat-no" title="statement not covered" >            const cellProperties: Pa</span>rtial&lt;Handsontable.CellProperties&gt; = {}
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const allClasses = cssC</span>lasses?.slice() ?? []
+<span class="cstat-no" title="statement not covered" >            const allClasses = cssClasses?.slice</span>() ?? []
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (cellContentsOnDisk !</span>== contents) {
-<span class="cstat-no" title="statement not covered" >                if (contents === "" </span>&amp;&amp; cellContentsOnDisk === undefined)
-<span class="cstat-no" title="statement not covered" >                    allClasses.push("cellCreated</span>")
-<span class="cstat-no" title="statement not covered" >                else if (isEmp</span>ty(contents)) allClasses.push("cellDeleted")
-<span class="cstat-no" title="statement not covered" >                else if (isEmp</span>ty(cellContentsOnDisk))
-<span class="cstat-no" title="statement not covered" >                    allClasses.push("cellCreated</span>")
-<span class="cstat-no" title="statement not covered" >                else allClasse</span>s.push("cellChanged")
+<span class="cstat-no" title="statement not covered" >            if (cellContentsOn</span>Disk !== contents) {
+<span class="cstat-no" title="statement not covered" >                if (contents === "" &amp;&amp; cellConte</span>ntsOnDisk === undefined)
+<span class="cstat-no" title="statement not covered" >                    allClasses</span>.push("cellCreated")
+<span class="cstat-no" title="statement not covered" >                else if (isEm</span>pty(contents)) allClasses.push("cellDeleted")
+<span class="cstat-no" title="statement not covered" >                els</span>e if (isEmpty(cellContentsOnDisk))
+<span class="cstat-no" title="statement not covered" ></span>                    allClasses.push("cellCreated")
+<span class="cstat-no" title="statement not covered" >                else allClasses.push("cellChanged")</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if </span>(currentlySelectedGrapherRow === row &amp;&amp; column)
-<span class="cstat-no" title="statement not covered" >                al</span>lClasses.push(`currentlySelectedGrapherRow`)
+<span class="cstat-no" title="statement not covered" >            if (currentlySelected</span>GrapherRow === row &amp;&amp; column)
+<span class="cstat-no" title="statement not covered" >                allClasses.push(`current</span>lySelectedGrapherRow`)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            cellProperties.className =</span> allClasses.join(" ")
-<span class="cstat-no" title="statement not covered" >            cellProperties.commen</span>t = comment ? { value: comment } : undefined
-<span class="cstat-no" title="statement not covered" >            cellProperties.placeholder =</span> placeholder
+<span class="cstat-no" title="statement not covered" >            cellPropertie</span>s.className = allClasses.join(" ")
+<span class="cstat-no" title="statement not covered" >            cellProperties.com</span>ment = comment ? { value: comment } : undefined
+<span class="cstat-no" title="statement not covered" >            cellProperties.pla</span>ceholder = placeholder
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (optionKey</span>words &amp;&amp; optionKeywords.length) {
-<span class="cstat-no" title="statement not covered" >                cellProperties</span>.type = "autocomplete"
-<span class="cstat-no" title="statement not covered" >                cellProperties</span>.source = optionKeywords
-<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >            if (optionKeyword</span>s &amp;&amp; optionKeywords.length) {
+<span class="cstat-no" title="statement not covered" >                cellPropert</span>ies.type = "autocomplete"
+<span class="cstat-no" title="statement not covered" >                cellPropertie</span>s.source = optionKeywords
+<span class="cstat-no" title="statement not covered" ></span>            }
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            return cellProp</span>erties
+<span class="cstat-no" title="statement not covered" ></span>            return cellProperties
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const hotSettings: H</span>andsontable.GridSettings = {
+<span class="cstat-no" title="statement not covered" ></span>        const hotSettings: Handsontable.GridSettings = {
 <span class="cstat-no" title="statement not covered" ></span>            afterChange: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            aft</span>erRemoveRow: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            afterRemoveCol: () =&gt; this.updateProgramFromHot(),</span>
-<span class="cstat-no" title="statement not covered" ></span>            allowInsertColumn: false,
-<span class="cstat-no" title="statement not covered" ></span>            allowInsertRow: true,
-<span class="cstat-no" title="statement not covered" >            a</span>utoRowSize: false,
-<span class="cstat-no" title="statement not covered" >            autoColu</span>mnSize: false,
-<span class="cstat-no" title="statement not covered" >            cells,</span>
-<span class="cstat-no" title="statement not covered" >            c</span>olHeaders: true,
-<span class="cstat-no" title="statement not covered" >            comments</span>: true,
+<span class="cstat-no" title="statement not covered" >            a</span>fterRemoveRow: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            afterRem</span>oveCol: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            allowInsertColumn: false,</span>
+<span class="cstat-no" title="statement not covered" >            a</span>llowInsertRow: true,
+<span class="cstat-no" title="statement not covered" >            autoRowS</span>ize: false,
+<span class="cstat-no" title="statement not covered" >            autoColumnSize: false,</span>
+<span class="cstat-no" title="statement not covered" >            c</span>ells,
+<span class="cstat-no" title="statement not covered" >            colHeaders: </span>true,
+<span class="cstat-no" title="statement not covered" >            comments: true,</span>
 <span class="cstat-no" title="statement not covered" >            contextMenu: {</span>
 <span class="cstat-no" title="statement not covered" ></span>                items: {
-<span class="cstat-no" title="statement not covered" >                    Auto</span>fillColDefCommand: new AutofillColDefCommand(
-<span class="cstat-no" title="statement not covered" >                        program,</span>
-<span class="cstat-no" title="statement not covered" >                        (newProgram: string) =&gt; this.props.</span>onChange(newProgram)
-<span class="cstat-no" title="statement not covered" ></span>                    ).toHotCommand(),
-<span class="cstat-no" title="statement not covered" >                    InlineDataCommand: new InlineDataCommand(</span>
+<span class="cstat-no" title="statement not covered" >                    AutofillColDefCommand: new AutofillColDefCommand(</span>
 <span class="cstat-no" title="statement not covered" ></span>                        program,
 <span class="cstat-no" title="statement not covered" ></span>                        (newProgram: string) =&gt; this.props.onChange(newProgram)
 <span class="cstat-no" title="statement not covered" >                    ).toHotCommand(),</span>
+<span class="cstat-no" title="statement not covered" ></span>                    InlineDataCommand: new InlineDataCommand(
+<span class="cstat-no" title="statement not covered" >                        progr</span>am,
+<span class="cstat-no" title="statement not covered" >                        (newP</span>rogram: string) =&gt; this.props.onChange(newProgram)
+<span class="cstat-no" title="statement not covered" >                    ).toHotCommand(),</span>
 <span class="cstat-no" title="statement not covered" ></span>                    SelectAllHitsCommand: new SelectAllHitsCommand(
 <span class="cstat-no" title="statement not covered" >                        progr</span>am
-<span class="cstat-no" title="statement not covered" >                    ).toHotCo</span>mmand(),
-<span class="cstat-no" title="statement not covered" >                    sp0: { name: "---------" },</span>
+<span class="cstat-no" title="statement not covered" >                    ).toHotCommand(),</span>
+<span class="cstat-no" title="statement not covered" >                    sp0</span>: { name: "---------" },
 <span class="cstat-no" title="statement not covered" ></span>                    row_above: {},
-<span class="cstat-no" title="statement not covered" >                    row_below</span>: {},
-<span class="cstat-no" title="statement not covered" >                    sp1: { name: "---------" },</span>
-<span class="cstat-no" title="statement not covered" >                    rem</span>ove_row: {},
+<span class="cstat-no" title="statement not covered" >                    row_be</span>low: {},
+<span class="cstat-no" title="statement not covered" >                    sp1: { name: "</span>---------" },
+<span class="cstat-no" title="statement not covered" >                    remove_row: {},</span>
 <span class="cstat-no" title="statement not covered" ></span>                    remove_col: {},
-<span class="cstat-no" title="statement not covered" >                    sp2: {</span> name: "---------" },
+<span class="cstat-no" title="statement not covered" >                    sp2: { na</span>me: "---------" },
 <span class="cstat-no" title="statement not covered" >                    undo: {},</span>
 <span class="cstat-no" title="statement not covered" >                    redo: {},</span>
-<span class="cstat-no" title="statement not covered" ></span>                    sp3: { name: "---------" },
+<span class="cstat-no" title="statement not covered" >                    sp3: { name: "--</span>-------" },
 <span class="cstat-no" title="statement not covered" >                    copy: {},</span>
-<span class="cstat-no" title="statement not covered" >                    cut: {},</span>
+<span class="cstat-no" title="statement not covered" ></span>                    cut: {},
 <span class="cstat-no" title="statement not covered" >                },</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            data,</span>
-<span class="cstat-no" title="statement not covered" >            heig</span>ht: "100%",
+<span class="cstat-no" title="statement not covered" ></span>            },
+<span class="cstat-no" title="statement not covered" ></span>            data: toRectangularMatrix(data, undefined),
+<span class="cstat-no" title="statement not covered" >            hei</span>ght: "100%",
 <span class="cstat-no" title="statement not covered" >            manualColumnResize: true,</span>
-<span class="cstat-no" title="statement not covered" ></span>            manualRowMove: true,
-<span class="cstat-no" title="statement not covered" ></span>            minCols: program.width + 3,
-<span class="cstat-no" title="statement not covered" >            min</span>SpareCols: 2,
-<span class="cstat-no" title="statement not covered" >            minRows: 40,</span>
-<span class="cstat-no" title="statement not covered" >            minSpareRows: 20,</span>
-<span class="cstat-no" title="statement not covered" >            rowHeaders: true,</span>
-<span class="cstat-no" title="statement not covered" ></span>            search: true,
-<span class="cstat-no" title="statement not covered" ></span>            stretchH: "all",
-<span class="cstat-no" title="statement not covered" >            w</span>idth: "100%",
-<span class="cstat-no" title="statement not covered" >            wordWrap: fa</span>lse,
+<span class="cstat-no" title="statement not covered" >            manualRowMove: true,</span>
+<span class="cstat-no" title="statement not covered" >            minCols: program.width </span>+ 3,
+<span class="cstat-no" title="statement not covered" ></span>            minSpareCols: 2,
+<span class="cstat-no" title="statement not covered" ></span>            minRows: 40,
+<span class="cstat-no" title="statement not covered" >            m</span>inSpareRows: 20,
+<span class="cstat-no" title="statement not covered" >            rowHeaders: </span>true,
+<span class="cstat-no" title="statement not covered" >            search: true,</span>
+<span class="cstat-no" title="statement not covered" >            s</span>tretchH: "all",
+<span class="cstat-no" title="statement not covered" >            width: "100%",</span>
+<span class="cstat-no" title="statement not covered" >            wordWrap: false,</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return hotSettings</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    render() {</span></span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            &lt;HotTable</span>
+&nbsp;
+    render() {
+        return (
+            &lt;HotTable
                 settings={this.hotSettings}
                 ref={this.hotTableComponent as any}
                 licenseKey={"non-commercial-and-evaluation"}
@@ -1474,7 +1486,7 @@ class TemplatesComponent extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Oct 20 2021 19:42:25 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 21 2021 09:40:56 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
