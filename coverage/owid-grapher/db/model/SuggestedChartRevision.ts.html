@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.24% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>52/136</span>
+                <span class='fraction'>56/140</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.24% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>52/136</span>
+                <span class='fraction'>56/140</span>
             </div>
         
             
@@ -179,7 +179,15 @@
 <a name='L120'></a><a href='#L120'>120</a>
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
-<a name='L123'></a><a href='#L123'>123</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -314,7 +322,11 @@ export class SuggestedChartRevision extends BaseEntity {
     @Column() createdBy!: number
     @Column() updatedBy!: number
 &nbsp;
-    @Column({ type: "enum", default: SuggestedChartRevisionStatus.pending })
+    @Column({
+        type: "enum",
+        enum: SuggestedChartRevisionStatus,
+        default: SuggestedChartRevisionStatus.pending,
+    })
     status!: SuggestedChartRevisionStatus
 &nbsp;
     @Column({ default: "" }) suggestedReason!: string
@@ -330,66 +342,66 @@ export class SuggestedChartRevision extends BaseEntity {
     canPending?: boolean
 &nbsp;
     static <span class="fstat-no" title="function not covered" >isValidStatus(status: SuggestedChartRevisionStatus): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        return</span> Object.values(SuggestedChartRevisionStatus).includes(status)
+<span class="cstat-no" title="statement not covered" >        return Object.values(S</span>uggestedChartRevisionStatus).includes(status)
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     static <span class="fstat-no" title="function not covered" >checkCanApprove(</span>
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision</span>: SuggestedChartRevision
-<span class="cstat-no" title="statement not covered" >    ): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        // note: a suggestion can be </span>approved if status == "rejected" |
-<span class="cstat-no" title="statement not covered" >        // "flagged" | "pending" AND the original c</span>onfig version equals
-<span class="cstat-no" title="statement not covered" >        // the existing c</span>onfig version (i.e. the existing chart has not
-<span class="cstat-no" title="statement not covered" >        //</span> been changed since the suggestion was created).
-<span class="cstat-no" title="statement not covered" >        const status =</span> suggestedChartRevision.status
-<span class="cstat-no" title="statement not covered" ></span>        const originalVersion = suggestedChartRevision.originalConfig?.version
-<span class="cstat-no" title="statement not covered" >        const existingVersion = suggestedChartRevisi</span>on.existingConfig?.version
-<span class="cstat-no" title="statement not covered" >        const origin</span>alVersionExists =
-<span class="cstat-no" title="statement not covered" >            originalVersion !== null &amp;&amp; originalVersion !== unde</span>fined
+<span class="cstat-no" title="statement not covered" >        suggestedChartRev</span>ision: SuggestedChartRevision
+<span class="cstat-no" title="statement not covered" >    ): boo</span>lean {
+<span class="cstat-no" title="statement not covered" >        // note: a sug</span>gestion can be approved if status == "rejected" |
+<span class="cstat-no" title="statement not covered" ></span>        // "flagged" | "pending" AND the original config version equals
+<span class="cstat-no" title="statement not covered" >        // the existing config version (i.e. the exi</span>sting chart has not
+<span class="cstat-no" title="statement not covered" >        // been chan</span>ged since the suggestion was created).
+<span class="cstat-no" title="statement not covered" >        const status = suggestedChartRevision.status</span>
+<span class="cstat-no" title="statement not covered" >        const originalVersion = suggestedChartRevision.originalConfig?</span>.version
+<span class="cstat-no" title="statement not covered" >        const existingVersion = suggestedChartRevision.existingConfig?</span>.version
+<span class="cstat-no" title="statement not covered" >        const originalVersionExists =</span>
+<span class="cstat-no" title="statement not covered" >            originalVersio</span>n !== null &amp;&amp; originalVersion !== undefined
 <span class="cstat-no" title="statement not covered" >        const existingVersionExists =</span>
 <span class="cstat-no" title="statement not covered" >            existingVersion !== null &amp;&amp; existingVersion !== undefined</span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
 <span class="cstat-no" title="statement not covered" >            [</span>
 <span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.rejected,</span>
-<span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.flagged,</span>
+<span class="cstat-no" title="statement not covered" ></span>                SuggestedChartRevisionStatus.flagged,
 <span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.pending,</span>
 <span class="cstat-no" title="statement not covered" >            ].includes(status) &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            originalVersionExists &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >            ex</span>istingVersionExists &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            originalVersion === existingVersion</span>
+<span class="cstat-no" title="statement not covered" >            originalVersionExi</span>sts &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            existingVersi</span>onExists &amp;&amp;
+<span class="cstat-no" title="statement not covered" ></span>            originalVersion === existingVersion
 <span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >            return true</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        re</span>turn false
+<span class="cstat-no" title="statement not covered" >        return false</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     static <span class="fstat-no" title="function not covered" >checkCanReject(</span>
-<span class="cstat-no" title="statement not covered" >        suggestedChartRevision: SuggestedChartRevisi</span>on
+<span class="cstat-no" title="statement not covered" ></span>        suggestedChartRevision: SuggestedChartRevision
 <span class="cstat-no" title="statement not covered" >    ): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        //</span> note: a suggestion can be rejected if: (1) status ==
-<span class="cstat-no" title="statement not covered" >        // "pending" |</span> "flagged"; or (2) status == "approved" and the
-<span class="cstat-no" title="statement not covered" ></span>        // suggested config version equals the existing chart version
-<span class="cstat-no" title="statement not covered" >        // (i.e. the existing chart has not change</span>d since the suggestion
+<span class="cstat-no" title="statement not covered" >        // note: a suggestion can be rejected if: (1) status ==</span>
+<span class="cstat-no" title="statement not covered" >        // "pending" | "flagged"; or (2) status == "approved" and t</span>he
+<span class="cstat-no" title="statement not covered" >        // suggested config version equals the existing chart version</span>
+<span class="cstat-no" title="statement not covered" >        // (i.e. the existing chart has not changed since the suggestio</span>n
 <span class="cstat-no" title="statement not covered" >        // was approved).</span>
 <span class="cstat-no" title="statement not covered" >        const status = suggestedChartRevision.status</span>
-<span class="cstat-no" title="statement not covered" >        const suggestedVersion = suggestedChartRevision.suggestedConf</span>ig?.version
-<span class="cstat-no" title="statement not covered" >        const existingVersion = suggestedChartRevision.existingConfig?.</span>version
+<span class="cstat-no" title="statement not covered" >        const </span>suggestedVersion = suggestedChartRevision.suggestedConfig?.version
+<span class="cstat-no" title="statement not covered" >        const existingVersion = suggestedChartRevision.existingConfig?.vers</span>ion
 <span class="cstat-no" title="statement not covered" >        const suggestedVersionExists =</span>
-<span class="cstat-no" title="statement not covered" >            suggestedVersion !== null &amp;&amp; suggestedVers</span>ion !== undefined
-<span class="cstat-no" title="statement not covered" >        const </span>existingVersionExists =
-<span class="cstat-no" title="statement not covered" >            existingVersion !== null &amp;&amp; existingVersion !== undefined</span>
+<span class="cstat-no" title="statement not covered" >            suggestedVersion !</span>== null &amp;&amp; suggestedVersion !== undefined
+<span class="cstat-no" title="statement not covered" >        const existingVer</span>sionExists =
+<span class="cstat-no" title="statement not covered" ></span>            existingVersion !== null &amp;&amp; existingVersion !== undefined
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" >            [</span>
-<span class="cstat-no" title="statement not covered" >                Suggested</span>ChartRevisionStatus.flagged,
-<span class="cstat-no" title="statement not covered" ></span>                SuggestedChartRevisionStatus.pending,
+<span class="cstat-no" title="statement not covered" ></span>            [
+<span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.flagged,</span>
+<span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.pending,</span>
 <span class="cstat-no" title="statement not covered" >            ].includes</span>(status)
 <span class="cstat-no" title="statement not covered" ></span>        ) {
-<span class="cstat-no" title="statement not covered" >            return true</span>
+<span class="cstat-no" title="statement not covered" ></span>            return true
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" ></span>            status === "approved" &amp;&amp;
-<span class="cstat-no" title="statement not covered" ></span>            suggestedVersionExists &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            status === "approved" &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >            suggestedVersionExists &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >            e</span>xistingVersionExists &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            suggestedVersion === existingVers</span>ion
+<span class="cstat-no" title="statement not covered" >            suggestedVersion </span>=== existingVersion
 <span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >            return true</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -399,9 +411,9 @@ export class SuggestedChartRevision extends BaseEntity {
     static <span class="fstat-no" title="function not covered" >checkCanFlag(</span>
 <span class="cstat-no" title="statement not covered" >        suggestedChartRevision: SuggestedChar</span>tRevision
 <span class="cstat-no" title="statement not covered" >    ): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        // note: a suggestion can be flagged if status == "pendin</span>g" or
+<span class="cstat-no" title="statement not covered" >        // note: a suggestion can be flagged if status == "pendi</span>ng" or
 <span class="cstat-no" title="statement not covered" >        // if</span> it is already flagged. Flagging a suggestion that is
-<span class="cstat-no" title="statement not covered" >        // already flagged is a hack for upda</span>ting the decisionReason
+<span class="cstat-no" title="statement not covered" >        // already flagged is</span> a hack for updating the decisionReason
 <span class="cstat-no" title="statement not covered" >        // column in the SuggestedChar</span>tRevisionApproverPage UI without
 <span class="cstat-no" title="statement not covered" >        // changing the status column.</span>
 <span class="cstat-no" title="statement not covered" >        const</span> status = suggestedChartRevision.status
@@ -409,11 +421,11 @@ export class SuggestedChartRevision extends BaseEntity {
 <span class="cstat-no" title="statement not covered" >            [</span>
 <span class="cstat-no" title="statement not covered" >                SuggestedChartRevisionStatus.flagged,</span>
 <span class="cstat-no" title="statement not covered" ></span>                SuggestedChartRevisionStatus.pending,
-<span class="cstat-no" title="statement not covered" >            ].includes(status</span>)
+<span class="cstat-no" title="statement not covered" >            ].includes(statu</span>s)
 <span class="cstat-no" title="statement not covered" >        ) {</span>
 <span class="cstat-no" title="statement not covered" >            return true</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        return false</span>
+<span class="cstat-no" title="statement not covered" ></span>        return false
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     static <span class="fstat-no" title="function not covered" >checkCanPending(</span>
@@ -430,7 +442,7 @@ export class SuggestedChartRevision extends BaseEntity {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 28 2021 19:17:07 GMT+0000 (Coordinated Universal Time)
+                at Thu Oct 28 2021 21:04:46 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
