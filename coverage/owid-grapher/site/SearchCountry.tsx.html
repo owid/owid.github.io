@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.07% </span>
+                <span class="strong">34.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/61</span>
+                <span class='fraction'>21/61</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.07% </span>
+                <span class="strong">34.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/61</span>
+                <span class='fraction'>21/61</span>
             </div>
         
             
@@ -132,7 +132,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -177,9 +177,8 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react"
 import ReactDOM from "react-dom"
-import Select, { ValueType } from "react-select"
+import Select from "react-select"
 import { countries } from "../clientUtils/countries"
-import { asArray } from "../clientUtils/react-select"
 import { sortBy } from "../clientUtils/Util"
 import { countryProfileSpecs } from "../site/countryProfileProjects"
 import { SiteAnalytics } from "./SiteAnalytics"
@@ -191,19 +190,20 @@ interface CountrySelectOption {
 &nbsp;
 const analytics = new SiteAnalytics()
 &nbsp;
-const SearchCountry = (<span class="fstat-no" title="function not covered" >props: { countryProfileRootPath: string }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [isLoading, setIsLoading] =</span> useState(false)
-<span class="cstat-no" title="statement not covered" >    const sorted = </span>sortBy(countries, "name")
-<span class="cstat-no" title="statement not covered" ></span>    return (
-<span class="cstat-no" title="statement not covered" >        &lt;Select</span>
+const SearchCountry = (props: { countryProfileRootPath: string }) =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const [isLoading, setIsLoading] = useState(false)</span></span>
+<span class="cstat-no" title="statement not covered" >    const sorted = sortBy(countries, </span>"name")
+<span class="cstat-no" title="statement not covered" >    return (</span>
+<span class="cstat-no" title="statement not covered" ></span>        &lt;Select
 <span class="cstat-no" title="statement not covered" >            options={sorted.map((c) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" ></span>                return { label: c.name, value: c.slug }
-<span class="cstat-no" title="statement not covered" >            })}</span>
-<span class="cstat-no" title="statement not covered" >            onChange={(selected: Va</span>lueType&lt;CountrySelectOption&gt;) =&gt; {
-<span class="cstat-no" title="statement not covered" >                const country = asArray(selected</span>)[0].value
-<span class="cstat-no" title="statement not covered" >                analytics.logCovidCountryProfileSearch(coun</span>try)
-<span class="cstat-no" title="statement not covered" >                setIsLoading(true)</span>
-<span class="cstat-no" title="statement not covered" >                window.location.href = `${props.countryPr</span>ofileRootPath}/${country}`
+<span class="cstat-no" title="statement not covered" >                return { label: c.name, value: c.slug }</span>
+<span class="cstat-no" title="statement not covered" ></span>            })}
+<span class="cstat-no" title="statement not covered" >            onChange={(selected: CountrySelectOption | null) =&gt;</span> {
+<span class="cstat-no" title="statement not covered" >                if (selected) {</span>
+<span class="cstat-no" title="statement not covered" >                    analytics.logCovidCountryPro</span>fileSearch(selected.value)
+<span class="cstat-no" title="statement not covered" >                    setIsLoading(true)</span>
+<span class="cstat-no" title="statement not covered" >                    window.location.href = `${props.countryProfil</span>eRootPath}/${selected.value}`
+<span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }}</span>
 <span class="cstat-no" title="statement not covered" >            isLoading={isLoading}</span>
 <span class="cstat-no" title="statement not covered" >            placeholder="Search for a country..."</span>
@@ -213,12 +213,12 @@ const SearchCountry = (<span class="fstat-no" title="function not covered" >prop
 &nbsp;
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export function runSearchCountry() {</span></span>
 <span class="cstat-no" title="statement not covered" >    const searchElements = document.querySelectorAll(</span>
-<span class="cstat-no" title="statement not covered" >        ".wp-block-search-country-profile"</span>
+<span class="cstat-no" title="statement not covered" >        ".wp-block-search-country-prof</span>ile"
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" >    searchElements.forEach((element) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const project = element.getAttribute("data-project")</span>
+<span class="cstat-no" title="statement not covered" >        const project = element.getA</span>ttribute("data-project")
 <span class="cstat-no" title="statement not covered" >        if (project) {</span>
-<span class="cstat-no" title="statement not covered" >            const profileSpec = countryProfileSpecs.find(</span>
+<span class="cstat-no" title="statement not covered" >            co</span>nst profileSpec = countryProfileSpecs.find(
 <span class="cstat-no" title="statement not covered" >                (spec) =&gt; spec.project === project</span>
 <span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >            if (profileSpec) {</span>
@@ -241,7 +241,7 @@ export default SearchCountry
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Oct 28 2021 21:23:55 GMT+0000 (Coordinated Universal Time)
+                at Tue Nov 02 2021 09:23:02 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
