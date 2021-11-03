@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.33% </span>
+                <span class="strong">13.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>80/600</span>
+                <span class='fraction'>81/602</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.33% </span>
+                <span class="strong">13.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>80/600</span>
+                <span class='fraction'>81/602</span>
             </div>
         
             
@@ -812,7 +812,10 @@
 <a name='L753'></a><a href='#L753'>753</a>
 <a name='L754'></a><a href='#L754'>754</a>
 <a name='L755'></a><a href='#L755'>755</a>
-<a name='L756'></a><a href='#L756'>756</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L756'></a><a href='#L756'>756</a>
+<a name='L757'></a><a href='#L757'>757</a>
+<a name='L758'></a><a href='#L758'>758</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -931,6 +934,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1619,6 +1623,7 @@ import {
     getLegacyVariableDisplayConfig,
 } from "../db/model/Variable"
 import { AnnotatingDataValue } from "../site/AnnotatingDataValue"
+import { renderAutomaticProminentLinks } from "./siteRenderers"
 &nbsp;
 const initMathJax = () =&gt; {
     const adaptor = liteAdaptor()
@@ -1792,36 +1797,36 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    html = html.replace(</span>
 <span class="cstat-no" title="statement not covered" >        dataTokenRegex,</span>
-<span class="cstat-no" title="statement not covered" >        (_, token, da</span>taTokenConfigurationString) =&gt; {
-<span class="cstat-no" title="statement not covered" >            return ReactDOMServer.renderToS</span>tring(
-<span class="cstat-no" title="statement not covered" >                &lt;DataTok</span>en
-<span class="cstat-no" title="statement not covered" >                    token={to</span>ken}
-<span class="cstat-no" title="statement not covered" >                    {...</span>parseKeyValueArgs(dataTokenConfigurationString)}
-<span class="cstat-no" title="statement not covered" ></span>                /&gt;
-<span class="cstat-no" title="statement not covered" >            )</span>
+<span class="cstat-no" title="statement not covered" >        (_, token, dataTokenConfi</span>gurationString) =&gt; {
+<span class="cstat-no" title="statement not covered" >            return Re</span>actDOMServer.renderToString(
+<span class="cstat-no" title="statement not covered" >                &lt;DataToken</span>
+<span class="cstat-no" title="statement not covered" >                    toke</span>n={token}
+<span class="cstat-no" title="statement not covered" >                    {...parse</span>KeyValueArgs(dataTokenConfigurationString)}
+<span class="cstat-no" title="statement not covered" >                /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Insert [table id=foo] tablepress tab</span>les
-<span class="cstat-no" title="statement not covered" >    const tables = await getTab</span>les()
-<span class="cstat-no" title="statement not covered" >    ht</span>ml = html.replace(/\[table\s+id=(\d+)\s*\/\]/g, (match, tableId) =&gt; {
-<span class="cstat-no" title="statement not covered" >        const table = tables.ge</span>t(tableId)
+<span class="cstat-no" title="statement not covered" >    // Insert [table id=foo] ta</span>blepress tables
+<span class="cstat-no" title="statement not covered" >    const tables = await getTables()</span>
+<span class="cstat-no" title="statement not covered" >    html = html.replace(/\[tabl</span>e\s+id=(\d+)\s*\/\]/g, (match, tableId) =&gt; {
+<span class="cstat-no" title="statement not covered" ></span>        const table = tables.get(tableId)
 <span class="cstat-no" title="statement not covered" >        if (table)</span>
-<span class="cstat-no" title="statement not covered" >            return ReactDOMServer.renderToStaticMarkup(</span>
-<span class="cstat-no" title="statement not covered" >                &lt;Tablepress da</span>ta={table.data} /&gt;
+<span class="cstat-no" title="statement not covered" >            return R</span>eactDOMServer.renderToStaticMarkup(
+<span class="cstat-no" title="statement not covered" >                &lt;Tablepress data={table.data} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        return "UNKNOWN TABLE"</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // No need f</span>or wordpress urls
-<span class="cstat-no" title="statement not covered" >    html = html.replace(new RegExp("/app/uploads", "g"),</span> "/uploads")
+<span class="cstat-no" title="statement not covered" >    // No need for wordpres</span>s urls
+<span class="cstat-no" title="statement not covered" >    html = html.</span>replace(new RegExp("/app/uploads", "g"), "/uploads")
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Give "Add country" text (a</span>nd variations) the appearance of "+ Add Country" chart control
+<span class="cstat-no" title="statement not covered" >    // Give "Add country" </span>text (and variations) the appearance of "+ Add Country" chart control
 <span class="cstat-no" title="statement not covered" >    html = html.replace(</span>
-<span class="cstat-no" title="statement not covered" ></span>        /(\+ )?[a|A]dd [c|C]ountry/g,
-<span class="cstat-no" title="statement not covered" >        `&lt;span class="add-country"&gt;</span>
+<span class="cstat-no" title="statement not covered" >        /(\+ )?[a|A]dd [c|</span>C]ountry/g,
+<span class="cstat-no" title="statement not covered" ></span>        `&lt;span class="add-country"&gt;
 <span class="cstat-no" title="statement not covered" >            &lt;span class="icon"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;svg width="16" height="16"&gt;&lt;path d=</span>"M3,8 h10 m-5,-5 v10"&gt;&lt;/path&gt;&lt;/svg&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;svg width="16" height="16"&gt;&lt;path d="M3,8 h10 m-5,-5 v10"&gt;&lt;/path&gt;&lt;/svg&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/span&gt;</span>
 <span class="cstat-no" title="statement not covered" >            Add country</span>
 <span class="cstat-no" title="statement not covered" >        &lt;/span&gt;`</span>
@@ -1830,21 +1835,21 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >    const cheerioEl = cheerio.load(html)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Related charts</span>
-<span class="cstat-no" title="statement not covered" >    // Mimicking SSR output of additional informati</span>on block from PHP
+<span class="cstat-no" title="statement not covered" >    // Mimicking SSR output of additional informat</span>ion block from PHP
 <span class="cstat-no" title="statement not covered" >    if (</span>
-<span class="cstat-no" title="statement not covered" >        !countryProfileSpecs.some</span>(
-<span class="cstat-no" title="statement not covered" >            (spec) =&gt; post.slug === spec.landingPageSlug</span>
+<span class="cstat-no" title="statement not covered" >        !countryProfileSp</span>ecs.some(
+<span class="cstat-no" title="statement not covered" >            (spec) =&gt; post.slug =</span>== spec.landingPageSlug
 <span class="cstat-no" title="statement not covered" >        ) &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >        post.relatedCharts &amp;&amp;</span>
 <span class="cstat-no" title="statement not covered" >        post.relatedCharts.length !== 0</span>
 <span class="cstat-no" title="statement not covered" >    ) {</span>
 <span class="cstat-no" title="statement not covered" >        const allCharts = `</span>
-<span class="cstat-no" title="statement not covered" >        &lt;block type="additional</span>-information"&gt;
+<span class="cstat-no" title="statement not covered" >        &lt;block type="additional-information"&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;content&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;h3&gt;All our </span>charts on ${post.title}&lt;/h3&gt;
-<span class="cstat-no" title="statement not covered" >                ${ReactDOMServer.renderToStaticMa</span>rkup(
+<span class="cstat-no" title="statement not covered" >                &lt;h3&gt;All o</span>ur charts on ${post.title}&lt;/h3&gt;
+<span class="cstat-no" title="statement not covered" >                ${ReactDOMSe</span>rver.renderToStaticMarkup(
 <span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;RelatedCharts charts={post.related</span>Charts} /&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;RelatedCharts charts={post.relatedCharts} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/content&gt;</span>
@@ -1854,14 +1859,15 @@ export const formatWordpressPost = async (
 <span class="cstat-no" title="statement not covered" >        if ($summary.length !== 0) {</span>
 <span class="cstat-no" title="statement not covered" >            $summary.after(allCharts)</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
-<span class="cstat-no" title="statement not covered" >            cheeri</span>oEl("body &gt; h2:first-of-type, body &gt; h3:first-of-type")
-<span class="cstat-no" title="statement not covered" >                .first()</span>
+<span class="cstat-no" title="statement not covered" >            cheerioEl("body &gt; h2:f</span>irst-of-type, body &gt; h3:first-of-type")
+<span class="cstat-no" title="statement not covered" >                .f</span>irst()
 <span class="cstat-no" title="statement not covered" >                .before(allCharts)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // SSR rendering of Gutenberg blocks, before h</span>ydration on client
+<span class="cstat-no" title="statement not covered" >    // SSR rendering of Gutenberg blocks, before hydration on client</span>
 <span class="cstat-no" title="statement not covered" >    renderBlocks(cheerioEl)</span>
+<span class="cstat-no" title="statement not covered" >    await renderAutomaticProminentLinks(che</span>erioEl, post)
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    // Extract blo</span>g info content
 <span class="cstat-no" title="statement not covered" >    let info = null</span>
@@ -2329,7 +2335,7 @@ export const formatPost = async (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Nov 02 2021 09:23:02 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 03 2021 16:08:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
