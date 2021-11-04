@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.33% </span>
+                <span class="strong">18.44% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/180</span>
+                <span class='fraction'>33/179</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.33% </span>
+                <span class="strong">18.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/180</span>
+                <span class='fraction'>33/179</span>
             </div>
         
             
@@ -270,8 +270,7 @@
 <a name='L211'></a><a href='#L211'>211</a>
 <a name='L212'></a><a href='#L212'>212</a>
 <a name='L213'></a><a href='#L213'>213</a>
-<a name='L214'></a><a href='#L214'>214</a>
-<a name='L215'></a><a href='#L215'>215</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L214'></a><a href='#L214'>214</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -409,7 +408,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -642,15 +640,15 @@ export const countryProfilePage = <span class="fstat-no" title="function not cov
 <span class="cstat-no" title="statement not covered" >        const vid = firstDimen</span>sion &amp;&amp; firstDimension.variableId
 <span class="cstat-no" title="statement not covered" >        const values = valuesByVariableI</span>d[vid]
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        if (values &amp;&amp; values.length) </span>{
+<span class="cstat-no" title="statement not covered" >        if (values &amp;&amp; values.length) {</span>
 <span class="cstat-no" title="statement not covered" >            const latestValue = values[0]</span>
-<span class="cstat-no" title="statement not covered" >            const variable = variablesById[vid]</span>
+<span class="cstat-no" title="statement not covered" >            cons</span>t variable = variablesById[vid]
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>            // todo: this is a lot of setup to get formatValueShort. Maybe cleanup?
-<span class="cstat-no" title="statement not covered" ></span>            const table = new OwidTable(
+<span class="cstat-no" title="statement not covered" >            const table = new OwidTable(</span>
 <span class="cstat-no" title="statement not covered" >                [],</span>
-<span class="cstat-no" title="statement not covered" >                [</span>
-<span class="cstat-no" title="statement not covered" ></span>                    {
+<span class="cstat-no" title="statement not covered" ></span>                [
+<span class="cstat-no" title="statement not covered" >                    {</span>
 <span class="cstat-no" title="statement not covered" >                        slug: vid.toString(),</span>
 <span class="cstat-no" title="statement not covered" >                        unit: variable.unit,</span>
 <span class="cstat-no" title="statement not covered" >                        display: variable.display,</span>
@@ -659,15 +657,14 @@ export const countryProfilePage = <span class="fstat-no" title="function not cov
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >            const column = table.get(vid.toString())</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            let value: string | number</span>
-<span class="cstat-no" title="statement not covered" ></span>            value = parseFloat(latestValue.value)
-<span class="cstat-no" title="statement not covered" >            if (isNaN(value)) value = latestValue.value</span>
-<span class="cstat-no" title="statement not covered" ></span>            else if (variable.display.conversionFactor)
-<span class="cstat-no" title="statement not covered" >                value *= variable.displ</span>ay.conversionFactor
-<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>            let value: string | number
+<span class="cstat-no" title="statement not covered" >            value = parseFloat(latestValue.value)</span>
+<span class="cstat-no" title="statement not covered" ></span>            if (isNaN(value)) value = latestValue.value
+<span class="cstat-no" title="statement not covered" >            else if (variable.display.c</span>onversionFactor)
+<span class="cstat-no" title="statement not covered" >                value *= variable.display.co</span>nversionFactor
+&nbsp;
             indicators.push({
                 year: latestValue.year,
-                value: column.formatValueShort(value),
                 name: grapher.title as string,
                 slug: `/grapher/${grapher.slug}?tab=chart&amp;country=${country.code}`,
                 variantName: grapher.variantName,
@@ -706,7 +703,7 @@ export const bakeCountries = async (baker: SiteBaker) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 03 2021 16:46:55 GMT+0000 (Coordinated Universal Time)
+                at Thu Nov 04 2021 09:55:56 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

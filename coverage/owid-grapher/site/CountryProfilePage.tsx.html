@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.13% </span>
+                <span class="strong">51.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/64</span>
+                <span class='fraction'>33/64</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">53.13% </span>
+                <span class="strong">51.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/64</span>
+                <span class='fraction'>33/64</span>
             </div>
         
             
@@ -160,8 +160,10 @@
 <a name='L101'></a><a href='#L101'>101</a>
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -224,6 +226,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -272,7 +278,6 @@ import urljoin from "url-join"
 export interface CountryProfileIndicator {
     name: string
     slug: string
-    value: string
     year: number
     variantName?: string
 }
@@ -297,11 +302,11 @@ export interface CountryProfilePageProps {
 }
 &nbsp;
 export const CountryProfilePage = (<span class="fstat-no" title="function not covered" >props: CountryProfilePageProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const { country, indicators, baseUrl } = p</span>rops
+<span class="cstat-no" title="statement not covered" >    const { country, indicators, baseUrl } = props</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // const displayName = defaultTo(variable.display.name, variable.name</span>)
+<span class="cstat-no" title="statement not covered" >    // const displayName = defaultTo(variable.display.name, variable.name)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const script = `window.runCountryProfilePa</span>ge()`
+<span class="cstat-no" title="statement not covered" >    const script = `window.runCountryProfilePage()`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;html&gt;</span>
@@ -311,22 +316,26 @@ export const CountryProfilePage = (<span class="fstat-no" title="function not co
 <span class="cstat-no" title="statement not covered" >                pageDesc={`Population, GDP, life expectancy, birth rate and other key metrics for ${country.name}.`}</span>
 <span class="cstat-no" title="statement not covered" >                baseUrl={baseUrl}</span>
 <span class="cstat-no" title="statement not covered" >            /&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;body className="CountryProfilePage"</span>&gt;
+<span class="cstat-no" title="statement not covered" >            &lt;body className="CountryProfilePage"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;SiteHeader baseUrl={baseUrl} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;main&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;header&gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;img</span>
 <span class="cstat-no" title="statement not covered" >                            className="flag"</span>
-<span class="cstat-no" title="statement not covered" >                            src={`/images/flags/${country.code}.svg`}</span>
+<span class="cstat-no" title="statement not covered" >                            src={`/images/fl</span>ags/${country.code}.svg`}
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;h1&gt;{count</span>ry.name}&lt;/h1&gt;
+<span class="cstat-no" title="statement not covered" >                        &lt;h1&gt;{country.name}&lt;/h1&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/header&gt;</span>
-<span class="cstat-no" title="statement not covered" >                    {/* &lt;ul className="k</span>eyStats"&gt;
+<span class="cstat-no" title="statement not covered" >                    {/* &lt;ul className="keySt</span>ats"&gt;
 <span class="cstat-no" title="statement not covered" >                    &lt;li&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;Population, persons:&lt;/span&gt; {keyStats.population.value} ({keyStat</span>s.population.year})
-<span class="cstat-no" title="statement not covered" ></span>                    &lt;/li&gt;
-<span class="cstat-no" title="statement not covered" >                &lt;/ul&gt; */}</span>
-<span class="cstat-no" title="statement not covered" >                    &lt;div&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;span&gt;Population, persons:&lt;/span&gt; {keyStats.population.v</span>alue} ({keyStats.population.year})
+<span class="cstat-no" title="statement not covered" >                    &lt;/li&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;/ul&gt; */}
+<span class="cstat-no" title="statement not covered" >                    &lt;p&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        Below are all indicator</span>s in our database for which this
+                        country has a value.
+                    &lt;/p&gt;
+                    &lt;div&gt;
                         &lt;input
                             type="search"
                             className="chartsSearchInput"
@@ -353,7 +362,7 @@ export const CountryProfilePage = (<span class="fstat-no" title="function not co
                                         &lt;/a&gt;
                                     &lt;/div&gt;
                                     &lt;div className="indicatorValue"&gt;
-                                        {indicator.value} ({indicator.year})
+                                        ({indicator.year})
                                     &lt;/div&gt;
                                 &lt;/li&gt;
                             ))}
@@ -373,7 +382,7 @@ export const CountryProfilePage = (<span class="fstat-no" title="function not co
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 03 2021 16:46:55 GMT+0000 (Coordinated Universal Time)
+                at Thu Nov 04 2021 09:55:56 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
