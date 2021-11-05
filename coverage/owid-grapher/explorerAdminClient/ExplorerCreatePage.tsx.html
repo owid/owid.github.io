@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.4% </span>
+                <span class="strong">42.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>173/408</span>
+                <span class='fraction'>173/407</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">42.4% </span>
+                <span class="strong">42.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>173/408</span>
+                <span class='fraction'>173/407</span>
             </div>
         
             
@@ -530,8 +530,7 @@
 <a name='L471'></a><a href='#L471'>471</a>
 <a name='L472'></a><a href='#L472'>472</a>
 <a name='L473'></a><a href='#L473'>473</a>
-<a name='L474'></a><a href='#L474'>474</a>
-<a name='L475'></a><a href='#L475'>475</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L474'></a><a href='#L474'>474</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -808,7 +807,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1314,55 +1312,54 @@ export class ExplorerCreatePage extends React.Component&lt;{
 <span class="cstat-no" title="statement not covered" >        const { program, programOnDisk } = this</span>
 <span class="cstat-no" title="statement not covered" >        const data = program.asArrays</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const { currentlySelectedGraph</span>erRow } = program
+<span class="cstat-no" title="statement not covered" >        const { currentlySelectedG</span>rapherRow } = program
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const cells = function (</span>row: number, column: number) {
+<span class="cstat-no" title="statement not covered" >        const cells = function (row</span>: number, column: number) {
 <span class="cstat-no" title="statement not covered" >            const {</span>
-<span class="cstat-no" title="statement not covered" >                com</span>ment,
+<span class="cstat-no" title="statement not covered" >                comment,</span>
 <span class="cstat-no" title="statement not covered" >                cssClasses,</span>
-<span class="cstat-no" title="statement not covered" >                optionKeywor</span>ds,
-<span class="cstat-no" title="statement not covered" >                placeholder</span>,
+<span class="cstat-no" title="statement not covered" >                optionKeywo</span>rds,
+<span class="cstat-no" title="statement not covered" >                placehold</span>er,
 <span class="cstat-no" title="statement not covered" >                contents,</span>
 <span class="cstat-no" title="statement not covered" >            } = program.getCell({ row, column })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const cellContentsOnDisk = programOnDisk.getCellContents({</span>
+<span class="cstat-no" title="statement not covered" >            const cellContentsOnDisk = programOn</span>Disk.getCellContents({
 <span class="cstat-no" title="statement not covered" >                row,</span>
 <span class="cstat-no" title="statement not covered" >                column,</span>
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            const cellProperties: Pa</span>rtial&lt;Handsontable.CellProperties&gt; = {}
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            const allClasses = cssClasses?.slice</span>() ?? []
+<span class="cstat-no" title="statement not covered" >            const allClasses =</span> cssClasses?.slice() ?? []
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (cellContentsOn</span>Disk !== contents) {
-<span class="cstat-no" title="statement not covered" >                if (contents === "" &amp;&amp; cellConte</span>ntsOnDisk === undefined)
-<span class="cstat-no" title="statement not covered" >                    allClasses</span>.push("cellCreated")
-<span class="cstat-no" title="statement not covered" >                else if (isEm</span>pty(contents)) allClasses.push("cellDeleted")
-<span class="cstat-no" title="statement not covered" >                els</span>e if (isEmpty(cellContentsOnDisk))
-<span class="cstat-no" title="statement not covered" ></span>                    allClasses.push("cellCreated")
-<span class="cstat-no" title="statement not covered" >                else allClasses.push("cellChanged")</span>
+<span class="cstat-no" title="statement not covered" >            if (cellContentsOnDisk !== contents)</span> {
+<span class="cstat-no" title="statement not covered" >                if (contents =</span>== "" &amp;&amp; cellContentsOnDisk === undefined)
+<span class="cstat-no" title="statement not covered" >                    allClasse</span>s.push("cellCreated")
+<span class="cstat-no" title="statement not covered" >                els</span>e if (isEmpty(contents)) allClasses.push("cellDeleted")
+<span class="cstat-no" title="statement not covered" ></span>                else if (isEmpty(cellContentsOnDisk))
+<span class="cstat-no" title="statement not covered" >                    allClasses.push("cellCreated")</span>
+<span class="cstat-no" title="statement not covered" >                else allClas</span>ses.push("cellChanged")
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (currentlySelected</span>GrapherRow === row &amp;&amp; column)
-<span class="cstat-no" title="statement not covered" >                allClasses.push(`current</span>lySelectedGrapherRow`)
+<span class="cstat-no" title="statement not covered" >            if (currentlySelectedGrapher</span>Row === row &amp;&amp; column)
+<span class="cstat-no" title="statement not covered" >                allClasses.pu</span>sh(`currentlySelectedGrapherRow`)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            cellPropertie</span>s.className = allClasses.join(" ")
+<span class="cstat-no" title="statement not covered" >            cellProperties.cla</span>ssName = allClasses.join(" ")
 <span class="cstat-no" title="statement not covered" >            cellProperties.com</span>ment = comment ? { value: comment } : undefined
-<span class="cstat-no" title="statement not covered" >            cellProperties.pla</span>ceholder = placeholder
+<span class="cstat-no" title="statement not covered" >            cellProperties</span>.placeholder = placeholder
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            if (optionKeyword</span>s &amp;&amp; optionKeywords.length) {
-<span class="cstat-no" title="statement not covered" >                cellPropert</span>ies.type = "autocomplete"
-<span class="cstat-no" title="statement not covered" >                cellPropertie</span>s.source = optionKeywords
-<span class="cstat-no" title="statement not covered" ></span>            }
+<span class="cstat-no" title="statement not covered" >            if (optionKeywo</span>rds &amp;&amp; optionKeywords.length) {
+<span class="cstat-no" title="statement not covered" >                cellPropertie</span>s.type = "autocomplete"
+<span class="cstat-no" title="statement not covered" ></span>                cellProperties.source = optionKeywords
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>            return cellProperties
+<span class="cstat-no" title="statement not covered" >            ret</span>urn cellProperties
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" ></span>        const hotSettings: Handsontable.GridSettings = {
-<span class="cstat-no" title="statement not covered" ></span>            afterChange: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            a</span>fterRemoveRow: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            afterRem</span>oveCol: () =&gt; this.updateProgramFromHot(),
-<span class="cstat-no" title="statement not covered" >            allowInsertColumn: false,</span>
+<span class="cstat-no" title="statement not covered" >            a</span>fterChange: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            afterRem</span>oveRow: () =&gt; this.updateProgramFromHot(),
+<span class="cstat-no" title="statement not covered" >            afterRemoveCol: () =&gt; this.upd</span>ateProgramFromHot(),
 <span class="cstat-no" title="statement not covered" >            a</span>llowInsertRow: true,
 <span class="cstat-no" title="statement not covered" >            autoRowS</span>ize: false,
 <span class="cstat-no" title="statement not covered" >            autoColumnSize: false,</span>
@@ -1486,7 +1483,7 @@ class TemplatesComponent extends React.Component&lt;{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Nov 04 2021 09:55:56 GMT+0000 (Coordinated Universal Time)
+                at Fri Nov 05 2021 09:18:50 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
