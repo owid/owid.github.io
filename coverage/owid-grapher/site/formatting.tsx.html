@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">69.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/30</span>
+                <span class='fraction'>41/59</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">69.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/30</span>
+                <span class='fraction'>41/59</span>
             </div>
         
             
@@ -86,17 +86,37 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -115,25 +135,35 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { last } from "../clientUtils/Util"
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import * as cheerio from "cheerio"
+import { last } from "../clientUtils/Util"
 import { BAKED_BASE_URL, WORDPRESS_URL } from "../settings/serverSettings"
+import { renderAuthoredProminentLinks } from "./blocks/ProminentLink"
 &nbsp;
 // Standardize urls
-const formatLinks = (<span class="fstat-no" title="function not covered" >html: string) =&gt;</span>
-    html
+const formatLinks = (html: string) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    h</span></span>tml
         .replace(new RegExp(WORDPRESS_URL, "g"), BAKED_BASE_URL)
         .replace(new RegExp("https?://owid.cloud", "g"), BAKED_BASE_URL)
         .replace(new RegExp("https?://ourworldindata.org", "g"), BAKED_BASE_URL)
 &nbsp;
-export const formatReusableBlock = (<span class="fstat-no" title="function not covered" >html: string) =&gt; form</span>atLinks(html)
+export const formatReusableBlock = (html: string): string =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const cheerioEl = cheerio.load(html)</span></span>
+<span class="cstat-no" title="statement not covered" >    renderAuthoredProminentLinks(cheerioEl)</span>
+<span class="cstat-no" title="statement not covered" >    const rendered = </span>cheerioEl("body").html()
+<span class="cstat-no" title="statement not covered" >    if (!rendered) return ""</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    const formatted</span> = formatLinks(rendered)
+<span class="cstat-no" title="statement not covered" ></span>    return formatted
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const formatAuthors = <span class="fstat-no" title="function not covered" >(authors: string[], requireMax?: boolean) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (requireMax &amp;&amp; authors.indexOf("Max Roser") === -1)</span>
+<span class="cstat-no" title="statement not covered" >    if (requireMax &amp;&amp; authors.indexOf("Max Rose</span>r") === -1)
 <span class="cstat-no" title="statement not covered" >        authors.push("Max Roser")</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    let authorsText = authors.slic</span>e(0, -1).join(", ")
-<span class="cstat-no" title="statement not covered" >    if (authorsText.length === 0) </span>authorsText = authors[0]
-<span class="cstat-no" title="statement not covered" >    else </span>authorsText += ` and ${last(authors)}`
+<span class="cstat-no" title="statement not covered" >    let authorsText </span>= authors.slice(0, -1).join(", ")
+<span class="cstat-no" title="statement not covered" >    if (authorsText.length === 0) a</span>uthorsText = authors[0]
+<span class="cstat-no" title="statement not covered" >    else authorsText += ` and ${last(authors)}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return authorsText</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -151,7 +181,7 @@ export const formatDate = (<span class="fstat-no" title="function not covered" >
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 17 2021 12:49:01 GMT+0000 (Coordinated Universal Time)
+                at Wed Nov 17 2021 14:49:44 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
