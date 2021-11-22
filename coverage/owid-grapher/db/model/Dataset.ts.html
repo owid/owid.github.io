@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.37% </span>
+                <span class="strong">46.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>98/216</span>
+                <span class='fraction'>102/220</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.37% </span>
+                <span class="strong">46.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>98/216</span>
+                <span class='fraction'>102/220</span>
             </div>
         
             
@@ -224,7 +224,9 @@
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -422,127 +424,128 @@ export class Dataset extends BaseEntity {
     @Column() dataEditedAt!: Date
     @Column() dataEditedByUserId!: number
     @Column({ default: false }) isPrivate!: boolean
+    @Column({ default: false }) nonRedistributable!: boolean
 &nbsp;
     @ManyToOne(() =&gt; User, (user) =&gt; user.createdDatasets)
     createdByUser!: User
 &nbsp;
     // Export dataset variables to CSV (not including metadata)
     static async writeCSV(datasetId: number, stream: Writable): Promise&lt;void&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        const csvHeader = ["Entity", "Year"]</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const csvHeader = ["Entity", "Year"]</span></span>
 <span class="cstat-no" title="statement not covered" >        const variables = await db.queryMysql(</span>
-<span class="cstat-no" title="statement not covered" >            `SELECT name, id FROM variables v WHERE v.datasetId</span>=? ORDER BY v.columnOrder ASC, v.id ASC`,
-<span class="cstat-no" title="statement not covered" ></span>            [datasetId]
+<span class="cstat-no" title="statement not covered" ></span>            `SELECT name, id FROM variables v WHERE v.datasetId=? ORDER BY v.columnOrder ASC, v.id ASC`,
+<span class="cstat-no" title="statement not covered" >            [da</span>tasetId]
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        for (const variable of variables) {</span>
-<span class="cstat-no" title="statement not covered" >            csvHeader.push</span>(variable.name)
+<span class="cstat-no" title="statement not covered" >        for (const variabl</span>e of variables) {
+<span class="cstat-no" title="statement not covered" >            csvHeader.push(variable.na</span>me)
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const columnIndexByVariableId:</span> { [key: number]: number } = {}
-<span class="cstat-no" title="statement not covered" >        for (const variable of variables) </span>{
-<span class="cstat-no" title="statement not covered" >            columnIndexByVariableId[variabl</span>e.id] = csvHeader.indexOf(
+<span class="cstat-no" title="statement not covered" >        const columnIndexByVariableId: { [</span>key: number]: number } = {}
+<span class="cstat-no" title="statement not covered" >        for (const variable of variables) {</span>
+<span class="cstat-no" title="statement not covered" >            columnIndexByVariableId[variable.id] =</span> csvHeader.indexOf(
 <span class="cstat-no" title="statement not covered" >                variable.name</span>
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        stream.write(arrToCsvRow(csvHeade</span>r))
+<span class="cstat-no" title="statement not covered" >        stream.write(arrToCsvRow(csvHeader))</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const data = await db.queryMysql(</span>
 <span class="cstat-no" title="statement not covered" >            `</span>
-<span class="cstat-no" title="statement not covered" >            SELECT e.name AS entity, dv.year, dv</span>.value, dv.variableId FROM data_values dv
-<span class="cstat-no" title="statement not covered" >            JOIN variables v ON v.id=dv.variabl</span>eId
-<span class="cstat-no" title="statement not covered" >            JO</span>IN datasets d ON v.datasetId=d.id
+<span class="cstat-no" title="statement not covered" >            SELECT e.name AS entity, dv.year, d</span>v.value, dv.variableId FROM data_values dv
+<span class="cstat-no" title="statement not covered" >            JO</span>IN variables v ON v.id=dv.variableId
+<span class="cstat-no" title="statement not covered" >            JOIN datasets d ON v.datasetId=d.id</span>
 <span class="cstat-no" title="statement not covered" >            JOIN entities e ON dv.entityId=e.id</span>
 <span class="cstat-no" title="statement not covered" >            WHERE d.id=?</span>
-<span class="cstat-no" title="statement not covered" >            ORDER BY e.name ASC, dv.year ASC, v.columnOrder ASC, dv.variableId ASC`,</span>
-<span class="cstat-no" title="statement not covered" >            [d</span>atasetId]
+<span class="cstat-no" title="statement not covered" >            OR</span>DER BY e.name ASC, dv.year ASC, v.columnOrder ASC, dv.variableId ASC`,
+<span class="cstat-no" title="statement not covered" >            [datasetId]</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let row: string[] = []</span>
 <span class="cstat-no" title="statement not covered" >        for (const datum of data) {</span>
 <span class="cstat-no" title="statement not covered" >            if (datum.entity !== row[0] || datum</span>.year !== row[1]) {
-<span class="cstat-no" title="statement not covered" >                // New row</span>
-<span class="cstat-no" title="statement not covered" >                if (row.l</span>ength) {
-<span class="cstat-no" title="statement not covered" >                    stream.write(arrToCsvRow(row))</span>
+<span class="cstat-no" title="statement not covered" >                // New ro</span>w
+<span class="cstat-no" title="statement not covered" >                if (row.length) {</span>
+<span class="cstat-no" title="statement not covered" >                    stream</span>.write(arrToCsvRow(row))
 <span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" >                row = [datum.entity, dat</span>um.year]
-<span class="cstat-no" title="statement not covered" >                for (const variable of variables) {</span>
-<span class="cstat-no" title="statement not covered" >                    row.push(""</span>)
+<span class="cstat-no" title="statement not covered" >                row = [datum.entity, datum.year]</span>
+<span class="cstat-no" title="statement not covered" >                for (const vari</span>able of variables) {
+<span class="cstat-no" title="statement not covered" >                    row.push("")</span>
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            row[columnIndexByVariableId[datum.variable</span>Id]] = datum.value
+<span class="cstat-no" title="statement not covered" >            row[columnIndexByVariableId[datum.variableId</span>]] = datum.value
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Final row</span>
-<span class="cstat-no" title="statement not covered" >        stream.wri</span>te(arrToCsvRow(row))
+<span class="cstat-no" title="statement not covered" >        // Final r</span>ow
+<span class="cstat-no" title="statement not covered" >        stream.write(arrToCsvRow(row))</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        stream</span>.end()
+<span class="cstat-no" title="statement not covered" >        stream.end()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    static async <span class="fstat-no" title="function not covered" >setTags(datasetId: number, tagIds: number[]): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        awai</span>t db.transaction(async (t) =&gt; {
-<span class="cstat-no" title="statement not covered" ></span>            const tagRows = tagIds.map((tagId) =&gt; [tagId, datasetId])
-<span class="cstat-no" title="statement not covered" >            await t.execute(`DELETE FROM</span> dataset_tags WHERE datasetId=?`, [
+    static async setTags(datasetId: number, tagIds: number[]): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        await db.transaction(async (t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            const tagRows = tagIds.map((</span>tagId) =&gt; [tagId, datasetId])
+<span class="cstat-no" title="statement not covered" >            await t.execute(`DELETE FROM dataset_tags WHERE da</span>tasetId=?`, [
 <span class="cstat-no" title="statement not covered" >                datasetId,</span>
 <span class="cstat-no" title="statement not covered" >            ])</span>
 <span class="cstat-no" title="statement not covered" >            if (tagRows.length)</span>
-<span class="cstat-no" title="statement not covered" >                await t.execute(</span>
-<span class="cstat-no" title="statement not covered" >                    `INSERT INT</span>O dataset_tags (tagId, datasetId) VALUES ?`,
-<span class="cstat-no" title="statement not covered" ></span>                    [tagRows]
+<span class="cstat-no" title="statement not covered" >                await t.execute</span>(
+<span class="cstat-no" title="statement not covered" ></span>                    `INSERT INTO dataset_tags (tagId, datasetId) VALUES ?`,
+<span class="cstat-no" title="statement not covered" >                    [tagRows]</span>
 <span class="cstat-no" title="statement not covered" >                )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    async toCSV(): Promise&lt;string&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        let cs</span>v = ""</span>
-<span class="cstat-no" title="statement not covered" >        await Dataset.writeCSV(this.id, {</span>
-<span class="cstat-no" title="statement not covered" >            write: (s: str</span>ing) =&gt; (csv += s),
+    async <span class="fstat-no" title="function not covered" >toCSV(): Promise&lt;string&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        let csv = ""</span>
+<span class="cstat-no" title="statement not covered" >        await Dataset.writ</span>eCSV(this.id, {
+<span class="cstat-no" title="statement not covered" >            write: (s: string) =&gt; (csv += s),</span>
 <span class="cstat-no" title="statement not covered" >            end: () =&gt; null,</span>
 <span class="cstat-no" title="statement not covered" >        } as any)</span>
-<span class="cstat-no" title="statement not covered" >        return csv</span>
+<span class="cstat-no" title="statement not covered" >        return c</span>sv
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     get filename(): string {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        return filenamify(this.name)</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return filena</span>mify(this.name)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    get slug(): string {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return sl</span>ugify(this.name)</span>
+    get slug<span class="fstat-no" title="function not covered" >(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return slugify(this.name)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // Return object representing datapackage.json for this dataset
     async <span class="fstat-no" title="function not covered" >toDatapackage(): Promise&lt;any&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        // XXX</span>
-<span class="cstat-no" title="statement not covered" >        const sourc</span>es = await Source.find({ datasetId: this.id })
+<span class="cstat-no" title="statement not covered" >        const sources = await Source.find({ datasetId: this.id })</span>
 <span class="cstat-no" title="statement not covered" >        const variables = (await db</span>
 <span class="cstat-no" title="statement not covered" >            .knexTable(Variable.table)</span>
-<span class="cstat-no" title="statement not covered" >            .where({ datasetId: this.id })) as Variabl</span>e.Row[]
+<span class="cstat-no" title="statement not covered" >            .where({ datasetId: this.id })) as Va</span>riable.Row[]
 <span class="cstat-no" title="statement not covered" >        const tags = await db.queryMysql(</span>
-<span class="cstat-no" title="statement not covered" >            `SELECT t.id, t.name FROM dataset_tags dt JOIN tags t ON t.id=dt.tagId WHERE dt.datasetId=?`,</span>
+<span class="cstat-no" title="statement not covered" >            `SELECT t.id, t.name FRO</span>M dataset_tags dt JOIN tags t ON t.id=dt.tagId WHERE dt.datasetId=?`,
 <span class="cstat-no" title="statement not covered" >            [this.id]</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const i</span>nitialFields = [
-<span class="cstat-no" title="statement not covered" >            { name: "Entity", type</span>: "string" },
-<span class="cstat-no" title="statement not covered" >            { name: "Year", type:</span> "year" },
+<span class="cstat-no" title="statement not covered" >        const initialFields = [</span>
+<span class="cstat-no" title="statement not covered" >            { name: "Entity", typ</span>e: "string" },
+<span class="cstat-no" title="statement not covered" >            { name: "Year", type: </span>"year" },
 <span class="cstat-no" title="statement not covered" >        ]</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const dataPackage = {</span>
 <span class="cstat-no" title="statement not covered" >            name: this.name,</span>
-<span class="cstat-no" title="statement not covered" >            title: this.name,</span>
+<span class="cstat-no" title="statement not covered" >            title: this.</span>name,
 <span class="cstat-no" title="statement not covered" >            id: this.id,</span>
 <span class="cstat-no" title="statement not covered" >            description:</span>
-<span class="cstat-no" title="statement not covered" >                (sources[0] &amp;&amp;</span>
-<span class="cstat-no" title="statement not covered" >                    sources[0</span>].description &amp;&amp;
-<span class="cstat-no" title="statement not covered" >                    so</span>urces[0].description.additionalInfo) ||
+<span class="cstat-no" title="statement not covered" >                (sources[0] &amp;</span>&amp;
+<span class="cstat-no" title="statement not covered" >                    so</span>urces[0].description &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                    sources[0].description.additio</span>nalInfo) ||
 <span class="cstat-no" title="statement not covered" >                "",</span>
-<span class="cstat-no" title="statement not covered" >            sources: sources.map((</span>s) =&gt; s.toDatapackage()),
-<span class="cstat-no" title="statement not covered" >            owidTags: tags.map((t: any) =&gt; t.name),</span>
+<span class="cstat-no" title="statement not covered" >            sources: sources.map((s) =&gt; s.toDatapackage()),</span>
+<span class="cstat-no" title="statement not covered" >            owidTags: tags.map((t: any) =&gt; t.n</span>ame),
 <span class="cstat-no" title="statement not covered" >            resources: [</span>
 <span class="cstat-no" title="statement not covered" >                {</span>
 <span class="cstat-no" title="statement not covered" >                    path: `${this.name}.csv`,</span>
 <span class="cstat-no" title="statement not covered" >                    schema: {</span>
-<span class="cstat-no" title="statement not covered" >                        fields: in</span>itialFields.concat(
+<span class="cstat-no" title="statement not covered" >                        fie</span>lds: initialFields.concat(
 <span class="cstat-no" title="statement not covered" ></span>                            variables.map((v) =&gt; ({
 <span class="cstat-no" title="statement not covered" ></span>                                name: v.name,
 <span class="cstat-no" title="statement not covered" ></span>                                type: "any",
@@ -551,11 +554,11 @@ export class Dataset extends BaseEntity {
 <span class="cstat-no" title="statement not covered" ></span>                            }))
 <span class="cstat-no" title="statement not covered" ></span>                        ),
 <span class="cstat-no" title="statement not covered" ></span>                    },
-<span class="cstat-no" title="statement not covered" ></span>                },
+<span class="cstat-no" title="statement not covered" >                },</span>
 <span class="cstat-no" title="statement not covered" >            ],</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n dataPackage
+<span class="cstat-no" title="statement not covered" >        return dataPackage</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -565,7 +568,7 @@ export class Dataset extends BaseEntity {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Nov 18 2021 19:02:53 GMT+0000 (Coordinated Universal Time)
+                at Mon Nov 22 2021 15:04:15 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
