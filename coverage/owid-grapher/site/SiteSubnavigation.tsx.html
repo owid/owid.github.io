@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.23% </span>
+                <span class="strong">90.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>290/325</span>
+                <span class='fraction'>300/332</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.23% </span>
+                <span class="strong">90.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>290/325</span>
+                <span class='fraction'>300/332</span>
             </div>
         
             
@@ -400,7 +400,17 @@
 <a name='L341'></a><a href='#L341'>341</a>
 <a name='L342'></a><a href='#L342'>342</a>
 <a name='L343'></a><a href='#L343'>343</a>
-<a name='L344'></a><a href='#L344'>344</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L344'></a><a href='#L344'>344</a>
+<a name='L345'></a><a href='#L345'>345</a>
+<a name='L346'></a><a href='#L346'>346</a>
+<a name='L347'></a><a href='#L347'>347</a>
+<a name='L348'></a><a href='#L348'>348</a>
+<a name='L349'></a><a href='#L349'>349</a>
+<a name='L350'></a><a href='#L350'>350</a>
+<a name='L351'></a><a href='#L351'>351</a>
+<a name='L352'></a><a href='#L352'>352</a>
+<a name='L353'></a><a href='#L353'>353</a>
+<a name='L354'></a><a href='#L354'>354</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -682,6 +692,16 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -722,9 +742,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1026,6 +1046,16 @@ export const subnavs: { [key in SubNavId]: SubnavItem[] } = {
     ],
 }
 &nbsp;
+export const getSubnavItem = (
+    id: string | undefined,
+    subnavItems: SubnavItem[]
+) =&gt; {
+    // We want to avoid matching elements with potentially undefined id.
+    // Static typing prevents id from being undefined but this might not be
+    // the case in a future API powered version.
+    return id<span class="branch-0 cbranch-no" title="branch not covered" > ? subnavItems</span>.find((item) =&gt; item.id === id) : undefined
+}
+&nbsp;
 export const getTopSubnavigationParentItem = (
     subnavId: SubNavId
 ): SubnavItem | undefined =&gt; {
@@ -1034,40 +1064,40 @@ export const getTopSubnavigationParentItem = (
 &nbsp;
 export const SiteSubnavigation = ({
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    subnavId,</span></span>
-<span class="cstat-no" title="statement not covered" >    subnavC</span>urrentId,
+<span class="cstat-no" title="statement not covered" >    subnavCurrentId,</span>
 <span class="cstat-no" title="statement not covered" >}: {</span>
-<span class="cstat-no" title="statement not covered" ></span>    subnavId: SubNavId
-<span class="cstat-no" title="statement not covered" >    subnavCurrentId?: string</span>
+<span class="cstat-no" title="statement not covered" >    subnavId: SubNavId</span>
+<span class="cstat-no" title="statement not covered" ></span>    subnavCurrentId?: string
 <span class="cstat-no" title="statement not covered" >}) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const subnavLinks = subnavs[subnavId]</span>
-<span class="cstat-no" title="statement not covered" ></span>    return subnavLinks ? (
+<span class="cstat-no" title="statement not covered" >    return subnavLinks ? (</span>
 <span class="cstat-no" title="statement not covered" >        &lt;div className="offset-subnavigation"&gt;</span>
 <span class="cstat-no" title="statement not covered" >            &lt;div className="site-subnavigation"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div className="site-subnavigation-</span>scroll"&gt;
+<span class="cstat-no" title="statement not covered" >                &lt;div className="site-subnavigation-scroll"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;ul className="site-subnavigation-links"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                        {subnavLinks.map(</span>
-<span class="cstat-no" title="statement not covered" >                            ({ href, label, id, highlight }, idx) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >                                const classes: string[] = []</span>
-<span class="cstat-no" title="statement not covered" >                                const da</span>taTrackNote = [
-<span class="cstat-no" title="statement not covered" >                                    subnavId</span>,
+<span class="cstat-no" title="statement not covered" >                        {subnavLinks.map</span>(
+<span class="cstat-no" title="statement not covered" >                            ({ href, label, </span>id, highlight }, idx) =&gt; {
+<span class="cstat-no" title="statement not covered" >                                co</span>nst classes: string[] = []
+<span class="cstat-no" title="statement not covered" >                                co</span>nst dataTrackNote = [
+<span class="cstat-no" title="statement not covered" ></span>                                    subnavId,
 <span class="cstat-no" title="statement not covered" ></span>                                    "subnav",
-<span class="cstat-no" title="statement not covered" ></span>                                    id,
-<span class="cstat-no" title="statement not covered" ></span>                                ].join("-")
-<span class="cstat-no" title="statement not covered" >                                i</span>f (id === subnavCurrentId)
-<span class="cstat-no" title="statement not covered" >                                    classes.push</span>("current")
-<span class="cstat-no" title="statement not covered" >                                if (highlight) cl</span>asses.push("highlight")
-<span class="cstat-no" title="statement not covered" >                                ret</span>urn (
+<span class="cstat-no" title="statement not covered" >                                    id,</span>
+<span class="cstat-no" title="statement not covered" >                                ].join("-")</span>
+<span class="cstat-no" title="statement not covered" >                                if </span>(id === subnavCurrentId)
+<span class="cstat-no" title="statement not covered" >                                    classes.push("c</span>urrent")
+<span class="cstat-no" title="statement not covered" >                                if (highlight) classes.push("highlight")</span>
+<span class="cstat-no" title="statement not covered" >                                return (</span>
 <span class="cstat-no" title="statement not covered" >                                    &lt;li</span>
 <span class="cstat-no" title="statement not covered" >                                        className={</span>
-<span class="cstat-no" title="statement not covered" >                                            (class</span>es.length &amp;&amp;
-<span class="cstat-no" title="statement not covered" ></span>                                                classes.join(" ")) ||
-<span class="cstat-no" title="statement not covered" >                                            ""</span>
+<span class="cstat-no" title="statement not covered" ></span>                                            (classes.length &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                                                classes.join(" ")) ||</span>
+<span class="cstat-no" title="statement not covered" ></span>                                            ""
 <span class="cstat-no" title="statement not covered" ></span>                                        }
-<span class="cstat-no" title="statement not covered" >                                        key={href}</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    &gt;
-<span class="cstat-no" title="statement not covered" ></span>                                        &lt;a
-<span class="cstat-no" title="statement not covered" >                                            hre</span>f={href}
-<span class="cstat-no" title="statement not covered" >                                            da</span>ta-track-note={dataTrackNote}
+<span class="cstat-no" title="statement not covered" >                                        key={hr</span>ef}
+<span class="cstat-no" title="statement not covered" >                                    &gt;</span>
+                                        &lt;a
+                                            href={href}
+                                            data-track-note={dataTrackNote}
                                         &gt;
                                             {label}
                                             {idx === 0 &amp;&amp; (
@@ -1093,7 +1123,7 @@ export const SiteSubnavigation = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 09 2021 16:58:52 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 10 2021 07:37:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

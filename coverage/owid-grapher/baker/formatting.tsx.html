@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.24% </span>
+                <span class="strong">69.74% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>107/164</span>
+                <span class='fraction'>106/152</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.67% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/12</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>6/9</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.24% </span>
+                <span class="strong">69.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>107/164</span>
+                <span class='fraction'>106/152</span>
             </div>
         
             
@@ -235,21 +235,7 @@
 <a name='L176'></a><a href='#L176'>176</a>
 <a name='L177'></a><a href='#L177'>177</a>
 <a name='L178'></a><a href='#L178'>178</a>
-<a name='L179'></a><a href='#L179'>179</a>
-<a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a>
-<a name='L182'></a><a href='#L182'>182</a>
-<a name='L183'></a><a href='#L183'>183</a>
-<a name='L184'></a><a href='#L184'>184</a>
-<a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a>
-<a name='L187'></a><a href='#L187'>187</a>
-<a name='L188'></a><a href='#L188'>188</a>
-<a name='L189'></a><a href='#L189'>189</a>
-<a name='L190'></a><a href='#L190'>190</a>
-<a name='L191'></a><a href='#L191'>191</a>
-<a name='L192'></a><a href='#L192'>192</a>
-<a name='L193'></a><a href='#L193'>193</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L179'></a><a href='#L179'>179</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -278,20 +264,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -413,8 +385,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -460,6 +432,7 @@ import {
     OwidVariableDisplayConfigInterface,
 } from "../clientUtils/OwidVariableDisplayConfigInterface"
 import { legacyToOwidTableAndDimensions } from "../grapher/core/LegacyToOwidTable"
+import { getBodyHtml } from "../site/formatting"
 &nbsp;
 export const DEEP_LINK_CLASS = "deep-link"
 &nbsp;
@@ -470,27 +443,12 @@ export const formatLinks = (html: string) =&gt;
         .replace(new RegExp("https?://owid.cloud", "g"), BAKED_BASE_URL)
         .replace(new RegExp("https?://ourworldindata.org", "g"), BAKED_BASE_URL)
 &nbsp;
-export const getHtmlContentWithStyles = (<span class="fstat-no" title="function not covered" >cheerEl: CheerioStatic) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // Inline styling</span>
-<span class="cstat-no" title="statement not covered" >    // Get the first root level &lt;style&gt; tag within</span> the content as it gets
-<span class="cstat-no" title="statement not covered" >    // stripped out by $("body").html() below. Voluntarily limits to 1 as th</span>ere
-<span class="cstat-no" title="statement not covered" >    // should not be a need for more.</span>
-<span class="cstat-no" title="statement not covered" >    const style =</span>
-<span class="cstat-no" title="statement not covered" >        cheerEl("style").length === 1</span>
-<span class="cstat-no" title="statement not covered" >            ? `&lt;style&gt;${cheerEl("style"</span>).html()}&lt;/style&gt;`
-<span class="cstat-no" title="statement not covered" >            : ""</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // This is effectively a hack within a hack, as style tags are technically</span>
-<span class="cstat-no" title="statement not covered" >    // not allowed in the body (of the main article)</span>
-<span class="cstat-no" title="statement not covered" >    return `${style}${cheerEl("body").html()}`</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-&nbsp;
 export const extractFormattingOptions = (html: string): FormattingOptions =&gt; {
     const formattingOptionsMatch = html.match(
         /&lt;!--\s*formatting-options\s+(.*)\s*--&gt;/
     )
     return formattingOptionsMatch<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        ? parseFormattingOptions(formattingOptionsMatc</span>h[1])
+<span class="cstat-no" title="statement not covered" >        ? parseFormattingOptions(formattingOptionsMatch[1])</span>
 <span class="cstat-no" title="statement not covered" >        : {}</span>
 }
 &nbsp;
@@ -562,28 +520,28 @@ export const parseKeyValueArgs = (text: string): KeyValueProps =&gt; {
 &nbsp;
 export const formatDataValue = (
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    value: number,</span></span>
-<span class="cstat-no" title="statement not covered" >    variableId: OwidVariable</span>Id,
-<span class="cstat-no" title="statement not covered" >    legacyVariableDisplayConfig:</span> OwidVariableDisplayConfigInterface = {},
-<span class="cstat-no" title="statement not covered" >    legacyChartDimension: OwidChartDimensionInterface </span>| undefined
+<span class="cstat-no" title="statement not covered" >    variableId: OwidVar</span>iableId,
+<span class="cstat-no" title="statement not covered" >    legacyVariableDis</span>playConfig: OwidVariableDisplayConfigInterface = {},
+<span class="cstat-no" title="statement not covered" >    legacyChartDimension: Ow</span>idChartDimensionInterface | undefined
 <span class="cstat-no" title="statement not covered" >) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (!legacyChartDimensi</span>on) return
-<span class="cstat-no" title="statement not covered" >    const legacyVariableConfig</span>: OwidVariablesAndEntityKey = {
-<span class="cstat-no" title="statement not covered" >        entityK</span>ey: {},
-<span class="cstat-no" title="statement not covered" >        var</span>iables: {
-<span class="cstat-no" title="statement not covered" ></span>            [variableId]: {
-<span class="cstat-no" title="statement not covered" >                id: variableId,</span>
-<span class="cstat-no" title="statement not covered" >                displa</span>y: legacyVariableDisplayConfig,
+<span class="cstat-no" title="statement not covered" >    if (!legacyChartDimension) return</span>
+<span class="cstat-no" title="statement not covered" >    const legacyVariableConfig: O</span>widVariablesAndEntityKey = {
+<span class="cstat-no" title="statement not covered" >        entityKey: {},</span>
+<span class="cstat-no" title="statement not covered" >        variables: {</span>
+<span class="cstat-no" title="statement not covered" >            [va</span>riableId]: {
+<span class="cstat-no" title="statement not covered" ></span>                id: variableId,
+<span class="cstat-no" title="statement not covered" ></span>                display: legacyVariableDisplayConfig,
 <span class="cstat-no" title="statement not covered" >                values: [value],</span>
-<span class="cstat-no" title="statement not covered" ></span>                years: [],
-<span class="cstat-no" title="statement not covered" ></span>                entities: [],
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
+<span class="cstat-no" title="statement not covered" >                years:</span> [],
+<span class="cstat-no" title="statement not covered" >                entities: [],</span>
+<span class="cstat-no" title="statement not covered" ></span>            },
+<span class="cstat-no" title="statement not covered" ></span>        },
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const legacyGrapherConfig = {</span>
-<span class="cstat-no" title="statement not covered" ></span>        dimensions: [
+<span class="cstat-no" title="statement not covered" >        dimensions: [</span>
 <span class="cstat-no" title="statement not covered" >            {</span>
-<span class="cstat-no" title="statement not covered" >                ...legacyChartDimension,</span>
+<span class="cstat-no" title="statement not covered" ></span>                ...legacyChartDimension,
 <span class="cstat-no" title="statement not covered" >            },</span>
 <span class="cstat-no" title="statement not covered" >        ],</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -602,11 +560,11 @@ export const formatDataValue = (
 &nbsp;
 export const formatCountryProfile = (
 <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    post: FormattedPost,</span></span>
-<span class="cstat-no" title="statement not covered" ></span>    country: Country
+<span class="cstat-no" title="statement not covered" >    country: Country</span>
 <span class="cstat-no" title="statement not covered" >): FormattedPost =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    // Localize country selector</span>
-    const htmlWithLocalizedCountrySelector = post.html.replace(
-        countryProfileDefaultCountryPlaceholder,
+<span class="cstat-no" title="statement not covered" ></span>    // Localize country selector
+<span class="cstat-no" title="statement not covered" >    const htmlWithLocalizedCountrySelector = post.html.replac</span>e(
+<span class="cstat-no" title="statement not covered" >        countryProfileDefaultCountryPla</span>ceholder,
         country.code
     )
 &nbsp;
@@ -619,7 +577,7 @@ export const formatCountryProfile = (
         $deepLinkAnchor.after(`${country.name}: `)
     })
 &nbsp;
-    return { ...post, html: getHtmlContentWithStyles(cheerioEl) }
+    return { ...post, html: getBodyHtml(cheerioEl) }
 }
 &nbsp;
 // Relies on formatLinks URL standardisation
@@ -640,7 +598,7 @@ export const isStandaloneInternalLink = (
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 09 2021 16:58:52 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 10 2021 07:37:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

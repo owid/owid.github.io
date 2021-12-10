@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.49% </span>
+                <span class="strong">17.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>32/194</span>
+                <span class='fraction'>35/195</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.49% </span>
+                <span class="strong">17.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>32/194</span>
+                <span class='fraction'>35/195</span>
             </div>
         
             
@@ -498,9 +498,7 @@
 <a name='L439'></a><a href='#L439'>439</a>
 <a name='L440'></a><a href='#L440'>440</a>
 <a name='L441'></a><a href='#L441'>441</a>
-<a name='L442'></a><a href='#L442'>442</a>
-<a name='L443'></a><a href='#L443'>443</a>
-<a name='L444'></a><a href='#L444'>444</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L442'></a><a href='#L442'>442</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -532,6 +530,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -692,11 +693,6 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -949,7 +945,7 @@ import { Head } from "./Head"
 import { CitationMeta } from "./CitationMeta"
 import { SiteHeader } from "./SiteHeader"
 import { SiteFooter } from "./SiteFooter"
-import { formatAuthors, formatDate } from "../site/formatting"
+import { addContentFeatures, formatAuthors } from "../site/formatting"
 import { SiteSubnavigation } from "./SiteSubnavigation"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBook } from "@fortawesome/free-solid-svg-icons/faBook"
@@ -962,16 +958,19 @@ import {
     TocHeading,
 } from "../clientUtils/owidTypes"
 import { Breadcrumb } from "./Breadcrumb/Breadcrumb"
+import { Byline } from "./Byline"
+import { PageInfo } from "./PageInfo"
+import { BackToTopic } from "./BackToTopic"
 &nbsp;
 export interface PageOverrides {
     pageTitle?: string
+    pageDesc?: string
+    canonicalUrl?: string
     citationTitle?: string
     citationSlug?: string
     citationCanonicalUrl?: string
     citationAuthors?: string[]
     citationPublicationDate?: Date
-    canonicalUrl?: string
-    excerpt?: string
 }
 &nbsp;
 export const LongFormPage = (<span class="fstat-no" title="function not covered" >props: {</span>
@@ -989,7 +988,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >    const pageTitleSEO = `${pageTitle}${</span>
 <span class="cstat-no" title="statement not covered" >        post.supertitle ? ` - ${post.supertitle}` : ""</span>
 <span class="cstat-no" title="statement not covered" >    }`</span>
-<span class="cstat-no" title="statement not covered" >    const pageDesc = overrides?.excerpt ?? post.excerpt</span>
+<span class="cstat-no" title="statement not covered" >    const pageDesc = overrides?.pageDesc ?? post.pageDesc</span>
 <span class="cstat-no" title="statement not covered" >    const canonicalUrl = overrides?.canonicalUrl ?? `${baseUrl}/${post.slug}`</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const citationTitle = overrides?.citationTitle ?? pageTitle</span>
@@ -1061,8 +1060,9 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >                        canonicalUrl={citationCanonicalUrl}</span>
 <span class="cstat-no" title="statement not covered" >                    /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                )}</span>
+<span class="cstat-no" title="statement not covered" >                {post.style &amp;&amp; &lt;style&gt;{post.style}&lt;/style&gt;}</span>
 <span class="cstat-no" title="statement not covered" >            &lt;/Head&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;body className={bodyClasses.join(" ")}&gt;</span>
+<span class="cstat-no" title="statement not covered" >            &lt;body className={bodyClasses.j</span>oin(" ")}&gt;
 <span class="cstat-no" title="statement not covered" >                &lt;SiteHeader baseUrl={baseUrl} /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                &lt;main&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;article</span>
@@ -1072,94 +1072,82 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div className="offset-header"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            &lt;header className="article-header"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {isPost &amp;&amp; formattingOptions.subnavId &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;BackToTopic</span>
+<span class="cstat-no" title="statement not covered" >                                        subnavId={formattingOptions.subnavId}</span>
+<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                )}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;div className="article-titles"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    {post.supertitle &amp;&amp; (</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;div className="supertitle"&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                            {post.supertitle}</span>
 <span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;h1 className="entry-title"&gt;{pageTitle}&lt;/h1&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    {post.subtitle &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                        &lt;div className="subtitle"&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                            {post.subtitl</span>e}
-<span class="cstat-no" title="statement not covered" >                                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                    )}</span>
-<span class="cstat-no" title="statement not covered" >                                    {formattingOptions.subnavId &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;h1 className="entry-title</span>"&gt;{pageTitle}&lt;/h1&gt;
+<span class="cstat-no" title="statement not covered" >                                    {!isPost &amp;&amp; formattin</span>gOptions.subnavId &amp;&amp; (
 <span class="cstat-no" title="statement not covered" >                                        &lt;Breadcrumb</span>
 <span class="cstat-no" title="statement not covered" >                                            subnavId={</span>
-<span class="cstat-no" title="statement not covered" >                                                formattin</span>gOptions.subnavId
+<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subna</span>vId
 <span class="cstat-no" title="statement not covered" >                                            }</span>
-<span class="cstat-no" title="statement not covered" >                                            subnavCurrent</span>Id={
-<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subna</span>vCurrentId
+<span class="cstat-no" title="statement not covered" >                                            subnavCurrentId={</span>
+<span class="cstat-no" title="statement not covered" >                                                formattingOptions.subnavCurrentId</span>
 <span class="cstat-no" title="statement not covered" >                                            }</span>
 <span class="cstat-no" title="statement not covered" >                                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                    )}</span>
 <span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                {!formattingOptions.hideAuthors &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div className="autho</span>rs-byline"&gt;
-<span class="cstat-no" title="statement not covered" >                                        {post.byline ? (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                                dangerouslySet</span>InnerHTML={{
-<span class="cstat-no" title="statement not covered" >                                                    __html: post.by</span>line,
-<span class="cstat-no" title="statement not covered" >                                                }}</span>
-<span class="cstat-no" title="statement not covered" >                                            &gt;&lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                        ) : (</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;a href="/tea</span>m"&gt;
-<span class="cstat-no" title="statement not covered" >                                                {`by ${formatAuthors(</span>
-<span class="cstat-no" title="statement not covered" >                                                    post.authors,</span>
-<span class="cstat-no" title="statement not covered" >                                                    withCitation</span>
-<span class="cstat-no" title="statement not covered" >                                                )}`}</span>
-<span class="cstat-no" title="statement not covered" >                                            &lt;/a&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                {!isPost &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                    &lt;&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        {!formattingOptions.hideAut</span>hors &amp;&amp; (
+<span class="cstat-no" title="statement not covered" >                                            &lt;Byline</span>
+<span class="cstat-no" title="statement not covered" >                                                authors={</span>post.authors}
+<span class="cstat-no" title="statement not covered" >                                                withMax={withCitation}</span>
+<span class="cstat-no" title="statement not covered" >                                                override=</span>{post.byline}
+<span class="cstat-no" title="statement not covered" >                                            /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                                        )}</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                )}</span>
-<span class="cstat-no" title="statement not covered" >                                {isPost &amp;&amp; &lt;time&gt;{formatDate(post.date)}&lt;/time&gt;}</span>
-<span class="cstat-no" title="statement not covered" >                                {post.info &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" >                                    &lt;div</span>
-<span class="cstat-no" title="statement not covered" ></span>                                        className="blog-info"
-<span class="cstat-no" title="statement not covered" >                                        dangerouslySetInnerHTML={{</span>
-<span class="cstat-no" title="statement not covered" >                                            __html: post.info,</span>
-<span class="cstat-no" title="statement not covered" >                                        }}</span>
-<span class="cstat-no" title="statement not covered" >                                    /&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                                )}
+<span class="cstat-no" title="statement not covered" >                                        {post.info &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;PageInfo info={post.info} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                        )}</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >                                {(isPost ||</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    withCitation ||
-<span class="cstat-no" title="statement not covered" >                                    post.lastUpda</span>ted) &amp;&amp; (
-<span class="cstat-no" title="statement not covered" ></span>                                    &lt;div className="tools"&gt;
-<span class="cstat-no" title="statement not covered" >                                        {post.lastUpdated &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" ></span>                                            &lt;div className="last-updated"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                                                &lt;FontAwesomeIcon
-<span class="cstat-no" title="statement not covered" ></span>                                                    icon={faSync}
-<span class="cstat-no" title="statement not covered" ></span>                                                /&gt;
-<span class="cstat-no" title="statement not covered" ></span>                                                &lt;span
-<span class="cstat-no" title="statement not covered" >                                                    dangerouslySetInnerHTML={{</span>
-<span class="cstat-no" title="statement not covered" ></span>                                                        __html: post.lastUpdated,
-<span class="cstat-no" title="statement not covered" >                                                    }}</span>
-<span class="cstat-no" title="statement not covered" ></span>                                                /&gt;
+<span class="cstat-no" title="statement not covered" >                                        {(withCitation || post.lastUpdated) &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                            &lt;div className="tools"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                {post.lastUpdated &amp;&amp; (</span>
+<span class="cstat-no" title="statement not covered" >                                                    &lt;div className="last-updated"&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;FontAwesomeIcon</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                            icon={faSync}
+<span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" >                                                        &lt;span</span>
+<span class="cstat-no" title="statement not covered" >                                                            dangerouslySetInnerHTML={{</span>
+<span class="cstat-no" title="statement not covered" >                                                                __html:</span> post.lastUpdated,
+<span class="cstat-no" title="statement not covered" ></span>                                                            }}
+<span class="cstat-no" title="statement not covered" >                                                        /&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                    &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" ></span>                                                )}
+<span class="cstat-no" title="statement not covered" >                                                {</span>withCitation &amp;&amp; (
+<span class="cstat-no" title="statement not covered" ></span>                                                    &lt;&gt;
+<span class="cstat-no" title="statement not covered" >                                                        &lt;a href="#licence"&gt;</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                            &lt;FontAwesomeIcon
+<span class="cstat-no" title="statement not covered" ></span>                                                                icon={
+<span class="cstat-no" title="statement not covered" ></span>                                                                    faCreativeCommons
+<span class="cstat-no" title="statement not covered" ></span>                                                                }
+<span class="cstat-no" title="statement not covered" ></span>                                                            /&gt;
+<span class="cstat-no" title="statement not covered" >                                                            Reuse our work</span>
+<span class="cstat-no" title="statement not covered" ></span>                                                            freely
+<span class="cstat-no" title="statement not covered" >                                                        &lt;/a</span>&gt;
+<span class="cstat-no" title="statement not covered" ></span>                                                        &lt;a href="#citation"&gt;
+                                                            &lt;FontAwesomeIcon
+                                                                icon={faBook}
+                                                            /&gt;
+                                                            Cite this research
+                                                        &lt;/a&gt;
+                                                    &lt;/&gt;
+                                                )}
                                             &lt;/div&gt;
                                         )}
-                                        {(isPost || withCitation) &amp;&amp; (
-                                            &lt;a href="#licence"&gt;
-                                                &lt;FontAwesomeIcon
-                                                    icon={faCreativeCommons}
-                                                /&gt;
-                                                Reuse our work freely
-                                            &lt;/a&gt;
-                                        )}
-                                        {withCitation &amp;&amp; (
-                                            &lt;a href="#citation"&gt;
-                                                &lt;FontAwesomeIcon
-                                                    icon={faBook}
-                                                /&gt;
-                                                Cite this research
-                                            &lt;/a&gt;
-                                        )}
-                                    &lt;/div&gt;
+                                    &lt;/&gt;
                                 )}
                             &lt;/header&gt;
                         &lt;/div&gt;
-                        {formattingOptions.subnavId &amp;&amp; (
+                        {!isPost &amp;&amp; formattingOptions.subnavId &amp;&amp; (
                             &lt;SiteSubnavigation
                                 subnavId={formattingOptions.subnavId}
                                 subnavCurrentId={
@@ -1181,12 +1169,17 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                     &lt;div
                                         className="article-content"
                                         dangerouslySetInnerHTML={{
-                                            __html: post.html,
+                                            __html: addContentFeatures(post),
                                         }}
                                     /&gt;
                                     &lt;footer className="article-footer"&gt;
                                         &lt;div className="wp-block-columns"&gt;
                                             &lt;div className="wp-block-column"&gt;
+                                                {isPost &amp;&amp; post.info &amp;&amp; (
+                                                    &lt;PageInfo
+                                                        info={post.info}
+                                                    /&gt;
+                                                )}
                                                 {post.footnotes.length ? (
                                                     &lt;React.Fragment&gt;
                                                         &lt;h3 id={endNotes.slug}&gt;
@@ -1216,6 +1209,7 @@ export const LongFormPage = (<span class="fstat-no" title="function not covered"
                                                         &lt;/ol&gt;
                                                     &lt;/React.Fragment&gt;
                                                 ) : undefined}
+&nbsp;
                                                 {(isPost || withCitation) &amp;&amp; (
                                                     &lt;&gt;
                                                         &lt;h3 id="licence"&gt;
@@ -1393,7 +1387,7 @@ export const formatWordpressEditLink = (postId: number) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 09 2021 16:58:52 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 10 2021 07:37:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

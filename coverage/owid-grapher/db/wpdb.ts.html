@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.6% </span>
+                <span class="strong">23.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>135/572</span>
+                <span class='fraction'>135/571</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.6% </span>
+                <span class="strong">23.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>135/572</span>
+                <span class='fraction'>135/571</span>
             </div>
         
             
@@ -751,8 +751,7 @@
 <a name='L692'></a><a href='#L692'>692</a>
 <a name='L693'></a><a href='#L693'>693</a>
 <a name='L694'></a><a href='#L694'>694</a>
-<a name='L695'></a><a href='#L695'>695</a>
-<a name='L696'></a><a href='#L696'>696</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L695'></a><a href='#L695'>695</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1305,7 +1304,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1954,71 +1952,71 @@ export const getPostBySlug = async (<span class="fstat-no" title="function not c
 &nbsp;
 // the /revisions endpoint does not send back all the metadata required for
 // the proper rendering of the post (e.g. authors), hence the double request.
-export const getLatestPostRevision = async (id: number): Promise&lt;any&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const type = await getPostType(id)</span></span>
-<span class="cstat-no" title="statement not covered" >    cons</span>t endpointSlug = getEndpointSlugFromType(type)
+export const getLatestPostRevision = async (<span class="fstat-no" title="function not covered" >id: number): Promise&lt;any&gt; =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    cons</span>t type = await getPostType(id)
+<span class="cstat-no" title="statement not covered" ></span>    const endpointSlug = getEndpointSlugFromType(type)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const postApi = await apiQuery(</span>`${WP_API_ENDPOINT}/${endpointSlug}/${id}`)
+<span class="cstat-no" title="statement not covered" >    const postApi = await apiQuery(`${WP_API_ENDPOINT}/${endpointSlug}/${id}`)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const revision = (</span>
 <span class="cstat-no" title="statement not covered" >        await apiQuery(</span>
-<span class="cstat-no" title="statement not covered" >            `${WP_API_ENDPOINT}/${endpointSlug}/${id}/revisions?per_page=1`</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" ></span>            `${WP_API_ENDPOINT}/${endpointSlug}/${id}/revisions?per_page=1`
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    )[0]</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    // Since WP does</span> not store metadata for revisions, some elements of a
-<span class="cstat-no" title="statement not covered" >    // previewed page will not refle</span>ct the latest edits:
-<span class="cstat-no" title="statement not covered" >    // - published date (will show the correct one</span> - that is the one in the
-<span class="cstat-no" title="statement not covered" >    //   sidebar - for un</span>published posts though. For published posts, the
-<span class="cstat-no" title="statement not covered" >    //   current pub</span>lished date is displayed, regardless of what is shown
-<span class="cstat-no" title="statement not covered" >    //   and could </span>have been modified in the sidebar.)
-<span class="cstat-no" title="statement not covered" >    // - glossary highli</span>ghts
-<span class="cstat-no" title="statement not covered" >    // - autho</span>rs
+<span class="cstat-no" title="statement not covered" >    // Since WP does not store metad</span>ata for revisions, some elements of a
+<span class="cstat-no" title="statement not covered" >    // previewed page will not reflect the latest </span>edits:
+<span class="cstat-no" title="statement not covered" >    // - published date (</span>will show the correct one - that is the one in the
+<span class="cstat-no" title="statement not covered" >    //   sidebar - f</span>or unpublished posts though. For published posts, the
+<span class="cstat-no" title="statement not covered" >    //   current pu</span>blished date is displayed, regardless of what is shown
+<span class="cstat-no" title="statement not covered" >    //   and could have </span>been modified in the sidebar.)
+<span class="cstat-no" title="statement not covered" >    // - gloss</span>ary highlights
+<span class="cstat-no" title="statement not covered" >    // - aut</span>hors
 <span class="cstat-no" title="statement not covered" >    // ...</span>
-<span class="cstat-no" title="statement not covered" >    return</span> getFullPost({
+<span class="cstat-no" title="statement not covered" >    retu</span>rn getFullPost({
 <span class="cstat-no" title="statement not covered" ></span>        ...postApi,
-<span class="cstat-no" title="statement not covered" ></span>        content: revision.content,
+<span class="cstat-no" title="statement not covered" >        content: revision.content,</span>
 <span class="cstat-no" title="statement not covered" >        title: revision.title,</span>
 <span class="cstat-no" title="statement not covered" >    })</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export const getRelatedCharts = async (
 <span class="fstat-no" title="function not covered" >    postId: number</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;RelatedChart[]&gt; =&gt;</span>
+<span class="cstat-no" title="statement not covered" >): Promise&lt;RelatedChar</span>t[]&gt; =&gt;
 <span class="cstat-no" title="statement not covered" >    db.queryMysql(`</span>
 <span class="cstat-no" title="statement not covered" >        SELECT DISTINCT</span>
 <span class="cstat-no" title="statement not covered" >            charts.config-&gt;&gt;"$.slug" AS slug,</span>
-<span class="cstat-no" title="statement not covered" >            charts.config-&gt;&gt;"$.title" AS title,</span>
-<span class="cstat-no" title="statement not covered" ></span>            charts.config-&gt;&gt;"$.variantName" AS variantName
+<span class="cstat-no" title="statement not covered" ></span>            charts.config-&gt;&gt;"$.title" AS title,
+<span class="cstat-no" title="statement not covered" >            charts.config-&gt;&gt;"$.variantName" AS variantName</span>
 <span class="cstat-no" title="statement not covered" >        FROM charts</span>
-<span class="cstat-no" title="statement not covered" >        INNER JOIN chart_tags ON charts.id=chart_</span>tags.chartId
-<span class="cstat-no" title="statement not covered" >        INNER JOIN post_tags ON chart_tags.tagId=post_tags.tag_id</span>
-<span class="cstat-no" title="statement not covered" ></span>        WHERE post_tags.post_id=${postId}
-<span class="cstat-no" title="statement not covered" >        AND charts.config-&gt;&gt;"$.isPubl</span>ished" = "true"
+<span class="cstat-no" title="statement not covered" >        INNER JOIN chart_tags ON charts.id=chart_tags.chartId</span>
+<span class="cstat-no" title="statement not covered" ></span>        INNER JOIN post_tags ON chart_tags.tagId=post_tags.tag_id
+<span class="cstat-no" title="statement not covered" >        WHERE post_tags.post_id=${pos</span>tId}
+<span class="cstat-no" title="statement not covered" >        AND charts.config-&gt;&gt;"$</span>.isPublished" = "true"
 <span class="cstat-no" title="statement not covered" >        ORDER BY title ASC</span>
 <span class="cstat-no" title="statement not covered" >    `)</span>
 &nbsp;
 export const getRelatedArticles = async (
 <span class="fstat-no" title="function not covered" >    chartSlug: string</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;PostReference[] | undefined&gt; =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const graph = await getContentGr</span>aph()
+<span class="cstat-no" title="statement not covered" >): Promise&lt;PostReference[] | undefin</span>ed&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" >    const graph = await getCon</span>tentGraph()
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    const chartRecord = </span>await graph.find(GraphType.Chart, chartSlug)
+<span class="cstat-no" title="statement not covered" >    const ch</span>artRecord = await graph.find(GraphType.Chart, chartSlug)
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    if</span> (!chartRecord.payload.count) return
+<span class="cstat-no" title="statement not covered" >    if (!chartRecord.payl</span>oad.count) return
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>    const chart = chartRecord.payload.records[0]
-<span class="cstat-no" title="statement not covered" >    const relatedArticles: Post</span>Reference[] = await Promise.all(
-<span class="cstat-no" title="statement not covered" >        chart.research.map(</span>async (postId: any) =&gt; {
-<span class="cstat-no" title="statement not covered" >            cons</span>t postRecord = await graph.find(GraphType.Document, postId)
-<span class="cstat-no" title="statement not covered" >            const post = postRecor</span>d.payload.records[0]
+<span class="cstat-no" title="statement not covered" >    const chart = chartRecord.p</span>ayload.records[0]
+<span class="cstat-no" title="statement not covered" >    const relatedArticles: </span>PostReference[] = await Promise.all(
+<span class="cstat-no" title="statement not covered" >        chart.re</span>search.map(async (postId: any) =&gt; {
+<span class="cstat-no" title="statement not covered" >            const postRecord = awa</span>it graph.find(GraphType.Document, postId)
+<span class="cstat-no" title="statement not covered" >            const post =</span> postRecord.payload.records[0]
 <span class="cstat-no" title="statement not covered" >            return {</span>
 <span class="cstat-no" title="statement not covered" >                id: postId,</span>
-<span class="cstat-no" title="statement not covered" >                title: post.title,</span>
-<span class="cstat-no" title="statement not covered" >                slug: post.slu</span>g,
-<span class="cstat-no" title="statement not covered" ></span>            }
+<span class="cstat-no" title="statement not covered" >                title: post.ti</span>tle,
+<span class="cstat-no" title="statement not covered" ></span>                slug: post.slug,
+<span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
+    )
     return relatedArticles
 }
 &nbsp;
@@ -2048,7 +2046,6 @@ export const getFullPost = async (
     slug: postApi.slug,
     path: postApi.slug, // kept for transitioning between legacy BPES (blog post as entry section) and future hierarchical paths
     title: decodeHTML(postApi.title.rendered),
-    subtitle: postApi.meta.owid_subtitle_meta_field,
     date: new Date(postApi.date_gmt),
     modifiedDate: new Date(postApi.modified_gmt),
     authors: postApi.authors_name || [],
@@ -2149,7 +2146,7 @@ export const flushCache = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 09 2021 16:58:52 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 10 2021 07:37:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

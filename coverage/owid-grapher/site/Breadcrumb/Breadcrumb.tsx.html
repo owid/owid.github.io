@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.48% </span>
+                <span class="strong">78.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>49/58</span>
+                <span class='fraction'>40/51</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/10</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.48% </span>
+                <span class="strong">78.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>49/58</span>
+                <span class='fraction'>40/51</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -131,31 +131,11 @@
 <a name='L72'></a><a href='#L72'>72</a>
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a>
-<a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a>
-<a name='L81'></a><a href='#L81'>81</a>
-<a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -189,19 +169,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,19 +207,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react"
 import { SubNavId } from "../../clientUtils/owidTypes"
-import { SubnavItem, subnavs } from "../SiteSubnavigation"
+import { getSubnavItem, SubnavItem, subnavs } from "../SiteSubnavigation"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight"
-&nbsp;
-export const getSubnavItem = (
-    id: string | undefined,
-    subnavItems: SubnavItem[]
-) =&gt; {
-    // We want to avoid matching elements with potentially undefined id.
-    // Static typing prevents id from being undefined but this might not be
-    // the case in a future API powered version.
-    return id<span class="branch-0 cbranch-no" title="branch not covered" > ? subnavItems.find((item) =&gt; item.i</span>d === id) : undefined
-}
 &nbsp;
 export const getSubnavParent = (
     currentItem: SubnavItem | undefined,
@@ -250,7 +220,7 @@ export const getSubnavParent = (
     // Static typing prevents id from being undefined but this might not be
     // the case in a future API powered version.
     return parentId<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        ? subnavItems.find((item) =&gt; item.id === parentId)
+<span class="cstat-no" title="statement not covered" >        ? subnavItem</span>s.find((item) =&gt; item.id === parentId)
 <span class="cstat-no" title="statement not covered" >        : undefined</span>
 }
 &nbsp;
@@ -260,7 +230,7 @@ export const getBreadcrumbItems = (
 ): SubnavItem[] | undefined =&gt; {
     const breadcrumb = []
     let currentItem = getSubnavItem(subnavCurrentId, subnavItems)
-    if (!currentItem) <span class="branch-0 cbranch-no" title="branch not covered" >ret</span>urn
+    if (!currentItem) <span class="branch-0 cbranch-no" title="branch not covered" >return</span>
     breadcrumb.push(currentItem)
 &nbsp;
     while (currentItem &amp;&amp; currentItem.parentId) {
@@ -273,19 +243,19 @@ export const getBreadcrumbItems = (
 &nbsp;
 const BreadcrumbSeparator = <span class="fstat-no" title="function not covered" >() =&gt; (</span>
 <span class="cstat-no" title="statement not covered" >    &lt;span className="separator"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;FontAwe</span>someIcon icon={faAngleRight} /&gt;
+        &lt;FontAwesomeIcon icon={faAngleRight} /&gt;
     &lt;/span&gt;
 )
 &nbsp;
 export const Breadcrumb = <span class="fstat-no" title="function not covered" >({</span>
 <span class="cstat-no" title="statement not covered" >    subnavId,</span>
 <span class="cstat-no" title="statement not covered" >    subnavCurrentId,</span>
-<span class="cstat-no" title="statement not covered" >}: </span>{
+<span class="cstat-no" title="statement not covered" >}: {</span>
 <span class="cstat-no" title="statement not covered" >    subnavId?: SubNavId</span>
 <span class="cstat-no" title="statement not covered" >    subnavCurrentId?: string</span>
-}) =&gt; {
-    const breadcrumbItems = subnavId
-        ? getBreadcrumbItems(subnavCurrentId, subnavs[subnavId])
+<span class="cstat-no" title="statement not covered" >}) </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >    const breadcrumbItems = subna</span>vId
+<span class="cstat-no" title="statement not covered" >        ? getBreadcrumbItems(subnavCurr</span>entId, subnavs[subnavId])
         : null
 &nbsp;
     return breadcrumbItems ? (
@@ -316,7 +286,7 @@ export const Breadcrumb = <span class="fstat-no" title="function not covered" >(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 09 2021 16:58:52 GMT+0000 (Coordinated Universal Time)
+                at Fri Dec 10 2021 07:37:49 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
