@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>75/75</span>
+                <span class='fraction'>84/84</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">88.89% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>15/16</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>75/75</span>
+                <span class='fraction'>84/84</span>
             </div>
         
             
@@ -166,7 +166,16 @@
 <a name='L107'></a><a href='#L107'>107</a>
 <a name='L108'></a><a href='#L108'>108</a>
 <a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -205,11 +214,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">278x</span>
-<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">284x</span>
+<span class="cline-any cline-yes">284x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">275x</span>
-<span class="cline-any cline-yes">275x</span>
+<span class="cline-any cline-yes">282x</span>
+<span class="cline-any cline-yes">282x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
@@ -224,16 +233,25 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">203x</span>
-<span class="cline-any cline-yes">206x</span>
-<span class="cline-any cline-yes">128x</span>
-<span class="cline-any cline-yes">128x</span>
-<span class="cline-any cline-yes">206x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">210x</span>
+<span class="cline-any cline-yes">210x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">74x</span>
+<span class="cline-any cline-yes">212x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-yes">212x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -335,13 +353,22 @@ export class NumericBin extends AbstractColorScaleBin&lt;NumericBinProps&gt; {
     contains(value: string | number | undefined): boolean {
         if (value === undefined) return false
 &nbsp;
-        if (this.props.isOpenLeft) return value &lt;= this.max
+        // In looking at this code, it is important to realise that `isOpenLeft`, `isOpenRight`,
+        // and `isFirst` are _not_ mutually exclusive.
+        // For example, if both `isOpenRight` and `isFirst` are set, then we effectively want `value &gt;= min`.
 &nbsp;
-        if (this.props.isOpenRight) return value &gt; this.min
+        // If the bin is left-open, we just need to check the right side
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >this.props.isOpenLeft</span> &amp;&amp; value &lt;= this.max) return true
 &nbsp;
-        if (this.props.isFirst) return value &gt;= this.min &amp;&amp; value &lt;= this.max
+        // If the bin is right-open, we just need to check the left side
+        if (this.props.isOpenRight &amp;&amp; value &gt; this.min) return true
 &nbsp;
-        return value &gt; this.min &amp;&amp; value &lt;= this.max
+        // If this is the first bin of the chart, we want to include the `min` value and thus use greater-equals
+        if (this.props.isFirst) {
+            return value &gt;= this.min &amp;&amp; value &lt;= this.max
+        } else {
+            return value &gt; this.min &amp;&amp; value &lt;= this.max
+        }
     }
 &nbsp;
     equals(other: ColorScaleBin): boolean {
@@ -391,7 +418,7 @@ export type ColorScaleBin = CategoricalBin | NumericBin
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Dec 13 2021 21:25:09 GMT+0000 (Coordinated Universal Time)
+                at Tue Dec 14 2021 11:56:14 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
