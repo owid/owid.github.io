@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.55% </span>
+                <span class="strong">92.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>348/376</span>
+                <span class='fraction'>349/377</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.95% </span>
+                <span class="strong">59.26% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>51/88</span>
+                <span class='fraction'>48/81</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.55% </span>
+                <span class="strong">92.57% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>348/376</span>
+                <span class='fraction'>349/377</span>
             </div>
         
             
@@ -695,7 +695,7 @@
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">28x</span>
@@ -973,13 +973,13 @@ export class ColorScale {
         const numColors = bucketMaximums.length + categoricalValues.length
         const colors = colorScheme.getColors(numColors)
 &nbsp;
-        if (isColorSchemeInverted) <span class="branch-0 cbranch-no" title="branch not covered" >rev</span>erse(colors)
+        if (isColorSchemeInverted) reverse(colors)
 &nbsp;
         return colors
     }
 &nbsp;
     @computed get numAutoBins(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.con</span>fig.binningStrategyBinCount ?? 5
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.c</span>onfig.binningStrategyBinCount ?? 5
     }
 &nbsp;
     @computed get isManualBuckets(): boolean {
@@ -995,9 +995,9 @@ export class ColorScale {
     // Exclude any major outliers for legend calculation (they will be relegated to open-ended bins)
     @computed get sortedNumericValuesWithoutOutliers(): any[] {
         const { sortedNumericValues } = this
-        if (!sortedNumericValues.length) return []
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>        const sampleMean = mean(sortedNumericValues) as number</span>
-<span class="cstat-no" title="statement not covered" >        const sampleDeviation = <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >de</span></span></span>viation(sortedNumericValues) ?? 0
+        if (!sortedNumericValues.length) <span class="branch-0 cbranch-no" title="branch not covered" >return []</span>
+<span class="cstat-no" title="statement not covered" >        con</span>st sampleMean = mean(sortedNumericValues) as number
+<span class="cstat-no" title="statement not covered" ></span>        const sampleDeviation = deviation(sortedNumericValues) ?? 0
         const withoutOutliers = sortedNumericValues.filter(
             (d) =&gt; Math.abs(d - sampleMean) &lt;= sampleDeviation * 2
         )
@@ -1005,10 +1005,10 @@ export class ColorScale {
         // d3-array returns a deviation of `undefined` for arrays of length &lt;= 1, so set it to 0 in that case
         const deviationWithoutOutliers = <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >deviation(withoutOutliers) ?? 0</span></span></span>
 &nbsp;
-        if (deviationWithoutOutliers === 0) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            // if after removing outliers we end up in a state where the std. dev. is</span> 0, i.e. we only</span>
-<span class="cstat-no" title="statement not covered" ></span>            // have one distinct value, then we actually want to _keep_ the outliers in
-<span class="cstat-no" title="statement not covered" >            return sortedNumericValues</span>
+        if (deviationWithoutOutliers === 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            // if after removing outliers we</span> end up in a state where the std. dev. is 0, i.e. we only
+<span class="cstat-no" title="statement not covered" >            // have one distinct value, then we actually want to _keep_ the outliers </span>in
+<span class="cstat-no" title="statement not covered" ></span>            return sortedNumericValues
         } else return withoutOutliers
     }
 &nbsp;
@@ -1030,29 +1030,29 @@ export class ColorScale {
             baseColors,
         } = this
 &nbsp;
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >minPossibl</span>eValue === undefined || maxPossibleValue === undefined)
+        if (minPossibleValue === undefined || maxPossibleValue === undefined)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return []</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        let min = minBinValue</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        return bucketMaximums.map((max, index) =&gt; {
+<span class="cstat-no" title="statement not covered" >        return bucketMaximums.map((max, index) =&gt; {</span>
             const baseColor = baseColors[index]
             const color = customNumericColors[index] ?? baseColor
             const label = customNumericLabels[index]
 &nbsp;
             const displayMin =
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this</span></span>.colorScaleColumn?.formatValueShort(min) ?? min.toString()
+                this.colorScaleColumn?.formatValueShort(min) ?? min.toString()
             const displayMax =
-                this.colorScaleColumn?.formatValueShort(max) ?? max.toString()
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                this.colorScaleColumn?.f</span>ormatValueShort</span>(max) ?? max.toString()
 &nbsp;
             const currentMin = min
+            const isFirst = index === 0
+            const isLast = index === bucketMaximums.length - 1
             min = max
             return new NumericBin({
-                isFirst: index === 0,
-                isOpenLeft: index === 0 &amp;&amp; currentMin &gt; minPossibleValue,
-                isOpenRight:
-                    index === bucketMaximums.length - 1 &amp;&amp;
-                    max &lt; maxPossibleValue,
+                isFirst,
+                isOpenLeft: isFirst &amp;&amp; currentMin &gt; minPossibleValue,
+                isOpenRight: isLast &amp;&amp; max &lt; maxPossibleValue,
                 min: currentMin,
                 max,
                 color,
@@ -1100,10 +1100,10 @@ export class ColorScale {
         return allCategoricalValues.map((value, index) =&gt; {
             const boundingOffset = isEmpty(bucketMaximums)
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                ? 0</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                : bucketMaximums.length - 1
+<span class="cstat-no" title="statement not covered" >                : bucketMaximums.length - 1</span>
             const baseColor = baseColors[index + boundingOffset]
             const color = customCategoryColors[value] ?? baseColor
-            const label = customCategoryLabels[value] ?? value
+            const label = <span class="branch-0 cbranch-no" title="branch not covered" >customCategoryLabels[</span>value] ?? value
 &nbsp;
             return new CategoricalBin({
                 index,
@@ -1118,14 +1118,14 @@ export class ColorScale {
     getBinForValue(
         value: number | string | undefined
     ): ColorScaleBin | undefined {
-        return value === undefined
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? undefi</span></span>ned
+        return <span class="branch-0 cbranch-no" title="branch not covered" >value === undefined</span>
+<span class="cstat-no" title="statement not covered" >            ?</span> undefined
             : this.legendBins.find((bin) =&gt; bin.contains(value))
     }
 &nbsp;
     getColor(value: number | string | undefined): string | undefined {
         if (value === undefined) return this.noDataColor
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.</span>getBinForValue(value)?.color
+        return this.getBinForValue(value)?.color
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -1135,7 +1135,7 @@ export class ColorScale {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 16 2021 08:05:50 GMT+0000 (Coordinated Universal Time)
+                at Thu Dec 16 2021 10:28:42 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
