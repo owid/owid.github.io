@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.47% </span>
+                <span class="strong">69.91% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>241/342</span>
+                <span class='fraction'>244/349</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.47% </span>
+                <span class="strong">69.91% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>241/342</span>
+                <span class='fraction'>244/349</span>
             </div>
         
             
@@ -526,7 +526,16 @@
 <a name='L467'></a><a href='#L467'>467</a>
 <a name='L468'></a><a href='#L468'>468</a>
 <a name='L469'></a><a href='#L469'>469</a>
-<a name='L470'></a><a href='#L470'>470</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -625,7 +634,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3295x</span>
+<span class="cline-any cline-yes">3307x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -655,7 +664,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3295x</span>
+<span class="cline-any cline-yes">3307x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -815,6 +824,15 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -866,8 +884,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1189,10 +1207,10 @@ class Areas extends React.Component&lt;AreasProps&gt; {
 <span class="cstat-no" title="statement not covered" ></span>                                        point.value + point.valueOffset
 <span class="cstat-no" title="statement not covered" ></span>                                    )}
 <span class="cstat-no" title="statement not covered" ></span>                                    r={2}
-<span class="cstat-no" title="statement not covered" >                                    fill={seri</span>es.color}
+<span class="cstat-no" title="statement not covered" >                                    fill={series.color}</span>
 <span class="cstat-no" title="statement not covered" >                                /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                            )</span>
-<span class="cstat-no" title="statement not covered" ></span>                        })}
+<span class="cstat-no" title="statement not covered" >                        })}</span>
 <span class="cstat-no" title="statement not covered" ></span>                        &lt;line
                             x1={horizontalAxis.place(
                                 seriesArr[0].points[hoverIndex].position
@@ -1213,7 +1231,7 @@ class Areas extends React.Component&lt;AreasProps&gt; {
 &nbsp;
 @observer
 export class StackedAreaChart
-    extends AbstactStackedChart&lt;Time&gt;
+    extends AbstactStackedChart
     implements LineLegendManager
 {
     constructor(props: AbstactStackedChartProps) {
@@ -1256,12 +1274,12 @@ export class StackedAreaChart
 &nbsp;
     @observable hoveredPointIndex?: number
     @action.bound <span class="fstat-no" title="function not covered" >onHover(hoverIndex: number | undefined): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.hoveredPointIndex = hoverIndex
+<span class="cstat-no" title="statement not covered" >        this.hoveredPointIndex = hoverIndex</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable hoverSeriesName?: SeriesName
     @action.bound <span class="fstat-no" title="function not covered" >onLegendClick(): void {</span>
-<span class="cstat-no" title="statement not covered" >        if (this.manager.startSelectingWhenLineClicke</span>d)
+<span class="cstat-no" title="statement not covered" >        if (this.manager.startSelectingWhenLineClicked)</span>
 <span class="cstat-no" title="statement not covered" >            this.manager.isSelectingData = true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1270,73 +1288,82 @@ export class StackedAreaChart
         return legendDimensions<span class="branch-0 cbranch-no" title="branch not covered" > ? legendDimensions.width : 20</span>
     }
 &nbsp;
-    @action.bound onLegendMouseOver(seriesName: SeriesName): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hoverSeriesName = seriesName</span></span>
+    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(seriesName: SeriesName): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverSeriesName =</span> seriesName
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound onLegendMouseLeave(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.hoverSe</span>riesName = undefined</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverSeriesName = undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get focusedSeriesNames(): string[] {
-        return excludeUndefined([
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.ma</span>nager.externalLegendFocusBin?.value,
+        const { externalLegendFocusBin } = this.manager
+        const focusedSeriesNames = excludeUndefined([
+            this.props.manager.annotation?.entityName,
             this.hoverSeriesName,
         ])
+        if (externalLegendFocusBin) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            focus</span>edSeriesNames.push(
+<span class="cstat-no" title="statement not covered" ></span>                ...this.series
+<span class="cstat-no" title="statement not covered" ></span>                    .map((s) =&gt; s.seriesName)
+<span class="cstat-no" title="statement not covered" >                    .filter((name) =&gt; externalLegendFocusBin.contains(name))</span>
+<span class="cstat-no" title="statement not covered" ></span>            )
+<span class="cstat-no" title="statement not covered" ></span>        }
+        return focusedSeriesNames
     }
 &nbsp;
     @computed get isFocusMode(): boolean {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.focusedSeriesNames.length &gt; 0</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>focusedSeriesNames.length &gt; 0</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >    seriesIsBlur(series: StackedSeries&lt;Time&gt;): boolean {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n (
-<span class="cstat-no" title="statement not covered" >            this.foc</span>usedSeriesNames.length &gt; 0 &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            !this.focusedSeriesNames.includes(series.ser</span>iesName)
+<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.focusedSeriesNames.length &gt; 0 &amp;&amp;
+<span class="cstat-no" title="statement not covered" >            !this.fo</span>cusedSeriesNames.includes(series.seriesName)
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get tooltip(): JSX.Element | undefined {
         if (this.hoveredPointIndex === undefined) return undefined
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >        const</span> { hoveredPointIndex, dualAxis, series } = this
+<span class="cstat-no" title="statement not covered" >        const { hoveredPointIndex, dualAxis, seri</span>es } = this
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // Grab the first value to get the year f</span>rom
-<span class="cstat-no" title="statement not covered" >        const</span> bottomSeriesPoint = series[0].points[hoveredPointIndex]
+<span class="cstat-no" title="statement not covered" >        // Grab the fi</span>rst value to get the year from
+<span class="cstat-no" title="statement not covered" >        const bottomSeriesPoint = series[0].points[hoveredP</span>ointIndex]
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        // If some data is missing, don't calculate a total</span>
-<span class="cstat-no" title="statement not covered" >        const</span> somePointsMissingForHoveredTime = series.some(
-<span class="cstat-no" title="statement not covered" >            (series) =&gt; </span>series.points[hoveredPointIndex].fake
+<span class="cstat-no" title="statement not covered" >        // If some data </span>is missing, don't calculate a total
+<span class="cstat-no" title="statement not covered" >        const somePointsMissingForHoveredTime = series.</span>some(
+<span class="cstat-no" title="statement not covered" >            (</span>series) =&gt; series.points[hoveredPointIndex].fake
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const legend</span>BlockStyle = {
-<span class="cstat-no" title="statement not covered" >            width: "10px",</span>
-<span class="cstat-no" title="statement not covered" >            h</span>eight: "10px",
-<span class="cstat-no" title="statement not covered" >            display: "in</span>line-block",
-<span class="cstat-no" title="statement not covered" >            marginRight: "2px",</span>
+<span class="cstat-no" title="statement not covered" >        const</span> legendBlockStyle = {
+<span class="cstat-no" title="statement not covered" >            width: "10px</span>",
+<span class="cstat-no" title="statement not covered" >            height: "10px",</span>
+<span class="cstat-no" title="statement not covered" >            d</span>isplay: "inline-block",
+<span class="cstat-no" title="statement not covered" >            marginRight:</span> "2px",
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const lastStackedPoint = last(series)!.points[hovere</span>dPointIndex]
-<span class="cstat-no" title="statement not covered" >        const</span> totalValue = lastStackedPoint.value + lastStackedPoint.valueOffset
+<span class="cstat-no" title="statement not covered" >        const lastSt</span>ackedPoint = last(series)!.points[hoveredPointIndex]
+<span class="cstat-no" title="statement not covered" >        const totalValue = lastStackedPoint.value + lastStac</span>kedPoint.valueOffset
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const yColumn = this.yColumns[0] // Assumes same typ</span>e for all columns.
+<span class="cstat-no" title="statement not covered" >        const yColum</span>n = this.yColumns[0] // Assumes same type for all columns.
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n (
 <span class="cstat-no" title="statement not covered" >            &lt;Tooltip</span>
-<span class="cstat-no" title="statement not covered" ></span>                tooltipManager={this.props.manager}
-<span class="cstat-no" title="statement not covered" >                x={d</span>ualAxis.horizontalAxis.place(bottomSeriesPoint.position)}
+<span class="cstat-no" title="statement not covered" >                tooltipManager={this.props.manage</span>r}
+<span class="cstat-no" title="statement not covered" ></span>                x={dualAxis.horizontalAxis.place(bottomSeriesPoint.position)}
 <span class="cstat-no" title="statement not covered" >                y={</span>
-<span class="cstat-no" title="statement not covered" ></span>                    dualAxis.verticalAxis.rangeMin +
+<span class="cstat-no" title="statement not covered" >                    dualAxis.verticalAxis.rangeMi</span>n +
 <span class="cstat-no" title="statement not covered" ></span>                    dualAxis.verticalAxis.rangeSize / 2
 <span class="cstat-no" title="statement not covered" >                }</span>
-<span class="cstat-no" title="statement not covered" ></span>                style={{ padding: "0.3em" }}
-<span class="cstat-no" title="statement not covered" >                offs</span>etX={5}
+<span class="cstat-no" title="statement not covered" >                style={{ padding: "0.3em" }}</span>
+<span class="cstat-no" title="statement not covered" >                offsetX={5}</span>
 <span class="cstat-no" title="statement not covered" >            &gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;table style={{ </span>fontSize: "0.9em", lineHeight: "1.4em" }}&gt;
-<span class="cstat-no" title="statement not covered" >                    &lt;tbody</span>&gt;
-<span class="cstat-no" title="statement not covered" ></span>                        &lt;tr&gt;
-<span class="cstat-no" title="statement not covered" >                            &lt;td&gt;</span>
-<span class="cstat-no" title="statement not covered" >                                &lt;strong&gt;</span>
+<span class="cstat-no" title="statement not covered" >                &lt;table</span> style={{ fontSize: "0.9em", lineHeight: "1.4em" }}&gt;
+<span class="cstat-no" title="statement not covered" >                    &lt;tbody&gt;</span>
+<span class="cstat-no" title="statement not covered" >                        &lt;tr&gt;</span>
+                            &lt;td&gt;
+                                &lt;strong&gt;
                                     {this.inputTable.timeColumnFormatFunction(
                                         bottomSeriesPoint.position
                                     )}
@@ -1471,7 +1498,7 @@ export class StackedAreaChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 30 2021 12:23:26 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 04 2022 12:15:10 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

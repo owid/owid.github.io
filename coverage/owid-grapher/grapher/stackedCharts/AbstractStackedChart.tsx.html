@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.27% </span>
+                <span class="strong">94.29% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>329/349</span>
+                <span class='fraction'>330/350</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">81.97% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>50/60</span>
+                <span class='fraction'>50/61</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.27% </span>
+                <span class="strong">94.29% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>329/349</span>
+                <span class='fraction'>330/350</span>
             </div>
         
             
@@ -395,7 +395,12 @@
 <a name='L336'></a><a href='#L336'>336</a>
 <a name='L337'></a><a href='#L337'>337</a>
 <a name='L338'></a><a href='#L338'>338</a>
-<a name='L339'></a><a href='#L339'>339</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L339'></a><a href='#L339'>339</a>
+<a name='L340'></a><a href='#L340'>340</a>
+<a name='L341'></a><a href='#L341'>341</a>
+<a name='L342'></a><a href='#L342'>342</a>
+<a name='L343'></a><a href='#L343'>343</a>
+<a name='L344'></a><a href='#L344'>344</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -607,6 +612,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -619,6 +625,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
@@ -630,12 +637,14 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -701,12 +710,13 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">830x</span>
-<span class="cline-any cline-yes">830x</span>
-<span class="cline-any cline-yes">830x</span>
-<span class="cline-any cline-yes">830x</span>
-<span class="cline-any cline-yes">830x</span>
-<span class="cline-any cline-yes">830x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
+<span class="cline-any cline-yes">832x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
@@ -754,7 +764,7 @@ import { observer } from "mobx-react"
 import React from "react"
 import {
     StackedPoint,
-    StackedPointPositionType,
+    StackedRawSeries,
     StackedSeries,
 } from "./StackedConstants"
 import { OwidTable } from "../../coreTable/OwidTable"
@@ -778,7 +788,7 @@ export interface AbstactStackedChartProps {
 }
 &nbsp;
 @observer
-export class AbstactStackedChart&lt;PositionType extends StackedPointPositionType&gt;
+export class AbstactStackedChart
     extends React.Component&lt;AbstactStackedChartProps&gt;
     implements ChartInterface, FontSizeManager
 {
@@ -944,7 +954,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return axis
     }
 &nbsp;
-    @computed private get columnsAsSeries() {
+    @computed
+    private get columnsAsSeries(): readonly StackedRawSeries&lt;number&gt;[] {
         return this.yColumns
             .map((col) =&gt; {
                 return {
@@ -956,32 +967,35 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
     }
 &nbsp;
-    @computed private get entitiesAsSeries() {
+    @computed
+    private get entitiesAsSeries(): readonly StackedRawSeries&lt;number&gt;[] {
         const { isProjection, owidRowsByEntityName } = this.yColumns[0]
         return this.selectionArray.selectedEntityNames
             .map((seriesName) =&gt; {
                 return {
                     isProjection,
                     seriesName,
-                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >ow</span>idRowsByEntityName.get(seriesName) || [],
+                    rows: <span class="branch-0 cbranch-no" title="branch not covered" >owidRowsByEntityNa</span>me.get(seriesName) || [],
                 }
             })
             .reverse() // For stacked charts, we want the first selected series to be on top, so we reverse the order of the stacks.
     }
 &nbsp;
-    @computed protected get rawSeries() {
+    @computed
+    protected get rawSeries(): readonly StackedRawSeries&lt;number&gt;[] {
         return this.isEntitySeries
             ? this.entitiesAsSeries
             : this.columnsAsSeries
     }
 &nbsp;
-    @computed protected get allStackedPoints(): StackedPoint&lt;PositionType&gt;[] {
+    @computed
+    protected get allStackedPoints(): readonly StackedPoint&lt;number&gt;[] {
         return flatten(this.series.map((series) =&gt; series.points))
     }
 &nbsp;
     @computed get failMessage(): string {
         const { yColumnSlugs } = this
-        if (!yColumnSlugs.length) return "Missing variable"
+        if (!yColumnSlugs.length) <span class="branch-0 cbranch-no" title="branch not covered" >return "</span>Missing variable"
         if (!this.series.length) return "No matching data"
         if (!this.allStackedPoints.length) return "No matching points"
         return ""
@@ -990,8 +1004,8 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
     @computed private get colorScheme(): ScaleOrdinal&lt;string, string&gt; {
         const scheme =
             (this.manager.baseColorScheme
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                ? C</span></span>olorSchemes[this.manager.baseColorScheme]</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                : null) ?? ColorSchemes.stackedAreaDefault
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                ? ColorSchemes[this.manager.baseColorScheme]</span></span>
+<span class="cstat-no" title="statement not covered" >                : nu</span>ll) ?? ColorSchemes.stackedAreaDefault
         const seriesCount = this.isEntitySeries
             ? this.selectionArray.numSelectedEntities
             : this.yColumns.length
@@ -1025,7 +1039,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
         return true
     }
 &nbsp;
-    @computed get unstackedSeries(): readonly StackedSeries&lt;PositionType&gt;[] {
+    @computed get unstackedSeries(): readonly StackedSeries&lt;number&gt;[] {
         return this.rawSeries
             .filter(
                 (series) =&gt;
@@ -1041,17 +1055,18 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
                     points: rows.map((row) =&gt; {
                         return {
                             position: row.time,
+                            time: row.time,
                             value: row.value,
                             valueOffset: 0,
                         }
                     }),
                     color: this.getColorForSeries(seriesName),
-                } as StackedSeries&lt;PositionType&gt;
-            })
+                }
+            }) as StackedSeries&lt;number&gt;[]
     }
 &nbsp;
-    @computed get series(): readonly StackedSeries&lt;PositionType&gt;[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>unstackedSeries</span>
+    @computed get series(): readonly StackedSeries&lt;number&gt;[] {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.unstackedSeries</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get externalLegendBins(): CategoricalBin[] {
@@ -1078,7 +1093,7 @@ export class AbstactStackedChart&lt;PositionType extends StackedPointPositionTyp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 30 2021 12:23:26 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 04 2022 12:15:10 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

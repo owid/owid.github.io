@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.29% </span>
+                <span class="strong">93.13% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>459/492</span>
+                <span class='fraction'>461/495</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.31% </span>
+                <span class="strong">75.61% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>61/81</span>
+                <span class='fraction'>62/82</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.67% </span>
+                <span class="strong">97.62% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>42/43</span>
+                <span class='fraction'>41/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.29% </span>
+                <span class="strong">93.13% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>459/492</span>
+                <span class='fraction'>461/495</span>
             </div>
         
             
@@ -605,7 +605,18 @@
 <a name='L546'></a><a href='#L546'>546</a>
 <a name='L547'></a><a href='#L547'>547</a>
 <a name='L548'></a><a href='#L548'>548</a>
-<a name='L549'></a><a href='#L549'>549</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a>
+<a name='L551'></a><a href='#L551'>551</a>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a>
+<a name='L555'></a><a href='#L555'>555</a>
+<a name='L556'></a><a href='#L556'>556</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1036,9 +1047,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">32x</span>
@@ -1093,10 +1107,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1187,7 +1201,11 @@ import {
     DiscreteBarSeries,
 } from "./DiscreteBarChartConstants"
 import { OwidTable } from "../../coreTable/OwidTable"
-import { autoDetectYColumnSlugs, makeSelectionArray } from "../chart/ChartUtils"
+import {
+    autoDetectSeriesStrategy,
+    autoDetectYColumnSlugs,
+    makeSelectionArray,
+} from "../chart/ChartUtils"
 import { HorizontalAxis } from "../axis/Axis"
 import { SelectionArray } from "../selection/SelectionArray"
 import { CoreColumn } from "../../coreTable/CoreTableColumns"
@@ -1247,8 +1265,8 @@ export class DiscreteBarChart
 &nbsp;
     @computed get transformedTable(): OwidTable {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.transformedTable ??</span>
-            this.transformTable(this.inputTable)
+            this.manager.transformedTable ??
+<span class="branch-0 cbranch-no" title="branch not covered" >            this.t</span>ransformTable(this.inputTable)
         )
     }
 &nbsp;
@@ -1309,7 +1327,7 @@ export class DiscreteBarChart
 &nbsp;
     // The amount of space we need to allocate for bar end labels on the right
     @computed private get rightValueLabelWidth(): number {
-        if (!this.hasPositive) return 0
+        if (!this.hasPositive) <span class="branch-0 cbranch-no" title="branch not covered" >return 0</span>
 &nbsp;
         const positiveLabels = this.series
             .filter((d) =&gt; d.value &gt;= 0)
@@ -1324,21 +1342,21 @@ export class DiscreteBarChart
     @computed private get leftValueLabelWidth(): number {
         if (!this.hasNegative) <span class="branch-0 cbranch-no" title="branch not covered" >return 0</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        const negativeLabels = this.series
-<span class="cstat-no" title="statement not covered" >            .filter((d) =&gt; </span>d.value &lt; 0)
-<span class="cstat-no" title="statement not covered" >            .map((d) =&gt; this.formatValue(d))</span>
+<span class="cstat-no" title="statement not covered" >        const negativeLabels = this.series</span>
+<span class="cstat-no" title="statement not covered" >            .filter((</span>d) =&gt; d.value &lt; 0)
+<span class="cstat-no" title="statement not covered" >            .map((d) =&gt; this.format</span>Value(d))
 <span class="cstat-no" title="statement not covered" ></span>        const longestNegativeLabel = maxBy(negativeLabels, (l) =&gt; l.length)
 <span class="cstat-no" title="statement not covered" >        return (</span>
-<span class="cstat-no" title="statement not covered" >            Bounds.fo</span>rText(longestNegativeLabel, this.valueLabelStyle).width +
-<span class="cstat-no" title="statement not covered" >            labelToTextPadding</span>
-<span class="cstat-no" title="statement not covered" ></span>        )
+<span class="cstat-no" title="statement not covered" >            Bounds.forText(longestNegativeLabel, this.valueLabel</span>Style).width +
+<span class="cstat-no" title="statement not covered" ></span>            labelToTextPadding
+<span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get x0(): number {
-        if (!this.isLogScale) return 0
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" ></span>        const minValue = min(this.series.map((d) =&gt; d.value))
-<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" >minValue !=</span></span>= undefined ? Math.min(1, minValue) : 1
+        if (!this.isLogScale) <span class="branch-0 cbranch-no" title="branch not covered" >return 0</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        const minValue = min(this.series.map</span>((d) =&gt; d.value))
+<span class="cstat-no" title="statement not covered" >        return <span class="branch-0 cbranch-no" title="branch not covered" >minValue !== undefine</span></span>d ? Math.min(1, minValue) : 1
     }
 &nbsp;
     // Now we can work out the main x axis scale
@@ -1432,16 +1450,16 @@ export class DiscreteBarChart
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    componentDidUpdate(): void {</span>
-<span class="cstat-no" title="statement not covered" ></span>        // Animating the bar width after a render ensures there's no race condition, where the
-<span class="cstat-no" title="statement not covered" >        // initial animat</span>ion (in componentDidMount) did override the now-changed bar width in
-<span class="cstat-no" title="statement not covered" >        // some cases. Updating the animation with the updated bar widt</span>hs fixes that.
-<span class="cstat-no" title="statement not covered" ></span>        this.animateBarWidth()
+<span class="cstat-no" title="statement not covered" >        // Animating the ba</span>r width after a render ensures there's no race condition, where the
+<span class="cstat-no" title="statement not covered" >        // initial animation (in componentDidMount) did override the now-changed bar width in</span>
+<span class="cstat-no" title="statement not covered" >        // some cases. Updating the animation with the updated bar widths fi</span>xes that.
+<span class="cstat-no" title="statement not covered" >        this.animateBarWidth()</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     render(): JSX.Element {
         if (this.failMessage)
 <span class="branch-0 cbranch-no" title="branch not covered" >            return (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;NoDataModal</span>
+<span class="cstat-no" title="statement not covered" ></span>                &lt;NoDataModal
                     manager={this.manager}
                     bounds={this.bounds}
                     message={this.failMessage}
@@ -1475,18 +1493,18 @@ export class DiscreteBarChart
                 {series.map((series) =&gt; {
                     // Todo: add a "placedSeries" getter to get the transformed series, then just loop over the placedSeries and render a bar for each
                     const isNegative = series.value &lt; 0
-                    const barX = isNegative<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-                        ? yAxis.place(series.value)
+                    const barX = isNegative
+<span class="branch-0 cbranch-no" title="branch not covered" >                        ? yAxis.</span>place(series.value)
                         : yAxis.place(this.x0)
                     const barWidth = isNegative
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? yAxis.place(this</span></span>.x0) - barX
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? yAxis.place(this.x0) -</span></span> barX
                         : yAxis.place(series.value) - barX
                     const valueLabel = this.formatValue(series)
                     const labelX = isNegative
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                        ? barX -</span>
-<span class="cstat-no" title="statement not covered" >                          Bounds.forText(va</span>lueLabel, this.valueLabelStyle)
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        ? barX -</span></span>
+<span class="cstat-no" title="statement not covered" >                          Bounds.forText(valueLabel, this.valueLabelStyle)</span>
 <span class="cstat-no" title="statement not covered" >                              .width -</span>
-<span class="cstat-no" title="statement not covered" >                          labelToTextPadding</span>
+<span class="cstat-no" title="statement not covered" ></span>                          labelToTextPadding
                         : barX - labelToBarPadding
 &nbsp;
                     // Using transforms for positioning to enable better (subpixel) transitions
@@ -1551,13 +1569,13 @@ export class DiscreteBarChart
     @computed get failMessage(): string {
         const column = this.yColumns[0]
 &nbsp;
-        if (!column) return "No column to chart"
+        if (!column) <span class="branch-0 cbranch-no" title="branch not covered" >return "</span>No column to chart"
 &nbsp;
         if (!this.selectionArray.hasSelection) return `No data selected`
 &nbsp;
         // TODO is it better to use .series for this check?
-        return this.yColumns.every((col) =&gt; col.isEmpty)
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? `No ma</span></span>tching data in columns ${this.yColumnSlugs.join(", ")}`
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.yColumns.every((col) =&gt; col.isEmpty)</span>
+<span class="cstat-no" title="statement not covered" >            ? `No matching data in columns ${this.yCo</span>lumnSlugs.join(", ")}`
             : ""
     }
 &nbsp;
@@ -1581,13 +1599,16 @@ export class DiscreteBarChart
     }
 &nbsp;
     @computed private get seriesStrategy(): SeriesStrategy {
-        return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.manager.seriesStrategy ??</span>
-            (this.yColumnSlugs.length &gt; 1 &amp;&amp;
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.sel</span></span>ectionArray.numSelectedEntities === 1</span>
-<span class="cstat-no" title="statement not covered" >                ? SeriesStrategy.column</span>
-                : SeriesStrategy.entity)
-        )
+        const autoStrategy = autoDetectSeriesStrategy(this.manager, true)
+        // TODO this is an inconsistency between LineChart and DiscreteBar.
+        // We should probably make it consistent at some point.
+        if (
+            autoStrategy === SeriesStrategy.column &amp;&amp;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            this.sel</span></span>ectionArray.numSelectedEntities &gt; 1
+        ) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >            r</span>eturn SeriesStrategy.entity
+<span class="cstat-no" title="statement not covered" >        }</span>
+        return autoStrategy
     }
 &nbsp;
     @computed protected get yColumns(): CoreColumn[] {
@@ -1621,20 +1642,20 @@ export class DiscreteBarChart
     }
 &nbsp;
     @computed get sortConfig(): SortConfig {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager.sortConfig ?? {}</span>
+        return this.manager.sortConfig ?? {}
     }
 &nbsp;
     @computed private get sortedRawSeries(): DiscreteBarItem[] {
         const raw =
 <span class="branch-0 cbranch-no" title="branch not covered" >            this.seriesStrategy === SeriesStrategy.entity</span>
-<span class="cstat-no" title="statement not covered" >                ? this.entitiesAsSeries</span>
-<span class="cstat-no" title="statement not covered" ></span>                : this.columnsAsSeries
+<span class="cstat-no" title="statement not covered" ></span>                ? this.entitiesAsSeries
+<span class="cstat-no" title="statement not covered" >                : th</span>is.columnsAsSeries
 &nbsp;
         let sortByFunc: (item: DiscreteBarItem) =&gt; number | string
         switch (this.sortConfig.sortBy) {
 <span class="branch-0 cbranch-no" title="branch not covered" >            case SortBy.entityName:</span>
-<span class="cstat-no" title="statement not covered" >                sortByFunc = (item: DiscreteBarItem) </span>=&gt; item.seriesName
-<span class="cstat-no" title="statement not covered" ></span>                break
+<span class="cstat-no" title="statement not covered" ></span>                sortByFunc = (item: DiscreteBarItem) =&gt; item.seriesName
+<span class="cstat-no" title="statement not covered" >                brea</span>k
 <span class="branch-0 cbranch-no" title="branch not covered" >            default:</span>
             case SortBy.total:
             case SortBy.column: // we only have one yColumn, so total and column are the same
@@ -1708,7 +1729,7 @@ export class DiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Dec 30 2021 12:23:26 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 04 2022 12:15:10 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
