@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.84% </span>
+                <span class="strong">50.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>320/642</span>
+                <span class='fraction'>325/647</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.42% </span>
+                <span class="strong">85.11% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>41/48</span>
+                <span class='fraction'>40/47</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">49.84% </span>
+                <span class="strong">50.23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>320/642</span>
+                <span class='fraction'>325/647</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -926,7 +926,12 @@
 <a name='L867'></a><a href='#L867'>867</a>
 <a name='L868'></a><a href='#L868'>868</a>
 <a name='L869'></a><a href='#L869'>869</a>
-<a name='L870'></a><a href='#L870'>870</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L870'></a><a href='#L870'>870</a>
+<a name='L871'></a><a href='#L871'>871</a>
+<a name='L872'></a><a href='#L872'>872</a>
+<a name='L873'></a><a href='#L873'>873</a>
+<a name='L874'></a><a href='#L874'>874</a>
+<a name='L875'></a><a href='#L875'>875</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1308,7 +1313,12 @@
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2097,7 +2107,7 @@ export class StackedDiscreteBarChart
             case SortBy.column:
                 const sortColumnSlug = this.sortConfig.sortColumnSlug
                 sortByFunc = (item: Item): number =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    item.bars.find((b) =&gt; b.columnSl</span>ug === sortColumnSlug)</span>
+<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    item.bars.find((b) =&gt; b.columnSlug === sortColumnSlug)</span></span>
                         ?.point.value ?? 0
                 break
             default:
@@ -2116,22 +2126,22 @@ export class StackedDiscreteBarChart
     }
 &nbsp;
     @computed private get placedItems<span class="fstat-no" title="function not covered" >(): PlacedItem[] {</span>
-<span class="cstat-no" title="statement not covered" >        const { innerBounds, barHeight, barSpacing } = thi</span>s
+<span class="cstat-no" title="statement not covered" >        const { innerBounds, barHeight, barSpacing } = this</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        const topYOffset = innerBounds.top + barHeight / 2</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        return this.sortedItems.map((d, i) =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >            yPosition: topYOffset + (barHeight + barSpacing) * i,</span>
+<span class="cstat-no" title="statement not covered" >            yPosition: topYOffset + (barHeight + barSpacin</span>g) * i,
 <span class="cstat-no" title="statement not covered" >            ...d,</span>
 <span class="cstat-no" title="statement not covered" >        }))</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get barHeight<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return (0.8 *</span> this.innerBounds.height) / this.items.length
+<span class="cstat-no" title="statement not covered" >        return (0.8 * this.innerBounds.height) / this.items.length</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get barSpacing<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.innerBounds.height / this.items.length - this.barHeight</span>
+<span class="cstat-no" title="statement not covered" >        return this.innerBounds.height / this.items.length - thi</span>s.barHeight
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     // legend props
@@ -2144,8 +2154,8 @@ export class StackedDiscreteBarChart
 <span class="cstat-no" title="statement not covered" >        return this.bounds.x</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get categoryLegendY<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.bounds.top</span>
+    @computed get categoryLegendY(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.bounds.top</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get legendWidth(): number {
@@ -2175,8 +2185,13 @@ export class StackedDiscreteBarChart
         return this.showLegend ? this.legendBins : []
     }
 &nbsp;
-    @computed get externalLegendBins(): CategoricalBin[] {
-        return this.showLegend ? [] : this.legendBins
+    @computed get externalLegend(): HorizontalColorLegendManager | undefined {
+        if (!this.showLegend) {
+            return {
+                categoricalLegendData: this.legendBins,
+            }
+        }
+        return undefined
     }
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(bin: ColorScaleBin): void {</span>
@@ -2671,7 +2686,7 @@ export class StackedDiscreteBarChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 04 2022 12:15:10 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 04 2022 13:54:28 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

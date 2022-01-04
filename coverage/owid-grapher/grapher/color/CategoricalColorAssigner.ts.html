@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/grapher/dataTable/DataTable.sample.ts</title>
+    <title>Code coverage report for owid-grapher/grapher/color/CategoricalColorAssigner.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/grapher/dataTable</a> DataTable.sample.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">owid-grapher/grapher/color</a> CategoricalColorAssigner.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>61/61</span>
+                <span class='fraction'>59/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>61/61</span>
+                <span class='fraction'>59/59</span>
             </div>
         
             
@@ -132,24 +132,18 @@
 <a name='L73'></a><a href='#L73'>73</a>
 <a name='L74'></a><a href='#L74'>74</a>
 <a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -191,8 +185,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,81 +216,105 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DimensionProperty } from "../../clientUtils/owidTypes"
-import { Grapher } from "../core/Grapher"
-import { GrapherTabOption } from "../core/GrapherConstants"
-import { GrapherInterface } from "../core/GrapherInterface"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Color } from "../../clientUtils/owidTypes"
+import { last } from "../../clientUtils/Util"
+import { ColorScheme } from "./ColorScheme"
+import { getLeastUsedColor } from "./ColorUtils"
 &nbsp;
-export const childMortalityGrapher = (
-    props: Partial&lt;GrapherInterface&gt; = {}
-): Grapher =&gt;
-    new Grapher({
-        hasMapTab: true,
-        tab: GrapherTabOption.map,
-        dimensions: [
-            {
-                variableId: 104402,
-                property: DimensionProperty.y,
-            },
-        ],
-        ...props,
-        owidDataset: {
-            variables: {
-                "104402": {
-                    years: [1950, 1950, 2005, 2005, 2019, 2019],
-                    entities: [15, 207, 15, 207, 15, 207],
-                    values: [224.45, 333.68, 295.59, 246.12, 215.59, 226.12],
-                    id: 104402,
-                    display: {
-                        name: "Child mortality",
-                        unit: "%",
-                        shortUnit: "%",
-                        conversionFactor: 0.1,
-                    },
-                },
-            },
-            entityKey: {
-                "15": { name: "Afghanistan", id: 15, code: "AFG" },
-                "207": { name: "Iceland", id: 207, code: "ICE" },
-            },
-        },
-    })
+type CategoryId = string
+export type CategoricalColorMap = Map&lt;CategoryId, Color&gt;
+export type CategoricalColorMapReadonly = ReadonlyMap&lt;CategoryId, Color&gt;
 &nbsp;
-export const IncompleteDataTable = (
-    props: Partial&lt;GrapherInterface&gt; = {}
-): Grapher =&gt;
-    new Grapher({
-        tab: GrapherTabOption.table,
-        dimensions: [
-            {
-                variableId: 3512,
-                property: DimensionProperty.y,
-                display: {
-                    name: "",
-                    unit: "% of children under 5",
-                    tolerance: 1,
-                    isProjection: false,
-                },
-            },
-        ],
-        ...props,
-        owidDataset: {
-            variables: {
-                "3512": {
-                    years: [2000, 2001, 2010, 2010],
-                    entities: [207, 33, 15, 207],
-                    values: [4, 22, 20, 34],
-                    id: 3512,
-                    shortUnit: "%",
-                },
-            },
-            entityKey: {
-                "15": { name: "Afghanistan", id: 15, code: "AFG" },
-                "207": { name: "Iceland", id: 207, code: "ISL" },
-                "33": { name: "France", id: 33, code: "FRA" },
-            },
-        },
-    })
+export interface CategoricalColorAssignerProps {
+    colorScheme: ColorScheme
+    invertColorScheme?: boolean
+&nbsp;
+    /** The custom color mappings (most likely author-specified) to use. */
+    colorMap?: CategoricalColorMap
+&nbsp;
+    /**
+     * A cache for custom colors or automatically selected colors for each identifier
+     * encountered.
+     *
+     * In the Grapher, this is persisted across charts, so that a line chart
+     * that turns into a bar chart will have a matching color scheme across
+     * both states.
+     */
+    autoColorMapCache?: CategoricalColorMap
+}
+&nbsp;
+/**
+ * Assigns custom categorical colors, e.g. specified by an author for entities or variables.
+ *
+ * When an identifier doesn't have an assigned color, it uses the least used color in the scheme.
+ *
+ * Keeps a cache so that identical identifiers are assigned consistent colors. See
+ * Grapher#seriesColorMap for an example of a cache.
+ */
+export class CategoricalColorAssigner {
+    private colorScheme: ColorScheme
+    private invertColorScheme: boolean
+    private colorMap: CategoricalColorMapReadonly
+    private autoColorMapCache: CategoricalColorMap
+&nbsp;
+    constructor(props: CategoricalColorAssignerProps) {
+        this.colorScheme = props.colorScheme
+        this.invertColorScheme = props.invertColorScheme ?? false
+        this.colorMap = props.colorMap ?? new Map()
+        this.autoColorMapCache = <span class="branch-0 cbranch-no" title="branch not covered" >props.autoColorMapCache ?? new M</span>ap()
+    }
+&nbsp;
+    private get usedColors(): Color[] {
+        const merged: CategoricalColorMap = new Map([
+            ...this.autoColorMapCache,
+            ...this.colorMap,
+        ])
+        return Array.from(merged.values())
+    }
+&nbsp;
+    private get availableColors(): Color[] {
+        // copy the colors array because we might need to reverse it
+        const colors = <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >last(this.colorScheme.colorSet</span></span>s)?.slice() ?? []
+        if (this.invertColorScheme) colors.reverse()
+        return colors
+    }
+&nbsp;
+    private get leastUsedColor(): Color {
+        const leastUsedColor = getLeastUsedColor(
+            this.availableColors,
+            this.usedColors
+        )
+        // TODO handle this better?
+        if (leastUsedColor === undefined) {
+            console.trace("Least used color is undefined, using black.", {
+                availableColors: this.availableColors,
+                usedColors: this.usedColors,
+            })
+        }
+        return leastUsedColor ?? "#000"
+    }
+&nbsp;
+    assign(id: CategoryId): Color {
+        let color = this.colorMap.get(id)
+        if (color === undefined) color = this.autoColorMapCache.get(id)
+        if (color === undefined) color = this.leastUsedColor
+        this.autoColorMapCache.set(id, color)
+        return color
+    }
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

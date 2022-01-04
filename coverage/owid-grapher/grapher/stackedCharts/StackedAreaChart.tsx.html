@@ -634,7 +634,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3307x</span>
+<span class="cline-any cline-yes">3292x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -664,7 +664,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">3307x</span>
+<span class="cline-any cline-yes">3292x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-yes">52x</span>
@@ -1199,7 +1199,7 @@ class Areas extends React.Component&lt;AreasProps&gt; {
 <span class="cstat-no" title="statement not covered" >                        {seriesArr.map((ser</span>ies) =&gt; {
 <span class="cstat-no" title="statement not covered" >                            const point = series.points[hoverIn</span>dex]
 <span class="cstat-no" title="statement not covered" ></span>                            return this.seriesIsBlur(series) ||
-<span class="cstat-no" title="statement not covered" >                                poin</span>t.fake ? null : (
+<span class="cstat-no" title="statement not covered" >                                point.fa</span>ke ? null : (
 <span class="cstat-no" title="statement not covered" >                                &lt;circle</span>
 <span class="cstat-no" title="statement not covered" ></span>                                    key={series.seriesName}
 <span class="cstat-no" title="statement not covered" ></span>                                    cx={horizontalAxis.place(point.position)}
@@ -1263,7 +1263,7 @@ export class StackedAreaChart
             .reverse()
     }
 &nbsp;
-    @computed get maxLegendWidth(): number {
+    @computed get maxLineLegendWidth(): number {
         return Math.min(150, this.bounds.width / 3)
     }
 &nbsp;
@@ -1278,7 +1278,7 @@ export class StackedAreaChart
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @observable hoverSeriesName?: SeriesName
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendClick(): void {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onLineLegendClick(): void {</span>
 <span class="cstat-no" title="statement not covered" >        if (this.manager.startSelectingWhenLineClicked)</span>
 <span class="cstat-no" title="statement not covered" >            this.manager.isSelectingData = true</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -1288,11 +1288,11 @@ export class StackedAreaChart
         return legendDimensions<span class="branch-0 cbranch-no" title="branch not covered" > ? legendDimensions.width : 20</span>
     }
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(seriesName: SeriesName): void {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onLineLegendMouseOver(seriesName: SeriesName): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.hoverSeriesName =</span> seriesName
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave(): void {</span>
+    @action.bound <span class="fstat-no" title="function not covered" >onLineLegendMouseLeave(): void {</span>
 <span class="cstat-no" title="statement not covered" >        this.hoverSeriesName = undefined</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -1332,7 +1332,7 @@ export class StackedAreaChart
 <span class="cstat-no" title="statement not covered" >        const bottomSeriesPoint = series[0].points[hoveredP</span>ointIndex]
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >        // If some data </span>is missing, don't calculate a total
-<span class="cstat-no" title="statement not covered" >        const somePointsMissingForHoveredTime = series.</span>some(
+<span class="cstat-no" title="statement not covered" >        const somePointsMissingForHoveredTime = series.some</span>(
 <span class="cstat-no" title="statement not covered" >            (</span>series) =&gt; series.points[hoveredPointIndex].fake
 <span class="cstat-no" title="statement not covered" >        )</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -1353,7 +1353,7 @@ export class StackedAreaChart
 <span class="cstat-no" title="statement not covered" >                tooltipManager={this.props.manage</span>r}
 <span class="cstat-no" title="statement not covered" ></span>                x={dualAxis.horizontalAxis.place(bottomSeriesPoint.position)}
 <span class="cstat-no" title="statement not covered" >                y={</span>
-<span class="cstat-no" title="statement not covered" >                    dualAxis.verticalAxis.rangeMi</span>n +
+<span class="cstat-no" title="statement not covered" >                    dualAxis.verticalAxis.rangeMin +</span>
 <span class="cstat-no" title="statement not covered" ></span>                    dualAxis.verticalAxis.rangeSize / 2
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >                style={{ padding: "0.3em" }}</span>
@@ -1481,7 +1481,7 @@ export class StackedAreaChart
         return false
     }
 &nbsp;
-    @computed get legendX(): number {
+    @computed get lineLegendX(): number {
         return this.legendDimensions
             ? this.bounds.right - this.legendDimensions.width
             : 0
@@ -1498,7 +1498,7 @@ export class StackedAreaChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 04 2022 12:15:10 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 04 2022 13:54:28 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
