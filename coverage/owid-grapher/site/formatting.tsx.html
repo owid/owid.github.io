@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.03% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>50/227</span>
+                <span class='fraction'>48/224</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.03% </span>
+                <span class="strong">21.43% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>50/227</span>
+                <span class='fraction'>48/224</span>
             </div>
         
             
@@ -322,7 +322,8 @@
 <a name='L263'></a><a href='#L263'>263</a>
 <a name='L264'></a><a href='#L264'>264</a>
 <a name='L265'></a><a href='#L265'>265</a>
-<a name='L266'></a><a href='#L266'>266</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -546,9 +547,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -797,25 +799,25 @@ const addTocToSections = <span class="fstat-no" title="function not covered" >(<
 <span class="cstat-no" title="statement not covered" >        })</span>
 <span class="cstat-no" title="statement not covered" >        .forEach(($el) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            $el.replaceWith(</span>
-<span class="cstat-no" title="statement not covered" >                ReactDOMServer.renderToStaticMarkup(</span>
+<span class="cstat-no" title="statement not covered" ></span>                ReactDOMServer.renderToStaticMarkup(
 <span class="cstat-no" title="statement not covered" >                    &lt;SectionHeading</span>
 <span class="cstat-no" title="statement not covered" >                        title={$el.text()}</span>
-<span class="cstat-no" title="statement not covered" ></span>                        tocHeadings={tocHeadings}
+<span class="cstat-no" title="statement not covered" >                        tocHeadings={tocHeadings}</span>
 <span class="cstat-no" title="statement not covered" >                    &gt;</span>
 <span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            dangerouslySetInnerHTML=</span>{{
-<span class="cstat-no" title="statement not covered" >                                __html: </span>cheerioEl.html($el),
-<span class="cstat-no" title="statement not covered" >                            }}</span>
+<span class="cstat-no" title="statement not covered" >                            dangerouslySetInnerHTML={{</span>
+<span class="cstat-no" title="statement not covered" >                                __html: cheerioEl.h</span>tml($el),
+<span class="cstat-no" title="statement not covered" ></span>                            }}
 <span class="cstat-no" title="statement not covered" >                        /&gt;</span>
 <span class="cstat-no" title="statement not covered" >                    &lt;/SectionHeading&gt;</span>
-<span class="cstat-no" title="statement not covered" >                )</span>
+<span class="cstat-no" title="statement not covered" ></span>                )
 <span class="cstat-no" title="statement not covered" >            )</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;
-const addPostHeader = <span class="fstat-no" title="function not covered" >(cheerioEl: Cheer</span>ioStatic, post: FormattedPost) =&gt; {
+const addPostHeader = (cheerioEl: CheerioStatic, post: FormattedPost) =&gt; {
     const publishedDate = formatDate(post.date)
-    const modifiedDate = formatDate(post.modifiedDate)
+    // const modifiedDate = formatDate(post.modifiedDate)
 &nbsp;
     cheerioEl("body").prepend(
         ReactDOMServer.renderToStaticMarkup(
@@ -829,12 +831,13 @@ const addPostHeader = <span class="fstat-no" title="function not covered" >(chee
 &nbsp;
                 &lt;div className="published-updated"&gt;
                     &lt;time&gt;{publishedDate}&lt;/time&gt;
-                    {modifiedDate !== publishedDate &amp;&amp; (
+                    {/* See https://www.notion.so/owid/Revert-last-updated-mention-in-articles-a917e8cf6ad846138bd650bfc1b7395b */}
+                    {/* {modifiedDate !== publishedDate &amp;&amp; (
                         &lt;&gt;
                             &lt;span&gt; - Last updated on &lt;/span&gt;
                             &lt;time&gt;{modifiedDate}&lt;/time&gt;
                         &lt;/&gt;
-                    )}
+                    )} */}
                 &lt;/div&gt;
             &lt;/div&gt;
         )
@@ -859,7 +862,7 @@ export const addContentFeatures = (post: FormattedPost): string =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jan 12 2022 14:44:10 GMT+0000 (Coordinated Universal Time)
+                at Wed Jan 12 2022 15:41:18 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
