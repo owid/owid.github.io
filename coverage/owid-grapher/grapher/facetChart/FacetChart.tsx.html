@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.95% </span>
+                <span class="strong">91.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>628/683</span>
+                <span class='fraction'>629/684</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80.21% </span>
+                <span class="strong">80.41% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>77/96</span>
+                <span class='fraction'>78/97</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.95% </span>
+                <span class="strong">80.7% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>45/57</span>
+                <span class='fraction'>46/57</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.95% </span>
+                <span class="strong">91.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>628/683</span>
+                <span class='fraction'>629/684</span>
             </div>
         
             
@@ -832,7 +832,9 @@
 <a name='L773'></a><a href='#L773'>773</a>
 <a name='L774'></a><a href='#L774'>774</a>
 <a name='L775'></a><a href='#L775'>775</a>
-<a name='L776'></a><a href='#L776'>776</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L776'></a><a href='#L776'>776</a>
+<a name='L777'></a><a href='#L777'>777</a>
+<a name='L778'></a><a href='#L778'>778</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1095,6 +1097,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1107,6 +1110,7 @@
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
 <span class="cline-any cline-yes">60x</span>
@@ -1514,7 +1518,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1854,6 +1858,7 @@ export class FacetChart
             sizeColumnSlug,
             isRelativeMode,
             colorScale,
+            sortConfig,
         } = manager
 &nbsp;
         // Use compact labels, e.g. 50k instead of 50,000.
@@ -1902,6 +1907,7 @@ export class FacetChart
                 seriesColorMap,
                 colorScale,
                 colorScaleColumnOverride,
+                sortConfig,
                 ...series.manager,
                 xAxisConfig: {
                     ...globalXAxisConfig,
@@ -1927,8 +1933,8 @@ export class FacetChart
     @computed private get intermediateChartInstances(): ChartInterface[] {
         return this.intermediatePlacedSeries.map(({ bounds, manager }) =&gt; {
             const ChartClass =
-<span class="branch-0 cbranch-no" title="branch not covered" >                ChartComponentClassMap.get(this.chartTypeName) ??</span>
-<span class="cstat-no" title="statement not covered" ></span>                DefaultChartClass
+                ChartComponentClassMap.get(this.chartTypeName) ??
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>                DefaultChartClass
             return new ChartClass({ bounds, manager })
         })
     }
@@ -2125,15 +2131,15 @@ export class FacetChart
 &nbsp;
     @computed private get isNumericLegend(): boolean {
         return this.externalLegends.some((legend) =&gt;
-<span class="branch-0 cbranch-no" title="branch not covered" >            legend.numericLegendData?.s</span>ome((bin) =&gt; bin instanceof NumericBin)
+<span class="branch-0 cbranch-no" title="branch not covered" >            legend</span>.numericLegendData?.some((bin) =&gt; bin instanceof NumericBin)
         )
     }
 &nbsp;
     @computed private get LegendClass():
         | typeof HorizontalNumericColorLegend
         | typeof HorizontalCategoricalColorLegend {
-        return this.isNumericLegend
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            ? Horizo</span></span>ntalNumericColorLegend
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.isNumericLegend</span>
+<span class="cstat-no" title="statement not covered" >            ? HorizontalNumericColorLegend</span>
             : HorizontalCategoricalColorLegend
     }
 &nbsp;
@@ -2141,19 +2147,19 @@ export class FacetChart
         const { isNumericLegend, categoricalLegendData, numericLegendData } =
             this
         const hasBins =
-            categoricalLegendData.length &gt; 0 || numericLegendData.length &gt; 0
-        if (!hasBins) return false
-        if (isNumericLegend) <span class="branch-0 cbranch-no" title="branch not covered" >return t</span>rue
+<span class="branch-0 cbranch-no" title="branch not covered" >            categori</span>calLegendData.length &gt; 0 || numericLegendData.length &gt; 0
+        if (!hasBins) <span class="branch-0 cbranch-no" title="branch not covered" >return f</span>alse
+        if (isNumericLegend) return true
         if (
 <span class="branch-0 cbranch-no" title="branch not covered" >            categoricalLegendData.length &gt; 1 ||</span>
-<span class="cstat-no" title="statement not covered" >            // If the facetStrategy is met</span>ric, then the legend (probably?) shows entity items.
-<span class="cstat-no" title="statement not covered" >            /</span>/ If the user happens to select only a single entity, we don't want to collapse the
-<span class="cstat-no" title="statement not covered" >            // legen</span>d, because it's (probably?) the only information about what is selected.
-<span class="cstat-no" title="statement not covered" >            // This is fragile and ideally we sho</span>uldn't be making assumptions about what type of
-<span class="cstat-no" title="statement not covered" >            /</span>/ items are shown on the legend, but it works for now...
-<span class="cstat-no" title="statement not covered" >            // -@dan</span>ielgavrilov, 2021-09-28
-<span class="cstat-no" title="statement not covered" >            (this.facetStrategy === FacetStrategy.metric </span>&amp;&amp;
-<span class="cstat-no" title="statement not covered" ></span>                this.props.manager.canSelectMultipleEntities)
+<span class="cstat-no" title="statement not covered" >            /</span>/ If the facetStrategy is metric, then the legend (probably?) shows entity items.
+<span class="cstat-no" title="statement not covered" >            // If th</span>e user happens to select only a single entity, we don't want to collapse the
+<span class="cstat-no" title="statement not covered" >            // legend, because it's (probably?) t</span>he only information about what is selected.
+<span class="cstat-no" title="statement not covered" >            /</span>/ This is fragile and ideally we shouldn't be making assumptions about what type of
+<span class="cstat-no" title="statement not covered" >            // items</span> are shown on the legend, but it works for now...
+<span class="cstat-no" title="statement not covered" >            // -@danielgavrilov, 2021-09-28</span>
+<span class="cstat-no" title="statement not covered" >            (</span>this.facetStrategy === FacetStrategy.metric &amp;&amp;
+<span class="cstat-no" title="statement not covered" >                this</span>.props.manager.canSelectMultipleEntities)
         ) {
             return true
         }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
@@ -2165,7 +2171,7 @@ export class FacetChart
     &gt;(prop: Prop): HorizontalColorLegendManager[Prop] | undefined {
         for (const externalLegend of this.externalLegends) {
             if (externalLegend[prop] !== undefined) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                return externalLegend[prop]</span>
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                retu</span>rn externalLegend[prop]</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
         }
         return undefined
@@ -2179,8 +2185,8 @@ export class FacetChart
             // from different charts (facets).
             if (binA instanceof CategoricalBin) {
                 return binA.text === binB.text
-            }<span class="branch-0 cbranch-no" title="branch not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            r</span>eturn binA.equals(binB)
+            }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            return b</span>inA.equals(binB)</span>
 <span class="cstat-no" title="statement not covered" >        })</span>
     }
 &nbsp;
@@ -2190,8 +2196,8 @@ export class FacetChart
         return this.bounds.x
     }
 &nbsp;
-    @computed get numericLegendY(): number {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.bounds.top</span></span>
+    @computed get numericLegendY<span class="fstat-no" title="function not covered" >(): number {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.bounds.top
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get categoryLegendY(): number {
@@ -2206,67 +2212,67 @@ export class FacetChart
         return HorizontalAlign.center
     }
 &nbsp;
-    @computed get legendTitle<span class="fstat-no" title="function not covered" >(): string | undefined {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.getExternalLegendProp("legendTitle")
+    @computed get legendTitle(): string | undefined {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("legendTitle")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get legendHeight(): number | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("legendHeight")</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.getExternalLegendProp("legendHe</span>ight")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get legendOpacity(): number | undefined {
         return this.getExternalLegendProp("legendOpacity")
     }
 &nbsp;
-    @computed get legendTextColor<span class="fstat-no" title="function not covered" >(): Color | undefined {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.getExternalLegendProp("legendTextColor")
+    @computed get legendTextColor(): Color | undefined {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("legendTextColor")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get legendTickSize(): number | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("legendTickSize")</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.getExternalLegendProp("</span>legendTickSize")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get categoricalBinStroke(): Color | undefined {
         return this.getExternalLegendProp("categoricalBinStroke")
     }
 &nbsp;
-    @computed get numericBinSize<span class="fstat-no" title="function not covered" >(): number | undefined {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.getExternalLegendProp("numericBinSize")
+    @computed get numericBinSize(): number | undefined {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("numericBinSize")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get numericBinStroke(): Color | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("numericBinStroke")</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.getExternalLegendProp("nume</span>ricBinStroke")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get numericBinStrokeWidth(): number | undefined {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.getExternalLegendProp("nume</span>ricBinStrokeWidth")</span>
+    @computed get numericBinStrokeWidth<span class="fstat-no" title="function not covered" >(): number | undefined {</span>
+<span class="cstat-no" title="statement not covered" >        retur</span>n this.getExternalLegendProp("numericBinStrokeWidth")
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @computed get equalSizeBins<span class="fstat-no" title="function not covered" >(): boolean | undefined {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n this.getExternalLegendProp("equalSizeBins")
+    @computed get equalSizeBins(): boolean | undefined {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.</span>getExternalLegendProp("equalSizeBins")</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get numericLegendData(): ColorScaleBin[] {
-        if (<span class="branch-0 cbranch-no" title="branch not covered" >!this.is</span>NumericLegend || !this.hideFacetLegends) return []
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        const allBins: ColorScaleBin[] = flatten(</span></span>
-<span class="cstat-no" title="statement not covered" >            t</span>his.externalLegends.map((legend) =&gt; [
-<span class="cstat-no" title="statement not covered" >                ...(</span>legend.numericLegendData ?? []),
-<span class="cstat-no" title="statement not covered" >                ...(legend.categoricalLegendData ?</span>? []),
-<span class="cstat-no" title="statement not covered" >            ]</span>)
+        if (<span class="branch-0 cbranch-no" title="branch not covered" >!this.isNumericLegend || !this.hideFace</span>tLegends) return []
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        const</span> allBins: ColorScaleBin[] = flatten(</span>
+<span class="cstat-no" title="statement not covered" >            this.ext</span>ernalLegends.map((legend) =&gt; [
+<span class="cstat-no" title="statement not covered" >                ...(legend.numericLegendData ?? []</span>),
+<span class="cstat-no" title="statement not covered" ></span>                ...(legend.categoricalLegendData ?? []),
+<span class="cstat-no" title="statement not covered" >            ])</span>
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        const uniqBins = this.getUniqBins(allBins)</span>
-<span class="cstat-no" title="statement not covered" >        const</span> sortedBins = sortBy(
-<span class="cstat-no" title="statement not covered" >            uniqBins</span>,
-<span class="cstat-no" title="statement not covered" >            (bin) =&gt; bin instanceof CategoricalBin</span>
+<span class="cstat-no" title="statement not covered" >        const</span> uniqBins = this.getUniqBins(allBins)
+<span class="cstat-no" title="statement not covered" >        const sorted</span>Bins = sortBy(
+<span class="cstat-no" title="statement not covered" >            uniqBins,</span>
+<span class="cstat-no" title="statement not covered" >            (</span>bin) =&gt; bin instanceof CategoricalBin
 <span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        return sorte</span>dBins
+<span class="cstat-no" title="statement not covered" >        return sortedBins</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed get categoricalLegendData(): CategoricalBin[] {
         if (this.isNumericLegend || !this.hideFacetLegends) return []
         const allBins: CategoricalBin[] = flatten(
             this.externalLegends.map((legend) =&gt; [
-                ...(<span class="branch-0 cbranch-no" title="branch not covered" >legend.numericLegendData ?? [</span>]),
+                ...(legend.numericLegendData ?? []),
                 ...(legend.categoricalLegendData ?? []),
             ])
         ).filter((bin) =&gt; bin instanceof CategoricalBin) as CategoricalBin[]
@@ -2286,10 +2292,10 @@ export class FacetChart
         undefined
 &nbsp;
     @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseOver(bin: ColorScaleBin): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.legendFocusBi</span>n = bin
+<span class="cstat-no" title="statement not covered" >        this.leg</span>endFocusBin = bin
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    @action.bound <span class="fstat-no" title="function not covered" >onLegendMouseLeave():</span> void {
+    @action.bound onLegendMouseLeave(): void {
         this.legendFocusBin = undefined
     }
 &nbsp;
@@ -2389,7 +2395,7 @@ export class FacetChart
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jan 15 2022 08:31:13 GMT+0000 (Coordinated Universal Time)
+                at Sat Jan 15 2022 22:03:37 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
