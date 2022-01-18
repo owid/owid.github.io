@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.29% </span>
+                <span class="strong">86.54% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>604/700</span>
+                <span class='fraction'>611/706</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.02% </span>
+                <span class="strong">68.93% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>68/103</span>
+                <span class='fraction'>71/103</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.58% </span>
+                <span class="strong">89.8% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>43/48</span>
+                <span class='fraction'>44/49</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.29% </span>
+                <span class="strong">86.54% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>604/700</span>
+                <span class='fraction'>611/706</span>
             </div>
         
             
@@ -872,7 +872,11 @@
 <a name='L813'></a><a href='#L813'>813</a>
 <a name='L814'></a><a href='#L814'>814</a>
 <a name='L815'></a><a href='#L815'>815</a>
-<a name='L816'></a><a href='#L816'>816</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L816'></a><a href='#L816'>816</a>
+<a name='L817'></a><a href='#L817'>817</a>
+<a name='L818'></a><a href='#L818'>818</a>
+<a name='L819'></a><a href='#L819'>819</a>
+<a name='L820'></a><a href='#L820'>820</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1040,6 +1044,10 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1107,7 +1115,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -1142,7 +1150,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1485,7 +1493,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
@@ -1572,8 +1580,8 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1829,7 +1837,7 @@ export abstract class HorizontalColorLegend extends React.Component&lt;{
     }
 &nbsp;
     @computed protected get legendTickSize(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manager</span>.legendTickSize ?? DEFAULT_TICK_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.mana</span>ger.legendTickSize ?? DEFAULT_TICK_SIZE
     }
 &nbsp;
     abstract get height(): number
@@ -1841,26 +1849,30 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
     base: React.RefObject&lt;SVGGElement&gt; = React.createRef()
 &nbsp;
     @computed private get numericLegendData(): ColorScaleBin[] {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.manag</span>er.numericLegendData ?? []
+        return this.manager.numericLegendData ?? []
+    }
+&nbsp;
+    @computed private get visibleBins(): ColorScaleBin[] {
+        return this.numericLegendData.filter((bin) =&gt; !bin.isHidden)
     }
 &nbsp;
     @computed private get numericBins(): NumericBin[] {
-        return this.numericLegendData.filter(
+        return this.visibleBins.filter(
             (bin): bin is NumericBin =&gt; bin instanceof NumericBin
         )
     }
 &nbsp;
     @computed private get numericBinSize(): number {
-        return this.props.manager.numericBinSize ?? DEFAULT_NUMERIC_BIN_SIZE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.p</span>rops.manager.numericBinSize ?? DEFAULT_NUMERIC_BIN_SIZE
     }
 &nbsp;
     @computed private get numericBinStroke(): Color {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.pr</span>ops.manager.numericBinStroke ?? DEFAULT_NUMERIC_BIN_STROKE
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.props.manager.numericBinSt</span>roke ?? DEFAULT_NUMERIC_BIN_STROKE
     }
 &nbsp;
     @computed private get numericBinStrokeWidth(): number {
         return (
-<span class="branch-0 cbranch-no" title="branch not covered" >            this.props.manager.numericBinStrokeWidth ??</span>
+            this.props.manager.numericBinStrokeWidth ??
             DEFAULT_NUMERIC_BIN_STROKE_WIDTH
         )
     }
@@ -1903,9 +1915,9 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
     }
 &nbsp;
     @computed private get totalCategoricalWidth(): number {
-        const { numericLegendData, itemMargin } = this
-        const widths = numericLegendData.map((bin) =&gt;
-            bin instanceof CategoricalBin
+        const { visibleBins, itemMargin } = this
+        const widths = visibleBins.map((bin) =&gt;
+            bin instanceof CategoricalBin &amp;&amp; !bin.isHidden
                 ? this.getCategoricalBinWidth(bin) + itemMargin
                 : 0
         )
@@ -1920,9 +1932,9 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
     }
 &nbsp;
     private getNumericLabelMinWidth(bin: NumericBin): number {
-        if (bin.text) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" ></span>            return this.getTickLabelWidth(bin.text)
-<span class="cstat-no" title="statement not covered" ></span>        } else {
+        if (bin.text) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>            return this.getTickLabelWidth(bin.text)</span>
+        } else {
             const combinedLabelWidths = sum(
                 [bin.minText, bin.maxText].map(
                     (text) =&gt;
@@ -1943,21 +1955,21 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
             shareOfTotal: (bin.max - bin.min) / this.rangeSize,
         }))
         // Make sure the legend is big enough to avoid overlapping labels (including `raisedMode`)
-        if (this.manager.equalSizeBins) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            const min</span>BinWidth = this.fontSize * 3.5
+        if (this.manager.equalSizeBins) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            const minBinWidth = this.fontSize * 3</span>.5</span>
 <span class="cstat-no" title="statement not covered" >            const maxBinWidth =</span>
 <span class="cstat-no" title="statement not covered" >                max(</span>
-<span class="cstat-no" title="statement not covered" >                    spaceRequirements.map(({ labelSpace })</span> =&gt;
+<span class="cstat-no" title="statement not covered" >                    spaceRequirements.map(({ labelSpace }) =</span>&gt;
 <span class="cstat-no" title="statement not covered" >                        Math.max(labelSpace, minBinWidth)</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                ) ?? 0</span>
-<span class="cstat-no" title="statement not covered" >            return Math.round(maxBinWidth * binCount)</span>
+<span class="cstat-no" title="statement not covered" >            return</span> Math.round(maxBinWidth * binCount)
         } else {
             const minBinWidth = this.fontSize * 2
             const maxTotalWidth =
                 max(
-                    spaceRequirements.map((<span class="branch-0 cbranch-no" title="branch not covered" >{ labelSpace, shareOfTotal }) =&gt;</span>
-                        Math.max(labelSpace / shareOfTotal, minBinWidth)
+                    spaceRequirements.map(({ labelSpace, shareOfTotal }) =&gt;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                        Math.max(labelSpace / shareOfTotal, m</span>inBinWidth)</span>
 <span class="cstat-no" title="statement not covered" >                    )</span>
 <span class="cstat-no" title="statement not covered" >                ) ?? 0</span>
             return Math.round(maxTotalWidth)
@@ -1972,9 +1984,9 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
                     this.totalCategoricalWidth +
                     this.idealNumericWidth
             )
-        } else {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            return this.maxWidth</span></span>
-<span class="cstat-no" title="statement not covered" >        }</span>
+        }<span class="branch-0 cbranch-no" title="branch not covered" > else {</span>
+<span class="cstat-no" title="statement not covered" >            return this.maxWidth</span>
+<span class="cstat-no" title="statement not covered" ></span>        }
     }
 &nbsp;
     @computed private get availableNumericWidth(): number {
@@ -1988,8 +2000,8 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         const widthDiff = maxWidth - width
         if (legendAlign === HorizontalAlign.center) {
             return legendX + widthDiff / 2
-        }<span class="branch-0 cbranch-no" title="branch not covered" > else if (legendAlign === HorizontalAlign.right) {</span>
-<span class="cstat-no" title="statement not covered" ></span>            return legendX + widthDiff
+        } else if (legendAlign === HorizontalAlign.right) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            return legendX</span> + widthDiff</span>
 <span class="cstat-no" title="statement not covered" >        } else {</span>
 <span class="cstat-no" title="statement not covered" >            return legendX // left align</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
@@ -2000,7 +2012,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
             manager,
             rangeSize,
             availableNumericWidth,
-            numericLegendData,
+            visibleBins,
             numericBins,
             legendTitleWidth,
             x,
@@ -2009,14 +2021,14 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         let xOffset = x + legendTitleWidth
         let prevBin: ColorScaleBin | undefined
 &nbsp;
-        return numericLegendData.map((bin, index) =&gt; {
+        return visibleBins.map((bin, index) =&gt; {
             const isFirst = index === 0
             let width: number = this.getCategoricalBinWidth(bin)
             let marginLeft: number = isFirst ? 0 : this.itemMargin
 &nbsp;
             if (bin instanceof NumericBin) {
-                if (manager.equalSizeBins) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >                    width = avai</span>lableNumericWidth / numericBins.length
+                if (manager.equalSizeBins) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                    width = ava</span>ilableNumericWidth / numericBins.length</span>
                 } else {
                     width =
                         ((bin.max - bin.min) / rangeSize) *
@@ -2040,8 +2052,8 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         })
     }
 &nbsp;
-    @computed private get legendTitleFontSize<span class="fstat-no" title="function not covered" >(): number {</span>
-<span class="cstat-no" title="statement not covered" >        return this.fontSize * 0.85</span>
+    @computed private get legendTitleFontSize(): number {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.fontSize * 0.85</span></span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @computed private get legendTitle(): TextWrap | undefined {
@@ -2057,7 +2069,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
     }
 &nbsp;
     @computed private get legendTitleWidth(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" >this.legendTitle ? this.legendTitle.width + this.it</span>emMargin : 0
+        return <span class="branch-0 cbranch-no" title="branch not covered" >this.legendTitle ? this.legend</span>Title.width + this.itemMargin : 0
     }
 &nbsp;
     @computed private get numericLabels(): NumericLabel[] {
@@ -2071,7 +2083,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
             const labelBounds = Bounds.forText(text, { fontSize: tickFontSize })
             const x =
                 bin.x +
-                (<span class="branch-0 cbranch-no" title="branch not covered" >minOrMax === "min" ? 0 : bin.width) -</span>
+                (minOrMax === "min" ? 0 : bin.width) -
                 labelBounds.width / 2
             const y = -numericBinSize - labelBounds.height - this.legendTickSize
 &nbsp;
@@ -2107,7 +2119,7 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
             else if (bin.bin instanceof NumericBin) {
                 if (bin.bin.minText)
                     labels.push(makeBoundaryLabel(bin, "min", bin.bin.minText))
-                if (<span class="branch-0 cbranch-no" title="branch not covered" >bin === l</span>ast(positionedBins) &amp;&amp; bin.bin.maxText)
+                if (<span class="branch-0 cbranch-no" title="branch not covered" >bin === last(positionedBins) &amp;&amp; bin.bin.maxText)</span>
 <span class="branch-0 cbranch-no" title="branch not covered" >                    labels.</span>push(makeBoundaryLabel(bin, "max", bin.bin.maxText))
             }
         }
@@ -2136,19 +2148,19 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
         for (let index = 1; index &lt; labels.length; index++) {
             const l1 = labels[index - 1],
                 l2 = labels[index]
-            if (l1.bounds.right + MINIMUM_LABEL_DISTANCE &gt;= l2.bounds.left) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                raisedMode = true</span></span>
+            if (l1.bounds.right + MINIMUM_LABEL_DISTANCE &gt;= l2.bounds.left) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >                raisedMode = tr</span>ue
 <span class="cstat-no" title="statement not covered" >                break</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
         }
 &nbsp;
         if (raisedMode) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-<span class="cstat-no" title="statement not covered" >            for (let index = 1; index &lt; labels.length; index++) {</span>
+<span class="cstat-no" title="statement not covered" ></span>            for (let index = 1; index &lt; labels.length; index++) {
 <span class="cstat-no" title="statement not covered" ></span>                const label = labels[index]
 <span class="cstat-no" title="statement not covered" ></span>                if (index % 2 !== 0) {
 <span class="cstat-no" title="statement not covered" ></span>                    label.bounds = label.bounds.set({
-<span class="cstat-no" title="statement not covered" ></span>                        y: label.bounds.y - label.bounds.height - 1,
-<span class="cstat-no" title="statement not covered" >                    })</span>
+<span class="cstat-no" title="statement not covered" >                        y: label.bounds.y - label.bounds.height - 1,</span>
+<span class="cstat-no" title="statement not covered" ></span>                    })
 <span class="cstat-no" title="statement not covered" ></span>                    label.raised = true
 <span class="cstat-no" title="statement not covered" >                }</span>
 <span class="cstat-no" title="statement not covered" >            }</span>
@@ -2159,43 +2171,43 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
 &nbsp;
     @computed get height(): number {
         return Math.abs(
-<span class="branch-0 cbranch-no" title="branch not covered" >            min(this</span>.numericLabels.map((label) =&gt; label.bounds.y)) ?? 0
+<span class="branch-0 cbranch-no" title="branch not covered" >            min(this.numericLabels.map((label) =&gt; label.bounds.y)) ?? </span>0
         )
     }
 &nbsp;
-    @computed private get bounds<span class="fstat-no" title="function not covered" >(): Bounds {</span>
-<span class="cstat-no" title="statement not covered" >        retur</span>n new Bounds(this.x, this.numericLegendY, this.width, this.height)
+    @computed private get bounds(): Bounds {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return new B</span>ounds(this.x, this.numericLegendY, this.width, this.height)</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
     @action.bound private onMouseMove(ev: MouseEvent | TouchEvent): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const { mana</span>ger, base, positionedBins } = this</span>
-<span class="cstat-no" title="statement not covered" >        const { numericFocusBracket } = manager</span>
-<span class="cstat-no" title="statement not covered" >        if (b</span>ase.current) {
-<span class="cstat-no" title="statement not covered" >            const mo</span>use = getRelativeMouse(base.current, ev)
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        const { manager, base, positionedBins } = this</span></span>
+<span class="cstat-no" title="statement not covered" >        const</span> { numericFocusBracket } = manager
+<span class="cstat-no" title="statement not covered" >        if (base.cur</span>rent) {
+<span class="cstat-no" title="statement not covered" >            const mouse = getRelativeMouse(base.current, ev)</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            /</span>/ We implement onMouseMove and onMouseLeave in a custom way, without attaching them to
-<span class="cstat-no" title="statement not covered" >            // speci</span>fic SVG elements, in order to allow continuous transition between bins as the user
-<span class="cstat-no" title="statement not covered" >            // moves their cursor across (even if their cursor </span>is in the empty area above the
-<span class="cstat-no" title="statement not covered" >            /</span>/ legend, where the labels are).
-<span class="cstat-no" title="statement not covered" >            // We co</span>uld achieve the same by rendering invisible rectangles over the areas and attaching
-<span class="cstat-no" title="statement not covered" >            // event handlers to those.</span>
+<span class="cstat-no" title="statement not covered" >            // We im</span>plement onMouseMove and onMouseLeave in a custom way, without attaching them to
+<span class="cstat-no" title="statement not covered" >            // specific SVG elements, in order to allow contin</span>uous transition between bins as the user
+<span class="cstat-no" title="statement not covered" >            /</span>/ moves their cursor across (even if their cursor is in the empty area above the
+<span class="cstat-no" title="statement not covered" >            // legen</span>d, where the labels are).
+<span class="cstat-no" title="statement not covered" >            // We could achieve the same by rendering invisible</span> rectangles over the areas and attaching
+<span class="cstat-no" title="statement not covered" >            /</span>/ event handlers to those.
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // If ou</span>tside legend bounds, trigger onMouseLeave if there is an existing bin in focus.
-<span class="cstat-no" title="statement not covered" >            if (!this.bounds.contains(mouse)) {</span>
-<span class="cstat-no" title="statement not covered" ></span>                if (numericFocusBracket &amp;&amp; manager.onLegendMouseLeave)
-<span class="cstat-no" title="statement not covered" ></span>                    return manager.onLegendMouseLeave()
-<span class="cstat-no" title="statement not covered" >                return</span>
+<span class="cstat-no" title="statement not covered" >            // If outside legend bounds, trigger onMouseLeave </span>if there is an existing bin in focus.
+<span class="cstat-no" title="statement not covered" >            i</span>f (!this.bounds.contains(mouse)) {
+<span class="cstat-no" title="statement not covered" >                if (</span>numericFocusBracket &amp;&amp; manager.onLegendMouseLeave)
+<span class="cstat-no" title="statement not covered" >                    return manager.onLegendMouseLeave()</span>
+<span class="cstat-no" title="statement not covered" ></span>                return
 <span class="cstat-no" title="statement not covered" >            }</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            // If inside legend bounds, trigger onMouseOver with the bi</span>n closest to the cursor.
-<span class="cstat-no" title="statement not covered" >            l</span>et newFocusBracket: ColorScaleBin | undefined
-<span class="cstat-no" title="statement not covered" >            position</span>edBins.forEach((bin) =&gt; {
-<span class="cstat-no" title="statement not covered" >                if (mouse.x &gt;= bin.x &amp;&amp; mouse.x &lt;= bin.x + </span>bin.width)
+<span class="cstat-no" title="statement not covered" >            /</span>/ If inside legend bounds, trigger onMouseOver with the bin closest to the cursor.
+<span class="cstat-no" title="statement not covered" >            let newF</span>ocusBracket: ColorScaleBin | undefined
+<span class="cstat-no" title="statement not covered" >            positionedBins.forEach((bin) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" ></span>                if (mouse.x &gt;= bin.x &amp;&amp; mouse.x &lt;= bin.x + bin.width)
 <span class="cstat-no" title="statement not covered" ></span>                    newFocusBracket = bin.bin
 <span class="cstat-no" title="statement not covered" >            })</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >            i</span>f (newFocusBracket &amp;&amp; manager.onLegendMouseOver)
-<span class="cstat-no" title="statement not covered" >                mana</span>ger.onLegendMouseOver(newFocusBracket)
+<span class="cstat-no" title="statement not covered" >            if (newF</span>ocusBracket &amp;&amp; manager.onLegendMouseOver)
+<span class="cstat-no" title="statement not covered" >                manager.onLegendMouseOver(newFocusBracket)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
@@ -2261,8 +2273,8 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
                                 height={numericBinSize}
                                 fill={bin.color}
                                 opacity={manager.legendOpacity} // defaults to undefined which removes the prop
-                                stroke={isFocus ? FOCUS_BORDER_COLOR : stroke}
-                                strokeWidth={isFocus<span class="branch-0 cbranch-no" title="branch not covered" > ? 2 : s</span>trokeWidth}
+                                stroke={isFocus<span class="branch-0 cbranch-no" title="branch not covered" > ? FOCUS_BORDER_COLOR : s</span>troke}
+                                strokeWidth={isFocus ? 2 : strokeWidth}
                                 isOpenLeft={
                                     bin instanceof NumericBin
                                         ? bin.props.isOpenLeft
@@ -2294,13 +2306,13 @@ export class HorizontalNumericColorLegend extends HorizontalColorLegend {
                     &lt;/text&gt;
                 ))}
                 {<span class="branch-0 cbranch-no" title="branch not covered" >this.legendTitle?.render(</span>
-<span class="cstat-no" title="statement not covered" >                    this.x</span>,
+<span class="cstat-no" title="statement not covered" >                    this.x,</span>
 <span class="cstat-no" title="statement not covered" ></span>                    // Align legend title baseline with bottom of color bins
-<span class="cstat-no" title="statement not covered" >                    this.</span>numericLegendY +
-<span class="cstat-no" title="statement not covered" >                        he</span>ight -
-<span class="cstat-no" title="statement not covered" >                        th</span>is.legendTitle.height +
+<span class="cstat-no" title="statement not covered" >                    this.n</span>umericLegendY +
+<span class="cstat-no" title="statement not covered" ></span>                        height -
+<span class="cstat-no" title="statement not covered" >                        t</span>his.legendTitle.height +
 <span class="cstat-no" title="statement not covered" >                        th</span>is.legendTitleFontSize * 0.2,
-<span class="cstat-no" title="statement not covered" >                    { f</span>ill: this.legendTextColor }
+                    { fill: this.legendTextColor }
                 )}
             &lt;/g&gt;
         )
@@ -2333,18 +2345,18 @@ const NumericBinRect = (props: NumericBinRectProps) =&gt; {
             z
         `)
         return &lt;path d={d} {...restProps} /&gt;
-    } else if (isOpenLeft) {
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        cons</span>t a = ARROW_SIZE</span>
-<span class="cstat-no" title="statement not covered" >        const w = width - a</span>
-<span class="cstat-no" title="statement not covered" ></span>        const d = removeAllWhitespace(`
-<span class="cstat-no" title="statement not covered" >            M ${x +</span> a}, ${y}
-<span class="cstat-no" title="statement not covered" >            l ${</span>w}, 0
-<span class="cstat-no" title="statement not covered" >            l 0, ${height}</span>
-<span class="cstat-no" title="statement not covered" ></span>            l ${-w}, 0
-<span class="cstat-no" title="statement not covered" >            l $</span>{-a}, ${-height / 2}
-<span class="cstat-no" title="statement not covered" >            z</span>
+    } else if (isOpenLeft) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        const a = AR</span>ROW_SIZE
+<span class="cstat-no" title="statement not covered" >        const w </span>= width - a
+<span class="cstat-no" title="statement not covered" >        cons</span>t d = removeAllWhitespace(`
+<span class="cstat-no" title="statement not covered" >            M ${x + a}, ${y}</span>
+<span class="cstat-no" title="statement not covered" ></span>            l ${w}, 0
+<span class="cstat-no" title="statement not covered" >            l 0, ${</span>height}
+<span class="cstat-no" title="statement not covered" >            l ${</span>-w}, 0
+<span class="cstat-no" title="statement not covered" >            l ${-a}, ${-height / 2}</span>
+<span class="cstat-no" title="statement not covered" ></span>            z
 <span class="cstat-no" title="statement not covered" >        `)</span>
-<span class="cstat-no" title="statement not covered" >        return &lt;path d={d} {...restProps} /&gt;</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;path d={d} {...restProps}</span> /&gt;
     } else {
         return &lt;rect x={x} y={y} width={width} height={height} {...restProps} /&gt;
     }
@@ -2353,7 +2365,7 @@ const NumericBinRect = (props: NumericBinRectProps) =&gt; {
 @observer
 export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
     @computed get width(): number {
-        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.manager.legendWidth ?? this.ma</span></span>nager.legendMaxWidth ?? 200
+        return <span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >this.manag</span></span>er.legendWidth ?? this.manager.legendMaxWidth ?? 200
     }
 &nbsp;
     @computed private get categoricalLegendData(): CategoricalBin[] {
@@ -2375,11 +2387,11 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
             const markWidth =
                 rectSize + rectPadding + labelBounds.width + markPadding
 &nbsp;
-            if (<span class="branch-0 cbranch-no" title="branch not covered" >xOffset + markWidth &gt; this.width &amp;&amp; marks.length &gt; 0) <span class="branch-0 cbranch-no" title="branch not covered" >{</span></span>
-<span class="cstat-no" title="statement not covered" ></span>                lines.push({ totalWidth: xOffset - markPadding, marks: marks })
-<span class="cstat-no" title="statement not covered" >                mark</span>s = []
-<span class="cstat-no" title="statement not covered" >                xOffset = 0</span>
-<span class="cstat-no" title="statement not covered" ></span>                yOffset += rectSize + rectPadding
+            if (xOffset + markWidth &gt; this.width &amp;&amp; marks.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >                line</span>s.push({ totalWidth: xOffset - markPadding, marks: marks })</span>
+<span class="cstat-no" title="statement not covered" >                marks = []</span>
+<span class="cstat-no" title="statement not covered" ></span>                xOffset = 0
+<span class="cstat-no" title="statement not covered" >                yOff</span>set += rectSize + rectPadding
 <span class="cstat-no" title="statement not covered" >            }</span>
 &nbsp;
             const markX = xOffset
@@ -2509,7 +2521,7 @@ export class HorizontalCategoricalColorLegend extends HorizontalColorLegend {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jan 15 2022 22:03:37 GMT+0000 (Coordinated Universal Time)
+                at Tue Jan 18 2022 18:27:13 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
