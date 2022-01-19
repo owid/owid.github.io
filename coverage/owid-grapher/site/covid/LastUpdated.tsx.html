@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.54% </span>
+                <span class="strong">42.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/65</span>
+                <span class='fraction'>28/66</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.54% </span>
+                <span class="strong">42.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/65</span>
+                <span class='fraction'>28/66</span>
             </div>
         
             
@@ -105,7 +105,9 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -156,38 +158,39 @@
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect, useState } from "react"
 import dayjs, { Dayjs } from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
+import { fetchWithRetries } from "../../clientUtils/Util"
 dayjs.extend(relativeTime)
 &nbsp;
 export interface LastUpdatedTokenProps {
     timestampUrl?: string
 }
 &nbsp;
-export const LastUpdated = <span class="fstat-no" title="function not covered" >({ timestampUrl }: LastUpdatedTokenProps) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const [date, setDa</span>te] = useState&lt;null | Dayjs&gt;(null)
-<span class="cstat-no" title="statement not covered" >    useEffect(() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" ></span>        const fetchTimeStamp = async () =&gt; {
+export const LastUpdated = ({ timestampUrl }: LastUpdatedTokenProps) =&gt; {
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >    const [date, setDa</span>te] = useState&lt;null | Dayjs&gt;(null)</span>
+<span class="cstat-no" title="statement not covered" ></span>    useEffect(() =&gt; {
+<span class="cstat-no" title="statement not covered" >        const fetchTimeStamp = async () =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >            if (!timestampUrl) return</span>
-<span class="cstat-no" title="statement not covered" >            const response = await fetch(ti</span>mestampUrl)
-<span class="cstat-no" title="statement not covered" >            if (!resp</span>onse.ok) return
-<span class="cstat-no" title="statement not covered" >            const timestampRaw = await response.text()</span>
-<span class="cstat-no" title="statement not covered" >            const timestamp = timesta</span>mpRaw.trim()
-<span class="cstat-no" title="statement not covered" >            const p</span>arsedDate =
-<span class="cstat-no" title="statement not covered" ></span>                timestamp.length &lt; 20
+<span class="cstat-no" title="statement not covered" >            const res</span>ponse = await fetchWithRetries(timestampUrl)
+<span class="cstat-no" title="statement not covered" >            if (!response.ok) return</span>
+<span class="cstat-no" title="statement not covered" >            const timestampRaw = awai</span>t response.text()
+<span class="cstat-no" title="statement not covered" >            const t</span>imestamp = timestampRaw.trim()
+<span class="cstat-no" title="statement not covered" ></span>            const parsedDate =
+<span class="cstat-no" title="statement not covered" >                timestamp.length &lt; 20</span>
 <span class="cstat-no" title="statement not covered" >                    ? dayjs(`${timestamp}Z`)</span>
 <span class="cstat-no" title="statement not covered" >                    : dayjs(timestamp)</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >            if (!parsedDate.isValid()) return</span>
 <span class="cstat-no" title="statement not covered" >            setDate(parsedDate)</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        fetchTimeStamp()</span>
-<span class="cstat-no" title="statement not covered" >    }, [</span>])
+<span class="cstat-no" title="statement not covered" ></span>        fetchTimeStamp()
+<span class="cstat-no" title="statement not covered" ></span>    }, [])
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        date &amp;&amp; (</span>
-<span class="cstat-no" title="statement not covered" ></span>            &lt;span&gt;
-<span class="cstat-no" title="statement not covered" >                Last update: &lt;strong&gt;{date.fromNow()}&lt;/strong&gt;.</span>
+<span class="cstat-no" title="statement not covered" ></span>        date &amp;&amp; (
+<span class="cstat-no" title="statement not covered" >            &lt;span&gt;</span>
+<span class="cstat-no" title="statement not covered" >                Last update: &lt;</span>strong&gt;{date.fromNow()}&lt;/strong&gt;.
 <span class="cstat-no" title="statement not covered" >                {/* (</span>
-<span class="cstat-no" title="statement not covered" >                {date.toDate().toLocaleString("e</span>n-US", {
+<span class="cstat-no" title="statement not covered" >                {date.toDate().toLocaleString("en-U</span>S", {
 <span class="cstat-no" title="statement not covered" >                    year: "numeric",</span>
 <span class="cstat-no" title="statement not covered" >                    month: "long",</span>
 <span class="cstat-no" title="statement not covered" >                    day: "numeric",</span>
@@ -208,7 +211,7 @@ export const LastUpdated = <span class="fstat-no" title="function not covered" >
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jan 18 2022 22:34:06 GMT+0000 (Coordinated Universal Time)
+                at Wed Jan 19 2022 13:37:03 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
