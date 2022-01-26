@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for owid-grapher/grapher/controls/globalEntitySelector/GlobalEntitySelector.tsx</title>
+    <title>Code coverage report for owid-grapher/clientUtils/SqlFilterSExpression.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">owid-grapher/grapher/controls/globalEntitySelector</a> GlobalEntitySelector.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">owid-grapher/clientUtils</a> SqlFilterSExpression.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.33% </span>
+                <span class="strong">96.79% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>194/327</span>
+                <span class='fraction'>422/436</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">96.77% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>12/16</span>
+                <span class='fraction'>60/62</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">34.78% </span>
+                <span class="strong">91.49% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/23</span>
+                <span class='fraction'>43/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">59.33% </span>
+                <span class="strong">96.79% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>194/327</span>
+                <span class='fraction'>422/436</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -483,7 +483,87 @@
 <a name='L424'></a><a href='#L424'>424</a>
 <a name='L425'></a><a href='#L425'>425</a>
 <a name='L426'></a><a href='#L426'>426</a>
-<a name='L427'></a><a href='#L427'>427</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L427'></a><a href='#L427'>427</a>
+<a name='L428'></a><a href='#L428'>428</a>
+<a name='L429'></a><a href='#L429'>429</a>
+<a name='L430'></a><a href='#L430'>430</a>
+<a name='L431'></a><a href='#L431'>431</a>
+<a name='L432'></a><a href='#L432'>432</a>
+<a name='L433'></a><a href='#L433'>433</a>
+<a name='L434'></a><a href='#L434'>434</a>
+<a name='L435'></a><a href='#L435'>435</a>
+<a name='L436'></a><a href='#L436'>436</a>
+<a name='L437'></a><a href='#L437'>437</a>
+<a name='L438'></a><a href='#L438'>438</a>
+<a name='L439'></a><a href='#L439'>439</a>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -492,6 +572,12 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -506,48 +592,96 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">108x</span>
+<span class="cline-any cline-yes">108x</span>
+<span class="cline-any cline-yes">108x</span>
+<span class="cline-any cline-yes">108x</span>
+<span class="cline-any cline-yes">108x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">93x</span>
+<span class="cline-any cline-yes">93x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">28x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -555,198 +689,19 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -755,29 +710,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -789,6 +737,170 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -801,8 +913,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -810,6 +923,82 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">154x</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -880,461 +1069,512 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from "react"
-import * as ReactDOM from "react-dom"
-import { action, observable, IReactionDisposer, reaction, computed } from "mobx"
-import { observer } from "mobx-react"
-import Select, {
-    components,
-    CSSObjectWithLabel,
-    GroupBase,
-    OptionProps,
-    Props,
-} from "react-select"
-import classnames from "classnames"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes"
-import { countries } from "../../../clientUtils/countries"
-import {
-    throttle,
-    noop,
-    getCountryCodeFromNetlifyRedirect,
-    sortBy,
-} from "../../../clientUtils/Util"
-import { GrapherAnalytics } from "../../core/GrapherAnalytics"
-import { WorldEntityName } from "../../core/GrapherConstants"
-import { GLOBAL_ENTITY_SELECTOR_ELEMENT } from "./GlobalEntitySelectorConstants"
-import { SelectionArray } from "../../selection/SelectionArray"
-import { EntityName } from "../../../coreTable/OwidTableConstants"
-import { setSelectedEntityNamesParam } from "../../core/EntityUrlBuilder"
-import { getWindowUrl, setWindowUrl } from "../../../clientUtils/urls/Url"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import parse = require("s-expression")
+import pointer from "json8-pointer"
+import { isArray, tail, without } from "lodash"
+// This type models what we get from the s-expression library. This library
+// transforms lists in S-Expressions into array, strings inside double quotes
+// as String (note the uppercase! It really uses the rarely used String object) and
+// all other tokes like numbers or symbols as normal string.
+export type SExprAtom = string | String | SExprAtom[] // eslint-disable-line @typescript-eslint/ban-types
 &nbsp;
-enum GlobalEntitySelectionModes {
-    none = "none",
-    // Possibly might need the `add` state in the future to
-    // add country from geolocation without clearing others.
-    // One thing to figure out is what its behaviour should
-    // be for single-entity charts.
-&nbsp;
-    // add = "add",
-    override = "override",
+export enum Arity {
+    nullary = "nullary",
+    unary = "unary",
+    binary = "binary",
+    nary = "nary",
 }
 &nbsp;
-interface DropdownEntity {
-    label: string
-    value: string
+const arityToNumberMap = new Map([
+    [Arity.nullary, 0],
+    [Arity.unary, 1],
+    [Arity.binary, 2],
+    [Arity.nary, undefined],
+])
+&nbsp;
+export interface Operation {
+    toSql(): string
+    toSExpr(): string
+    expressionType: ExpressionType
 }
 &nbsp;
-const allEntities = sortBy(countries, (c) =&gt; c.name)
-    // Add 'World'
-    .concat([
-        {
-            name: WorldEntityName,
-            code: "OWID_WRL",
-            slug: "world",
-        },
+export abstract class NumericOperation implements Operation {
+    abstract toSql(): string
+    abstract toSExpr(): string
+    expressionType: ExpressionType = ExpressionType.numeric
+}
+&nbsp;
+export abstract class BooleanOperation implements Operation {
+    abstract toSql(): string
+    abstract toSExpr(): string
+    expressionType: ExpressionType = ExpressionType.boolean
+}
+&nbsp;
+export abstract class StringOperation implements Operation {
+    abstract toSql(): string
+    abstract toSExpr(): string
+    expressionType: ExpressionType = ExpressionType.string
+}
+&nbsp;
+export enum ExpressionType {
+    numeric = "numeric",
+    boolean = "boolean",
+    string = "string",
+    any = "any", // This is used for values we can't type check e.g. jsonpath queries that might return anything
+}
+&nbsp;
+export class BooleanAtom extends BooleanOperation {
+    constructor(public value: boolean) {
+        super()
+    }
+    toSql(): string {
+        return this.value.toString()
+    }
+&nbsp;
+    toSExpr(): string {
+        return this.value.toString()
+    }
+}
+&nbsp;
+export class NumberAtom extends NumericOperation {
+    constructor(public value: number) {
+        super()
+    }
+    toSql(): string {
+        return this.value.toString()
+    }
+&nbsp;
+    toSExpr(): string {
+        return this.value.toString()
+    }
+}
+const quoteReplaceRegex = /'/g
+const backslashReplaceRegex = /\\/g
+const doubleQuoteReplaceRegex = /"/g
+export class StringAtom extends StringOperation {
+    constructor(public value: string) {
+        super()
+    }
+    expressionType = ExpressionType.string
+    escapedValue(): string {
+        return this.value
+            .toString()
+            .replace(quoteReplaceRegex, "''")
+            .replace(backslashReplaceRegex, "\\\\")
+    }
+    toSql(): string {
+        return `'${this.escapedValue()}'` // escape single quotes to avoid SQL injection attacks :)
+    }
+&nbsp;
+    toSExpr(): string {
+        return `"${this.value
+            .toString()
+            .replace(backslashReplaceRegex, "\\\\")
+            .replace(doubleQuoteReplaceRegex, '\\"')}"`
+    }
+}
+&nbsp;
+function jsonPointerToJsonPath(jsonpointer: string): string {
+    const pointerFragments = pointer.decode(jsonpointer)
+    let path = "$"
+    for (const fragment of pointerFragments) {
+        const number = Number.parseInt(fragment)
+        if (!Number.isNaN(number)) path += `[${number}]`
+        else path += `.${fragment}`
+    }
+    return path
+}
+&nbsp;
+export class JsonPointerSymbol implements Operation {
+    // Json pointer is actually less restrictive and allows pretty much all unicode
+    // code points but for the foreseeable future we will only have \w and \d, _ and -
+    // characters in actual use. Tilde is from json pointer to escape / inside field names
+    // We also disallow empty jsonPointer for now even though they are legal (if you
+    // want to enable them then make sure that the parsing decisions outside of here
+    // all correctly allow this)
+    static jsonPointerRegex: RegExp = /^\/[\w\d/\-~_]+$/
+    static columnName: string = "grapherConfig" // TODO: this should come from context
+    static isValidJsonPointer(str: string): boolean {
+        return JsonPointerSymbol.jsonPointerRegex.test(str)
+    }
+    constructor(public value: string) {
+        if (!JsonPointerSymbol.isValidJsonPointer(value))
+<span class="branch-0 cbranch-no" title="branch not covered" >            throw E</span>rror(`Invalid Json Pointer: ${value} - did not match regex`)
+    }
+    arity = Arity.nullary
+    expressionType = ExpressionType.any
+    toSql(): string {
+        return `JSON_EXTRACT(${
+            JsonPointerSymbol.columnName
+        }, "${jsonPointerToJsonPath(this.value.toString())}")`
+    }
+&nbsp;
+    toSExpr(): string {
+        return this.value.toString()
+    }
+}
+&nbsp;
+export const SQL_COLUMN_NAME_VARIABLE_NAME = "variables.name"
+export const SQL_COLUMN_NAME_DATASET_NAME = "datasets.name"
+export const SQL_COLUMN_NAME_NAMESPACE_NAME = "namespaces.name"
+&nbsp;
+export class SqlColumnName implements Operation {
+    // NOTE: this is a temporary solution for the beginning of using S Expressions for filtering.
+    //       Once we start using this in more places, declaring the whitelist of columns that are
+    //       valid to query needs to come from the piece of code that wants to use the expression.
+    //       I think we should not start allowing expressions that traverse foreign keys and instead
+    //       create views and whitelist column names in those if we need more complex filters
+    static allowedColumnNamesAndTypes: Map&lt;string, ExpressionType&gt; = new Map([
+        [SQL_COLUMN_NAME_VARIABLE_NAME, ExpressionType.string],
+        [SQL_COLUMN_NAME_DATASET_NAME, ExpressionType.string],
+        [SQL_COLUMN_NAME_NAMESPACE_NAME, ExpressionType.string],
     ])
-&nbsp;
-const Option = (<span class="fstat-no" title="function not covered" >props: OptionProps&lt;DropdownEntity, true, any&gt;): JSX.Element =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;components.Option {...props}&gt;</span>
-<span class="cstat-no" title="statement not covered" >                &lt;input type="checkbox" checked={props.isSelec</span>ted} readOnly /&gt;{" "}
-<span class="cstat-no" title="statement not covered" >                &lt;label&gt;{props.label}&lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >            &lt;/components.Option&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-&nbsp;
-const SelectOptions: Props&lt;DropdownEntity, true, any&gt; = {
-    components: {
-        IndicatorSeparator: null,
-        Option,
-    },
-    menuPlacement: "bottom",
-    isClearable: false,
-    isMulti: true,
-    backspaceRemovesValue: false,
-    blurInputOnSelect: false,
-    closeMenuOnSelect: false,
-    controlShouldRenderValue: false,
-    hideSelectedOptions: false,
-    placeholder: "Add a country to all charts...",
-    styles: {
-        placeholder: (<span class="fstat-no" title="function not covered" >base: CSSObjectWithLabel): CSSObjectWithLabel =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >            ...bas</span>e,
-            whiteSpace: "nowrap",
-        }),
-        valueContainer: (base: CSSObjectWithLabel): CSSObjectWithLabel =&gt; ({
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >            ...base,</span></span>
-            paddingTop: 0,
-            paddingBottom: 0,
-        }),
-        control: (<span class="fstat-no" title="function not covered" >base: CSSObjectWithLabel): CSSObjectWithLabel =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >            ...base,</span>
-            minHeight: "initial",
-        }),
-        dropdownIndicator: (<span class="fstat-no" title="function not covered" >base: CSSObjectWithLabel): CSSObjectWithLabel =&gt; ({</span>
-<span class="cstat-no" title="statement not covered" >            ..</span>.base,
-            padding: "0 5px",
-        }),
-    },
-}
-&nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >fun</span>ction SelectedItems(props: {</span>
-<span class="cstat-no" title="statement not covered" >    selectedEntityNames: EntityN</span>ame[]
-<span class="cstat-no" title="statement not covered" >    emptyLab</span>el: string
-<span class="cstat-no" title="statement not covered" >    canRemove?: boolean</span>
-<span class="cstat-no" title="statement not covered" >    onRemove?: (item: EntityName) =&gt; void</span>
-<span class="cstat-no" title="statement not covered" >}): JSX.Element {</span>
-<span class="cstat-no" title="statement not covered" >    const canRemove = (props.canRemove ?? true) &amp;&amp; props.onRemove !== undefined</span>
-<span class="cstat-no" title="statement not covered" >    const onRemove = props.onRemov</span>e || noop
-<span class="cstat-no" title="statement not covered" >    const isEm</span>pty = props.selectedEntityNames.length === 0
-<span class="cstat-no" title="statement not covered" >    return (</span>
-<span class="cstat-no" title="statement not covered" >        &lt;div className="selected-items-container"&gt;</span>
-<span class="cstat-no" title="statement not covered" >            {isEmpty ? (</span>
-<span class="cstat-no" title="statement not covered" ></span>                &lt;div className="empty"&gt;{props.emptyLabel}&lt;/div&gt;
-<span class="cstat-no" title="statement not covered" >            ) : (</span>
-<span class="cstat-no" title="statement not covered" >                &lt;div</span> className="selected-items"&gt;
-<span class="cstat-no" title="statement not covered" ></span>                    {props.selectedEntityNames.map((entityName) =&gt; (
-<span class="cstat-no" title="statement not covered" >                        &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                            key={entityName}</span>
-<span class="cstat-no" title="statement not covered" >                            c</span>lassName={classnames("selected-item", {
-<span class="cstat-no" title="statement not covered" >                                removable: canRemove,</span>
-<span class="cstat-no" title="statement not covered" >                            })</span>}
-<span class="cstat-no" title="statement not covered" >                        &gt;</span>
-<span class="cstat-no" title="statement not covered" >                            &lt;div className="lab</span>el"&gt;{entityName}&lt;/div&gt;
-<span class="cstat-no" title="statement not covered" >                            {can</span>Remove &amp;&amp; (
-<span class="cstat-no" title="statement not covered" >                                &lt;div</span>
-<span class="cstat-no" title="statement not covered" >                                    className="remove-icon"</span>
-<span class="cstat-no" title="statement not covered" ></span>                                    onClick={(): void =&gt; onRemove(entityName)}
-<span class="cstat-no" title="statement not covered" ></span>                                &gt;
-<span class="cstat-no" title="statement not covered" ></span>                                    &lt;FontAwesomeIcon icon={faTimes} /&gt;
-<span class="cstat-no" title="statement not covered" >                                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >                            )}</span>
-<span class="cstat-no" title="statement not covered" >                        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" ></span>                    ))}
-<span class="cstat-no" title="statement not covered" >                &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >            )}</span>
-<span class="cstat-no" title="statement not covered" >        &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >    )</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-&nbsp;
-@observer
-export class GlobalEntitySelector extends React.Component&lt;{
-    selection: SelectionArray
-    graphersAndExplorersToUpdate?: Set&lt;SelectionArray&gt;
-    environment?: string
-}&gt; {
-    refContainer: React.RefObject&lt;HTMLDivElement&gt; = React.createRef()
-    disposers: IReactionDisposer[] = []
-&nbsp;
-    @observable mode = GlobalEntitySelectionModes.none
-&nbsp;
-    @observable private isNarrow = true
-    @observable private isOpen = false
-    @observable private localEntityName: EntityName | undefined
-&nbsp;
-    selection = this.props.selection
-&nbsp;
-    @observable.ref private optionGroups: GroupBase&lt;DropdownEntity&gt;[] = []
-&nbsp;
-    componentDidMount(): void {
-        this.onResize()
-        window.addEventListener("resize", this.onResizeThrottled)
-        this.disposers.push(
-            reaction(
-                () =&gt; this.isOpen,
-                () =&gt; this.prepareOptionGroups()
-            )
-        )
-        this.populateLocalEntity()
+    static isValidSqlColumnName(str: string): boolean {
+        return SqlColumnName.allowedColumnNamesAndTypes.has(str)
     }
-&nbsp;
-<span class="fstat-no" title="function not covered" >    componentWillUnmount(): void {</span>
-<span class="cstat-no" title="statement not covered" >        window.removeEventListener("res</span>ize", this.onResizeThrottled)
-<span class="cstat-no" title="statement not covered" >        this.disposers.forEach((dispose): void =&gt; dispose())</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    private onResizeThrottled = throttle(this.onResize, 200)
-    @action.bound private onResize(): void {
-        const container = this.refContainer.current
-        if (container) this.isNarrow = container.offsetWidth &lt;= 640
-    }
-&nbsp;
-    @action.bound async populateLocalEntity(): Promise&lt;void&gt; {
-        try {
-            const localCountryCode = await getCountryCodeFromNetlifyRedirect()
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >            if (!localCountryCode) return</span></span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>            const country = allEntities.find(
-<span class="cstat-no" title="statement not covered" >                (e</span>ntity): boolean =&gt; entity.code === localCountryCode
+<span class="fstat-no" title="function not covered" >    constructor(public value: string) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!SqlColumnName.isValidSqlColumnName(value))</span>
+<span class="cstat-no" title="statement not covered" >            throw Error(</span>
+<span class="cstat-no" title="statement not covered" >                `Invalid column name: ${value} - did not match the s</span>et of allowed columns`
 <span class="cstat-no" title="statement not covered" >            )</span>
-<span class="cstat-no" title="statement not covered" ></span>            if (country) this.localEntityName = country.name
-        }<span class="branch-0 cbranch-no" title="branch not covered" > catch (err) {}</span>
-    }
-&nbsp;
-    @action.bound private prepareOptionGroups(): GroupBase&lt;DropdownEntity&gt;[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span>        let optionGroups: GroupBase&lt;DropdownEntity&gt;[] = []</span>
-<span class="cstat-no" title="statement not covered" >        // We want to in</span>clude the local country, but not if it's already selected, it adds
-<span class="cstat-no" title="statement not covered" >        // unnecessary duplication.</span>
-<span class="cstat-no" title="statement not covered" >        if (</span>
-<span class="cstat-no" title="statement not covered" ></span>            this.localEntityName &amp;&amp;
-<span class="cstat-no" title="statement not covered" >            !this.selection.selectedSet.has(</span>this.localEntityName)
-<span class="cstat-no" title="statement not covered" >        ) {</span>
-<span class="cstat-no" title="statement not covered" >            optionGr</span>oups = optionGroups.concat([
-<span class="cstat-no" title="statement not covered" >                {</span>
-<span class="cstat-no" title="statement not covered" >                    label: "Suggestions",</span>
-<span class="cstat-no" title="statement not covered" ></span>                    options: [entityNameToOption(this.localEntityName)],
-<span class="cstat-no" title="statement not covered" ></span>                },
-<span class="cstat-no" title="statement not covered" >            ])</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        if (this.selection.hasSelection) {</span>
-<span class="cstat-no" title="statement not covered" >            optionGroups =</span> optionGroups.concat([
-<span class="cstat-no" title="statement not covered" ></span>                {
-<span class="cstat-no" title="statement not covered" ></span>                    label: "Selected",
-<span class="cstat-no" title="statement not covered" >                    options:</span>
-<span class="cstat-no" title="statement not covered" ></span>                        this.selection.selectedEntityNames.map(
-<span class="cstat-no" title="statement not covered" ></span>                            entityNameToOption
-<span class="cstat-no" title="statement not covered" >                        ),</span>
-<span class="cstat-no" title="statement not covered" ></span>                },
-<span class="cstat-no" title="statement not covered" >            ])</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >        optionGroups = opti</span>onGroups.concat([
-<span class="cstat-no" title="statement not covered" ></span>            {
-<span class="cstat-no" title="statement not covered" >                label: "All</span> countries",
-<span class="cstat-no" title="statement not covered" >                options: allEntities</span>
-<span class="cstat-no" title="statement not covered" >                    .map((en</span>tity) =&gt; entity.name)
-<span class="cstat-no" title="statement not covered" ></span>                    .map(entityNameToOption),
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >        ])</span>
-<span class="cstat-no" title="statement not covered" ></span>        this.optionGroups = optionGroups
-<span class="cstat-no" title="statement not covered" >        return option</span>Groups
+<span class="cstat-no" title="statement not covered" >        this.expressionType = SqlColumnName.allowedColumnNamesAndType</span>s.get(
+<span class="cstat-no" title="statement not covered" ></span>            this.value
+<span class="cstat-no" title="statement not covered" >        )!</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    arity = Arity.nullary
+    expressionType: ExpressionType
+<span class="fstat-no" title="function not covered" >    toSql(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return `${this.value}`</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 &nbsp;
-    private analytics = new GrapherAnalytics(
-<span class="branch-0 cbranch-no" title="branch not covered" >        this.props.environment ?? "</span>development"
-    )
+<span class="fstat-no" title="function not covered" >    toSExpr(): string {</span>
+<span class="cstat-no" title="statement not covered" >        return this.value.toString()</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+}
 &nbsp;
-    @action.bound private updateURL(): void {
-        setWindowUrl(
-            setSelectedEntityNamesParam(
-                getWindowUrl(),
-                this.selection.selectedEntityNames
+export enum ArithmeticOperator {
+    addition = "+",
+    subtraction = "-",
+    multiplication = "*",
+    division = "/",
+}
+&nbsp;
+export const allArithmeticOperators = [
+    ArithmeticOperator.addition,
+    ArithmeticOperator.subtraction,
+    ArithmeticOperator.multiplication,
+    ArithmeticOperator.division,
+]
+&nbsp;
+export class ArithmeticOperation extends NumericOperation {
+    constructor(
+        public operator: ArithmeticOperator,
+        public operands: NumericOperation[]
+    ) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(${this.operands
+            .map((operand) =&gt; operand.toSql())
+            .join(this.operator)})` // we emit too many parenthesis here but don't want to deal with precedence rn
+    }
+&nbsp;
+    toSExpr(): string {
+        const operands = this.operands.map((op) =&gt; op.toSExpr()).join(" ")
+        return `(${this.operator} ${operands})`
+    }
+}
+&nbsp;
+export enum EqualityOperator {
+    equal = "=",
+    unequal = "&lt;&gt;",
+}
+&nbsp;
+export const allEqualityOperators = [
+    EqualityOperator.equal,
+    EqualityOperator.unequal,
+]
+&nbsp;
+export class EqualityComparision extends BooleanOperation {
+    constructor(
+        public operator: EqualityOperator,
+        public operands: Operation[]
+    ) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(${this.operands
+            .map((operand) =&gt; operand.toSql())
+            .join(" " + this.operator + " ")})` // we emit too many parenthesis here but don't want to deal with precedence rn
+    }
+&nbsp;
+    toSExpr(): string {
+        const operands = this.operands.map((op) =&gt; op.toSExpr()).join(" ")
+        return `(${this.operator} ${operands})`
+    }
+}
+&nbsp;
+export class StringContainsOperation extends BooleanOperation {
+    constructor(
+        public container: StringOperation,
+        public searchString: StringAtom
+    ) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(${this.container.toSql()} LIKE '%${this.searchString.escapedValue()}%')`
+    }
+&nbsp;
+    toSExpr(): string {
+        return `(CONTAINS ${this.container.toSExpr()} ${this.searchString.toSExpr()})`
+    }
+}
+&nbsp;
+export enum ComparisonOperator {
+    less = "&lt;",
+    lessOrEqual = "&lt;=",
+    greater = "&gt;",
+    greaterOrEqual = "&gt;=",
+}
+&nbsp;
+export const allComparisonOperators = [
+    ComparisonOperator.less,
+    ComparisonOperator.lessOrEqual,
+    ComparisonOperator.greater,
+    ComparisonOperator.greaterOrEqual,
+]
+&nbsp;
+export class NumericComparision extends BooleanOperation {
+    constructor(
+        public operator: ComparisonOperator,
+        public operands: [NumericOperation, NumericOperation]
+    ) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(${this.operands[0].toSql()} ${
+            this.operator
+        } ${this.operands[1].toSql()})` // we emit too many parenthesis here but don't want to deal with precedence rn
+    }
+&nbsp;
+    toSExpr(): string {
+        const operands = this.operands.map((op) =&gt; op.toSExpr()).join(" ")
+        return `(${this.operator} ${operands})`
+    }
+}
+&nbsp;
+export enum BinaryLogicOperators {
+    and = "AND",
+    or = "OR",
+}
+&nbsp;
+export const allBinaryLogicOperators = [
+    BinaryLogicOperators.and,
+    BinaryLogicOperators.or,
+]
+&nbsp;
+export class BinaryLogicOperation extends BooleanOperation {
+    constructor(
+        public operator: BinaryLogicOperators,
+        public operands: BooleanOperation[]
+    ) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(${this.operands
+            .map((operand) =&gt; operand.toSql())
+            .join(" " + this.operator + " ")})` // we emit too many parenthesis here but don't want to deal with precedence rn
+    }
+&nbsp;
+    toSExpr(): string {
+        const operands = this.operands.map((op) =&gt; op.toSExpr()).join(" ")
+        return `(${this.operator} ${operands})`
+    }
+}
+&nbsp;
+export class Negation extends BooleanOperation {
+    constructor(public operand: BooleanOperation) {
+        super()
+    }
+&nbsp;
+    toSql(): string {
+        return `(NOT ${this.operand.toSql()})` // we emit too many parenthesis here but don't want to deal with precedence rn
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    toSExpr(): string {</span>
+<span class="cstat-no" title="statement not covered" ></span>        return `(NOT ${this.operand.toSExpr()})`
+<span class="cstat-no" title="statement not covered" >    }</span>
+}
+&nbsp;
+interface OperationInfo {
+    arity: Arity
+    operandsType: ExpressionType
+    ctor(args: Operation[]): Operation
+}
+&nbsp;
+const arithmeticOperatorInfos = allArithmeticOperators.map(
+    (op) =&gt;
+        [
+            op.toString(),
+            {
+                arity: Arity.nary,
+                operandsType: ExpressionType.numeric,
+                ctor: (args: Operation[]): Operation =&gt;
+                    new ArithmeticOperation(op, args as NumericOperation[]),
+            },
+        ] as const
+)
+const equalityOperatorInfos = allEqualityOperators.map(
+    (op) =&gt;
+        [
+            op.toString(),
+            {
+                arity: Arity.binary,
+                operandsType: ExpressionType.any,
+                ctor: (args: Operation[]): Operation =&gt;
+                    new EqualityComparision(op, args),
+            },
+        ] as const
+)
+const comparisionOperatorInfos = allComparisonOperators.map(
+    (op) =&gt;
+        [
+            op.toString(),
+            {
+                arity: Arity.binary,
+                operandsType: ExpressionType.numeric,
+                ctor: (args: Operation[]): Operation =&gt;
+                    new NumericComparision(
+                        op,
+                        args as [NumericOperation, NumericOperation]
+                    ),
+            },
+        ] as const
+)
+const binaryLogicOperatorInfos = allBinaryLogicOperators.map(
+    (op) =&gt;
+        [
+            op.toString(),
+            {
+                arity: Arity.nary,
+                operandsType: ExpressionType.boolean,
+                ctor: (args: Operation[]): Operation =&gt;
+                    new BinaryLogicOperation(op, args as BooleanOperation[]),
+            },
+        ] as const
+)
+const operationFactoryMap = new Map&lt;string, OperationInfo&gt;([
+    //...(allArithmeticOperators.map(op =&gt; [op, {arity: Arity.nary, operandsType: ExpressionType.numeric, ctor: arithMeticCtor}])
+    ...arithmeticOperatorInfos,
+    ...equalityOperatorInfos,
+    ...comparisionOperatorInfos,
+    ...binaryLogicOperatorInfos,
+    [
+        "NOT",
+        {
+            arity: Arity.unary,
+            operandsType: ExpressionType.boolean,
+            ctor: (args: Operation[]): Operation =&gt; new Negation(args[0]),
+        },
+    ],
+    [
+        "CONTAINS",
+        {
+            arity: Arity.binary,
+            operandsType: ExpressionType.string,
+            ctor: (args: Operation[]): Operation =&gt;
+                new StringContainsOperation(args[0], args[1] as StringAtom),
+        },
+    ],
+])
+&nbsp;
+export function parseOperationRecursive(
+    sExpr: SExprAtom | undefined
+): Operation | undefined {
+    if (sExpr === undefined) <span class="branch-0 cbranch-no" title="branch not covered" >return u</span>ndefined
+    if (isArray(sExpr)) {
+        if (sExpr.length === 0) return undefined
+        else {
+            const firstElement = sExpr[0]
+            // The first element of a list in an SExpression has to be a function. In our
+            // parser this means that it has to be of type string which is what symbols end up as
+            // (actual verbatim strings that are quoted are String instances and nested lists are arrays)
+            if (typeof firstElement !== "string")
+                throw Error(
+                    `First element in list was not a symbol! ${firstElement}`
+                )
+            const op = operationFactoryMap.get(firstElement)
+            if (op === undefined)
+                throw Error(`Unknown function ${firstElement}!`)
+&nbsp;
+            // Check if the arity matches the number of arguments
+            const expectedArgs = arityToNumberMap.get(op.arity)
+            const parsedArgs = without(
+                tail(sExpr).map(parseOperationRecursive),
+                undefined
+            ) as Operation[]
+            if (
+                expectedArgs !== undefined &amp;&amp;
+                parsedArgs.length !== expectedArgs
             )
-        )
+                throw Error(
+                    `Function ${firstElement} expected ${expectedArgs} arguments but got ${parsedArgs.length}`
+                )
+&nbsp;
+            // Check if the types of the arguments match the expected type for this operation unless the operation accepts type "any"
+            if (
+                op.operandsType !== ExpressionType.any &amp;&amp;
+                !parsedArgs.every(
+                    (item) =&gt;
+                        item.expressionType === op.operandsType ||
+                        item.expressionType === ExpressionType.any
+                )
+            )
+                throw Error(
+                    `Operation ${firstElement} expected arguments of type ${op.operandsType} but not all arguments were of that type`
+                )
+&nbsp;
+            // All checks passed, construct and return the Operator
+            return op.ctor(parsedArgs)
+        }
     }
-&nbsp;
-    @action.bound updateSelection(newSelectedEntities: string[]): void {
-        this.selection.setSelectedEntities(newSelectedEntities)
-        this.updateAllGraphersAndExplorersOnPage()
-        this.updateURL()
-    }
-&nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onChange(options: readonly DropdownEntity[]): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.updateSelection(</span>
-<span class="cstat-no" title="statement not covered" >            options.map((option: DropdownEn</span>tity) =&gt; option.label)
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>        this.analytics.logGlobalEntitySelector(
-<span class="cstat-no" title="statement not covered" >            "</span>change",
-<span class="cstat-no" title="statement not covered" >            this.selec</span>tion.selectedEntityNames.join(",")
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @action.bound private updateAllGraphersAndExplorersOnPage(): void {
-        if (!this.props.graphersAndExplorersToUpdate) return
-        Array.from(this.props.graphersAndExplorersToUpdate.values()).forEach(
-            (value) =&gt; {
-                value.setSelectedEntities(this.selection.selectedEntityNames)
-            }
-        )
-    }
-&nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onRemove(option: EntityName): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>selection.toggleSelection(option)
-<span class="cstat-no" title="statement not covered" >        this.updateAllGr</span>aphersAndExplorersOnPage()
-<span class="cstat-no" title="statement not covered" >        this.updateURL()</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onMenuOpen(): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>isOpen = true
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @action.bound private onMenuClose(): void {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.isOpen = fa</span>lse</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @action.bound private onButtonOpen(
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        event: React.MouseEvent&lt;HTMLButtonElement&gt;</span></span>
-<span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.analytics.l</span>ogGlobalEntitySelector(
-<span class="cstat-no" title="statement not covered" >            "open",</span>
-<span class="cstat-no" title="statement not covered" >            e</span>vent.currentTarget.innerText
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.onMenuOpen()</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @action.bound private <span class="fstat-no" title="function not covered" >onButtonClose(</span>
-<span class="cstat-no" title="statement not covered" >        event</span>: React.MouseEvent&lt;HTMLButtonElement&gt;
-<span class="cstat-no" title="statement not covered" >    ): void {</span>
-<span class="cstat-no" title="statement not covered" >        this.analytics.logGlobalEntitySelector(</span>
-<span class="cstat-no" title="statement not covered" >            "</span>close",
-<span class="cstat-no" title="statement not covered" >            event.curren</span>tTarget.innerText
-<span class="cstat-no" title="statement not covered" >        )</span>
-<span class="cstat-no" title="statement not covered" >        this.</span>onMenuClose()
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    @computed private get selectedOptions(): DropdownEntity[] {
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        return this.sele</span>ction.selectedEntityNames.map(entityNameToOption)</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-&nbsp;
-    private renderNarrow(): JSX.Element {
-        return (
-            &lt;&gt;
-                &lt;div
-                    className={classnames("narrow-summary", {
-                        "narrow-summary-selected-items": !this.isOpen,
-                    })}
-                &gt;
-                    {this.isOpen ? (
-<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span>                        &lt;Select</span>
-<span class="cstat-no" title="statement not covered" >                            {...SelectOptions}</span>
-                            options={this.optionGroups}
-                            value={this.selectedOptions}
-                            onChange={this.onChange}
-                            menuIsOpen={this.isOpen}
-                            autoFocus={true}
-                        /&gt;
-                    ) : (
-                        &lt;div&gt;
-                            {!this.selection.hasSelection
-                                ? "None selected"
-                                : this.selection.selectedEntityNames
-                                      .map((entityName) =&gt; (
-                                          &lt;span
-                                              className="narrow-summary-selected-item"
-                                              key={entityName}
-                                          &gt;
-                                              {entityName}
-                                          &lt;/span&gt;
-                                      ))
-                                      .reduce(
-                                          (acc, item) =&gt;
-                                              acc.length === 0
-                                                  ? [item]
-                                                  : [...acc, ", ", item],
-                                          [] as (JSX.Element | string)[]
-                                      )}
-                        &lt;/div&gt;
-                    )}
-                &lt;/div&gt;
-                &lt;div className="narrow-actions"&gt;
-                    {this.isOpen ? (
-                        &lt;button className="button" onClick={this.onButtonClose}&gt;
-                            Done
-                        &lt;/button&gt;
-                    ) : (
-                        &lt;button className="button" onClick={this.onButtonOpen}&gt;
-                            {!this.selection.hasSelection
-                                ? "Select countries"
-                                : "Edit"}
-                        &lt;/button&gt;
-                    )}
-                &lt;/div&gt;
-            &lt;/&gt;
-        )
-    }
-&nbsp;
-    private renderWide(): JSX.Element {
-        return (
-            &lt;&gt;
-                &lt;div className="select-dropdown-container"&gt;
-                    &lt;Select
-                        {...SelectOptions}
-                        options={this.optionGroups}
-                        onChange={this.onChange}
-                        value={this.selectedOptions}
-                        onMenuOpen={this.onMenuOpen}
-                        onMenuClose={this.onMenuClose}
-                    /&gt;
-                &lt;/div&gt;
-                &lt;SelectedItems
-                    selectedEntityNames={this.selection.selectedEntityNames}
-                    onRemove={this.onRemove}
-                    emptyLabel="Select countries to show on all charts"
-                /&gt;
-            &lt;/&gt;
-        )
-    }
-&nbsp;
-    render(): JSX.Element {
-        return (
-            &lt;div
-                className={classnames("global-entity-control", {
-                    "is-narrow": this.isNarrow,
-                    "is-wide": !this.isNarrow,
-                })}
-                ref={this.refContainer}
-                onClick={
-                    this.isNarrow &amp;&amp; !this.isOpen ? this.onMenuOpen : undefined
-                }
-            &gt;
-                {this.isNarrow ? this.renderNarrow() : this.renderWide()}
-            &lt;/div&gt;
-        )
-    }
+    // our s-expression parser library turns quoted strings like "hello" into String instances to
+    // differentiate them from unquoted symbols
+    else if (sExpr instanceof String) {
+        if (sExpr === "") return undefined
+        else return new StringAtom(sExpr.valueOf())
+    } else if (typeof sExpr === "string") {
+        let num: number
+        if (sExpr === "") return undefined
+        else if (sExpr === "true") return new BooleanAtom(true)
+        else if (sExpr === "false") return new BooleanAtom(false)
+        // Handling NaN correctly throught the entire DSL is hard - let's see if we can just drop it
+        else if (sExpr === "NaN") return undefined
+        else if ((num = Number.parseFloat(sExpr))) return new NumberAtom(num)
+        else if (SqlColumnName.isValidSqlColumnName(sExpr))
+            return new SqlColumnName(sExpr)
+        else return new JsonPointerSymbol(sExpr) // this will throw if the symbol is not a JsonPointer which is the only valid symbol we know of
+    } else throw Error(`Unexpected type in parseToOperation: ${sExpr}!`)
 }
 &nbsp;
-export const hydrateGlobalEntitySelectorIfAny = (
-    selection: SelectionArray,
-    graphersAndExplorersToUpdate: Set&lt;SelectionArray&gt;
-): void =&gt; {
-    const element = document.querySelector(GLOBAL_ENTITY_SELECTOR_ELEMENT)
-    if (!element) return
-&nbsp;
-    ReactDOM.hydrate(
-        &lt;GlobalEntitySelector
-            selection={selection}
-            graphersAndExplorersToUpdate={graphersAndExplorersToUpdate}
-        /&gt;,
-        element
-    )
+export function parseToOperation(
+    sexpressionString: string
+): Operation | undefined {
+    // Use the s-expression library to turn character strings with parens into
+    // nested arrays. The parsed datastructure is thus (potentially nested) arrays
+    // that contain either string primitives or String instances. This is a bit odd
+    // but useful - the latter is used to represent quoted strings, the primitive
+    // string is used for everything, which means numbers, booleans and symbols.
+    //
+    const sExpr = parse(sexpressionString) as SExprAtom
+    const result = parseOperationRecursive(sExpr)
+    return result
 }
-&nbsp;
-const entityNameToOption = (label: EntityName): DropdownEntity =&gt; ({
-    label,
-    value: label,
-})
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -1345,14 +1585,14 @@ const entityNameToOption = (label: EntityName): DropdownEntity =&gt; ({
                 at Wed Jan 26 2022 15:42:48 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
